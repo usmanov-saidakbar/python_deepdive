@@ -122,14 +122,23 @@ walkthrough for either.
 ## Spark Roadmap tab
 
 `/roadmap.html` (the "Spark Roadmap" tab at the top of the page) turns the
-*15-Day Spark Mastery Roadmap* into a per-day checklist: concepts, lab steps,
-extended practice, coding drills and the "Done when" self-test, plus a
-free-text daily log for each day. Set a start date and it highlights which day
-you're on.
+*15-Day Spark Mastery Roadmap* into a per-day checklist. Every day is split
+into three parts, each with its own progress bar and notes box:
+
+- **Theory** (research and learn): the topic map and the docs to read.
+- **Lab** (test it for real): the guided lab, the deep dive, and break it and
+  fix it, all hands-on in PySpark and the Spark UI.
+- **Exercise** (practice on your own): coding drills, practice questions, and
+  the "Done when" self-test with the daily log.
+
+Set a start date and it highlights which day you're on.
 
 - Checklist data lives in `data/roadmap.json` (generated once from the roadmap
-  doc). Edit it directly to add or change items; keep each item's `id` stable
-  so saved checkmarks still line up.
+  doc, `15-Day Spark Mastery Roadmap-3.docx`). Each day nests
+  `parts` → `activities` → `blocks` → `items`. Edit it directly to add or
+  change items; keep each item's `id` stable so saved checkmarks still line up.
+- Theory and Lab notes are saved under `<day>-theory` and `<day>-lab`; the
+  Exercise log keeps the plain `<day>` key the old daily log used.
 - With an email entered, progress is saved in Upstash under `roadmap:<email>`
   (separate from the course's `progress:<email>`) via
   `GET`/`PUT /api/roadmap-progress/:email`. Without one, it's kept in the

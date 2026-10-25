@@ -3,14 +3,36 @@ const LOCAL_KEY = "spark-roadmap-progress";
 const DAY_KEY = "spark-roadmap-day";
 const DIFFICULTY = { E: "Easy", M: "Medium", H: "Hard" };
 
+// Every day is split into Theory, Lab and Exercise, and each part has its own
+// notes box. The Exercise box is the original daily log, so it keeps the bare
+// day number as its key and logs written before the split still show up.
+const PART_NOTES = {
+  theory: {
+    suffix: "-theory",
+    heading: "Theory notes",
+    placeholder: "Explain each topic in your own words. Note anything that surprised you and which Study from pages are worth rereading.",
+  },
+  lab: {
+    suffix: "-lab",
+    heading: "Lab notes",
+    placeholder: "Paste the explain outputs you saved. Note the plan you predicted vs. what explain and the Spark UI showed, and what broke and how you fixed it.",
+  },
+  exercise: {
+    suffix: "",
+    heading: "Recap and daily log",
+    placeholder: "Answer today's checklist questions in your own words. Note which drills were slow and why, then re-answer yesterday's questions from memory.",
+  },
+};
+
 // Same email-keyed storage as the course page, under a separate server key.
 // Without an email, progress is kept in this browser only.
-// progress = { checked: { [itemId]: true }, notes: { [day]: "..." }, startDate: "YYYY-MM-DD" }
+// progress = { checked: { [itemId]: true }, notes: { [day | "day-part"]: "..." }, startDate: "YYYY-MM-DD" }
 let email = "";
 let progress = emptyProgress();
 let progressError = "";
 let days = [];
 let activeDay = 1;
+let activePart = "theory";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -82,11 +104,29 @@ function persistSoon() {
 }
 
 function dayItems(day) {
-  return day.sections.flatMap(sectionItems);
+  return day.parts.flatMap(partItems);
 }
 
-function sectionItems(section) {
-  return section.blocks.flatMap((b) => b.items);
+function partItems(part) {
+  return part.activities.flatMap(activityItems);
+}
+
+function activityItems(activity) {
+  return activity.blocks.flatMap((b) => b.items);
+}
+
+// Open a day on the first part that still has unticked items.
+function firstOpenPart(day) {
+  const open = day.parts.find((part) => countChecked(partItems(part)) < partItems(part).length);
+  return (open || day.parts[0]).key;
+}
+
+function selectDay(dayNumber) {
+  activeDay = dayNumber;
+  activePart = firstOpenPart(days.find((d) => d.day === dayNumber));
+  try {
+    localStorage.setItem(DAY_KEY, String(activeDay));
+  } catch {}
 }
 
 function countChecked(items) {
@@ -155,10 +195,7 @@ function renderTabs() {
     btn.textContent = done === items.length ? `✓ Day ${day.day}` : `Day ${day.day}`;
     btn.title = `${day.theme} — ${done}/${items.length}`;
     btn.addEventListener("click", () => {
-      activeDay = day.day;
-      try {
-        localStorage.setItem(DAY_KEY, String(activeDay));
-      } catch {}
+      selectDay(day.day);
       refresh();
     });
     tabsEl.appendChild(btn);
@@ -195,12 +232,141 @@ function renderItem(item) {
 }
 
 function renderTable(table) {
+  // Wide tables (Day 11 has five columns) scroll sideways on a phone instead of the page.
+  const wrap = document.createElement("div");
+  wrap.className = "table-wrap";
   const el = document.createElement("table");
   el.className = "symptoms";
   el.innerHTML =
     `<tr>${table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join("")}</tr>` +
     table.rows.map((row) => `<tr>${row.map((c) => `<td>${escapeHtml(c)}</td>`).join("")}</tr>`).join("");
+  wrap.appendChild(el);
+  return wrap;
+}
+
+function renderPartSwitch(day) {
+  const nav = document.createElement("div");
+  nav.className = "part-switch";
+  nav.id = "part-switch";
+
+  day.parts.forEach((part, i) => {
+    const items = partItems(part);
+    const done = countChecked(items);
+    const pct = items.length === 0 ? 0 : Math.round((done / items.length) * 100);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className =
+      "part-switch-btn" + (part.key === activePart ? " active" : "") + (done === items.length ? " complete" : "");
+    btn.setAttribute("aria-pressed", String(part.key === activePart));
+    btn.innerHTML = `
+      <span class="part-switch-name">${i + 1}. ${escapeHtml(part.name)}${done === items.length ? " ✓" : ""}</span>
+      <span class="part-switch-tagline">${escapeHtml(part.tagline)}</span>
+      <span class="part-switch-meta">${part.time ? `${escapeHtml(part.time)} · ` : ""}${done}/${items.length}</span>
+      <span class="part-switch-track"><span class="part-switch-fill" style="width:${pct}%"></span></span>
+    `;
+    btn.addEventListener("click", () => {
+      activePart = part.key;
+      refresh();
+    });
+    nav.appendChild(btn);
+  });
+  return nav;
+}
+
+function renderBlock(block, parent) {
+  if (block.label) {
+    const sub = document.createElement("h4");
+    sub.className = "block-heading" + (block.label === "What to learn first" ? " learn-first" : "");
+    const added = block.added ? ` <span class="badge badge-added" title="Beginner lesson the original checklist assumes you know">added</span>` : "";
+    sub.innerHTML = `${escapeHtml(block.label)}${added} <span class="muted">${countChecked(block.items)}/${block.items.length}</span>`;
+    parent.appendChild(sub);
+  }
+  if (block.note) {
+    const note = document.createElement("p");
+    note.className = "muted";
+    note.textContent = block.note;
+    parent.appendChild(note);
+  }
+  const ul = document.createElement("ul");
+  ul.className = "list";
+  block.items.forEach((item) => ul.appendChild(renderItem(item)));
+  parent.appendChild(ul);
+}
+
+function renderActivity(activity) {
+  const items = activityItems(activity);
+  const el = document.createElement("div");
+  el.className = "section";
+
+  const heading = document.createElement("h3");
+  heading.className = "section-heading";
+  const time = activity.time ? `${escapeHtml(activity.time)} · ` : "";
+  heading.innerHTML = `${escapeHtml(activity.name)} <span class="muted">${time}${countChecked(items)}/${items.length}</span>`;
+  el.appendChild(heading);
+
+  if (activity.studyFrom) {
+    const study = document.createElement("p");
+    study.className = "study-from";
+    study.innerHTML = `<strong>Study from:</strong> ${escapeHtml(activity.studyFrom)}`;
+    el.appendChild(study);
+  }
+  if (activity.note) {
+    const note = document.createElement("p");
+    note.className = "activity-note";
+    note.textContent = activity.note;
+    el.appendChild(note);
+  }
+
+  activity.blocks.forEach((block) => renderBlock(block, el));
+
+  if (activity.table) el.appendChild(renderTable(activity.table));
+  if (activity.footnote) {
+    const foot = document.createElement("p");
+    foot.className = "activity-note";
+    foot.textContent = activity.footnote;
+    el.appendChild(foot);
+  }
   return el;
+}
+
+function renderPartNotes(day, part) {
+  const config = PART_NOTES[part.key];
+  const key = `${day.day}${config.suffix}`;
+  const notesEl = document.createElement("div");
+  notesEl.className = "section";
+  notesEl.innerHTML = `<h3 class="section-heading">${escapeHtml(config.heading)}</h3>`;
+  const textarea = document.createElement("textarea");
+  textarea.className = "notes";
+  textarea.rows = 8;
+  textarea.placeholder = config.placeholder;
+  textarea.value = progress.notes[key] || "";
+  textarea.addEventListener("input", () => {
+    if (textarea.value) progress.notes[key] = textarea.value;
+    else delete progress.notes[key];
+    persistSoon();
+  });
+  notesEl.appendChild(textarea);
+  return notesEl;
+}
+
+// "Next: Lab", "Next: Exercise", then "Next: Day N+1" at the end of a day.
+function renderNextButton(day, part) {
+  const idx = day.parts.indexOf(part);
+  const nextPart = day.parts[idx + 1];
+  const nextDay = days.find((d) => d.day === day.day + 1);
+  if (!nextPart && !nextDay) return null;
+
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "next-btn";
+  btn.textContent = nextPart ? `Next: ${nextPart.name} →` : `Next: Day ${nextDay.day} →`;
+  btn.addEventListener("click", () => {
+    if (nextPart) activePart = nextPart.key;
+    else selectDay(nextDay.day);
+    refresh();
+    document.getElementById(nextPart ? "part-switch" : "tabs").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+  return btn;
 }
 
 function renderDay() {
@@ -210,73 +376,33 @@ function renderDay() {
   if (!day) return;
 
   const items = dayItems(day);
-  const partEl = document.createElement("section");
-  partEl.className = "part";
-  partEl.innerHTML = `
+  const dayEl = document.createElement("section");
+  dayEl.className = "part";
+  dayEl.innerHTML = `
     <h2 class="part-heading">Day ${day.day}: ${escapeHtml(day.title)}</h2>
     <div class="day-meta">Checklist section: ${escapeHtml(day.checklist)} · Lab output: ${escapeHtml(day.labOutput)}</div>
+    ${day.intro ? `<p class="day-goal">${escapeHtml(day.intro)}</p>` : ""}
     <p class="day-goal"><strong>Goal:</strong> ${escapeHtml(day.goal)}</p>
+    ${day.note ? `<p class="activity-note">${escapeHtml(day.note)}</p>` : ""}
   `;
-  partEl.appendChild(renderProgressBar(countChecked(items), items.length));
+  dayEl.appendChild(renderProgressBar(countChecked(items), items.length));
+  dayEl.appendChild(renderPartSwitch(day));
 
-  day.sections.forEach((section) => {
-    const sectionItemsList = sectionItems(section);
-    const sectionEl = document.createElement("div");
-    sectionEl.className = "section";
+  const part = day.parts.find((p) => p.key === activePart) || day.parts[0];
+  const partEl = document.createElement("div");
+  partEl.className = `day-part day-part-${part.key}`;
+  const partHeading = document.createElement("h3");
+  partHeading.className = "day-part-heading";
+  partHeading.innerHTML = `${escapeHtml(part.name)} <span class="muted">${escapeHtml(part.tagline)}${part.time ? ` · ${escapeHtml(part.time)}` : ""}</span>`;
+  partEl.appendChild(partHeading);
 
-    const heading = document.createElement("h3");
-    heading.className = "section-heading";
-    heading.innerHTML = `${escapeHtml(section.name)} <span class="muted">${countChecked(sectionItemsList)}/${sectionItemsList.length}</span>`;
-    sectionEl.appendChild(heading);
+  part.activities.forEach((activity) => partEl.appendChild(renderActivity(activity)));
+  partEl.appendChild(renderPartNotes(day, part));
+  const next = renderNextButton(day, part);
+  if (next) partEl.appendChild(next);
 
-    if (section.key === "concepts" && day.studyFrom) {
-      const study = document.createElement("p");
-      study.className = "study-from";
-      study.innerHTML = `<strong>Study from:</strong> ${escapeHtml(day.studyFrom)}`;
-      sectionEl.appendChild(study);
-    }
-
-    section.blocks.forEach((block) => {
-      if (block.label) {
-        const sub = document.createElement("h4");
-        sub.className = "block-heading" + (block.label === "What to learn first" ? " learn-first" : "");
-        const added = block.added ? ` <span class="badge badge-added" title="Beginner lesson the original checklist assumes you know">added</span>` : "";
-        sub.innerHTML = `${escapeHtml(block.label)}${added} <span class="muted">${countChecked(block.items)}/${block.items.length}</span>`;
-        sectionEl.appendChild(sub);
-      }
-      if (block.note) {
-        const note = document.createElement("p");
-        note.className = "muted";
-        note.textContent = block.note;
-        sectionEl.appendChild(note);
-      }
-      const ul = document.createElement("ul");
-      ul.className = "list";
-      block.items.forEach((item) => ul.appendChild(renderItem(item)));
-      sectionEl.appendChild(ul);
-    });
-
-    if (section.table) sectionEl.appendChild(renderTable(section.table));
-    partEl.appendChild(sectionEl);
-  });
-
-  const notesEl = document.createElement("div");
-  notesEl.className = "section";
-  notesEl.innerHTML = `<h3 class="section-heading">Daily log</h3>`;
-  const textarea = document.createElement("textarea");
-  textarea.className = "notes";
-  textarea.rows = 8;
-  textarea.placeholder = "Answer today's checklist questions in your own words. Note plans you predicted vs. what explain showed.";
-  textarea.value = progress.notes[day.day] || "";
-  textarea.addEventListener("input", () => {
-    if (textarea.value) progress.notes[day.day] = textarea.value;
-    else delete progress.notes[day.day];
-    persistSoon();
-  });
-  notesEl.appendChild(textarea);
-  partEl.appendChild(notesEl);
-
-  container.appendChild(partEl);
+  dayEl.appendChild(partEl);
+  container.appendChild(dayEl);
 }
 
 function renderAccount() {
@@ -347,6 +473,7 @@ async function main() {
     const today = todayDayNumber();
     const saved = Number(localStorage.getItem(DAY_KEY));
     activeDay = today >= 1 && today <= days.length ? today : saved || 1;
+    activePart = firstOpenPart(days.find((d) => d.day === activeDay) || days[0]);
     refresh();
     if (progressError) statusEl.textContent = progressError;
   } catch (err) {
