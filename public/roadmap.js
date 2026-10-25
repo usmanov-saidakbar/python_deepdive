@@ -82,7 +82,11 @@ function persistSoon() {
 }
 
 function dayItems(day) {
-  return day.sections.flatMap((s) => s.items);
+  return day.sections.flatMap(sectionItems);
+}
+
+function sectionItems(section) {
+  return section.blocks.flatMap((b) => b.items);
 }
 
 function countChecked(items) {
@@ -190,6 +194,15 @@ function renderItem(item) {
   return li;
 }
 
+function renderTable(table) {
+  const el = document.createElement("table");
+  el.className = "symptoms";
+  el.innerHTML =
+    `<tr>${table.headers.map((h) => `<th>${escapeHtml(h)}</th>`).join("")}</tr>` +
+    table.rows.map((row) => `<tr>${row.map((c) => `<td>${escapeHtml(c)}</td>`).join("")}</tr>`).join("");
+  return el;
+}
+
 function renderDay() {
   const container = document.getElementById("day");
   container.innerHTML = "";
@@ -207,18 +220,43 @@ function renderDay() {
   partEl.appendChild(renderProgressBar(countChecked(items), items.length));
 
   day.sections.forEach((section) => {
+    const sectionItemsList = sectionItems(section);
     const sectionEl = document.createElement("div");
     sectionEl.className = "section";
 
     const heading = document.createElement("h3");
     heading.className = "section-heading";
-    heading.innerHTML = `${escapeHtml(section.name)} <span class="muted">${countChecked(section.items)}/${section.items.length}</span>`;
+    heading.innerHTML = `${escapeHtml(section.name)} <span class="muted">${countChecked(sectionItemsList)}/${sectionItemsList.length}</span>`;
     sectionEl.appendChild(heading);
 
-    const ul = document.createElement("ul");
-    ul.className = "list";
-    section.items.forEach((item) => ul.appendChild(renderItem(item)));
-    sectionEl.appendChild(ul);
+    if (section.key === "concepts" && day.studyFrom) {
+      const study = document.createElement("p");
+      study.className = "study-from";
+      study.innerHTML = `<strong>Study from:</strong> ${escapeHtml(day.studyFrom)}`;
+      sectionEl.appendChild(study);
+    }
+
+    section.blocks.forEach((block) => {
+      if (block.label) {
+        const sub = document.createElement("h4");
+        sub.className = "block-heading" + (block.label === "What to learn first" ? " learn-first" : "");
+        const added = block.added ? ` <span class="badge badge-added" title="Beginner lesson the original checklist assumes you know">added</span>` : "";
+        sub.innerHTML = `${escapeHtml(block.label)}${added} <span class="muted">${countChecked(block.items)}/${block.items.length}</span>`;
+        sectionEl.appendChild(sub);
+      }
+      if (block.note) {
+        const note = document.createElement("p");
+        note.className = "muted";
+        note.textContent = block.note;
+        sectionEl.appendChild(note);
+      }
+      const ul = document.createElement("ul");
+      ul.className = "list";
+      block.items.forEach((item) => ul.appendChild(renderItem(item)));
+      sectionEl.appendChild(ul);
+    });
+
+    if (section.table) sectionEl.appendChild(renderTable(section.table));
     partEl.appendChild(sectionEl);
   });
 
@@ -290,10 +328,12 @@ function renderAccount() {
 }
 
 function refresh() {
+  const scrollY = window.scrollY;
   renderStartDate();
   renderTabs();
   renderDay();
   renderOverallProgress();
+  window.scrollTo(0, scrollY);
 }
 
 async function main() {

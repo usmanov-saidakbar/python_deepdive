@@ -360,3 +360,36 @@ select.status-select {
 }
 
 .notes:focus { outline: none; border-color: var(--accent); }
+
+.block-heading {
+  font-size: 0.9rem;
+  margin: 16px 0 8px;
+  color: var(--text);
+}
+
+.block-heading.learn-first { color: var(--accent); }
+
+.study-from {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+.badge-added { color: var(--muted); font-weight: 400; }
+
+.symptoms {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  font-size: 0.82rem;
+}
+
+.symptoms th, .symptoms td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.symptoms th { color: var(--muted); }
