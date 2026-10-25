@@ -14,33 +14,18 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark docs pages Overview, Quick Start, Cluster Mode Overview, Submitting Applications; PySpark docs pages Installation and Quickstart: DataFrame",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "Why Spark exists",
                 "added": true,
                 "items": [
                   {
-                    "title": "Limits of one machine",
-                    "text": "RAM, cores, disk, I/O",
-                    "id": "d1-concepts-0-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "Scale up vs scale out; data parallelism and partitions",
-                    "id": "d1-concepts-0-1"
-                  },
-                  {
                     "title": "Spark vs MapReduce",
                     "text": "in-memory pipelining, DAG execution, lazy evaluation",
                     "id": "d1-concepts-0-2"
-                  },
-                  {
-                    "title": "Spark components",
-                    "text": "Spark Core, Spark SQL and DataFrames, Structured Streaming, MLlib, GraphX",
-                    "id": "d1-concepts-0-3"
                   }
                 ]
               },
@@ -75,14 +60,106 @@
                 "added": true,
                 "items": [
                   {
-                    "title": "",
-                    "text": "Local, standalone, YARN, Kubernetes",
-                    "id": "d1-concepts-2-0"
-                  },
-                  {
                     "title": "Client mode vs cluster mode",
                     "text": "where the driver runs",
                     "id": "d1-concepts-2-1"
+                  }
+                ]
+              },
+              {
+                "label": "SparkSession",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "SparkSession vs SparkContext, and why SparkSession is the entry point",
+                    "id": "d1-concepts-3-2"
+                  },
+                  {
+                    "title": "Runtime vs static configuration",
+                    "text": "spark.conf.set and spark.conf.get",
+                    "id": "d1-concepts-3-3"
+                  }
+                ]
+              },
+              {
+                "label": "Driver vs executor",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Driver",
+                    "text": "runs your program, builds the plan, schedules tasks, collects results",
+                    "id": "d1-concepts-4-0"
+                  },
+                  {
+                    "title": "Executors",
+                    "text": "run tasks, hold cached blocks and shuffle files, report metrics",
+                    "id": "d1-concepts-4-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "What happens when an executor fails, and what happens when the driver fails",
+                    "id": "d1-concepts-4-3"
+                  }
+                ]
+              },
+              {
+                "label": "PySpark architecture",
+                "added": true,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "The Python driver talks to the JVM through Py4J",
+                    "id": "d1-concepts-5-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "Python worker processes on executors run Python code",
+                    "id": "d1-concepts-5-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Why DataFrame code stays in the JVM, and where Python serialization appears",
+                    "id": "d1-concepts-5-2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "Why Spark exists",
+                "added": true,
+                "items": [
+                  {
+                    "title": "Limits of one machine",
+                    "text": "RAM, cores, disk, I/O",
+                    "id": "d1-concepts-0-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "Scale up vs scale out; data parallelism and partitions",
+                    "id": "d1-concepts-0-1"
+                  },
+                  {
+                    "title": "Spark components",
+                    "text": "Spark Core, Spark SQL and DataFrames, Structured Streaming, MLlib, GraphX",
+                    "id": "d1-concepts-0-3"
+                  }
+                ]
+              },
+              {
+                "label": "Cluster managers and deploy modes",
+                "added": true,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Local, standalone, YARN, Kubernetes",
+                    "id": "d1-concepts-2-0"
                   },
                   {
                     "title": "spark-submit options",
@@ -106,16 +183,6 @@
                     "id": "d1-concepts-3-1"
                   },
                   {
-                    "title": "",
-                    "text": "SparkSession vs SparkContext, and why SparkSession is the entry point",
-                    "id": "d1-concepts-3-2"
-                  },
-                  {
-                    "title": "Runtime vs static configuration",
-                    "text": "spark.conf.set and spark.conf.get",
-                    "id": "d1-concepts-3-3"
-                  },
-                  {
                     "title": "Temp views and the catalog",
                     "text": "createOrReplaceTempView, spark.catalog.listTables",
                     "id": "d1-concepts-3-4"
@@ -127,50 +194,14 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "Driver",
-                    "text": "runs your program, builds the plan, schedules tasks, collects results",
-                    "id": "d1-concepts-4-0"
-                  },
-                  {
-                    "title": "Executors",
-                    "text": "run tasks, hold cached blocks and shuffle files, report metrics",
-                    "id": "d1-concepts-4-1"
-                  },
-                  {
                     "title": "Communication between them",
                     "text": "task launch, heartbeats, result return",
                     "id": "d1-concepts-4-2"
                   },
                   {
-                    "title": "",
-                    "text": "What happens when an executor fails, and what happens when the driver fails",
-                    "id": "d1-concepts-4-3"
-                  },
-                  {
                     "title": "Driver limits",
                     "text": "spark.driver.memory, spark.driver.maxResultSize",
                     "id": "d1-concepts-4-4"
-                  }
-                ]
-              },
-              {
-                "label": "PySpark architecture",
-                "added": true,
-                "items": [
-                  {
-                    "title": "",
-                    "text": "The Python driver talks to the JVM through Py4J",
-                    "id": "d1-concepts-5-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "Python worker processes on executors run Python code",
-                    "id": "d1-concepts-5-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Why DataFrame code stays in the JVM, and where Python serialization appears",
-                    "id": "d1-concepts-5-2"
                   }
                 ]
               },
@@ -207,7 +238,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Spark docs pages Overview, Quick Start, Cluster Mode Overview, Submitting Applications; PySpark docs pages Installation and Quickstart: DataFrame"
       },
       {
         "key": "lab",
@@ -473,9 +505,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark docs pages RDD Programming Guide (transformations, actions, shuffle operations, persistence) and Monitoring and Instrumentation (web UI); Spark SQL guide page Getting Started; PySpark API reference for DataFrame",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "Transformations vs actions",
@@ -490,11 +522,6 @@
                     "title": "Actions",
                     "text": "count, collect, take, first, show, write, foreach, toPandas; they start a job",
                     "id": "d2-concepts-0-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Which actions return data to the driver and which write to storage",
-                    "id": "d2-concepts-0-2"
                   },
                   {
                     "title": "",
@@ -539,16 +566,6 @@
                     "id": "d2-concepts-2-0"
                   },
                   {
-                    "title": "Creating RDDs",
-                    "text": "parallelize, textFile, df.rdd",
-                    "id": "d2-concepts-2-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "map, flatMap, filter, reduceByKey vs groupByKey, mapPartitions, glom, getNumPartitions",
-                    "id": "d2-concepts-2-2"
-                  },
-                  {
                     "title": "",
                     "text": "Key-value RDDs, and why reduceByKey combines before the shuffle",
                     "id": "d2-concepts-2-3"
@@ -563,21 +580,6 @@
                     "title": "",
                     "text": "Schema plus Catalyst and Tungsten optimization vs opaque objects",
                     "id": "d2-concepts-3-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "Where PySpark RDD code pays Python serialization cost",
-                    "id": "d2-concepts-3-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "When an RDD is still the right tool, and converting back and forth with df.rdd and createDataFrame(rdd)",
-                    "id": "d2-concepts-3-2"
-                  },
-                  {
-                    "title": "The Dataset API",
-                    "text": "why it exists in Scala and Java but not in PySpark",
-                    "id": "d2-concepts-3-3"
                   }
                 ]
               },
@@ -625,7 +627,95 @@
                     "title": "",
                     "text": "Tasks per stage equal the partitions of that stage; task sets, task scheduler, executors",
                     "id": "d2-concepts-5-2"
+                  }
+                ]
+              },
+              {
+                "label": "Fault tolerance",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Lineage",
+                    "text": "recompute only the lost partitions",
+                    "id": "d2-concepts-6-0"
                   },
+                  {
+                    "title": "",
+                    "text": "Checkpointing to truncate lineage; driver failure needs an external restart",
+                    "id": "d2-concepts-6-4"
+                  }
+                ]
+              },
+              {
+                "label": "Parallelism settings",
+                "added": true,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "spark.default.parallelism (RDDs) vs spark.sql.shuffle.partitions (DataFrames)",
+                    "id": "d2-concepts-7-0"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "Transformations vs actions",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Which actions return data to the driver and which write to storage",
+                    "id": "d2-concepts-0-2"
+                  }
+                ]
+              },
+              {
+                "label": "RDD basics",
+                "added": true,
+                "items": [
+                  {
+                    "title": "Creating RDDs",
+                    "text": "parallelize, textFile, df.rdd",
+                    "id": "d2-concepts-2-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "map, flatMap, filter, reduceByKey vs groupByKey, mapPartitions, glom, getNumPartitions",
+                    "id": "d2-concepts-2-2"
+                  }
+                ]
+              },
+              {
+                "label": "DataFrame vs RDD",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Where PySpark RDD code pays Python serialization cost",
+                    "id": "d2-concepts-3-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "When an RDD is still the right tool, and converting back and forth with df.rdd and createDataFrame(rdd)",
+                    "id": "d2-concepts-3-2"
+                  },
+                  {
+                    "title": "The Dataset API",
+                    "text": "why it exists in Scala and Java but not in PySpark",
+                    "id": "d2-concepts-3-3"
+                  }
+                ]
+              },
+              {
+                "label": "Lifecycle of a Spark job",
+                "added": false,
+                "items": [
                   {
                     "title": "Data locality levels",
                     "text": "process-local, node-local, rack-local, any",
@@ -643,11 +733,6 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "Lineage",
-                    "text": "recompute only the lost partitions",
-                    "id": "d2-concepts-6-0"
-                  },
-                  {
                     "title": "",
                     "text": "Task retries (spark.task.maxFailures) and stage retries after fetch failures",
                     "id": "d2-concepts-6-1"
@@ -661,11 +746,6 @@
                     "title": "",
                     "text": "Speculative execution (spark.speculation) for slow tasks",
                     "id": "d2-concepts-6-3"
-                  },
-                  {
-                    "title": "",
-                    "text": "Checkpointing to truncate lineage; driver failure needs an external restart",
-                    "id": "d2-concepts-6-4"
                   }
                 ]
               },
@@ -675,11 +755,6 @@
                 "items": [
                   {
                     "title": "",
-                    "text": "spark.default.parallelism (RDDs) vs spark.sql.shuffle.partitions (DataFrames)",
-                    "id": "d2-concepts-7-0"
-                  },
-                  {
-                    "title": "",
                     "text": "Input partitions vs shuffle partitions",
                     "id": "d2-concepts-7-1"
                   }
@@ -687,7 +762,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Spark docs pages RDD Programming Guide (transformations, actions, shuffle operations, persistence) and Monitoring and Instrumentation (web UI); Spark SQL guide page Getting Started; PySpark API reference for DataFrame"
       },
       {
         "key": "lab",
@@ -958,19 +1034,14 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark SQL guide page Performance Tuning; Spark SQL reference pages for EXPLAIN and ANALYZE TABLE; the Databricks engineering blog posts on the Catalyst optimizer and on Project Tungsten; the research paper on Spark SQL and Catalyst",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "What a query plan is",
                 "added": true,
                 "items": [
-                  {
-                    "title": "",
-                    "text": "A plan is a tree of operators; data flows from the leaves (scans) up to the root",
-                    "id": "d3-concepts-0-0"
-                  },
                   {
                     "title": "",
                     "text": "Logical plan (what to compute) vs physical plan (how to compute it)",
@@ -980,16 +1051,6 @@
                     "title": "",
                     "text": "DataFrame code and SQL compile to the same tree",
                     "id": "d3-concepts-0-2"
-                  },
-                  {
-                    "title": "explain modes",
-                    "text": "simple, extended, codegen, cost, formatted",
-                    "id": "d3-concepts-0-3"
-                  },
-                  {
-                    "title": "Reading order",
-                    "text": "start at the bottom scan and read upward",
-                    "id": "d3-concepts-0-4"
                   }
                 ]
               },
@@ -998,24 +1059,9 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "SQL parser output",
-                    "text": "the unresolved logical plan (names shown with a leading quote)",
-                    "id": "d3-concepts-1-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "The DataFrame API builds the unresolved plan directly, with no SQL parser",
-                    "id": "d3-concepts-1-1"
-                  },
-                  {
                     "title": "Analyzer",
                     "text": "resolving table names, column names and data types against the catalog",
                     "id": "d3-concepts-1-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Implicit type casts added during analysis, and attribute ids such as col#12",
-                    "id": "d3-concepts-1-3"
                   },
                   {
                     "title": "What an AnalysisException means",
@@ -1045,16 +1091,6 @@
                   },
                   {
                     "title": "",
-                    "text": "Constant folding (ConstantFolding), BooleanSimplification, NullPropagation, CombineFilters, PruneFilters",
-                    "id": "d3-concepts-2-3"
-                  },
-                  {
-                    "title": "",
-                    "text": "Join reordering and why it needs statistics",
-                    "id": "d3-concepts-2-4"
-                  },
-                  {
-                    "title": "",
                     "text": "Rules that are skipped when the operator is opaque (Python UDFs, arbitrary lambdas)",
                     "id": "d3-concepts-2-5"
                   }
@@ -1070,19 +1106,9 @@
                     "id": "d3-concepts-3-0"
                   },
                   {
-                    "title": "",
-                    "text": "Choosing between candidates, for example the join algorithm",
-                    "id": "d3-concepts-3-1"
-                  },
-                  {
                     "title": "Preparation rules",
                     "text": "EnsureRequirements adds Exchange and Sort where an operator needs a distribution or an ordering",
                     "id": "d3-concepts-3-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Exchange reuse (ReusedExchange) when two branches shuffle the same data",
-                    "id": "d3-concepts-3-3"
                   }
                 ]
               },
@@ -1096,19 +1122,9 @@
                     "id": "d3-concepts-4-0"
                   },
                   {
-                    "title": "",
-                    "text": "The *(n) marker and what the number identifies",
-                    "id": "d3-concepts-4-1"
-                  },
-                  {
                     "title": "What breaks a codegen region",
                     "text": "Exchange, and operators that cannot generate code",
                     "id": "d3-concepts-4-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "spark.sql.codegen.wholeStage and the wide-schema limit (spark.sql.codegen.maxFields)",
-                    "id": "d3-concepts-4-3"
                   }
                 ]
               },
@@ -1120,21 +1136,6 @@
                     "title": "",
                     "text": "Most optimization is rule-based and needs no statistics",
                     "id": "d3-concepts-5-0"
-                  },
-                  {
-                    "title": "Statistics",
-                    "text": "table size, row count, column distinct count, min, max, null count",
-                    "id": "d3-concepts-5-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "ANALYZE TABLE ... COMPUTE STATISTICS and ... FOR COLUMNS",
-                    "id": "d3-concepts-5-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "spark.sql.cbo.enabled, spark.sql.cbo.joinReorder.enabled, EXPLAIN COST",
-                    "id": "d3-concepts-5-3"
                   }
                 ]
               },
@@ -1151,16 +1152,6 @@
                     "title": "",
                     "text": "Cache-friendly layout and fewer JVM objects, so less garbage collection",
                     "id": "d3-concepts-6-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Code generation as part of Tungsten",
-                    "id": "d3-concepts-6-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Vectorized columnar reads and the ColumnarToRow conversion",
-                    "id": "d3-concepts-6-3"
                   }
                 ]
               },
@@ -1172,16 +1163,6 @@
                     "title": "Scan nodes",
                     "text": "FileScan parquet and its fields (PushedFilters, ReadSchema, PartitionFilters)",
                     "id": "d3-concepts-7-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "Filter, Project, HashAggregate, Sort, Window, Exchange",
-                    "id": "d3-concepts-7-1"
-                  },
-                  {
-                    "title": "Join nodes",
-                    "text": "BroadcastHashJoin, SortMergeJoin",
-                    "id": "d3-concepts-7-2"
                   },
                   {
                     "title": "Exchange variants",
@@ -1207,8 +1188,159 @@
                 ]
               }
             ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "What a query plan is",
+                "added": true,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "A plan is a tree of operators; data flows from the leaves (scans) up to the root",
+                    "id": "d3-concepts-0-0"
+                  },
+                  {
+                    "title": "explain modes",
+                    "text": "simple, extended, codegen, cost, formatted",
+                    "id": "d3-concepts-0-3"
+                  },
+                  {
+                    "title": "Reading order",
+                    "text": "start at the bottom scan and read upward",
+                    "id": "d3-concepts-0-4"
+                  }
+                ]
+              },
+              {
+                "label": "Catalyst phase 1: parsing and analysis",
+                "added": false,
+                "items": [
+                  {
+                    "title": "SQL parser output",
+                    "text": "the unresolved logical plan (names shown with a leading quote)",
+                    "id": "d3-concepts-1-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "The DataFrame API builds the unresolved plan directly, with no SQL parser",
+                    "id": "d3-concepts-1-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Implicit type casts added during analysis, and attribute ids such as col#12",
+                    "id": "d3-concepts-1-3"
+                  }
+                ]
+              },
+              {
+                "label": "Catalyst phase 2: logical optimization",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Constant folding (ConstantFolding), BooleanSimplification, NullPropagation, CombineFilters, PruneFilters",
+                    "id": "d3-concepts-2-3"
+                  },
+                  {
+                    "title": "",
+                    "text": "Join reordering and why it needs statistics",
+                    "id": "d3-concepts-2-4"
+                  }
+                ]
+              },
+              {
+                "label": "Catalyst phase 3: physical planning",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Choosing between candidates, for example the join algorithm",
+                    "id": "d3-concepts-3-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Exchange reuse (ReusedExchange) when two branches shuffle the same data",
+                    "id": "d3-concepts-3-3"
+                  }
+                ]
+              },
+              {
+                "label": "Catalyst phase 4: code generation",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "The *(n) marker and what the number identifies",
+                    "id": "d3-concepts-4-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "spark.sql.codegen.wholeStage and the wide-schema limit (spark.sql.codegen.maxFields)",
+                    "id": "d3-concepts-4-3"
+                  }
+                ]
+              },
+              {
+                "label": "Rule-based vs cost-based optimization",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Statistics",
+                    "text": "table size, row count, column distinct count, min, max, null count",
+                    "id": "d3-concepts-5-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "ANALYZE TABLE ... COMPUTE STATISTICS and ... FOR COLUMNS",
+                    "id": "d3-concepts-5-2"
+                  },
+                  {
+                    "title": "",
+                    "text": "spark.sql.cbo.enabled, spark.sql.cbo.joinReorder.enabled, EXPLAIN COST",
+                    "id": "d3-concepts-5-3"
+                  }
+                ]
+              },
+              {
+                "label": "Tungsten",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Code generation as part of Tungsten",
+                    "id": "d3-concepts-6-2"
+                  },
+                  {
+                    "title": "",
+                    "text": "Vectorized columnar reads and the ColumnarToRow conversion",
+                    "id": "d3-concepts-6-3"
+                  }
+                ]
+              },
+              {
+                "label": "Plan node vocabulary",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Filter, Project, HashAggregate, Sort, Window, Exchange",
+                    "id": "d3-concepts-7-1"
+                  },
+                  {
+                    "title": "Join nodes",
+                    "text": "BroadcastHashJoin, SortMergeJoin",
+                    "id": "d3-concepts-7-2"
+                  }
+                ]
+              }
+            ]
           }
-        ]
+        ],
+        "studyFrom": "Spark SQL guide page Performance Tuning; Spark SQL reference pages for EXPLAIN and ANALYZE TABLE; the Databricks engineering blog posts on the Catalyst optimizer and on Project Tungsten; the research paper on Spark SQL and Catalyst"
       },
       {
         "key": "lab",
@@ -1509,9 +1641,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark SQL guide page Performance Tuning (the Adaptive Query Execution section); Spark docs page on the web UI (SQL tab); PySpark API reference for approx_count_distinct, countDistinct, orderBy, sortWithinPartitions",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "Why AQE exists",
@@ -1521,11 +1653,6 @@
                     "title": "",
                     "text": "Plans picked before a query runs rely on estimates, and estimates are often wrong or missing",
                     "id": "d4-concepts-0-0"
-                  },
-                  {
-                    "title": "Sources of bad estimates",
-                    "text": "no statistics, filters, UDFs, joins that change row counts, skewed keys",
-                    "id": "d4-concepts-0-1"
                   },
                   {
                     "title": "",
@@ -1547,16 +1674,6 @@
                     "title": "Problem",
                     "text": "spark.sql.shuffle.partitions is fixed, but the data size is not",
                     "id": "d4-concepts-1-0"
-                  },
-                  {
-                    "title": "Settings",
-                    "text": "spark.sql.adaptive.coalescePartitions.enabled, initialPartitionNum, minPartitionSize, spark.sql.adaptive.advisoryPartitionSizeInBytes",
-                    "id": "d4-concepts-1-1"
-                  },
-                  {
-                    "title": "Seeing it",
-                    "text": "a coalesced shuffle read in the final plan",
-                    "id": "d4-concepts-1-2"
                   }
                 ]
               },
@@ -1573,11 +1690,6 @@
                     "title": "Static threshold",
                     "text": "spark.sql.autoBroadcastJoinThreshold",
                     "id": "d4-concepts-2-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Local shuffle reader after the switch",
-                    "id": "d4-concepts-2-2"
                   }
                 ]
               },
@@ -1589,11 +1701,6 @@
                     "title": "",
                     "text": "Splitting oversized partitions of one side and duplicating the matching rows of the other",
                     "id": "d4-concepts-3-0"
-                  },
-                  {
-                    "title": "Settings",
-                    "text": "spark.sql.adaptive.skewJoin.enabled, skewedPartitionFactor, skewedPartitionThresholdInBytes",
-                    "id": "d4-concepts-3-1"
                   },
                   {
                     "title": "",
@@ -1610,16 +1717,6 @@
                     "title": "",
                     "text": "AdaptiveSparkPlan isFinalPlan=false before execution, true after",
                     "id": "d4-concepts-4-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "ShuffleQueryStage, BroadcastQueryStage, and the shuffle read node (AQEShuffleRead, older name CustomShuffleReader)",
-                    "id": "d4-concepts-4-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Final plan in the SQL tab of the Spark UI",
-                    "id": "d4-concepts-4-2"
                   },
                   {
                     "title": "What AQE cannot do",
@@ -1683,11 +1780,6 @@
                     "title": "",
                     "text": "Several distinct columns add an Expand node that multiplies rows (look for gid)",
                     "id": "d4-concepts-7-1"
-                  },
-                  {
-                    "title": "Alternatives",
-                    "text": "approx_count_distinct, separate queries, collect_set with size (and its memory risk)",
-                    "id": "d4-concepts-7-2"
                   }
                 ]
               },
@@ -1699,11 +1791,6 @@
                     "title": "orderBy = global sort",
                     "text": "sampling job, Exchange rangepartitioning, local Sort",
                     "id": "d4-concepts-8-0"
-                  },
-                  {
-                    "title": "Sort flag in the plan",
-                    "text": "true for global, false for within-partition",
-                    "id": "d4-concepts-8-1"
                   },
                   {
                     "title": "",
@@ -1722,16 +1809,6 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "",
-                    "text": "df.count() is an action that returns an exact number to the driver",
-                    "id": "d4-concepts-9-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "approx_count_distinct(col, rsd) is an aggregate function inside a query",
-                    "id": "d4-concepts-9-1"
-                  },
-                  {
                     "title": "HyperLogLog++",
                     "text": "hash values, keep small registers, merge sketches; fixed memory per group; the rsd parameter and its default",
                     "id": "d4-concepts-9-2"
@@ -1740,6 +1817,116 @@
                     "title": "What you give up",
                     "text": "exactness, and what it saves: memory and shuffle volume",
                     "id": "d4-concepts-9-3"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "Why AQE exists",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Sources of bad estimates",
+                    "text": "no statistics, filters, UDFs, joins that change row counts, skewed keys",
+                    "id": "d4-concepts-0-1"
+                  }
+                ]
+              },
+              {
+                "label": "AQE feature 1: coalescing shuffle partitions",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Settings",
+                    "text": "spark.sql.adaptive.coalescePartitions.enabled, initialPartitionNum, minPartitionSize, spark.sql.adaptive.advisoryPartitionSizeInBytes",
+                    "id": "d4-concepts-1-1"
+                  },
+                  {
+                    "title": "Seeing it",
+                    "text": "a coalesced shuffle read in the final plan",
+                    "id": "d4-concepts-1-2"
+                  }
+                ]
+              },
+              {
+                "label": "AQE feature 2: switching join strategy",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Local shuffle reader after the switch",
+                    "id": "d4-concepts-2-2"
+                  }
+                ]
+              },
+              {
+                "label": "AQE feature 3: skew join handling",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Settings",
+                    "text": "spark.sql.adaptive.skewJoin.enabled, skewedPartitionFactor, skewedPartitionThresholdInBytes",
+                    "id": "d4-concepts-3-1"
+                  }
+                ]
+              },
+              {
+                "label": "Reading AQE plans",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "ShuffleQueryStage, BroadcastQueryStage, and the shuffle read node (AQEShuffleRead, older name CustomShuffleReader)",
+                    "id": "d4-concepts-4-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Final plan in the SQL tab of the Spark UI",
+                    "id": "d4-concepts-4-2"
+                  }
+                ]
+              },
+              {
+                "label": "How count(distinct) runs",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Alternatives",
+                    "text": "approx_count_distinct, separate queries, collect_set with size (and its memory risk)",
+                    "id": "d4-concepts-7-2"
+                  }
+                ]
+              },
+              {
+                "label": "How sorting runs",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Sort flag in the plan",
+                    "text": "true for global, false for within-partition",
+                    "id": "d4-concepts-8-1"
+                  }
+                ]
+              },
+              {
+                "label": "count() vs approx_count_distinct",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "df.count() is an action that returns an exact number to the driver",
+                    "id": "d4-concepts-9-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "approx_count_distinct(col, rsd) is an aggregate function inside a query",
+                    "id": "d4-concepts-9-1"
                   }
                 ]
               },
@@ -1766,7 +1953,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Spark SQL guide page Performance Tuning (the Adaptive Query Execution section); Spark docs page on the web UI (SQL tab); PySpark API reference for approx_count_distinct, countDistinct, orderBy, sortWithinPartitions"
       },
       {
         "key": "lab",
@@ -2057,9 +2245,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark SQL guide Data Sources pages (Generic Load/Save Functions, Parquet Files, ORC Files, JSON Files, CSV Files, Avro Data Source Guide); the Apache Parquet documentation on file format; the Avro specification section on schema resolution",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "Row-based vs column-based storage",
@@ -2076,14 +2264,133 @@
                     "id": "d5-concepts-0-1"
                   },
                   {
-                    "title": "Access patterns",
-                    "text": "whole-record reads vs few columns across many rows",
-                    "id": "d5-concepts-0-2"
-                  },
-                  {
                     "title": "Why columnar helps wide tables",
                     "text": "column pruning and per-column compression",
                     "id": "d5-concepts-0-3"
+                  }
+                ]
+              },
+              {
+                "label": "CSV in depth",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Parse modes",
+                    "text": "PERMISSIVE, DROPMALFORMED, FAILFAST, and columnNameOfCorruptRecord",
+                    "id": "d5-concepts-1-2"
+                  },
+                  {
+                    "title": "",
+                    "text": "Why inferSchema costs an extra pass over the data",
+                    "id": "d5-concepts-1-3"
+                  }
+                ]
+              },
+              {
+                "label": "Parquet file structure",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "File, row groups, column chunks, pages",
+                    "id": "d5-concepts-3-0"
+                  },
+                  {
+                    "title": "Footer",
+                    "text": "schema plus per-chunk statistics (min, max, null count)",
+                    "id": "d5-concepts-3-1"
+                  },
+                  {
+                    "title": "Encodings",
+                    "text": "dictionary, run-length, bit-packing, delta",
+                    "id": "d5-concepts-3-2"
+                  }
+                ]
+              },
+              {
+                "label": "ORC file structure",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "File, stripes, column streams, stripe footer, file footer",
+                    "id": "d5-concepts-4-0"
+                  }
+                ]
+              },
+              {
+                "label": "Predicate pushdown and column pruning",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "PushedFilters vs DataFilters vs PartitionFilters in the scan node",
+                    "id": "d5-concepts-5-0"
+                  },
+                  {
+                    "title": "Filter shapes that push down",
+                    "text": "comparisons, IN, IsNotNull, AND, OR, NOT, StartsWith",
+                    "id": "d5-concepts-5-1"
+                  },
+                  {
+                    "title": "Filter shapes that do not",
+                    "text": "Python UDFs, functions wrapped around the column, casts on the column",
+                    "id": "d5-concepts-5-2"
+                  },
+                  {
+                    "title": "",
+                    "text": "Row group skipping with min and max, and why sorted data makes statistics useful",
+                    "id": "d5-concepts-5-3"
+                  },
+                  {
+                    "title": "",
+                    "text": "Column pruning and ReadSchema",
+                    "id": "d5-concepts-5-5"
+                  }
+                ]
+              },
+              {
+                "label": "Avro",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Row-based binary format with the schema stored in the file header",
+                    "id": "d5-concepts-6-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "Why it suits Kafka and event streams and not analytical scans",
+                    "id": "d5-concepts-6-2"
+                  }
+                ]
+              },
+              {
+                "label": "Schema evolution",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Parquet",
+                    "text": "mergeSchema option and spark.sql.parquet.mergeSchema; adding columns works, incompatible type changes do not",
+                    "id": "d5-concepts-7-0"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "Row-based vs column-based storage",
+                "added": true,
+                "items": [
+                  {
+                    "title": "Access patterns",
+                    "text": "whole-record reads vs few columns across many rows",
+                    "id": "d5-concepts-0-2"
                   }
                 ]
               },
@@ -2100,16 +2407,6 @@
                     "title": "Reader options",
                     "text": "header, sep, inferSchema, schema, nullValue, dateFormat, multiLine, mode",
                     "id": "d5-concepts-1-1"
-                  },
-                  {
-                    "title": "Parse modes",
-                    "text": "PERMISSIVE, DROPMALFORMED, FAILFAST, and columnNameOfCorruptRecord",
-                    "id": "d5-concepts-1-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Why inferSchema costs an extra pass over the data",
-                    "id": "d5-concepts-1-3"
                   },
                   {
                     "title": "",
@@ -2150,21 +2447,6 @@
                 "items": [
                   {
                     "title": "",
-                    "text": "File, row groups, column chunks, pages",
-                    "id": "d5-concepts-3-0"
-                  },
-                  {
-                    "title": "Footer",
-                    "text": "schema plus per-chunk statistics (min, max, null count)",
-                    "id": "d5-concepts-3-1"
-                  },
-                  {
-                    "title": "Encodings",
-                    "text": "dictionary, run-length, bit-packing, delta",
-                    "id": "d5-concepts-3-2"
-                  },
-                  {
-                    "title": "",
                     "text": "How nested data is stored (repetition and definition levels, as terms to look up)",
                     "id": "d5-concepts-3-3"
                   }
@@ -2174,11 +2456,6 @@
                 "label": "ORC file structure",
                 "added": false,
                 "items": [
-                  {
-                    "title": "",
-                    "text": "File, stripes, column streams, stripe footer, file footer",
-                    "id": "d5-concepts-4-0"
-                  },
                   {
                     "title": "",
                     "text": "Built-in lightweight indexes and bloom filters",
@@ -2196,34 +2473,9 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "",
-                    "text": "PushedFilters vs DataFilters vs PartitionFilters in the scan node",
-                    "id": "d5-concepts-5-0"
-                  },
-                  {
-                    "title": "Filter shapes that push down",
-                    "text": "comparisons, IN, IsNotNull, AND, OR, NOT, StartsWith",
-                    "id": "d5-concepts-5-1"
-                  },
-                  {
-                    "title": "Filter shapes that do not",
-                    "text": "Python UDFs, functions wrapped around the column, casts on the column",
-                    "id": "d5-concepts-5-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Row group skipping with min and max, and why sorted data makes statistics useful",
-                    "id": "d5-concepts-5-3"
-                  },
-                  {
                     "title": "Settings",
                     "text": "spark.sql.parquet.filterPushdown, spark.sql.orc.filterPushdown, spark.sql.parquet.enableVectorizedReader",
                     "id": "d5-concepts-5-4"
-                  },
-                  {
-                    "title": "",
-                    "text": "Column pruning and ReadSchema",
-                    "id": "d5-concepts-5-5"
                   }
                 ]
               },
@@ -2233,18 +2485,8 @@
                 "items": [
                   {
                     "title": "",
-                    "text": "Row-based binary format with the schema stored in the file header",
-                    "id": "d5-concepts-6-0"
-                  },
-                  {
-                    "title": "",
                     "text": "Writer schema vs reader schema, default values, schema registry",
                     "id": "d5-concepts-6-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Why it suits Kafka and event streams and not analytical scans",
-                    "id": "d5-concepts-6-2"
                   },
                   {
                     "title": "",
@@ -2257,11 +2499,6 @@
                 "label": "Schema evolution",
                 "added": false,
                 "items": [
-                  {
-                    "title": "Parquet",
-                    "text": "mergeSchema option and spark.sql.parquet.mergeSchema; adding columns works, incompatible type changes do not",
-                    "id": "d5-concepts-7-0"
-                  },
                   {
                     "title": "What merging costs",
                     "text": "reading every file footer and reconciling schemas",
@@ -2307,7 +2544,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Spark SQL guide Data Sources pages (Generic Load/Save Functions, Parquet Files, ORC Files, JSON Files, CSV Files, Avro Data Source Guide); the Apache Parquet documentation on file format; the Avro specification section on schema resolution"
       },
       {
         "key": "lab",
@@ -2598,9 +2836,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark SQL guide pages Parquet Files, ORC Files and Generic Load/Save Functions; Spark SQL Performance Tuning page (the settings for file reading); the Hive-style partitioning description in the Spark docs",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "Partitioned folders",
@@ -2613,11 +2851,6 @@
                   },
                   {
                     "title": "",
-                    "text": "Partition discovery on read, and partition column type inference",
-                    "id": "d6-concepts-0-1"
-                  },
-                  {
-                    "title": "",
                     "text": "PartitionFilters in the plan and partition pruning",
                     "id": "d6-concepts-0-2"
                   },
@@ -2625,11 +2858,6 @@
                     "title": "Choosing partition columns",
                     "text": "low cardinality, used in filters, balanced sizes",
                     "id": "d6-concepts-0-3"
-                  },
-                  {
-                    "title": "",
-                    "text": "Multi-level partitions and over-partitioning",
-                    "id": "d6-concepts-0-4"
                   },
                   {
                     "title": "Dynamic partition overwrite",
@@ -2656,11 +2884,6 @@
                     "title": "Fixes",
                     "text": "coalesce, repartition(n, col), maxRecordsPerFile, AQE coalescing, compaction jobs, Delta OPTIMIZE (Day 14)",
                     "id": "d6-concepts-1-2"
-                  },
-                  {
-                    "title": "The opposite problem",
-                    "text": "few huge files that cannot be split",
-                    "id": "d6-concepts-1-3"
                   }
                 ]
               },
@@ -2677,16 +2900,6 @@
                     "title": "",
                     "text": "Large files are split, small files are packed together, and each file is charged an open cost",
                     "id": "d6-concepts-2-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Checking the result with df.rdd.getNumPartitions()",
-                    "id": "d6-concepts-2-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Where the formula lives in the source (FilePartition, as a term to look up)",
-                    "id": "d6-concepts-2-3"
                   }
                 ]
               },
@@ -2716,16 +2929,6 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "Same ideas",
-                    "text": "columnar, compressed, pushdown, vectorized readers",
-                    "id": "d6-concepts-4-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "Differences in ecosystem, defaults and tooling; Hive-centered stacks vs engine-neutral",
-                    "id": "d6-concepts-4-1"
-                  },
-                  {
                     "title": "",
                     "text": "Choosing by ecosystem rather than by benchmark",
                     "id": "d6-concepts-4-2"
@@ -2743,18 +2946,8 @@
                   },
                   {
                     "title": "",
-                    "text": "Writes buffer a row group in memory",
-                    "id": "d6-concepts-5-1"
-                  },
-                  {
-                    "title": "",
                     "text": "Limited schema changes; slow single-record lookups",
                     "id": "d6-concepts-5-2"
-                  },
-                  {
-                    "title": "Timestamp storage choices",
-                    "text": "spark.sql.parquet.outputTimestampType",
-                    "id": "d6-concepts-5-3"
                   }
                 ]
               },
@@ -2763,19 +2956,9 @@
                 "added": true,
                 "items": [
                   {
-                    "title": "",
-                    "text": "snappy, gzip, zstd, lz4, uncompressed",
-                    "id": "d6-concepts-6-0"
-                  },
-                  {
                     "title": "Trade-offs",
                     "text": "compression ratio, CPU time, read speed",
                     "id": "d6-concepts-6-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Setting it per write (compression option) or globally (spark.sql.parquet.compression.codec)",
-                    "id": "d6-concepts-6-2"
                   }
                 ]
               },
@@ -2796,8 +2979,107 @@
                 ]
               }
             ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "Partitioned folders",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Partition discovery on read, and partition column type inference",
+                    "id": "d6-concepts-0-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Multi-level partitions and over-partitioning",
+                    "id": "d6-concepts-0-4"
+                  }
+                ]
+              },
+              {
+                "label": "Small file problem",
+                "added": false,
+                "items": [
+                  {
+                    "title": "The opposite problem",
+                    "text": "few huge files that cannot be split",
+                    "id": "d6-concepts-1-3"
+                  }
+                ]
+              },
+              {
+                "label": "How Spark splits files into read partitions",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Checking the result with df.rdd.getNumPartitions()",
+                    "id": "d6-concepts-2-2"
+                  },
+                  {
+                    "title": "",
+                    "text": "Where the formula lives in the source (FilePartition, as a term to look up)",
+                    "id": "d6-concepts-2-3"
+                  }
+                ]
+              },
+              {
+                "label": "Parquet vs ORC",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Same ideas",
+                    "text": "columnar, compressed, pushdown, vectorized readers",
+                    "id": "d6-concepts-4-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "Differences in ecosystem, defaults and tooling; Hive-centered stacks vs engine-neutral",
+                    "id": "d6-concepts-4-1"
+                  }
+                ]
+              },
+              {
+                "label": "Disadvantages of Parquet",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Writes buffer a row group in memory",
+                    "id": "d6-concepts-5-1"
+                  },
+                  {
+                    "title": "Timestamp storage choices",
+                    "text": "spark.sql.parquet.outputTimestampType",
+                    "id": "d6-concepts-5-3"
+                  }
+                ]
+              },
+              {
+                "label": "Compression codecs",
+                "added": true,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "snappy, gzip, zstd, lz4, uncompressed",
+                    "id": "d6-concepts-6-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "Setting it per write (compression option) or globally (spark.sql.parquet.compression.codec)",
+                    "id": "d6-concepts-6-2"
+                  }
+                ]
+              }
+            ]
           }
-        ]
+        ],
+        "studyFrom": "Spark SQL guide pages Parquet Files, ORC Files and Generic Load/Save Functions; Spark SQL Performance Tuning page (the settings for file reading); the Hive-style partitioning description in the Spark docs"
       },
       {
         "key": "lab",
@@ -3083,9 +3365,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark SQL guide Performance Tuning (join strategy hints, broadcast section); SQL reference pages for Join and Join Hints; RDD Programming Guide section on shuffle operations; Configuration page section on shuffle behavior",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "Shuffle mechanics",
@@ -3110,16 +3392,6 @@
                     "title": "Stage barrier",
                     "text": "no reduce task starts until every map task finishes",
                     "id": "d7-concepts-0-3"
-                  },
-                  {
-                    "title": "",
-                    "text": "External shuffle service and shuffle file lifetime",
-                    "id": "d7-concepts-0-4"
-                  },
-                  {
-                    "title": "Metrics in the Stages tab",
-                    "text": "shuffle write size and records, shuffle read size and records, fetch wait time",
-                    "id": "d7-concepts-0-5"
                   }
                 ]
               },
@@ -3149,11 +3421,6 @@
                     "id": "d7-concepts-2-0"
                   },
                   {
-                    "title": "",
-                    "text": "repartition(n, col) vs repartitionByRange",
-                    "id": "d7-concepts-2-1"
-                  },
-                  {
                     "title": "spark.sql.shuffle.partitions",
                     "text": "default, too few vs too many, target partition size as a rule of thumb, AQE coalescing",
                     "id": "d7-concepts-2-2"
@@ -3178,11 +3445,6 @@
                     "title": "Limits",
                     "text": "driver memory, executor memory, spark.sql.broadcastTimeout, the hard size cap on a broadcast table",
                     "id": "d7-concepts-3-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "BroadcastExchange and BuildLeft / BuildRight in the plan",
-                    "id": "d7-concepts-3-3"
                   }
                 ]
               },
@@ -3199,11 +3461,6 @@
                     "title": "Probe",
                     "text": "lookup of each row of the larger side",
                     "id": "d7-concepts-4-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "How the build side is chosen",
-                    "id": "d7-concepts-4-2"
                   }
                 ]
               },
@@ -3220,11 +3477,6 @@
                     "title": "",
                     "text": "No sort, but the build side of each partition must fit in memory",
                     "id": "d7-concepts-5-1"
-                  },
-                  {
-                    "title": "When it is chosen",
-                    "text": "spark.sql.join.preferSortMergeJoin, hints",
-                    "id": "d7-concepts-5-2"
                   }
                 ]
               },
@@ -3241,7 +3493,107 @@
                     "title": "Why it scales",
                     "text": "it streams, and it can spill",
                     "id": "d7-concepts-6-1"
+                  }
+                ]
+              },
+              {
+                "label": "Cartesian and nested loop joins",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Non-equi joins use BroadcastNestedLoopJoin or CartesianProduct",
+                    "id": "d7-concepts-7-1"
+                  }
+                ]
+              },
+              {
+                "label": "Join types",
+                "added": true,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Which side can be broadcast for each type",
+                    "id": "d7-concepts-8-1"
                   },
+                  {
+                    "title": "",
+                    "text": "Null keys never match in an equi-join; eqNullSafe and <=>",
+                    "id": "d7-concepts-8-3"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "Shuffle mechanics",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "External shuffle service and shuffle file lifetime",
+                    "id": "d7-concepts-0-4"
+                  },
+                  {
+                    "title": "Metrics in the Stages tab",
+                    "text": "shuffle write size and records, shuffle read size and records, fetch wait time",
+                    "id": "d7-concepts-0-5"
+                  }
+                ]
+              },
+              {
+                "label": "Partitioners and Exchange types",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "repartition(n, col) vs repartitionByRange",
+                    "id": "d7-concepts-2-1"
+                  }
+                ]
+              },
+              {
+                "label": "Broadcast Hash Join",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "BroadcastExchange and BuildLeft / BuildRight in the plan",
+                    "id": "d7-concepts-3-3"
+                  }
+                ]
+              },
+              {
+                "label": "Hash join in two phases",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "How the build side is chosen",
+                    "id": "d7-concepts-4-2"
+                  }
+                ]
+              },
+              {
+                "label": "Shuffle Hash Join",
+                "added": false,
+                "items": [
+                  {
+                    "title": "When it is chosen",
+                    "text": "spark.sql.join.preferSortMergeJoin, hints",
+                    "id": "d7-concepts-5-2"
+                  }
+                ]
+              },
+              {
+                "label": "Sort-Merge Join",
+                "added": false,
+                "items": [
                   {
                     "title": "",
                     "text": "What happens with duplicate keys (matches multiply)",
@@ -3265,11 +3617,6 @@
                   },
                   {
                     "title": "",
-                    "text": "Non-equi joins use BroadcastNestedLoopJoin or CartesianProduct",
-                    "id": "d7-concepts-7-1"
-                  },
-                  {
-                    "title": "",
                     "text": "Why range conditions are expensive",
                     "id": "d7-concepts-7-2"
                   }
@@ -3286,18 +3633,8 @@
                   },
                   {
                     "title": "",
-                    "text": "Which side can be broadcast for each type",
-                    "id": "d7-concepts-8-1"
-                  },
-                  {
-                    "title": "",
                     "text": "Semi and anti joins as filters",
                     "id": "d7-concepts-8-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Null keys never match in an equi-join; eqNullSafe and <=>",
-                    "id": "d7-concepts-8-3"
                   },
                   {
                     "title": "",
@@ -3308,7 +3645,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Spark SQL guide Performance Tuning (join strategy hints, broadcast section); SQL reference pages for Join and Join Hints; RDD Programming Guide section on shuffle operations; Configuration page section on shuffle behavior"
       },
       {
         "key": "lab",
@@ -3609,9 +3947,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark SQL guide Performance Tuning (join strategy hints, converting sort-merge join to broadcast join, coalescing post-shuffle partitions); SQL reference page for Join Hints; Spark SQL guide section on bucketing, sorting and partitioning",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "How Spark picks a join strategy",
@@ -3626,16 +3964,6 @@
                     "title": "Hint family and precedence",
                     "text": "broadcast, merge, shuffle_hash, shuffle_replicate_nl",
                     "id": "d8-concepts-0-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Where the choice lives in the source (JoinSelection, as a term to look up)",
-                    "id": "d8-concepts-0-2"
-                  },
-                  {
-                    "title": "Settings",
-                    "text": "spark.sql.autoBroadcastJoinThreshold, spark.sql.join.preferSortMergeJoin",
-                    "id": "d8-concepts-0-3"
                   }
                 ]
               },
@@ -3644,19 +3972,9 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "Where estimates come from",
-                    "text": "file sizes, table statistics, propagated sizeInBytes",
-                    "id": "d8-concepts-1-0"
-                  },
-                  {
                     "title": "",
                     "text": "Filters and joins that change size without the estimate noticing",
                     "id": "d8-concepts-1-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "How statistics change the estimate (ANALYZE TABLE), and how AQE replaces the estimate with real sizes",
-                    "id": "d8-concepts-1-2"
                   }
                 ]
               },
@@ -3673,11 +3991,6 @@
                     "title": "",
                     "text": "Why the side whose rows must all be kept cannot be broadcast",
                     "id": "d8-concepts-2-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Checking each case with experiments rather than memorizing",
-                    "id": "d8-concepts-2-2"
                   }
                 ]
               },
@@ -3704,11 +4017,6 @@
                     "title": "Reuse an existing partitioning",
                     "text": "EnsureRequirements adds an Exchange only when the current partitioning does not satisfy the requirement",
                     "id": "d8-concepts-3-3"
-                  },
-                  {
-                    "title": "",
-                    "text": "Chained joins on the same key and one early repartition on that key",
-                    "id": "d8-concepts-3-4"
                   }
                 ]
               },
@@ -3722,24 +4030,9 @@
                     "id": "d8-concepts-4-0"
                   },
                   {
-                    "title": "",
-                    "text": "Metastore holds the bucket spec; DESCRIBE EXTENDED shows buckets and columns",
-                    "id": "d8-concepts-4-1"
-                  },
-                  {
-                    "title": "Read side",
-                    "text": "spark.sql.sources.bucketing.enabled, join without Exchange, bucket pruning on equality filters",
-                    "id": "d8-concepts-4-2"
-                  },
-                  {
                     "title": "Rules for a shuffle-free join",
                     "text": "same key, same type, compatible bucket counts",
                     "id": "d8-concepts-4-3"
-                  },
-                  {
-                    "title": "Different bucket counts",
-                    "text": "spark.sql.bucketing.coalesceBucketsInJoin.enabled and its ratio setting",
-                    "id": "d8-concepts-4-4"
                   },
                   {
                     "title": "Trade-offs",
@@ -3750,6 +4043,104 @@
                     "title": "Bucketing vs partitioning",
                     "text": "different purposes, can be combined",
                     "id": "d8-concepts-4-6"
+                  }
+                ]
+              },
+              {
+                "label": "Broadcast Hash Join vs Shuffle Hash Join",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Number of shuffles, memory need, sort need, build side, ordering of output",
+                    "id": "d8-concepts-6-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "When the optimizer prefers each",
+                    "id": "d8-concepts-6-1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "How Spark picks a join strategy",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Where the choice lives in the source (JoinSelection, as a term to look up)",
+                    "id": "d8-concepts-0-2"
+                  },
+                  {
+                    "title": "Settings",
+                    "text": "spark.sql.autoBroadcastJoinThreshold, spark.sql.join.preferSortMergeJoin",
+                    "id": "d8-concepts-0-3"
+                  }
+                ]
+              },
+              {
+                "label": "Size estimates and why they go wrong",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Where estimates come from",
+                    "text": "file sizes, table statistics, propagated sizeInBytes",
+                    "id": "d8-concepts-1-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "How statistics change the estimate (ANALYZE TABLE), and how AQE replaces the estimate with real sizes",
+                    "id": "d8-concepts-1-2"
+                  }
+                ]
+              },
+              {
+                "label": "Join type vs broadcastable side",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Checking each case with experiments rather than memorizing",
+                    "id": "d8-concepts-2-2"
+                  }
+                ]
+              },
+              {
+                "label": "Avoiding a shuffle in a join",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Chained joins on the same key and one early repartition on that key",
+                    "id": "d8-concepts-3-4"
+                  }
+                ]
+              },
+              {
+                "label": "Bucketing in depth",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Metastore holds the bucket spec; DESCRIBE EXTENDED shows buckets and columns",
+                    "id": "d8-concepts-4-1"
+                  },
+                  {
+                    "title": "Read side",
+                    "text": "spark.sql.sources.bucketing.enabled, join without Exchange, bucket pruning on equality filters",
+                    "id": "d8-concepts-4-2"
+                  },
+                  {
+                    "title": "Different bucket counts",
+                    "text": "spark.sql.bucketing.coalesceBucketsInJoin.enabled and its ratio setting",
+                    "id": "d8-concepts-4-4"
                   }
                 ]
               },
@@ -3778,26 +4169,11 @@
                     "id": "d8-concepts-5-3"
                   }
                 ]
-              },
-              {
-                "label": "Broadcast Hash Join vs Shuffle Hash Join",
-                "added": false,
-                "items": [
-                  {
-                    "title": "",
-                    "text": "Number of shuffles, memory need, sort need, build side, ordering of output",
-                    "id": "d8-concepts-6-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "When the optimizer prefers each",
-                    "id": "d8-concepts-6-1"
-                  }
-                ]
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Spark SQL guide Performance Tuning (join strategy hints, converting sort-merge join to broadcast join, coalescing post-shuffle partitions); SQL reference page for Join Hints; Spark SQL guide section on bucketing, sorting and partitioning"
       },
       {
         "key": "lab",
@@ -4083,9 +4459,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark SQL guide Performance Tuning (the AQE skew join section); Spark docs Monitoring page (Stages tab and task metrics); SQL reference page for Join Hints",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "What skew is and where it comes from",
@@ -4100,11 +4476,6 @@
                     "title": "Typical causes",
                     "text": "null keys, default values (unknown, 0, -1), one very large customer, date-based keys",
                     "id": "d9-concepts-0-1"
-                  },
-                  {
-                    "title": "Where it appears",
-                    "text": "joins, groupBy, window partitionBy, distinct, repartition('key')",
-                    "id": "d9-concepts-0-2"
                   }
                 ]
               },
@@ -4116,11 +4487,6 @@
                     "title": "",
                     "text": "A stage ends when its slowest task ends, so other cores sit idle",
                     "id": "d9-concepts-1-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "The big partition spills, runs out of memory and gets retried",
-                    "id": "d9-concepts-1-1"
                   },
                   {
                     "title": "",
@@ -4140,34 +4506,8 @@
                   },
                   {
                     "title": "",
-                    "text": "Event timeline with one long bar; the task table sorted by duration",
-                    "id": "d9-concepts-2-1"
-                  },
-                  {
-                    "title": "",
                     "text": "A rule of thumb for max vs median, and why it is only a heuristic",
                     "id": "d9-concepts-2-2"
-                  },
-                  {
-                    "title": "Finding hot keys",
-                    "text": "groupBy(key).count().orderBy(desc), a sampled version, spark_partition_id() counts",
-                    "id": "d9-concepts-2-3"
-                  }
-                ]
-              },
-              {
-                "label": "Read-side skew",
-                "added": false,
-                "items": [
-                  {
-                    "title": "",
-                    "text": "One huge non-splittable file, uneven file sizes, uneven partition folders",
-                    "id": "d9-concepts-3-0"
-                  },
-                  {
-                    "title": "Fixes",
-                    "text": "repartition after reading, change format or codec, write smaller files",
-                    "id": "d9-concepts-3-1"
                   }
                 ]
               },
@@ -4237,11 +4577,6 @@
                     "id": "d9-concepts-5-2"
                   },
                   {
-                    "title": "",
-                    "text": "Join on key plus salt, then drop the salt",
-                    "id": "d9-concepts-5-3"
-                  },
-                  {
                     "title": "Choosing N, and the cost",
                     "text": "the other side grows N times",
                     "id": "d9-concepts-5-4"
@@ -4250,6 +4585,121 @@
                     "title": "Salting aggregations",
                     "text": "aggregate by key plus salt, then aggregate again by key; works for sum, count, min, max, and for avg via sum and count",
                     "id": "d9-concepts-5-5"
+                  }
+                ]
+              },
+              {
+                "label": "Iterative salting",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Defining the term clearly, since people use it loosely",
+                    "id": "d9-concepts-6-3"
+                  }
+                ]
+              },
+              {
+                "label": "AQE skew join optimization",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Skewed means larger than the factor times the median and larger than the byte threshold",
+                    "id": "d9-concepts-7-0"
+                  },
+                  {
+                    "title": "Settings",
+                    "text": "skewedPartitionFactor, skewedPartitionThresholdInBytes, advisoryPartitionSizeInBytes",
+                    "id": "d9-concepts-7-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Does not apply to groupBy or window skew",
+                    "id": "d9-concepts-7-4"
+                  }
+                ]
+              },
+              {
+                "label": "Filtering, repartition and coalesce in relation to skew",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "repartition(n) fixes volume skew; repartition('key') hashes by key, so a hot key stays together",
+                    "id": "d9-concepts-8-1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "What skew is and where it comes from",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Where it appears",
+                    "text": "joins, groupBy, window partitionBy, distinct, repartition('key')",
+                    "id": "d9-concepts-0-2"
+                  }
+                ]
+              },
+              {
+                "label": "Why skew hurts",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "The big partition spills, runs out of memory and gets retried",
+                    "id": "d9-concepts-1-1"
+                  }
+                ]
+              },
+              {
+                "label": "Diagnosing skew in the Spark UI",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Event timeline with one long bar; the task table sorted by duration",
+                    "id": "d9-concepts-2-1"
+                  },
+                  {
+                    "title": "Finding hot keys",
+                    "text": "groupBy(key).count().orderBy(desc), a sampled version, spark_partition_id() counts",
+                    "id": "d9-concepts-2-3"
+                  }
+                ]
+              },
+              {
+                "label": "Read-side skew",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "One huge non-splittable file, uneven file sizes, uneven partition folders",
+                    "id": "d9-concepts-3-0"
+                  },
+                  {
+                    "title": "Fixes",
+                    "text": "repartition after reading, change format or codec, write smaller files",
+                    "id": "d9-concepts-3-1"
+                  }
+                ]
+              },
+              {
+                "label": "Salting in depth",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Join on key plus salt, then drop the salt",
+                    "id": "d9-concepts-5-3"
                   },
                   {
                     "title": "Distinct counts",
@@ -4276,11 +4726,6 @@
                     "title": "",
                     "text": "Repeat until no task stands out",
                     "id": "d9-concepts-6-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Defining the term clearly, since people use it loosely",
-                    "id": "d9-concepts-6-3"
                   }
                 ]
               },
@@ -4290,16 +4735,6 @@
                 "items": [
                   {
                     "title": "",
-                    "text": "Skewed means larger than the factor times the median and larger than the byte threshold",
-                    "id": "d9-concepts-7-0"
-                  },
-                  {
-                    "title": "Settings",
-                    "text": "skewedPartitionFactor, skewedPartitionThresholdInBytes, advisoryPartitionSizeInBytes",
-                    "id": "d9-concepts-7-1"
-                  },
-                  {
-                    "title": "",
                     "text": "Splits the skewed partition and pairs each piece with a copy of the matching partition on the other side",
                     "id": "d9-concepts-7-2"
                   },
@@ -4307,11 +4742,6 @@
                     "title": "",
                     "text": "Applies to sort-merge joins, and to the sides that may be split for the join type",
                     "id": "d9-concepts-7-3"
-                  },
-                  {
-                    "title": "",
-                    "text": "Does not apply to groupBy or window skew",
-                    "id": "d9-concepts-7-4"
                   },
                   {
                     "title": "",
@@ -4331,11 +4761,6 @@
                   },
                   {
                     "title": "",
-                    "text": "repartition(n) fixes volume skew; repartition('key') hashes by key, so a hot key stays together",
-                    "id": "d9-concepts-8-1"
-                  },
-                  {
-                    "title": "",
                     "text": "coalesce merges partitions without a shuffle and can make sizes more uneven",
                     "id": "d9-concepts-8-2"
                   }
@@ -4343,7 +4768,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Spark SQL guide Performance Tuning (the AQE skew join section); Spark docs Monitoring page (Stages tab and task metrics); SQL reference page for Join Hints"
       },
       {
         "key": "lab",
@@ -4644,9 +5070,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark docs Tuning Guide (memory management overview, memory tuning, garbage collection tuning); Configuration page (memory settings); Running on YARN and Running on Kubernetes pages (memory overhead notes); Monitoring page (Executors tab)",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "Executor memory regions and the arithmetic",
@@ -4676,11 +5102,6 @@
                     "title": "",
                     "text": "User memory = usable times (1 minus the fraction)",
                     "id": "d10-concepts-0-4"
-                  },
-                  {
-                    "title": "",
-                    "text": "Why the UI numbers differ slightly from your arithmetic (the JVM reports a bit less than the configured heap)",
-                    "id": "d10-concepts-0-5"
                   }
                 ]
               },
@@ -4715,11 +5136,6 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "What lives there",
-                    "text": "your own objects, UDF closures, metadata, Spark internals",
-                    "id": "d10-concepts-2-0"
-                  },
-                  {
                     "title": "Not tracked by Spark, so no spill",
                     "text": "overuse ends in an out-of-memory error",
                     "id": "d10-concepts-2-1"
@@ -4737,16 +5153,6 @@
                   },
                   {
                     "title": "",
-                    "text": "Python worker processes and Arrow buffers live outside the JVM heap",
-                    "id": "d10-concepts-3-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "spark.executor.pyspark.memory and how it relates to the overhead",
-                    "id": "d10-concepts-3-2"
-                  },
-                  {
-                    "title": "",
                     "text": "Container total = heap + overhead + off-heap + PySpark memory",
                     "id": "d10-concepts-3-3"
                   },
@@ -4754,6 +5160,94 @@
                     "title": "How the cluster manager reports a kill",
                     "text": "YARN container killed for exceeding memory limits; Kubernetes OOMKilled and exit code 137",
                     "id": "d10-concepts-3-4"
+                  }
+                ]
+              },
+              {
+                "label": "Spilling to disk",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Spill (Memory) = size of the data in memory when spilled; Spill (Disk) = size written to disk",
+                    "id": "d10-concepts-5-1"
+                  },
+                  {
+                    "title": "Fixes",
+                    "text": "more partitions, more memory per task, fewer cores per executor, less data per task",
+                    "id": "d10-concepts-5-3"
+                  }
+                ]
+              },
+              {
+                "label": "Garbage collection",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Causes",
+                    "text": "deserialized caches, UDFs, wide rows; fixes: DataFrame operations, off-heap, smaller heaps",
+                    "id": "d10-concepts-6-3"
+                  }
+                ]
+              },
+              {
+                "label": "Executor sizing and cores",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Memory per task is roughly the execution pool divided by cores",
+                    "id": "d10-concepts-7-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Fat vs thin executors, and the usual rule of thumb on cores per executor with its reasons",
+                    "id": "d10-concepts-7-2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "Executor memory regions and the arithmetic",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Why the UI numbers differ slightly from your arithmetic (the JVM reports a bit less than the configured heap)",
+                    "id": "d10-concepts-0-5"
+                  }
+                ]
+              },
+              {
+                "label": "User memory",
+                "added": false,
+                "items": [
+                  {
+                    "title": "What lives there",
+                    "text": "your own objects, UDF closures, metadata, Spark internals",
+                    "id": "d10-concepts-2-0"
+                  }
+                ]
+              },
+              {
+                "label": "Memory overhead and PySpark",
+                "added": true,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Python worker processes and Arrow buffers live outside the JVM heap",
+                    "id": "d10-concepts-3-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "spark.executor.pyspark.memory and how it relates to the overhead",
+                    "id": "d10-concepts-3-2"
                   }
                 ]
               },
@@ -4788,19 +5282,9 @@
                     "id": "d10-concepts-5-0"
                   },
                   {
-                    "title": "",
-                    "text": "Spill (Memory) = size of the data in memory when spilled; Spill (Disk) = size written to disk",
-                    "id": "d10-concepts-5-1"
-                  },
-                  {
                     "title": "Why it is slow",
                     "text": "disk I/O and serialization",
                     "id": "d10-concepts-5-2"
-                  },
-                  {
-                    "title": "Fixes",
-                    "text": "more partitions, more memory per task, fewer cores per executor, less data per task",
-                    "id": "d10-concepts-5-3"
                   }
                 ]
               },
@@ -4822,11 +5306,6 @@
                     "title": "",
                     "text": "Collector choices (G1 and Parallel) and GC logging through spark.executor.extraJavaOptions",
                     "id": "d10-concepts-6-2"
-                  },
-                  {
-                    "title": "Causes",
-                    "text": "deserialized caches, UDFs, wide rows; fixes: DataFrame operations, off-heap, smaller heaps",
-                    "id": "d10-concepts-6-3"
                   }
                 ]
               },
@@ -4841,16 +5320,6 @@
                   },
                   {
                     "title": "",
-                    "text": "Memory per task is roughly the execution pool divided by cores",
-                    "id": "d10-concepts-7-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Fat vs thin executors, and the usual rule of thumb on cores per executor with its reasons",
-                    "id": "d10-concepts-7-2"
-                  },
-                  {
-                    "title": "",
                     "text": "Larger heaps mean longer GC pauses; very small executors duplicate broadcast data",
                     "id": "d10-concepts-7-3"
                   }
@@ -4858,7 +5327,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Spark docs Tuning Guide (memory management overview, memory tuning, garbage collection tuning); Configuration page (memory settings); Running on YARN and Running on Kubernetes pages (memory overhead notes); Monitoring page (Executors tab)"
       },
       {
         "key": "lab",
@@ -5139,19 +5609,14 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Spark docs RDD Programming Guide (the persistence section: storage levels, removing data); Spark SQL guide page on caching data; PySpark API reference for DataFrame.cache, persist, checkpoint, localCheckpoint and StorageLevel; Configuration page (driver settings)",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "Why persistence exists",
                 "added": false,
                 "items": [
-                  {
-                    "title": "",
-                    "text": "Every action re-runs the plan from the source unless data is stored",
-                    "id": "d11-concepts-0-0"
-                  },
                   {
                     "title": "When reuse pays off",
                     "text": "an expensive result used by two or more actions",
@@ -5182,26 +5647,6 @@
                     "title": "Both are lazy",
                     "text": "the first action fills the cache",
                     "id": "d11-concepts-1-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Lineage is kept, so lost blocks are recomputed",
-                    "id": "d11-concepts-1-3"
-                  },
-                  {
-                    "title": "In the plan",
-                    "text": "InMemoryTableScan and InMemoryRelation",
-                    "id": "d11-concepts-1-4"
-                  },
-                  {
-                    "title": "",
-                    "text": "Partial caching, and the Fraction Cached column in the Storage tab",
-                    "id": "d11-concepts-1-5"
-                  },
-                  {
-                    "title": "",
-                    "text": "Eviction in least-recently-used order",
-                    "id": "d11-concepts-1-6"
                   }
                 ]
               },
@@ -5210,35 +5655,9 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "",
-                    "text": "spark.catalog.cacheTable, CACHE TABLE (eager or LAZY), UNCACHE TABLE, spark.catalog.clearCache",
-                    "id": "d11-concepts-2-0"
-                  },
-                  {
                     "title": "Cached data does not notice changes to the files underneath",
                     "text": "REFRESH TABLE",
                     "id": "d11-concepts-2-1"
-                  }
-                ]
-              },
-              {
-                "label": "unpersist()",
-                "added": false,
-                "items": [
-                  {
-                    "title": "",
-                    "text": "Call it when the last action that needs the data is done",
-                    "id": "d11-concepts-3-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "Frees storage for execution and avoids evicting data you still need",
-                    "id": "d11-concepts-3-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Watching the Storage tab empty",
-                    "id": "d11-concepts-3-2"
                   }
                 ]
               },
@@ -5248,11 +5667,6 @@
                 "items": [
                   {
                     "title": "",
-                    "text": "sparkContext.setCheckpointDir, the eager argument",
-                    "id": "d11-concepts-4-0"
-                  },
-                  {
-                    "title": "",
                     "text": "What is stored and where; lineage is cut by both",
                     "id": "d11-concepts-4-1"
                   },
@@ -5260,11 +5674,6 @@
                     "title": "",
                     "text": "Reliable storage vs executor-local storage, and what happens when an executor dies",
                     "id": "d11-concepts-4-2"
-                  },
-                  {
-                    "title": "Cost",
-                    "text": "a full write and read; clean-up of checkpoint files",
-                    "id": "d11-concepts-4-3"
                   },
                   {
                     "title": "",
@@ -5283,11 +5692,6 @@
                     "id": "d11-concepts-5-0"
                   },
                   {
-                    "title": "Settings",
-                    "text": "spark.driver.memory, spark.driver.maxResultSize, spark.driver.memoryOverhead",
-                    "id": "d11-concepts-5-1"
-                  },
-                  {
                     "title": "The maxResultSize error vs a real OutOfMemoryError",
                     "text": "how to tell them apart from the message",
                     "id": "d11-concepts-5-2"
@@ -5296,11 +5700,6 @@
                     "title": "Fixes, in order",
                     "text": "aggregate or limit first, write to storage, lower the broadcast threshold, reduce partitions, raise limits last",
                     "id": "d11-concepts-5-3"
-                  },
-                  {
-                    "title": "",
-                    "text": "Arrow-based toPandas and its setting",
-                    "id": "d11-concepts-5-4"
                   }
                 ]
               }
@@ -5344,8 +5743,117 @@
                 ]
               ]
             }
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "Why persistence exists",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Every action re-runs the plan from the source unless data is stored",
+                    "id": "d11-concepts-0-0"
+                  }
+                ]
+              },
+              {
+                "label": "cache() vs persist()",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Lineage is kept, so lost blocks are recomputed",
+                    "id": "d11-concepts-1-3"
+                  },
+                  {
+                    "title": "In the plan",
+                    "text": "InMemoryTableScan and InMemoryRelation",
+                    "id": "d11-concepts-1-4"
+                  },
+                  {
+                    "title": "",
+                    "text": "Partial caching, and the Fraction Cached column in the Storage tab",
+                    "id": "d11-concepts-1-5"
+                  },
+                  {
+                    "title": "",
+                    "text": "Eviction in least-recently-used order",
+                    "id": "d11-concepts-1-6"
+                  }
+                ]
+              },
+              {
+                "label": "Table-level caching",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "spark.catalog.cacheTable, CACHE TABLE (eager or LAZY), UNCACHE TABLE, spark.catalog.clearCache",
+                    "id": "d11-concepts-2-0"
+                  }
+                ]
+              },
+              {
+                "label": "unpersist()",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Call it when the last action that needs the data is done",
+                    "id": "d11-concepts-3-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "Frees storage for execution and avoids evicting data you still need",
+                    "id": "d11-concepts-3-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Watching the Storage tab empty",
+                    "id": "d11-concepts-3-2"
+                  }
+                ]
+              },
+              {
+                "label": "checkpoint() vs localCheckpoint()",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "sparkContext.setCheckpointDir, the eager argument",
+                    "id": "d11-concepts-4-0"
+                  },
+                  {
+                    "title": "Cost",
+                    "text": "a full write and read; clean-up of checkpoint files",
+                    "id": "d11-concepts-4-3"
+                  }
+                ]
+              },
+              {
+                "label": "Driver out-of-memory errors",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Settings",
+                    "text": "spark.driver.memory, spark.driver.maxResultSize, spark.driver.memoryOverhead",
+                    "id": "d11-concepts-5-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Arrow-based toPandas and its setting",
+                    "id": "d11-concepts-5-4"
+                  }
+                ]
+              }
+            ]
           }
-        ]
+        ],
+        "studyFrom": "Spark docs RDD Programming Guide (the persistence section: storage levels, removing data); Spark SQL guide page on caching data; PySpark API reference for DataFrame.cache, persist, checkpoint, localCheckpoint and StorageLevel; Configuration page (driver settings)"
       },
       {
         "key": "lab",
@@ -5636,9 +6144,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "PySpark documentation user guide pages on Python UDFs, pandas UDFs and Arrow; Structured Streaming Programming Guide (window operations, handling late data and watermarking); Spark SQL guide Performance Tuning; Spark docs Tuning Guide (broadcast variables)",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "UDF costs and alternatives",
@@ -5650,14 +6158,155 @@
                     "id": "d12-concepts-0-0"
                   },
                   {
-                    "title": "UDF details",
-                    "text": "returnType, null handling, asNondeterministic()",
-                    "id": "d12-concepts-0-1"
-                  },
-                  {
                     "title": "pandas UDF",
                     "text": "Arrow batches, the ArrowEvalPython node, spark.sql.execution.arrow.maxRecordsPerBatch",
                     "id": "d12-concepts-0-2"
+                  }
+                ]
+              },
+              {
+                "label": "Built-in functions over Python logic",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Why built-ins keep pushdown, optimization and codegen",
+                    "id": "d12-concepts-1-2"
+                  }
+                ]
+              },
+              {
+                "label": "repartition() vs coalesce()",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Plan nodes",
+                    "text": "Exchange for repartition, Coalesce for coalesce",
+                    "id": "d12-concepts-2-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "coalesce merges partitions with no shuffle, but can reduce parallelism of the stage before it",
+                    "id": "d12-concepts-2-2"
+                  },
+                  {
+                    "title": "",
+                    "text": "Why coalesce(1) on large data is a single-task bottleneck",
+                    "id": "d12-concepts-2-3"
+                  }
+                ]
+              },
+              {
+                "label": "Broadcast variables and broadcast joins",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Why capturing a large object in a closure is sent with every task",
+                    "id": "d12-concepts-3-1"
+                  }
+                ]
+              },
+              {
+                "label": "Star schema",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Broadcasting dimensions so the fact table does not shuffle",
+                    "id": "d12-concepts-4-1"
+                  },
+                  {
+                    "title": "Dynamic partition pruning",
+                    "text": "spark.sql.optimizer.dynamicPartitionPruning.enabled, and how it appears in the plan",
+                    "id": "d12-concepts-4-2"
+                  }
+                ]
+              },
+              {
+                "label": "Deep plans and lit() loops",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Each withColumn adds a projection; hundreds make analysis and explain slow",
+                    "id": "d12-concepts-5-0"
+                  },
+                  {
+                    "title": "Fixes",
+                    "text": "one select with a list of expressions, withColumns (check your version), functools.reduce only for small loops",
+                    "id": "d12-concepts-5-1"
+                  }
+                ]
+              },
+              {
+                "label": "Structured Streaming in a nutshell",
+                "added": true,
+                "items": [
+                  {
+                    "title": "Output modes",
+                    "text": "append, update, complete",
+                    "id": "d12-concepts-8-2"
+                  },
+                  {
+                    "title": "Checkpoint location",
+                    "text": "offsets and state",
+                    "id": "d12-concepts-8-3"
+                  }
+                ]
+              },
+              {
+                "label": "Watermarks and late data",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Event time vs processing time",
+                    "id": "d12-concepts-9-0"
+                  },
+                  {
+                    "title": "withWatermark(col, delay)",
+                    "text": "the watermark is the maximum event time seen minus the delay",
+                    "id": "d12-concepts-9-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Events older than the watermark are dropped, and old state is cleaned up",
+                    "id": "d12-concepts-9-2"
+                  },
+                  {
+                    "title": "Trade-off",
+                    "text": "longer delay gives more complete results, more state and more latency",
+                    "id": "d12-concepts-9-4"
+                  }
+                ]
+              },
+              {
+                "label": "When to checkpoint",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Cost of a full write and read vs the cost of a long lineage",
+                    "id": "d12-concepts-10-0"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "UDF costs and alternatives",
+                "added": false,
+                "items": [
+                  {
+                    "title": "UDF details",
+                    "text": "returnType, null handling, asNondeterministic()",
+                    "id": "d12-concepts-0-1"
                   },
                   {
                     "title": "Kinds",
@@ -5684,11 +6333,6 @@
                     "title": "",
                     "text": "F.expr and higher-order functions as the bridge to SQL syntax",
                     "id": "d12-concepts-1-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Why built-ins keep pushdown, optimization and codegen",
-                    "id": "d12-concepts-1-2"
                   }
                 ]
               },
@@ -5700,21 +6344,6 @@
                     "title": "",
                     "text": "repartition(n), repartition(col), repartition(n, col), repartitionByRange",
                     "id": "d12-concepts-2-0"
-                  },
-                  {
-                    "title": "Plan nodes",
-                    "text": "Exchange for repartition, Coalesce for coalesce",
-                    "id": "d12-concepts-2-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "coalesce merges partitions with no shuffle, but can reduce parallelism of the stage before it",
-                    "id": "d12-concepts-2-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Why coalesce(1) on large data is a single-task bottleneck",
-                    "id": "d12-concepts-2-3"
                   }
                 ]
               },
@@ -5726,11 +6355,6 @@
                     "title": "",
                     "text": "sc.broadcast(value), .value, unpersist, destroy",
                     "id": "d12-concepts-3-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "Why capturing a large object in a closure is sent with every task",
-                    "id": "d12-concepts-3-1"
                   },
                   {
                     "title": "",
@@ -5747,32 +6371,6 @@
                     "title": "",
                     "text": "Fact and dimension tables, surrogate keys",
                     "id": "d12-concepts-4-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "Broadcasting dimensions so the fact table does not shuffle",
-                    "id": "d12-concepts-4-1"
-                  },
-                  {
-                    "title": "Dynamic partition pruning",
-                    "text": "spark.sql.optimizer.dynamicPartitionPruning.enabled, and how it appears in the plan",
-                    "id": "d12-concepts-4-2"
-                  }
-                ]
-              },
-              {
-                "label": "Deep plans and lit() loops",
-                "added": false,
-                "items": [
-                  {
-                    "title": "",
-                    "text": "Each withColumn adds a projection; hundreds make analysis and explain slow",
-                    "id": "d12-concepts-5-0"
-                  },
-                  {
-                    "title": "Fixes",
-                    "text": "one select with a list of expressions, withColumns (check your version), functools.reduce only for small loops",
-                    "id": "d12-concepts-5-1"
                   }
                 ]
               },
@@ -5831,16 +6429,6 @@
                     "title": "",
                     "text": "readStream, writeStream, trigger, start, awaitTermination, lastProgress",
                     "id": "d12-concepts-8-1"
-                  },
-                  {
-                    "title": "Output modes",
-                    "text": "append, update, complete",
-                    "id": "d12-concepts-8-2"
-                  },
-                  {
-                    "title": "Checkpoint location",
-                    "text": "offsets and state",
-                    "id": "d12-concepts-8-3"
                   }
                 ]
               },
@@ -5850,28 +6438,8 @@
                 "items": [
                   {
                     "title": "",
-                    "text": "Event time vs processing time",
-                    "id": "d12-concepts-9-0"
-                  },
-                  {
-                    "title": "withWatermark(col, delay)",
-                    "text": "the watermark is the maximum event time seen minus the delay",
-                    "id": "d12-concepts-9-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Events older than the watermark are dropped, and old state is cleaned up",
-                    "id": "d12-concepts-9-2"
-                  },
-                  {
-                    "title": "",
                     "text": "Window aggregation with append mode and the delay in results",
                     "id": "d12-concepts-9-3"
-                  },
-                  {
-                    "title": "Trade-off",
-                    "text": "longer delay gives more complete results, more state and more latency",
-                    "id": "d12-concepts-9-4"
                   }
                 ]
               },
@@ -5879,11 +6447,6 @@
                 "label": "When to checkpoint",
                 "added": false,
                 "items": [
-                  {
-                    "title": "",
-                    "text": "Cost of a full write and read vs the cost of a long lineage",
-                    "id": "d12-concepts-10-0"
-                  },
                   {
                     "title": "",
                     "text": "cache() as the cheaper choice when lineage is not the problem",
@@ -5919,7 +6482,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "PySpark documentation user guide pages on Python UDFs, pandas UDFs and Arrow; Structured Streaming Programming Guide (window operations, handling late data and watermarking); Spark SQL guide Performance Tuning; Spark docs Tuning Guide (broadcast variables)"
       },
       {
         "key": "lab",
@@ -6190,9 +6754,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Delta Lake documentation pages Quickstart, Table batch reads and writes, Table deletes, updates and merges, Concurrency control, and Releases (compatibility table); the Delta transaction log protocol document in the delta-io/delta repository",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "Why Delta Lake exists",
@@ -6207,7 +6771,126 @@
                     "title": "",
                     "text": "Delta = Parquet data files + a transaction log",
                     "id": "d13-concepts-0-1"
+                  }
+                ]
+              },
+              {
+                "label": "The transaction log",
+                "added": false,
+                "items": [
+                  {
+                    "title": "_delta_log folder",
+                    "text": "one numbered JSON file per commit",
+                    "id": "d13-concepts-2-0"
                   },
+                  {
+                    "title": "Actions inside a commit",
+                    "text": "protocol, metaData, add, remove, commitInfo, txn",
+                    "id": "d13-concepts-2-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Table state = replay of the log in order",
+                    "id": "d13-concepts-2-3"
+                  },
+                  {
+                    "title": "",
+                    "text": "Checkpoint Parquet files, the _last_checkpoint file, delta.checkpointInterval",
+                    "id": "d13-concepts-2-4"
+                  }
+                ]
+              },
+              {
+                "label": "ACID in Delta Lake",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Atomicity",
+                    "text": "a commit is one log file that appears or does not",
+                    "id": "d13-concepts-3-0"
+                  },
+                  {
+                    "title": "Consistency",
+                    "text": "schema enforcement and constraints (NOT NULL, CHECK)",
+                    "id": "d13-concepts-3-1"
+                  },
+                  {
+                    "title": "Isolation",
+                    "text": "optimistic concurrency, conflict check at commit time, isolation levels",
+                    "id": "d13-concepts-3-2"
+                  },
+                  {
+                    "title": "Durability",
+                    "text": "data and log in durable storage; what object stores must guarantee for atomic commits",
+                    "id": "d13-concepts-3-4"
+                  }
+                ]
+              },
+              {
+                "label": "Schema enforcement and evolution",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Allowing change on purpose",
+                    "text": "mergeSchema, overwriteSchema, the auto-merge setting, ALTER TABLE ... ADD COLUMNS",
+                    "id": "d13-concepts-4-1"
+                  }
+                ]
+              },
+              {
+                "label": "UPDATE and DELETE",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Find files containing matching rows, rewrite those files, commit remove and add together",
+                    "id": "d13-concepts-5-0"
+                  }
+                ]
+              },
+              {
+                "label": "MERGE INTO",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Clauses",
+                    "text": "WHEN MATCHED [AND condition] THEN UPDATE | DELETE, WHEN NOT MATCHED THEN INSERT, and NOT MATCHED BY SOURCE (check your version)",
+                    "id": "d13-concepts-6-0"
+                  },
+                  {
+                    "title": "Two passes",
+                    "text": "find touched files, then rewrite them",
+                    "id": "d13-concepts-6-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Duplicate source keys cause an error for matched rows",
+                    "id": "d13-concepts-6-2"
+                  }
+                ]
+              },
+              {
+                "label": "Snapshot isolation and time travel",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "A query reads the version that was current when it started",
+                    "id": "d13-concepts-7-0"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "Why Delta Lake exists",
+                "added": true,
+                "items": [
                   {
                     "title": "",
                     "text": "Other open table formats (Iceberg, Hudi) as names to recognize",
@@ -6246,29 +6929,9 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "_delta_log folder",
-                    "text": "one numbered JSON file per commit",
-                    "id": "d13-concepts-2-0"
-                  },
-                  {
-                    "title": "Actions inside a commit",
-                    "text": "protocol, metaData, add, remove, commitInfo, txn",
-                    "id": "d13-concepts-2-1"
-                  },
-                  {
                     "title": "Fields of an add action",
                     "text": "path, size, partitionValues, modificationTime, dataChange, stats",
                     "id": "d13-concepts-2-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Table state = replay of the log in order",
-                    "id": "d13-concepts-2-3"
-                  },
-                  {
-                    "title": "",
-                    "text": "Checkpoint Parquet files, the _last_checkpoint file, delta.checkpointInterval",
-                    "id": "d13-concepts-2-4"
                   },
                   {
                     "title": "Log retention",
@@ -6282,29 +6945,9 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "Atomicity",
-                    "text": "a commit is one log file that appears or does not",
-                    "id": "d13-concepts-3-0"
-                  },
-                  {
-                    "title": "Consistency",
-                    "text": "schema enforcement and constraints (NOT NULL, CHECK)",
-                    "id": "d13-concepts-3-1"
-                  },
-                  {
-                    "title": "Isolation",
-                    "text": "optimistic concurrency, conflict check at commit time, isolation levels",
-                    "id": "d13-concepts-3-2"
-                  },
-                  {
                     "title": "Conflict exceptions to recognize",
                     "text": "ConcurrentAppendException, ConcurrentDeleteReadException, ConcurrentDeleteDeleteException, MetadataChangedException",
                     "id": "d13-concepts-3-3"
-                  },
-                  {
-                    "title": "Durability",
-                    "text": "data and log in durable storage; what object stores must guarantee for atomic commits",
-                    "id": "d13-concepts-3-4"
                   }
                 ]
               },
@@ -6318,11 +6961,6 @@
                     "id": "d13-concepts-4-0"
                   },
                   {
-                    "title": "Allowing change on purpose",
-                    "text": "mergeSchema, overwriteSchema, the auto-merge setting, ALTER TABLE ... ADD COLUMNS",
-                    "id": "d13-concepts-4-1"
-                  },
-                  {
                     "title": "",
                     "text": "Constraints as part of consistency",
                     "id": "d13-concepts-4-2"
@@ -6333,11 +6971,6 @@
                 "label": "UPDATE and DELETE",
                 "added": false,
                 "items": [
-                  {
-                    "title": "",
-                    "text": "Find files containing matching rows, rewrite those files, commit remove and add together",
-                    "id": "d13-concepts-5-0"
-                  },
                   {
                     "title": "",
                     "text": "Data skipping narrows the files touched",
@@ -6354,21 +6987,6 @@
                 "label": "MERGE INTO",
                 "added": false,
                 "items": [
-                  {
-                    "title": "Clauses",
-                    "text": "WHEN MATCHED [AND condition] THEN UPDATE | DELETE, WHEN NOT MATCHED THEN INSERT, and NOT MATCHED BY SOURCE (check your version)",
-                    "id": "d13-concepts-6-0"
-                  },
-                  {
-                    "title": "Two passes",
-                    "text": "find touched files, then rewrite them",
-                    "id": "d13-concepts-6-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Duplicate source keys cause an error for matched rows",
-                    "id": "d13-concepts-6-2"
-                  },
                   {
                     "title": "",
                     "text": "Join condition quality and partition predicates control how many files are rewritten",
@@ -6387,11 +7005,6 @@
                 "items": [
                   {
                     "title": "",
-                    "text": "A query reads the version that was current when it started",
-                    "id": "d13-concepts-7-0"
-                  },
-                  {
-                    "title": "",
                     "text": "VERSION AS OF, TIMESTAMP AS OF, versionAsOf and timestampAsOf options",
                     "id": "d13-concepts-7-1"
                   },
@@ -6404,7 +7017,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Delta Lake documentation pages Quickstart, Table batch reads and writes, Table deletes, updates and merges, Concurrency control, and Releases (compatibility table); the Delta transaction log protocol document in the delta-io/delta repository"
       },
       {
         "key": "lab",
@@ -6695,9 +7309,9 @@
         "time": "1 h 15 min",
         "activities": [
           {
-            "key": "topic-map",
-            "name": "Topic map",
-            "studyFrom": "Delta Lake documentation pages Table utility commands (OPTIMIZE, VACUUM, RESTORE, DESCRIBE), Data skipping and Z-ordering, Change data feed, Table properties; the Delta protocol document (section on add statistics)",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "OPTIMIZE",
@@ -6717,7 +7331,131 @@
                     "title": "",
                     "text": "Readers are not blocked; old files stay on disk until vacuumed",
                     "id": "d14-concepts-0-2"
+                  }
+                ]
+              },
+              {
+                "label": "Data skipping",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Per-file statistics in the log",
+                    "text": "numRecords, minValues, maxValues, nullCount",
+                    "id": "d14-concepts-1-0"
                   },
+                  {
+                    "title": "",
+                    "text": "Partition pruning vs file skipping",
+                    "id": "d14-concepts-1-2"
+                  }
+                ]
+              },
+              {
+                "label": "Z-ordering",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "A space-filling curve interleaves the columns so similar values land in the same files",
+                    "id": "d14-concepts-2-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Why narrow per-file ranges let more files be skipped",
+                    "id": "d14-concepts-2-2"
+                  },
+                  {
+                    "title": "",
+                    "text": "Works best on a few high-cardinality columns that queries filter on; less effective as columns are added",
+                    "id": "d14-concepts-2-3"
+                  },
+                  {
+                    "title": "Cost",
+                    "text": "it rewrites data; columns need statistics; partition columns cannot be Z-ordered",
+                    "id": "d14-concepts-2-4"
+                  }
+                ]
+              },
+              {
+                "label": "VACUUM",
+                "added": false,
+                "items": [
+                  {
+                    "title": "What it deletes",
+                    "text": "data files no longer referenced and older than the retention period",
+                    "id": "d14-concepts-3-0"
+                  },
+                  {
+                    "title": "",
+                    "text": "delta.deletedFileRetentionDuration (7 days by default) and VACUUM t RETAIN n HOURS",
+                    "id": "d14-concepts-3-1"
+                  },
+                  {
+                    "title": "",
+                    "text": "Effect on time travel, running queries and streams",
+                    "id": "d14-concepts-3-3"
+                  }
+                ]
+              },
+              {
+                "label": "Change Data Feed",
+                "added": false,
+                "items": [
+                  {
+                    "title": "Reading",
+                    "text": "option('readChangeFeed', 'true') with startingVersion or startingTimestamp (and ending options)",
+                    "id": "d14-concepts-4-1"
+                  },
+                  {
+                    "title": "Columns",
+                    "text": "_change_type (insert, update_preimage, update_postimage, delete), _commit_version, _commit_timestamp",
+                    "id": "d14-concepts-4-2"
+                  },
+                  {
+                    "title": "Limits",
+                    "text": "only changes after enabling; vacuum also removes old change data",
+                    "id": "d14-concepts-4-4"
+                  },
+                  {
+                    "title": "Consumer pattern",
+                    "text": "remember the last processed version",
+                    "id": "d14-concepts-4-5"
+                  }
+                ]
+              },
+              {
+                "label": "Time travel and RESTORE",
+                "added": true,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "A restore is a new commit, and it needs the old files to still exist",
+                    "id": "d14-concepts-5-1"
+                  }
+                ]
+              },
+              {
+                "label": "Choosing a layout",
+                "added": false,
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Partitioning vs Z-ordering, and what Delta offers instead of Spark bucketing from Day 8",
+                    "id": "d14-concepts-6-0"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "OPTIMIZE",
+                "added": false,
+                "items": [
                   {
                     "title": "",
                     "text": "OPTIMIZE t WHERE <partition condition>, DeltaTable.optimize(), result metrics",
@@ -6740,19 +7478,9 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "Per-file statistics in the log",
-                    "text": "numRecords, minValues, maxValues, nullCount",
-                    "id": "d14-concepts-1-0"
-                  },
-                  {
                     "title": "Number of indexed columns",
                     "text": "delta.dataSkippingNumIndexedCols",
                     "id": "d14-concepts-1-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Partition pruning vs file skipping",
-                    "id": "d14-concepts-1-2"
                   },
                   {
                     "title": "",
@@ -6772,26 +7500,6 @@
                   },
                   {
                     "title": "",
-                    "text": "A space-filling curve interleaves the columns so similar values land in the same files",
-                    "id": "d14-concepts-2-1"
-                  },
-                  {
-                    "title": "",
-                    "text": "Why narrow per-file ranges let more files be skipped",
-                    "id": "d14-concepts-2-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Works best on a few high-cardinality columns that queries filter on; less effective as columns are added",
-                    "id": "d14-concepts-2-3"
-                  },
-                  {
-                    "title": "Cost",
-                    "text": "it rewrites data; columns need statistics; partition columns cannot be Z-ordered",
-                    "id": "d14-concepts-2-4"
-                  },
-                  {
-                    "title": "",
                     "text": "Liquid clustering as a newer alternative (look up your version)",
                     "id": "d14-concepts-2-5"
                   }
@@ -6802,24 +7510,9 @@
                 "added": false,
                 "items": [
                   {
-                    "title": "What it deletes",
-                    "text": "data files no longer referenced and older than the retention period",
-                    "id": "d14-concepts-3-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "delta.deletedFileRetentionDuration (7 days by default) and VACUUM t RETAIN n HOURS",
-                    "id": "d14-concepts-3-1"
-                  },
-                  {
                     "title": "",
                     "text": "DRY RUN, and the safety check spark.databricks.delta.retentionDurationCheck.enabled",
                     "id": "d14-concepts-3-2"
-                  },
-                  {
-                    "title": "",
-                    "text": "Effect on time travel, running queries and streams",
-                    "id": "d14-concepts-3-3"
                   },
                   {
                     "title": "",
@@ -6838,29 +7531,9 @@
                     "id": "d14-concepts-4-0"
                   },
                   {
-                    "title": "Reading",
-                    "text": "option('readChangeFeed', 'true') with startingVersion or startingTimestamp (and ending options)",
-                    "id": "d14-concepts-4-1"
-                  },
-                  {
-                    "title": "Columns",
-                    "text": "_change_type (insert, update_preimage, update_postimage, delete), _commit_version, _commit_timestamp",
-                    "id": "d14-concepts-4-2"
-                  },
-                  {
                     "title": "Storage",
                     "text": "the _change_data folder for changes that cannot be derived from add and remove",
                     "id": "d14-concepts-4-3"
-                  },
-                  {
-                    "title": "Limits",
-                    "text": "only changes after enabling; vacuum also removes old change data",
-                    "id": "d14-concepts-4-4"
-                  },
-                  {
-                    "title": "Consumer pattern",
-                    "text": "remember the last processed version",
-                    "id": "d14-concepts-4-5"
                   }
                 ]
               },
@@ -6872,11 +7545,6 @@
                     "title": "",
                     "text": "RESTORE TABLE t TO VERSION AS OF n or TO TIMESTAMP AS OF",
                     "id": "d14-concepts-5-0"
-                  },
-                  {
-                    "title": "",
-                    "text": "A restore is a new commit, and it needs the old files to still exist",
-                    "id": "d14-concepts-5-1"
                   }
                 ]
               },
@@ -6884,11 +7552,6 @@
                 "label": "Choosing a layout",
                 "added": false,
                 "items": [
-                  {
-                    "title": "",
-                    "text": "Partitioning vs Z-ordering, and what Delta offers instead of Spark bucketing from Day 8",
-                    "id": "d14-concepts-6-0"
-                  },
                   {
                     "title": "",
                     "text": "Why a high-cardinality partition column cannot be fixed by OPTIMIZE",
@@ -6914,7 +7577,8 @@
               }
             ]
           }
-        ]
+        ],
+        "studyFrom": "Delta Lake documentation pages Table utility commands (OPTIMIZE, VACUUM, RESTORE, DESCRIBE), Data skipping and Z-ordering, Change data feed, Table properties; the Delta protocol document (section on add statistics)"
       },
       {
         "key": "lab",
@@ -7186,8 +7850,9 @@
         "tagline": "Research and learn",
         "activities": [
           {
-            "key": "final-review",
-            "name": "Final review",
+            "key": "learn-note",
+            "name": "📘 Learn & Note",
+            "note": "Core concepts, important principles, formulas, and explanations worth revisiting. Write these up in your Theory notes.",
             "blocks": [
               {
                 "label": "What to learn first",
@@ -7209,34 +7874,14 @@
                   },
                   {
                     "title": "",
-                    "text": "Rebuilding a query's shape from a plan with the query hidden",
-                    "id": "d15-review-0-3"
-                  },
-                  {
-                    "title": "",
                     "text": "The symptom table (symptom, cause, where to look, first fix) until you can write it from memory",
                     "id": "d15-review-0-4"
-                  },
-                  {
-                    "title": "Spaced repetition",
-                    "text": "re-reading the day for every stumble, then re-answering a day later",
-                    "id": "d15-review-0-5"
                   }
                 ]
               },
               {
                 "label": "Then do",
                 "items": [
-                  {
-                    "title": "",
-                    "text": "Answer every checklist question aloud from memory, about 2 minutes each. Mark the ones you stumble on and re-read that day.",
-                    "id": "d15-review-1-0"
-                  },
-                  {
-                    "title": "Plan-reading drill",
-                    "text": "take five plans from your daily logs, hide the query, and for each name the join strategy, the shuffles, and the pushdown.",
-                    "id": "d15-review-1-1"
-                  },
                   {
                     "title": "",
                     "text": "Learn the symptom table below until you can produce it from memory.",
@@ -7303,6 +7948,43 @@
                 ]
               ]
             }
+          },
+          {
+            "key": "learn-only",
+            "name": "🧠 Learn Only",
+            "note": "Concepts you need to understand but don't need to write down.",
+            "blocks": [
+              {
+                "label": "What to learn first",
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Rebuilding a query's shape from a plan with the query hidden",
+                    "id": "d15-review-0-3"
+                  },
+                  {
+                    "title": "Spaced repetition",
+                    "text": "re-reading the day for every stumble, then re-answering a day later",
+                    "id": "d15-review-0-5"
+                  }
+                ]
+              },
+              {
+                "label": "Then do",
+                "items": [
+                  {
+                    "title": "",
+                    "text": "Answer every checklist question aloud from memory, about 2 minutes each. Mark the ones you stumble on and re-read that day.",
+                    "id": "d15-review-1-0"
+                  },
+                  {
+                    "title": "Plan-reading drill",
+                    "text": "take five plans from your daily logs, hide the query, and for each name the join strategy, the shuffles, and the pushdown.",
+                    "id": "d15-review-1-1"
+                  }
+                ]
+              }
+            ]
           },
           {
             "key": "runbook",

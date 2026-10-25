@@ -10,7 +10,7 @@ const PART_NOTES = {
   theory: {
     suffix: "-theory",
     heading: "Theory notes",
-    placeholder: "Explain each topic in your own words. Note anything that surprised you and which Study from pages are worth rereading.",
+    placeholder: "Write up the 📘 Learn & Note topics in your own words: the core ideas, principles, formulas and explanations you'll want to revisit.",
   },
   lab: {
     suffix: "-lab",
@@ -304,12 +304,6 @@ function renderActivity(activity) {
   heading.innerHTML = `${escapeHtml(activity.name)} <span class="muted">${time}${countChecked(items)}/${items.length}</span>`;
   el.appendChild(heading);
 
-  if (activity.studyFrom) {
-    const study = document.createElement("p");
-    study.className = "study-from";
-    study.innerHTML = `<strong>Study from:</strong> ${escapeHtml(activity.studyFrom)}`;
-    el.appendChild(study);
-  }
   if (activity.note) {
     const note = document.createElement("p");
     note.className = "activity-note";
@@ -395,6 +389,12 @@ function renderDay() {
   partHeading.className = "day-part-heading";
   partHeading.innerHTML = `${escapeHtml(part.name)} <span class="muted">${escapeHtml(part.tagline)}${part.time ? ` · ${escapeHtml(part.time)}` : ""}</span>`;
   partEl.appendChild(partHeading);
+  if (part.studyFrom) {
+    const study = document.createElement("p");
+    study.className = "study-from";
+    study.innerHTML = `<strong>Study from:</strong> ${escapeHtml(part.studyFrom)}`;
+    partEl.appendChild(study);
+  }
 
   part.activities.forEach((activity) => partEl.appendChild(renderActivity(activity)));
   partEl.appendChild(renderPartNotes(day, part));

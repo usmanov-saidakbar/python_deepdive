@@ -125,7 +125,9 @@ walkthrough for either.
 *15-Day Spark Mastery Roadmap* into a per-day checklist. Every day is split
 into three parts, each with its own progress bar and notes box:
 
-- **Theory** (research and learn): the topic map and the docs to read.
+- **Theory** (research and learn): the docs to read, then the day's topics
+  split into 📘 Learn & Note (core concepts, principles and formulas worth
+  writing up) and 🧠 Learn Only (understand them, no need to write them down).
 - **Lab** (test it for real): the guided lab, the deep dive, and break it and
   fix it, all hands-on in PySpark and the Spark UI.
 - **Exercise** (practice on your own): coding drills, practice questions, and
