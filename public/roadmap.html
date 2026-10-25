@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spark Roadmap</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <nav class="page-nav">
+      <a href="/">Python Deep Dive</a>
+      <a href="/roadmap.html" class="active">Spark Roadmap</a>
+    </nav>
+    <header>
+      <h1>15-Day Spark Mastery Roadmap</h1>
+      <p class="subtitle">Tick off each concept, lab step and drill. Your daily log is saved with your checklist.</p>
+    </header>
+    <div id="account" class="account"></div>
+    <div class="overall">
+      <div class="overall-label">Overall progress</div>
+      <div id="overall-progress"></div>
+    </div>
+    <div class="start-date">
+      <label for="start-date">Started on</label>
+      <input type="date" id="start-date" />
+      <span id="today-hint" class="muted"></span>
+    </div>
+
+    <details class="guide">
+      <summary>How a day works</summary>
+      <table>
+        <tr><th>Block</th><th>Time</th><th>What you do</th></tr>
+        <tr><td>Concepts</td><td>1 h 15 min</td><td>Read the day's docs and answer its checklist questions in your own words</td></tr>
+        <tr><td>Lab</td><td>1 h 30 min</td><td>Run the day's lab and save every explain output</td></tr>
+        <tr><td>Deep dive</td><td>1 h</td><td>Go one level below the lab: internals, file contents, docs or source</td></tr>
+        <tr><td>Break it and fix it</td><td>1 h</td><td>Cause the failure the day is about, then fix it</td></tr>
+        <tr><td>Coding drills</td><td>1 h</td><td>Solve the day's four problems with the solving routine</td></tr>
+        <tr><td>Practice questions</td><td>30 min</td><td>Answer the written questions without notes</td></tr>
+        <tr><td>Recap and log</td><td>30 min</td><td>Write the one-page log, then re-answer yesterday's questions from memory</td></tr>
+      </table>
+      <p><strong>Habits:</strong> predict the plan, then check it with <code>df.explain('formatted')</code>.
+        Keep the Spark UI open at <code>localhost:4040</code>. Write a one-page log every day.</p>
+      <p class="muted">Short day? Do Concepts, Lab and Recap, and move the rest to the next afternoon. Never skip the Lab or the drills.</p>
+    </details>
+
+    <div id="tabs" class="tabs"></div>
+    <div id="status" class="status"></div>
+    <div id="day"></div>
+  </main>
+  <script src="roadmap.js"></script>
+</body>
+</html>

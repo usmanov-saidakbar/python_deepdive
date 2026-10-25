@@ -118,3 +118,19 @@ walkthrough for either.
 - Progress endpoints: `GET /api/progress/:email` and
   `PUT /api/progress/:email` (body: the full status map). Both 503 if Upstash
   isn't configured.
+
+## Spark Roadmap tab
+
+`/roadmap.html` (the "Spark Roadmap" tab at the top of the page) turns the
+*15-Day Spark Mastery Roadmap* into a per-day checklist: concepts, lab steps,
+extended practice, coding drills and the "Done when" self-test, plus a
+free-text daily log for each day. Set a start date and it highlights which day
+you're on.
+
+- Checklist data lives in `data/roadmap.json` (generated once from the roadmap
+  doc). Edit it directly to add or change items; keep each item's `id` stable
+  so saved checkmarks still line up.
+- With an email entered, progress is saved in Upstash under `roadmap:<email>`
+  (separate from the course's `progress:<email>`) via
+  `GET`/`PUT /api/roadmap-progress/:email`. Without one, it's kept in the
+  browser's localStorage.

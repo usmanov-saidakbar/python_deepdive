@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3000;
 const ADMIN_KEY = process.env.ADMIN_KEY || "";
 const DATA_FILE = path.join(__dirname, "data", "content.json");
 const SECTIONS_FILE = path.join(__dirname, "data", "sections.json");
+const ROADMAP_FILE = path.join(__dirname, "data", "roadmap.json");
 
 // Progress storage: keyed by whatever email the visitor typed in, with no
 // password check. This is a convenience identifier, not authentication —
@@ -33,7 +34,8 @@ function normalizeEmail(raw) {
 }
 
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.json());
+// Roadmap progress includes free-text daily logs, so allow more than the 100kb default.
+app.use(express.json({ limit: "1mb" }));
 
 function loadContent() {
   try {
@@ -86,32 +88,47 @@ app.get("/api/content", (req, res) => {
   res.json(groupContent(items, partDefs));
 });
 
-app.get("/api/progress/:email", async (req, res) => {
-  if (!redis) return res.status(503).json({ error: "progress storage not configured" });
-  const email = normalizeEmail(req.params.email);
-  if (!email) return res.status(400).json({ error: "invalid email" });
+app.get("/api/roadmap", (req, res) => {
   try {
-    const data = await redis.get(`progress:${email}`);
-    res.json(data || {});
-  } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.json(JSON.parse(fs.readFileSync(ROADMAP_FILE, "utf8")));
+  } catch {
+    res.json([]);
   }
 });
 
-app.put("/api/progress/:email", async (req, res) => {
-  if (!redis) return res.status(503).json({ error: "progress storage not configured" });
-  const email = normalizeEmail(req.params.email);
-  if (!email) return res.status(400).json({ error: "invalid email" });
-  if (typeof req.body !== "object" || req.body === null || Array.isArray(req.body)) {
-    return res.status(400).json({ error: "body must be a status map" });
-  }
-  try {
-    await redis.set(`progress:${email}`, req.body);
-    res.json({ ok: true });
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+// Course progress and roadmap progress are stored under separate Redis keys
+// so each page can PUT its whole map without clobbering the other's.
+function progressRoutes(route, keyPrefix) {
+  app.get(`${route}/:email`, async (req, res) => {
+    if (!redis) return res.status(503).json({ error: "progress storage not configured" });
+    const email = normalizeEmail(req.params.email);
+    if (!email) return res.status(400).json({ error: "invalid email" });
+    try {
+      const data = await redis.get(`${keyPrefix}:${email}`);
+      res.json(data || {});
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  app.put(`${route}/:email`, async (req, res) => {
+    if (!redis) return res.status(503).json({ error: "progress storage not configured" });
+    const email = normalizeEmail(req.params.email);
+    if (!email) return res.status(400).json({ error: "invalid email" });
+    if (typeof req.body !== "object" || req.body === null || Array.isArray(req.body)) {
+      return res.status(400).json({ error: "body must be a status map" });
+    }
+    try {
+      await redis.set(`${keyPrefix}:${email}`, req.body);
+      res.json({ ok: true });
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+}
+
+progressRoutes("/api/progress", "progress");
+progressRoutes("/api/roadmap-progress", "roadmap");
 
 app.post("/api/sync", async (req, res) => {
   if (!ADMIN_KEY || req.query.key !== ADMIN_KEY) {

@@ -1,0 +1,2309 @@
+[
+  {
+    "day": 1,
+    "title": "Spark foundations and setup",
+    "theme": "Spark foundations and setup",
+    "checklist": "1. Basics",
+    "labOutput": "First SparkSession, first DataFrame, Spark UI tour",
+    "goal": "Explain what Spark is, how a cluster is laid out, and run your first PySpark query.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "(added) Why Spark exists",
+            "text": "one machine runs out of memory and cores, so Spark splits data into partitions and processes them in parallel. Compare it with MapReduce: Spark keeps intermediate data in memory and plans the whole job as a DAG.",
+            "id": "d1-concepts-0"
+          },
+          {
+            "title": "Apache Spark architecture",
+            "text": "a driver, a cluster manager, and executors that run tasks.",
+            "id": "d1-concepts-1"
+          },
+          {
+            "title": "(added) Cluster managers and deploy modes",
+            "text": "local, standalone, YARN, Kubernetes; client mode vs cluster mode.",
+            "id": "d1-concepts-2"
+          },
+          {
+            "title": "What is a SparkSession",
+            "text": "the single entry point for DataFrames, SQL, configuration and the catalog. It wraps the older SparkContext.",
+            "id": "d1-concepts-3"
+          },
+          {
+            "title": "Driver vs executor",
+            "text": "the driver holds your program, builds the plan, and schedules tasks. Executors are JVM processes that run tasks, cache data, and report back. A task is one unit of work on one partition.",
+            "id": "d1-concepts-4"
+          },
+          {
+            "title": "(added) PySpark DataFrame basics",
+            "text": "schema, select, filter, withColumn, groupBy().agg(), join, show, printSchema.",
+            "id": "d1-concepts-5"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Create a virtual environment and pip install pyspark. Pin one version, and choose it with Day 13 in mind: Delta Lake only works with specific Spark versions (see Resources). Install the Java version that your chosen release documents.",
+            "id": "d1-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Start a session with SparkSession.builder.master('local[*]').appName('day1').getOrCreate().",
+            "id": "d1-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Read a CSV twice, once with inferSchema and once with an explicit schema. Compare the two with printSchema().",
+            "id": "d1-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Run a filter, groupBy and agg, then open http://localhost:4040 and find your job.",
+            "id": "d1-lab-3"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Read the Cluster Mode Overview page in the Spark docs, then redraw its diagram with your own labels. Run one aggregation with master('local[1]') and again with local[4]. Compare the task timelines in the Spark UI to see that parallelism equals available cores.",
+            "id": "d1-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Write the same five queries twice, once in the DataFrame API and once in spark.sql against a temp view (createOrReplaceTempView). Confirm the explain outputs match. Then misspell a column name in each and compare the error messages. Note which planning phase raised them.",
+            "id": "d1-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) Where does the driver run in client mode and in cluster mode? (2) What happens when an executor dies, and what happens when the driver dies? (3) Why does spark.range(10) start no job but spark.range(10).count() does? (4) How does a SparkSession differ from a SparkContext?",
+            "id": "d1-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Clean a messy orders table",
+            "text": "orders(order_id, customer_email, amount_text, ordered_at), where amount_text looks like $1,204.50 or is blank, and ordered_at is a string in one of two date formats. Return order_id, the email domain, the amount as a double (null when blank), and the order date as a date.",
+            "difficulty": "E",
+            "id": "d1-coding-drills-0"
+          },
+          {
+            "title": "Tenure bands",
+            "text": "staff(id, full_name, hired_on, salary). Add tenure_years rounded to 1 decimal as of a fixed date, and a band of low, mid or high using when chains with boundaries you choose. Keep only people hired after a cutoff date.",
+            "difficulty": "E",
+            "id": "d1-coding-drills-1"
+          },
+          {
+            "title": "Extract a marketing source",
+            "text": "visits(user_id, url). Pull the utm_source query parameter out of each URL with a regex, and use direct when the URL has none.",
+            "difficulty": "M",
+            "id": "d1-coding-drills-2"
+          },
+          {
+            "title": "Normalize tags without exploding",
+            "text": "A column holds comma-separated tags with inconsistent spacing and case. Return one string per row with the tags lowercased, trimmed, de-duplicated and sorted, using only array functions.",
+            "difficulty": "M",
+            "id": "d1-coding-drills-3"
+          },
+          {
+            "title": "Plan check",
+            "text": "all four are narrow transformations. Confirm that explain shows no Exchange.",
+            "id": "d1-coding-drills-4"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "you can draw driver, cluster manager and executors from memory and say what each one does. In local mode, say where each one lives.",
+            "id": "d1-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 2,
+    "title": "The execution model",
+    "theme": "Execution model: lazy evaluation, jobs, stages, fault tolerance",
+    "checklist": "1. Basics",
+    "labOutput": "Count jobs, stages and tasks for three queries",
+    "goal": "Trace one query from your code to tasks, and explain how Spark recovers from a lost executor.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "Transformation vs action",
+            "text": "select, filter, join, groupBy only describe work. count, collect, show and write start it.",
+            "id": "d2-concepts-0"
+          },
+          {
+            "title": "Lazy evaluation",
+            "text": "transformations build a plan and nothing runs until an action. That lets Spark optimize the whole chain at once.",
+            "id": "d2-concepts-1"
+          },
+          {
+            "title": "DataFrame vs RDD",
+            "text": "an RDD is a distributed collection of opaque objects with no optimizer. A DataFrame adds a schema, so Catalyst and Tungsten can optimize it. In PySpark, DataFrame work stays inside the JVM, while RDD lambdas pay Python serialization cost.",
+            "id": "d2-concepts-2"
+          },
+          {
+            "title": "(added) RDD basics",
+            "text": "partitions, map, filter, reduceByKey, and lineage. Use rdd.toDebugString() to see lineage.",
+            "id": "d2-concepts-3"
+          },
+          {
+            "title": "Narrow vs wide dependencies",
+            "text": "in a narrow one each output partition reads one input partition (filter, map). In a wide one it reads many (groupBy, join, distinct, orderBy), which forces a shuffle.",
+            "id": "d2-concepts-4"
+          },
+          {
+            "title": "Lifecycle of a job",
+            "text": "an action creates a job, Spark cuts the DAG into stages at each shuffle, each stage becomes one task per partition, the scheduler sends tasks to executors, and results return to the driver.",
+            "id": "d2-concepts-5"
+          },
+          {
+            "title": "Fault tolerance",
+            "text": "Spark replays lineage to rebuild a lost partition, retries failed tasks and stages, can run speculative copies of slow tasks, and uses checkpoints to cut long lineage.",
+            "id": "d2-concepts-6"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Write a read, filter, groupBy, count chain and confirm that no job appears in the UI until the action runs.",
+            "id": "d2-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Set spark.sql.adaptive.enabled to false so the numbers are exact. For three queries, record jobs, stages and tasks from the UI.",
+            "id": "d2-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Change spark.sql.shuffle.partitions from 200 to 8 and watch the task count of the stage after the shuffle change.",
+            "id": "d2-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Print df.rdd.getNumPartitions() before and after a repartition.",
+            "id": "d2-lab-3"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Build the same grouped count with the RDD API (map then reduceByKey) and with a DataFrame. Compare runtime, the RDD lineage from toDebugString(), and the DataFrame explain output. After the shuffle, look in the folder set by spark.local.dir (the system temp folder by default) for blockmgr-* directories, where shuffle files live.",
+            "id": "d2-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Make one task fail with a Python UDF that raises an error on a single row. In plain local[*] mode the job fails at once, because local mode does not retry tasks. Restart with the master set to local[*,4], which allows 4 attempts, and watch the attempts in the UI. A deterministic error fails every attempt, so retries only help with transient failures. Then read about spark.task.maxFailures and spark.speculation.",
+            "id": "d2-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) Draw the DAG for a query with a filter, a join and a groupBy. How many stages does it have? (2) What is the difference between a job, a stage and a task? (3) When does lineage-based recovery win over checkpointing, and when does it lose? (4) Which of these cause a shuffle: select, distinct, filter, orderBy, union?",
+            "id": "d2-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Ride summary",
+            "text": "rides(ride_id, city, fare, tip, started_at). Per city and day, return the ride count, the total fare, the average tip with null tips counted as zero, and the share of rides that had a tip.",
+            "difficulty": "E",
+            "id": "d2-coding-drills-0"
+          },
+          {
+            "title": "Conditional counts, two ways",
+            "text": "For each customer, count orders in each of three statuses as separate columns, first with sum(when(...)), then with pivot and an explicit value list. Compare the plans.",
+            "difficulty": "M",
+            "id": "d2-coding-drills-1"
+          },
+          {
+            "title": "Above-average cities",
+            "text": "Return the cities that have at least 100 distinct riders and an average fare above the average fare across all rides. Get the overall average without collect.",
+            "difficulty": "M",
+            "id": "d2-coding-drills-2"
+          },
+          {
+            "title": "Outlier flags",
+            "text": "Compute each group's mean and standard deviation, then flag rows more than 2 standard deviations from their group's mean. Use a join back to the group statistics. On Day 3 you will redo it with a window.",
+            "difficulty": "H",
+            "id": "d2-coding-drills-3"
+          },
+          {
+            "title": "Plan check",
+            "text": "for each solution, count the jobs and stages in the UI. Say which solution needs a broadcast, and why.",
+            "id": "d2-coding-drills-4"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "for any 5-line query you can say which lines are lazy, where the stage boundary falls, and how many tasks each stage has.",
+            "id": "d2-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 3,
+    "title": "Catalyst and Tungsten, how Spark plans a query",
+    "theme": "Catalyst and Tungsten: how Spark plans a query",
+    "checklist": "1. Basics",
+    "labOutput": "Walk one query through all four plan stages",
+    "goal": "Name every step between your code and running tasks, and read each plan.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "(added) What a query plan is",
+            "text": "a tree of operators. DataFrame code and SQL compile into the same tree, which is why they perform the same. explain has five modes: simple, extended, codegen, cost and formatted.",
+            "id": "d3-concepts-0"
+          },
+          {
+            "title": "",
+            "text": "What the Catalyst optimizer does, in four phases:",
+            "id": "d3-concepts-1"
+          },
+          {
+            "title": "",
+            "text": "Parsing and analysis. Your code becomes an unresolved logical plan. The analyzer then resolves table names, column names and types against the catalog.",
+            "id": "d3-concepts-2"
+          },
+          {
+            "title": "",
+            "text": "Logical optimization. Rule-based rewrites run repeatedly until the plan stops changing. Key rules: predicate pushdown, column pruning, constant folding, merging adjacent filters and projections, boolean simplification.",
+            "id": "d3-concepts-3"
+          },
+          {
+            "title": "",
+            "text": "Physical planning. Spark turns the logical plan into one or more physical plans, chooses concrete operators (for example the join algorithm), and picks the cheapest.",
+            "id": "d3-concepts-4"
+          },
+          {
+            "title": "",
+            "text": "Code generation. Whole-stage codegen fuses a chain of operators into one generated Java function. In the plan, fused operators carry a *(1) style marker.",
+            "id": "d3-concepts-5"
+          },
+          {
+            "title": "Rule-based vs cost-based",
+            "text": "most optimization is rule-based. The cost-based optimizer needs table and column statistics from ANALYZE TABLE and is off by default (spark.sql.cbo.enabled).",
+            "id": "d3-concepts-6"
+          },
+          {
+            "title": "What Tungsten is",
+            "text": "a binary row format (UnsafeRow) with explicit memory management, cache-friendly data layout, and whole-stage codegen. It means fewer JVM objects and less garbage collection.",
+            "id": "d3-concepts-7"
+          },
+          {
+            "title": "Where stages come from",
+            "text": "every Exchange node in a physical plan is a shuffle, and so a stage boundary.",
+            "id": "d3-concepts-8"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Write a small dataset to Parquet. Then read it, filter, select two columns, join a small table, and aggregate.",
+            "id": "d3-lab-0"
+          },
+          {
+            "title": "Run explain('extended') and label its four sections",
+            "text": "Parsed, Analyzed, Optimized Logical, Physical.",
+            "id": "d3-lab-1"
+          },
+          {
+            "title": "",
+            "text": "In the scan node, find PushedFilters and ReadSchema. Write down what the optimizer moved into the scan.",
+            "id": "d3-lab-2"
+          },
+          {
+            "title": "Write a deliberately wasteful query",
+            "text": "filter after the join, select * then pick one column, a filter containing 1 + 1. See which rules clean it up.",
+            "id": "d3-lab-3"
+          },
+          {
+            "title": "",
+            "text": "Exclude one rule with spark.sql.optimizer.excludedRules and diff the plans.",
+            "id": "d3-lab-4"
+          },
+          {
+            "title": "",
+            "text": "Run explain('codegen') once, only to see that generated code exists.",
+            "id": "d3-lab-5"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Print each plan on its own from Python with df._jdf.queryExecution().analyzed(), .optimizedPlan() and .executedPlan() (an internal API, fine for learning). Save your query's table, run ANALYZE TABLE ... COMPUTE STATISTICS, set spark.sql.cbo.enabled to true, and compare EXPLAIN COST before and after. Skim the rule batches in Optimizer.scala in the Spark source on GitHub, and match three rule names to what you saw in your plans.",
+            "id": "d3-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Predict, then verify, which Catalyst rule fires for five queries: a filter pushed below a join, a filter pushed below an aggregate, column pruning after select * then select a, constant folding, and boolean simplification. Then wrap one filter in a Python UDF and show that PushedFilters goes empty for it. Fix it by rewriting with built-in expressions.",
+            "id": "d3-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) Why do DataFrame code and SQL perform the same? (2) What can Catalyst do for DataFrames that it cannot do for RDD code? (3) What does *(2) in a plan mean? (4) Which operators sit between two generated-code regions, and why?",
+            "id": "d3-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Latest and top readings",
+            "text": "readings(device_id, ts, value). Return the latest reading per device, and separately the three highest readings per device with ties kept.",
+            "difficulty": "E",
+            "id": "d3-coding-drills-0"
+          },
+          {
+            "title": "Dedupe with a tiebreak",
+            "text": "messages(device_id, ts, seq, payload). For rows that share (device_id, ts), keep the one with the largest seq, and if seq also ties, the smallest payload.",
+            "difficulty": "M",
+            "id": "d3-coding-drills-1"
+          },
+          {
+            "title": "First threshold crossing",
+            "text": "For each device, return the first reading above 100 and how many readings came before it.",
+            "difficulty": "M",
+            "id": "d3-coding-drills-2"
+          },
+          {
+            "title": "Top two with a rule",
+            "text": "sales(category, product, revenue). Return one row per category with first_product and second_product, where second_product is null when its revenue is under half of the first's.",
+            "difficulty": "H",
+            "id": "d3-coding-drills-3"
+          },
+          {
+            "title": "Plan check",
+            "text": "every window with a partitionBy shows an Exchange hashpartitioning, a Sort and a Window node. Find all three. Then redo Day 2 problem 4 with a window and compare the two plans.",
+            "id": "d3-coding-drills-4"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "given any explain output, you can point to where pushdown, pruning, constant folding and codegen happened, and name the Catalyst phase responsible for each.",
+            "id": "d3-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 4,
+    "title": "Adaptive Query Execution and operator internals",
+    "theme": "AQE and operator internals (count distinct, avg, sort)",
+    "checklist": "1. Basics",
+    "labOutput": "Plans for each operator, AQE on vs off",
+    "goal": "Explain how Spark re-plans while a query runs, and how count(distinct), avg, approx_count_distinct and sorting execute across partitions.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "What AQE is",
+            "text": "the plan Spark picks before running is based on estimates. AQE re-optimizes at each shuffle boundary using the real size of the finished stage. It does three things: coalesces many small shuffle partitions into fewer, switches a sort-merge join to a broadcast join when one side turns out small, and splits skewed partitions in joins. It is on by default in recent versions (spark.sql.adaptive.enabled). In explain you see AdaptiveSparkPlan isFinalPlan=false, and the Spark UI SQL tab shows the final plan after the run.",
+            "id": "d4-concepts-0"
+          },
+          {
+            "title": "(added) How an aggregation runs",
+            "text": "every partition computes a partial aggregate, Spark shuffles by the grouping key, and a final aggregate merges the partials. This is why sum and count scale so well.",
+            "id": "d4-concepts-1"
+          },
+          {
+            "title": "How avg() works",
+            "text": "Spark splits it into sum and count. Each partition emits a (sum, count) pair, the final step adds the pairs, then divides. Nulls are skipped by both parts. Averaging the per-partition averages would be wrong, which is why Spark never does that.",
+            "id": "d4-concepts-2"
+          },
+          {
+            "title": "How count(distinct) works",
+            "text": "a distinct count cannot be merged from simple partials, so Catalyst rewrites it into two levels of aggregation. The first level groups by the key and the distinct column to remove duplicates, and the second counts the rows. Several distinct counts in one query add an Expand node that multiplies rows, which makes them expensive.",
+            "id": "d4-concepts-3"
+          },
+          {
+            "title": "How sorting works",
+            "text": "orderBy is a global sort. Spark samples the data (an extra job you can see in the UI) to pick range boundaries, shuffles rows into those ranges (Exchange rangepartitioning), then sorts each partition locally, spilling to disk if it must. sortWithinPartitions skips the shuffle and sorts each partition only.",
+            "id": "d4-concepts-4"
+          },
+          {
+            "title": "count() as an action vs approx_count_distinct()",
+            "text": "df.count() is an action that runs a job and returns an exact row count to the driver. approx_count_distinct is an aggregate function used inside a query. It uses the HyperLogLog++ algorithm, trades a small error (default relative error 5%) for fixed small memory per group, and avoids the full shuffle that an exact distinct needs.",
+            "id": "d4-concepts-5"
+          },
+          {
+            "title": "(added) Reading the SQL tab in the Spark UI",
+            "text": "each operator shows rows output, shuffle bytes and spill size. Learn to read it now, because Days 7 to 11 rely on it.",
+            "id": "d4-concepts-6"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Generate 10 million rows with spark.range and add a few derived columns, including one low-cardinality key and one high-cardinality column.",
+            "id": "d4-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Run avg, countDistinct, approx_count_distinct and orderBy. For each, save explain('formatted') output and the wall-clock time.",
+            "id": "d4-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Find the Expand node in the distinct-count plan. Find the extra sampling job for orderBy in the Jobs tab.",
+            "id": "d4-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Repeat one query with AQE on and off, and with spark.sql.shuffle.partitions at 200 and at 8. Find the coalesced shuffle read in the final plan.",
+            "id": "d4-lab-3"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Run approx_count_distinct with rsd set to 0.01, 0.05 and 0.2 on 10 million rows. Compare each result's error against the exact countDistinct, and compare runtimes. Then read the whole AQE section of the Spark SQL performance tuning page and list every AQE setting with what it controls.",
+            "id": "d4-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Run orderBy followed by limit(10) and read the plan. Look for TakeOrderedAndProject instead of a full sort. Then ask for countDistinct on two columns in one query and watch rows multiply in the Expand node. Rewrite it as two separate queries, then compare runtimes.",
+            "id": "d4-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) Why is averaging per-partition averages wrong? (2) Describe the stages of df.groupBy('k').agg(countDistinct('v')). (3) What are the stages of a global orderBy, and why is there an extra sampling job? (4) When would you choose approx_count_distinct over countDistinct, and what do you give up?",
+            "id": "d4-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Day over day",
+            "text": "shop_sales(shop, day, revenue). Add the previous day's revenue and the change from it, with null on the first day.",
+            "difficulty": "E",
+            "id": "d4-coding-drills-0"
+          },
+          {
+            "title": "Rolling 7-day total with gaps",
+            "text": "For each shop and day, total the revenue over that day and the six days before it. Use a range window over the date as a number, so days with no row are skipped naturally.",
+            "difficulty": "M",
+            "id": "d4-coding-drills-1"
+          },
+          {
+            "title": "Revenue coverage",
+            "text": "store_items(store, item, revenue). Per store, keep the smallest set of items whose revenue adds up to at least 80 percent of that store's revenue, highest revenue first.",
+            "difficulty": "M",
+            "id": "d4-coding-drills-2"
+          },
+          {
+            "title": "Status runs",
+            "text": "heartbeats(machine, minute, status), where status is up or down each minute. Return one row per uninterrupted run of the same status per machine, with start minute, end minute and length.",
+            "difficulty": "H",
+            "id": "d4-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 3 problem 2 from a blank file in 10 minutes, without notes.",
+            "id": "d4-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "when two window specs share the same partitionBy and orderBy, Spark can reuse one sort. Write two windows both ways, and compare the number of Exchange and Sort nodes.",
+            "id": "d4-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "you can explain in two sentences each how avg, count(distinct) and orderBy run across partitions, and say what AQE changed in your plans.",
+            "id": "d4-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 5,
+    "title": "Row vs columnar storage",
+    "theme": "File formats I: row vs columnar",
+    "checklist": "2. File formats",
+    "labOutput": "One dataset in CSV, JSON, Parquet, ORC, Avro",
+    "goal": "Explain why Parquet beats CSV for analytics, and prove it with plans and file sizes.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "(added) Row-based vs column-based storage",
+            "text": "row formats (CSV, JSON, Avro) keep all fields of a record together. Columnar formats (Parquet, ORC) keep all values of one column together. Analytics usually reads a few columns of many rows, so columnar reads far less.",
+            "id": "d5-concepts-0"
+          },
+          {
+            "title": "Why CSV is a heavy format",
+            "text": "values are stored as text, there is no type information, schema inference costs an extra pass, there are no column or row statistics, and compression is not built in. Every query must read and parse every field of every row.",
+            "id": "d5-concepts-1"
+          },
+          {
+            "title": "Columnar storage (Parquet and ORC)",
+            "text": "data is split into row groups (Parquet) or stripes (ORC), then into column chunks. Each chunk is encoded (dictionary, run-length) and compressed on its own. A footer stores the schema and min/max statistics per chunk.",
+            "id": "d5-concepts-2"
+          },
+          {
+            "title": "Predicate pushdown",
+            "text": "Spark hands filters to the file reader, and the reader uses the min/max statistics to skip row groups that cannot match. You see it as PushedFilters in the scan node. It only works for simple comparisons on columns, not for Python UDFs. Column pruning is its sibling: only the needed columns are read (ReadSchema).",
+            "id": "d5-concepts-3"
+          },
+          {
+            "title": "Schema evolution",
+            "text": "the ability to read old and new files together after columns are added or types widen, without rewriting history. Parquet supports it with the mergeSchema option. Avro handles it with separate writer and reader schemas. CSV has no real support.",
+            "id": "d5-concepts-4"
+          },
+          {
+            "title": "Why Avro for Kafka and streaming",
+            "text": "Avro is a compact, row-based binary format with strict, well-defined schema evolution rules and a schema registry, and it writes one record at a time cheaply. That suits event streams. It is a poor fit for analytical scans.",
+            "id": "d5-concepts-5"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Generate 2 to 5 million rows with about 30 columns of mixed types.",
+            "id": "d5-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Write the same data as CSV, JSON, Parquet, ORC and Avro. Avro needs the spark-avro package, added through spark.jars.packages with a version that matches your Spark.",
+            "id": "d5-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Compare size on disk, write time, and read time for select of one column.",
+            "id": "d5-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Filter on one column in Parquet and find PushedFilters in explain('formatted'). Then look at the Spark UI scan metrics for files and bytes read.",
+            "id": "d5-lab-3"
+          },
+          {
+            "title": "",
+            "text": "Write a second Parquet batch with an extra column, then read both batches with mergeSchema on.",
+            "id": "d5-lab-4"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Install pyarrow and open one of your Parquet files with pyarrow.parquet.ParquetFile. Print its metadata: row groups, column chunks, encodings, compression, and the min and max statistics. Match those statistics to the row groups your pushdown skipped.",
+            "id": "d5-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Find filters where pushdown does less than you expect: a filter on lower(col), a filter on a cast column, and a filter through a Python UDF. Compare PushedFilters and the files and bytes read in the UI for each, then rewrite each one so more of it pushes down. Also read a 5-million-row CSV with inferSchema and find the extra job it costs in the Jobs tab.",
+            "id": "d5-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) Why is Avro good for Kafka and poor for analytics? (2) What can schema evolution do in Parquet, and what can it not do? (3) Why do wide tables favor columnar formats? (4) What does mergeSchema cost you?",
+            "id": "d5-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Tag counts",
+            "text": "articles(id, tags array<string>). Count how many articles carry each tag, with articles whose tag list is empty or null counted under untagged.",
+            "difficulty": "E",
+            "id": "d5-coding-drills-0"
+          },
+          {
+            "title": "Cart totals without a shuffle",
+            "text": "carts(cart_id, items array<struct<sku, qty, price>>). Compute each cart's total value with aggregate or transform. Then solve it again with explode and groupBy, and compare the plans.",
+            "difficulty": "M",
+            "id": "d5-coding-drills-1"
+          },
+          {
+            "title": "Parse JSON strings",
+            "text": "A column holds JSON text with a nested object and an array. Parse it with from_json and an explicit schema, flatten the result into a tidy table, and send rows that fail to parse to a separate DataFrame.",
+            "difficulty": "M",
+            "id": "d5-coding-drills-2"
+          },
+          {
+            "title": "Spend map",
+            "text": "purchases(customer, category, amount). Per customer, build a map from category to total spend, then return the top category from that map without exploding it again.",
+            "difficulty": "H",
+            "id": "d5-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 3 problem 4 from a blank file in 15 minutes.",
+            "id": "d5-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "transform and aggregate over one row's array show no Exchange, while explode followed by groupBy does. Confirm both in your plans.",
+            "id": "d5-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "you can explain in one minute why a query on 2 of 50 columns reads so much less from Parquet than from CSV, and name what you would check in the plan to prove it.",
+            "id": "d5-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 6,
+    "title": "Layout and performance",
+    "theme": "File formats II: layout and performance",
+    "checklist": "2. File formats",
+    "labOutput": "Partitioned write, pruning proof, small-file fix",
+    "goal": "Choose a format, codec and partition column for a described workload, and defend the choice.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "How partitioned folders improve performance",
+            "text": "partitionBy('date') writes one folder per value. A filter on that column lets Spark skip whole folders, shown as PartitionFilters in the plan. Pick low-cardinality columns that queries actually filter on. A high-cardinality column creates millions of tiny folders.",
+            "id": "d6-concepts-0"
+          },
+          {
+            "title": "The small file problem",
+            "text": "many tiny files cost listing time, per-file task overhead, and metadata load on the driver, and they compress badly. Common causes are too many shuffle partitions at write time, over-partitioning, and streaming micro-batches. Fixes: coalesce or repartition before writing, maxRecordsPerFile, scheduled compaction, AQE coalescing, and Delta OPTIMIZE (Day 14).",
+            "id": "d6-concepts-1"
+          },
+          {
+            "title": "Splittable vs non-splittable files",
+            "text": "a splittable file can be read by several tasks in parallel. Parquet, ORC and plain line-delimited text are splittable. A gzip-compressed CSV is not, so one task must read the whole file. Multi-line JSON and CSV (multiLine=true) are not splittable either.",
+            "id": "d6-concepts-2"
+          },
+          {
+            "title": "Parquet vs ORC",
+            "text": "both are columnar, compressed, and support pushdown. Parquet is the default across engines (Spark, Trino, pandas and more). ORC comes from the Hive ecosystem and fits Hive-centered stacks. In Spark the performance is usually close, so choose by ecosystem.",
+            "id": "d6-concepts-3"
+          },
+          {
+            "title": "The disadvantages of Parquet",
+            "text": "it is not human readable, files are immutable so updates need a table format such as Delta, writes buffer a row group in memory, schema changes such as renames or type changes are limited, and looking up a single record is slow without a layer on top.",
+            "id": "d6-concepts-4"
+          },
+          {
+            "title": "(added) Compression codecs",
+            "text": "snappy (fast, the common default), gzip (smaller, slower), zstd (a good balance), lz4. Compression happens inside Parquet, so Parquet stays splittable with any codec.",
+            "id": "d6-concepts-5"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Write a dataset with partitionBy on a date column. Filter on a date and find PartitionFilters in the plan. Count the files.",
+            "id": "d6-lab-0"
+          },
+          {
+            "title": "Create a small file problem",
+            "text": "write with repartition(2000), then time a read. Fix it with coalesce and maxRecordsPerFile, and compare task counts.",
+            "id": "d6-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Write one large gzip CSV and one plain CSV. Read both and compare how many tasks each read uses.",
+            "id": "d6-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Compare Parquet with snappy and with zstd on size and time.",
+            "id": "d6-lab-3"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Study spark.sql.files.maxPartitionBytes (128 MB by default) and spark.sql.files.openCostInBytes (4 MB by default). For a folder of files with mixed sizes, predict the read partition count by hand, then check it with df.rdd.getNumPartitions(). Change both settings and predict again.",
+            "id": "d6-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Partition a dataset by a high-cardinality column such as user id, so it creates tens of thousands of folders. Time the write, the file listing and a read, and count the files. Then redesign it: partition by date, and plan to serve user lookups with bucketing or Z-ordering (Days 8 and 14). Also compress the same CSV with gzip and with bzip2 and compare read task counts.",
+            "id": "d6-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) A folder holds one 10 GB gzip CSV, 1,000 files of 1 MB each, and ten 1 GB Parquet files. Roughly how many read tasks does each part create, and why? (2) When does partitioning hurt? (3) Why can a gzip-compressed Parquet file be split while a gzip CSV cannot? (4) When would you pick ORC over Parquet?",
+            "id": "d6-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Weekly and monthly rollups",
+            "text": "orders(order_id, placed_at, amount). Return revenue per week (weeks starting Monday) and, as a second output, revenue per calendar month, using date_trunc.",
+            "difficulty": "E",
+            "id": "d6-coding-drills-0"
+          },
+          {
+            "title": "Fill the missing days",
+            "text": "daily_sales(product, day, units). Return one row for every calendar day between each product's first and last sale, with zero units on days that had no sales. Build the date spine with sequence and explode.",
+            "difficulty": "M",
+            "id": "d6-coding-drills-1"
+          },
+          {
+            "title": "Time-window counts",
+            "text": "events(ts, kind). Count events per 10-minute tumbling window, then per 10-minute window sliding every 5 minutes, labeled with the window start.",
+            "difficulty": "M",
+            "id": "d6-coding-drills-2"
+          },
+          {
+            "title": "Sessions",
+            "text": "clicks(user_id, ts, page). A new session starts after 30 minutes of inactivity. Return, per session, its number within the user, its start, its end and its page count.",
+            "difficulty": "H",
+            "id": "d6-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 4 problem 3 from a blank file in 15 minutes.",
+            "id": "d6-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "problem 4 needs two window steps. Count the Exchange and Sort nodes, then write it so the second window reuses the first sort.",
+            "id": "d6-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "given a workload (daily batch, wide table, mostly filtered by date), you can pick the format, codec and partition scheme and explain each choice.",
+            "id": "d6-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 7,
+    "title": "Shuffle and join algorithms",
+    "theme": "Shuffle and join strategies",
+    "checklist": "3. Joins and shuffle",
+    "labOutput": "Force each join type with hints and read the plans",
+    "goal": "Explain what a shuffle costs, and how each join algorithm works step by step.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "What a shuffle is",
+            "text": "moving rows between partitions so that rows with the same key end up together. It happens for wide dependencies such as groupBy, join, distinct, orderBy and repartition. Map tasks write shuffle files to local disk, split by target partition. Reduce tasks then fetch their pieces over the network.",
+            "id": "d7-concepts-0"
+          },
+          {
+            "title": "The cost of a shuffle",
+            "text": "disk writes, network transfer, serialization, a stage barrier (no reduce task starts until every map task finishes), memory pressure and spill, and exposure to skew. It is often the largest cost in a job.",
+            "id": "d7-concepts-1"
+          },
+          {
+            "title": "spark.sql.shuffle.partitions",
+            "text": "the number of partitions after a shuffle in DataFrame and SQL code, 200 by default. Too few gives huge partitions that spill or run out of memory. Too many gives thousands of tiny tasks. AQE can coalesce them at runtime.",
+            "id": "d7-concepts-2"
+          },
+          {
+            "title": "Broadcast Hash Join",
+            "text": "Spark collects the small side to the driver, sends a copy to every executor, and each executor builds a hash table. The big side is scanned and probed in place, so the big side is never shuffled. It is triggered when one side's estimated size is under spark.sql.autoBroadcastJoinThreshold (10 MB by default) or when you use the broadcast() hint.",
+            "id": "d7-concepts-3"
+          },
+          {
+            "title": "How a hash join works, in two phases",
+            "text": "the build phase makes a hash table from the smaller side keyed by the join key, and the probe phase looks up each row of the larger side in that table.",
+            "id": "d7-concepts-4"
+          },
+          {
+            "title": "Shuffle Hash Join",
+            "text": "both sides are shuffled by join key, then each partition builds a hash table from its smaller side and probes it. There is no sort, but the build side must fit in memory.",
+            "id": "d7-concepts-5"
+          },
+          {
+            "title": "Sort-Merge Join, in three stages",
+            "text": "(1) shuffle both sides by join key, (2) sort each partition by key, (3) walk the two sorted streams together and merge matches. It is the default for large equi-joins because it can spill to disk and does not need a hash table in memory.",
+            "id": "d7-concepts-6"
+          },
+          {
+            "title": "Cartesian product",
+            "text": "pairs every row of one side with every row of the other, so n rows by m rows gives n times m output. It appears when there is no join condition, or as a nested loop join for non-equi conditions. Ask for it explicitly with crossJoin.",
+            "id": "d7-concepts-7"
+          },
+          {
+            "title": "(added) Join types and what they allow",
+            "text": "inner, left, right, full outer, left semi, left anti. For an outer join you cannot broadcast the side whose rows must all be kept.",
+            "id": "d7-concepts-8"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Build a large table (10 million rows), a medium table (5 million rows) and a small dimension table (1,000 rows).",
+            "id": "d7-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Join the large and small tables with defaults and confirm BroadcastHashJoin in the plan.",
+            "id": "d7-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Set spark.sql.autoBroadcastJoinThreshold to -1. Now find SortMergeJoin, the two Exchange nodes and the two Sort nodes.",
+            "id": "d7-lab-2"
+          },
+          {
+            "title": "Force each strategy with hints",
+            "text": "broadcast, shuffle_hash, merge. Read each plan.",
+            "id": "d7-lab-3"
+          },
+          {
+            "title": "",
+            "text": "Run a join with no condition and read what Spark does. Compare the output row count with the inputs.",
+            "id": "d7-lab-4"
+          },
+          {
+            "title": "",
+            "text": "In the Spark UI SQL tab, compare shuffle bytes written for each strategy.",
+            "id": "d7-lab-5"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Walk a sort-merge join on paper with two tiny tables, each split over two partitions. Draw the map output files, the reducers, the sort and the merge. Then run the same tiny query and compare your drawing with shuffle write and shuffle read in the SQL tab. Read the join strategy hints section of the performance tuning page and try every hint, including shuffle_replicate_nl.",
+            "id": "d7-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Force a broadcast of a table that is too large for the driver (set a small spark.driver.memory and broadcast a big table), read the error, and fix it with a shuffle-based join. Then run a join where many keys are null and confirm that null keys never match in an equi-join.",
+            "id": "d7-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) Which join types cannot broadcast a given side? (2) Why does a sort-merge join need sorting, and what makes it scale? (3) What is the difference between Exchange hashpartitioning, rangepartitioning and SinglePartition? (4) What does a cross join of 100,000 rows with 100,000 rows produce, and why is that dangerous?",
+            "id": "d7-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Present and absent",
+            "text": "students(id, name) and enrollments(student_id, course). List students with no enrollments, and separately students with at least one, each student once.",
+            "difficulty": "E",
+            "id": "d7-coding-drills-0"
+          },
+          {
+            "title": "The rate in effect",
+            "text": "orders(order_id, ordered_on, amount, currency) and rates(currency, valid_from, valid_to, usd_per_unit). Convert each order to USD using the rate valid on its date. Note the join strategy Spark picks, then temporarily drop the currency match from the condition to see what a range-only join costs.",
+            "difficulty": "M",
+            "id": "d7-coding-drills-1"
+          },
+          {
+            "title": "Inflated counts",
+            "text": "customers(id), phones(customer_id, phone) and addresses(customer_id, address). Count phones and addresses per customer. First join all three tables and see the inflated counts, then fix it by aggregating before joining.",
+            "difficulty": "M",
+            "id": "d7-coding-drills-2"
+          },
+          {
+            "title": "Null keys",
+            "text": "events(event_id, user_id) has many null user_id values. Return every event with the user's name when known, plus exact counts of known and unknown events. Decide where eqNullSafe is needed and where it would be wrong.",
+            "difficulty": "H",
+            "id": "d7-coding-drills-3"
+          },
+          {
+            "title": "Plan check",
+            "text": "for each join, name the strategy and count the shuffles. Then force the opposite strategy with a hint and compare the plans.",
+            "id": "d7-coding-drills-4"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "shown any join plan, you can name the strategy, count the shuffles, and say why Spark picked it.",
+            "id": "d7-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 8,
+    "title": "Strategy choice, bucketing and AQE for joins",
+    "theme": "Join strategy choice, bucketing, AQE joins",
+    "checklist": "3. Joins and shuffle",
+    "labOutput": "A bucketed join with no shuffle",
+    "goal": "Predict which strategy Spark picks, and remove shuffles on purpose.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "How Spark chooses a join strategy, roughly in this order",
+            "text": "a hint in your query wins; for an equi-join Spark broadcasts a side whose estimated size is under the threshold and whose join type allows it; otherwise it prefers sort-merge join; with no equi condition it falls back to broadcast nested loop join and then Cartesian product. Size estimates come from file sizes and statistics, so they can be wrong after a filter. That gap is what AQE fixes.",
+            "id": "d8-concepts-0"
+          },
+          {
+            "title": "How to avoid a shuffle during a join",
+            "text": "broadcast the small side, bucket both tables on the join key, filter and select early so less data moves, and reuse an existing partitioning (Spark drops an Exchange when the data is already partitioned by the same key).",
+            "id": "d8-concepts-1"
+          },
+          {
+            "title": "What bucketing is",
+            "text": "at write time Spark hashes rows on a column into a fixed number of bucket files (bucketBy(n, col)), optionally sorted inside each bucket. It needs a table (saveAsTable). Two tables bucketed on the join key with the same bucket count can be joined with no shuffle. The trade-offs are a fixed bucket count, more files, and discipline when writing.",
+            "id": "d8-concepts-2"
+          },
+          {
+            "title": "How AQE helps joins",
+            "text": "it switches a sort-merge join to a broadcast join when a side turns out small after a filter or shuffle, it coalesces small post-shuffle partitions, and it splits skewed partitions (Day 9).",
+            "id": "d8-concepts-3"
+          },
+          {
+            "title": "Broadcast Hash Join vs Shuffle Hash Join, side by side",
+            "text": "the first broadcasts one side and shuffles nothing, the second shuffles both sides and then hashes per partition.",
+            "id": "d8-concepts-4"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Write down six join scenarios (sizes, join types, hints) and predict the strategy for each. Run explain and score yourself.",
+            "id": "d8-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Write two tables with bucketBy(16, 'id') using saveAsTable. Join them and confirm the join inputs have no Exchange.",
+            "id": "d8-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Filter a big table so it is small only at runtime. With AQE on, find the switch to BroadcastHashJoin in the final plan of the SQL tab.",
+            "id": "d8-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Tune spark.sql.shuffle.partitions for a join and watch AQE coalesce the result.",
+            "id": "d8-lab-3"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "On paper, build your own decision flowchart for join strategy selection. Then test it with at least 12 experiments that vary sizes, join type, equi vs non-equi condition, and hints. Set spark.sql.join.preferSortMergeJoin to false and find when a Shuffle Hash Join appears. Read the AQE join settings on the tuning page.",
+            "id": "d8-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Bucket two tables with different bucket counts (16 and 8) and observe that one side still shuffles. Then read about spark.sql.bucketing.coalesceBucketsInJoin.enabled and test whether it removes that shuffle. Also join two bucketed tables on a column that is not the bucket column, and watch the shuffle return.",
+            "id": "d8-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Predict the strategy and the number of shuffles for each case, then verify with explain. (1) A 50 GB table and an 8 MB table, inner join. (2) The same tables, but the 8 MB table is the left side of a left outer join. (3) Two 50 GB tables, equi-join. (4) A non-equi join of a large table and a small one. (5) Two tables bucketed on the same key with the same bucket count.",
+            "id": "d8-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Staff and managers",
+            "text": "staff(id, name, manager_id). Return each person with their manager's name, and the number of direct reports per person, including people with zero reports.",
+            "difficulty": "E",
+            "id": "d8-coding-drills-0"
+          },
+          {
+            "title": "Same-day pairs",
+            "text": "visits(patient, doctor, day). List all pairs of patients who saw the same doctor on the same day. Show each pair once, and never pair a patient with themselves.",
+            "difficulty": "M",
+            "id": "d8-coding-drills-1"
+          },
+          {
+            "title": "Bought everything",
+            "text": "required_items(item) and purchases(customer, item). Return the customers who bought every required item at least once.",
+            "difficulty": "M",
+            "id": "d8-coding-drills-2"
+          },
+          {
+            "title": "Chain to the top",
+            "text": "For each employee, build the chain of managers up to 5 levels as an array, using a bounded loop of self-joins. Watch how the plan grows, and keep it in check with cache or localCheckpoint.",
+            "difficulty": "H",
+            "id": "d8-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 5 problem 2 from a blank file in 15 minutes.",
+            "id": "d8-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "rerun problem 2 with both tables bucketed on doctor (from today's lab) and confirm that a shuffle disappears.",
+            "id": "d8-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "you can predict the strategy for six described cases, and design a bucketed layout that removes the shuffle in a recurring join.",
+            "id": "d8-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 9,
+    "title": "Data skew",
+    "theme": "Data skew",
+    "checklist": "4. Data skew",
+    "labOutput": "Create skew, spot it in the UI, fix it three ways",
+    "goal": "Diagnose skew from the Spark UI, explain why it hurts, and fix it with at least three techniques.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "What data skew is",
+            "text": "an uneven spread of data across partitions, where a few partitions hold far more rows than the rest. The usual cause is a few dominant key values: null keys, a default value, one very large customer.",
+            "id": "d9-concepts-0"
+          },
+          {
+            "title": "Why it is dangerous",
+            "text": "a stage finishes only when its slowest task finishes, so one oversized partition leaves the rest of the cluster idle. That partition is also the one most likely to spill, run out of memory, and be retried.",
+            "id": "d9-concepts-1"
+          },
+          {
+            "title": "How to identify skew in the Spark UI",
+            "text": "open the stage, then read the task summary metrics (min, 25th, median, 75th, max) for duration, shuffle read size and spill. A max far above the median is the signature. The event timeline shows one long bar. A groupBy(key).count() sorted descending shows the hot keys directly.",
+            "id": "d9-concepts-2"
+          },
+          {
+            "title": "",
+            "text": "Can skew happen on the read side? Yes. One huge non-splittable file, wildly uneven file sizes, or uneven partition folders all make some read tasks far bigger than others.",
+            "id": "d9-concepts-3"
+          },
+          {
+            "title": "Possible ways to solve skew",
+            "text": "AQE skew join handling, broadcasting the smaller side so the big side never shuffles, salting, handling hot keys separately and unioning the results, filtering or isolating null and junk keys, two-stage aggregation, and repartitioning on a more even key.",
+            "id": "d9-concepts-4"
+          },
+          {
+            "title": "How salting fixes skew",
+            "text": "add a random suffix from 0 to N-1 to the key on the skewed side, and replicate each row of the other side N times, once per suffix. Join on key plus salt. A hot key is now spread over N partitions. The cost is that the other side grows N times. For aggregations, aggregate by key plus salt first, then aggregate again by key.",
+            "id": "d9-concepts-5"
+          },
+          {
+            "title": "Iterative salting",
+            "text": "instead of one salt factor for everything, find the hot keys, give each a salt range sized to its volume, join the rest normally, and union the results. You repeat the measure, salt, re-check loop until no task stands out. The name is used loosely, so be ready to define it the way you used it.",
+            "id": "d9-concepts-6"
+          },
+          {
+            "title": "What AQE skew join optimization is",
+            "text": "after the shuffle, AQE compares partition sizes. A partition counts as skewed when it is larger than a multiple of the median and above a byte threshold (spark.sql.adaptive.skewJoin.skewedPartitionFactor and skewedPartitionThresholdInBytes). AQE splits it into smaller pieces and pairs each piece with a copy of the matching partition from the other side. It applies to sort-merge joins.",
+            "id": "d9-concepts-7"
+          },
+          {
+            "title": "",
+            "text": "Does filtering help with skew? Only if the filter removes the hot keys. Filtering out null or junk keys, and processing them separately, is a common fix. A filter that keeps the hot key does nothing for skew.",
+            "id": "d9-concepts-8"
+          },
+          {
+            "title": "How repartition() affects skew",
+            "text": "repartition(n) spreads rows evenly with a full shuffle and fixes volume skew. repartition('key') hashes by key, so a hot key still lands in one partition and can create skew.",
+            "id": "d9-concepts-9"
+          },
+          {
+            "title": "repartition() vs coalesce() regarding skew",
+            "text": "coalesce only merges existing partitions with no shuffle. It cannot split a big partition, and it can make sizes more uneven.",
+            "id": "d9-concepts-10"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "Generate a skewed table",
+            "text": "10 million rows where half the rows share one key and the rest spread over 100,000 keys. Add a second table with those 100,000 keys.",
+            "id": "d9-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Join them with AQE off. In the Stages tab, find the straggler by comparing max and median task duration.",
+            "id": "d9-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Turn AQE skew handling on. On small local data, lower skewedPartitionThresholdInBytes so it triggers. Compare task times and read the final plan.",
+            "id": "d9-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Implement manual salting with a factor of 16 and compare task times again.",
+            "id": "d9-lab-3"
+          },
+          {
+            "title": "Isolate the hot key",
+            "text": "join it separately with a broadcast, join the rest normally, and union.",
+            "id": "d9-lab-4"
+          },
+          {
+            "title": "",
+            "text": "Group by spark_partition_id() after repartition(8), repartition('key') and coalesce(8) to see partition sizes.",
+            "id": "d9-lab-5"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Implement iterative salting yourself on a join with three hot keys of different sizes. Give each hot key its own salt factor, and record the slowest task time against the salt factor. Then take the shuffle partition sizes shown in the UI and work out by hand which partitions AQE would split, using the median size, the factor and the byte threshold.",
+            "id": "d9-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Skew an aggregation instead of a join: group by a hot key, then fix it with a two-stage salted aggregation, and confirm that AQE skew join handling does not help here. Then create null-key skew with a join where 30 percent of keys are null. Filter the nulls out before an inner join, or handle them separately and union them back for an outer join, and compare.",
+            "id": "d9-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) What is the difference between key skew and read-side skew from uneven files? (2) When does salting hurt? (3) Why does repartition('key') not fix key skew? (4) Why can AQE not fix skew in a groupBy?",
+            "id": "d9-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Delivery percentiles",
+            "text": "deliveries(region, minutes). Return the median and the 90th percentile per region with percentile_approx, then the exact values with percentile. Compare the results and the plans.",
+            "difficulty": "E",
+            "id": "d9-coding-drills-0"
+          },
+          {
+            "title": "Hottest keys",
+            "text": "For a large events(user_id, ...) table, find the 20 keys with the most rows and each key's share of all rows. Then join only those keys with a salted join, join the rest normally, and union the results.",
+            "difficulty": "M",
+            "id": "d9-coding-drills-1"
+          },
+          {
+            "title": "Distinct counts on a hot key",
+            "text": "pageviews(page, user_id), where one page holds half of all rows. Count distinct users per page with a two-stage approach that avoids one huge reducer.",
+            "difficulty": "M",
+            "id": "d9-coding-drills-2"
+          },
+          {
+            "title": "Z-scores in a window",
+            "text": "Flag outliers per group again, this time with window functions. Compare with your Day 2 join-back solution on shuffles and runtime.",
+            "difficulty": "H",
+            "id": "d9-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 7 problem 4 from a blank file in 15 minutes.",
+            "id": "d9-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "for problems 2 and 3, show the task-time spread (max against median) in the UI before and after your fix.",
+            "id": "d9-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "given a stage with one 10-minute task and 199 two-second tasks, you can diagnose skew and list four fixes with the trade-off of each.",
+            "id": "d9-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 10,
+    "title": "The executor memory model",
+    "theme": "Executor memory model",
+    "checklist": "5. Memory",
+    "labOutput": "Trigger spill and GC pressure on purpose",
+    "goal": "Draw the executor memory layout from memory, compute each region by hand, and match symptoms to settings.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "The two main regions in an executor heap",
+            "text": "Spark memory (also called unified memory) and user memory. A fixed 300 MB is reserved first. Of the remaining heap, spark.memory.fraction (0.6 by default) becomes unified memory, and the rest (0.4) is user memory.",
+            "id": "d10-concepts-0"
+          },
+          {
+            "title": "spark.memory.fraction",
+            "text": "the share of the usable heap given to unified memory, which holds both execution data (shuffles, joins, sorts, aggregations) and storage data (cached blocks and broadcasts). spark.memory.storageFraction (0.5 by default) is the part of that pool protected from eviction.",
+            "id": "d10-concepts-1"
+          },
+          {
+            "title": "Unified Memory Management",
+            "text": "execution and storage share one pool and borrow from each other. Execution can evict cached blocks, but only down to the protected storage share. Storage can never evict execution data.",
+            "id": "d10-concepts-2"
+          },
+          {
+            "title": "The user memory region",
+            "text": "the leftover share for your own data structures, UDF objects and Spark internals. Spark does not track it, so overuse ends in an out-of-memory error with no spill to save you.",
+            "id": "d10-concepts-3"
+          },
+          {
+            "title": "(added) Memory overhead",
+            "text": "spark.executor.memoryOverhead is extra memory outside the heap for JVM internals and native buffers. For PySpark it also has to cover the Python worker processes, so a PySpark job with Python UDFs often needs more of it.",
+            "id": "d10-concepts-4"
+          },
+          {
+            "title": "What off-heap memory is",
+            "text": "memory outside the JVM heap that Tungsten manages directly (spark.memory.offHeap.enabled and spark.memory.offHeap.size). The garbage collector never scans it, so it can reduce GC pauses. You must add its size to what you request from the cluster.",
+            "id": "d10-concepts-5"
+          },
+          {
+            "title": "What spilling to disk is",
+            "text": "when execution memory runs out during a sort, aggregation or hash join, Spark writes intermediate data to disk and merges it later. The job still finishes, but slowly, because of disk I/O and serialization. The UI shows Spill (Memory) and Spill (Disk) per stage.",
+            "id": "d10-concepts-6"
+          },
+          {
+            "title": "What GC overhead is",
+            "text": "time the JVM spends on garbage collection instead of running tasks. The Executors tab highlights it when it is a large share of task time. Typical causes are many small objects, deserialized caches and UDFs. Typical fixes are DataFrame operations, off-heap memory, and smaller executors.",
+            "id": "d10-concepts-7"
+          },
+          {
+            "title": "The risk of high spark.executor.cores",
+            "text": "all cores share the executor's memory, so each running task gets a smaller slice of the execution pool, which causes spill and out-of-memory errors. Bigger heaps also mean longer GC pauses and more contention for disk and network.",
+            "id": "d10-concepts-8"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "By hand, for a 10 GB heap (10,240 MB)",
+            "text": "reserved is 300 MB, usable is 9,940 MB, unified memory is 5,964 MB, protected storage is 2,982 MB, and user memory is 3,976 MB. Re-do it for 4 GB and 16 GB.",
+            "id": "d10-lab-0"
+          },
+          {
+            "title": "",
+            "text": "In a fresh Python process, start a session with spark.driver.memory set to 1g (in local mode the driver JVM also runs your tasks, and this must be set before the JVM starts).",
+            "id": "d10-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Run a large sort or aggregation with spark.sql.shuffle.partitions set to 2, so partitions are huge. Find Spill (Disk) in the stage page. Raise partitions to 200 and watch the spill shrink.",
+            "id": "d10-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Run the same logic with a Python UDF and with built-in functions. Compare GC time in the Executors tab.",
+            "id": "d10-lab-3"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Read the Memory Management section of the Spark tuning guide. Compute the memory regions for five executor sizes and compare your unified memory number with the storage memory total shown in the Executors tab, and explain any difference. Then read how spark.executor.pyspark.memory relates to spark.executor.memoryOverhead.",
+            "id": "d10-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Run collect_list on a hot key with a small driver memory, so that one group grows huge, and watch it fail. Fix it by not collecting: aggregate instead, or reduce the group first. Record which region ran out and which setting would have delayed the failure without fixing it.",
+            "id": "d10-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) Which setting would you look at first for each symptom: heavy spill, long GC pauses, a container killed for using too much memory, a driver out-of-memory error? (2) Why not give every executor 64 GB? (3) Why can too many cores per executor cause out-of-memory errors? (4) What is the difference between Spill (Memory) and Spill (Disk) in the UI?",
+            "id": "d10-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Remove a collect",
+            "text": "A job collects a lookup table into a Python dict and loops over rows. Rewrite it as a broadcast join, and explain what runs on the driver and what runs on executors.",
+            "difficulty": "E",
+            "id": "d10-coding-drills-0"
+          },
+          {
+            "title": "Stratified sample",
+            "text": "users(id, country, plan). Take about 1 percent from each country with a fixed seed using sampleBy, and verify the proportions. Build the fractions without collecting the whole table.",
+            "difficulty": "M",
+            "id": "d10-coding-drills-1"
+          },
+          {
+            "title": "Dedupe at scale",
+            "text": "On 10 million rows, deduplicate by id with dropDuplicates(['id']), then with a window that keeps the latest row. Compare spill and runtime in the UI.",
+            "difficulty": "M",
+            "id": "d10-coding-drills-2"
+          },
+          {
+            "title": "Top-k inside an array",
+            "text": "scores(student, marks array<int>). Return each student's top 3 marks as an array, plus their average mark, without exploding and without a UDF.",
+            "difficulty": "H",
+            "id": "d10-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 6 problem 4 from a blank file in 20 minutes.",
+            "id": "d10-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "look for Spill (Disk) in problem 3, and remove it with more partitions or a lighter approach.",
+            "id": "d10-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "given an executor config, you can compute each region by hand, and say whether a symptom points to execution memory, storage memory, user memory, overhead or cores.",
+            "id": "d10-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 11,
+    "title": "Caching, checkpoints and out-of-memory fixes",
+    "theme": "Caching, checkpoints, OOM fixes",
+    "checklist": "5. Memory",
+    "labOutput": "Compare cache, persist, checkpoint, localCheckpoint",
+    "goal": "Choose the right persistence tool for a scenario, and diagnose a driver out-of-memory error.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "cache() vs persist()",
+            "text": "cache() is persist() with the default storage level, which for DataFrames keeps data in memory and spills to disk. persist(level) lets you choose, for example disk only. Both are lazy: data is stored the first time an action runs. Both keep the lineage, so lost blocks are recomputed.",
+            "id": "d11-concepts-0"
+          },
+          {
+            "title": "checkpoint() vs localCheckpoint()",
+            "text": "checkpoint() writes data to reliable storage (set with setCheckpointDir) and cuts the lineage. localCheckpoint() stores data on the executors and cuts the lineage too, but it is lost if an executor dies. The table below compares all four.",
+            "id": "d11-concepts-1"
+          },
+          {
+            "title": "When to use unpersist()",
+            "text": "as soon as the last action that needs the cached data is done. It frees storage memory for execution, and stops Spark from evicting data you still need.",
+            "id": "d11-concepts-2"
+          },
+          {
+            "title": "How to fix a driver out-of-memory error",
+            "text": "the driver runs out when you collect() or toPandas() too much, broadcast a large table, create very many tasks, or list a huge number of files. Fixes: aggregate or limit before collecting, write results to storage instead, lower the broadcast threshold, reduce partitions, and raise spark.driver.memory and spark.driver.maxResultSize only as a last step.",
+            "id": "d11-concepts-3"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Build an expensive DataFrame (join plus aggregation) used by three actions. Time it with no cache, with cache(), and with persist to disk only. Read the Storage tab for size in memory and on disk.",
+            "id": "d11-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Write a loop of 30 withColumn steps. Compare the plan and the lineage (rdd.toDebugString()) before and after checkpoint() and localCheckpoint(). Look at the checkpoint files on disk.",
+            "id": "d11-lab-1"
+          },
+          {
+            "title": "Cause a driver failure",
+            "text": "set spark.driver.memory to 512m and spark.driver.maxResultSize to 100m, then collect() a large result. Read the error, then fix it without raising the limits.",
+            "id": "d11-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Call unpersist() and watch the Storage tab empty.",
+            "id": "d11-lab-3"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Compare the storage levels MEMORY_ONLY, MEMORY_AND_DISK and DISK_ONLY on a 5-million-row DataFrame. For each, record the size in the Storage tab and the runtime of the second action. Then read how spark.catalog.cacheTable and SQL CACHE TABLE differ from df.cache().",
+            "id": "d11-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Cache a DataFrame larger than your storage memory and read Fraction Cached in the Storage tab. Then cache a DataFrame built from files, change those files, and see what a re-read returns. Fix both situations with unpersist, a better storage level, or REFRESH TABLE.",
+            "id": "d11-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) When can cache() make a job slower? (2) Give three cases where you should not cache. (3) Pick cache, persist, checkpoint or localCheckpoint for each: a result reused by three actions, an iterative algorithm with 100 iterations, a result you cannot afford to lose if an executor dies, and a long lineage on a stable cluster. (4) What clues in a driver out-of-memory error tell you whether collect, a broadcast or too many tasks caused it?",
+            "id": "d11-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "One cache in the right place",
+            "text": "A job builds base from a join, then uses it in three separate aggregations. Add one cache() in the right place and prove the gain with the Storage tab and job times. Then show a case where a cache would not help.",
+            "difficulty": "E",
+            "id": "d11-coding-drills-0"
+          },
+          {
+            "title": "Snapshot diff",
+            "text": "yesterday(id, name, tier) and today(id, name, tier). Return the rows added, removed and changed between the two snapshots, with the names of the changed columns, using a full outer join and exceptAll.",
+            "difficulty": "M",
+            "id": "d11-coding-drills-1"
+          },
+          {
+            "title": "Bought together",
+            "text": "order_lines(order_id, product). Return the 10 most common product pairs bought in the same order, each pair once. Check how many rows the self-join produces for the biggest orders.",
+            "difficulty": "M",
+            "id": "d11-coding-drills-2"
+          },
+          {
+            "title": "Iterate without a growing plan",
+            "text": "On a small edge list edges(src, dst), run 10 rounds of a PageRank-style update where each node's score is 0.15 plus 0.85 times the sum of incoming shares, using out-degree. Keep the plan from growing with localCheckpoint or checkpoint, and compare the time per round with and without it.",
+            "difficulty": "H",
+            "id": "d11-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 8 problem 3 from a blank file in 15 minutes.",
+            "id": "d11-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "in problem 3, compare the join when one order has thousands of lines. That is skew by another name, so apply a fix from Day 9.",
+            "id": "d11-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "you can pick among cache, persist, checkpoint and localCheckpoint for four described scenarios, and diagnose a driver out-of-memory error from its message.",
+            "id": "d11-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 12,
+    "title": "Best practices",
+    "theme": "Best practices",
+    "checklist": "6. Best practices",
+    "labOutput": "Refactor a slow job step by step",
+    "goal": "Take a slow, messy job and improve it one change at a time, with a measurable reason for each change.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "Why avoid UDFs",
+            "text": "Catalyst cannot see inside a Python UDF, so it cannot push filters through it or fuse it into generated code. Rows also travel between the JVM and a Python worker process, which adds serialization cost. If you must use one, prefer a pandas UDF, which moves data in Arrow batches.",
+            "id": "d12-concepts-0"
+          },
+          {
+            "title": "Why use standard Spark SQL functions over Python logic",
+            "text": "built-in functions run inside the JVM, Catalyst optimizes them, and they take part in whole-stage codegen. Python logic loses all three.",
+            "id": "d12-concepts-1"
+          },
+          {
+            "title": "repartition() vs coalesce()",
+            "text": "use repartition to raise the partition count, to rebalance evenly, or to partition by a column before a join or write. It costs a full shuffle. Use coalesce to lower the count cheaply with no shuffle, for example before writing fewer files. Do not coalesce(1) on large data.",
+            "id": "d12-concepts-2"
+          },
+          {
+            "title": "Why use broadcast variables",
+            "text": "they send a read-only lookup (a dictionary, a list) to each executor once, instead of with every task. For DataFrames, a broadcast join does the same job.",
+            "id": "d12-concepts-3"
+          },
+          {
+            "title": "The star schema benefit in Spark",
+            "text": "a large fact table surrounded by small dimension tables means the dimensions can be broadcast, so the fact table is never shuffled. Spark can also use filters on a dimension to prune fact-table partitions at runtime (dynamic partition pruning).",
+            "id": "d12-concepts-4"
+          },
+          {
+            "title": "Why avoid lit() in loops",
+            "text": "each withColumn(name, lit(value)) call in a loop adds another projection to the logical plan. Hundreds of them make the plan deep, so analysis and optimization get slow on the driver. Build the column list once and use a single select, or use withColumns.",
+            "id": "d12-concepts-5"
+          },
+          {
+            "title": "How to handle hardcoded values",
+            "text": "move paths, thresholds and mappings into a config file or job parameters, keep constants in one module, and pass lookup data in as a table or a broadcast.",
+            "id": "d12-concepts-6"
+          },
+          {
+            "title": "How to handle data lineage",
+            "text": "the plan and explain give you lineage inside one run. For lineage across jobs, add metadata columns (source file with input_file_name(), load timestamp), keep table history (Delta history on Day 13), and use a lineage tool such as OpenLineage through a Spark listener.",
+            "id": "d12-concepts-7"
+          },
+          {
+            "title": "(added) Structured Streaming in one paragraph",
+            "text": "Spark reads a stream as a series of small batches, keeps running state for aggregations, and records progress in a checkpoint location.",
+            "id": "d12-concepts-8"
+          },
+          {
+            "title": "How to handle late data in streaming",
+            "text": "set an event-time watermark with withWatermark('event_time', '10 minutes'). Spark waits that long for stragglers, then closes the window and drops older state. A longer watermark gives more complete results but more state and more delay.",
+            "id": "d12-concepts-9"
+          },
+          {
+            "title": "Why limit the use of checkpoint()",
+            "text": "it writes the whole dataset to storage and reads it back, which costs I/O and space, and the files need cleaning up. Use it to cut a very long lineage or to save an expensive result. Otherwise cache() is cheaper.",
+            "id": "d12-concepts-10"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "Write a deliberately bad job",
+            "text": "a Python UDF for string cleanup, a 40-step withColumn(lit) loop, a join with a small table that is not broadcast, coalesce(1) at the end, and hardcoded paths and thresholds.",
+            "id": "d12-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Fix one problem at a time. After each fix, save the explain output and the runtime in a before and after table.",
+            "id": "d12-lab-1"
+          },
+          {
+            "title": "Optional, 30 minutes",
+            "text": "build a streaming aggregation on the rate source with a window and a watermark, and watch the console output as windows close.",
+            "id": "d12-lab-2"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Benchmark one transformation three ways on 10 million rows: a Python UDF, a pandas UDF and built-in functions. Record the runtimes and find BatchEvalPython and ArrowEvalPython in the plans. Then read the pandas UDF section of the PySpark docs and note when Arrow batches help.",
+            "id": "d12-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Build a plan with 300 chained withColumn calls and time how long explain() takes before anything runs. Rewrite it as a single select, or with withColumns, and compare. Then take a job with hardcoded values and move them into a config file, and confirm the results are identical.",
+            "id": "d12-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing, then review a notebook from your own work against this day's list and write down every violation with its fix. (1) What happens to an event that arrives after the watermark? (2) What is the trade-off in choosing a watermark length? (3) Why is coalesce(1) risky on large data? (4) Why can a star schema avoid shuffles?",
+            "id": "d12-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Three UDFs to built-ins",
+            "text": "Rewrite three UDFs with built-in functions: one that title-cases a name except for small words, one that keeps only the digits of a string, and one that divides safely and returns null when the denominator is zero.",
+            "difficulty": "E",
+            "id": "d12-coding-drills-0"
+          },
+          {
+            "title": "A loop to one select",
+            "text": "A job adds 25 columns with withColumn in a loop. Generate the same columns from a config dictionary with a single select, and prove the results match with your checker.",
+            "difficulty": "M",
+            "id": "d12-coding-drills-1"
+          },
+          {
+            "title": "Buckets without a UDF",
+            "text": "A Python UDF maps ages to ranges. Replace it with a when chain, then again with a join to a small range table. Compare the plans.",
+            "difficulty": "M",
+            "id": "d12-coding-drills-2"
+          },
+          {
+            "title": "Where the line is",
+            "text": "Write one transformation that built-ins cannot express, such as calling a Python library per batch, as a pandas UDF. Compare it with the nearest built-in approximation on runtime, and say where you would draw the line.",
+            "difficulty": "H",
+            "id": "d12-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 9 problem 4 from a blank file in 15 minutes.",
+            "id": "d12-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "in problem 3, find the Python evaluation node in the UDF plan, and confirm it is gone in the rewrites.",
+            "id": "d12-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "you can defend every item on this day's list with a measurable reason, such as a plan difference, a shuffle removed, or a runtime change.",
+            "id": "d12-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 13,
+    "title": "The transaction log, ACID and DML",
+    "theme": "Delta Lake I: log, ACID, DML, MERGE",
+    "checklist": "7. Delta Lake",
+    "labOutput": "Build a Delta table, merge into it, read the log",
+    "goal": "Explain how Delta Lake turns a folder of Parquet files into a table with transactions.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "(added) Why Delta Lake exists",
+            "text": "plain Parquet has no transactions, no updates, and a failed write can leave partial files behind. Delta adds a log that gives database-style guarantees on top of ordinary storage.",
+            "id": "d13-concepts-0"
+          },
+          {
+            "title": "The transaction log",
+            "text": "the _delta_log folder holds one JSON file per commit. Each lists actions such as add file, remove file, metadata change and commit info. The table's state is the replay of the log. Spark writes a Parquet checkpoint file every 10 commits by default, so readers do not replay everything.",
+            "id": "d13-concepts-1"
+          },
+          {
+            "title": "ACID in Delta Lake",
+            "text": "atomicity because a commit is a single log file that either appears or does not. Consistency because of schema enforcement and constraints. Isolation because writers use optimistic concurrency, checking for conflicts at commit time and retrying or failing if another writer touched the same files. Durability because data and log live in durable storage.",
+            "id": "d13-concepts-2"
+          },
+          {
+            "title": "Schema enforcement",
+            "text": "a write whose schema does not match the table (extra column, wrong type) is rejected, instead of silently corrupting the table. You can allow changes on purpose with mergeSchema.",
+            "id": "d13-concepts-3"
+          },
+          {
+            "title": "",
+            "text": "Can you run SQL UPDATE and DELETE on Delta? Yes. Parquet files are immutable, so Delta rewrites the affected files and commits one log entry that removes the old files and adds the new ones.",
+            "id": "d13-concepts-4"
+          },
+          {
+            "title": "What MERGE INTO (upsert) is",
+            "text": "it matches source rows to target rows on a condition, then updates or deletes matches and inserts the rest, all in one atomic commit. It runs in two passes, first finding the files that contain matches, then rewriting them. A tight join condition keeps the rewritten file count low.",
+            "id": "d13-concepts-5"
+          },
+          {
+            "title": "What snapshot isolation is",
+            "text": "a query reads the table version that was current when it started, so concurrent writes never change what a running query sees. The same mechanism gives you time travel with VERSION AS OF and TIMESTAMP AS OF.",
+            "id": "d13-concepts-6"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Install the delta-spark version that matches your Spark version, and start the session with the Delta extension and catalog configured.",
+            "id": "d13-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Write a DataFrame as a Delta table. List the folder, find the Parquet files and _delta_log, and open the first JSON commit to find the add entries.",
+            "id": "d13-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Run an INSERT, an UPDATE and a DELETE. After each, read the new log file and run DESCRIBE HISTORY.",
+            "id": "d13-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Append a DataFrame with an extra column and read the rejection error. Then allow it with mergeSchema.",
+            "id": "d13-lab-3"
+          },
+          {
+            "title": "",
+            "text": "Run a MERGE INTO with a small updates table. Check the operation metrics in the history.",
+            "id": "d13-lab-4"
+          },
+          {
+            "title": "",
+            "text": "Read the table at version 0 with VERSION AS OF.",
+            "id": "d13-lab-5"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Read the Delta transaction log protocol document in the delta-io/delta repository. Then, in plain Python with no Spark, read the JSON commits in _delta_log and replay the add and remove actions to rebuild the current list of data files. Compare your list with the files on disk.",
+            "id": "d13-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Run two writers at once (two threads in one session) that update the same rows, and read the concurrent-modification error that one of them gets. Then make them touch different files or partitions and confirm both succeed. Read the Delta concurrency control page to explain the difference.",
+            "id": "d13-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) What files does an UPDATE write, and what do the log entries say? (2) How does snapshot isolation protect a long-running read? (3) How is a Delta table different from a folder of Parquet files in a Hive table? (4) What is the _last_checkpoint file for?",
+            "id": "d13-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Idempotent daily load",
+            "text": "Daily CSV drops are loaded into a Delta table with MERGE on a business key, so running the same day twice changes nothing. Prove it with the table history and row counts.",
+            "difficulty": "E",
+            "id": "d13-coding-drills-0"
+          },
+          {
+            "title": "A dimension with history",
+            "text": "customers_dim(customer_id, city, valid_from, valid_to, is_current) and a daily changes table. When a customer's city changes, close the current row and insert the new version, in one MERGE.",
+            "difficulty": "M",
+            "id": "d13-coding-drills-1"
+          },
+          {
+            "title": "Delete by list",
+            "text": "Delete every row belonging to a list of user ids. Check with time travel that old versions still contain them, and say what must happen before the data is truly gone.",
+            "difficulty": "M",
+            "id": "d13-coding-drills-2"
+          },
+          {
+            "title": "Duplicate source keys",
+            "text": "Show the error a MERGE gives when the source has two rows for one key. Then fix it by keeping only the latest row per key by updated_at before merging.",
+            "difficulty": "H",
+            "id": "d13-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 4 problem 4 from a blank file in 20 minutes.",
+            "id": "d13-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "read the MERGE operation metrics in DESCRIBE HISTORY: rows updated, inserted and deleted, and files rewritten. Explain why problem 4 rewrote few or many files.",
+            "id": "d13-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "you can say what is in _delta_log after three commits, and describe each step Delta takes during an UPDATE.",
+            "id": "d13-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 14,
+    "title": "OPTIMIZE, Z-ordering, VACUUM and Change Data Feed",
+    "theme": "Delta Lake II: OPTIMIZE, Z-order, VACUUM, CDF",
+    "checklist": "7. Delta Lake",
+    "labOutput": "Compaction, time travel, change data feed",
+    "goal": "Explain what each maintenance command changes on disk and in the log, and when to run it.",
+    "sections": [
+      {
+        "key": "concepts",
+        "name": "Concepts",
+        "items": [
+          {
+            "title": "How OPTIMIZE works",
+            "text": "it compacts many small files into fewer large ones (about 1 GB by default in open-source Delta) and records the swap as a new commit. The data does not change, readers are not blocked, and old files stay on disk until vacuumed. It is the standard fix for the small file problem from Day 6.",
+            "id": "d14-concepts-0"
+          },
+          {
+            "title": "What Z-ordering is",
+            "text": "OPTIMIZE table ZORDER BY (col) rewrites files so rows with similar values in the chosen columns sit together, using a space-filling curve. Each file then covers a narrow range of those columns, so the per-file min and max statistics in the log let Spark skip more files. It works best on a few columns that queries filter on, and it helps less as you add columns.",
+            "id": "d14-concepts-1"
+          },
+          {
+            "title": "Why VACUUM is necessary",
+            "text": "UPDATE, DELETE and OPTIMIZE never delete old files, because time travel and running queries may still need them. VACUUM removes files that are no longer referenced and are older than the retention period (7 days by default). After a vacuum you cannot time travel to versions that needed those files.",
+            "id": "d14-concepts-2"
+          },
+          {
+            "title": "What Change Data Feed (CDF) is",
+            "text": "when enabled with delta.enableChangeDataFeed, Delta records row-level changes with the columns _change_type (insert, update_preimage, update_postimage, delete), _commit_version and _commit_timestamp. You read it with the readChangeFeed option and a starting version. It powers incremental downstream loads and audits. It only captures changes made after you enable it.",
+            "id": "d14-concepts-3"
+          },
+          {
+            "title": "(added) Data skipping",
+            "text": "the log stores min and max statistics per file for the first 32 columns by default. Spark uses them to skip files, which is Delta's version of the predicate pushdown from Day 5.",
+            "id": "d14-concepts-4"
+          },
+          {
+            "title": "(added) Time travel and RESTORE",
+            "text": "because old versions stay until vacuumed, you can read or roll back to an earlier version.",
+            "id": "d14-concepts-5"
+          }
+        ]
+      },
+      {
+        "key": "lab",
+        "name": "Lab",
+        "items": [
+          {
+            "title": "",
+            "text": "Create a table with 200 tiny appends. Run DESCRIBE DETAIL to see the file count, run OPTIMIZE, and check the file count and history again. Confirm the old files are still on disk.",
+            "id": "d14-lab-0"
+          },
+          {
+            "title": "",
+            "text": "Build a table with two filterable columns. Run a filter before and after ZORDER BY, and compare files read in the Spark UI scan metrics.",
+            "id": "d14-lab-1"
+          },
+          {
+            "title": "",
+            "text": "Run VACUUM with DRY RUN to list what it would delete. On practice data only, set a retention of 0 hours with the safety check turned off, then confirm time travel to an old version now fails.",
+            "id": "d14-lab-2"
+          },
+          {
+            "title": "",
+            "text": "Enable CDF, run an insert, an update and a delete, then read the change feed and inspect _change_type.",
+            "id": "d14-lab-3"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Deep dive (1 h)",
+            "text": "Open the add actions in the log before and after OPTIMIZE ... ZORDER BY. Each carries a stats JSON with numRecords, minValues and maxValues. Compare the min and max ranges per file before and after, to see exactly why Z-ordering lets Spark skip more files.",
+            "id": "d14-extended-practice-0"
+          },
+          {
+            "title": "Break it and fix it (1 h)",
+            "text": "Enable CDF and run one MERGE that updates, inserts and deletes rows. Read the change feed and map every row back to the part of the merge that made it. Then create a table partitioned by a high-cardinality column and see that OPTIMIZE compacts files within each partition, so it cannot fix too many partitions.",
+            "id": "d14-extended-practice-1"
+          },
+          {
+            "title": "Practice questions (30 min)",
+            "text": "Answer in writing. (1) When do you use Z-ordering, partitioning or bucketing? (2) When is VACUUM dangerous? (3) How does the change feed differ from time travel for building incremental loads? (4) Design a maintenance schedule for a table that gets small appends every minute.",
+            "id": "d14-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "coding-drills",
+        "name": "Coding drills",
+        "items": [
+          {
+            "title": "Compact and prove",
+            "text": "Compact a table that has many small files with OPTIMIZE. Prove that no data changed using file counts, a row count, and a sum of hash over all columns.",
+            "difficulty": "E",
+            "id": "d14-coding-drills-0"
+          },
+          {
+            "title": "Version diff",
+            "text": "Using two versions of a table, list the rows added, removed and changed with exceptAll. Then compare your answer with the change data feed output for the same version range.",
+            "difficulty": "M",
+            "id": "d14-coding-drills-1"
+          },
+          {
+            "title": "Incremental aggregate",
+            "text": "Maintain a daily-revenue table by applying only the rows that the change feed reports since the last run, including updates and deletes (use the pre-image and post-image rows with opposite signs).",
+            "difficulty": "M",
+            "id": "d14-coding-drills-2"
+          },
+          {
+            "title": "Layout choice",
+            "text": "For three described query patterns (filter by date, filter by user id, filter by both), choose partitioning, Z-order columns or neither, and benchmark files read and runtime for each choice.",
+            "difficulty": "H",
+            "id": "d14-coding-drills-3"
+          },
+          {
+            "title": "Repeat",
+            "text": "redo Day 6 problem 4 in 15 minutes and Day 2 problem 3 in 10 minutes, both from blank files.",
+            "id": "d14-coding-drills-4"
+          },
+          {
+            "title": "Plan check",
+            "text": "confirm in the scan metrics how many files each layout skipped.",
+            "id": "d14-coding-drills-5"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "you can explain what OPTIMIZE, ZORDER, VACUUM and CDF each change on disk and in the log, and what you lose if VACUUM runs too aggressively.",
+            "id": "d14-done-when-0"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "day": 15,
+    "title": "Capstone and final review",
+    "theme": "Capstone and review",
+    "checklist": "All",
+    "labOutput": "End-to-end pipeline and a self-run Q&A",
+    "goal": "Build one end-to-end pipeline and explain every plan decision inside it.",
+    "sections": [
+      {
+        "key": "capstone-pipeline",
+        "name": "Capstone pipeline",
+        "items": [
+          {
+            "title": "",
+            "text": "Generate a few million rows of orders, customers and products with Python, so you depend on no outside data.",
+            "id": "d15-capstone-pipeline-0"
+          },
+          {
+            "title": "",
+            "text": "Ingest the raw CSV into a Delta bronze table with an explicit schema.",
+            "id": "d15-capstone-pipeline-1"
+          },
+          {
+            "title": "",
+            "text": "Clean it into a silver table using built-in functions only (casts, deduplication). Use MERGE INTO for the incremental load.",
+            "id": "d15-capstone-pipeline-2"
+          },
+          {
+            "title": "",
+            "text": "Join silver to a small dimension with a broadcast, then aggregate into a gold table.",
+            "id": "d15-capstone-pipeline-3"
+          },
+          {
+            "title": "",
+            "text": "Plant a hot customer key in the data, find it in the Spark UI, and fix it with AQE or salting.",
+            "id": "d15-capstone-pipeline-4"
+          },
+          {
+            "title": "",
+            "text": "Run OPTIMIZE with ZORDER, and turn on Change Data Feed to load gold incrementally.",
+            "id": "d15-capstone-pipeline-5"
+          },
+          {
+            "title": "For each step, save the explain('formatted') output and annotate it",
+            "text": "join strategy, number of shuffles, pushdown and pruning, spill, and what AQE changed.",
+            "id": "d15-capstone-pipeline-6"
+          }
+        ]
+      },
+      {
+        "key": "review",
+        "name": "Review",
+        "items": [
+          {
+            "title": "",
+            "text": "Answer every checklist question aloud from memory, about 2 minutes each. Mark the ones you stumble on and re-read that day.",
+            "id": "d15-review-0"
+          },
+          {
+            "title": "Plan-reading drill",
+            "text": "take five plans from your daily logs, hide the query, and for each name the join strategy, the shuffles, and the pushdown.",
+            "id": "d15-review-1"
+          },
+          {
+            "title": "",
+            "text": "Learn the symptom table below until you can produce it from memory.",
+            "id": "d15-review-2"
+          }
+        ]
+      },
+      {
+        "key": "extended-practice",
+        "name": "Extended practice",
+        "items": [
+          {
+            "title": "Streaming extension (1 h)",
+            "text": "Add a streaming step to the capstone. Read new CSV files dropped into a folder with readStream, aggregate over a window with a watermark, and write to a Delta table with a checkpoint location. Drop in late files and observe what the watermark does.",
+            "id": "d15-extended-practice-0"
+          },
+          {
+            "title": "Mock interview (1.5 h)",
+            "text": "Pick 20 checklist questions at random. Answer each aloud in 2 minutes while recording yourself, then replay it and mark every answer that missed a mechanism. Redo the weak ones.",
+            "id": "d15-extended-practice-1"
+          },
+          {
+            "title": "Runbook (1 h)",
+            "text": "Write a one-page runbook called 'my Spark job is slow'. Make it a decision tree: which Spark UI tab to open first, which symptoms point to skew, shuffle cost, spill, small files or driver problems, and the first fix for each.",
+            "id": "d15-extended-practice-2"
+          }
+        ]
+      },
+      {
+        "key": "mock-set-a-windows-and-dates",
+        "name": "Mock set A: windows and dates",
+        "items": [
+          {
+            "title": "",
+            "text": "purchases(user_id, ts, amount). For each user with at least two purchases, return the time between their first and second purchase.",
+            "difficulty": "M",
+            "id": "d15-mock-set-a-windows-and-dates-0"
+          },
+          {
+            "title": "",
+            "text": "logins(user_id, day). For each month, return the number of active users and the share of the previous month's users who were also active this month.",
+            "difficulty": "M",
+            "id": "d15-mock-set-a-windows-and-dates-1"
+          },
+          {
+            "title": "",
+            "text": "shifts(driver, shift_date, cancelled). For each driver, return the longest stretch of consecutive shifts with no cancellation, with its start and end dates.",
+            "difficulty": "H",
+            "id": "d15-mock-set-a-windows-and-dates-2"
+          }
+        ]
+      },
+      {
+        "key": "mock-set-b-joins-and-complex-types",
+        "name": "Mock set B: joins and complex types",
+        "items": [
+          {
+            "title": "",
+            "text": "modules(course, module) and completions(student, module, completed_on). Per course, return the students who completed all its modules, with the date they finished the last one.",
+            "difficulty": "M",
+            "id": "d15-mock-set-b-joins-and-complex-types-0"
+          },
+          {
+            "title": "",
+            "text": "orders(order_id, ordered_on, items array<struct<sku, category, qty>>) and prices(sku, valid_from, valid_to, price). Price each item at its order date, give a 10 percent discount to one category, and return order totals.",
+            "difficulty": "M",
+            "id": "d15-mock-set-b-joins-and-complex-types-1"
+          },
+          {
+            "title": "",
+            "text": "purchases(customer, product). For each customer, return the top 3 products bought by other customers who share at least one product with them, excluding products they already own.",
+            "difficulty": "H",
+            "id": "d15-mock-set-b-joins-and-complex-types-2"
+          }
+        ]
+      },
+      {
+        "key": "mock-set-c-cleaning-aggregation-and-performance",
+        "name": "Mock set C: cleaning, aggregation and performance",
+        "items": [
+          {
+            "title": "",
+            "text": "customers(id, phone, updated_at) with phone numbers written many ways. Normalize them to digits only with a default country code, then keep the latest record per normalized phone.",
+            "difficulty": "E",
+            "id": "d15-mock-set-c-cleaning-aggregation-and-performance-0"
+          },
+          {
+            "title": "",
+            "text": "signups(user_id, signup_date) and activity(user_id, day). Build a cohort table with signup month as rows and months since signup as columns, showing active user counts.",
+            "difficulty": "M",
+            "id": "d15-mock-set-c-cleaning-aggregation-and-performance-1"
+          },
+          {
+            "title": "",
+            "text": "A heavily skewed events(country, user_id, page) table. Return distinct users per country and the top 3 pages per country, with no task in any stage taking more than 3 times the median task time.",
+            "difficulty": "H",
+            "id": "d15-mock-set-c-cleaning-aggregation-and-performance-2"
+          }
+        ]
+      },
+      {
+        "key": "done-when",
+        "name": "Done when (self-test, no notes)",
+        "items": [
+          {
+            "title": "",
+            "text": "you can walk through the capstone's plans end to end without notes, answer any checklist question in under 2 minutes, and finish each timed mock set within its 45 minutes. After this, run the same pipeline on a real cluster (managed Spark such as Databricks or EMR) to see multiple executors, real shuffles and real skew.",
+            "id": "d15-done-when-0"
+          }
+        ]
+      }
+    ]
+  }
+]
