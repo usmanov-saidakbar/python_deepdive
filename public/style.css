@@ -332,6 +332,10 @@ select.status-select {
 
 .check-text { font-size: 0.9rem; line-height: 1.45; min-width: 0; overflow-wrap: anywhere; }
 .check-item.done .check-text { text-decoration: line-through; }
+.check-text .item-title { font-weight: 600; }
+.check-text a { color: var(--accent); font-size: inherit; text-decoration: none; }
+.check-text a:hover { text-decoration: underline; }
+.check-text .item-link { white-space: nowrap; }
 
 .badge {
   display: inline-block;
@@ -343,9 +347,7 @@ select.status-select {
   border: 1px solid currentColor;
 }
 
-.badge-E { color: #6fd08c; }
-.badge-M { color: #f0b85a; }
-.badge-H { color: #ff7a7a; }
+.badge-deep { color: #c9a0ff; font-weight: 500; }
 
 .notes {
   width: 100%;
@@ -367,16 +369,30 @@ select.status-select {
   color: var(--text);
 }
 
-.block-heading.learn-first { color: var(--accent); }
-
-.study-from {
-  font-size: 0.82rem;
-  color: var(--muted);
+/* Checklist coverage panel */
+.coverage-list {
+  list-style: none;
   margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   line-height: 1.4;
 }
 
-.badge-added { color: var(--muted); font-weight: 400; }
+.coverage-list li.done { color: var(--muted); }
+.coverage-mark { display: inline-block; width: 1.2em; color: var(--accent); }
+.coverage-code { color: var(--muted); margin-right: 6px; font-variant-numeric: tabular-nums; }
+
+.coverage-list .link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .table-wrap { overflow-x: auto; margin-top: 12px; }
 
@@ -396,7 +412,7 @@ select.status-select {
 
 .symptoms th { color: var(--muted); }
 
-/* Theory / Lab / Exercise switcher inside a roadmap day */
+/* Theory / Lab / Recall switcher inside a roadmap day */
 .part-switch {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

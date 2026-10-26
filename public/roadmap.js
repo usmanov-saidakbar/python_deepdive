@@ -1,32 +1,44 @@
 const EMAIL_KEY = "course-tracker-email";
 const LOCAL_KEY = "spark-roadmap-progress";
 const DAY_KEY = "spark-roadmap-day";
-const DIFFICULTY = { E: "Easy", M: "Medium", H: "Hard" };
 
-// Every day is split into Theory, Lab and Exercise, and each part has its own
-// notes box. The Exercise box is the original daily log, so it keeps the bare
-// day number as its key and logs written before the split still show up.
+// Every day is split into Theory, Lab and Recall, and each part has its own
+// notes box. Keys carry a "v2-" prefix so notes written for the old 15-day
+// roadmap ("<day>-theory", "<day>-lab", "<day>") stay in storage untouched
+// instead of showing up under a day that now covers a different topic.
+const NOTES_PREFIX = "v2-";
 const PART_NOTES = {
   theory: {
     suffix: "-theory",
-    heading: "Theory notes",
-    placeholder: "Write up the 📘 Learn & Note topics in your own words: the core ideas, principles, formulas and explanations you'll want to revisit.",
+    heading: "Answer cards",
+    placeholder: "One card per checklist question: 5–8 lines in your own words that cover every point after \"Cover:\".",
   },
   lab: {
     suffix: "-lab",
     heading: "Lab notes",
-    placeholder: "Paste the explain outputs you saved. Note the plan you predicted vs. what explain and the Spark UI showed, and what broke and how you fixed it.",
+    placeholder: "Paste the plans you saved. For each task: what you predicted, what explain and the Spark UI showed, and what broke and how you fixed it.",
   },
-  exercise: {
-    suffix: "",
-    heading: "Recap and daily log",
-    placeholder: "Answer today's checklist questions in your own words. Note which drills were slow and why, then re-answer yesterday's questions from memory.",
+  recall: {
+    suffix: "-recall",
+    heading: "Recall log",
+    placeholder: "The cards you hesitated on today and what was missing. Re-answer them when the spaced review asks for them.",
   },
+};
+
+// Section names for the checklist coverage panel; question codes look like "4.6".
+const SECTIONS = {
+  1: "Apache Spark and PySpark basics",
+  2: "File formats",
+  3: "Joins and shuffle",
+  4: "Data skew",
+  5: "Memory handling",
+  6: "Best practices",
+  7: "Delta Lake",
 };
 
 // Same email-keyed storage as the course page, under a separate server key.
 // Without an email, progress is kept in this browser only.
-// progress = { checked: { [itemId]: true }, notes: { [day | "day-part"]: "..." }, startDate: "YYYY-MM-DD" }
+// progress = { checked: { [itemId]: true }, notes: { "v2-<day>-<part>": "..." }, startDate: "YYYY-MM-DD" }
 let email = "";
 let progress = emptyProgress();
 let progressError = "";
@@ -157,24 +169,102 @@ function renderOverallProgress() {
   holder.appendChild(daysText);
 }
 
-// Which roadmap day "today" is, counting the start date as Day 1.
-function todayDayNumber() {
+// Every checklist question with the day and answer card that cover it. Answer
+// cards carry the codes they answer in `q` and the question texts in `asks`.
+function checklistCoverage() {
+  const rows = [];
+  days.forEach((day) =>
+    dayItems(day).forEach((item) =>
+      (item.q || []).forEach((code, i) => rows.push({ code, ask: item.asks[i], day: day.day, item }))
+    )
+  );
+  const order = (code) => code.split(".").map(Number);
+  return rows.sort((a, b) => {
+    const [as, aq] = order(a.code);
+    const [bs, bq] = order(b.code);
+    return as - bs || aq - bq;
+  });
+}
+
+function renderCoverage() {
+  const body = document.getElementById("coverage-body");
+  if (!body) return;
+  const rows = checklistCoverage();
+  const ready = rows.filter((row) => progress.checked[row.item.id]).length;
+  document.getElementById("coverage-summary").textContent =
+    `Checklist coverage: ${ready} of ${rows.length} questions answered`;
+
+  body.innerHTML = "";
+  let section = null;
+  let list = null;
+  rows.forEach((row) => {
+    const sectionNumber = row.code.split(".")[0];
+    if (sectionNumber !== section) {
+      section = sectionNumber;
+      const heading = document.createElement("h4");
+      heading.className = "block-heading";
+      heading.textContent = `${section}. ${SECTIONS[section] || ""}`;
+      list = document.createElement("ul");
+      list.className = "coverage-list";
+      body.append(heading, list);
+    }
+    const done = !!progress.checked[row.item.id];
+    const li = document.createElement("li");
+    li.className = done ? "done" : "";
+    li.innerHTML = `<span class="coverage-mark">${done ? "✓" : "○"}</span><span class="coverage-code">${escapeHtml(row.code)}</span>${escapeHtml(row.ask)} `;
+    const go = document.createElement("button");
+    go.type = "button";
+    go.className = "link-btn";
+    go.textContent = `Day ${row.day}`;
+    go.addEventListener("click", () => {
+      selectDay(row.day);
+      activePart = "theory";
+      refresh();
+      document.getElementById("part-switch").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    li.appendChild(go);
+    list.appendChild(li);
+  });
+}
+
+function isWeekend(date) {
+  const weekday = date.getDay();
+  return weekday === 0 || weekday === 6;
+}
+
+// Where today falls in the plan. Study days run Monday to Friday: Day 1 is the
+// start date (or the Monday after it, for a weekend start) and weekends are
+// catch-up time. Returns null, { before: n }, { weekend: true } or { day: n }.
+function planPosition() {
   if (!progress.startDate) return null;
   const start = new Date(progress.startDate + "T00:00:00");
-  const now = new Date();
-  now.setHours(0, 0, 0, 0);
-  return Math.floor((now - start) / 86400000) + 1;
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  if (today < start) return { before: Math.round((start - today) / 86400000) };
+  if (isWeekend(today)) return { weekend: true };
+  let day = 0;
+  for (const d = new Date(start); d <= today; d.setDate(d.getDate() + 1)) {
+    if (!isWeekend(d)) day++;
+  }
+  return { day };
+}
+
+// Which roadmap day "today" is, or null before the start and on weekends.
+function todayDayNumber() {
+  const position = planPosition();
+  return position && position.day ? position.day : null;
 }
 
 function renderStartDate() {
   const input = document.getElementById("start-date");
   input.value = progress.startDate || "";
   const hint = document.getElementById("today-hint");
-  const n = todayDayNumber();
-  if (n === null) hint.textContent = "Set it to see which day you're on.";
-  else if (n < 1) hint.textContent = `Starts in ${1 - n} day${n === 0 ? "" : "s"}.`;
-  else if (n > days.length) hint.textContent = "Roadmap period is over — finish any open items.";
-  else hint.textContent = `Today is Day ${n}.`;
+  const position = planPosition();
+  if (!position) hint.textContent = "Set it to see which day you're on. Study days run Monday to Friday.";
+  else if (position.before) hint.textContent = `Starts in ${position.before} day${position.before === 1 ? "" : "s"}.`;
+  else if (position.weekend) hint.textContent = "Weekend: finish open items and re-answer the cards you marked.";
+  else if (position.day > days.length) hint.textContent = "Roadmap period is over — finish any open items.";
+  else hint.textContent = `Today is Day ${position.day}.`;
 }
 
 function renderTabs() {
@@ -202,6 +292,24 @@ function renderTabs() {
   });
 }
 
+// Item text marks code with `backticks`. Escape first, then add the tags, so
+// nothing in the data can inject HTML.
+function formatText(str) {
+  return escapeHtml(str)
+    .replace(/`([^`]+)`/g, "<code>$1</code>")
+    .replace(/^Cover:/, "<strong>Cover:</strong>");
+}
+
+// Links sit inside the checkbox label; clicking one opens it without ticking the box.
+function renderLink(label, url) {
+  const a = document.createElement("a");
+  a.href = url;
+  a.textContent = label;
+  a.target = "_blank";
+  a.rel = "noopener";
+  return a;
+}
+
 function renderItem(item) {
   const li = document.createElement("li");
   li.className = "item check-item" + (progress.checked[item.id] ? " done" : "");
@@ -219,11 +327,20 @@ function renderItem(item) {
 
   const body = document.createElement("span");
   body.className = "check-text";
-  const badge = item.difficulty
-    ? `<span class="badge badge-${item.difficulty}">${DIFFICULTY[item.difficulty]}</span>`
-    : "";
-  const title = item.title ? `<strong>${escapeHtml(item.title)}</strong>${item.difficulty ? "" : ":"} ` : "";
-  body.innerHTML = `${badge}${title}${item.difficulty && item.title ? "<br />" : ""}${escapeHtml(item.text)}`;
+  if (item.title) {
+    const title = item.url ? renderLink(item.title, item.url) : document.createElement("strong");
+    if (!item.url) title.textContent = item.title;
+    title.classList.add("item-title");
+    body.append(title, document.createElement("br"));
+  }
+  const text = document.createElement("span");
+  text.innerHTML = formatText(item.text);
+  body.appendChild(text);
+  (item.links || []).forEach((link) => {
+    const extra = renderLink(`↗ ${link.label}`, link.url);
+    extra.className = "item-link";
+    body.append(" ", extra);
+  });
 
   label.appendChild(box);
   label.appendChild(body);
@@ -276,9 +393,11 @@ function renderPartSwitch(day) {
 function renderBlock(block, parent) {
   if (block.label) {
     const sub = document.createElement("h4");
-    sub.className = "block-heading" + (block.label === "What to learn first" ? " learn-first" : "");
-    const added = block.added ? ` <span class="badge badge-added" title="Beginner lesson the original checklist assumes you know">added</span>` : "";
-    sub.innerHTML = `${escapeHtml(block.label)}${added} <span class="muted">${countChecked(block.items)}/${block.items.length}</span>`;
+    sub.className = "block-heading";
+    const deep = block.deep
+      ? ` <span class="badge badge-deep" title="Goes deeper than the checklist: how Spark decides how to run your query">beyond the checklist</span>`
+      : "";
+    sub.innerHTML = `${escapeHtml(block.label)}${deep} <span class="muted">${countChecked(block.items)}/${block.items.length}</span>`;
     parent.appendChild(sub);
   }
   if (block.note) {
@@ -325,7 +444,7 @@ function renderActivity(activity) {
 
 function renderPartNotes(day, part) {
   const config = PART_NOTES[part.key];
-  const key = `${day.day}${config.suffix}`;
+  const key = `${NOTES_PREFIX}${day.day}${config.suffix}`;
   const notesEl = document.createElement("div");
   notesEl.className = "section";
   notesEl.innerHTML = `<h3 class="section-heading">${escapeHtml(config.heading)}</h3>`;
@@ -374,7 +493,7 @@ function renderDay() {
   dayEl.className = "part";
   dayEl.innerHTML = `
     <h2 class="part-heading">Day ${day.day}: ${escapeHtml(day.title)}</h2>
-    <div class="day-meta">Checklist section: ${escapeHtml(day.checklist)} · Lab output: ${escapeHtml(day.labOutput)}</div>
+    <div class="day-meta">Checklist: ${escapeHtml(day.checklist)} · Lab output: ${escapeHtml(day.labOutput)}${day.time ? ` · ${escapeHtml(day.time)}` : ""}</div>
     ${day.intro ? `<p class="day-goal">${escapeHtml(day.intro)}</p>` : ""}
     <p class="day-goal"><strong>Goal:</strong> ${escapeHtml(day.goal)}</p>
     ${day.note ? `<p class="activity-note">${escapeHtml(day.note)}</p>` : ""}
@@ -389,12 +508,6 @@ function renderDay() {
   partHeading.className = "day-part-heading";
   partHeading.innerHTML = `${escapeHtml(part.name)} <span class="muted">${escapeHtml(part.tagline)}${part.time ? ` · ${escapeHtml(part.time)}` : ""}</span>`;
   partEl.appendChild(partHeading);
-  if (part.studyFrom) {
-    const study = document.createElement("p");
-    study.className = "study-from";
-    study.innerHTML = `<strong>Study from:</strong> ${escapeHtml(part.studyFrom)}`;
-    partEl.appendChild(study);
-  }
 
   part.activities.forEach((activity) => partEl.appendChild(renderActivity(activity)));
   partEl.appendChild(renderPartNotes(day, part));
@@ -459,6 +572,7 @@ function refresh() {
   renderTabs();
   renderDay();
   renderOverallProgress();
+  renderCoverage();
   window.scrollTo(0, scrollY);
 }
 

@@ -13,8 +13,8 @@
       <a href="/roadmap.html" class="active">Spark Roadmap</a>
     </nav>
     <header>
-      <h1>15-Day Spark Mastery Roadmap</h1>
-      <p class="subtitle">Every day has three parts: Theory, Lab and Exercise. Tick off each item as you go. Your notes are saved with your checklist.</p>
+      <h1>2-Week Spark Roadmap</h1>
+      <p class="subtitle">10 study days, Monday to Friday, about 5 focused hours each. Every day has three parts: Theory, Lab and Recall. Tick off each item as you go; your notes are saved with your checklist.</p>
     </header>
     <div id="account" class="account"></div>
     <div class="overall">
@@ -28,26 +28,24 @@
     </div>
 
     <details class="guide">
+      <summary id="coverage-summary">Checklist coverage</summary>
+      <p class="muted">Every question on the module checklist, the day that covers it, and whether its answer card is ticked. Use it to pick questions for the Day 10 mock checkpoint.</p>
+      <div id="coverage-body"></div>
+    </details>
+
+    <details class="guide">
       <summary>How a day works</summary>
       <table>
         <tr><th>Part</th><th>Time</th><th>What you do</th></tr>
-        <tr><td><strong>1. Theory</strong><br /><span class="muted">Research and learn</span></td><td>1 h 15 min</td><td>Read the pages under Study from and work through the day's topics, split into two lists:</td></tr>
-        <tr><td class="muted">📘 Learn &amp; Note</td><td></td><td>Core concepts, important principles, formulas and explanations worth revisiting. Write them up in your Theory notes.</td></tr>
-        <tr><td class="muted">🧠 Learn Only</td><td></td><td>Concepts you need to understand but don't need to write down</td></tr>
-        <tr><td><strong>2. Lab</strong><br /><span class="muted">Test it for real</span></td><td>3 h 30 min</td><td>Hands-on in PySpark and the Spark UI. Save every explain output.</td></tr>
-        <tr><td class="muted">Guided lab</td><td>1 h 30 min</td><td>Run the day's lab step by step</td></tr>
-        <tr><td class="muted">Deep dive</td><td>1 h</td><td>Go one level below the lab: internals, file contents, docs or source</td></tr>
-        <tr><td class="muted">Break it and fix it</td><td>1 h</td><td>Cause the failure the day is about, then fix it</td></tr>
-        <tr><td><strong>3. Exercise</strong><br /><span class="muted">Practice on your own</span></td><td>2 h</td><td>Solve problems and answer questions without notes</td></tr>
-        <tr><td class="muted">Coding drills</td><td>1 h</td><td>Solve the day's four problems with the solving routine, then do the plan check</td></tr>
-        <tr><td class="muted">Practice questions</td><td>30 min</td><td>Answer the written questions without notes</td></tr>
-        <tr><td class="muted">Self-test and log</td><td>30 min</td><td>Pass the Done when test, write the one-page log, then re-answer yesterday's questions from memory</td></tr>
+        <tr><td><strong>1. Theory</strong><br /><span class="muted">Learn the answers</span></td><td>≈ 1 h 45 min</td><td>Read the linked sources (each says which sections and how long), then write one answer card per checklist question. The points after <em>Cover:</em> are what a complete answer contains.</td></tr>
+        <tr><td class="muted">🧭 How Spark decides</td><td></td><td>Extra cards on Days 1–3 and 10 that go one level deeper: how Spark plans, schedules and re-plans your query.</td></tr>
+        <tr><td><strong>2. Lab</strong><br /><span class="muted">Prove it in PySpark and the Spark UI</span></td><td>≈ 2 h 30 min</td><td>One lab built on the starter kit <a href="/spark-lab/lab_utils.py" target="_blank" rel="noopener">lab_utils.py</a>. Each task says what to run, what you should see, and which questions it proves. The last task breaks something on purpose.</td></tr>
+        <tr><td><strong>3. Recall</strong><br /><span class="muted">Say it without notes</span></td><td>≈ 40 min</td><td>Answer today's cards aloud, re-answer the ones you marked on earlier days, and pass the <em>Done when</em> test.</td></tr>
       </table>
-      <p>In the Lab and Exercise parts, each activity opens with a <em>What to learn first</em> list of the commands,
-        settings, UI screens and functions you need, followed by the tasks under <em>Then do</em>.</p>
-      <p><strong>Habits:</strong> predict the plan, then check it with <code>df.explain('formatted')</code>.
-        Keep the Spark UI open at <code>localhost:4040</code>. Write a one-page log every day.</p>
-      <p class="muted">Short day? Do the Theory, the guided lab and the self-test, and move the rest to the next afternoon. Never skip the Lab or the drills.</p>
+      <p><strong>Setup:</strong> Python 3.10 or newer (3.12 recommended), Java 17 or 21, then <code>pip install pyspark==4.2.0 delta-spark==4.4.1 "pyarrow&gt;=18" "pandas&gt;=2.2,&lt;3"</code>. Day 1 walks you through it.</p>
+      <p><strong>Habits:</strong> predict the plan before you run it, then check it with <code>explain('formatted')</code>.
+        Keep the Spark UI open at <code>localhost:4040</code>. Paste the plans you save into your Lab notes.</p>
+      <p class="muted">Short day? Do the Theory and the first half of the Lab, and move the rest to the weekend. Do not skip Recall: it is what makes the answers stick.</p>
     </details>
 
     <div id="tabs" class="tabs"></div>

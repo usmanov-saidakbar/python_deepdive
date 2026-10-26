@@ -121,26 +121,41 @@ walkthrough for either.
 
 ## Spark Roadmap tab
 
-`/roadmap.html` (the "Spark Roadmap" tab at the top of the page) turns the
-*15-Day Spark Mastery Roadmap* into a per-day checklist. Every day is split
-into three parts, each with its own progress bar and notes box:
+`/roadmap.html` (the "Spark Roadmap" tab at the top of the page) is a 2-week
+Spark module: 10 study days (Monday to Friday, about 5 focused hours each)
+covering the module checklist's 80 questions in 7 sections, plus a deeper
+thread on how Spark decides how to run a query. Every day is split into three
+parts, each with its own progress bar and notes box:
 
-- **Theory** (research and learn): the docs to read, then the day's topics
-  split into 📘 Learn & Note (core concepts, principles and formulas worth
-  writing up) and 🧠 Learn Only (understand them, no need to write them down).
-- **Lab** (test it for real): the guided lab, the deep dive, and break it and
-  fix it, all hands-on in PySpark and the Spark UI.
-- **Exercise** (practice on your own): coding drills, practice questions, and
-  the "Done when" self-test with the daily log.
+- **Theory** (learn the answers): a short, time-boxed reading list with links,
+  then one answer card per checklist question, listing what a complete answer
+  must cover. 🧭 cards go beyond the checklist.
+- **Lab** (prove it in PySpark and the Spark UI): one lab per day on the
+  starter kit. Each task says what to run, what you should see and which
+  questions it proves; the last one breaks something on purpose.
+- **Recall** (say it without notes): answer the day's cards aloud, re-answer
+  marked cards from earlier days, and pass the "Done when" test.
 
-Set a start date and it highlights which day you're on.
+The *Checklist coverage* panel lists every checklist question, the day that
+covers it and whether its answer card is ticked. Set a start date and the page
+shows which study day today is; weekends count as catch-up time.
 
-- Checklist data lives in `data/roadmap.json` (generated once from the roadmap
-  doc, `15-Day Spark Mastery Roadmap-3.docx`). Each day nests
-  `parts` → `activities` → `blocks` → `items`. Edit it directly to add or
-  change items; keep each item's `id` stable so saved checkmarks still line up.
-- Theory and Lab notes are saved under `<day>-theory` and `<day>-lab`; the
-  Exercise log keeps the plain `<day>` key the old daily log used.
+- Checklist data lives in `data/roadmap.json`. Each day nests
+  `parts` → `activities` → `blocks` → `items`. Items can carry `url` (the
+  title becomes a link), `links` (extra links after the text) and, on answer
+  cards, `q` and `asks` (the checklist codes and questions they answer, which
+  feed the coverage panel). Text can mark code with `backticks`. Edit the file
+  directly to add or change items; keep each item's `id` stable so saved
+  checkmarks still line up.
+- The previous 15-day roadmap is in git history (`git show
+  2dfe373:data/roadmap.json`). Its checkmarks and notes stay in saved progress
+  but no longer show, because the new item ids and note keys start with `v2-`.
+- Notes are saved under `v2-<day>-theory`, `v2-<day>-lab` and
+  `v2-<day>-recall`.
+- The lab starter kit is served from `public/spark-lab/`: `lab_utils.py`
+  (session with Delta and Avro, seeded data generators, plan and timing
+  helpers; written for PySpark 4.2.0 and delta-spark 4.4.1) and `bad_job.py`
+  (the deliberately slow job for the Day 8 refactor lab).
 - With an email entered, progress is saved in Upstash under `roadmap:<email>`
   (separate from the course's `progress:<email>`) via
   `GET`/`PUT /api/roadmap-progress/:email`. Without one, it's kept in the
