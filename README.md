@@ -130,9 +130,10 @@ parts, each with its own progress bar and notes box:
 - **Theory** (learn the answers): a short, time-boxed reading list with links,
   then one answer card per checklist question, listing what a complete answer
   must cover. 🧭 cards go beyond the checklist.
-- **Lab** (prove it in PySpark and the Spark UI): one lab per day on the
-  starter kit. Each task says what to run, what you should see and which
-  questions it proves; the last one breaks something on purpose.
+- **Lab** (code along, practise, prove): type an official tutorial or GitHub
+  example (PySpark user guide chapters, Spark and Delta example scripts),
+  write two exercises built on it, each with a self-check and a reference
+  solution, then prove the day's questions in the plan and the Spark UI.
 - **Recall** (say it without notes): answer the day's cards aloud, re-answer
   marked cards from earlier days, and pass the "Done when" test.
 
@@ -154,8 +155,9 @@ shows which study day today is; weekends count as catch-up time.
   `v2-<day>-recall`.
 - The lab starter kit is served from `public/spark-lab/`: `lab_utils.py`
   (session with Delta and Avro, seeded data generators, plan and timing
-  helpers; written for PySpark 4.2.0 and delta-spark 4.4.1) and `bad_job.py`
-  (the deliberately slow job for the Day 8 refactor lab).
+  helpers; written for PySpark 4.2.0 and delta-spark 4.4.1), `bad_job.py`
+  (the deliberately slow job for the Day 8 refactor lab) and `solutions/`
+  (reference solutions for the Day 1–9 exercises, each run on Spark 4.2).
 - With an email entered, progress is saved in Upstash under `roadmap:<email>`
   (separate from the course's `progress:<email>`) via
   `GET`/`PUT /api/roadmap-progress/:email`. Without one, it's kept in the

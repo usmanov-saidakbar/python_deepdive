@@ -426,7 +426,7 @@ function renderActivity(activity) {
   if (activity.note) {
     const note = document.createElement("p");
     note.className = "activity-note";
-    note.textContent = activity.note;
+    note.innerHTML = formatText(activity.note);
     el.appendChild(note);
   }
 

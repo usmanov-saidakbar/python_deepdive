@@ -39,10 +39,13 @@
         <tr><th>Part</th><th>Time</th><th>What you do</th></tr>
         <tr><td><strong>1. Theory</strong><br /><span class="muted">Learn the answers</span></td><td>≈ 1 h 45 min</td><td>Read the linked sources (each says which sections and how long), then write one answer card per checklist question. The points after <em>Cover:</em> are what a complete answer contains.</td></tr>
         <tr><td class="muted">🧭 How Spark decides</td><td></td><td>Extra cards on Days 1–3 and 10 that go one level deeper: how Spark plans, schedules and re-plans your query.</td></tr>
-        <tr><td><strong>2. Lab</strong><br /><span class="muted">Prove it in PySpark and the Spark UI</span></td><td>≈ 2 h 30 min</td><td>One lab built on the starter kit <a href="/spark-lab/lab_utils.py" target="_blank" rel="noopener">lab_utils.py</a>. Each task says what to run, what you should see, and which questions it proves. The last task breaks something on purpose.</td></tr>
+        <tr><td><strong>2. Lab</strong><br /><span class="muted">Code along, practise, prove</span></td><td>≈ 2 h 30 min</td><td>Coding in PySpark with the starter kit <a href="/spark-lab/lab_utils.py" target="_blank" rel="noopener">lab_utils.py</a>, in three steps:</td></tr>
+        <tr><td class="muted">📘 Code along</td><td></td><td>Type an official tutorial or GitHub example (PySpark guide chapters, Spark and Delta example scripts). Each item says which sections, and what breaks on Spark 4.2.</td></tr>
+        <tr><td class="muted">✍️ Exercises</td><td></td><td>Two exercises built on that code, each with a Check you can verify and a linked reference solution to compare with afterwards.</td></tr>
+        <tr><td class="muted">🔬 Prove it</td><td></td><td>Short checks of the day's checklist questions in the plan and the Spark UI.</td></tr>
         <tr><td><strong>3. Recall</strong><br /><span class="muted">Say it without notes</span></td><td>≈ 40 min</td><td>Answer today's cards aloud, re-answer the ones you marked on earlier days, and pass the <em>Done when</em> test.</td></tr>
       </table>
-      <p><strong>Setup:</strong> Python 3.10 or newer (3.12 recommended), Java 17 or 21, then <code>pip install pyspark==4.2.0 delta-spark==4.4.1 "pyarrow&gt;=18" "pandas&gt;=2.2,&lt;3"</code>. Day 1 walks you through it.</p>
+      <p><strong>Setup:</strong> Python 3.10 or newer (3.12 recommended), Java 17 or 21, then <code>pip install pyspark==4.2.0 delta-spark==4.4.1 "pyarrow&gt;=18" "pandas&gt;=2.2,&lt;3" jupyterlab pytest memory-profiler</code>. Day 1 walks you through it.</p>
       <p><strong>Habits:</strong> predict the plan before you run it, then check it with <code>explain('formatted')</code>.
         Keep the Spark UI open at <code>localhost:4040</code>. Paste the plans you save into your Lab notes.</p>
       <p class="muted">Short day? Do the Theory and the first half of the Lab, and move the rest to the weekend. Do not skip Recall: it is what makes the answers stick.</p>
