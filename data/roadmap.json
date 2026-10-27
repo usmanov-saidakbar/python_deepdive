@@ -150,64 +150,21 @@
             "key": "notebook",
             "name": "🧪 Lab notebook",
             "time": "2 h 30 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day01_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d1-nb-0",
+                    "title": "Lab notebook: day01_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right.",
+                    "id": "v2-d1-lab-notebook",
                     "url": "/spark-lab/notebooks/day01_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day01_lab_solution.ipynb"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. Set up PySpark 4.2, Delta 4.4 and the starter kit (30 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d1-code-1"
-                  },
-                  {
-                    "title": "Task 2. Quickstart: DataFrame (35 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d1-code-2"
-                  },
-                  {
-                    "title": "Task 3. Exercise 1: quickstart patterns on your own data (25 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d1-exercises-1",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day01.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 4. Exercise 2: port the official pi.py to DataFrames and spark-submit it (25 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d1-exercises-2",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/pi_df.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 5. Count jobs, stages and tasks (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d1-prove-1"
-                  },
-                  {
-                    "title": "Task 6. Fail a task, then retry it (15 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d1-prove-2"
                   }
                 ]
               }
@@ -354,64 +311,21 @@
             "key": "notebook",
             "name": "🧪 Lab notebook",
             "time": "2 h 30 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day02_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d2-nb-0",
+                    "title": "Lab notebook: day02_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right.",
+                    "id": "v2-d2-lab-notebook",
                     "url": "/spark-lab/notebooks/day02_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day02_lab_solution.ipynb"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. Write the lab dataset once (10 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d2-code-1"
-                  },
-                  {
-                    "title": "Task 2. Chapter 6: Old SQL, New Tricks (30 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d2-code-2"
-                  },
-                  {
-                    "title": "Task 3. Exercise 1: one question in SQL and in the DataFrame API (30 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d2-exercises-1",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day02.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 4. Exercise 2: port the official wordcount.py from RDDs to DataFrames (30 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d2-exercises-2",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day02.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 5. Four plans, and the rules that made them (35 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d2-prove-1"
-                  },
-                  {
-                    "title": "Task 6. Blind the optimizer with a UDF (15 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d2-prove-2"
                   }
                 ]
               }
@@ -565,15 +479,14 @@
             "key": "notebook",
             "name": "🧪 Lab notebook",
             "time": "2 h 30 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day03_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d3-nb-0",
+                    "title": "Lab notebook: day03_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "id": "v2-d3-lab-notebook",
                     "url": "/spark-lab/notebooks/day03_lab.ipynb",
                     "links": [
                       {
@@ -581,43 +494,6 @@
                         "url": "/spark-lab/lab_utils.py"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. Chapter 3: Function Junction (35 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d3-code-1"
-                  },
-                  {
-                    "title": "Task 2. Exercise 1: count three ways (30 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d3-exercises-1",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day03.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 3. Exercise 2: averages and rankings on the chapter's data (30 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d3-exercises-2",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day03.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 4. Build the operator table (30 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d3-prove-1"
-                  },
-                  {
-                    "title": "Task 5. AQE on vs off, and the wrong partition count (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d3-prove-2"
                   }
                 ]
               }
@@ -796,15 +672,14 @@
             "key": "notebook",
             "name": "🧪 Lab notebook",
             "time": "2 h 30 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day04_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d4-nb-0",
+                    "title": "Lab notebook: day04_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "id": "v2-d4-lab-notebook",
                     "url": "/spark-lab/notebooks/day04_lab.ipynb",
                     "links": [
                       {
@@ -812,42 +687,6 @@
                         "url": "/spark-lab/lab_utils.py"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. Chapter 7: Load and Behold (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d4-code-1"
-                  },
-                  {
-                    "title": "Task 2. The official datasource.py example (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d4-code-2"
-                  },
-                  {
-                    "title": "Task 3. Exercise 1: one dataset in five formats (30 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d4-exercises-1"
-                  },
-                  {
-                    "title": "Task 4. Exercise 2: datasource.py's layouts applied to orders (30 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d4-exercises-2",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day04.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 5. Create the small file problem, then fix it (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d4-prove-1"
-                  },
-                  {
-                    "title": "Task 6. Splittable or not (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d4-prove-2"
                   }
                 ]
               }
@@ -1029,15 +868,14 @@
             "key": "notebook",
             "name": "🧪 Lab notebook",
             "time": "2 h 30 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day05_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d5-nb-0",
+                    "title": "Lab notebook: day05_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "id": "v2-d5-lab-notebook",
                     "url": "/spark-lab/notebooks/day05_lab.ipynb",
                     "links": [
                       {
@@ -1045,43 +883,6 @@
                         "url": "/spark-lab/lab_utils.py"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. Joins in the official guides (35 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d5-code-1"
-                  },
-                  {
-                    "title": "Task 2. Exercise 1: every join type, and which side can be broadcast (30 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d5-exercises-1",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day05.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 3. Exercise 2: predict, then verify the strategy matrix (35 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d5-exercises-2",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day05.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 4. AQE switches a join at runtime (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d5-prove-1"
-                  },
-                  {
-                    "title": "Task 5. A join with no shuffle: bucketing (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d5-prove-2"
                   }
                 ]
               }
@@ -1249,15 +1050,14 @@
             "key": "notebook",
             "name": "🧪 Lab notebook",
             "time": "2 h 30 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day06_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d6-nb-0",
+                    "title": "Lab notebook: day06_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "id": "v2-d6-lab-notebook",
                     "url": "/spark-lab/notebooks/day06_lab.ipynb",
                     "links": [
                       {
@@ -1265,43 +1065,6 @@
                         "url": "/spark-lab/lab_utils.py"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. Partitioning tools in the API reference (30 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d6-code-1"
-                  },
-                  {
-                    "title": "Task 2. Exercise 1: salt a skewed join (45 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d6-exercises-1",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day06.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 3. Exercise 2: a two-stage distinct count (30 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d6-exercises-2",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day06.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 4. AQE skew join (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d6-prove-1"
-                  },
-                  {
-                    "title": "Task 5. repartition vs coalesce (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d6-prove-2"
                   }
                 ]
               }
@@ -1533,15 +1296,14 @@
             "key": "notebook",
             "name": "🧪 Lab notebook",
             "time": "2 h 30 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day07_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d7-nb-0",
+                    "title": "Lab notebook: day07_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "id": "v2-d7-lab-notebook",
                     "url": "/spark-lab/notebooks/day07_lab.ipynb",
                     "links": [
                       {
@@ -1549,53 +1311,6 @@
                         "url": "/spark-lab/lab_utils.py"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. Chapter 4: Bug Busting (30 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d7-code-1"
-                  },
-                  {
-                    "title": "Task 2. The persistence API (10 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d7-code-2"
-                  },
-                  {
-                    "title": "Task 3. Exercise 1: cache the right thing (30 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d7-exercises-1",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day07.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 4. Exercise 2: cut a long lineage (25 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d7-exercises-2",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day07.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 5. Compute the regions, then check the UI (15 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d7-prove-1"
-                  },
-                  {
-                    "title": "Task 6. Cause spill, then remove it (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d7-prove-2"
-                  },
-                  {
-                    "title": "Task 7. Driver out of memory (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d7-prove-3"
                   }
                 ]
               }
@@ -1761,15 +1476,14 @@
             "key": "notebook",
             "name": "🧪 Lab notebook",
             "time": "2 h 30 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day08_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d8-nb-0",
+                    "title": "Lab notebook: day08_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "id": "v2-d8-lab-notebook",
                     "url": "/spark-lab/notebooks/day08_lab.ipynb",
                     "links": [
                       {
@@ -1777,52 +1491,6 @@
                         "url": "/spark-lab/lab_utils.py"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. Chapter 5: Unleashing UDFs (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d8-code-1"
-                  },
-                  {
-                    "title": "Task 2. Testing PySpark (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d8-code-2"
-                  },
-                  {
-                    "title": "Task 3. Exercise 1: refactor bad_job.py (40 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d8-exercises-1",
-                    "links": [
-                      {
-                        "label": "Solution: good_job.py",
-                        "url": "/spark-lab/solutions/good_job.py"
-                      },
-                      {
-                        "label": "Solution: good_job.json",
-                        "url": "/spark-lab/solutions/good_job.json"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 4. Exercise 2: test it like a real project (25 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d8-exercises-2",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/test_good_job.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 5. Star schema and dynamic partition pruning (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d8-prove-1"
-                  },
-                  {
-                    "title": "Task 6. Late data with a watermark (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d8-prove-2"
                   }
                 ]
               }
@@ -1992,15 +1660,14 @@
             "key": "notebook",
             "name": "🧪 Lab notebook",
             "time": "2 h 30 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day09_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d9-nb-0",
+                    "title": "Lab notebook: day09_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "id": "v2-d9-lab-notebook",
                     "url": "/spark-lab/notebooks/day09_lab.ipynb",
                     "links": [
                       {
@@ -2008,48 +1675,6 @@
                         "url": "/spark-lab/lab_utils.py"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. The Delta Lake quickstart (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d9-code-1"
-                  },
-                  {
-                    "title": "Task 2. Delta utilities and change data feed examples (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d9-code-2"
-                  },
-                  {
-                    "title": "Task 3. Exercise 1: an idempotent upsert (35 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d9-exercises-1",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day09.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 4. Exercise 2: compaction vs Z-ordering (30 min)",
-                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
-                    "id": "v2-d9-exercises-2",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day09.py"
-                      }
-                    ]
-                  },
-                  {
-                    "title": "Task 5. What UPDATE, DELETE and a bad append write (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d9-prove-1"
-                  },
-                  {
-                    "title": "Task 6. VACUUM breaks time travel (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d9-prove-2"
                   }
                 ]
               }

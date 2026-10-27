@@ -130,11 +130,15 @@ parts, each with its own progress bar and notes box:
 - **Theory** (learn the answers): a short, time-boxed reading list with links,
   then one answer card per checklist question, listing what a complete answer
   must cover. 🧭 cards go beyond the checklist.
-- **Lab** (a Jupyter notebook per day in `public/spark-lab/notebooks/`,
-  solved in place): type an official tutorial or GitHub
-  example (PySpark user guide chapters, Spark and Delta example scripts),
-  write two exercises built on it, each with a self-check and a reference
-  solution, then prove the day's questions in the plan and the Spark UI.
+- **Lab** (one Jupyter notebook per day in `public/spark-lab/notebooks/`,
+  solved in place): the Lab tab shows only the notebook link. Labs 01–02 are
+  written in the assignment style: a data description, one documentation list at
+  the top, then short questions on the NYC taxi dataset, each with a check cell
+  (✅/❌, answers stored as hashes) and a reference solution in
+  `public/spark-lab/solutions/`. Early tasks have `___` blanks; the rest are
+  empty cells. Day 10 is a final project (a Delta Lake bronze/silver/gold
+  lakehouse on 9.5 million trips) written from scratch. Days 3–9 still use the
+  older notebook style and are being rewritten the same way.
 
 The *Checklist coverage* panel lists every checklist question, the day that
 covers it and whether its answer card is ticked. Set a start date and the page
