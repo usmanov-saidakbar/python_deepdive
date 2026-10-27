@@ -122,20 +122,19 @@ walkthrough for either.
 ## Spark Roadmap tab
 
 `/roadmap.html` (the "Spark Roadmap" tab at the top of the page) is a 2-week
-Spark module: 10 study days (Monday to Friday, about 5 focused hours each)
+Spark module: 10 study days (Monday to Friday, about 4 focused hours each)
 covering the module checklist's 80 questions in 7 sections, plus a deeper
-thread on how Spark decides how to run a query. Every day is split into three
+thread on how Spark decides how to run a query. Every day is split into two
 parts, each with its own progress bar and notes box:
 
 - **Theory** (learn the answers): a short, time-boxed reading list with links,
   then one answer card per checklist question, listing what a complete answer
   must cover. 🧭 cards go beyond the checklist.
-- **Lab** (code along, practise, prove): type an official tutorial or GitHub
+- **Lab** (a Jupyter notebook per day in `public/spark-lab/notebooks/`,
+  solved in place): type an official tutorial or GitHub
   example (PySpark user guide chapters, Spark and Delta example scripts),
   write two exercises built on it, each with a self-check and a reference
   solution, then prove the day's questions in the plan and the Spark UI.
-- **Recall** (say it without notes): answer the day's cards aloud, re-answer
-  marked cards from earlier days, and pass the "Done when" test.
 
 The *Checklist coverage* panel lists every checklist question, the day that
 covers it and whether its answer card is ticked. Set a start date and the page

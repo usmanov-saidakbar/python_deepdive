@@ -143,133 +143,71 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Code along, practise, prove",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 30 min",
         "activities": [
           {
-            "key": "code",
-            "name": "📘 Code along",
-            "time": "1 h 5 min",
-            "note": "Type the code yourself instead of pasting it, run every cell, and keep the Spark UI open. Swap in `spark = get_spark()` from the starter kit wherever an example builds its own session.",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
+            "time": "2 h 30 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Set up PySpark 4.2, Delta 4.4 and the starter kit (30 min)",
-                    "text": "Install Python 3.12 (`brew install python@3.12`; macOS ships Python 3.9, which PySpark 4.2 does not support) and check `java -version` shows 17 or 21 (Spark 4.2 runs on Java 17, 21 or 25). In a new folder: `python3.12 -m venv .venv`, `source .venv/bin/activate`, `pip install pyspark==4.2.0 delta-spark==4.4.1 \"pyarrow>=18\" \"pandas>=2.2,<3\" jupyterlab pytest memory-profiler` (PySpark 4.2 does not fully support pandas 3 yet). Download `lab_utils.py` into the folder and run `from lab_utils import *` then `spark = get_spark()`. The kit points executors at your venv's Python and switches off a Spark 4.2.0 setting that can make Python UDFs on Parquet hang or return wrong results (SPARK-60294, fixed in 4.2.1). The first start downloads the Delta and Avro jars (1–2 minutes); later starts take seconds. Open the UI address it prints (usually http://localhost:4040).",
+                    "title": "Download day01_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d1-nb-0",
+                    "url": "/spark-lab/notebooks/day01_lab.ipynb",
                     "links": [
                       {
                         "label": "Download lab_utils.py",
                         "url": "/spark-lab/lab_utils.py"
                       }
-                    ],
+                    ]
+                  },
+                  {
+                    "title": "Task 1. Set up PySpark 4.2, Delta 4.4 and the starter kit (30 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d1-code-1"
                   },
                   {
-                    "title": "Quickstart: DataFrame (35 min)",
-                    "text": "Work through every section of the official PySpark quickstart in a Jupyter notebook (`jupyter lab`): creating DataFrames from Rows, tuples with a schema string and pandas; viewing and selecting data; a pandas UDF and `mapInPandas`; grouping with `applyInPandas` and `cogroup`; CSV, Parquet and ORC in and out; and SQL. After each `show()`, `collect()` or `toPandas()`, find the new job in the Jobs tab. A real-world bug to fix on the way: on Spark 4.2 the `plus_mean` cell fails with `ArrowInvalid: Float value -3.800000 was truncated converting to int64`, because the function returns floats while `schema=df.schema` says `v1` is a long, and Spark 4 no longer truncates silently (`spark.sql.execution.pandas.convertToArrowArraySafely` is on). Fix it the way a real developer would: declare the true output schema (`v1 double`), not by switching the check off.",
-                    "url": "https://spark.apache.org/docs/latest/api/python/getting_started/quickstart_df.html",
-                    "links": [
-                      {
-                        "label": "Notebook source on GitHub",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/python/docs/source/getting_started/quickstart_df.ipynb"
-                      }
-                    ],
+                    "title": "Task 2. Quickstart: DataFrame (35 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d1-code-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "exercises",
-            "name": "✍️ Exercises",
-            "time": "50 min",
-            "note": "Write these from scratch in a notebook or a .py file, using the patterns you just typed. Each one ends with a Check you can verify yourself; open the reference solution only after you have a working answer.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                  },
                   {
-                    "title": "Exercise 1: quickstart patterns on your own data (25 min)",
-                    "text": "Use only what the quickstart showed. (1) Build a 6-person `staff` DataFrame from `Row`s with the schema string `'name string, dept string, salary double, hired date'` (3 departments). (2) Add `salary_k` with `withColumn` and keep people hired after 2020 with `filter`. (3) Average salary per department with `groupby(\"dept\").avg(\"salary\")`. (4) The same through `createOrReplaceTempView(\"staff\")` and `spark.sql`. (5) Centre salaries per department with `applyInPandas`, declaring the output schema correctly. Check: `from pyspark.testing import assertDataFrameEqual`; `assertDataFrameEqual(api_result, sql_result)` passes, the centred salaries sum to 0 in every department, and jobs appear only for lines with an action. Proves 1.2, 1.11, 1.12.",
+                    "title": "Task 3. Exercise 1: quickstart patterns on your own data (25 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d1-exercises-1",
                     "links": [
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/day01.py"
                       }
-                    ],
-                    "id": "v2-d1-exercises-1"
+                    ]
                   },
                   {
-                    "title": "Exercise 2: port the official pi.py to DataFrames and spark-submit it (25 min)",
-                    "text": "Read the Self-Contained Applications section (Python tab) and the official `pi.py`: a script that builds its own SparkSession, uses the RDD API (`parallelize`, `map`, `reduce`) and is launched with `spark-submit`. Write `pi_df.py` that does the same with the DataFrame API: `spark.range(n)`, two `F.rand(seed)` columns for x and y, `F.sum(F.when(x * x + y * y <= 1, 1).otherwise(0))`, print 4 × inside ÷ n, and call `input()` before `spark.stop()` so the UI stays up. Run both with `spark-submit --master \"local[4]\" pi.py 10` and `spark-submit --master \"local[4]\" pi_df.py 10`. Check: both print about 3.14 (within ±0.01 for 1,000,000 points); the RDD job has no entry in the SQL / DataFrame tab, while the DataFrame one shows `HashAggregate` → `Exchange SinglePartition` → `HashAggregate`. Proves 1.1, 1.10, 1.13.",
-                    "url": "https://spark.apache.org/docs/latest/quick-start.html#self-contained-applications",
+                    "title": "Task 4. Exercise 2: port the official pi.py to DataFrames and spark-submit it (25 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d1-exercises-2",
                     "links": [
-                      {
-                        "label": "pi.py on GitHub",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/examples/src/main/python/pi.py"
-                      },
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/pi_df.py"
                       }
-                    ],
-                    "id": "v2-d1-exercises-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "prove",
-            "name": "🔬 Prove it",
-            "time": "35 min",
-            "note": "Short, focused checks of today's checklist questions in the plan and the Spark UI.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                    ]
+                  },
                   {
-                    "title": "Count jobs, stages and tasks (20 min)",
-                    "text": "Turn AQE off so the numbers are exact: `spark.conf.set(\"spark.sql.adaptive.enabled\", \"false\")`. Record jobs, stages and tasks for (a) `orders.count()`, (b) `orders.groupBy(\"status\").count().collect()`, (c) `run(orders.orderBy(\"amount\"))`. Expect 1 job / 2 stages, 1 / 2, and 2 jobs / 3 stages: count adds a single-partition shuffle, and orderBy runs an extra sampling job first. Then set `spark.sql.shuffle.partitions` to 8 and watch the second stage drop from 200 tasks to 8. Proves 1.5, 1.10.",
+                    "title": "Task 5. Count jobs, stages and tasks (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d1-prove-1"
                   },
                   {
-                    "title": "Fail a task, then retry it (15 min)",
-                    "text": "Write a UDF that raises for one row, e.g. `bad = udf(lambda x: 1 // 0 if x == 7 else x, \"long\")`, and run `run(spark.range(100).repartition(4).select(bad(\"id\")))`. With master `local[4]` the job fails at the first error (local mode does not retry). Restart Python, start with `get_spark(master=\"local[4,3]\")` (3 attempts per task) and find the 3 failed attempts in the Stages tab. A deterministic bug fails every attempt: retries only help with transient failures such as a lost executor. Proves 1.7.",
+                    "title": "Task 6. Fail a task, then retry it (15 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d1-prove-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Say it without notes",
-        "time": "30 min",
-        "activities": [
-          {
-            "key": "recall",
-            "name": "🗣 Recall",
-            "time": "30 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Say today's answers aloud (25 min)",
-                    "text": "Notes closed. Answer each of today's 6 answer cards aloud in about 2 minutes: what it is, how it works, what it costs or trades off, and where you would see it in the plan or the UI. Mark every card where you hesitated.",
-                    "id": "v2-d1-recall-1"
-                  },
-                  {
-                    "title": "Done when (5 min)",
-                    "text": "Without notes you can draw driver, cluster manager and executors, say where each lives in local mode, and predict the jobs, stages and tasks of a read → filter → groupBy → count query.",
-                    "id": "v2-d1-recall-2"
                   }
                 ]
               }
@@ -278,7 +216,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 45 min"
+    "time": "≈ 4 h 15 min"
   },
   {
     "day": 2,
@@ -409,131 +347,71 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Code along, practise, prove",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 30 min",
         "activities": [
           {
-            "key": "code",
-            "name": "📘 Code along",
-            "time": "40 min",
-            "note": "Type the code yourself instead of pasting it, run every cell, and keep the Spark UI open. Swap in `spark = get_spark()` from the starter kit wherever an example builds its own session.",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
+            "time": "2 h 30 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Write the lab dataset once (10 min)",
-                    "text": "`make_orders(spark, 5_000_000).write.parquet(\"data/orders\")` and `make_customers(spark).write.parquet(\"data/customers\")`. Later days reuse both folders. Reading from Parquet shows pushdown and pruning, which generated data cannot.",
+                    "title": "Download day02_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d2-nb-0",
+                    "url": "/spark-lab/notebooks/day02_lab.ipynb",
+                    "links": [
+                      {
+                        "label": "Download lab_utils.py",
+                        "url": "/spark-lab/lab_utils.py"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Task 1. Write the lab dataset once (10 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d2-code-1"
                   },
                   {
-                    "title": "Chapter 6: Old SQL, New Tricks (30 min)",
-                    "text": "Type every pair of examples in the official PySpark guide: SELECT and FILTER, JOIN, GROUP BY, a window with RANK, UNION, SET configurations, listing tables, `selectExpr`, temp views, and a Python UDF registered for SQL. After each SQL / DataFrame pair, call `explain()` on both and confirm the physical plans match: one engine, two syntaxes. The chapter creates Parquet tables named `people` and `orders` in `spark-warehouse/`; drop them at the end (`DROP TABLE people`, `DROP TABLE orders`) so they do not get mixed up with your own data.",
-                    "url": "https://spark.apache.org/docs/latest/api/python/user_guide/sql.html",
-                    "links": [
-                      {
-                        "label": "Notebook source on GitHub",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/python/docs/source/user_guide/sql.ipynb"
-                      }
-                    ],
+                    "title": "Task 2. Chapter 6: Old SQL, New Tricks (30 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d2-code-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "exercises",
-            "name": "✍️ Exercises",
-            "time": "1 h",
-            "note": "Write these from scratch in a notebook or a .py file, using the patterns you just typed. Each one ends with a Check you can verify yourself; open the reference solution only after you have a working answer.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Exercise 1: one question in SQL and in the DataFrame API (30 min)",
-                    "text": "Question: revenue of paid orders per country, top 5. Register `data/orders` and `data/customers` as temp views and answer it with `spark.sql`, then again with the DataFrame API (`filter`, `join`, `groupBy`, `agg`, `orderBy`, `limit`). Check: `assertDataFrameEqual(sql_df, api_df, checkRowOrder=True)` passes, and the operator names in both `explain(\"formatted\")` trees are identical and in the same order (only the `#ids` differ). Proves 1.6, 1.13.",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day02.py"
-                      }
-                    ],
-                    "id": "v2-d2-exercises-1"
                   },
                   {
-                    "title": "Exercise 2: port the official wordcount.py from RDDs to DataFrames (30 min)",
-                    "text": "Download a text file (`curl -o README.md https://raw.githubusercontent.com/apache/spark/v4.2.0/README.md`), run the logic of the official `wordcount.py` in your notebook (`flatMap`, `map`, `reduceByKey`), then rewrite it with `spark.read.text`, `F.explode(F.split(\"value\", \" \"))` and `groupBy(\"word\").count()`. Check: both give the same count for the 10 most frequent words, and the DataFrame plan has `partial_count` before its Exchange: the same map-side combine that `reduceByKey` does. In the Stages tab, compare task times: the RDD version ships every line to Python workers. Proves 1.13, 1.5.",
+                    "title": "Task 3. Exercise 1: one question in SQL and in the DataFrame API (30 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d2-exercises-1",
                     "links": [
-                      {
-                        "label": "wordcount.py on GitHub",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/examples/src/main/python/wordcount.py"
-                      },
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/day02.py"
                       }
-                    ],
-                    "id": "v2-d2-exercises-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "prove",
-            "name": "🔬 Prove it",
-            "time": "50 min",
-            "note": "Short, focused checks of today's checklist questions in the plan and the Spark UI.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                    ]
+                  },
                   {
-                    "title": "Four plans, and the rules that made them (35 min)",
-                    "text": "Query: read `data/orders`, filter `F.col(\"amount\") > 50`, join `data/customers` on customer_id, `groupBy(\"country\").agg(F.sum(\"amount\"))`. Run `explain(\"extended\")` and label the sections: Parsed (names still unresolved), Analyzed (types and ids such as `amount#3`), Optimized (filter moved below the join, `isnotnull(customer_id)` added) and Physical (FileScan with `PushedFilters`, `BroadcastHashJoin`, partial and final `HashAggregate`, one `Exchange`). Then `spark.conf.set(\"spark.sql.planChangeLog.level\", \"WARN\")`, rebuild a deliberately wasteful version (`select(\"*\")` then two columns, the filter after the join, an extra `F.lit(1) + F.lit(1) == 2`) and `explain()` it: the console lists every rule that changed the plan, such as `ResolveReferences`, `PushDownPredicates`, `ColumnPruning`, `ConstantFolding`, `InferFiltersFromConstraints` and `EnsureRequirements`. Set the level back to `TRACE` afterwards. Proves 1.6.",
+                    "title": "Task 4. Exercise 2: port the official wordcount.py from RDDs to DataFrames (30 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d2-exercises-2",
+                    "links": [
+                      {
+                        "label": "Reference solution",
+                        "url": "/spark-lab/solutions/day02.py"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Task 5. Four plans, and the rules that made them (35 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d2-prove-1"
                   },
                   {
-                    "title": "Blind the optimizer with a UDF (15 min)",
-                    "text": "Replace `F.col(\"amount\") > 50` with a Python UDF, `udf(lambda a: a is not None and a > 50, \"boolean\")(\"amount\")`, and compare the scan node: the predicate disappears from `PushedFilters` and an `ArrowEvalPython` node appears (Spark 4.2 runs plain Python UDFs through Arrow by default; `useArrow=False` shows the older `BatchEvalPython`). Time both versions with `run()`. Proves 1.6; preview of 6.1.",
+                    "title": "Task 6. Blind the optimizer with a UDF (15 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d2-prove-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Say it without notes",
-        "time": "40 min",
-        "activities": [
-          {
-            "key": "recall",
-            "name": "🗣 Recall",
-            "time": "40 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Say today's answers aloud (25 min)",
-                    "text": "Notes closed. Answer each of today's 3 answer cards aloud in about 2 minutes: what it is, how it works, what it costs or trades off, and where you would see it in the plan or the UI. Mark every card where you hesitated. Then explain each 🧭 item in one minute.",
-                    "id": "v2-d2-recall-1"
-                  },
-                  {
-                    "title": "Spaced review (10 min)",
-                    "text": "Without notes, re-answer the cards you marked on Day 1. If one still will not come, re-read that card and the lab task that proves it.",
-                    "id": "v2-d2-recall-2"
-                  },
-                  {
-                    "title": "Done when (5 min)",
-                    "text": "Given any explain output you can point to pushdown, pruning, constant folding and codegen, and name the Catalyst phase or physical rule responsible for each.",
-                    "id": "v2-d2-recall-3"
                   }
                 ]
               }
@@ -542,7 +420,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 55 min"
+    "time": "≈ 4 h 15 min"
   },
   {
     "day": 3,
@@ -680,130 +558,66 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Code along, practise, prove",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 30 min",
         "activities": [
           {
-            "key": "code",
-            "name": "📘 Code along",
-            "time": "35 min",
-            "note": "Type the code yourself instead of pasting it, run every cell, and keep the Spark UI open. Swap in `spark = get_spark()` from the starter kit wherever an example builds its own session.",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
+            "time": "2 h 30 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Chapter 3: Function Junction (35 min)",
-                    "text": "Type the cleaning (rename, `na.drop`, `na.fill`, outliers, `distinct`), string, transform and summarizing sections of the official PySpark guide (`explode`, `groupBy().agg()`, `orderBy`); keep the joins section for Day 5. After `groupBy().agg()` and `orderBy`, run `explain()`: partial and final `HashAggregate` around one Exchange, and `rangepartitioning` for the sort. Notice the cell that adds 20 columns with a `withColumn(lit)` loop: Day 8 explains why real code avoids it.",
-                    "url": "https://spark.apache.org/docs/latest/api/python/user_guide/dataprep.html",
+                    "title": "Download day03_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d3-nb-0",
+                    "url": "/spark-lab/notebooks/day03_lab.ipynb",
                     "links": [
                       {
-                        "label": "Notebook source on GitHub",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/python/docs/source/user_guide/dataprep.ipynb"
+                        "label": "Download lab_utils.py",
+                        "url": "/spark-lab/lab_utils.py"
                       }
-                    ],
-                    "id": "v2-d3-code-1"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "exercises",
-            "name": "✍️ Exercises",
-            "time": "1 h",
-            "note": "Write these from scratch in a notebook or a .py file, using the patterns you just typed. Each one ends with a Check you can verify yourself; open the reference solution only after you have a working answer.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Exercise 1: count three ways (30 min)",
-                    "text": "On `data/orders`, per status: `count(\"*\")`, the exact `countDistinct(\"customer_id\")`, and `approx_count_distinct(\"customer_id\", rsd)` at 0.05 and 0.01, plus the relative error of each. Keep the exact and the approximate counts in two separate `agg` calls and join them: in one `agg`, Spark computes the sketches inside the distinct count's (status, customer_id) step, about 40,000 groups each holding a 13 KB sketch at rsd 0.01, and the job runs out of memory (try it once and read the plan). With AQE off, count the Exchanges of the exact and the approximate query. Check: exact is 9,999 for every status, the error is about 4 % at 0.05 and under 1 % at 0.01, and the plans have 2 Exchanges vs 1. Proves 1.9, 1.14.",
-                    "links": [
-                      {
-                        "label": "approx_count_distinct API",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.approx_count_distinct.html"
-                      },
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day03.py"
-                      }
-                    ],
-                    "id": "v2-d3-exercises-1"
+                    ]
                   },
                   {
-                    "title": "Exercise 2: averages and rankings on the chapter's data (30 min)",
-                    "text": "Rebuild the chapter's `incomes` DataFrame and explode it to one row per income. (1) Compute the overall average income from the rows, and the average of the per-name averages. (2) Top 2 incomes per name with `F.row_number().over(Window.partitionBy(\"name\").orderBy(F.desc(\"income\")))`. (3) The overall top 3 with `orderBy(F.desc(\"income\")).limit(3)`. Compare the two plans with AQE off. Check: 242.11 vs 244.87, because names have different numbers of incomes; the window plan has an `Exchange hashpartitioning(name)`, a Sort and a Window node; the top 3 is a `TakeOrderedAndProject` with no Exchange. Proves 1.15, 1.16.",
+                    "title": "Task 1. Chapter 3: Function Junction (35 min)",
+                    "text": "Solve it in the notebook.",
+                    "id": "v2-d3-code-1"
+                  },
+                  {
+                    "title": "Task 2. Exercise 1: count three ways (30 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d3-exercises-1",
                     "links": [
-                      {
-                        "label": "Window API",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.Window.html"
-                      },
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/day03.py"
                       }
-                    ],
-                    "id": "v2-d3-exercises-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "prove",
-            "name": "🔬 Prove it",
-            "time": "55 min",
-            "note": "Short, focused checks of today's checklist questions in the plan and the Spark UI.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                    ]
+                  },
                   {
-                    "title": "Build the operator table (30 min)",
-                    "text": "Read `data/orders`, turn AQE off, and for each query save `explain(\"formatted\")` and record the aggregate operator, the number of Exchanges, any Expand, and the sort node: `groupBy(\"status\").agg(F.avg(\"amount\"))`; `.agg(F.countDistinct(\"customer_id\"))`; `.agg(F.countDistinct(\"customer_id\"), F.countDistinct(\"product_id\"))`; `.agg(F.approx_count_distinct(\"customer_id\"))`; `.agg(F.collect_list(\"amount\"))`; `orderBy(\"amount\")`; `sortWithinPartitions(\"amount\")`; `orderBy(F.desc(\"amount\")).limit(10)`. Expect: avg 2 HashAggregate / 1 Exchange; one distinct 4 / 2; two distincts add Expand; approx 2 / 1; collect_list uses ObjectHashAggregate; orderBy has `rangepartitioning` plus `Sort ... true`; sortWithinPartitions has no Exchange; orderBy + limit becomes `TakeOrderedAndProject`. Proves 1.9, 1.14, 1.15, 1.16.",
+                    "title": "Task 3. Exercise 2: averages and rankings on the chapter's data (30 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d3-exercises-2",
+                    "links": [
+                      {
+                        "label": "Reference solution",
+                        "url": "/spark-lab/solutions/day03.py"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Task 4. Build the operator table (30 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d3-prove-1"
                   },
                   {
-                    "title": "AQE on vs off, and the wrong partition count (25 min)",
-                    "text": "Query `q = orders.groupBy(\"customer_id\").agg(F.sum(\"amount\"))`. AQE off: run it and count the tasks of the second stage (200); then run it with `spark.sql.shuffle.partitions` at 2 (two big tasks, idle cores) and at 2000 (thousands of tiny tasks). AQE on, partitions still 2000: build `q` again, `q.collect()`, then `q.explain()`: `isFinalPlan=true`, `ShuffleQueryStage`, `AQEShuffleRead coalesced`, and only a few tasks in the Stages tab. Proves 1.4, 3.11.",
+                    "title": "Task 5. AQE on vs off, and the wrong partition count (25 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d3-prove-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Say it without notes",
-        "time": "40 min",
-        "activities": [
-          {
-            "key": "recall",
-            "name": "🗣 Recall",
-            "time": "40 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Say today's answers aloud (25 min)",
-                    "text": "Notes closed. Answer each of today's 5 answer cards aloud in about 2 minutes: what it is, how it works, what it costs or trades off, and where you would see it in the plan or the UI. Mark every card where you hesitated. Then explain each 🧭 item in one minute.",
-                    "id": "v2-d3-recall-1"
-                  },
-                  {
-                    "title": "Spaced review (10 min)",
-                    "text": "Without notes, re-answer the cards you marked on Day 2. If one still will not come, re-read that card and the lab task that proves it.",
-                    "id": "v2-d3-recall-2"
-                  },
-                  {
-                    "title": "Done when (5 min)",
-                    "text": "You can explain in two sentences each how avg, count(distinct), approx_count_distinct and orderBy run across partitions, and point to what AQE changed in a final plan.",
-                    "id": "v2-d3-recall-3"
                   }
                 ]
               }
@@ -812,7 +626,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 55 min"
+    "time": "≈ 4 h 15 min"
   },
   {
     "day": 4,
@@ -975,132 +789,65 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Code along, practise, prove",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 30 min",
         "activities": [
           {
-            "key": "code",
-            "name": "📘 Code along",
-            "time": "45 min",
-            "note": "Type the code yourself instead of pasting it, run every cell, and keep the Spark UI open. Swap in `spark = get_spark()` from the starter kit wherever an example builds its own session.",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
+            "time": "2 h 30 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Chapter 7: Load and Behold (20 min)",
-                    "text": "Type the reading, writing and options sections of the official guide. The chapter reads `../data/employees.*` files that are not shipped with it, so use the official sample files from `examples/src/main/resources` instead (download each with the Raw button): `people.csv` (semicolon-delimited, so `option(\"delimiter\", \";\")`), `people.json`, `users.parquet` and `users.orc`. Write each back out as CSV, Parquet and ORC, and try the gzip compression option.",
-                    "url": "https://spark.apache.org/docs/latest/api/python/user_guide/loadandbehold.html",
+                    "title": "Download day04_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d4-nb-0",
+                    "url": "/spark-lab/notebooks/day04_lab.ipynb",
                     "links": [
                       {
-                        "label": "Sample files on GitHub",
-                        "url": "https://github.com/apache/spark/tree/v4.2.0/examples/src/main/resources"
-                      },
-                      {
-                        "label": "Notebook source on GitHub",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/python/docs/source/user_guide/loadandbehold.ipynb"
+                        "label": "Download lab_utils.py",
+                        "url": "/spark-lab/lab_utils.py"
                       }
-                    ],
+                    ]
+                  },
+                  {
+                    "title": "Task 1. Chapter 7: Load and Behold (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d4-code-1"
                   },
                   {
-                    "title": "The official datasource.py example (25 min)",
-                    "text": "Type `basic_datasource_example` and `parquet_schema_merging_example` into your notebook with the downloaded sample files (skip JDBC, Hive and XML): generic `load` / `save`, `partitionBy`, `bucketBy` with `saveAsTable`, and two batches under `key=1` and `key=2` read back with `mergeSchema`. After every write, list the output folder: one folder per partition value, bucket files, part files and `_SUCCESS`.",
-                    "url": "https://github.com/apache/spark/blob/v4.2.0/examples/src/main/python/sql/datasource.py",
-                    "links": [
-                      {
-                        "label": "Data sources guide",
-                        "url": "https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html"
-                      }
-                    ],
+                    "title": "Task 2. The official datasource.py example (25 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d4-code-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "exercises",
-            "name": "✍️ Exercises",
-            "time": "1 h",
-            "note": "Write these from scratch in a notebook or a .py file, using the patterns you just typed. Each one ends with a Check you can verify yourself; open the reference solution only after you have a working answer.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                  },
                   {
-                    "title": "Exercise 1: one dataset in five formats (30 min)",
-                    "text": "Take 1,000,000 rows of `data/orders` and write them as CSV (with header), JSON, Parquet, ORC and Avro. Record folder size and write time, then time `agg(F.sum(\"amount\"))` on each with `run()`. Expect JSON largest, CSV slowest to write, Parquet and ORC smallest and fastest to read; ORC may be smaller than Parquet because Spark 4 uses zstd for ORC and snappy for Parquet. Check (1,000,000 rows): JSON about 200 MB, CSV about 100 MB, Avro about 60 MB, Parquet about 50 MB and ORC about 30 MB, and Parquet reads about 5× faster than CSV. Proves 2.1, 2.2, 2.10.",
+                    "title": "Task 3. Exercise 1: one dataset in five formats (30 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d4-exercises-1"
                   },
                   {
-                    "title": "Exercise 2: datasource.py's layouts applied to orders (30 min)",
-                    "text": "(1) Write orders with `partitionBy(\"order_date\")`, then filter one date and `amount > 99` and read the scan node. (2) Like `parquet_schema_merging_example`, write 1,000 orders to `layout/batches/batch=1` and 1,000 with an extra `discount` column to `layout/batches/batch=2`, then read the parent folder with `mergeSchema`. Check: 30 date folders; `PartitionFilters` holds your date and `PushedFilters` holds `GreaterThan(amount,99.0)`; the merged DataFrame has `batch` and `discount` columns, and `discount` is null for every batch-1 row. Proves 2.8, 2.4, 2.3.",
+                    "title": "Task 4. Exercise 2: datasource.py's layouts applied to orders (30 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d4-exercises-2",
                     "links": [
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/day04.py"
                       }
-                    ],
-                    "id": "v2-d4-exercises-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "prove",
-            "name": "🔬 Prove it",
-            "time": "45 min",
-            "note": "Short, focused checks of today's checklist questions in the plan and the Spark UI.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                    ]
+                  },
                   {
-                    "title": "Create the small file problem, then fix it (25 min)",
-                    "text": "Write orders with `repartition(200)` and `partitionBy(\"order_date\")`: up to 6,000 tiny files. Time a full read and count its read tasks. Fix it with `repartition(\"order_date\")` before `partitionBy` (one file per folder), or `coalesce(n)` with the `maxRecordsPerFile` option; compare file counts, read tasks and time. Proves 2.5.",
+                    "title": "Task 5. Create the small file problem, then fix it (25 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d4-prove-1"
                   },
                   {
-                    "title": "Splittable or not (20 min)",
-                    "text": "Write a CSV of about 200 MB as one file (`coalesce(1)`), once plain and once with `option(\"compression\", \"gzip\")`. Read both and compare `rdd.getNumPartitions()`: plain splits across tasks, gzip is 1. Predict the plain count with the formula min(128 MB, max(4 MB, bytes ÷ cores)) and check; set `spark.sql.files.maxPartitionBytes` to `32m` and predict again. Proves 2.9.",
+                    "title": "Task 6. Splittable or not (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d4-prove-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Say it without notes",
-        "time": "40 min",
-        "activities": [
-          {
-            "key": "recall",
-            "name": "🗣 Recall",
-            "time": "40 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Say today's answers aloud (25 min)",
-                    "text": "Notes closed. Answer each of today's 8 answer cards aloud in about 2 minutes: what it is, how it works, what it costs or trades off, and where you would see it in the plan or the UI. Mark every card where you hesitated.",
-                    "id": "v2-d4-recall-1"
-                  },
-                  {
-                    "title": "Spaced review (10 min)",
-                    "text": "Without notes, re-answer the cards you marked on Day 3 and Day 1. If one still will not come, re-read that card and the lab task that proves it.",
-                    "id": "v2-d4-recall-2"
-                  },
-                  {
-                    "title": "Done when (5 min)",
-                    "text": "Given a workload (daily batch, wide table, mostly filtered by date and customer) you can choose format, codec, partition column and file size, and say what you would check in the plan to prove each choice.",
-                    "id": "v2-d4-recall-3"
                   }
                 ]
               }
@@ -1109,7 +856,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 55 min"
+    "time": "≈ 4 h 15 min"
   },
   {
     "day": 5,
@@ -1275,130 +1022,66 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Code along, practise, prove",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 30 min",
         "activities": [
           {
-            "key": "code",
-            "name": "📘 Code along",
-            "time": "35 min",
-            "note": "Type the code yourself instead of pasting it, run every cell, and keep the Spark UI open. Swap in `spark = get_spark()` from the starter kit wherever an example builds its own session.",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
+            "time": "2 h 30 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Joins in the official guides (35 min)",
-                    "text": "Type the join examples from three official pages: the last section of Chapter 3, \"When DataFrames Collide\" (inner, left and right joins on `name`); every join type on the SQL reference JOIN page (inner, left, right, full, cross, semi, anti); and the Examples of `DataFrame.join` in the API reference (joining on a column name, on expressions, on several keys). Then type the `DataFrame.hint` examples. Run `explain()` as you go and note which joins show BroadcastHashJoin and which SortMergeJoin.",
-                    "url": "https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-join.html",
+                    "title": "Download day05_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d5-nb-0",
+                    "url": "/spark-lab/notebooks/day05_lab.ipynb",
                     "links": [
                       {
-                        "label": "Chapter 3 joins",
-                        "url": "https://spark.apache.org/docs/latest/api/python/user_guide/dataprep.html"
-                      },
-                      {
-                        "label": "DataFrame.join API",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.join.html"
-                      },
-                      {
-                        "label": "DataFrame.hint API",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.hint.html"
+                        "label": "Download lab_utils.py",
+                        "url": "/spark-lab/lab_utils.py"
                       }
-                    ],
-                    "id": "v2-d5-code-1"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "exercises",
-            "name": "✍️ Exercises",
-            "time": "1 h 5 min",
-            "note": "Write these from scratch in a notebook or a .py file, using the patterns you just typed. Each one ends with a Check you can verify yourself; open the reference solution only after you have a working answer.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Exercise 1: every join type, and which side can be broadcast (30 min)",
-                    "text": "With the chapter's `df1` (4 people) and `df2` (5 people with incomes), write down the row count of inner, left, right, full, left_semi, left_anti and cross first, then check. With AQE off, every join is a SortMergeJoin, even on 4 rows: DataFrames built from Python rows have no size estimate (`df2._jdf.queryExecution().optimizedPlan().stats().sizeInBytes()` prints 9223372036854775807), so Spark treats them as huge. Add `F.broadcast(df2)`, then `F.broadcast(df1)`, to every join and record which hints Spark honours. Check: 3, 4, 5, 6, 3, 1 and 20 rows; left, semi and anti joins can broadcast only the right side, right joins only the left side, full outer neither. Proves 3.2, 3.7, 3.9.",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day05.py"
-                      }
-                    ],
-                    "id": "v2-d5-exercises-1"
+                    ]
                   },
                   {
-                    "title": "Exercise 2: predict, then verify the strategy matrix (35 min)",
-                    "text": "AQE off. Write down your predicted strategy and Exchange count for each case, then check with `count_nodes(df, \"BroadcastHashJoin\", \"ShuffledHashJoin\", \"SortMergeJoin\", \"BroadcastNestedLoopJoin\", \"CartesianProduct\", \"Exchange\")`. With `orders` = `data/orders`, `cust` = `data/customers`, `big2` = `make_orders(spark, 1_000_000, seed=1)`: (a) `orders.join(cust, \"customer_id\")`; (b) `orders.join(big2, \"customer_id\")` (explain only); (c) `cust.join(orders, \"customer_id\", \"left\")`; (d) `orders.join(cust, \"customer_id\", \"full\")`; (e) `orders.join(cust, orders.amount < cust.customer_id)` (explain only); (f) case (e) with `autoBroadcastJoinThreshold` -1; (g) case (b) with `spark.sql.join.preferSortMergeJoin` false and threshold `1MB`, joining a 200,000-row `make_orders(spark, 200_000, seed=2)`. Expect: broadcast hash; sort-merge; sort-merge (the small left side of a left join cannot be the build side); sort-merge; broadcast nested loop; Cartesian product; shuffled hash. Proves 3.9, 3.2, 3.8.",
+                    "title": "Task 1. Joins in the official guides (35 min)",
+                    "text": "Solve it in the notebook.",
+                    "id": "v2-d5-code-1"
+                  },
+                  {
+                    "title": "Task 2. Exercise 1: every join type, and which side can be broadcast (30 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d5-exercises-1",
                     "links": [
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/day05.py"
                       }
-                    ],
-                    "id": "v2-d5-exercises-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "prove",
-            "name": "🔬 Prove it",
-            "time": "50 min",
-            "note": "Short, focused checks of today's checklist questions in the plan and the Spark UI.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                    ]
+                  },
                   {
-                    "title": "AQE switches a join at runtime (25 min)",
-                    "text": "Write `make_orders(spark, 1_000_000, seed=3)` to `data/orders_b`. `ob = spark.read.parquet(\"data/orders_b\").filter(\"amount < 0.1\")` keeps about 1,000 rows. Join orders with `ob` on customer_id, then `groupBy(orders.status).agg(F.count(ob.note))`; counting `ob.note` keeps a wide column on that side, so its static estimate is about 20 MB (Spark scales file size by the columns a query reads, and ignores the filter). AQE off: SortMergeJoin. AQE on: build it again, `collect()` it, then `explain()`: the final plan shows BroadcastHashJoin and `AQEShuffleRead local`. Count only `ob.customer_id` instead and even the static plan broadcasts: pruning alone pushes the estimate under 10 MB. Proves 3.10, 3.2.",
+                    "title": "Task 3. Exercise 2: predict, then verify the strategy matrix (35 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d5-exercises-2",
+                    "links": [
+                      {
+                        "label": "Reference solution",
+                        "url": "/spark-lab/solutions/day05.py"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Task 4. AQE switches a join at runtime (25 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d5-prove-1"
                   },
                   {
-                    "title": "A join with no shuffle: bucketing (25 min)",
-                    "text": "Write orders and `big2` with `bucketBy(16, \"customer_id\").sortBy(\"customer_id\").saveAsTable(...)`; `DESCRIBE EXTENDED` shows the bucket spec. With broadcasting off, join the two tables: no Exchange under the SortMergeJoin (the Sort stays, as expected since Spark 3). Re-bucket one side with 8 buckets: one side shuffles again; set `spark.sql.bucketing.coalesceBucketsInJoin.enabled` to true and it goes away. Join on a column that is not the bucket column: both Exchanges return. Proves 3.5, 3.4.",
+                    "title": "Task 5. A join with no shuffle: bucketing (25 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d5-prove-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Say it without notes",
-        "time": "40 min",
-        "activities": [
-          {
-            "key": "recall",
-            "name": "🗣 Recall",
-            "time": "40 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Say today's answers aloud (25 min)",
-                    "text": "Notes closed. Answer each of today's 8 answer cards aloud in about 2 minutes: what it is, how it works, what it costs or trades off, and where you would see it in the plan or the UI. Mark every card where you hesitated.",
-                    "id": "v2-d5-recall-1"
-                  },
-                  {
-                    "title": "Spaced review (10 min)",
-                    "text": "Without notes, re-answer the cards you marked on Day 4 and Day 2. If one still will not come, re-read that card and the lab task that proves it.",
-                    "id": "v2-d5-recall-2"
-                  },
-                  {
-                    "title": "Done when (5 min)",
-                    "text": "Shown any join plan you can name the strategy, count the shuffles and say why Spark picked it; given table sizes and a join type you can predict the strategy before running explain.",
-                    "id": "v2-d5-recall-3"
                   }
                 ]
               }
@@ -1407,7 +1090,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 55 min"
+    "time": "≈ 4 h 15 min"
   },
   {
     "day": 6,
@@ -1559,138 +1242,66 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Code along, practise, prove",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 30 min",
         "activities": [
           {
-            "key": "code",
-            "name": "📘 Code along",
-            "time": "30 min",
-            "note": "Type the code yourself instead of pasting it, run every cell, and keep the Spark UI open. Swap in `spark = get_spark()` from the starter kit wherever an example builds its own session.",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
+            "time": "2 h 30 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Partitioning tools in the API reference (30 min)",
-                    "text": "Type the Examples sections of the official API pages for `DataFrame.repartition`, `repartitionByRange`, `coalesce` and `hint`, and of `functions.broadcast`, then the SQL partitioning hints (`REPARTITION`, `REBALANCE`, `COALESCE`) from Performance Tuning. After each one, print `df.rdd.getNumPartitions()` and `partition_sizes(df)`, and look for the Exchange (or its absence) in `explain()`.",
-                    "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.repartition.html",
+                    "title": "Download day06_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d6-nb-0",
+                    "url": "/spark-lab/notebooks/day06_lab.ipynb",
                     "links": [
                       {
-                        "label": "repartitionByRange",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.repartitionByRange.html"
-                      },
-                      {
-                        "label": "coalesce",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.coalesce.html"
-                      },
-                      {
-                        "label": "hint",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.hint.html"
-                      },
-                      {
-                        "label": "broadcast",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.broadcast.html"
-                      },
-                      {
-                        "label": "SQL partitioning hints",
-                        "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#coalesce-hints-for-sql-queries"
+                        "label": "Download lab_utils.py",
+                        "url": "/spark-lab/lab_utils.py"
                       }
-                    ],
-                    "id": "v2-d6-code-1"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "exercises",
-            "name": "✍️ Exercises",
-            "time": "1 h 15 min",
-            "note": "Write these from scratch in a notebook or a .py file, using the patterns you just typed. Each one ends with a Check you can verify yourself; open the reference solution only after you have a working answer.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Exercise 1: salt a skewed join (45 min)",
-                    "text": "Write `make_orders(spark, 4_000_000, hot_share=0.5)` to `data/orders_skewed` (half the rows have customer_id 0). With AQE off and broadcasting off (`spark.sql.autoBroadcastJoinThreshold` = -1), join it with customers and find the straggler in the Stages tab: Max vs Median duration and shuffle read. Then (a) salt every key: `salt = F.floor(F.rand(1) * 16)` on the orders side and `F.explode(F.sequence(F.lit(0), F.lit(15)))` on customers, joined on [\"customer_id\", \"salt\"]; (b) salt only the hot key, keeping salt 0 for every other key and replicating only customer 0. Check: all three joins return the same number of rows; after hashing into 64 partitions the max ÷ median row ratio drops from about 65 to about 9, and the joins get faster; (a) grows customers to 160,000 rows, (b) to 10,015. Proves 4.2, 4.3, 4.5, 4.11.",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day06.py"
-                      }
-                    ],
-                    "id": "v2-d6-exercises-1"
+                    ]
                   },
                   {
-                    "title": "Exercise 2: a two-stage distinct count (30 min)",
-                    "text": "On the skewed data, `groupBy(\"customer_id\").agg(F.countDistinct(\"product_id\"))` sends the whole hot key to one task (check the task metrics). Rewrite it in two stages: add `salt = F.pmod(F.hash(\"product_id\"), F.lit(16))` so each product lands in exactly one salt, count distinct per (customer_id, salt), then sum per customer_id. AQE skew handling does not help aggregations, so this is on you. Check: the result equals the exact one for every customer (the hot key has 1,000 distinct products). Proves 4.4, 4.6.",
+                    "title": "Task 1. Partitioning tools in the API reference (30 min)",
+                    "text": "Solve it in the notebook.",
+                    "id": "v2-d6-code-1"
+                  },
+                  {
+                    "title": "Task 2. Exercise 1: salt a skewed join (45 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d6-exercises-1",
                     "links": [
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/day06.py"
                       }
-                    ],
-                    "id": "v2-d6-exercises-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "prove",
-            "name": "🔬 Prove it",
-            "time": "45 min",
-            "note": "Short, focused checks of today's checklist questions in the plan and the Spark UI.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                    ]
+                  },
                   {
-                    "title": "AQE skew join (25 min)",
-                    "text": "AQE on, broadcasting still off. For local data, lower the thresholds: `spark.sql.adaptive.skewJoin.skewedPartitionThresholdInBytes` = `4MB` and `spark.sql.adaptive.advisoryPartitionSizeInBytes` = `4MB`. Build the skewed join with an aggregate on top (`groupBy(\"country\").agg(F.count(\"note\"))`), `collect()` it and `explain()`: look for `SortMergeJoin(skew=true)`, an `AQEShuffleRead` marked `skewed`, and the split tasks in the UI. Then aggregate only `customer_id`, so that just the key is shuffled: the skew goes undetected, because AQE measures bytes, not rows. Proves 4.6.",
+                    "title": "Task 3. Exercise 2: a two-stage distinct count (30 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d6-exercises-2",
+                    "links": [
+                      {
+                        "label": "Reference solution",
+                        "url": "/spark-lab/solutions/day06.py"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Task 4. AQE skew join (25 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d6-prove-1"
                   },
                   {
-                    "title": "repartition vs coalesce (20 min)",
-                    "text": "Print `partition_sizes()` for `s.repartition(8)`, `s.repartition(8, \"customer_id\")`, `s.repartition(8).coalesce(2)` and `s.repartition(8, \"customer_id\").coalesce(2)`. Expect even sizes; one partition of about 2.2 million rows; two even halves; and two uneven partitions (about 3 million and 1 million): coalesce only glues partitions together, so it cannot undo skew. Then write `s` as one gzip CSV (`coalesce(1)`, `option(\"compression\", \"gzip\")`) and read it back: one read task however many cores you have, which is read-side skew. Proves 4.8, 4.9, 4.10, 6.2.",
+                    "title": "Task 5. repartition vs coalesce (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d6-prove-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Say it without notes",
-        "time": "40 min",
-        "activities": [
-          {
-            "key": "recall",
-            "name": "🗣 Recall",
-            "time": "40 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Say today's answers aloud (25 min)",
-                    "text": "Notes closed. Answer each of today's 7 answer cards aloud in about 2 minutes: what it is, how it works, what it costs or trades off, and where you would see it in the plan or the UI. Mark every card where you hesitated.",
-                    "id": "v2-d6-recall-1"
-                  },
-                  {
-                    "title": "Spaced review (10 min)",
-                    "text": "Without notes, re-answer the cards you marked on Day 5 and Day 3. If one still will not come, re-read that card and the lab task that proves it.",
-                    "id": "v2-d6-recall-2"
-                  },
-                  {
-                    "title": "Done when (5 min)",
-                    "text": "Given a stage with one 10-minute task and 199 two-second tasks, you can confirm it is skew, find the key, and list four fixes with the trade-off of each.",
-                    "id": "v2-d6-recall-3"
                   }
                 ]
               }
@@ -1699,7 +1310,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 50 min"
+    "time": "≈ 4 h 10 min"
   },
   {
     "day": 7,
@@ -1915,143 +1526,76 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Code along, practise, prove",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 30 min",
         "activities": [
           {
-            "key": "code",
-            "name": "📘 Code along",
-            "time": "40 min",
-            "note": "Type the code yourself instead of pasting it, run every cell, and keep the Spark UI open. Swap in `spark = get_spark()` from the starter kit wherever an example builds its own session.",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
+            "time": "2 h 30 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Chapter 4: Bug Busting (30 min)",
-                    "text": "Type the Spark UI section of the official guide (how a Python UDF shows up in the plan and the UI), then the UDF profilers: `spark.conf.set(\"spark.sql.pyspark.udf.profiler\", \"memory\")`, run the UDF, `spark.profile.show(type=\"memory\")`, then the same with `\"perf\"`. The memory profiler needs the `memory-profiler` package and real line numbers, so run it from a notebook or a .py file. Finish with the stack-trace settings. You get per-line memory use of your UDF: memory that lives in Python workers, outside the JVM heap.",
-                    "url": "https://spark.apache.org/docs/latest/api/python/user_guide/bugbusting.html",
+                    "title": "Download day07_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d7-nb-0",
+                    "url": "/spark-lab/notebooks/day07_lab.ipynb",
                     "links": [
                       {
-                        "label": "Notebook source on GitHub",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/python/docs/source/user_guide/bugbusting.ipynb"
+                        "label": "Download lab_utils.py",
+                        "url": "/spark-lab/lab_utils.py"
                       }
-                    ],
+                    ]
+                  },
+                  {
+                    "title": "Task 1. Chapter 4: Bug Busting (30 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d7-code-1"
                   },
                   {
-                    "title": "The persistence API (10 min)",
-                    "text": "Type the Examples of the official API pages for `DataFrame.persist`, `cache`, `unpersist`, `checkpoint` and `localCheckpoint`, printing `df.storageLevel` after each call.",
-                    "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.persist.html",
-                    "links": [
-                      {
-                        "label": "checkpoint",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.checkpoint.html"
-                      },
-                      {
-                        "label": "localCheckpoint",
-                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.localCheckpoint.html"
-                      }
-                    ],
+                    "title": "Task 2. The persistence API (10 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d7-code-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "exercises",
-            "name": "✍️ Exercises",
-            "time": "55 min",
-            "note": "Write these from scratch in a notebook or a .py file, using the patterns you just typed. Each one ends with a Check you can verify yourself; open the reference solution only after you have a working answer.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Exercise 1: cache the right thing (30 min)",
-                    "text": "Build `joined = orders.join(cust, \"customer_id\")` and run three different aggregations on it (by country, by segment, by status), timing the total: with no persistence, after `joined.cache()`, and after `joined.persist(StorageLevel.DISK_ONLY)`. Read the Storage tab (level, fraction cached, size in memory and on disk) and find `InMemoryTableScan` in the plans. `unpersist()` and watch the Storage tab empty. Check: about 2.6 s for the three reports without persistence; the first cached run is slower because it fills the cache (about 5 s), later runs take about 0.6 s; the Storage tab shows `Disk Memory Deserialized 1x Replicated`, 4 of 4 partitions, about 400 MiB in memory; DISK_ONLY holds about 290 MiB on disk and is slower than memory. Proves 5.11, 5.8.",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day07.py"
-                      }
-                    ],
-                    "id": "v2-d7-exercises-1"
                   },
                   {
-                    "title": "Exercise 2: cut a long lineage (25 min)",
-                    "text": "Build a DataFrame with a loop of 30 `withColumn` steps. `spark.sparkContext.setCheckpointDir(\"checkpoints\")`, then compare `len(plan_text(df, \"extended\"))` before and after `df.checkpoint()` and `df.localCheckpoint()`: the plan shrinks to a `Scan ExistingRDD`. Look at the files written under `checkpoints/`. Check: the extended plan drops from about 17,000 characters to about 1,600. Proves 5.11, 6.10.",
+                    "title": "Task 3. Exercise 1: cache the right thing (30 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d7-exercises-1",
                     "links": [
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/day07.py"
                       }
-                    ],
-                    "id": "v2-d7-exercises-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "prove",
-            "name": "🔬 Prove it",
-            "time": "55 min",
-            "note": "Short, focused checks of today's checklist questions in the plan and the Spark UI.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                    ]
+                  },
                   {
-                    "title": "Compute the regions, then check the UI (15 min)",
-                    "text": "By hand, for 4, 10 and 16 GB heaps, compute reserved, usable, unified, protected storage and user memory (10 GB: 9,940 / 5,964 / 2,982 / 3,976 MB). Then open the Executors tab: `get_spark()` starts a 2 GB driver, and Storage Memory shows 1,048.8 MiB = (2048 − 300) × 0.6. The column says Storage, but it is the whole unified pool. Proves 5.1, 5.3, 5.10.",
+                    "title": "Task 4. Exercise 2: cut a long lineage (25 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d7-exercises-2",
+                    "links": [
+                      {
+                        "label": "Reference solution",
+                        "url": "/spark-lab/solutions/day07.py"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Task 5. Compute the regions, then check the UI (15 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d7-prove-1"
                   },
                   {
-                    "title": "Cause spill, then remove it (20 min)",
-                    "text": "Restart Python with `get_spark(driver_memory=\"1g\")` so memory is tight. AQE off, `spark.sql.shuffle.partitions` = 2. `run(orders.orderBy(\"note\"))` on `data/orders` and find Spill (Memory) and Spill (Disk) in the sort stage (about 300 MB and 190 MB). Set partitions to 200 and run it again: the spill disappears and the stage gets faster. Proves 5.2, 5.9.",
+                    "title": "Task 6. Cause spill, then remove it (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d7-prove-2"
                   },
                   {
-                    "title": "Driver out of memory (20 min)",
-                    "text": "Restart Python with `get_spark(conf={\"spark.driver.maxResultSize\": \"64m\"})` and `collect()` all of `data/orders`. Read the error. Fix it without raising the limit: aggregate first, `limit()`, or write the result to Parquet; then iterate with `toLocalIterator()` and note why it avoids the problem. Proves 5.5.",
+                    "title": "Task 7. Driver out of memory (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d7-prove-3"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Say it without notes",
-        "time": "40 min",
-        "activities": [
-          {
-            "key": "recall",
-            "name": "🗣 Recall",
-            "time": "40 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Say today's answers aloud (25 min)",
-                    "text": "Notes closed. Answer each of today's 9 answer cards aloud in about 2 minutes: what it is, how it works, what it costs or trades off, and where you would see it in the plan or the UI. Mark every card where you hesitated.",
-                    "id": "v2-d7-recall-1"
-                  },
-                  {
-                    "title": "Spaced review (10 min)",
-                    "text": "Without notes, re-answer the cards you marked on Day 6 and Day 4. If one still will not come, re-read that card and the lab task that proves it.",
-                    "id": "v2-d7-recall-2"
-                  },
-                  {
-                    "title": "Done when (5 min)",
-                    "text": "Given an executor configuration you can compute every region by hand, and say whether a symptom points to execution memory, storage memory, user memory, overhead, cores or the driver.",
-                    "id": "v2-d7-recall-3"
                   }
                 ]
               }
@@ -2060,7 +1604,7 @@
         ]
       }
     ],
-    "time": "≈ 5 h"
+    "time": "≈ 4 h 20 min"
   },
   {
     "day": 8,
@@ -2210,67 +1754,45 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Code along, practise, prove",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 30 min",
         "activities": [
           {
-            "key": "code",
-            "name": "📘 Code along",
-            "time": "40 min",
-            "note": "Type the code yourself instead of pasting it, run every cell, and keep the Spark UI open. Swap in `spark = get_spark()` from the starter kit wherever an example builds its own session.",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
+            "time": "2 h 30 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Chapter 5: Unleashing UDFs (20 min)",
-                    "text": "Type the Python UDF, pandas UDF and Arrow UDF sections of the official guide (skip UDTFs). For each, run `explain()` and find the evaluation node (`ArrowEvalPython` or `BatchEvalPython`), then write the same logic with built-in functions and compare: the built-in version has no Python node and stays inside whole-stage codegen.",
-                    "url": "https://spark.apache.org/docs/latest/api/python/user_guide/udfandudtf.html",
+                    "title": "Download day08_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d8-nb-0",
+                    "url": "/spark-lab/notebooks/day08_lab.ipynb",
                     "links": [
                       {
-                        "label": "Arrow Python UDFs",
-                        "url": "https://spark.apache.org/docs/latest/api/python/tutorial/sql/arrow_python_udf.html"
-                      },
-                      {
-                        "label": "Notebook source on GitHub",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/python/docs/source/user_guide/udfandudtf.ipynb"
+                        "label": "Download lab_utils.py",
+                        "url": "/spark-lab/lab_utils.py"
                       }
-                    ],
+                    ]
+                  },
+                  {
+                    "title": "Task 1. Chapter 5: Unleashing UDFs (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d8-code-1"
                   },
                   {
-                    "title": "Testing PySpark (20 min)",
-                    "text": "Type the official example application (`remove_extra_spaces`) and testing options 1 and 3: `assertDataFrameEqual`, `assertSchemaEqual`, and a pytest `spark` fixture. Run the tests with `pytest -q`. This is how real projects keep Spark code safe to refactor.",
-                    "url": "https://spark.apache.org/docs/latest/api/python/getting_started/testing_pyspark.html",
-                    "links": [
-                      {
-                        "label": "Notebook source on GitHub",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/python/docs/source/getting_started/testing_pyspark.ipynb"
-                      }
-                    ],
+                    "title": "Task 2. Testing PySpark (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d8-code-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "exercises",
-            "name": "✍️ Exercises",
-            "time": "1 h 5 min",
-            "note": "Write these from scratch in a notebook or a .py file, using the patterns you just typed. Each one ends with a Check you can verify yourself; open the reference solution only after you have a working answer.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                  },
                   {
-                    "title": "Exercise 1: refactor bad_job.py (40 min)",
-                    "text": "Download `bad_job.py` next to `lab_utils.py`, run it 3 times and note the median time. Copy it to `good_job.py` and apply one fix per run, recording the time and the plan change: (1) both UDFs → `F.coalesce(F.upper(F.trim(\"status\")), F.lit(\"UNKNOWN\"))` and a plain `F.col(\"amount\") > MIN_AMOUNT` filter; (2) the 40-step `withColumn` loop → one `select(\"*\", *[F.lit(i).alias(f\"flag_{i}\") for i in range(40)])`; (3) stop disabling broadcasts, or use `F.broadcast(customers)`; (4) filter before the join; (5) write in parallel instead of `coalesce(1)`; (6) move paths and thresholds into a JSON config read through `argparse`. Put the logic in small functions (`clean_status`, `add_flags`, `build_report`) so Exercise 2 can test them. Check: about 10 s down to about 4 s on this module's data, with identical output: `assertDataFrameEqual(bad.select(sorted(bad.columns)), good.select(sorted(good.columns)))`. Proves 6.1, 6.5, 6.7, 6.8, 6.2.",
+                    "title": "Task 3. Exercise 1: refactor bad_job.py (40 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d8-exercises-1",
                     "links": [
-                      {
-                        "label": "Download bad_job.py",
-                        "url": "/spark-lab/bad_job.py"
-                      },
                       {
                         "label": "Solution: good_job.py",
                         "url": "/spark-lab/solutions/good_job.py"
@@ -2279,87 +1801,28 @@
                         "label": "Solution: good_job.json",
                         "url": "/spark-lab/solutions/good_job.json"
                       }
-                    ],
-                    "id": "v2-d8-exercises-1"
+                    ]
                   },
                   {
-                    "title": "Exercise 2: test it like a real project (25 min)",
-                    "text": "Write `test_good_job.py` with a session-scoped pytest `spark` fixture, as in the Testing PySpark guide, and tests for `clean_status` (padded, lower-case and null statuses become `PAID`, `NEW`, `UNKNOWN`), `add_flags` (the column names) and `build_report` on a 3-row orders table (only big orders from VIP countries survive). Compare with small expected DataFrames through `assertDataFrameEqual`. Check: `pytest -q` passes; then break `clean_status` on purpose (drop the `trim`) and read the diff the assertion prints. Proves 6.1, 6.7, 6.8.",
+                    "title": "Task 4. Exercise 2: test it like a real project (25 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d8-exercises-2",
                     "links": [
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/test_good_job.py"
                       }
-                    ],
-                    "id": "v2-d8-exercises-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "prove",
-            "name": "🔬 Prove it",
-            "time": "45 min",
-            "note": "Short, focused checks of today's checklist questions in the plan and the Spark UI.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                    ]
+                  },
                   {
-                    "title": "Star schema and dynamic partition pruning (20 min)",
-                    "text": "Write orders with `partitionBy(\"order_date\")`. Build a small date dimension: `spark.range(30).select(F.date_add(F.lit(\"2026-01-01\"), F.col(\"id\").cast(\"int\")).alias(\"order_date\"), (F.col(\"id\") % 7).alias(\"dow\"))`. Join it with the orders and filter `dow = 3`. Find `dynamicpruningexpression` in the fact scan's `PartitionFilters`, and in the SQL tab check that only about a seventh of the files were read. Proves 6.4.",
+                    "title": "Task 5. Star schema and dynamic partition pruning (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d8-prove-1"
                   },
                   {
-                    "title": "Late data with a watermark (25 min)",
-                    "text": "Stream `spark.readStream.schema(\"ts timestamp, user string\").json(\"events_in\").withWatermark(\"ts\", \"10 minutes\").groupBy(F.window(\"ts\", \"5 minutes\")).count()` to Parquet in append mode with a checkpoint location and `trigger(availableNow=True)`, then read the output. Drop one JSON-lines file at a time into `events_in/` and rerun after each: (1) events at 12:00, 12:01, 12:06, 12:09 → nothing emitted, watermark 11:59; (2) one event at 12:31 → windows 12:00 and 12:05 emitted with 2 rows each, watermark 12:21; (3) a late event at 12:07 → dropped, counts unchanged; (4) an event at 12:45 → the 12:20 and 12:30 windows appear. Print `query.lastProgress[\"eventTime\"]` each time. Use `spark.conf.set(\"spark.sql.session.timeZone\", \"UTC\")` so the times read as written. Proves 6.9.",
-                    "links": [
-                      {
-                        "label": "Structured Streaming quick example",
-                        "url": "https://spark.apache.org/docs/latest/streaming/getting-started.html"
-                      },
-                      {
-                        "label": "Official windowed word count",
-                        "url": "https://github.com/apache/spark/blob/v4.2.0/examples/src/main/python/sql/streaming/structured_network_wordcount_windowed.py"
-                      }
-                    ],
+                    "title": "Task 6. Late data with a watermark (25 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d8-prove-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Say it without notes",
-        "time": "40 min",
-        "activities": [
-          {
-            "key": "recall",
-            "name": "🗣 Recall",
-            "time": "40 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Say today's answers aloud (25 min)",
-                    "text": "Notes closed. Answer each of today's 7 answer cards aloud in about 2 minutes: what it is, how it works, what it costs or trades off, and where you would see it in the plan or the UI. Mark every card where you hesitated.",
-                    "id": "v2-d8-recall-1"
-                  },
-                  {
-                    "title": "Spaced review (10 min)",
-                    "text": "Without notes, re-answer the cards you marked on Day 7 and Day 5. If one still will not come, re-read that card and the lab task that proves it.",
-                    "id": "v2-d8-recall-2"
-                  },
-                  {
-                    "title": "Done when (5 min)",
-                    "text": "You can defend every fix in your before/after table with a measured reason (a plan difference, a removed shuffle, a runtime change), and explain what happens to an event that arrives after the watermark.",
-                    "id": "v2-d8-recall-3"
                   }
                 ]
               }
@@ -2368,7 +1831,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 50 min"
+    "time": "≈ 4 h 10 min"
   },
   {
     "day": 9,
@@ -2522,134 +1985,71 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Code along, practise, prove",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 30 min",
         "activities": [
           {
-            "key": "code",
-            "name": "📘 Code along",
-            "time": "45 min",
-            "note": "Type the code yourself instead of pasting it, run every cell, and keep the Spark UI open. Swap in `spark = get_spark()` from the starter kit wherever an example builds its own session.",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
+            "time": "2 h 30 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "The Delta Lake quickstart (25 min)",
-                    "text": "Follow the Python parts of Create a table, Read data, Update table data (overwrite, and conditional update without overwrite: update, delete, merge) and Read older versions of data using time travel, side by side with the official `quickstart.py`. Start your session with `get_spark()`: the example's own builder lacks the Delta jar unless you launch the file with `spark-submit --packages io.delta:delta-spark_4.2_2.13:4.4.1 quickstart.py`. Use a path in your lab folder instead of `/tmp`, and after every step list `_delta_log/` and open the newest JSON commit.",
-                    "url": "https://docs.delta.io/latest/quick-start.html#create-a-table",
+                    "title": "Download day09_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d9-nb-0",
+                    "url": "/spark-lab/notebooks/day09_lab.ipynb",
                     "links": [
                       {
-                        "label": "quickstart.py on GitHub",
-                        "url": "https://github.com/delta-io/delta/blob/v4.4.1/examples/python/quickstart.py"
+                        "label": "Download lab_utils.py",
+                        "url": "/spark-lab/lab_utils.py"
                       }
-                    ],
+                    ]
+                  },
+                  {
+                    "title": "Task 1. The Delta Lake quickstart (25 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d9-code-1"
                   },
                   {
-                    "title": "Delta utilities and change data feed examples (20 min)",
-                    "text": "Type the steps of the official `utilities.py` (convert a Parquet folder to Delta, `history()`, `detail()`, `vacuum()`) and of `change_data_feed.py` (a table created with `delta.enableChangeDataFeed = true`, then batch reads of the feed with `readChangeFeed` and `startingVersion`), using paths in your lab folder. Watch the `_change_type` values appear for inserts, updates and deletes.",
-                    "url": "https://github.com/delta-io/delta/blob/v4.4.1/examples/python/utilities.py",
-                    "links": [
-                      {
-                        "label": "change_data_feed.py on GitHub",
-                        "url": "https://github.com/delta-io/delta/blob/v4.4.1/examples/python/change_data_feed.py"
-                      }
-                    ],
+                    "title": "Task 2. Delta utilities and change data feed examples (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d9-code-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "exercises",
-            "name": "✍️ Exercises",
-            "time": "1 h 5 min",
-            "note": "Write these from scratch in a notebook or a .py file, using the patterns you just typed. Each one ends with a Check you can verify yourself; open the reference solution only after you have a working answer.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Exercise 1: an idempotent upsert (35 min)",
-                    "text": "Write 100,000 orders to `delta/orders_merge`. Build a source with new amounts for 5 existing order_ids and 5 new ids, and upsert it: `DeltaTable.forPath(spark, \"delta/orders_merge\").alias(\"t\").merge(src.alias(\"s\"), \"t.order_id = s.order_id\").whenMatchedUpdateAll(condition=\"t.amount <> s.amount\").whenNotMatchedInsertAll().execute()`. Read `table.history(1)` after each run. Run the same MERGE again: thanks to the condition nothing changes. Then add a duplicate order_id to the source, read the `DELTA_MULTIPLE_SOURCE_ROW_MATCHING_TARGET_ROW_IN_MERGE` error, and fix it by keeping the latest row per key with a `row_number` window. Check: the first MERGE updates 5 and inserts 5 rows, the second updates 0 and inserts 0. Proves 7.7, 7.2.",
-                    "links": [
-                      {
-                        "label": "Reference solution",
-                        "url": "/spark-lab/solutions/day09.py"
-                      }
-                    ],
-                    "id": "v2-d9-exercises-1"
                   },
                   {
-                    "title": "Exercise 2: compaction vs Z-ordering (30 min)",
-                    "text": "Build two copies by appending 50 batches of `make_orders(spark, 20_000, seed=100 + i)` to `delta/a` and to `delta/b` (200 small files each). Set `spark.databricks.delta.optimize.maxFileSize` to `str(8 * 1024 * 1024)` (bytes) so compaction writes several files. Compact a with `DeltaTable.forPath(spark, \"delta/a\").optimize().executeCompaction()` and Z-order b with `...optimize().executeZOrderBy(\"customer_id\")`; read the returned metrics (about 200 files removed, 7–8 added), the new commit (`dataChange: false`) and the old Parquet files still on disk. Filter `customer_id = 42` on both and compare `len(df.inputFiles())` and \"number of files read\" in the SQL tab: a reads all 8 files, b reads 1 of 7. Proves 7.4, 7.5.",
+                    "title": "Task 3. Exercise 1: an idempotent upsert (35 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d9-exercises-1",
                     "links": [
                       {
                         "label": "Reference solution",
                         "url": "/spark-lab/solutions/day09.py"
                       }
-                    ],
-                    "id": "v2-d9-exercises-2"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "prove",
-            "name": "🔬 Prove it",
-            "time": "40 min",
-            "note": "Short, focused checks of today's checklist questions in the plan and the Spark UI.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
+                    ]
+                  },
                   {
-                    "title": "What UPDATE, DELETE and a bad append write (20 min)",
-                    "text": "On `delta/orders_merge`, run `table.update(...)` and `table.delete(...)` (the `DeltaTable` API accepts a relative path; SQL on a path needs an absolute one). After each, open the newest commit file in `_delta_log/`: a `remove` of the old file with `dataChange: true` and an `add` of the rewritten one, and `history()` shows the operation and its metrics; the old Parquet files stay in the folder. Then append a DataFrame with an extra column: read the `DELTA_METADATA_MISMATCH` error, and retry with `option(\"mergeSchema\", \"true\")`. Proves 7.1, 7.6, 7.3.",
+                    "title": "Task 4. Exercise 2: compaction vs Z-ordering (30 min)",
+                    "text": "Solve it in the notebook. Compare with the reference solution afterwards.",
+                    "id": "v2-d9-exercises-2",
+                    "links": [
+                      {
+                        "label": "Reference solution",
+                        "url": "/spark-lab/solutions/day09.py"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Task 5. What UPDATE, DELETE and a bad append write (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d9-prove-1"
                   },
                   {
-                    "title": "VACUUM breaks time travel (20 min)",
-                    "text": "`table.vacuum()` removes nothing yet: files must be older than 7 days. Set `spark.databricks.delta.retentionDurationCheck.enabled` to false (practice data only) and run `table.vacuum(0)`, count the Parquet files again, then read version 0 with `.agg(F.sum(\"amount\"))`: it fails with `FAILED_READ_FILE.FILE_NOT_EXIST`. Delta answers `count()` from log statistics, so prove it by reading data, not by counting. Proves 7.9, 7.8.",
+                    "title": "Task 6. VACUUM breaks time travel (20 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d9-prove-2"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Say it without notes",
-        "time": "40 min",
-        "activities": [
-          {
-            "key": "recall",
-            "name": "🗣 Recall",
-            "time": "40 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Say today's answers aloud (25 min)",
-                    "text": "Notes closed. Answer each of today's 7 answer cards aloud in about 2 minutes: what it is, how it works, what it costs or trades off, and where you would see it in the plan or the UI. Mark every card where you hesitated.",
-                    "id": "v2-d9-recall-1"
-                  },
-                  {
-                    "title": "Spaced review (10 min)",
-                    "text": "Without notes, re-answer the cards you marked on Day 8 and Day 6. If one still will not come, re-read that card and the lab task that proves it.",
-                    "id": "v2-d9-recall-2"
-                  },
-                  {
-                    "title": "Done when (5 min)",
-                    "text": "You can say what is in `_delta_log` after three commits, describe each step Delta takes during an UPDATE and a MERGE, and explain what OPTIMIZE, ZORDER, VACUUM and CDF each change on disk and in the log.",
-                    "id": "v2-d9-recall-3"
                   }
                 ]
               }
@@ -2658,7 +2058,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 55 min"
+    "time": "≈ 4 h 15 min"
   },
   {
     "day": 10,
@@ -2667,13 +2067,13 @@
     "labOutput": "A bronze → silver → gold pipeline with every plan decision annotated; a recorded mock checkpoint",
     "goal": "Build one end-to-end pipeline that touches every checklist section, explain every decision Spark made inside it, and answer any checklist question in under 2 minutes.",
     "theme": "Capstone and checkpoint rehearsal",
-    "intro": "Day 10 ties the module together. Theory is a last review you run on yourself, the Lab is one pipeline built end to end with the starter kit, and Recall is a mock checkpoint over the whole checklist (see Checklist coverage at the top of the page).",
+    "intro": "Day 10 ties the module together. Theory is a last review you run on yourself, including a mock checkpoint over the whole checklist (see Checklist coverage at the top of the page), and the Lab is one pipeline built end to end in the lab notebook.",
     "parts": [
       {
         "key": "theory",
         "name": "Theory",
         "tagline": "Final review",
-        "time": "1 h",
+        "time": "2 h",
         "activities": [
           {
             "key": "symptoms",
@@ -2778,127 +2178,87 @@
                 ]
               }
             ]
+          },
+          {
+            "key": "mock",
+            "name": "🎤 Mock checkpoint",
+            "time": "1 h",
+            "blocks": [
+              {
+                "label": "",
+                "items": [
+                  {
+                    "title": "Mock checkpoint (1 h)",
+                    "text": "Pick 25 questions at random from Checklist coverage, at least 3 per section. Answer each aloud in 2 minutes while recording yourself, score it on mechanism, cost, trade-off and evidence in the plan or UI, then rewrite the answer cards that scored under 3.",
+                    "id": "v2-d10-mock-1"
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Build it end to end",
+        "tagline": "Solve the lab notebook",
         "time": "2 h 45 min",
         "activities": [
           {
-            "key": "capstone",
-            "name": "🏗 Capstone pipeline",
+            "key": "notebook",
+            "name": "🧪 Lab notebook",
             "time": "2 h 45 min",
+            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Raw data (15 min)",
-                    "text": "Write three CSV drops of 500,000 orders each with `make_orders(..., hot_share=0.2, null_share=0.02, seed=1)`, then seeds 2 and 3, adding about 1 % duplicate rows to each (`union` of a `sample`). Write `make_customers` and `make_products` as Parquet dimensions.",
+                    "title": "Download day10_lab.ipynb (Lab notebook)",
+                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
+                    "id": "v2-d10-nb-0",
+                    "url": "/spark-lab/notebooks/day10_lab.ipynb",
+                    "links": [
+                      {
+                        "label": "Download lab_utils.py",
+                        "url": "/spark-lab/lab_utils.py"
+                      }
+                    ]
+                  },
+                  {
+                    "title": "Task 1. Raw data (15 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d10-capstone-1"
                   },
                   {
-                    "title": "Bronze (20 min)",
-                    "text": "Read the CSV drops with an explicit DDL schema (no inferSchema) and append them to a Delta bronze table, adding `F.input_file_name()` and a load timestamp as lineage columns. Proves 2.1, 7.3, 6.6.",
-                    "id": "v2-d10-capstone-2",
-                    "links": [
-                      {
-                        "label": "Chapter 7: Load and Behold",
-                        "url": "https://spark.apache.org/docs/latest/api/python/user_guide/loadandbehold.html"
-                      }
-                    ]
+                    "title": "Task 2. Bronze (20 min)",
+                    "text": "Solve it in the notebook.",
+                    "id": "v2-d10-capstone-2"
                   },
                   {
-                    "title": "Silver with MERGE (30 min)",
-                    "text": "Clean with built-in functions only (trim and upper-case status, cast types, send rows with null keys to a reject table), deduplicate by order_id keeping the latest `order_ts` (row_number window), and MERGE into a silver Delta table so that loading the same drop twice changes nothing. Proves 6.1, 7.7.",
-                    "id": "v2-d10-capstone-3",
-                    "links": [
-                      {
-                        "label": "Delta merge docs",
-                        "url": "https://docs.delta.io/latest/delta-update.html#upsert-into-a-table-using-merge"
-                      },
-                      {
-                        "label": "Testing PySpark",
-                        "url": "https://spark.apache.org/docs/latest/api/python/getting_started/testing_pyspark.html"
-                      }
-                    ]
+                    "title": "Task 3. Silver with MERGE (30 min)",
+                    "text": "Solve it in the notebook.",
+                    "id": "v2-d10-capstone-3"
                   },
                   {
-                    "title": "Gold with the right joins (25 min)",
-                    "text": "Join silver with customers and products and aggregate revenue per country, category and day. Predict the plan first, then check it: both dimensions broadcast, one shuffle for the aggregation, pushdown on the silver scan. Proves 3.2, 3.9, 6.4.",
-                    "id": "v2-d10-capstone-4",
-                    "links": [
-                      {
-                        "label": "Chapter 6: SQL",
-                        "url": "https://spark.apache.org/docs/latest/api/python/user_guide/sql.html"
-                      }
-                    ]
+                    "title": "Task 4. Gold with the right joins (25 min)",
+                    "text": "Solve it in the notebook.",
+                    "id": "v2-d10-capstone-4"
                   },
                   {
-                    "title": "Find and fix the skew (25 min)",
-                    "text": "Force a sort-merge join with customers (broadcast off) and find the hot customer in the Stages tab (max vs median). Fix it twice, with AQE skew handling and with a broadcast, and record the numbers. Proves 4.2, 4.6, 4.4.",
+                    "title": "Task 5. Find and fix the skew (25 min)",
+                    "text": "Solve it in the notebook.",
                     "id": "v2-d10-capstone-5"
                   },
                   {
-                    "title": "Maintain the table (20 min)",
-                    "text": "`OPTIMIZE silver ZORDER BY (customer_id)`, then check the file count, the history entry and `VACUUM silver DRY RUN`. Proves 7.4, 7.5, 7.9.",
-                    "id": "v2-d10-capstone-6",
-                    "links": [
-                      {
-                        "label": "Delta optimizations",
-                        "url": "https://docs.delta.io/latest/optimizations-oss.html"
-                      }
-                    ]
+                    "title": "Task 6. Maintain the table (20 min)",
+                    "text": "Solve it in the notebook.",
+                    "id": "v2-d10-capstone-6"
                   },
                   {
-                    "title": "Incremental gold from the change feed (30 min)",
-                    "text": "Enable CDF on silver, load a fourth drop through the MERGE, read only the changes since the last processed version, and update the gold totals from them (inserts and post-images add, pre-images and deletes subtract). Store the last processed version in a small Delta table. Proves 7.10.",
-                    "id": "v2-d10-capstone-7",
-                    "links": [
-                      {
-                        "label": "change_data_feed.py",
-                        "url": "https://github.com/delta-io/delta/blob/v4.4.1/examples/python/change_data_feed.py"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "note": "Structure it like a real project: one function per layer in a module, plus a pytest file as in the official Testing PySpark guide. For every step save explain(\"formatted\") into your Lab notes and annotate it: join strategy, number of shuffles, pushdown and pruning, spill, and what AQE changed."
-          }
-        ]
-      },
-      {
-        "key": "recall",
-        "name": "Recall",
-        "tagline": "Mock checkpoint",
-        "time": "1 h 30 min",
-        "activities": [
-          {
-            "key": "mock",
-            "name": "🎤 Mock checkpoint",
-            "time": "1 h 30 min",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "Mock checkpoint (60 min)",
-                    "text": "Pick 25 questions at random from Checklist coverage, at least 3 from each section. Answer each aloud in 2 minutes while recording yourself, then score every answer on four marks: mechanism, cost, trade-off, and evidence in the plan or the UI.",
-                    "id": "v2-d10-mock-1"
-                  },
-                  {
-                    "title": "Fix the weak answers (20 min)",
-                    "text": "For every answer that scored under 3, re-read its answer card, rewrite it, and answer it aloud again.",
-                    "id": "v2-d10-mock-2"
-                  },
-                  {
-                    "title": "Done when (10 min)",
-                    "text": "You can walk through the capstone's plans end to end without notes, and answer any checklist question in under 2 minutes.",
-                    "id": "v2-d10-mock-3"
+                    "title": "Task 7. Incremental gold from the change feed (30 min)",
+                    "text": "Solve it in the notebook.",
+                    "id": "v2-d10-capstone-7"
                   }
                 ]
               }
@@ -2907,6 +2267,6 @@
         ]
       }
     ],
-    "time": "≈ 5 h 15 min"
+    "time": "≈ 4 h 45 min"
   }
 ]
