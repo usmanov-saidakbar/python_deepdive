@@ -1687,12 +1687,12 @@
   },
   {
     "day": 10,
-    "title": "Capstone and checkpoint rehearsal",
+    "title": "Final project and checkpoint rehearsal",
     "checklist": "All sections",
-    "labOutput": "A bronze → silver → gold pipeline with every plan decision annotated; a recorded mock checkpoint",
-    "goal": "Build one end-to-end pipeline that touches every checklist section, explain every decision Spark made inside it, and answer any checklist question in under 2 minutes.",
-    "theme": "Capstone and checkpoint rehearsal",
-    "intro": "Day 10 ties the module together. Theory is a last review you run on yourself, including a mock checkpoint over the whole checklist (see Checklist coverage at the top of the page), and the Lab is one pipeline built end to end in the lab notebook.",
+    "labOutput": "A Delta Lake lakehouse (bronze, silver, gold) built from scratch on 9.5 million real taxi trips",
+    "goal": "Build one real project end to end with no skeleton, explain every plan decision inside it, and answer any checklist question in under 2 minutes.",
+    "theme": "Final project and checkpoint rehearsal",
+    "intro": "Day 10 ties the module together. Theory is a last review, including a mock checkpoint over the whole checklist (see Checklist coverage at the top of the page). The Lab is a final project: a taxi lakehouse with Delta Lake, written from scratch in a notebook, with checks that inspect your tables. Spread it over the weekend if you need to.",
     "parts": [
       {
         "key": "theory",
@@ -1826,64 +1826,28 @@
       {
         "key": "lab",
         "name": "Lab",
-        "tagline": "Solve the lab notebook",
-        "time": "2 h 45 min",
+        "tagline": "Final project",
+        "time": "4 h",
         "activities": [
           {
             "key": "notebook",
-            "name": "🧪 Lab notebook",
-            "time": "2 h 45 min",
-            "note": "Everything for this lab (instructions, links, checks and empty cells for your code) is in the notebook.",
+            "name": "🏗 Final project",
+            "time": "4 h",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Download day10_lab.ipynb (Lab notebook)",
-                    "text": "Download the notebook and `lab_utils.py` into your lab folder, open it with `jupyter lab`, and solve every task directly in it. Tick each task below when it is done.",
-                    "id": "v2-d10-nb-0",
+                    "title": "Final project notebook: day10_lab.ipynb",
+                    "text": "Download it, open it with `jupyter lab`, and build the lakehouse yourself: six milestones, no code skeleton, and a check cell that inspects your tables after each one.",
+                    "id": "v2-d10-lab-notebook",
                     "url": "/spark-lab/notebooks/day10_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day10_lab_solution.ipynb"
                       }
                     ]
-                  },
-                  {
-                    "title": "Task 1. Raw data (15 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d10-capstone-1"
-                  },
-                  {
-                    "title": "Task 2. Bronze (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d10-capstone-2"
-                  },
-                  {
-                    "title": "Task 3. Silver with MERGE (30 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d10-capstone-3"
-                  },
-                  {
-                    "title": "Task 4. Gold with the right joins (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d10-capstone-4"
-                  },
-                  {
-                    "title": "Task 5. Find and fix the skew (25 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d10-capstone-5"
-                  },
-                  {
-                    "title": "Task 6. Maintain the table (20 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d10-capstone-6"
-                  },
-                  {
-                    "title": "Task 7. Incremental gold from the change feed (30 min)",
-                    "text": "Solve it in the notebook.",
-                    "id": "v2-d10-capstone-7"
                   }
                 ]
               }
@@ -1892,6 +1856,6 @@
         ]
       }
     ],
-    "time": "≈ 4 h 45 min"
+    "time": "≈ 6 h"
   }
 ]
