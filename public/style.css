@@ -337,6 +337,13 @@ select.status-select {
 .check-text a:hover { text-decoration: underline; }
 .check-text .item-link { white-space: nowrap; }
 
+/* Checklist questions: what the checkpoint asks, so they stand out in red */
+.checklist-item { border-left: 3px solid #ff6b6b; }
+.checklist-item .item-title,
+.checklist-item .checklist-asks { color: #ff6b6b; }
+.checklist-asks { font-size: 0.82rem; font-weight: 600; }
+.coverage-list .coverage-ask { color: #ff6b6b; }
+
 .badge {
   display: inline-block;
   font-size: 0.7rem;

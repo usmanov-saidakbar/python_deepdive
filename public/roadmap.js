@@ -211,7 +211,7 @@ function renderCoverage() {
     const done = !!progress.checked[row.item.id];
     const li = document.createElement("li");
     li.className = done ? "done" : "";
-    li.innerHTML = `<span class="coverage-mark">${done ? "✓" : "○"}</span><span class="coverage-code">${escapeHtml(row.code)}</span>${escapeHtml(row.ask)} `;
+    li.innerHTML = `<span class="coverage-mark">${done ? "✓" : "○"}</span><span class="coverage-code">${escapeHtml(row.code)}</span><span class="coverage-ask">${escapeHtml(row.ask)}</span> `;
     const go = document.createElement("button");
     go.type = "button";
     go.className = "link-btn";
@@ -312,7 +312,8 @@ function renderLink(label, url) {
 
 function renderItem(item) {
   const li = document.createElement("li");
-  li.className = "item check-item" + (progress.checked[item.id] ? " done" : "");
+  // Answer cards for checklist questions (they carry `q`) are shown in red.
+  li.className = "item check-item" + (item.q ? " checklist-item" : "") + (progress.checked[item.id] ? " done" : "");
 
   const label = document.createElement("label");
   const box = document.createElement("input");
@@ -332,6 +333,12 @@ function renderItem(item) {
     if (!item.url) title.textContent = item.title;
     title.classList.add("item-title");
     body.append(title, document.createElement("br"));
+  }
+  if (item.asks) {
+    const asks = document.createElement("span");
+    asks.className = "checklist-asks";
+    asks.textContent = `Checklist: ${item.asks.join(" · ")}`;
+    body.append(asks, document.createElement("br"));
   }
   const text = document.createElement("span");
   text.innerHTML = formatText(item.text);
