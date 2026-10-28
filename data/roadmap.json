@@ -116,7 +116,7 @@
                 "items": [
                   {
                     "title": "Lab notebook: day01_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
                     "id": "v2-d1-lab-notebook",
                     "url": "/spark-lab/notebooks/day01_lab.ipynb",
                     "links": [
@@ -139,7 +139,7 @@
     "day": 2,
     "title": "How Spark plans a query: Catalyst and Tungsten",
     "checklist": "1.6, 1.8, 1.13 · 🧭 planning decisions",
-    "labOutput": "Query plans read, and Catalyst rules observed, on the NYC taxi data",
+    "labOutput": "Query plans read and Catalyst rules observed on the shop data; aggregation and pivot practice",
     "goal": "Name every decision between your code and the running tasks: which rewrites Catalyst makes, how physical operators are chosen, and how Tungsten executes them.",
     "theme": "How Spark plans a query: Catalyst and Tungsten",
     "parts": [
@@ -246,7 +246,7 @@
                 "items": [
                   {
                     "title": "Lab notebook: day02_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
                     "id": "v2-d2-lab-notebook",
                     "url": "/spark-lab/notebooks/day02_lab.ipynb",
                     "links": [
@@ -269,7 +269,7 @@
     "day": 3,
     "title": "AQE and how operators run",
     "checklist": "1.4, 1.9, 1.14, 1.15, 1.16, 3.11 · 🧭 runtime decisions",
-    "labOutput": "A plan table for avg, count(distinct), approx_count_distinct and sorting; AQE on vs off",
+    "labOutput": "A plan table for aggregates and sorts; AQE on vs off; window-function practice",
     "goal": "Explain how each aggregate and sort executes across partitions, and what Spark changes at runtime once it sees real data sizes.",
     "theme": "AQE and how operators run",
     "parts": [
@@ -374,13 +374,13 @@
                 "items": [
                   {
                     "title": "Lab notebook: day03_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
                     "id": "v2-d3-lab-notebook",
                     "url": "/spark-lab/notebooks/day03_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day03_lab_solution.ipynb"
                       }
                     ]
                   }
@@ -397,7 +397,7 @@
     "day": 4,
     "title": "File formats and data layout",
     "checklist": "2.1–2.10",
-    "labOutput": "One dataset in five formats; pushdown, pruning, small files and file splitting proven in the UI",
+    "labOutput": "One dataset in five formats; pushdown, pruning, small files and splitting proven; dates and arrays practice",
     "goal": "Pick a format, codec and partition layout for a workload, and prove each choice with plans, file counts and read-task counts.",
     "theme": "File formats and data layout",
     "parts": [
@@ -517,13 +517,13 @@
                 "items": [
                   {
                     "title": "Lab notebook: day04_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
                     "id": "v2-d4-lab-notebook",
                     "url": "/spark-lab/notebooks/day04_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day04_lab_solution.ipynb"
                       }
                     ]
                   }
@@ -540,7 +540,7 @@
     "day": 5,
     "title": "Shuffle and joins: how Spark picks a join",
     "checklist": "3.1–3.10, 3.12 · 🧭 join selection",
-    "labOutput": "A join-strategy matrix predicted, then verified; a bucketed join with no shuffle",
+    "labOutput": "Join strategies predicted and verified; a bucketed join with no shuffle; join practice",
     "goal": "Explain what a shuffle costs and how each join algorithm works, predict which one Spark will pick, and change its choice on purpose.",
     "theme": "Shuffle and joins: how Spark picks a join",
     "note": "This ends week 1. Use the weekend as buffer: finish open items, then re-answer every card you marked on Days 1–5.",
@@ -667,13 +667,13 @@
                 "items": [
                   {
                     "title": "Lab notebook: day05_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
                     "id": "v2-d5-lab-notebook",
                     "url": "/spark-lab/notebooks/day05_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day05_lab_solution.ipynb"
                       }
                     ]
                   }
@@ -690,7 +690,7 @@
     "day": 6,
     "title": "Data skew",
     "checklist": "4.1–4.11, 6.2",
-    "labOutput": "A skewed join diagnosed in the UI and fixed four ways, with max and median task times recorded",
+    "labOutput": "A skewed join diagnosed and fixed with AQE and salting; practice with latest rows, duplicates and streaks",
     "goal": "Spot skew in the Spark UI, explain why it hurts, and choose between AQE, broadcasting, salting, hot-key isolation and repartitioning.",
     "theme": "Data skew",
     "parts": [
@@ -818,13 +818,13 @@
                 "items": [
                   {
                     "title": "Lab notebook: day06_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
                     "id": "v2-d6-lab-notebook",
                     "url": "/spark-lab/notebooks/day06_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day06_lab_solution.ipynb"
                       }
                     ]
                   }
@@ -841,7 +841,7 @@
     "day": 7,
     "title": "Memory, caching and checkpoints",
     "checklist": "5.1–5.11, 6.10",
-    "labOutput": "Memory regions computed and matched to the UI; spill, caching, checkpointing and a driver OOM reproduced",
+    "labOutput": "Memory regions computed and found in the UI; a spill, caching and a driver limit; snapshot and percentile practice",
     "goal": "Draw the executor memory layout from memory, compute each region, and match a symptom (spill, GC time, OOM, killed container) to its fix and to the right persistence tool.",
     "theme": "Memory, caching and checkpoints",
     "parts": [
@@ -965,13 +965,13 @@
                 "items": [
                   {
                     "title": "Lab notebook: day07_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
                     "id": "v2-d7-lab-notebook",
                     "url": "/spark-lab/notebooks/day07_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day07_lab_solution.ipynb"
                       }
                     ]
                   }
@@ -988,7 +988,7 @@
     "day": 8,
     "title": "Best practices, and late data in streaming",
     "checklist": "6.1, 6.3–6.9",
-    "labOutput": "bad_job.py refactored one fix at a time with a before/after table; late events dropped by a watermark",
+    "labOutput": "A messy job refactored and tested; late data in a stream; array and text practice",
     "goal": "Improve a slow, messy job one change at a time with a measured reason for each change, and handle late events in a stream.",
     "theme": "Best practices, and late data in streaming",
     "parts": [
@@ -1108,13 +1108,13 @@
                 "items": [
                   {
                     "title": "Lab notebook: day08_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
                     "id": "v2-d8-lab-notebook",
                     "url": "/spark-lab/notebooks/day08_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day08_lab_solution.ipynb"
                       }
                     ]
                   }
@@ -1131,7 +1131,7 @@
     "day": 9,
     "title": "Delta Lake",
     "checklist": "7.1–7.10",
-    "labOutput": "A Delta table created, updated, merged, compacted, Z-ordered, vacuumed and read through its change feed",
+    "labOutput": "A Delta table created, updated, merged, optimized, vacuumed and read through its change feed; SQL practice",
     "goal": "Explain how Delta Lake turns a folder of Parquet files into a transactional table, and what each DML and maintenance command writes to the data folder and to the log.",
     "theme": "Delta Lake",
     "parts": [
@@ -1255,13 +1255,13 @@
                 "items": [
                   {
                     "title": "Lab notebook: day09_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and solve every task inside it. The check cell under each task tells you when you are right. Put `lab_utils.py` next to it.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
                     "id": "v2-d9-lab-notebook",
                     "url": "/spark-lab/notebooks/day09_lab.ipynb",
                     "links": [
                       {
-                        "label": "Download lab_utils.py",
-                        "url": "/spark-lab/lab_utils.py"
+                        "label": "Reference solution (open only after trying)",
+                        "url": "/spark-lab/solutions/day09_lab_solution.ipynb"
                       }
                     ]
                   }
@@ -1278,10 +1278,10 @@
     "day": 10,
     "title": "Final project and checkpoint rehearsal",
     "checklist": "All sections",
-    "labOutput": "A Delta Lake lakehouse (bronze, silver, gold) built from scratch on 9.5 million real taxi trips",
+    "labOutput": "A Delta Lake lakehouse (bronze, silver, gold) built from scratch, and a timed practice set",
     "goal": "Build one real project end to end with no skeleton, explain every plan decision inside it, and answer any checklist question in under 2 minutes.",
     "theme": "Final project and checkpoint rehearsal",
-    "intro": "Day 10 ties the module together. Theory is a last review, including a mock checkpoint over the whole checklist (see Checklist coverage at the top of the page). The Lab is a final project: a taxi lakehouse with Delta Lake, written from scratch in a notebook, with checks that inspect your tables. Spread it over the weekend if you need to.",
+    "intro": "Day 10 ties the module together. Theory is a last review, including a mock checkpoint over the whole checklist (see Checklist coverage at the top of the page). The Lab is a final project: a shop lakehouse with Delta Lake, written from scratch in a notebook, with checks that inspect your tables. Spread it over the weekend if you need to.",
     "parts": [
       {
         "key": "theory",
@@ -1399,19 +1399,19 @@
         "key": "lab",
         "name": "Lab",
         "tagline": "Final project",
-        "time": "4 h",
+        "time": "4 h 30 min",
         "activities": [
           {
             "key": "notebook",
             "name": "🏗 Final project",
-            "time": "4 h",
+            "time": "4 h 30 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
                     "title": "Final project notebook: day10_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and build the lakehouse yourself: six milestones, no code skeleton, and a check cell that inspects your tables after each one.",
+                    "text": "Download it, open it with `jupyter lab`, and build the lakehouse yourself: six milestones with no code skeleton, a check cell that inspects your tables after each one, and a timed practice set at the end.",
                     "id": "v2-d10-lab-notebook",
                     "url": "/spark-lab/notebooks/day10_lab.ipynb",
                     "links": [
@@ -1428,6 +1428,6 @@
         ]
       }
     ],
-    "time": "≈ 6 h"
+    "time": "≈ 6 h 30 min"
   }
 ]

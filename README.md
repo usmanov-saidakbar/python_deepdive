@@ -132,8 +132,15 @@ parts, each with its own progress bar and notes box:
   "Learn:" sentence. Topics marked "beyond the checklist" go deeper into how
   Spark decides how to run a query.
 - **Lab** (one Jupyter notebook per day in `public/spark-lab/notebooks/`,
-  solved in place): the Lab tab shows only the notebook link. Lab 01 is written in the assignment style on a small self-generated online-shop dataset (the other labs are being moved to it): a data description, one documentation list at the top, then short questions, each with a check cell (✅/❌, answers stored as hashes) and a reference solution in `public/spark-lab/solutions/`. Early tasks have `___` blanks; the rest are empty cells, and each lab ends with DataFrame coding practice. Day 10 is a final project (a Delta Lake bronze/silver/gold lakehouse) written from scratch. Days 3–9 still use the
-  older notebook style and are being rewritten the same way.
+  solved in place): the Lab tab shows only the notebook link. Every notebook
+  creates the same small online-shop dataset (orders, customers, products) from
+  seeded code, so nothing is downloaded and everyone gets the same rows. A lab
+  has a data description, one documentation list at the top, then short
+  questions, each with a check cell (✅/❌, answers stored as hashes) and a
+  reference solution in `public/spark-lab/solutions/`. Early tasks in Lab 01
+  have `___` blanks; the rest are empty cells, and each lab ends with
+  original DataFrame/SQL coding practice. Day 10 is a final project (a Delta
+  Lake bronze/silver/gold lakehouse) written from scratch, plus a timed set.
 
 The *Checklist coverage* panel lists every checklist question, the day that
 covers it and whether its topic is ticked. Set a start date and the page
@@ -151,11 +158,6 @@ shows which study day today is; weekends count as catch-up time.
   but no longer show, because the new item ids and note keys start with `v2-`.
 - Notes are saved under `v2-<day>-theory`, `v2-<day>-lab` and
   `v2-<day>-recall`.
-- The lab starter kit is served from `public/spark-lab/`: `lab_utils.py`
-  (session with Delta and Avro, seeded data generators, plan and timing
-  helpers; written for PySpark 4.2.0 and delta-spark 4.4.1), `bad_job.py`
-  (the deliberately slow job for the Day 8 refactor lab) and `solutions/`
-  (reference solutions for the Day 1–9 exercises, each run on Spark 4.2).
 - With an email entered, progress is saved in Upstash under `roadmap:<email>`
   (separate from the course's `progress:<email>`) via
   `GET`/`PUT /api/roadmap-progress/:email`. Without one, it's kept in the

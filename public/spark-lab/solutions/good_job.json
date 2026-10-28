@@ -1,7 +1,0 @@
-{
-  "orders_path": "data/orders",
-  "customers_path": "data/customers",
-  "output_path": "out/good_job_report",
-  "min_amount": 20.0,
-  "vip_countries": ["C1", "C2", "C3"]
-}
