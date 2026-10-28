@@ -133,8 +133,8 @@ parts, each with its own progress bar and notes box:
   Spark decides how to run a query.
 - **Lab** (one Jupyter notebook per day in `public/spark-lab/notebooks/`,
   solved in place): the Lab tab shows only the notebook link. Every notebook
-  creates the same small online-shop dataset (orders, customers, products) from
-  seeded code, so nothing is downloaded and everyone gets the same rows. A lab
+  creates the same single table of online-shop orders (customer and product
+  columns included) from seeded code, so nothing is downloaded and everyone gets the same rows. A lab
   has a data description, one documentation list at the top, then short
   questions, each with a check cell (✅/❌, answers stored as hashes) and a
   reference solution in `public/spark-lab/solutions/`. Early tasks in Lab 01
