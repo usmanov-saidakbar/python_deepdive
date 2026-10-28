@@ -116,15 +116,9 @@
                 "items": [
                   {
                     "title": "Lab notebook: day01_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset. The answers are at the very end of the notebook, collapsed: open one only after you tried.",
                     "id": "v2-d1-lab-notebook",
-                    "url": "/spark-lab/notebooks/day01_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day01_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day01_lab.ipynb"
                   }
                 ]
               }
@@ -246,15 +240,9 @@
                 "items": [
                   {
                     "title": "Lab notebook: day02_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset. The answers are at the very end of the notebook, collapsed: open one only after you tried.",
                     "id": "v2-d2-lab-notebook",
-                    "url": "/spark-lab/notebooks/day02_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day02_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day02_lab.ipynb"
                   }
                 ]
               }
@@ -374,15 +362,9 @@
                 "items": [
                   {
                     "title": "Lab notebook: day03_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset. The answers are at the very end of the notebook, collapsed: open one only after you tried.",
                     "id": "v2-d3-lab-notebook",
-                    "url": "/spark-lab/notebooks/day03_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day03_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day03_lab.ipynb"
                   }
                 ]
               }
@@ -517,15 +499,9 @@
                 "items": [
                   {
                     "title": "Lab notebook: day04_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset. The answers are at the very end of the notebook, collapsed: open one only after you tried.",
                     "id": "v2-d4-lab-notebook",
-                    "url": "/spark-lab/notebooks/day04_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day04_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day04_lab.ipynb"
                   }
                 ]
               }
@@ -667,15 +643,9 @@
                 "items": [
                   {
                     "title": "Lab notebook: day05_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset. The answers are at the very end of the notebook, collapsed: open one only after you tried.",
                     "id": "v2-d5-lab-notebook",
-                    "url": "/spark-lab/notebooks/day05_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day05_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day05_lab.ipynb"
                   }
                 ]
               }
@@ -818,15 +788,9 @@
                 "items": [
                   {
                     "title": "Lab notebook: day06_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset. The answers are at the very end of the notebook, collapsed: open one only after you tried.",
                     "id": "v2-d6-lab-notebook",
-                    "url": "/spark-lab/notebooks/day06_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day06_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day06_lab.ipynb"
                   }
                 ]
               }
@@ -965,15 +929,9 @@
                 "items": [
                   {
                     "title": "Lab notebook: day07_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset. The answers are at the very end of the notebook, collapsed: open one only after you tried.",
                     "id": "v2-d7-lab-notebook",
-                    "url": "/spark-lab/notebooks/day07_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day07_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day07_lab.ipynb"
                   }
                 ]
               }
@@ -1108,15 +1066,9 @@
                 "items": [
                   {
                     "title": "Lab notebook: day08_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset. The answers are at the very end of the notebook, collapsed: open one only after you tried.",
                     "id": "v2-d8-lab-notebook",
-                    "url": "/spark-lab/notebooks/day08_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day08_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day08_lab.ipynb"
                   }
                 ]
               }
@@ -1255,15 +1207,9 @@
                 "items": [
                   {
                     "title": "Lab notebook: day09_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset, and the check cell under each question tells you when you are right.",
+                    "text": "Download it, open it with `jupyter lab`, and answer every question inside it. The notebook creates its own small shop dataset. The answers are at the very end of the notebook, collapsed: open one only after you tried.",
                     "id": "v2-d9-lab-notebook",
-                    "url": "/spark-lab/notebooks/day09_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day09_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day09_lab.ipynb"
                   }
                 ]
               }
@@ -1411,15 +1357,9 @@
                 "items": [
                   {
                     "title": "Final project notebook: day10_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and build the lakehouse yourself: six milestones with no code skeleton, a check cell that inspects your tables after each one, and a timed practice set at the end.",
+                    "text": "Download it, open it with `jupyter lab`, and build the lakehouse yourself: six milestones with no code skeleton, the answers collapsed at the end of the notebook, and a timed practice set.",
                     "id": "v2-d10-lab-notebook",
-                    "url": "/spark-lab/notebooks/day10_lab.ipynb",
-                    "links": [
-                      {
-                        "label": "Reference solution (open only after trying)",
-                        "url": "/spark-lab/solutions/day10_lab_solution.ipynb"
-                      }
-                    ]
+                    "url": "/spark-lab/notebooks/day10_lab.ipynb"
                   }
                 ]
               }

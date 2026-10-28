@@ -136,11 +136,12 @@ parts, each with its own progress bar and notes box:
   creates the same single table of online-shop orders (customer and product
   columns included) from seeded code, so nothing is downloaded and everyone gets the same rows. A lab
   has a data description, one documentation list at the top, then short
-  questions, each with a check cell (✅/❌, answers stored as hashes) and a
-  reference solution in `public/spark-lab/solutions/`. Early tasks in Lab 01
-  have `___` blanks; the rest are empty cells, and each lab ends with
-  original DataFrame/SQL coding practice. Day 10 is a final project (a Delta
-  Lake bronze/silver/gold lakehouse) written from scratch, plus a timed set.
+  questions. There are no check cells: the answers (code plus the result of
+  the reference run) sit collapsed in an *Answers* section at the very end of
+  each notebook. Early tasks in Lab 01 have `___` blanks; the rest are empty
+  cells, and each lab ends with original DataFrame/SQL coding practice. Day 10
+  is a final project (a Delta Lake bronze/silver/gold lakehouse) written from
+  scratch, plus a timed set.
 
 The *Checklist coverage* panel lists every checklist question, the day that
 covers it and whether its topic is ticked. Set a start date and the page
