@@ -132,13 +132,7 @@ parts, each with its own progress bar and notes box:
   "Learn:" sentence. Topics marked "beyond the checklist" go deeper into how
   Spark decides how to run a query.
 - **Lab** (one Jupyter notebook per day in `public/spark-lab/notebooks/`,
-  solved in place): the Lab tab shows only the notebook link. Labs 01–02 are
-  written in the assignment style: a data description, one documentation list at
-  the top, then short questions on the NYC taxi dataset, each with a check cell
-  (✅/❌, answers stored as hashes) and a reference solution in
-  `public/spark-lab/solutions/`. Early tasks have `___` blanks; the rest are
-  empty cells. Day 10 is a final project (a Delta Lake bronze/silver/gold
-  lakehouse on 9.5 million trips) written from scratch. Days 3–9 still use the
+  solved in place): the Lab tab shows only the notebook link. Lab 01 is written in the assignment style on a small self-generated online-shop dataset (the other labs are being moved to it): a data description, one documentation list at the top, then short questions, each with a check cell (✅/❌, answers stored as hashes) and a reference solution in `public/spark-lab/solutions/`. Early tasks have `___` blanks; the rest are empty cells, and each lab ends with DataFrame coding practice. Day 10 is a final project (a Delta Lake bronze/silver/gold lakehouse) written from scratch. Days 3–9 still use the
   older notebook style and are being rewritten the same way.
 
 The *Checklist coverage* panel lists every checklist question, the day that
