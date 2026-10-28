@@ -3,136 +3,96 @@
     "day": 1,
     "title": "How a Spark application runs",
     "checklist": "1.1, 1.2, 1.3, 1.5, 1.7, 1.10, 1.11, 1.12",
-    "labOutput": "Working PySpark 4.2 + Delta setup; jobs, stages and tasks counted for three queries",
+    "labOutput": "Real NYC taxi trips loaded; jobs, stages and tasks counted for your own queries",
     "goal": "Explain who does what in a Spark application, trace one action from your code to running tasks, and say how Spark survives a lost executor.",
     "theme": "How a Spark application runs",
     "parts": [
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Learn the answers",
-        "time": "1 h 45 min",
+        "tagline": "Learn the checklist topics",
+        "time": "1 h 25 min",
         "activities": [
           {
-            "key": "read",
-            "name": "📖 Read",
-            "time": "45 min",
-            "note": "Read only the sections named. Each item says how long it should take; stop when the time is up.",
+            "key": "topics",
+            "name": "📚 Topics",
+            "time": "1 h 25 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Cluster Mode Overview",
-                    "text": "Spark docs · whole page · 15 min. Redraw the diagram and copy the glossary (application, driver, executor, job, stage, task) into your notes.",
-                    "id": "v2-d1-read-1",
-                    "url": "https://spark.apache.org/docs/latest/cluster-overview.html"
-                  },
-                  {
-                    "title": "RDD Programming Guide: RDD Operations",
-                    "text": "Spark docs · sections Basics, Transformations, Actions, Shuffle operations · 20 min. Read the Python tabs only.",
-                    "id": "v2-d1-read-2",
-                    "url": "https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-operations"
-                  },
-                  {
-                    "title": "Web UI: Jobs and Stages tabs",
-                    "text": "Spark docs · Jobs Tab and Stages Tab sections · 10 min. You will use both screens in the lab.",
-                    "id": "v2-d1-read-3",
-                    "url": "https://spark.apache.org/docs/latest/web-ui.html"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "questions",
-            "name": "🎯 Checklist questions",
-            "time": "1 h",
-            "note": "Write one answer card per item in your Theory notes: 5–8 lines in your own words that hit every point after \"Cover:\". Tick the item when you can say it without looking.",
-            "blocks": [
-              {
-                "label": "Write an answer card for each",
-                "items": [
-                  {
-                    "title": "1.1 + 1.3 · Spark architecture and the driver ↔ executor relationship",
-                    "text": "Cover: the driver runs your program, holds the SparkSession, turns code into a plan of stages and tasks, schedules them and collects results; the cluster manager (local, standalone, YARN, Kubernetes) only hands out resources; executors are JVM processes with a fixed number of cores and amount of memory that run tasks, cache data and keep shuffle files. Relationship: one driver, many executors; the driver sends tasks, executors send back heartbeats, status, metrics and results. Deploy modes: client (driver on the machine you submit from) vs cluster (driver inside the cluster). PySpark: your Python process drives the JVM driver through Py4J, and executors start Python worker processes only for Python code such as UDFs. Local mode: driver and executor are one JVM, so the Executors tab lists only `driver`.",
-                    "id": "v2-d1-q-1",
+                    "title": "Spark architecture, SparkSession, driver vs executor (20 min)",
+                    "text": "Learn: The driver plans and schedules, executors run the tasks, and the SparkSession is your entry point.",
+                    "id": "v2-d1-t-1",
+                    "links": [
+                      {
+                        "label": "Cluster Mode Overview",
+                        "url": "https://spark.apache.org/docs/latest/cluster-overview.html"
+                      }
+                    ],
                     "q": [
                       "1.1",
+                      "1.2",
                       "1.3"
                     ],
                     "asks": [
                       "Apache Spark Architecture.",
+                      "What is a SparkSession?",
                       "Explain the Driver vs. Executor relationship."
                     ]
                   },
                   {
-                    "title": "1.2 · What is a SparkSession?",
-                    "text": "Cover: the single entry point (since Spark 2.0) for DataFrames, SQL, the catalog, configuration and UDFs: `spark.read`, `spark.sql`, `spark.table`, `spark.catalog`, `spark.conf`, `spark.udf`. It wraps the lower-level `SparkContext` (RDDs, broadcast variables, accumulators), reachable as `spark.sparkContext`. `SparkSession.builder...getOrCreate()` returns the running session if there is one. One SparkContext per JVM, but several sessions can share it with separate SQL settings and temp views (`spark.newSession()`). Static settings (driver memory, jar packages) must be set before the JVM starts; runtime SQL settings can change any time with `spark.conf.set`.",
-                    "id": "v2-d1-q-2",
-                    "q": [
-                      "1.2"
+                    "title": "Transformations, actions, lazy evaluation, narrow vs wide (25 min)",
+                    "text": "Learn: Nothing runs until an action is called, and wide operations need a shuffle.",
+                    "id": "v2-d1-t-2",
+                    "links": [
+                      {
+                        "label": "RDD Programming Guide: RDD operations",
+                        "url": "https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-operations"
+                      }
                     ],
-                    "asks": [
-                      "What is a SparkSession?"
-                    ]
-                  },
-                  {
-                    "title": "1.11 + 1.12 · Transformations vs actions; lazy evaluation",
-                    "text": "Cover: transformations (select, filter, withColumn, join, groupBy, orderBy, repartition) return a new DataFrame and run nothing; actions (count, collect, show, take, write, foreach, toPandas) start one or more jobs. Lazy evaluation: a DataFrame is a plan, not data; Spark waits for an action so it can optimize the whole plan at once (filter pushdown, column pruning, pipelining narrow steps into one stage). Consequences: an error in a transformation may only appear at the action, and every action recomputes the plan from the source unless the data is cached. `df.count()` is an action, while `F.count()` is an expression inside a query; `printSchema`, `columns` and `explain` run no job.",
-                    "id": "v2-d1-q-3",
                     "q": [
                       "1.11",
-                      "1.12"
-                    ],
-                    "asks": [
-                      "What is the difference between a Transformation and an Action?",
-                      "Explain the concept of \"Lazy Evaluation.\""
-                    ]
-                  },
-                  {
-                    "title": "1.5 · Narrow vs wide dependencies",
-                    "text": "Cover: narrow means each output partition needs one, or a fixed few, input partitions (filter, select, withColumn, union, coalesce); narrow steps are pipelined inside one stage with no data movement. Wide means an output partition needs rows from many input partitions (groupBy, join without broadcast, distinct, orderBy, repartition); it needs a shuffle, which ends the stage. Why it matters: stages per job = shuffle boundaries + 1; a wide dependency costs disk, network and a barrier (the next stage waits for every map task); recovering a lost partition is cheap after a narrow step (recompute one parent) and expensive after a wide one (many parents).",
-                    "id": "v2-d1-q-4",
-                    "q": [
+                      "1.12",
                       "1.5"
                     ],
                     "asks": [
+                      "What is the difference between a Transformation and an Action?",
+                      "Explain the concept of \"Lazy Evaluation.\"",
                       "Explain \"Narrow\" vs. \"Wide\" dependencies."
                     ]
                   },
                   {
-                    "title": "1.10 · Lifecycle of a Spark job",
-                    "text": "Cover: in order, an action calls the driver, which has Catalyst plan the query (analyzed → optimized → physical plan, wrapped by AQE); the physical plan becomes a graph of RDDs; the DAGScheduler cuts it into stages at every shuffle dependency and submits parent (shuffle map) stages before the final (result) stage; each stage becomes a task set with one task per partition; the TaskScheduler places tasks on free executor cores, preferring data locality; executors run the tasks and write shuffle files or return results; with AQE, after each shuffle stage Spark re-plans the rest with real sizes; the job ends when the result stage finishes. One action is usually one job, but some start more (orderBy also runs a sampling job).",
-                    "id": "v2-d1-q-5",
-                    "q": [
-                      "1.10"
+                    "title": "Job lifecycle and fault tolerance (30 min)",
+                    "text": "Learn: An action becomes stages and tasks, and lineage lets Spark recompute only the lost partitions.",
+                    "id": "v2-d1-t-3",
+                    "links": [
+                      {
+                        "label": "The original Spark paper (read sections 2.1, 4 and 5.1)",
+                        "url": "https://www.usenix.org/system/files/conference/nsdi12/nsdi12-final138.pdf"
+                      }
                     ],
-                    "asks": [
-                      "Explain the lifecycle of a Spark Job."
-                    ]
-                  },
-                  {
-                    "title": "1.7 · How Spark handles fault tolerance",
-                    "text": "Cover: lineage, so every partition can be recomputed from its parents and lost data is rebuilt, not copied from replicas. Failed tasks are retried (`spark.task.maxFailures`, 4 on a cluster; local mode does not retry unless the master is `local[N,F]`). If an executor dies and its shuffle files are lost, the next stage gets a fetch failure and the DAGScheduler re-runs only the missing map tasks of the parent stage. Shuffle files on local disk act as natural restart points. Slow tasks can get a speculative copy (`spark.speculation`). `checkpoint()` cuts very long lineages; replicated storage levels (`MEMORY_AND_DISK_2`) keep cached copies on two executors. The driver is a single point of failure: if it dies the application fails, unless the cluster manager restarts it. Structured Streaming recovers from its checkpoint (offsets and state).",
-                    "id": "v2-d1-q-6",
                     "q": [
+                      "1.10",
                       "1.7"
                     ],
                     "asks": [
+                      "Explain the lifecycle of a Spark Job.",
                       "How does Spark handle fault tolerance?"
                     ]
-                  }
-                ]
-              },
-              {
-                "label": "🧭 How Spark decides",
-                "deep": true,
-                "items": [
+                  },
                   {
-                    "title": "Where a task runs: locality and delay scheduling",
-                    "text": "Each task has preferred locations: where its input split or cached block lives. The TaskScheduler offers it first at PROCESS_LOCAL (same JVM), then NODE_LOCAL, RACK_LOCAL and ANY, waiting `spark.locality.wait` (3 s) at each level before accepting a worse one. The Stages tab shows the level per task (Locality Level column). Long waits with many ANY tasks mean the data is far from the executors.",
-                    "id": "v2-d1-deep-1"
+                    "title": "Where tasks run: data locality (10 min)",
+                    "text": "Learn: Spark prefers to run a task where its data already is, and waits a few seconds before settling for a worse place.",
+                    "id": "v2-d1-t-4",
+                    "links": [
+                      {
+                        "label": "Tuning Spark: Data Locality",
+                        "url": "https://spark.apache.org/docs/latest/tuning.html#data-locality"
+                      }
+                    ],
+                    "deep": true
                   }
                 ]
               }
@@ -173,78 +133,40 @@
         ]
       }
     ],
-    "time": "≈ 4 h 15 min"
+    "time": "≈ 3 h 55 min"
   },
   {
     "day": 2,
     "title": "How Spark plans a query: Catalyst and Tungsten",
     "checklist": "1.6, 1.8, 1.13 · 🧭 planning decisions",
-    "labOutput": "One query traced through all four plans, with the Catalyst rules that fired",
+    "labOutput": "Query plans read, and Catalyst rules observed, on the NYC taxi data",
     "goal": "Name every decision between your code and the running tasks: which rewrites Catalyst makes, how physical operators are chosen, and how Tungsten executes them.",
     "theme": "How Spark plans a query: Catalyst and Tungsten",
     "parts": [
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Learn the answers",
-        "time": "1 h 45 min",
+        "tagline": "Learn the checklist topics",
+        "time": "1 h 15 min",
         "activities": [
           {
-            "key": "read",
-            "name": "📖 Read",
-            "time": "50 min",
-            "note": "Read only the sections named. Each item says how long it should take; stop when the time is up.",
+            "key": "topics",
+            "name": "📚 Topics",
+            "time": "1 h 15 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Deep Dive into Spark SQL's Catalyst Optimizer",
-                    "text": "Databricks blog · whole post · 25 min. From 2015, but the trees, rules and four phases are unchanged.",
-                    "id": "v2-d2-read-1",
-                    "url": "https://www.databricks.com/blog/2015/04/13/deep-dive-into-spark-sqls-catalyst-optimizer.html"
-                  },
-                  {
-                    "title": "Project Tungsten: Bringing Apache Spark Closer to Bare Metal",
-                    "text": "Databricks blog · whole post · 10 min. Focus on the three goals: memory management, cache-aware computation, code generation.",
-                    "id": "v2-d2-read-2",
-                    "url": "https://www.databricks.com/blog/2015/04/28/project-tungsten-bringing-spark-closer-to-bare-metal.html"
-                  },
-                  {
-                    "title": "EXPLAIN and Leveraging Statistics",
-                    "text": "Spark docs · EXPLAIN page (the five modes) · 5 min, then Performance Tuning → Leveraging Statistics (linked below) · 5 min.",
-                    "id": "v2-d2-read-3",
-                    "url": "https://spark.apache.org/docs/latest/sql-ref-syntax-qry-explain.html",
+                    "title": "The Catalyst optimizer (25 min)",
+                    "text": "Learn: Four phases: analysis, logical optimization, physical planning and code generation.",
+                    "id": "v2-d2-t-1",
                     "links": [
                       {
-                        "label": "Performance Tuning: Leveraging Statistics",
-                        "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html"
+                        "label": "Deep Dive into Spark SQL's Catalyst Optimizer",
+                        "url": "https://www.databricks.com/blog/2015/04/13/deep-dive-into-spark-sqls-catalyst-optimizer.html"
                       }
-                    ]
-                  },
-                  {
-                    "title": "The Internals of Spark SQL: EnsureRequirements",
-                    "text": "Jacek Laskowski's online book · skim · 5 min. How Spark decides where to add Exchange and Sort.",
-                    "id": "v2-d2-read-4",
-                    "url": "https://books.japila.pl/spark-sql-internals/physical-optimizations/EnsureRequirements/"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "questions",
-            "name": "🎯 Checklist questions",
-            "time": "55 min",
-            "note": "Write one answer card per item in your Theory notes: 5–8 lines in your own words that hit every point after \"Cover:\". Tick the item when you can say it without looking.",
-            "blocks": [
-              {
-                "label": "Write an answer card for each",
-                "items": [
-                  {
-                    "title": "1.6 · Purpose of the Catalyst Optimizer and how it works",
-                    "text": "Cover: purpose: turn any DataFrame or SQL query into an efficient physical plan automatically, so performance depends less on how the query is written. It rewrites trees with rules (pattern match, then replace) in four phases: (1) analysis resolves table names, column names and types against the catalog (unresolved → analyzed plan; failures raise `AnalysisException`); (2) logical optimization runs rule batches until the plan stops changing: predicate pushdown, column pruning, constant folding, boolean simplification, filter inference, and join reordering when statistics exist; (3) physical planning maps each logical operator to physical ones (scan, join algorithm, aggregate type), then preparation rules add `Exchange` and `Sort` where an operator needs a distribution or an ordering; (4) whole-stage code generation compiles chains of operators into Java. DataFrame code and SQL become the same plan, so they perform the same. Python UDFs are black boxes it cannot optimize through.",
-                    "id": "v2-d2-q-1",
+                    ],
                     "q": [
                       "1.6"
                     ],
@@ -253,9 +175,15 @@
                     ]
                   },
                   {
-                    "title": "1.8 · What is Tungsten?",
-                    "text": "Cover: the execution-engine work (from Spark 1.4) that makes physical plans run close to the hardware: (1) memory management: rows stored as compact binary (`UnsafeRow`) or columnar batches in memory Spark manages itself, on or off the heap, instead of Java objects, so far less garbage collection and no per-object overhead; (2) cache-aware algorithms: sorting and hashing on compact key prefixes that fit CPU caches; (3) whole-stage code generation: operators of a stage fused into one loop with no virtual calls (`*(n)` in plans). Also vectorized Parquet/ORC readers (`ColumnarToRow` in plans). Catalyst decides what to run; Tungsten makes it run fast.",
-                    "id": "v2-d2-q-2",
+                    "title": "Tungsten (15 min)",
+                    "text": "Learn: Spark stores rows as compact binary data and generates Java code for each stage.",
+                    "id": "v2-d2-t-2",
+                    "links": [
+                      {
+                        "label": "Project Tungsten",
+                        "url": "https://www.databricks.com/blog/2015/04/28/project-tungsten-bringing-spark-closer-to-bare-metal.html"
+                      }
+                    ],
                     "q": [
                       "1.8"
                     ],
@@ -264,36 +192,37 @@
                     ]
                   },
                   {
-                    "title": "1.13 · DataFrame vs RDD",
-                    "text": "Cover: an RDD is a distributed collection of opaque objects plus your functions (map, filter, reduceByKey); Spark cannot look inside the lambdas, so there is no optimizer and no pushdown, data is serialized as objects, and in PySpark every row is pickled to a Python worker. A DataFrame is a distributed table with a schema, built from expressions Spark understands, so Catalyst optimizes it and Tungsten stores it in binary form; the same query runs at the same speed from Python, Scala or SQL. Use RDDs only for low-level control (custom partitioners, non-tabular data, old code); convert with `df.rdd` and `spark.createDataFrame(rdd, schema)`. The typed Dataset API exists only in Scala and Java.",
-                    "id": "v2-d2-q-3",
+                    "title": "DataFrame vs RDD (15 min)",
+                    "text": "Learn: A DataFrame has a schema, so Spark can optimize it; an RDD is a black box to Spark.",
+                    "id": "v2-d2-t-3",
+                    "links": [
+                      {
+                        "label": "Spark SQL, DataFrames and Datasets Guide",
+                        "url": "https://spark.apache.org/docs/latest/sql-programming-guide.html"
+                      }
+                    ],
                     "q": [
                       "1.13"
                     ],
                     "asks": [
                       "What is the difference between a DataFrame and an RDD?"
                     ]
-                  }
-                ]
-              },
-              {
-                "label": "🧭 How Spark decides",
-                "deep": true,
-                "items": [
-                  {
-                    "title": "Physical planning: how operators get picked",
-                    "text": "Each logical operator is offered to a list of strategies (file scans, aggregation, joins, basic operators), and the first strategy that can plan it wins. So most choices are rules plus size estimates, not a search over costs. Examples: an aggregate becomes `HashAggregate` when its buffer is fixed-width, `ObjectHashAggregate` for collect_list-style buffers, otherwise `SortAggregate`; a join becomes broadcast hash, shuffle hash, sort-merge or nested loop (Day 5). Then preparation rules run in order, including `EnsureRequirements` (adds `Exchange` or `Sort` only when the child's partitioning or ordering does not already satisfy the parent), `CollapseCodegenStages` and `ReuseExchangeAndSubquery`; with AQE, `InsertAdaptiveSparkPlan` wraps the result.",
-                    "id": "v2-d2-deep-1"
                   },
                   {
-                    "title": "Statistics: where size estimates come from",
-                    "text": "Without statistics the planner knows only file sizes, and a filter does not shrink the estimate: a 1 % filter on a 23 MB table is still estimated at 23 MB. After `ANALYZE TABLE t COMPUTE STATISTICS FOR ALL COLUMNS` and with `spark.sql.cbo.enabled=true` it also knows row counts, min, max and distinct counts, so it can estimate filter selectivity and join order (`EXPLAIN COST` prints them). This is why static plans are often wrong, and why AQE (Day 3) re-plans with real sizes.",
-                    "id": "v2-d2-deep-2"
-                  },
-                  {
-                    "title": "Reading a plan the way the planner wrote it",
-                    "text": "Read bottom-up. Scan fields: `PushedFilters` (handed to the file reader), `PartitionFilters` (folders skipped), `ReadSchema` (columns read). `Exchange hashpartitioning / rangepartitioning / SinglePartition / RoundRobinPartitioning` is a shuffle and a stage boundary. `*(n)` in simple mode, or a leading `*` in formatted mode, marks whole-stage codegen region n. Typical chain: `HashAggregate(partial_…)` → `Exchange` → `HashAggregate`. `AdaptiveSparkPlan isFinalPlan=false` means AQE has not run yet; codegen markers and AQE decisions appear only after the query has executed.",
-                    "id": "v2-d2-deep-3"
+                    "title": "Reading a query plan (20 min)",
+                    "text": "Learn: The four plans from parsed to physical, and how table statistics change the optimizer's estimates.",
+                    "id": "v2-d2-t-4",
+                    "links": [
+                      {
+                        "label": "EXPLAIN reference",
+                        "url": "https://spark.apache.org/docs/latest/sql-ref-syntax-qry-explain.html"
+                      },
+                      {
+                        "label": "Performance Tuning: Leveraging Statistics",
+                        "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#leveraging-statistics"
+                      }
+                    ],
+                    "deep": true
                   }
                 ]
               }
@@ -334,7 +263,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 15 min"
+    "time": "≈ 3 h 45 min"
   },
   {
     "day": 3,
@@ -347,64 +276,50 @@
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Learn the answers",
-        "time": "1 h 45 min",
+        "tagline": "Learn the checklist topics",
+        "time": "1 h 10 min",
         "activities": [
           {
-            "key": "read",
-            "name": "📖 Read",
-            "time": "40 min",
-            "note": "Read only the sections named. Each item says how long it should take; stop when the time is up.",
+            "key": "topics",
+            "name": "📚 Topics",
+            "time": "1 h 10 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Adaptive Query Execution: Speeding Up Spark SQL at Runtime",
-                    "text": "Databricks blog · whole post · 20 min. The three features with diagrams.",
-                    "id": "v2-d3-read-1",
-                    "url": "https://www.databricks.com/blog/2020/05/29/adaptive-query-execution-speeding-up-spark-sql-at-runtime.html"
-                  },
-                  {
-                    "title": "Performance Tuning: Adaptive Query Execution",
-                    "text": "Spark docs · AQE section with its settings tables · 15 min. Note the defaults; Day 6 lowers the skew thresholds.",
-                    "id": "v2-d3-read-2",
-                    "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#adaptive-query-execution"
-                  },
-                  {
-                    "title": "Performance Tuning: Tuning Partitions",
-                    "text": "Spark docs · Tuning Partitions section (coalesce hints) · 5 min.",
-                    "id": "v2-d3-read-3",
-                    "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "questions",
-            "name": "🎯 Checklist questions",
-            "time": "1 h 5 min",
-            "note": "Write one answer card per item in your Theory notes: 5–8 lines in your own words that hit every point after \"Cover:\". Tick the item when you can say it without looking.",
-            "blocks": [
-              {
-                "label": "Write an answer card for each",
-                "items": [
-                  {
-                    "title": "1.4 · What is Adaptive Query Execution (AQE)?",
-                    "text": "Cover: re-optimization while the query runs, on by default since Spark 3.2 (`spark.sql.adaptive.enabled`). The plan is cut into query stages at shuffle and broadcast boundaries; when a stage finishes, Spark reads the real output statistics (bytes per partition) and re-plans the rest. Main features: coalesce small post-shuffle partitions toward `advisoryPartitionSizeInBytes` (64 MB); switch a sort-merge join to a broadcast or shuffled hash join when a side turns out small; split skewed join partitions. Limits: it needs a shuffle to act on, it does not fix skewed aggregations, and its decisions show only in the final plan (`isFinalPlan=true`, `ShuffleQueryStage`, `AQEShuffleRead`) or the SQL tab.",
-                    "id": "v2-d3-q-1",
+                    "title": "AQE and the shuffle partitions setting (25 min)",
+                    "text": "Learn: AQE re-plans while the query runs, for example by merging small shuffle partitions after a stage ends.",
+                    "id": "v2-d3-t-1",
+                    "links": [
+                      {
+                        "label": "Performance Tuning: Adaptive Query Execution",
+                        "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#adaptive-query-execution"
+                      }
+                    ],
                     "q": [
-                      "1.4"
+                      "1.4",
+                      "3.11"
                     ],
                     "asks": [
-                      "What is an Adaptive Query Execution (AQE)?"
+                      "What is an Adaptive Query Execution (AQE)?",
+                      "What is the spark.sql.shuffle.partitions setting?"
                     ]
                   },
                   {
-                    "title": "1.9 + 1.14 · count() vs approx_count_distinct(); how count(distinct) works",
-                    "text": "Cover: `df.count()` is an action: a job in which each task counts its partition, a single-partition shuffle sums the counts, and an exact number returns to the driver. `F.countDistinct(c)` is an exact aggregate: Spark must first deduplicate (group, value) pairs, so it plans four aggregates and two shuffles (partial by group + value → shuffle → merge = deduplicate → partial count by group → shuffle → final count); two or more different distinct columns add an `Expand` node that copies each row once per distinct column. `F.approx_count_distinct(c, rsd=0.05)` is an aggregate expression using HyperLogLog++: each group keeps a fixed-size sketch (512 six-bit registers, about 416 bytes at the default 5 % error), sketches merge across partitions, so one shuffle of tiny buffers and no deduplication. Trade-off: exactness against memory, shuffle volume and time.",
-                    "id": "v2-d3-q-2",
+                    "title": "count(distinct) and approx_count_distinct (20 min)",
+                    "text": "Learn: An exact distinct count has to shuffle every value; HyperLogLog trades a few percent of error for a tiny sketch.",
+                    "id": "v2-d3-t-2",
+                    "links": [
+                      {
+                        "label": "HyperLogLog (Wikipedia)",
+                        "url": "https://en.wikipedia.org/wiki/HyperLogLog"
+                      },
+                      {
+                        "label": "functions.approx_count_distinct",
+                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.functions.approx_count_distinct.html"
+                      }
+                    ],
                     "q": [
                       "1.9",
                       "1.14"
@@ -415,53 +330,27 @@
                     ]
                   },
                   {
-                    "title": "1.15 · How does avg() work?",
-                    "text": "Cover: two-phase aggregation with a (sum, count) buffer per group: each task computes partial sums and counts over its rows, skipping nulls; the buffers are shuffled by the grouping key; the final step adds the sums and the counts and divides once (null when the count is 0). Why not average the partial averages: partitions hold different numbers of rows, so an average of averages is wrong unless every part has the same size. Output is double for numeric input (decimal input keeps a wider decimal). Plan: `HashAggregate(partial_avg)` → `Exchange hashpartitioning` → `HashAggregate(avg)`.",
-                    "id": "v2-d3-q-3",
-                    "q": [
-                      "1.15"
+                    "title": "How avg() and sorting run (25 min)",
+                    "text": "Learn: avg keeps a (sum, count) pair per group and merges the pairs; orderBy samples the data, range-partitions it and sorts each part.",
+                    "id": "v2-d3-t-3",
+                    "links": [
+                      {
+                        "label": "The Internals of Spark SQL: HashAggregateExec",
+                        "url": "https://books.japila.pl/spark-sql-internals/physical-operators/HashAggregateExec/"
+                      },
+                      {
+                        "label": "The Internals of Spark SQL: SortExec",
+                        "url": "https://books.japila.pl/spark-sql-internals/physical-operators/SortExec/"
+                      }
                     ],
-                    "asks": [
-                      "How does avg() work?"
-                    ]
-                  },
-                  {
-                    "title": "1.16 · How does sorting work?",
-                    "text": "Cover: `orderBy` is a global sort. Spark first runs a sampling job to pick range boundaries, then shuffles with `Exchange rangepartitioning` so the first partition holds the smallest keys, and sorts each partition locally (Tungsten sorter on binary key prefixes, spilling to disk when memory runs out); reading the partitions in order gives a total order. `sortWithinPartitions` sorts inside each partition only, with no shuffle (`Sort [...], false`). `orderBy(...).limit(n)` becomes `TakeOrderedAndProject`: each task keeps its top n and one final merge picks the result, with no full sort. Sort-merge joins and window functions sort too. Cost: a full shuffle plus possible spill, so do not sort data that does not need it.",
-                    "id": "v2-d3-q-4",
                     "q": [
+                      "1.15",
                       "1.16"
                     ],
                     "asks": [
+                      "How does avg() work?",
                       "How does sorting work?"
                     ]
-                  },
-                  {
-                    "title": "3.11 · What is spark.sql.shuffle.partitions?",
-                    "text": "Cover: the number of partitions, and so tasks, in the stage after every DataFrame shuffle: joins, groupBy, distinct, windows, orderBy (default 200; `spark.default.parallelism` is the RDD equivalent). Too few: huge partitions, spill, out-of-memory errors, idle cores. Too many: thousands of tiny tasks and output files, scheduling overhead. Rule of thumb: about 100–200 MB per partition and at least 2–3 × the total cores. With AQE you can start high (`spark.sql.adaptive.coalescePartitions.initialPartitionNum`) and let coalescing merge small partitions.",
-                    "id": "v2-d3-q-5",
-                    "q": [
-                      "3.11"
-                    ],
-                    "asks": [
-                      "What is the spark.sql.shuffle.partitions setting?"
-                    ]
-                  }
-                ]
-              },
-              {
-                "label": "🧭 How Spark decides",
-                "deep": true,
-                "items": [
-                  {
-                    "title": "Runtime decisions: the AQE loop",
-                    "text": "Spark submits the stages that have no unfinished parents, waits for them, re-optimizes the remaining logical plan with the real statistics and plans it physically again: the same Catalyst machinery, run again mid-query. Rules applied at stage boundaries include coalescing (`CoalesceShufflePartitions`), runtime join selection (switch to broadcast; `DynamicJoinSelection` demotes a broadcast whose side is mostly empty partitions), skew splitting (`OptimizeSkewedJoin`), local shuffle reads (`OptimizeShuffleWithLocalRead`) and removing joins with an empty side. Set `spark.sql.adaptive.logLevel` to `WARN` to see AQE log its final plan.",
-                    "id": "v2-d3-deep-1"
-                  },
-                  {
-                    "title": "Aggregates: which operator, and how many shuffles",
-                    "text": "`HashAggregate` when every aggregation buffer is fixed-width (sum, count, avg, min, max, approx_count_distinct); `ObjectHashAggregate` for object buffers (collect_list, collect_set, percentile); `SortAggregate` otherwise. Almost every aggregate is split into a partial step before the shuffle, which shrinks the data, and a final step after it. collect_list cannot shrink, so it ships every value. Exact distinct counts add a second shuffle; several different distinct columns add `Expand`.",
-                    "id": "v2-d3-deep-2"
                   }
                 ]
               }
@@ -502,7 +391,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 15 min"
+    "time": "≈ 3 h 40 min"
   },
   {
     "day": 4,
@@ -515,145 +404,95 @@
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Learn the answers",
-        "time": "1 h 45 min",
+        "tagline": "Learn the checklist topics",
+        "time": "1 h 20 min",
         "activities": [
           {
-            "key": "read",
-            "name": "📖 Read",
-            "time": "45 min",
-            "note": "Read only the sections named. Each item says how long it should take; stop when the time is up.",
+            "key": "topics",
+            "name": "📚 Topics",
+            "time": "1 h 20 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Parquet Files",
-                    "text": "Spark docs · Partition Discovery, Schema Merging and Configuration · 15 min.",
-                    "id": "v2-d4-read-1",
-                    "url": "https://spark.apache.org/docs/latest/sql-data-sources-parquet.html"
-                  },
-                  {
-                    "title": "Parquet file format",
-                    "text": "Apache Parquet docs · the file layout diagram and metadata pages · 10 min. Row groups, column chunks, pages, footer.",
-                    "id": "v2-d4-read-2",
-                    "url": "https://parquet.apache.org/docs/file-format/"
-                  },
-                  {
-                    "title": "Generic Load/Save Functions",
-                    "text": "Spark docs · Save Modes and Bucketing, Sorting and Partitioning · 10 min.",
-                    "id": "v2-d4-read-3",
-                    "url": "https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html"
-                  },
-                  {
-                    "title": "Apache Avro Data Source",
-                    "text": "Spark docs · Deploying, to_avro / from_avro and the schema notes · 10 min.",
-                    "id": "v2-d4-read-4",
-                    "url": "https://spark.apache.org/docs/latest/sql-data-sources-avro.html"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "questions",
-            "name": "🎯 Checklist questions",
-            "time": "1 h",
-            "note": "Write one answer card per item in your Theory notes: 5–8 lines in your own words that hit every point after \"Cover:\". Tick the item when you can say it without looking.",
-            "blocks": [
-              {
-                "label": "Write an answer card for each",
-                "items": [
-                  {
-                    "title": "2.1 · Why is CSV a heavy format?",
-                    "text": "Cover: plain text with no types, so every value is parsed from a string on every read, and `inferSchema` adds a full extra pass; row-oriented, so reading 2 of 50 columns still reads and parses whole lines; no statistics, so no predicate pushdown and no skipping; quoting, escaping and multi-line values make parsing fragile (modes PERMISSIVE, DROPMALFORMED, FAILFAST); usually compressed with gzip, which cannot be split; and text is larger than binary columnar data. Fine for exchanging data with people and other systems, poor for analytics.",
-                    "id": "v2-d4-q-1",
-                    "q": [
-                      "2.1"
+                    "title": "Why Parquet and ORC beat CSV (20 min)",
+                    "text": "Learn: Columnar files read only the columns you ask for and compress better; CSV is untyped text.",
+                    "id": "v2-d4-t-1",
+                    "links": [
+                      {
+                        "label": "Apache Parquet: file format",
+                        "url": "https://parquet.apache.org/docs/file-format/"
+                      }
                     ],
-                    "asks": [
-                      "Why is CSV considered a \"heavy\" format?"
-                    ]
-                  },
-                  {
-                    "title": "2.2 + 2.10 · Columnar storage (Parquet/ORC); Parquet vs ORC",
-                    "text": "Cover: the values of one column are stored together, so a query reads only the columns it needs (column pruning, `ReadSchema`), similar values compress far better (dictionary, run-length and bit-packing encodings, then snappy or zstd), and per-chunk min, max and null-count statistics let readers skip data. Parquet: file → row groups (about 128 MB) → column chunks → pages, schema and statistics in the footer. ORC: file → stripes (about 64 MB) → column streams, light indexes every 10,000 rows, optional bloom filters, file footer. Differences: Parquet is the default for Spark, Delta, Iceberg and most engines and handles nested data well; ORC comes from Hive (Hive ACID tables, built-in indexes). Spark 4 compresses Parquet with snappy and ORC with zstd by default. Choose by ecosystem more than by benchmark.",
-                    "id": "v2-d4-q-2",
                     "q": [
+                      "2.1",
                       "2.2",
                       "2.10"
                     ],
                     "asks": [
+                      "Why is CSV considered a \"heavy\" format?",
                       "Explain Columnar Storage (Parquet/ORC).",
                       "What is the difference between Parquet and ORC?"
                     ]
                   },
                   {
-                    "title": "2.4 · How does predicate pushdown work?",
-                    "text": "Cover: the optimizer moves filters as close to the data as it can, and the file reader receives them (`PushedFilters` in the scan node). The Parquet or ORC reader compares each filter with row-group (stripe) min/max statistics and skips groups that cannot match, then filters rows while decoding. Pushable: comparisons, IN, IS NULL / IS NOT NULL, AND, OR, NOT and StartsWith on raw columns. Not pushable: Python UDFs, functions around the column (`lower(col) = 'x'`) and casts of the column; rewrite to compare the raw column or cast the literal instead. Works best when data is sorted or clustered on the filter column, so each row group covers a narrow range. Related but different: `PartitionFilters` (folder pruning) and `DataFilters`.",
-                    "id": "v2-d4-q-3",
-                    "q": [
-                      "2.4"
+                    "title": "Predicate pushdown and partitioned folders (20 min)",
+                    "text": "Learn: Filters skip row groups using min/max statistics, and partition folders skip whole directories.",
+                    "id": "v2-d4-t-2",
+                    "links": [
+                      {
+                        "label": "Spark SQL: Parquet files",
+                        "url": "https://spark.apache.org/docs/latest/sql-data-sources-parquet.html"
+                      }
                     ],
-                    "asks": [
-                      "How does \"Predicate Pushdown\" work?"
-                    ]
-                  },
-                  {
-                    "title": "2.3 + 2.6 · Benefit of schema evolution; why Avro for Kafka and streaming",
-                    "text": "Cover: schema evolution means the schema can change over time (add a column, widen a type) while old data and old readers keep working: no rewriting history, and producers and consumers can upgrade independently. Parquet: new columns are merged at read time (`mergeSchema`, which costs reading every footer); incompatible type changes are not supported. Avro: compact row-oriented binary, each record written whole, which suits one-event-at-a-time writes; the schema travels with the data or lives in a schema registry, and reader/writer schema resolution (defaults for new fields) keeps producers and consumers compatible: exactly what Kafka topics need. Avro is poor for analytics: no column pruning and weak pushdown.",
-                    "id": "v2-d4-q-4",
                     "q": [
-                      "2.3",
-                      "2.6"
-                    ],
-                    "asks": [
-                      "What is the benefit of \"Schema Evolution\"?",
-                      "Why use Avro for Kafka/Streaming?"
-                    ]
-                  },
-                  {
-                    "title": "2.7 · Disadvantages of Parquet",
-                    "text": "Cover: files are immutable, so a row-level update or delete means rewriting files (hence table formats such as Delta and Iceberg); slow for point lookups and single-row writes; writing costs CPU and memory (a row group is buffered in memory) and frequent small writes create small files; not human-readable; schema changes are limited (no in-place type changes); and how much pushdown helps depends on how the data was sorted when written.",
-                    "id": "v2-d4-q-5",
-                    "q": [
-                      "2.7"
-                    ],
-                    "asks": [
-                      "What is the disadvantage of Parquet?"
-                    ]
-                  },
-                  {
-                    "title": "2.8 · How partitioned folders improve performance",
-                    "text": "Cover: `partitionBy(\"date\")` writes one folder per value (`date=2026-01-05/`); a query filtering on that column lists and reads only the matching folders (`PartitionFilters` in the plan): the cheapest possible skipping, before any file is opened. It also allows overwriting single partitions (`spark.sql.sources.partitionOverwriteMode=dynamic`). Choose low-cardinality columns that queries filter on, with balanced sizes (date, country). A high-cardinality column such as user id creates thousands of folders of tiny files and slow listings; use bucketing or Z-ordering/clustering for those. Dynamic partition pruning (Day 8) applies the same skipping to filters that come from a joined dimension.",
-                    "id": "v2-d4-q-6",
-                    "q": [
+                      "2.4",
                       "2.8"
                     ],
                     "asks": [
+                      "How does \"Predicate Pushdown\" work?",
                       "How do \"Partitioned\" folders improve performance?"
                     ]
                   },
                   {
-                    "title": "2.5 · What is the small file problem?",
-                    "text": "Cover: many small files (KBs to a few MB) instead of fewer files of roughly 128 MB to 1 GB. Causes: many shuffle partitions at write time multiplied by many partition folders, streaming micro-batches, frequent small appends, over-partitioning. Costs: file listing and metadata on the driver, one file open per file (Spark packs small files into one task but charges `spark.sql.files.openCostInBytes`, 4 MB, for each), poor compression and statistics, slow object-store calls. Fixes: `coalesce` or `repartition` before writing, `repartition(col)` matching `partitionBy(col)`, the `maxRecordsPerFile` option, AQE coalescing, compaction jobs, Delta `OPTIMIZE` or auto compaction.",
-                    "id": "v2-d4-q-7",
-                    "q": [
-                      "2.5"
+                    "title": "Small files and splittable formats (20 min)",
+                    "text": "Learn: Many tiny files waste task time, and a gzip file cannot be split, so one task reads all of it.",
+                    "id": "v2-d4-t-3",
+                    "links": [
+                      {
+                        "label": "Performance Tuning: Tuning Partitions",
+                        "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#tuning-partitions"
+                      }
                     ],
-                    "asks": [
-                      "What is the \"Small File Problem\"?"
-                    ]
-                  },
-                  {
-                    "title": "2.9 · Splittable vs non-splittable files",
-                    "text": "Cover: a splittable file can be cut into byte ranges that several tasks read in parallel. Splittable: uncompressed text, CSV and JSON Lines, bzip2 text, and Parquet, ORC and Avro with any codec (they compress inside blocks or pages and have sync points). Not splittable: gzip-compressed text, CSV and JSON, and multi-line JSON or CSV. A 10 GB gzip CSV is read by a single task: slow and risky for memory. Read partitions: split size = min(`spark.sql.files.maxPartitionBytes` (128 MB), max(`openCostInBytes` (4 MB), total bytes ÷ cores)); small files are packed together.",
-                    "id": "v2-d4-q-8",
                     "q": [
+                      "2.5",
                       "2.9"
                     ],
                     "asks": [
+                      "What is the \"Small File Problem\"?",
                       "What are \"Splittable\" vs. \"Non-Splittable\" files?"
+                    ]
+                  },
+                  {
+                    "title": "Schema evolution, Avro and Parquet's downsides (20 min)",
+                    "text": "Learn: Avro suits streaming and changing schemas; Parquet files cannot be updated in place.",
+                    "id": "v2-d4-t-4",
+                    "links": [
+                      {
+                        "label": "Apache Avro Data Source Guide",
+                        "url": "https://spark.apache.org/docs/latest/sql-data-sources-avro.html"
+                      }
+                    ],
+                    "q": [
+                      "2.3",
+                      "2.6",
+                      "2.7"
+                    ],
+                    "asks": [
+                      "What is the benefit of \"Schema Evolution\"?",
+                      "Why use Avro for Kafka/Streaming?",
+                      "What is the disadvantage of Parquet?"
                     ]
                   }
                 ]
@@ -695,7 +534,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 15 min"
+    "time": "≈ 3 h 50 min"
   },
   {
     "day": 5,
@@ -709,59 +548,27 @@
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Learn the answers",
-        "time": "1 h 45 min",
+        "tagline": "Learn the checklist topics",
+        "time": "1 h 20 min",
         "activities": [
           {
-            "key": "read",
-            "name": "📖 Read",
-            "time": "45 min",
-            "note": "Read only the sections named. Each item says how long it should take; stop when the time is up.",
+            "key": "topics",
+            "name": "📚 Topics",
+            "time": "1 h 20 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Performance Tuning: Optimizing the Join Strategy",
-                    "text": "Spark docs · Optimizing the Join Strategy, then the two AQE join subsections · 15 min.",
-                    "id": "v2-d5-read-1",
-                    "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html"
-                  },
-                  {
-                    "title": "Hints",
-                    "text": "Spark SQL reference · join hints and their priority · 10 min.",
-                    "id": "v2-d5-read-2",
-                    "url": "https://spark.apache.org/docs/latest/sql-ref-syntax-qry-select-hints.html"
-                  },
-                  {
-                    "title": "The Internals of Spark SQL: JoinSelection",
-                    "text": "Jacek Laskowski's online book · the requirements listed for each join operator · 15 min. Today's lab tests them.",
-                    "id": "v2-d5-read-3",
-                    "url": "https://books.japila.pl/spark-sql-internals/execution-planning-strategies/JoinSelection/"
-                  },
-                  {
-                    "title": "RDD Programming Guide: Shuffle operations",
-                    "text": "Spark docs · Background and Performance Impact · 5 min.",
-                    "id": "v2-d5-read-4",
-                    "url": "https://spark.apache.org/docs/latest/rdd-programming-guide.html#shuffle-operations"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "questions",
-            "name": "🎯 Checklist questions",
-            "time": "1 h",
-            "note": "Write one answer card per item in your Theory notes: 5–8 lines in your own words that hit every point after \"Cover:\". Tick the item when you can say it without looking.",
-            "blocks": [
-              {
-                "label": "Write an answer card for each",
-                "items": [
-                  {
-                    "title": "3.1 + 3.3 · What is a shuffle, and what does it cost?",
-                    "text": "Cover: a shuffle redistributes rows across partitions so that all rows with the same key (or key range) end up together; groupBy, join, distinct, orderBy, windows and repartition need it. Map side: each task partitions its output by target (hash of the key modulo N, or a range), sorts it and writes one data file plus an index to local disk, spilling when memory is short. Reduce side: each task fetches its blocks from every map task over the network. It is a stage barrier: no reduce task starts until all map tasks finish. Costs: serialization, disk writes and reads, network transfer, memory pressure and spill, more tasks, exposure to skew, and recomputation if shuffle files are lost. Partial aggregation before the shuffle shrinks it. In the UI: Shuffle Write and Shuffle Read in the Stages tab; `Exchange` in plans.",
-                    "id": "v2-d5-q-1",
+                    "title": "What a shuffle is and what it costs (15 min)",
+                    "text": "Learn: A shuffle moves rows between executors through disk and network, and the next stage waits for it.",
+                    "id": "v2-d5-t-1",
+                    "links": [
+                      {
+                        "label": "RDD Programming Guide: Shuffle operations",
+                        "url": "https://spark.apache.org/docs/latest/rdd-programming-guide.html#shuffle-operations"
+                      }
+                    ],
                     "q": [
                       "3.1",
                       "3.3"
@@ -772,83 +579,69 @@
                     ]
                   },
                   {
-                    "title": "3.7 + 3.12 · How a hash join works; broadcast hash join vs shuffle hash join",
-                    "text": "Cover: a hash join builds a hash table from the smaller side keyed by the join key, then streams the larger side and probes the table for each row (equality conditions only). Broadcast hash join: the small side is collected to the driver and sent whole to every executor; each task probes it with its own partition of the big side, so the big side is never shuffled, but the small side must fit in driver and executor memory. Shuffle hash join: both sides are shuffled by key, then each task builds a hash table from its partition of the smaller side; it handles larger build sides than a broadcast, needs no sort (unlike sort-merge), but costs two shuffles and can run out of memory on a big partition. Spark prefers sort-merge over shuffle hash by default (`spark.sql.join.preferSortMergeJoin=true`).",
-                    "id": "v2-d5-q-2",
+                    "title": "Hash joins: broadcast vs shuffle hash (20 min)",
+                    "text": "Learn: Build a hash table from the small side and probe it with the big side; broadcast sends the small table to every executor.",
+                    "id": "v2-d5-t-2",
+                    "links": [
+                      {
+                        "label": "Performance Tuning: Optimizing the join strategy",
+                        "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#optimizing-the-join-strategy"
+                      }
+                    ],
                     "q": [
+                      "3.2",
                       "3.7",
                       "3.12"
                     ],
                     "asks": [
+                      "When is a Broadcast Join triggered?",
                       "Explain how Hash Join works.",
                       "What is a \"Broadcast Hash Join\" vs. a \"Shuffle Hash Join\"?"
                     ]
                   },
                   {
-                    "title": "3.2 · When is a broadcast join triggered?",
-                    "text": "Cover: when a side's estimated size is at most `spark.sql.autoBroadcastJoinThreshold` (10 MB; -1 disables it) and the join type allows that side as the build side: left outer, semi and anti joins can broadcast only the right side, right outer only the left, full outer neither. Or when hinted (`F.broadcast(df)`, `/*+ BROADCAST(t) */`), which overrides the threshold but not the join-type rule. Or at runtime, when AQE finds a side is small (`spark.sql.adaptive.autoBroadcastJoinThreshold`). Estimates come from file sizes or table statistics, and a filter does not shrink a static estimate, so AQE often catches what static planning misses. Failure modes: driver memory or `spark.driver.maxResultSize` exceeded (the build side passes through the driver), `spark.sql.broadcastTimeout` (300 s), an 8 GB hard limit.",
-                    "id": "v2-d5-q-3",
-                    "q": [
-                      "3.2"
+                    "title": "Sort-merge join, Cartesian join and how Spark chooses (25 min)",
+                    "text": "Learn: The order in which Spark tries join strategies, and why sort-merge is the default for two big tables.",
+                    "id": "v2-d5-t-3",
+                    "links": [
+                      {
+                        "label": "The Internals of Spark SQL: JoinSelection",
+                        "url": "https://books.japila.pl/spark-sql-internals/execution-planning-strategies/JoinSelection/"
+                      }
                     ],
-                    "asks": [
-                      "When is a Broadcast Join triggered?"
-                    ]
-                  },
-                  {
-                    "title": "3.6 · Sort-merge join stages",
-                    "text": "Cover: (1) shuffle both sides by the join key into the same number of partitions: an `Exchange hashpartitioning` on each side, so two map stages; (2) sort each partition by the key (`Sort`); (3) merge: walk both sorted streams in one pass and emit pairs for equal keys, buffering the rows of one side that share a key. It scales to any size because it streams and can spill, but costs two shuffles and two sorts. The shuffles disappear when inputs are already partitioned on the key (bucketing, an earlier repartition or a join on the same key). Duplicate keys multiply output rows; one very frequent key makes one slow task. The default for equi-joins of two large tables.",
-                    "id": "v2-d5-q-4",
                     "q": [
-                      "3.6"
-                    ],
-                    "asks": [
-                      "Explain Sort-Merge Join (SMJ) stages."
-                    ]
-                  },
-                  {
-                    "title": "3.8 · What is a Cartesian product join?",
-                    "text": "Cover: every row of one side paired with every row of the other, n × m rows; it is what `crossJoin` produces, and what an inner join with no equality condition needs. Planned as `CartesianProduct` (inner joins with no broadcastable side) or `BroadcastNestedLoopJoin` (one side broadcastable; also used for non-equi outer joins). 100,000 × 100,000 rows is 10 billion rows: usually a bug (a missing join key) unless one side is tiny. Range conditions such as `a.ts BETWEEN b.start AND b.end` also fall back to nested loops, so add an equality key (for example a day bucket) when you can.",
-                    "id": "v2-d5-q-5",
-                    "q": [
-                      "3.8"
-                    ],
-                    "asks": [
-                      "What is a Cartesian Product join?"
-                    ]
-                  },
-                  {
-                    "title": "3.9 · How does Spark choose the join strategy?",
-                    "text": "Cover: the order in Spark 4.2's `JoinSelection`. (1) hints first, by priority BROADCAST > MERGE > SHUFFLE_HASH > SHUFFLE_REPLICATE_NL, each used only if it is valid for the join type; (2) equi-joins without hints: broadcast hash if a buildable side is within the threshold → shuffle hash if `preferSortMergeJoin` is false and a side is small enough for per-partition hash maps (under threshold × shuffle partitions) and at least 3 × smaller than the other → sort-merge if the keys are sortable → Cartesian product for inner joins → broadcast nested loop as the last resort; (3) non-equi joins: broadcast nested loop if a side is broadcastable → Cartesian product for inner joins → broadcast nested loop. Inputs: size estimates, join type, condition, hints and settings. AQE can revise the choice at runtime (3.10).",
-                    "id": "v2-d5-q-6",
-                    "q": [
+                      "3.6",
+                      "3.8",
                       "3.9"
                     ],
                     "asks": [
+                      "Explain Sort-Merge Join (SMJ) stages.",
+                      "What is a Cartesian Product join?",
                       "How does Spark choose which join strategy to use?"
                     ]
                   },
                   {
-                    "title": "3.4 + 3.5 · Avoiding a shuffle in a join; what bucketing is",
-                    "text": "Cover: the ways to avoid it are to broadcast the small side; bucket both tables on the join key; reuse an existing partitioning (after `repartition(key)` or an earlier join on the same key, EnsureRequirements adds no Exchange); filter, select and pre-aggregate before joining; use a semi join instead of join + distinct. Bucketing: `df.write.bucketBy(n, \"key\").sortBy(\"key\").saveAsTable(\"t\")` hashes rows into n bucket files and records the spec in the catalog; joining two tables bucketed on the same key with the same (or, with `spark.sql.bucketing.coalesceBucketsInJoin.enabled`, compatible) bucket counts needs no Exchange, and equality filters can prune buckets. Since Spark 3 the Sort usually stays in the plan. Costs: requires `saveAsTable`, a fixed bucket count, many files, discipline at write time. Partitioning = folders for pruning; bucketing = files for joins; they combine.",
-                    "id": "v2-d5-q-7",
+                    "title": "Avoiding shuffles: bucketing and AQE for joins (20 min)",
+                    "text": "Learn: Tables bucketed the same way join without a shuffle, and AQE can switch to a broadcast join at runtime.",
+                    "id": "v2-d5-t-4",
+                    "links": [
+                      {
+                        "label": "Bucketing, Sorting and Partitioning",
+                        "url": "https://spark.apache.org/docs/latest/sql-data-sources-load-save-functions.html#bucketing-sorting-and-partitioning"
+                      },
+                      {
+                        "label": "Performance Tuning: Adaptive Query Execution",
+                        "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#adaptive-query-execution"
+                      }
+                    ],
                     "q": [
                       "3.4",
-                      "3.5"
-                    ],
-                    "asks": [
-                      "How can you avoid a shuffle during a Join?",
-                      "What is \"Bucketing\"?"
-                    ]
-                  },
-                  {
-                    "title": "3.10 · How does AQE help with joins?",
-                    "text": "Cover: after the shuffle map stages finish, AQE knows real sizes and can (1) turn a sort-merge join into a broadcast hash join when one side is under `spark.sql.adaptive.autoBroadcastJoinThreshold`, reading the shuffle files already written locally (`AQEShuffleRead local`) instead of shuffling them to reducers; (2) turn sort-merge into shuffled hash join when every partition is under `spark.sql.adaptive.maxShuffledHashJoinLocalMapThreshold`; (3) split skewed partitions (Day 6); (4) coalesce small post-shuffle partitions; (5) avoid broadcasting a side made mostly of empty partitions; (6) drop a join whose side turned out empty. All of it shows only in the final plan.",
-                    "id": "v2-d5-q-8",
-                    "q": [
+                      "3.5",
                       "3.10"
                     ],
                     "asks": [
+                      "How can you avoid a shuffle during a Join?",
+                      "What is \"Bucketing\"?",
                       "How does AQE help with Joins?"
                     ]
                   }
@@ -891,7 +684,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 15 min"
+    "time": "≈ 3 h 50 min"
   },
   {
     "day": 6,
@@ -904,103 +697,71 @@
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Learn the answers",
-        "time": "1 h 40 min",
+        "tagline": "Learn the checklist topics",
+        "time": "1 h",
         "activities": [
           {
-            "key": "read",
-            "name": "📖 Read",
-            "time": "30 min",
-            "note": "Read only the sections named. Each item says how long it should take; stop when the time is up.",
+            "key": "topics",
+            "name": "📚 Topics",
+            "time": "1 h",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Performance Tuning: Optimizing Skew Join",
-                    "text": "Spark docs · Optimizing Skew Join and Splitting skewed shuffle partitions · 10 min. Note the two thresholds.",
-                    "id": "v2-d6-read-1",
-                    "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#optimizing-skew-join"
-                  },
-                  {
-                    "title": "Web UI: Stage detail",
-                    "text": "Spark docs · summary metrics, event timeline and task table · 10 min.",
-                    "id": "v2-d6-read-2",
-                    "url": "https://spark.apache.org/docs/latest/web-ui.html#stage-detail"
-                  },
-                  {
-                    "title": "Performance Tuning: Coalesce Hints",
-                    "text": "Spark docs · COALESCE, REPARTITION and REBALANCE hints · 10 min.",
-                    "id": "v2-d6-read-3",
-                    "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#coalesce-hints-for-sql-queries"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "questions",
-            "name": "🎯 Checklist questions",
-            "time": "1 h 10 min",
-            "note": "Write one answer card per item in your Theory notes: 5–8 lines in your own words that hit every point after \"Cover:\". Tick the item when you can say it without looking.",
-            "blocks": [
-              {
-                "label": "Write an answer card for each",
-                "items": [
-                  {
-                    "title": "4.1 + 4.3 · What data skew is, and why it is dangerous",
-                    "text": "Cover: skew means data is spread unevenly across partitions, so a few tasks get far more rows or bytes than the rest (row, byte or compute skew). Typical causes: a few very frequent keys (one huge customer, a default value such as 'unknown', 0 or -1, null join keys), date-based keys, uneven input files. Why it hurts: a stage finishes only when its slowest task does, so one straggler holds the whole job while the other cores sit idle; the big task spills, runs out of memory, is retried and can fail the job. Adding executors does not help, and neither does speculative execution: the copy gets the same giant partition.",
-                    "id": "v2-d6-q-1",
+                    "title": "What data skew is and how to spot it (15 min)",
+                    "text": "Learn: One task far slower than the rest means skew: compare the max and the median in the stage's summary metrics.",
+                    "id": "v2-d6-t-1",
+                    "links": [
+                      {
+                        "label": "Spark Web UI: Stages tab",
+                        "url": "https://spark.apache.org/docs/latest/web-ui.html#stages-tab"
+                      }
+                    ],
                     "q": [
                       "4.1",
+                      "4.2",
                       "4.3"
                     ],
                     "asks": [
                       "Define Data Skew.",
+                      "How do you identify skew in the Spark UI?",
                       "Why is skew dangerous?"
                     ]
                   },
                   {
-                    "title": "4.2 · How do you identify skew in the Spark UI?",
-                    "text": "Cover: Stages tab → open the slow stage → Summary Metrics: compare Max with the Median and 75th percentile for Duration, Shuffle Read Size / Records, Spill and GC Time; a max many times the median (for example 10×) signals skew, though the threshold is a judgement call. The Event Timeline shows one long bar; sort the task table by duration or shuffle read. After AQE, the SQL tab shows `SortMergeJoin(skew=true)` and `AQEShuffleRead skewed`. Confirm the hot keys in the data with `groupBy(key).count().orderBy(F.desc(\"count\"))` (sample first on big tables) or `partition_sizes()`.",
-                    "id": "v2-d6-q-2",
-                    "q": [
-                      "4.2"
+                    "title": "Fixing skew with salting (20 min)",
+                    "text": "Learn: Add a random salt to the hot key and replicate the other side, so one big task becomes many small ones.",
+                    "id": "v2-d6-t-2",
+                    "links": [
+                      {
+                        "label": "How to Fix Data Skew in Apache Spark with the Salting Technique",
+                        "url": "https://hackernoon.com/how-to-fix-data-skew-in-apache-spark-with-the-salting-technique"
+                      }
                     ],
-                    "asks": [
-                      "How do you identify skew in the Spark UI?"
-                    ]
-                  },
-                  {
-                    "title": "4.4 + 4.7 · Ways to fix skew; does filtering help?",
-                    "text": "Cover: the toolbox and its trade-offs. AQE skew join handling (automatic, joins only); broadcast the smaller side (no shuffle at all, if it fits); salting (spreads one key, multiplies the other side); isolating hot keys (broadcast-join them separately, normal join for the rest, then union); removing or separating null and junk keys before the join (nulls never match in an inner join anyway); a two-stage salted aggregation for a skewed groupBy; pre-aggregating before the join; repartitioning on a better or composite key; fixing uneven input files. Filtering helps only when it removes the hot keys themselves (for example `F.col(\"key\").isNotNull()` when nulls are the hot key); a filter that removes rows evenly leaves the same skew, just smaller.",
-                    "id": "v2-d6-q-3",
                     "q": [
                       "4.4",
-                      "4.7"
-                    ],
-                    "asks": [
-                      "Name possible ways to solve data skew.",
-                      "Does filtering data help with skew?"
-                    ]
-                  },
-                  {
-                    "title": "4.5 + 4.11 · How salting fixes skew; iterative salting",
-                    "text": "Cover: add a random salt 0..N-1 to the skewed side's key (`F.floor(F.rand(seed) * N)`), replicate every row of the other side N times, once per salt value (`F.explode(F.sequence(F.lit(0), F.lit(N - 1)))`), join on (key, salt) and drop the salt: one hot partition becomes N. Cost: the other side grows N times, so salt only what is hot and pick N from the skew ratio. For aggregations: aggregate by (key, salt), then again by key (works for sum, count, min, max; avg through sum and count). Use a seeded or hash-based salt so a retried task produces the same rows. Iterative salting: measure key frequencies, give each hot key its own salt range sized to its volume (normal keys get N = 1), join, check the task distribution again, and repeat until no task stands out: targeted rather than one global N.",
-                    "id": "v2-d6-q-4",
-                    "q": [
                       "4.5",
+                      "4.7",
                       "4.11"
                     ],
                     "asks": [
+                      "Name possible ways to solve data skew.",
                       "How does \"Salting\" fix skew?",
+                      "Does filtering data help with skew?",
                       "Explain \"Iterative Salting.\""
                     ]
                   },
                   {
-                    "title": "4.6 · What is AQE skew join optimization?",
-                    "text": "Cover: after the shuffle map stages of a sort-merge or shuffled hash join finish, AQE marks a partition skewed when it is larger than `skewedPartitionFactor` (5) × the median partition size and also larger than `skewedPartitionThresholdInBytes` (256 MB). It splits that partition into pieces of about `advisoryPartitionSizeInBytes` and pairs each piece with a copy of the matching partition from the other side. Sizes are shuffle bytes, not rows: a hot key with tiny rows may not be flagged. It does not apply to aggregations or windows, to broadcast joins (no shuffle), or to a side the join type needs to keep whole; `spark.sql.adaptive.forceOptimizeSkewedJoin` allows it even if it adds a shuffle. Seen as `SortMergeJoin(skew=true)` and `AQEShuffleRead skewed` in the final plan.",
-                    "id": "v2-d6-q-5",
+                    "title": "AQE skew join optimization (10 min)",
+                    "text": "Learn: AQE splits a partition that is much bigger than the median, and only for joins.",
+                    "id": "v2-d6-t-3",
+                    "links": [
+                      {
+                        "label": "Performance Tuning: Optimizing skew join",
+                        "url": "https://spark.apache.org/docs/latest/sql-performance-tuning.html#optimizing-skew-join"
+                      }
+                    ],
                     "q": [
                       "4.6"
                     ],
@@ -1009,29 +770,30 @@
                     ]
                   },
                   {
-                    "title": "4.8 + 4.10 + 6.2 · repartition() vs coalesce(): skew, and when to use each",
-                    "text": "Cover: `repartition(n)` is a full shuffle with round-robin distribution, so it evens out volume skew (uneven partitions or files); but `repartition(n, \"key\")` hashes by key, so a hot key still lands in one partition. `coalesce(n)` merges existing partitions without a shuffle (a narrow step): cheap, but it can only reduce the count, keeps or worsens unevenness, and lowers the parallelism of the whole stage before it (`coalesce(1)` makes it one task). Use repartition to increase partitions, to rebalance before heavy work, or to cluster by a column before `partitionBy`; use coalesce to cut the number of output files after a filter. The REBALANCE hint and AQE coalescing do this automatically.",
-                    "id": "v2-d6-q-6",
+                    "title": "repartition, coalesce and read-side skew (15 min)",
+                    "text": "Learn: repartition shuffles to even sizes (but a hot key stays together); coalesce only merges partitions without a shuffle.",
+                    "id": "v2-d6-t-4",
+                    "links": [
+                      {
+                        "label": "DataFrame.repartition",
+                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.repartition.html"
+                      },
+                      {
+                        "label": "DataFrame.coalesce",
+                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.coalesce.html"
+                      }
+                    ],
                     "q": [
                       "4.8",
+                      "4.9",
                       "4.10",
                       "6.2"
                     ],
                     "asks": [
                       "How does repartition() affect skew?",
+                      "Can skew happen on the \"Read\" side?",
                       "What is the difference between repartition() and coalesce() regarding skew?",
                       "When to use repartition() vs coalesce()?"
-                    ]
-                  },
-                  {
-                    "title": "4.9 · Can skew happen on the read side?",
-                    "text": "Cover: yes. One huge non-splittable file (gzip CSV, multi-line JSON) becomes one giant task; uneven file sizes or partition folders give uneven read tasks; Kafka partitions with uneven traffic do the same. Fixes: splittable formats (Parquet, ORC) and sensible file sizes, `repartition()` right after reading, compaction (`OPTIMIZE`), the `maxRecordsPerFile` write option. Diagnose with Input Size / Records in the scan stage's summary metrics.",
-                    "id": "v2-d6-q-7",
-                    "q": [
-                      "4.9"
-                    ],
-                    "asks": [
-                      "Can skew happen on the \"Read\" side?"
                     ]
                   }
                 ]
@@ -1073,7 +835,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 10 min"
+    "time": "≈ 3 h 30 min"
   },
   {
     "day": 7,
@@ -1086,203 +848,104 @@
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Learn the answers",
-        "time": "1 h 50 min",
+        "tagline": "Learn the checklist topics",
+        "time": "1 h 15 min",
         "activities": [
           {
-            "key": "read",
-            "name": "📖 Read",
-            "time": "40 min",
-            "note": "Read only the sections named. Each item says how long it should take; stop when the time is up.",
+            "key": "topics",
+            "name": "📚 Topics",
+            "time": "1 h 15 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Tuning Spark: Memory Tuning",
-                    "text": "Spark docs · Memory Management Overview, Determining Memory Consumption, Garbage Collection Tuning · 25 min.",
-                    "id": "v2-d7-read-1",
-                    "url": "https://spark.apache.org/docs/latest/tuning.html#memory-tuning"
-                  },
-                  {
-                    "title": "RDD Programming Guide: RDD Persistence",
-                    "text": "Spark docs · storage levels, which level to choose, removing data · 10 min.",
-                    "id": "v2-d7-read-2",
-                    "url": "https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-persistence"
-                  },
-                  {
-                    "title": "Configuration: Memory Management",
-                    "text": "Spark docs · the memory settings table · 5 min.",
-                    "id": "v2-d7-read-3",
-                    "url": "https://spark.apache.org/docs/latest/configuration.html#memory-management"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "questions",
-            "name": "🎯 Checklist questions",
-            "time": "1 h 10 min",
-            "note": "Write one answer card per item in your Theory notes: 5–8 lines in your own words that hit every point after \"Cover:\". Tick the item when you can say it without looking.",
-            "blocks": [
-              {
-                "label": "Write an answer card for each",
-                "items": [
-                  {
-                    "title": "5.1 + 5.3 + 5.6 · Executor memory regions, spark.memory.fraction, user memory",
-                    "text": "Cover: the executor heap (`spark.executor.memory`) holds 300 MB reserved for Spark itself; usable = heap − 300 MB; unified memory = usable × `spark.memory.fraction` (0.6), holding the two main regions, execution (shuffles, joins, sorts, aggregations) and storage (cached data, broadcasts), with `spark.memory.storageFraction` (0.5) of it protected for storage; user memory = the other 40 % of usable, for your own objects, UDF data and Spark metadata. User memory is not tracked, so overusing it ends in OutOfMemoryError, not spill. Example for 10 GB: usable 9,940 MB, unified 5,964 MB, protected storage 2,982 MB, user 3,976 MB. A higher fraction gives Spark more room but squeezes user memory. Outside the heap: overhead (`spark.executor.memoryOverhead`, by default 10 % of executor memory, at least 384 MB), off-heap memory and Python workers.",
-                    "id": "v2-d7-q-1",
+                    "title": "Executor memory: unified memory, fraction, user memory, off-heap (25 min)",
+                    "text": "Learn: Execution and storage share one pool (60% of the heap by default) and borrow from each other; user memory is the rest.",
+                    "id": "v2-d7-t-1",
+                    "links": [
+                      {
+                        "label": "Tuning Spark: Memory management overview",
+                        "url": "https://spark.apache.org/docs/latest/tuning.html#memory-management-overview"
+                      }
+                    ],
                     "q": [
                       "5.1",
                       "5.3",
-                      "5.6"
+                      "5.4",
+                      "5.6",
+                      "5.10"
                     ],
                     "asks": [
                       "What are the two main memory regions in an Executor?",
                       "Explain spark.memory.fraction.",
-                      "What is the \"User Memory\" region?"
-                    ]
-                  },
-                  {
-                    "title": "5.10 · Unified memory management",
-                    "text": "Cover: since Spark 1.6, execution and storage share one pool instead of fixed slices. Execution can borrow free storage memory and can evict cached blocks (least recently used first) until storage is down to its protected share; storage can borrow free execution memory but can never evict it, because execution memory is released only when tasks finish. Execution memory is shared fairly: with N running tasks each gets between 1/(2N) and 1/N of the pool, so more cores per executor means less memory per task. Benefit: no hand-tuned fixed fractions, and caches use idle memory without starving shuffles.",
-                    "id": "v2-d7-q-2",
-                    "q": [
-                      "5.10"
-                    ],
-                    "asks": [
+                      "What is \"Off-heap\" memory?",
+                      "What is the \"User Memory\" region?",
                       "Explain \"Unified Memory Management.\""
                     ]
                   },
                   {
-                    "title": "5.2 · What is spilling to disk?",
-                    "text": "Cover: when a task's execution memory cannot hold its sort buffer, hash map or shuffle data, Spark writes sorted runs to local disk and merges them later instead of failing. In the UI, Spill (Memory) is the size of the spilled data in its in-memory form and Spill (Disk) its serialized size on disk (smaller). It keeps jobs alive but costs serialization and disk I/O, often several times slower. Causes: too few, too large partitions, skew, many cores sharing the pool, wide rows. Fixes: more shuffle partitions or AQE, fix skew, fewer cores per executor or more memory, read fewer columns, aggregate earlier.",
-                    "id": "v2-d7-q-3",
-                    "q": [
-                      "5.2"
+                    "title": "Spilling, GC overhead and executor cores (20 min)",
+                    "text": "Learn: Too little memory per task means spill to disk or long GC pauses, and more cores per executor means less memory per task.",
+                    "id": "v2-d7-t-2",
+                    "links": [
+                      {
+                        "label": "Tuning Spark: Garbage collection tuning",
+                        "url": "https://spark.apache.org/docs/latest/tuning.html#garbage-collection-tuning"
+                      }
                     ],
-                    "asks": [
-                      "What is \"Spilling to Disk\"?"
-                    ]
-                  },
-                  {
-                    "title": "5.4 · What is off-heap memory?",
-                    "text": "Cover: memory outside the JVM heap that Spark manages itself (Tungsten) when `spark.memory.offHeap.enabled=true` and `spark.memory.offHeap.size` is set. It is used for execution and storage in binary form and is not scanned by the garbage collector, so big data causes fewer GC pauses. It must be added to the container size you request; it is not part of `spark.executor.memory`. Different from memory overhead (JVM native needs, thread stacks, network buffers), which always exists. Python workers and Arrow buffers also live outside the heap.",
-                    "id": "v2-d7-q-4",
                     "q": [
-                      "5.4"
-                    ],
-                    "asks": [
-                      "What is \"Off-heap\" memory?"
-                    ]
-                  },
-                  {
-                    "title": "5.7 · What is garbage collection (GC) overhead?",
-                    "text": "Cover: time the JVM spends finding and freeing dead objects instead of running tasks. Long or frequent full collections stall executors (missed heartbeats, timeouts), and `GC overhead limit exceeded` is thrown when almost all time goes to GC while freeing almost nothing. In the UI: GC Time per task (Stages) and per executor (Executors), shown in red when it exceeds about 10 % of task time. Causes: many short-lived objects (RDDs of objects, UDFs), large deserialized caches, very large heaps, collect_list on big groups. Fixes: DataFrames and built-in functions (Tungsten binary rows), serialized or off-heap storage, smaller executors (heaps up to about 32–64 GB), G1GC tuning, fewer objects per task.",
-                    "id": "v2-d7-q-5",
-                    "q": [
-                      "5.7"
-                    ],
-                    "asks": [
-                      "What is Garbage Collection (GC) overhead?"
-                    ]
-                  },
-                  {
-                    "title": "5.9 · Risk of a high spark.executor.cores",
-                    "text": "Cover: each core runs one task, and all tasks on an executor share its execution memory, so each gets roughly 1/N of the pool: more cores means less memory per task, more spill and more out-of-memory errors. More concurrent tasks also mean more Python workers (memory overhead), more GC pressure on one big heap, and I/O contention (HDFS clients degrade beyond about 5 concurrent tasks). Too few cores (1) wastes the per-JVM overhead and copies every broadcast into many executors. Common rule of thumb: about 4–5 cores per executor, then size memory per core.",
-                    "id": "v2-d7-q-6",
-                    "q": [
+                      "5.2",
+                      "5.7",
                       "5.9"
                     ],
                     "asks": [
+                      "What is \"Spilling to Disk\"?",
+                      "What is Garbage Collection (GC) overhead?",
                       "What is the risk of high spark.executor.cores?"
                     ]
                   },
                   {
-                    "title": "5.5 · How do you fix a driver OOM?",
-                    "text": "Cover: find the cause first. Common causes: `collect()` or `toPandas()` of large results; broadcast joins (the build side is collected on the driver first); very many tasks or partitions (task and map-output metadata); huge file listings; large accumulators; a long-running driver holding many plans. Fixes, in order: keep data off the driver (aggregate or `limit` first, write results to storage, use `toLocalIterator()`); lower `autoBroadcastJoinThreshold` or remove a broadcast hint; reduce partitions and files (compaction); only then raise `spark.driver.memory` and `spark.driver.maxResultSize` (1 GB by default). The message tells you which limit you hit: `Total size of serialized results ... is bigger than spark.driver.maxResultSize` or `java.lang.OutOfMemoryError: Java heap space`.",
-                    "id": "v2-d7-q-7",
+                    "title": "cache, persist, checkpoint and unpersist (20 min)",
+                    "text": "Learn: Cache keeps the lineage and can be recomputed; checkpoint writes the data to storage and cuts the lineage.",
+                    "id": "v2-d7-t-3",
+                    "links": [
+                      {
+                        "label": "RDD Programming Guide: RDD persistence",
+                        "url": "https://spark.apache.org/docs/latest/rdd-programming-guide.html#rdd-persistence"
+                      }
+                    ],
+                    "q": [
+                      "5.8",
+                      "5.11",
+                      "6.10"
+                    ],
+                    "asks": [
+                      "When should you use unpersist()?",
+                      "What is the difference between checkpoint(), localCheckpoint(), cache() and persist()?",
+                      "Why limit the use of checkpoint()?"
+                    ]
+                  },
+                  {
+                    "title": "Fixing a driver out-of-memory error (10 min)",
+                    "text": "Learn: Do not collect big results: aggregate first, and know what spark.driver.maxResultSize limits.",
+                    "id": "v2-d7-t-4",
+                    "links": [
+                      {
+                        "label": "Configuration: Application properties",
+                        "url": "https://spark.apache.org/docs/latest/configuration.html#application-properties"
+                      }
+                    ],
                     "q": [
                       "5.5"
                     ],
                     "asks": [
                       "How do you fix a \"Driver OOM\"?"
                     ]
-                  },
-                  {
-                    "title": "5.11 · cache() vs persist() vs checkpoint() vs localCheckpoint()",
-                    "text": "Cover: (see the table below) `cache()` is `persist()` with the default level (memory and disk for DataFrames); `persist(level)` lets you choose MEMORY_ONLY, MEMORY_AND_DISK, DISK_ONLY, OFF_HEAP or replicated (`_2`) levels. Both are lazy (the next action fills them), keep the lineage, and recompute lost blocks. `checkpoint()` writes the data to reliable storage (`setCheckpointDir`, for example HDFS or S3) and cuts the lineage: the plan becomes a scan of the saved data, it survives executor loss, and the files stay until you delete them. `localCheckpoint()` keeps the data in executor storage and also cuts the lineage: fast but not fault tolerant (a lost executor can fail the job). Both checkpoints are eager by default.",
-                    "id": "v2-d7-q-8",
-                    "q": [
-                      "5.11"
-                    ],
-                    "asks": [
-                      "What is the difference between checkpoint(), localCheckpoint(), cache() and persist()?"
-                    ]
-                  },
-                  {
-                    "title": "5.8 + 6.10 · When to call unpersist(); why limit checkpoint()",
-                    "text": "Cover: call `unpersist()` as soon as the last action that reuses the data has run: cached blocks take storage memory that execution could use, and otherwise they are evicted in least-recently-used order, possibly pushing out data you still need. Do not cache data used only once. Limit `checkpoint()` because each call is a full job that writes every row to reliable storage and reads it back, it is easy to overuse in loops, its files are not cleaned up automatically, and cutting the lineage removes Spark's cheap recovery path. Use it only to cut very long lineages (iterative algorithms, deep loops) or as a recovery point; prefer `cache()` when lineage is not the problem, and `localCheckpoint()` when speed matters more than fault tolerance.",
-                    "id": "v2-d7-q-9",
-                    "q": [
-                      "5.8",
-                      "6.10"
-                    ],
-                    "asks": [
-                      "When should you use unpersist()?",
-                      "Why limit the use of checkpoint()?"
-                    ]
                   }
                 ]
               }
-            ],
-            "table": {
-              "headers": [
-                "",
-                "cache()",
-                "persist(level)",
-                "checkpoint()",
-                "localCheckpoint()"
-              ],
-              "rows": [
-                [
-                  "Stored where",
-                  "Memory, spills to disk",
-                  "The level you choose",
-                  "Reliable storage (HDFS, S3)",
-                  "Executors' local storage"
-                ],
-                [
-                  "Lineage",
-                  "Kept",
-                  "Kept",
-                  "Cut",
-                  "Cut"
-                ],
-                [
-                  "Executor lost",
-                  "Recomputed from lineage",
-                  "Recomputed from lineage",
-                  "Read back from files",
-                  "Data lost, job can fail"
-                ],
-                [
-                  "When it runs",
-                  "Lazy (next action)",
-                  "Lazy (next action)",
-                  "Eager by default",
-                  "Eager by default"
-                ],
-                [
-                  "Typical use",
-                  "Reuse across several actions",
-                  "Reuse with a specific level",
-                  "Very long lineage, recovery points",
-                  "Long lineage when speed beats safety"
-                ]
-              ]
-            }
+            ]
           }
         ]
       },
@@ -1319,7 +982,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 20 min"
+    "time": "≈ 3 h 45 min"
   },
   {
     "day": 8,
@@ -1332,59 +995,27 @@
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Learn the answers",
-        "time": "1 h 40 min",
+        "tagline": "Learn the checklist topics",
+        "time": "1 h 10 min",
         "activities": [
           {
-            "key": "read",
-            "name": "📖 Read",
-            "time": "40 min",
-            "note": "Read only the sections named. Each item says how long it should take; stop when the time is up.",
+            "key": "topics",
+            "name": "📚 Topics",
+            "time": "1 h 10 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Arrow Python UDFs",
-                    "text": "PySpark docs · 10 min. Spark 4.2 runs plain Python UDFs through Arrow by default.",
-                    "id": "v2-d8-read-1",
-                    "url": "https://spark.apache.org/docs/latest/api/python/tutorial/sql/arrow_python_udf.html"
-                  },
-                  {
-                    "title": "Apache Arrow in PySpark: Pandas UDFs",
-                    "text": "PySpark docs · the Pandas UDFs section · 10 min.",
-                    "id": "v2-d8-read-2",
-                    "url": "https://spark.apache.org/docs/latest/api/python/tutorial/sql/arrow_pandas.html"
-                  },
-                  {
-                    "title": "Handling Late Data and Watermarking",
-                    "text": "Structured Streaming guide · Window Operations on Event Time through the watermark conditions · 15 min.",
-                    "id": "v2-d8-read-3",
-                    "url": "https://spark.apache.org/docs/latest/streaming/apis-on-dataframes-and-datasets.html#handling-late-data-and-watermarking"
-                  },
-                  {
-                    "title": "Tuning Spark: Broadcasting Large Variables",
-                    "text": "Spark docs · 5 min.",
-                    "id": "v2-d8-read-4",
-                    "url": "https://spark.apache.org/docs/latest/tuning.html#broadcasting-large-variables"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "questions",
-            "name": "🎯 Checklist questions",
-            "time": "1 h",
-            "note": "Write one answer card per item in your Theory notes: 5–8 lines in your own words that hit every point after \"Cover:\". Tick the item when you can say it without looking.",
-            "blocks": [
-              {
-                "label": "Write an answer card for each",
-                "items": [
-                  {
-                    "title": "6.1 + 6.7 · Why avoid UDFs; why built-in functions over Python logic",
-                    "text": "Cover: a Python UDF is a black box: Catalyst cannot push filters through it, prune by it, fold it or reorder around it, and it breaks whole-stage codegen; every row (or Arrow batch) leaves the JVM for a Python worker process and comes back, and the function runs once per row in the Python interpreter. The plan shows `ArrowEvalPython` (Spark 4.2 runs plain UDFs through Arrow by default) or `BatchEvalPython`. With Arrow, a simple UDF in a select can cost little; the big losses are blocked pushdown and pruning, with whole rows sent to Python (in this module's test a UDF filter on 5 million Parquet rows ran about 10× slower than the built-in filter). Built-in functions (`pyspark.sql.functions`, `F.expr`, higher-order functions such as `transform`, `filter`, `aggregate`) run inside the JVM on binary rows, handle nulls, and can be optimized. If Python is unavoidable, use a vectorized pandas UDF (`@pandas_udf`) or `mapInPandas`, which process Arrow batches; Scala UDFs skip the Python round trip but are still opaque.",
-                    "id": "v2-d8-q-1",
+                    "title": "Why avoid UDFs, use built-in functions (20 min)",
+                    "text": "Learn: A Python UDF is a black box that blocks optimizations and sends every row to a Python process.",
+                    "id": "v2-d8-t-1",
+                    "links": [
+                      {
+                        "label": "PySpark guide: Unleashing UDFs and UDTFs",
+                        "url": "https://spark.apache.org/docs/latest/api/python/user_guide/udfandudtf.html"
+                      }
+                    ],
                     "q": [
                       "6.1",
                       "6.7"
@@ -1395,64 +1026,59 @@
                     ]
                   },
                   {
-                    "title": "6.3 · Why use broadcast variables?",
-                    "text": "Cover: a read-only value (a lookup dict, a model, a small table) sent once to each executor and cached there, with `sc.broadcast(value)` and read through `.value`, instead of being serialized into the closure of every task, stage and job. Spark distributes it efficiently (executors fetch pieces from each other, BitTorrent-style); free it with `unpersist()` or `destroy()`. PySpark already broadcasts very large pickled functions automatically, but an explicit broadcast gives reuse and control. For DataFrames prefer a broadcast join (`F.broadcast(df)`): same idea, and Catalyst understands it. Keep it small: a copy lives in every executor's memory.",
-                    "id": "v2-d8-q-2",
-                    "q": [
-                      "6.3"
+                    "title": "Broadcast variables and the star schema (15 min)",
+                    "text": "Learn: Send small lookup data once per executor, and join one big fact table to small dimension tables by broadcast.",
+                    "id": "v2-d8-t-2",
+                    "links": [
+                      {
+                        "label": "RDD Programming Guide: Broadcast variables",
+                        "url": "https://spark.apache.org/docs/latest/rdd-programming-guide.html#broadcast-variables"
+                      },
+                      {
+                        "label": "Star schema (Wikipedia)",
+                        "url": "https://en.wikipedia.org/wiki/Star_schema"
+                      }
                     ],
-                    "asks": [
-                      "Why use Broadcast Variables?"
-                    ]
-                  },
-                  {
-                    "title": "6.4 · What is the star schema benefit in Spark?",
-                    "text": "Cover: one large fact table (orders, events) surrounded by small dimension tables (customer, product, date) joined by keys. In Spark the dimensions are small enough to broadcast, so joining the fact table with several dimensions needs no shuffle of the big table. Filters on dimension attributes turn into dynamic partition pruning on the fact table (`dynamicpruningexpression` in `PartitionFilters`), so only the matching fact partitions are read. Joins and aggregations stay simple and predictable. Contrast: joining two large tables (shuffles) or one wide denormalized table (rewritten on every change).",
-                    "id": "v2-d8-q-3",
                     "q": [
+                      "6.3",
                       "6.4"
                     ],
                     "asks": [
+                      "Why use Broadcast Variables?",
                       "What is the \"Star Schema\" benefit in Spark?"
                     ]
                   },
                   {
-                    "title": "6.5 · Why avoid lit() and withColumn in loops?",
-                    "text": "Cover: each `withColumn(..., F.lit(...))` returns a new DataFrame with one more projection, and Spark analyzes the growing plan again every time, so the cost grows much faster than the number of columns: hundreds of calls can take seconds before any job starts, make `explain()` slow, and very deep plans can hit a StackOverflowError. The data work is cheap; the planning is not. Fix: build a list of column expressions and apply them in one `select(\"*\", *exprs)` or `withColumns({...})`, generated from a config dict when the columns are data-driven.",
-                    "id": "v2-d8-q-4",
-                    "q": [
-                      "6.5"
+                    "title": "Loops with lit(), hardcoded values and data lineage (15 min)",
+                    "text": "Learn: Each withColumn adds a projection, so loops build huge plans; use one select and keep settings in config files.",
+                    "id": "v2-d8-t-3",
+                    "links": [
+                      {
+                        "label": "DataFrame.withColumn (read the Notes)",
+                        "url": "https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.DataFrame.withColumn.html"
+                      }
                     ],
-                    "asks": [
-                      "Why avoid pyspark.sql.functions.lit() in loops?"
-                    ]
-                  },
-                  {
-                    "title": "6.6 · How do you handle data lineage in Spark?",
-                    "text": "Cover: two levels. Within a job: Spark's own lineage, the plan and the RDD graph (`explain()`, `rdd.toDebugString()`, the SQL tab), shows how each output is computed. Across jobs and tables: record where data came from: `F.input_file_name()` or the `_metadata` column of file sources (path, size, modification time), load timestamps and batch ids as columns, Delta table history (`DESCRIBE HISTORY`: operation, parameters, metrics, and time travel to reproduce an input), and a lineage tool (OpenLineage via a Spark listener, Unity Catalog, DataHub) that captures every job's inputs and outputs automatically.",
-                    "id": "v2-d8-q-5",
                     "q": [
-                      "6.6"
-                    ],
-                    "asks": [
-                      "How do you handle \"Data Lineage\" in Spark?"
-                    ]
-                  },
-                  {
-                    "title": "6.8 · The best way to handle hardcoded values",
-                    "text": "Cover: keep paths, dates, thresholds, table names and credentials out of the code. Pass them as job arguments (`argparse`), environment variables or a config file per environment (YAML or JSON for dev, test, prod); pass run-time values to SQL as parameters (`spark.sql(\"... WHERE d = :d\", args={\"d\": day})`); keep shared constants in one module; keep lookup data as tables or broadcast DataFrames rather than Python literals; keep secrets in a secret manager, never in code. Benefits: one codebase for every environment, reproducible runs, testable functions, no code change to move a threshold.",
-                    "id": "v2-d8-q-6",
-                    "q": [
+                      "6.5",
+                      "6.6",
                       "6.8"
                     ],
                     "asks": [
+                      "Why avoid pyspark.sql.functions.lit() in loops?",
+                      "How do you handle \"Data Lineage\" in Spark?",
                       "What is the best way to handle \"Hardcoded\" values?"
                     ]
                   },
                   {
-                    "title": "6.9 · How to handle late data in streaming",
-                    "text": "Cover: aggregate on event time (when it happened), not processing time, and set a watermark: `withWatermark(\"ts\", \"10 minutes\")`. The engine tracks the latest event time seen and sets watermark = latest − 10 minutes at each trigger. Events newer than the watermark still update their window; older events are not guaranteed to be counted (in practice they are dropped), and state for windows behind the watermark is deleted, so memory stays bounded. In append mode a window is emitted once, after the watermark passes its end, so results lag by the threshold; update mode emits changing counts; complete mode keeps all state and ignores the watermark for cleanup. Trade-off: a longer threshold gives more complete results, more state and later output. For data later than any sensible threshold, write it to a side table or fix it later in batch (Delta MERGE).",
-                    "id": "v2-d8-q-7",
+                    "title": "Late data in streaming (20 min)",
+                    "text": "Learn: A watermark says how late data may be, so Spark can finish windows and drop old state.",
+                    "id": "v2-d8-t-4",
+                    "links": [
+                      {
+                        "label": "Structured Streaming: Handling late data and watermarking",
+                        "url": "https://spark.apache.org/docs/latest/streaming/apis-on-dataframes-and-datasets.html#handling-late-data-and-watermarking"
+                      }
+                    ],
                     "q": [
                       "6.9"
                     ],
@@ -1499,7 +1125,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 10 min"
+    "time": "≈ 3 h 40 min"
   },
   {
     "day": 9,
@@ -1512,131 +1138,94 @@
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Learn the answers",
-        "time": "1 h 45 min",
+        "tagline": "Learn the checklist topics",
+        "time": "1 h 15 min",
         "activities": [
           {
-            "key": "read",
-            "name": "📖 Read",
-            "time": "45 min",
-            "note": "Read only the sections named. Each item says how long it should take; stop when the time is up.",
+            "key": "topics",
+            "name": "📚 Topics",
+            "time": "1 h 15 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Diving Into Delta Lake: Unpacking the Transaction Log",
-                    "text": "Databricks blog · whole post · 20 min.",
-                    "id": "v2-d9-read-1",
-                    "url": "https://www.databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html"
-                  },
-                  {
-                    "title": "Table deletes, updates, and merges",
-                    "text": "Delta Lake docs · DELETE, UPDATE and the MERGE examples and semantics · 10 min.",
-                    "id": "v2-d9-read-2",
-                    "url": "https://docs.delta.io/latest/delta-update.html"
-                  },
-                  {
-                    "title": "Optimizations",
-                    "text": "Delta Lake docs · Compaction, Data skipping and Z-Ordering · 10 min.",
-                    "id": "v2-d9-read-3",
-                    "url": "https://docs.delta.io/latest/optimizations-oss.html"
-                  },
-                  {
-                    "title": "Change data feed",
-                    "text": "Delta Lake docs · enabling and reading the feed · 5 min.",
-                    "id": "v2-d9-read-4",
-                    "url": "https://docs.delta.io/latest/delta-change-data-feed.html"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "questions",
-            "name": "🎯 Checklist questions",
-            "time": "1 h",
-            "note": "Write one answer card per item in your Theory notes: 5–8 lines in your own words that hit every point after \"Cover:\". Tick the item when you can say it without looking.",
-            "blocks": [
-              {
-                "label": "Write an answer card for each",
-                "items": [
-                  {
-                    "title": "7.1 · What is the transaction log?",
-                    "text": "Cover: the `_delta_log/` folder next to the Parquet data files: an ordered series of JSON commit files (`00000000000000000000.json`, `...01.json`, ...), each an atomic set of actions: `protocol`, `metaData` (schema, partition columns, properties), `add` (path, size, partition values and per-file statistics: numRecords, minValues, maxValues, nullCount), `remove`, `commitInfo` (operation and metrics) and `txn` (idempotent streaming writes). The table's current state is the replay of every commit in order: the live files are those added and not yet removed. Every 10 commits Delta writes a Parquet checkpoint of the full state, plus `_last_checkpoint`, so readers can skip most JSON files. The log is the single source of truth: a data file that is not in the log is not part of the table.",
-                    "id": "v2-d9-q-1",
-                    "q": [
-                      "7.1"
+                    "title": "The transaction log, ACID and snapshot isolation (25 min)",
+                    "text": "Learn: Every commit is a JSON file in _delta_log, so readers always see one consistent version of the table.",
+                    "id": "v2-d9-t-1",
+                    "links": [
+                      {
+                        "label": "Diving Into Delta Lake: Unpacking the Transaction Log",
+                        "url": "https://www.databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html"
+                      }
                     ],
-                    "asks": [
-                      "What is the \"Transaction Log\"?"
-                    ]
-                  },
-                  {
-                    "title": "7.2 + 7.8 · ACID in Delta Lake; snapshot isolation",
-                    "text": "Cover: Atomicity: a commit is one log file that either exists or does not, so data files from a failed job are never referenced. Consistency: schema enforcement, NOT NULL and CHECK constraints. Isolation: optimistic concurrency; writers prepare new files, then try to create the next log version; if another writer committed first, Delta checks whether the two conflict (for example both rewrote the same files, `ConcurrentDeleteReadException`, or new files appeared where this one read, `ConcurrentAppendException`) and either commits on top or fails; the default level is WriteSerializable. Durability: data and log live in durable storage, which must support atomic put-if-absent (object stores need a suitable LogStore). Snapshot isolation: each query reads one table version for its whole run, so readers never see a half-finished commit and never block or wait for writers; time travel reads older snapshots (`VERSION AS OF`, `TIMESTAMP AS OF`).",
-                    "id": "v2-d9-q-2",
                     "q": [
+                      "7.1",
                       "7.2",
                       "7.8"
                     ],
                     "asks": [
+                      "What is the \"Transaction Log\"?",
                       "Explain \"ACID\" in Delta Lake.",
                       "What is \"Snapshot Isolation\"?"
                     ]
                   },
                   {
-                    "title": "7.3 · What is schema enforcement?",
-                    "text": "Cover: on every write Delta checks the incoming DataFrame against the table schema and rejects mismatches (extra columns, incompatible types, nulls in NOT NULL columns) with `DELTA_METADATA_MISMATCH`, so bad data never lands silently. Allowed: missing nullable columns (filled with null). Change the schema on purpose with `option(\"mergeSchema\", \"true\")` to add columns, `option(\"overwriteSchema\", \"true\")` with an overwrite to replace it, `ALTER TABLE ... ADD COLUMNS`, or automatic schema merging for MERGE (`spark.databricks.delta.schema.autoMerge.enabled`). Contrast with plain Parquet, where every file can have a different schema.",
-                    "id": "v2-d9-q-3",
-                    "q": [
-                      "7.3"
+                    "title": "Schema enforcement, UPDATE, DELETE and MERGE (20 min)",
+                    "text": "Learn: Delta rewrites only the files that contain changed rows, and MERGE does an upsert in one atomic step.",
+                    "id": "v2-d9-t-2",
+                    "links": [
+                      {
+                        "label": "Delta Lake: Table deletes, updates, and merges",
+                        "url": "https://docs.delta.io/latest/delta-update.html"
+                      }
                     ],
-                    "asks": [
-                      "What is \"Schema Enforcement\"?"
-                    ]
-                  },
-                  {
-                    "title": "7.6 + 7.7 · UPDATE and DELETE on Delta; MERGE INTO (upsert)",
-                    "text": "Cover: yes, `UPDATE t SET ... WHERE ...` and `DELETE FROM t WHERE ...` work in SQL and through the `DeltaTable` API. They are copy-on-write: Delta finds the files that contain matching rows (partition values and min/max statistics skip the rest), writes new versions of those files with the rows changed or removed, and commits `remove` for the old files and `add` for the new ones in one atomic commit; the old files stay on disk for time travel until VACUUM. With deletion vectors enabled, rows are marked as deleted instead of rewriting whole files. `MERGE INTO t USING s ON key` combines WHEN MATCHED [AND cond] THEN UPDATE or DELETE, WHEN NOT MATCHED THEN INSERT and WHEN NOT MATCHED BY SOURCE in one atomic operation: upserts and CDC loads. Internally it joins source and target to find the touched files, then rewrites only those. Rules: each target row may match at most one source row (`DELTA_MULTIPLE_SOURCE_ROW_MATCHING_TARGET_ROW_IN_MERGE`; deduplicate the source first); put partition predicates in the ON clause to touch fewer files; check the MERGE metrics in DESCRIBE HISTORY.",
-                    "id": "v2-d9-q-4",
                     "q": [
+                      "7.3",
                       "7.6",
                       "7.7"
                     ],
                     "asks": [
+                      "What is \"Schema Enforcement\"?",
                       "Can you run SQL UPDATE and DELETE on Delta?",
                       "What is \"Merge Into\" (Upsert)?"
                     ]
                   },
                   {
-                    "title": "7.4 + 7.5 · How OPTIMIZE works; what Z-ordering is",
-                    "text": "Cover: `OPTIMIZE t [WHERE partition_filter]` bin-packs many small files into fewer large ones (up to about 1 GB each) and commits `remove` and `add` actions with `dataChange=false`: the data is unchanged, streams ignore the commit, readers are not blocked, and the old files stay until VACUUM. It compacts within each partition, so it cannot fix a bad partition column, and running it twice does nothing the second time. `OPTIMIZE t ZORDER BY (col1, col2)` also rewrites the data sorted along a Z-order (space-filling) curve that interleaves the columns' bits, so rows with similar values land in the same files; per-file min/max ranges become narrow and data skipping can ignore most files for filters on those columns. Best for 1–4 high-cardinality filter columns (user_id, timestamps); each extra column weakens it; the columns need statistics; partition columns cannot be Z-ordered; it re-sorts everything each run. Newer alternative: liquid clustering (`CLUSTER BY`).",
-                    "id": "v2-d9-q-5",
+                    "title": "OPTIMIZE, Z-ordering and VACUUM (20 min)",
+                    "text": "Learn: OPTIMIZE compacts small files, Z-order groups similar values together, and VACUUM deletes files no table version needs.",
+                    "id": "v2-d9-t-3",
+                    "links": [
+                      {
+                        "label": "Delta Lake: Optimizations",
+                        "url": "https://docs.delta.io/latest/optimizations-oss.html"
+                      },
+                      {
+                        "label": "Delta Lake: Table utility commands",
+                        "url": "https://docs.delta.io/latest/delta-utility.html"
+                      }
+                    ],
                     "q": [
                       "7.4",
-                      "7.5"
-                    ],
-                    "asks": [
-                      "How does OPTIMIZE work?",
-                      "What is \"Z-Ordering\"?"
-                    ]
-                  },
-                  {
-                    "title": "7.9 · Why is VACUUM necessary?",
-                    "text": "Cover: DELETE, UPDATE, MERGE, OPTIMIZE and overwrites never delete data files; they only add `remove` actions, so storage keeps growing. `VACUUM t [RETAIN n HOURS]` physically deletes files that no table version within the retention period still references (default 7 days, `delta.deletedFileRetentionDuration`), plus stray files Delta does not track; `DRY RUN` lists them first. It saves storage and listing time and is required to really remove deleted data (GDPR). The price: time travel and RESTORE to versions older than the retention stop working, and readers or streams older than it can fail, so never retain less than your longest-running job (the `retentionDurationCheck` safety check enforces this). It does not touch the log itself (`delta.logRetentionDuration`, 30 days).",
-                    "id": "v2-d9-q-6",
-                    "q": [
+                      "7.5",
                       "7.9"
                     ],
                     "asks": [
+                      "How does OPTIMIZE work?",
+                      "What is \"Z-Ordering\"?",
                       "Why is VACUUM necessary?"
                     ]
                   },
                   {
-                    "title": "7.10 · Explain Change Data Feed (CDF)",
-                    "text": "Cover: with `delta.enableChangeDataFeed = true`, Delta records the row-level changes of each commit. Read them with `spark.read.format(\"delta\").option(\"readChangeFeed\", \"true\").option(\"startingVersion\", n)` (or `table_changes('t', n)` in SQL, or as a stream). Each row carries `_change_type` (insert, update_preimage, update_postimage, delete), `_commit_version` and `_commit_timestamp`. Updates and deletes write extra change files under `_change_data/`; inserts are read from the normal data files. Uses: incremental ETL (process only what changed since the last version you handled), CDC to downstream systems, auditing. Limits: only changes made after it was enabled, and VACUUM removes old change files too. Versus time travel: CDF hands you the changed rows directly instead of diffing two full versions.",
-                    "id": "v2-d9-q-7",
+                    "title": "Change Data Feed (10 min)",
+                    "text": "Learn: CDF records which rows were inserted, updated or deleted in each version, so you can load only the changes.",
+                    "id": "v2-d9-t-4",
+                    "links": [
+                      {
+                        "label": "Delta Lake: Change data feed",
+                        "url": "https://docs.delta.io/latest/delta-change-data-feed.html"
+                      }
+                    ],
                     "q": [
                       "7.10"
                     ],
@@ -1683,7 +1272,7 @@
         ]
       }
     ],
-    "time": "≈ 4 h 15 min"
+    "time": "≈ 3 h 45 min"
   },
   {
     "day": 10,
@@ -1697,26 +1286,21 @@
       {
         "key": "theory",
         "name": "Theory",
-        "tagline": "Final review",
+        "tagline": "Learn the checklist topics",
         "time": "2 h",
         "activities": [
           {
-            "key": "symptoms",
+            "key": "runbook",
             "name": "🧾 Symptoms and runbook",
-            "time": "45 min",
+            "time": "40 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Learn the symptom table (20 min)",
-                    "text": "Cover the table below one column at a time until you can rebuild it from memory: symptom, likely cause, where to look, first fix.",
-                    "id": "v2-d10-symptoms-1"
-                  },
-                  {
-                    "title": "Write the runbook \"my Spark job is slow\" (25 min)",
-                    "text": "One page, as a decision tree: which UI tab to open first (Jobs → Stages → SQL / DataFrame → Executors → Storage), which symptoms point to skew, too many or too few partitions, spill, small files, a driver bottleneck, the wrong join strategy or UDFs, the first fix for each, and how you confirm the fix worked.",
-                    "id": "v2-d10-symptoms-2"
+                    "title": "Symptom table and runbook (40 min)",
+                    "id": "v2-d10-t-1",
+                    "text": "Learn: the table below until you can rebuild it from memory, then write a one-page runbook, \"my Spark job is slow\": which Spark UI tab to open first and the first fix for each symptom."
                   }
                 ]
               }
@@ -1787,35 +1371,23 @@
             }
           },
           {
-            "key": "decides",
-            "name": "🗺 One-page summary",
-            "time": "15 min",
-            "blocks": [
-              {
-                "label": "🧭 How Spark decides",
-                "deep": true,
-                "items": [
-                  {
-                    "title": "Draw the whole decision chain",
-                    "text": "From `df.write` to tasks: parse → analyze → optimize (rule batches) → physical planning (strategies: scan, aggregate, join selection) → preparation (EnsureRequirements, codegen) → AQE query stages and re-planning → DAGScheduler stages → TaskScheduler and locality → executors. Under each box, write the settings and statistics that change its decision.",
-                    "id": "v2-d10-decides-1"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "key": "mock",
-            "name": "🎤 Mock checkpoint",
-            "time": "1 h",
+            "key": "final",
+            "name": "🎤 Final checks",
+            "time": "1 h 20 min",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Mock checkpoint (1 h)",
-                    "text": "Pick 25 questions at random from Checklist coverage, at least 3 per section. Answer each aloud in 2 minutes while recording yourself, score it on mechanism, cost, trade-off and evidence in the plan or UI, then rewrite the answer cards that scored under 3.",
-                    "id": "v2-d10-mock-1"
+                    "title": "How Spark decides, on one page (20 min)",
+                    "id": "v2-d10-t-2",
+                    "deep": true,
+                    "text": "Learn: draw the chain from df.write to tasks (parse, analyze, optimize, physical plan, AQE, stages, tasks) and write under each box the settings that change its decision."
+                  },
+                  {
+                    "title": "Mock checkpoint (60 min)",
+                    "id": "v2-d10-t-3",
+                    "text": "Pick 25 questions at random from Checklist coverage, at least 3 per section. Answer each aloud in 2 minutes, then check yourself on mechanism, cost, trade-off and evidence in the plan or UI."
                   }
                 ]
               }

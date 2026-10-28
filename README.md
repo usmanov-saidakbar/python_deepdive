@@ -127,9 +127,10 @@ covering the module checklist's 80 questions in 7 sections, plus a deeper
 thread on how Spark decides how to run a query. Every day is split into two
 parts, each with its own progress bar and notes box:
 
-- **Theory** (learn the answers): a short, time-boxed reading list with links,
-  then one answer card per checklist question, listing what a complete answer
-  must cover. 🧭 cards go beyond the checklist.
+- **Theory** (learn the checklist topics): 3–4 topics a day. Each shows the
+  checklist question(s) it answers (in red), one article to read and one
+  "Learn:" sentence. Topics marked "beyond the checklist" go deeper into how
+  Spark decides how to run a query.
 - **Lab** (one Jupyter notebook per day in `public/spark-lab/notebooks/`,
   solved in place): the Lab tab shows only the notebook link. Labs 01–02 are
   written in the assignment style: a data description, one documentation list at
@@ -141,7 +142,7 @@ parts, each with its own progress bar and notes box:
   older notebook style and are being rewritten the same way.
 
 The *Checklist coverage* panel lists every checklist question, the day that
-covers it and whether its answer card is ticked. Set a start date and the page
+covers it and whether its topic is ticked. Set a start date and the page
 shows which study day today is; weekends count as catch-up time.
 
 - Checklist data lives in `data/roadmap.json`. Each day nests

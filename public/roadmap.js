@@ -10,8 +10,8 @@ const NOTES_PREFIX = "v2-";
 const PART_NOTES = {
   theory: {
     suffix: "-theory",
-    heading: "Answer cards",
-    placeholder: "One card per checklist question: 5–8 lines in your own words that cover every point after \"Cover:\".",
+    heading: "Theory notes",
+    placeholder: "For each checklist question, write 3–5 lines in your own words, then check them against the article.",
   },
   lab: {
     suffix: "-lab",
@@ -169,8 +169,7 @@ function renderOverallProgress() {
   holder.appendChild(daysText);
 }
 
-// Every checklist question with the day and answer card that cover it. Answer
-// cards carry the codes they answer in `q` and the question texts in `asks`.
+// Every checklist question with the day and topic that cover it. Topics carry the codes they answer in `q` and the question texts in `asks`.
 function checklistCoverage() {
   const rows = [];
   days.forEach((day) =>
@@ -328,6 +327,13 @@ function renderItem(item) {
 
   const body = document.createElement("span");
   body.className = "check-text";
+  if (item.deep) {
+    const badge = document.createElement("span");
+    badge.className = "badge badge-deep";
+    badge.title = "Goes beyond the checklist: how Spark decides how to run your query";
+    badge.textContent = "beyond the checklist";
+    body.append(badge, " ");
+  }
   if (item.title) {
     const title = item.url ? renderLink(item.title, item.url) : document.createElement("strong");
     if (!item.url) title.textContent = item.title;
@@ -346,7 +352,7 @@ function renderItem(item) {
   (item.links || []).forEach((link) => {
     const extra = renderLink(`↗ ${link.label}`, link.url);
     extra.className = "item-link";
-    body.append(" ", extra);
+    body.append(document.createElement("br"), extra);
   });
 
   label.appendChild(box);
