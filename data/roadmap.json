@@ -3,7 +3,7 @@
     "day": 1,
     "title": "How a Spark application runs",
     "checklist": "1.1, 1.2, 1.3, 1.5, 1.7, 1.10, 1.11, 1.12",
-    "labOutput": "Shop orders loaded; jobs, stages and tasks counted for your own queries; first DataFrame coding problems",
+    "labOutput": "Jobs, stages and tasks of your own queries read in the Spark UI; a crashed task retried; 15 DataFrame basics problems",
     "goal": "Explain who does what in a Spark application, trace one action from your code to running tasks, and say how Spark survives a lost executor.",
     "theme": "How a Spark application runs",
     "parts": [
@@ -133,7 +133,7 @@
     "day": 2,
     "title": "How Spark plans a query: Catalyst and Tungsten",
     "checklist": "1.6, 1.8, 1.13 · 🧭 planning decisions",
-    "labOutput": "Query plans read and Catalyst rules observed on the shop data; aggregation and pivot practice",
+    "labOutput": "Catalyst's rewrites found in real plans; code generation and RDD vs DataFrame timed; 14 aggregation and join problems",
     "goal": "Name every decision between your code and the running tasks: which rewrites Catalyst makes, how physical operators are chosen, and how Tungsten executes them.",
     "theme": "How Spark plans a query: Catalyst and Tungsten",
     "parts": [
@@ -257,7 +257,7 @@
     "day": 3,
     "title": "AQE and how operators run",
     "checklist": "1.4, 1.9, 1.14, 1.15, 1.16, 3.11 · 🧭 runtime decisions",
-    "labOutput": "A plan table for aggregates and sorts; AQE on vs off; window-function practice",
+    "labOutput": "How avg, count_distinct, sorting and AQE run, seen in plans and the Spark UI; 13 window-function problems",
     "goal": "Explain how each aggregate and sort executes across partitions, and what Spark changes at runtime once it sees real data sizes.",
     "theme": "AQE and how operators run",
     "parts": [
@@ -379,7 +379,7 @@
     "day": 4,
     "title": "File formats and data layout",
     "checklist": "2.1–2.10",
-    "labOutput": "One dataset in five formats; pushdown, pruning, small files and splitting proven; dates and arrays practice",
+    "labOutput": "One dataset in five formats and several layouts, each choice measured; 13 date, text and array problems",
     "goal": "Pick a format, codec and partition layout for a workload, and prove each choice with plans, file counts and read-task counts.",
     "theme": "File formats and data layout",
     "parts": [
@@ -516,7 +516,7 @@
     "day": 5,
     "title": "Shuffle and joins: how Spark picks a join",
     "checklist": "3.1–3.10, 3.12 · 🧭 join selection",
-    "labOutput": "Join strategies predicted and verified; a bucketed join with no shuffle; join practice",
+    "labOutput": "Shuffle sizes measured, join strategies predicted and forced, a join without a shuffle; 13 join problems",
     "goal": "Explain what a shuffle costs and how each join algorithm works, predict which one Spark will pick, and change its choice on purpose.",
     "theme": "Shuffle and joins: how Spark picks a join",
     "note": "This ends week 1. Use the weekend as buffer: finish open items, then re-answer every card you marked on Days 1–5.",
@@ -660,7 +660,7 @@
     "day": 6,
     "title": "Data skew",
     "checklist": "4.1–4.11, 6.2",
-    "labOutput": "A skewed join diagnosed and fixed with AQE and salting; practice with latest rows, duplicates and streaks",
+    "labOutput": "A skewed join found in the Spark UI and fixed four ways; 12 problems on latest rows, duplicates, sessions and streaks",
     "goal": "Spot skew in the Spark UI, explain why it hurts, and choose between AQE, broadcasting, salting, hot-key isolation and repartitioning.",
     "theme": "Data skew",
     "parts": [
@@ -805,7 +805,7 @@
     "day": 7,
     "title": "Memory, caching and checkpoints",
     "checklist": "5.1–5.11, 6.10",
-    "labOutput": "Memory regions computed and found in the UI; a spill, caching and a driver limit; snapshot and percentile practice",
+    "labOutput": "Memory regions computed and found in the UI; a spill, a cache, a checkpoint and a driver limit; 11 aggregation problems",
     "goal": "Draw the executor memory layout from memory, compute each region, and match a symptom (spill, GC time, OOM, killed container) to its fix and to the right persistence tool.",
     "theme": "Memory, caching and checkpoints",
     "parts": [
@@ -946,7 +946,7 @@
     "day": 8,
     "title": "Best practices, and late data in streaming",
     "checklist": "6.1, 6.3–6.9",
-    "labOutput": "A messy job refactored and tested; late data in a stream; array and text practice",
+    "labOutput": "UDF costs measured, a job refactored and tested, a star schema, late data in a stream; 10 data-cleaning problems",
     "goal": "Improve a slow, messy job one change at a time with a measured reason for each change, and handle late events in a stream.",
     "theme": "Best practices, and late data in streaming",
     "parts": [
@@ -1083,7 +1083,7 @@
     "day": 9,
     "title": "Delta Lake",
     "checklist": "7.1–7.10",
-    "labOutput": "A Delta table created, updated, merged, optimized, vacuumed and read through its change feed; SQL practice",
+    "labOutput": "A Delta table created, updated, merged, optimized, vacuumed and read through its change feed; 11 Spark SQL problems",
     "goal": "Explain how Delta Lake turns a folder of Parquet files into a transactional table, and what each DML and maintenance command writes to the data folder and to the log.",
     "theme": "Delta Lake",
     "parts": [
@@ -1224,7 +1224,7 @@
     "day": 10,
     "title": "Final project and checkpoint rehearsal",
     "checklist": "All sections",
-    "labOutput": "A Delta Lake lakehouse (bronze, silver, gold) built from scratch, and a timed practice set",
+    "labOutput": "A Delta Lake lakehouse (bronze, silver, gold) built from messy raw files, and 10 timed interview-style problems",
     "goal": "Build one real project end to end with no skeleton, explain every plan decision inside it, and answer any checklist question in under 2 minutes.",
     "theme": "Final project and checkpoint rehearsal",
     "intro": "Day 10 ties the module together. Theory is a last review, including a mock checkpoint over the whole checklist (see Checklist coverage at the top of the page). The Lab is a final project: a shop lakehouse with Delta Lake, written from scratch in a notebook, with checks that inspect your tables. Spread it over the weekend if you need to.",
@@ -1357,7 +1357,7 @@
                 "items": [
                   {
                     "title": "Final project notebook: day10_lab.ipynb",
-                    "text": "Download it, open it with `jupyter lab`, and build the lakehouse yourself: six milestones with no code skeleton, the answers collapsed at the end of the notebook, and a timed practice set.",
+                    "text": "Download it, open it with `jupyter lab`, and build the lakehouse yourself: six milestones with expected outputs and no code skeleton, then 10 timed interview-style problems written as `etl(...)` functions. The answers are collapsed at the end of the notebook.",
                     "id": "v2-d10-lab-notebook",
                     "url": "/spark-lab/notebooks/day10_lab.ipynb"
                   }

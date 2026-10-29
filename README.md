@@ -132,16 +132,20 @@ parts, each with its own progress bar and notes box:
   "Learn:" sentence. Topics marked "beyond the checklist" go deeper into how
   Spark decides how to run a query.
 - **Lab** (one Jupyter notebook per day in `public/spark-lab/notebooks/`,
-  solved in place): the Lab tab shows only the notebook link. Every notebook
-  creates the same single table of online-shop orders (customer and product
-  columns included) from seeded code, so nothing is downloaded and everyone gets the same rows. A lab
-  has a data description, one documentation list at the top, then short
-  questions. There are no check cells: the answers (code plus the result of
-  the reference run) sit collapsed in an *Answers* section at the very end of
-  each notebook. Early tasks in Lab 01 have `___` blanks; the rest are empty
-  cells, and each lab ends with original DataFrame/SQL coding practice. Day 10
-  is a final project (a Delta Lake bronze/silver/gold lakehouse) written from
-  scratch, plus a timed set.
+  solved in place): the Lab tab shows only the notebook link. Every lab uses
+  the same three small shop tables (customers, products, orders; 7 to 16
+  rows each) written out in its setup cell, so nothing is downloaded and
+  every result can be checked by eye. A lab adds one small table when a topic
+  needs it (reviews, promotions, events, messy sign-ups), and generates a big
+  table with `spark.range` where a measurement needs volume (file sizes,
+  shuffles, skew, spills). Part A asks short questions that show the day's
+  checklist topics in the Spark UI and in query plans; Part B has original
+  coding problems, each a one-line task with its expected output table and a
+  collapsed hint, building up to interview-style problems. There are no check
+  cells: the answers (code plus the result of the reference run) sit
+  collapsed in an *Answers* section at the very end of each notebook. Day 10
+  is a final project (a Delta Lake bronze/silver/gold lakehouse built from
+  messy raw files) plus 10 timed problems written as `etl(...)` functions.
 
 The *Checklist coverage* panel lists every checklist question, the day that
 covers it and whether its topic is ticked. Set a start date and the page
