@@ -12,6 +12,7 @@ const ADMIN_KEY = process.env.ADMIN_KEY || "";
 const DATA_FILE = path.join(__dirname, "data", "content.json");
 const SECTIONS_FILE = path.join(__dirname, "data", "sections.json");
 const ROADMAP_FILE = path.join(__dirname, "data", "roadmap.json");
+const GIS_ROADMAP_FILE = path.join(__dirname, "data", "gis-roadmap.json");
 
 // Progress storage: keyed by whatever email the visitor typed in, with no
 // password check. This is a convenience identifier, not authentication —
@@ -96,8 +97,16 @@ app.get("/api/roadmap", (req, res) => {
   }
 });
 
-// Course progress and roadmap progress are stored under separate Redis keys
-// so each page can PUT its whole map without clobbering the other's.
+app.get("/api/gis-roadmap", (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(GIS_ROADMAP_FILE, "utf8")));
+  } catch {
+    res.json({ stages: [], sources: [] });
+  }
+});
+
+// Course progress and each roadmap's progress are stored under separate Redis
+// keys so each page can PUT its whole map without clobbering the others'.
 function progressRoutes(route, keyPrefix) {
   app.get(`${route}/:email`, async (req, res) => {
     if (!redis) return res.status(503).json({ error: "progress storage not configured" });
@@ -129,6 +138,7 @@ function progressRoutes(route, keyPrefix) {
 
 progressRoutes("/api/progress", "progress");
 progressRoutes("/api/roadmap-progress", "roadmap");
+progressRoutes("/api/gis-progress", "gis");
 
 app.post("/api/sync", async (req, res) => {
   if (!ADMIN_KEY || req.query.key !== ADMIN_KEY) {

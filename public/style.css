@@ -497,3 +497,58 @@ select.status-select {
 @media (max-width: 520px) {
   .part-switch { grid-template-columns: 1fr; }
 }
+
+/* GIS roadmap page */
+.topic-item { display: block; }
+.topic-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; font-size: 0.92rem; line-height: 1.4; }
+.topic-title-line { font-size: 0.92rem; line-height: 1.45; }
+.topic-reached { color: #6fd08c; font-size: 0.8rem; }
+.topic-line { color: var(--muted); font-size: 0.84rem; line-height: 1.45; margin-top: 4px; overflow-wrap: anywhere; }
+.topic-line a, .topic-title-line a, .link-list a { color: var(--accent); text-decoration: none; font-size: inherit; }
+.topic-line a:hover, .topic-title-line a:hover, .link-list a:hover { text-decoration: underline; }
+.topic-line code, .topic-title-line code, .callout code { background: #1f2430; padding: 1px 4px; border-radius: 4px; }
+.topic-line .link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--accent);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.topic-item.done .topic-title { text-decoration: line-through; }
+
+.badge.level.l2 { color: #4da3ff; }
+.badge.level.l3 { color: #f2b84b; }
+.badge.level.l4 { color: #ff7b7b; }
+.badge.project-badge { color: #6fd08c; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.chip {
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 11px;
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.chip:hover { color: var(--text); border-color: var(--accent); }
+.chip.on { color: #06121f; background: var(--accent); border-color: var(--accent); font-weight: 600; }
+
+.callout {
+  border-left: 3px solid #f2b84b;
+  background: var(--card);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 0 0 16px;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+
+.link-list { margin: 0 0 8px; padding-left: 18px; font-size: 0.85rem; line-height: 1.5; color: var(--muted); }
+.weekly-questions { margin: 6px 0 10px; padding-left: 18px; line-height: 1.5; }
+.earlier-weeks { margin-top: 10px; }
+.earlier-weeks summary { cursor: pointer; color: var(--muted); }
+.week-note { white-space: pre-wrap; margin: 0 0 8px; color: var(--muted); }

@@ -167,3 +167,33 @@ shows which study day today is; weekends count as catch-up time.
   (separate from the course's `progress:<email>`) via
   `GET`/`PUT /api/roadmap-progress/:email`. Without one, it's kept in the
   browser's localStorage.
+
+## GIS Roadmap tab
+
+`/gis.html` (the "GIS Roadmap" tab) is a 12-month GeoAI + GIS + urban
+analytics plan, based on *GeoAI + GIS + Urban Analytics: End-to-End Roadmap*
+(Sep 30, 2026). It has 7 stages in order (Stage 0 self-assessment, GIS
+fundamentals, spatial data science, GeoAI on vector data, remote sensing and
+imagery, spatial databases and web GIS, LLMs and GIS), plus two tabs that run
+all year: the urban analytics track and the portfolio.
+
+- Every topic has a target depth level, and the level decides which steps of
+  the learning loop it shows as chips: L2 = *Use*; L3 = *Use, Break,
+  Understand*; L4 = all four, with *Rebuild* (a from-scratch version). Each
+  topic links the exact chapter or page to read and names a Tashkent practice
+  task.
+- Stage 0 is a self-assessment with one chip per round (start, months 3, 6, 9
+  and 12); its rounds are left out of the progress bars. Each stage that ends
+  in a portfolio project shows that project's steps (built, on GitHub, written
+  up), shared with the Portfolio tab.
+- Every stage has a notes box (a Break log for the technical stages), and the
+  weekly check keeps one entry per ISO week. Set a start date and the page
+  shows which month and stage you're in and when the next self-assessment is
+  due.
+- Data lives in `data/gis-roadmap.json` (`stages` → `groups` of `topics`,
+  `checks`, `selfcheck` or `projects`, plus `sources`). Item text can mark code
+  with `backticks` and links with `[label](https://...)`. Keep each item's `id`
+  stable so saved checkmarks still line up.
+- Progress is saved like the Spark roadmap's, under its own key: `gis:<email>`
+  in Upstash via `GET`/`PUT /api/gis-progress/:email`, or this browser's
+  localStorage without an email.

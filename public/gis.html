@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GIS Roadmap</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <nav class="page-nav">
+      <a href="/">Python Deep Dive</a>
+      <a href="/roadmap.html">Spark Roadmap</a>
+      <a href="/gis.html" class="active">GIS Roadmap</a>
+    </nav>
+    <header>
+      <h1>GeoAI + GIS + Urban Analytics</h1>
+      <p class="subtitle">A 12-month roadmap: 7 stages in order, with an urban analytics track and a portfolio running all year. Every topic has a target depth level; tick the loop steps it needs (Use, Break, Understand, Rebuild) as you go. Your notes are saved with your checklist.</p>
+    </header>
+    <div id="account" class="account"></div>
+    <div class="overall">
+      <div class="overall-label">Overall progress</div>
+      <div id="overall-progress"></div>
+    </div>
+    <div class="start-date">
+      <label for="start-date">Started on</label>
+      <input type="date" id="start-date" />
+      <span id="today-hint" class="muted"></span>
+    </div>
+
+    <details class="guide">
+      <summary>How to use this roadmap</summary>
+      <p><strong>Goal:</strong> in 12 months, solidify GIS fundamentals, reach the level of a GeoAI (AI + spatial data) specialist, and build urban analytics knowledge in parallel. Time split: GIS fundamentals ~25%, GeoAI ~55%, urban analytics ~20%. Stage 2 (spatial data science) is the bridge: all later GeoAI work rests on it. Shift the months if you need to, but keep the order of the stages.</p>
+      <p><strong>The 4-step loop for every topic (top-down):</strong></p>
+      <table>
+        <tr><th>Step</th><th>What you do</th></tr>
+        <tr><td><strong>Use</strong></td><td>Get a result with a library or QGIS (1–2 days).</td></tr>
+        <tr><td><strong>Break</strong></td><td>Change parameters, the CRS, the data size; write down what changes in the stage's Break log.</td></tr>
+        <tr><td><strong>Understand</strong></td><td>Now read the theory and the formula; your questions are already waiting.</td></tr>
+        <tr><td><strong>Rebuild</strong></td><td>Write a small version from scratch with numpy or shapely (50–100 lines), or explain it to someone in 5 sentences.</td></tr>
+      </table>
+      <p><strong>Depth levels</strong> (the badge next to each topic decides which steps it needs):</p>
+      <table>
+        <tr><th>Level</th><th>Meaning</th><th>"Done" when</th></tr>
+        <tr><td><span class="badge level l2">L2 User</span></td><td>You get correct results with the tool</td><td>You used it on real data without errors: <em>Use</em></td></tr>
+        <tr><td><span class="badge level l3">L3 Understander</span></td><td>You know why it works and when it breaks</td><td><em>Use, Break, Understand</em>, with entries in your Break log</td></tr>
+        <tr><td><span class="badge level l4">L4 Builder</span></td><td>You know it down to the formula and can write it from scratch</td><td>All four steps: your from-scratch version matches the library</td></tr>
+      </table>
+      <p class="muted">L1 (aware: you can explain it in 2–3 sentences) is the starting point for everything. L4 only for the GeoAI core (spatial statistics, spatial CV, segmentation, GNNs); L2–L3 is enough everywhere else: don't dive into the math of everything.</p>
+      <p><strong>Weekly rhythm</strong> (~10–12 hours):</p>
+      <table>
+        <tr><th>Day</th><th>Work</th><th>Loop step</th></tr>
+        <tr><td>Monday–Tuesday</td><td>Use the new topic with a library</td><td>Use</td></tr>
+        <tr><td>Wednesday</td><td>Break it by changing parameters, write in the log</td><td>Break</td></tr>
+        <tr><td>Thursday</td><td>Theory, formula, textbook chapter</td><td>Understand</td></tr>
+        <tr><td>Friday</td><td>Implement from scratch or explain in 5 sentences</td><td>Rebuild</td></tr>
+        <tr><td>Saturday</td><td>Add it to a portfolio project</td><td>Apply</td></tr>
+        <tr><td>Sunday</td><td>20-minute weekly check (below)</td><td>—</td></tr>
+      </table>
+      <p><strong>When to stop:</strong> an L2 topic once you used it and got a correct result; L3 when you can explain why it works and when it breaks; L4 when your from-scratch version matches the library's result. If a topic took twice the planned time, flag it and move on: you'll return in the next round.</p>
+      <p><strong>Two risks of the top-down method:</strong> staying stuck in the <em>Use</em> step and becoming a button-pusher, or the opposite, sinking into one formula and building nothing for weeks. The weekly check catches both.</p>
+      <p class="muted">Quarterly review: every 3 months, redo the Stage 0 self-assessment and adjust this plan to your real pace.</p>
+    </details>
+
+    <details class="guide" id="weekly">
+      <summary id="weekly-summary">Weekly check</summary>
+      <p class="muted">Sunday, 20 minutes. Answer the four questions for this week:</p>
+      <ul class="weekly-questions">
+        <li>What did I build this week? (If nothing, cut back theory next week.)</li>
+        <li>Which topic reached L3 or L4? (If none, you skipped the <em>Understand</em> step.)</li>
+        <li>How many entries did my Break log get?</li>
+        <li>Which other subject or course connected to this week's work?</li>
+      </ul>
+      <div id="weekly-body"></div>
+    </details>
+
+    <details class="guide">
+      <summary>Sources</summary>
+      <div id="sources-body"></div>
+    </details>
+
+    <div id="tabs" class="tabs"></div>
+    <div id="status" class="status"></div>
+    <div id="stage"></div>
+  </main>
+  <script src="gis.js"></script>
+</body>
+</html>

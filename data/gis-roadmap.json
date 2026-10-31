@@ -1,0 +1,1436 @@
+{
+  "title": "GeoAI + GIS + Urban Analytics",
+  "basedOn": "GeoAI + GIS + Urban Analytics: End-to-End Roadmap (Sep 30, 2026)",
+  "selfCheckRounds": [
+    "Start",
+    "Month 3",
+    "Month 6",
+    "Month 9",
+    "Month 12"
+  ],
+  "projectSteps": [
+    {
+      "key": "built",
+      "label": "Built",
+      "hint": "The analysis or the model works end to end"
+    },
+    {
+      "key": "github",
+      "label": "On GitHub",
+      "hint": "Code on GitHub with a README and a map"
+    },
+    {
+      "key": "writeup",
+      "label": "Written up",
+      "hint": "The key result written down in a few sentences, with numbers"
+    }
+  ],
+  "stages": [
+    {
+      "key": "s0",
+      "tab": "Stage 0",
+      "title": "Self-assessment",
+      "when": "Week 1",
+      "months": [
+        1,
+        1
+      ],
+      "goal": "Find out what you don't know yet, so you don't re-read what you already know.",
+      "intro": [
+        "Answer each question on paper without looking anything up. The questions you can't answer are your personal study list: close them to L3 in the stage shown next to each one.",
+        "Redo this checklist every 3 months (one column per round) to see your progress."
+      ],
+      "groups": [
+        {
+          "label": "GIS fundamentals",
+          "kind": "selfcheck",
+          "items": [
+            {
+              "id": "gis-s0-datum",
+              "text": "I can explain the difference between a datum, an ellipsoid and a projection",
+              "stage": "s1"
+            },
+            {
+              "id": "gis-s0-buffer4326",
+              "text": "I can explain why `buffer(500)` in EPSG:4326 is wrong",
+              "stage": "s1"
+            },
+            {
+              "id": "gis-s0-vector-raster",
+              "text": "I can state the strengths and weaknesses of the vector and raster models",
+              "stage": "s1"
+            },
+            {
+              "id": "gis-s0-topology",
+              "text": "I know topology errors (gaps, overlaps, dangles) and how to fix them",
+              "stage": "s1"
+            },
+            {
+              "id": "gis-s0-predicates",
+              "text": "I know the difference between spatial join predicates (intersects, within, contains, touches)",
+              "stage": "s1"
+            },
+            {
+              "id": "gis-s0-raster",
+              "text": "I can explain raster resolution, NoData and resampling methods",
+              "stage": "s1"
+            }
+          ]
+        },
+        {
+          "label": "Spatial analysis and statistics",
+          "kind": "selfcheck",
+          "items": [
+            {
+              "id": "gis-s0-tobler",
+              "text": "I know Tobler's law and what spatial autocorrelation is",
+              "stage": "s2"
+            },
+            {
+              "id": "gis-s0-moran",
+              "text": "I can interpret a Moran's I result",
+              "stage": "s2"
+            },
+            {
+              "id": "gis-s0-maup",
+              "text": "I can explain MAUP (results change when zone boundaries change) with an example",
+              "stage": "s2"
+            },
+            {
+              "id": "gis-s0-network",
+              "text": "I can compute the difference between Euclidean and network (road) distance",
+              "stage": "s2"
+            }
+          ]
+        },
+        {
+          "label": "GeoAI",
+          "kind": "selfcheck",
+          "items": [
+            {
+              "id": "gis-s0-random-split",
+              "text": "I know why a random train/test split inflates accuracy on spatial data",
+              "stage": "s3"
+            },
+            {
+              "id": "gis-s0-bands",
+              "text": "I know what bands and indices (NDVI) mean in satellite imagery",
+              "stage": "s4"
+            },
+            {
+              "id": "gis-s0-seg-det",
+              "text": "I know the difference between segmentation and detection",
+              "stage": "s4"
+            }
+          ]
+        },
+        {
+          "label": "Urban analytics",
+          "kind": "selfcheck",
+          "items": [
+            {
+              "id": "gis-s0-accessibility",
+              "text": "I can name 2 ways to measure \"accessibility\"",
+              "stage": "urban"
+            },
+            {
+              "id": "gis-s0-density",
+              "text": "I know what population density and land-use mix affect",
+              "stage": "urban"
+            }
+          ]
+        }
+      ],
+      "notes": {
+        "heading": "Study list",
+        "placeholder": "The questions you couldn't answer, and what exactly was missing. Close each one in its stage."
+      }
+    },
+    {
+      "key": "s1",
+      "tab": "Stage 1",
+      "title": "GIS fundamentals",
+      "when": "Months 1–2",
+      "pace": "~7 hours/week",
+      "months": [
+        1,
+        2
+      ],
+      "goal": "Bring the theory behind what you already do in practice up to L3.",
+      "sources": [
+        {
+          "label": "A Gentle Introduction to GIS (QGIS)",
+          "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/index.html",
+          "note": "quick read"
+        },
+        {
+          "label": "Intro to GIS and Spatial Analysis (Gimond)",
+          "url": "https://mgimond.github.io/Spatial/",
+          "note": "theory"
+        },
+        {
+          "label": "Geocomputation with Python",
+          "url": "https://py.geocompx.org/",
+          "note": "code"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Topics",
+          "kind": "topics",
+          "items": [
+            {
+              "id": "gis-s1-models",
+              "title": "What GIS is, data models",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "Gentle Intro ch. 2",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/introducing_gis.html"
+                }
+              ],
+              "practice": "—"
+            },
+            {
+              "id": "gis-s1-vector",
+              "title": "Vector data, attributes",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "Gentle Intro ch. 3",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/vector_data.html"
+                },
+                {
+                  "label": "Gentle Intro ch. 4",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/vector_attribute_data.html"
+                }
+              ],
+              "practice": "Geocompy vector chapters: [spatial data](https://py.geocompx.org/01-spatial-data.html), [attribute operations](https://py.geocompx.org/02-attribute-operations.html)"
+            },
+            {
+              "id": "gis-s1-raster",
+              "title": "Raster data, resolution",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "Gentle Intro ch. 6",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/raster_data.html"
+                },
+                {
+                  "label": "Gimond ch. 2",
+                  "url": "https://mgimond.github.io/Spatial/02_feature_representation.html"
+                }
+              ],
+              "practice": "Read a Sentinel-2 band with rasterio"
+            },
+            {
+              "id": "gis-s1-topology",
+              "title": "Topology, geometry validity",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "Gentle Intro ch. 7",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/topology.html"
+                }
+              ],
+              "practice": "shapely `is_valid`, `make_valid`"
+            },
+            {
+              "id": "gis-s1-crs",
+              "title": "CRS, projections",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "Gentle Intro ch. 8",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/coordinate_reference_systems.html"
+                }
+              ],
+              "practice": "`to_crs()`, distances in UTM 42N (EPSG:32642)"
+            },
+            {
+              "id": "gis-s1-overlay",
+              "title": "Buffer, overlay, spatial join",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "Gentle Intro ch. 10",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/vector_spatial_analysis_buffers.html"
+                }
+              ],
+              "practice": "GeoPandas `sjoin`, `overlay`"
+            },
+            {
+              "id": "gis-s1-interpolation",
+              "title": "Interpolation (IDW, TIN)",
+              "level": 4,
+              "sources": [
+                {
+                  "label": "Gentle Intro ch. 11",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/spatial_analysis_interpolation.html"
+                },
+                {
+                  "label": "Gimond ch. 16",
+                  "url": "https://mgimond.github.io/Spatial/16_interpolation.html"
+                }
+              ],
+              "practice": "Write IDW from scratch in numpy"
+            },
+            {
+              "id": "gis-s1-cartography",
+              "title": "Cartography basics",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "Gentle Intro ch. 9",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/map_production.html"
+                }
+              ],
+              "practice": "One map with a QGIS layout"
+            }
+          ]
+        },
+        {
+          "label": "Stage practice",
+          "kind": "checks",
+          "items": [
+            {
+              "id": "gis-s1-practice",
+              "text": "Download buildings, roads and schools from OpenStreetMap for one Tashkent district and find the areas more than 800 m from a school with a straight-line buffer. Then write in your Break log why that result is wrong: you fix it with network distance in Stage 2.",
+              "links": [
+                {
+                  "label": "OSMnx",
+                  "url": "https://osmnx.readthedocs.io/"
+                },
+                {
+                  "label": "Geofabrik: Uzbekistan extract",
+                  "url": "https://download.geofabrik.de/asia/uzbekistan.html"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "extras": [
+        {
+          "label": "Optional courses (pick one)",
+          "items": [
+            {
+              "label": "UC Davis GIS Specialization (Coursera)",
+              "url": "https://www.coursera.org/specializations/gis",
+              "note": "4 courses, about 2 months at 10 hours/week; ArcGIS-based, but the concepts are universal"
+            },
+            {
+              "label": "AlaskaX GIS Foundations (edX)",
+              "url": "https://www.edx.org/learn/gis-geographic-information-systems/university-of-alaska-fairbanks-gis-foundations",
+              "note": "first course of the GIS Essentials certificate"
+            },
+            {
+              "label": "QGIS Training Manual",
+              "url": "https://docs.qgis.org/3.44/en/docs/training_manual/index.html",
+              "note": "free; the closest hands-on practice with open-source tools"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "items": [
+            {
+              "label": "GIS&T Body of Knowledge (UCGIS)",
+              "url": "https://gistbok-topics.ucgis.org/",
+              "note": "look up any unfamiliar term in the field's official knowledge map"
+            },
+            {
+              "label": "GEOG-312: Introduction to GIS Programming (Qiusheng Wu)",
+              "url": "https://geog-312.gishub.org/",
+              "note": "the GIS programming track that runs in parallel all year"
+            }
+          ]
+        }
+      ],
+      "notes": {
+        "heading": "Break log",
+        "placeholder": "For each topic: what you changed (parameters, the CRS, the data size) and what changed in the result."
+      }
+    },
+    {
+      "key": "s2",
+      "tab": "Stage 2",
+      "title": "Spatial data science",
+      "when": "Months 2–4",
+      "months": [
+        2,
+        4
+      ],
+      "goal": "The bridge between AI and GIS: learn why spatial data is special. This idea decides whether all your later GeoAI work is correct.",
+      "sources": [
+        {
+          "label": "Geographic Data Science with Python (Rey, Arribas-Bel, Wolf)",
+          "url": "https://geographicdata.science/book/",
+          "note": "main textbook, free online; one author co-founded PySAL"
+        },
+        {
+          "label": "Penn State GEOG 586: Geographic Information Analysis",
+          "url": "https://www.e-education.psu.edu/geog586/",
+          "note": "parallel course; Lesson 1, \"Why spatial data is special\", is the core of this stage"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Topics",
+          "kind": "topics",
+          "items": [
+            {
+              "id": "gis-s2-weights",
+              "title": "Spatial weights (contiguity, KNN, distance)",
+              "level": 4,
+              "sources": [
+                {
+                  "label": "GDSwP ch. 4",
+                  "url": "https://geographicdata.science/book/notebooks/04_spatial_weights.html"
+                }
+              ],
+              "practice": "Build a weights matrix W for the mahallas from scratch"
+            },
+            {
+              "id": "gis-s2-moran",
+              "title": "Global autocorrelation (Moran's I)",
+              "level": 4,
+              "sources": [
+                {
+                  "label": "GDSwP ch. 6",
+                  "url": "https://geographicdata.science/book/notebooks/06_spatial_autocorrelation.html"
+                },
+                {
+                  "label": "GEOG 586 L4",
+                  "url": "https://www.e-education.psu.edu/geog586/node/524"
+                }
+              ],
+              "practice": "Write Moran's I in numpy and compare it with [esda](https://pysal.org/esda/)"
+            },
+            {
+              "id": "gis-s2-lisa",
+              "title": "Local autocorrelation (LISA, hot spots)",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "GDSwP ch. 7",
+                  "url": "https://geographicdata.science/book/notebooks/07_local_autocorrelation.html"
+                }
+              ],
+              "practice": "Hot spot map of cafe density"
+            },
+            {
+              "id": "gis-s2-points",
+              "title": "Point pattern analysis (KDE, Ripley's K)",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "GEOG 586 L3",
+                  "url": "https://www.e-education.psu.edu/geog586/node/517"
+                },
+                {
+                  "label": "Gimond ch. 14–15",
+                  "url": "https://mgimond.github.io/Spatial/14_ppa_1st.html"
+                }
+              ],
+              "practice": "Are POIs clustered or random?"
+            },
+            {
+              "id": "gis-s2-regression",
+              "title": "Spatial regression (lag, error, GWR)",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "GDSwP ch. 11",
+                  "url": "https://geographicdata.science/book/notebooks/11_regression.html"
+                }
+              ],
+              "practice": "Apartment price model: OLS vs GWR"
+            },
+            {
+              "id": "gis-s2-clustering",
+              "title": "Clustering and regionalization",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "GDSwP ch. 10",
+                  "url": "https://geographicdata.science/book/notebooks/10_clustering_and_regionalization.html"
+                }
+              ],
+              "practice": "Group districts by their characteristics"
+            },
+            {
+              "id": "gis-s2-networks",
+              "title": "Street networks, isochrones",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "OSMnx docs",
+                  "url": "https://osmnx.readthedocs.io/"
+                }
+              ],
+              "practice": "15-minute walking isochrone"
+            },
+            {
+              "id": "gis-s2-h3",
+              "title": "Discrete grids (H3)",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "H3 docs",
+                  "url": "https://h3geo.org/docs/"
+                }
+              ],
+              "practice": "Split Tashkent into H3 hexagons"
+            },
+            {
+              "id": "gis-s2-maup",
+              "title": "MAUP, scale, ecological fallacy",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "GEOG 586 L1",
+                  "url": "https://www.e-education.psu.edu/geog586/node/6"
+                }
+              ],
+              "practice": "Compute one indicator on 2 different zonings and compare"
+            }
+          ]
+        }
+      ],
+      "projectRef": "gis-p0",
+      "projectNote": "Redo the Stage 1 \"800 m to a school\" task with network distance using OSMnx, and write down the difference from the straight-line buffer in percent: your first real result that combines urban analytics and GIS.",
+      "notes": {
+        "heading": "Break log",
+        "placeholder": "For each topic: what you changed (weights, zoning, distance band, data size) and what changed in the result."
+      }
+    },
+    {
+      "key": "s3",
+      "tab": "Stage 3",
+      "title": "GeoAI on vector and tabular data",
+      "when": "Months 4–6",
+      "months": [
+        4,
+        6
+      ],
+      "goal": "\"How good is this location for X\" problems (GeoScore type): your ML knowledge takes its spatial form here.",
+      "callouts": [
+        "The most important rule: on spatial data a random train/test split inflates accuracy, because nearby points land in both sets. Meyer and Pebesma (2022, Nature Communications) showed the problem in how global ML maps are evaluated. Spatial CV is itself debated, and some researchers argue it isn't always the right answer: try both and measure the difference yourself."
+      ],
+      "groups": [
+        {
+          "label": "Topics",
+          "kind": "topics",
+          "items": [
+            {
+              "id": "gis-s3-features",
+              "title": "Spatial feature engineering (distance, density, spatial lag, land-use mix)",
+              "level": 4,
+              "sources": [
+                {
+                  "label": "GDSwP ch. 12: Spatial feature engineering",
+                  "url": "https://geographicdata.science/book/notebooks/12_feature_engineering.html"
+                }
+              ],
+              "practice": "Create 20+ features per H3 cell"
+            },
+            {
+              "id": "gis-s3-spatial-cv",
+              "title": "Spatial cross-validation (blocks, buffers, leave-location-out)",
+              "level": 4,
+              "sources": [
+                {
+                  "label": "Meyer & Pebesma (2022)",
+                  "url": "https://www.nature.com/articles/s41467-022-29838-9"
+                },
+                {
+                  "label": "CAST package paper",
+                  "url": "https://arxiv.org/abs/2404.06978"
+                }
+              ],
+              "practice": "Random vs spatial CV: measure the accuracy gap"
+            },
+            {
+              "id": "gis-s3-shap",
+              "title": "Gradient boosting + SHAP explanations",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "SHAP docs",
+                  "url": "https://shap.readthedocs.io/"
+                }
+              ],
+              "practice": "The most important factors in a cafe success model"
+            },
+            {
+              "id": "gis-s3-weights",
+              "title": "Expert weights vs learned weights",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "GWR (Stage 2)",
+                  "url": "https://geographicdata.science/book/notebooks/11_regression.html"
+                }
+              ],
+              "practice": "Build one scoring index both ways and compare"
+            },
+            {
+              "id": "gis-s3-aoa",
+              "title": "Area of applicability",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "Meyer & Pebesma: area of applicability",
+                  "url": "https://arxiv.org/abs/2005.07939"
+                }
+              ],
+              "practice": "Map the districts where the model is unreliable"
+            },
+            {
+              "id": "gis-s3-gnn",
+              "title": "Graph neural networks (GNNs) on road networks",
+              "level": 4,
+              "sources": [
+                {
+                  "label": "PyTorch Geometric",
+                  "url": "https://pytorch-geometric.readthedocs.io/"
+                }
+              ],
+              "practice": "Node-level prediction on an OSMnx graph"
+            }
+          ]
+        }
+      ],
+      "projectRef": "gis-p1",
+      "projectNote": "An apartment price or cafe success model for Tashkent built on OSM features. The report shows (1) the random vs spatial CV gap, (2) the top 5 factors by SHAP, (3) a map of where the model is unreliable. These three results set you apart from \"an ML engineer with coordinates\".",
+      "notes": {
+        "heading": "Break log",
+        "placeholder": "What you changed (split type, block size, features, model) and how accuracy and the explanations moved."
+      }
+    },
+    {
+      "key": "s4",
+      "tab": "Stage 4",
+      "title": "Remote sensing and GeoAI on imagery",
+      "when": "Months 6–9",
+      "months": [
+        6,
+        9
+      ],
+      "goal": "Learn remote sensing first, then deep learning on imagery.",
+      "sources": [
+        {
+          "label": "GeoAI with Python (Qiusheng Wu, 2026)",
+          "url": "https://book.opengeoai.org/",
+          "note": "main textbook: 23 chapters, all code and data free; from downloading data to 7 core tasks, foundation models and satellite embeddings"
+        }
+      ],
+      "groups": [
+        {
+          "label": "4a. Remote sensing fundamentals (4 weeks)",
+          "kind": "topics",
+          "items": [
+            {
+              "id": "gis-s4-sensors",
+              "title": "Electromagnetic spectrum, sensors (Landsat, Sentinel-2)",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "NASA ARSET: Fundamentals of Remote Sensing",
+                  "url": "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-remote-sensing"
+                }
+              ],
+              "practice": "A cloud-free Sentinel-2 composite of Tashkent"
+            },
+            {
+              "id": "gis-s4-resolution",
+              "title": "Spatial, spectral and temporal resolution",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "NASA ARSET: Fundamentals of Remote Sensing",
+                  "url": "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-remote-sensing"
+                },
+                {
+                  "label": "Gentle Intro ch. 6",
+                  "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/raster_data.html"
+                }
+              ],
+              "practice": "Compare one mahalla at 10 m and at 30 m"
+            },
+            {
+              "id": "gis-s4-indices",
+              "title": "Indices: NDVI, NDBI, NDWI",
+              "level": 4,
+              "sources": [
+                {
+                  "label": "NASA ARSET: Fundamentals of Remote Sensing",
+                  "url": "https://www.earthdata.nasa.gov/learn/trainings/fundamentals-remote-sensing"
+                }
+              ],
+              "practice": "Compute NDVI from scratch with band math"
+            },
+            {
+              "id": "gis-s4-lst",
+              "title": "Thermal remote sensing, land surface temperature (LST)",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "ARSET: Thermal RS and Urban Heat Island",
+                  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-thermal-remote-sensing-applications-urban-heat-island-mapping"
+                }
+              ],
+              "practice": "A summer LST map of Tashkent (Landsat TIRS)"
+            },
+            {
+              "id": "gis-s4-rf",
+              "title": "Classic classification (pixel-based random forest)",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "Google Earth Engine tutorials",
+                  "url": "https://developers.google.com/earth-engine/tutorials"
+                }
+              ],
+              "practice": "A land cover map with 5 classes"
+            }
+          ]
+        },
+        {
+          "label": "4b. Deep learning for imagery (6–8 weeks)",
+          "kind": "topics",
+          "items": [
+            {
+              "id": "gis-s4-training-data",
+              "title": "Preparing training data (tiling, labels)",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "GeoAI with Python ch. 4–6",
+                  "url": "https://book.opengeoai.org/book/data/training-data"
+                }
+              ],
+              "practice": "Your own Tashkent dataset"
+            },
+            {
+              "id": "gis-s4-unet",
+              "title": "Semantic segmentation (U-Net)",
+              "level": 4,
+              "sources": [
+                {
+                  "label": "GeoAI with Python ch. 9",
+                  "url": "https://book.opengeoai.org/book/core-tasks/semantic-segmentation"
+                }
+              ],
+              "practice": "Building or green-area segmentation"
+            },
+            {
+              "id": "gis-s4-detection",
+              "title": "Object detection, instance segmentation",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "ch. 8",
+                  "url": "https://book.opengeoai.org/book/core-tasks/object-detection"
+                },
+                {
+                  "label": "ch. 10",
+                  "url": "https://book.opengeoai.org/book/core-tasks/instance-segmentation"
+                }
+              ],
+              "practice": "Count cars or buildings"
+            },
+            {
+              "id": "gis-s4-change",
+              "title": "Change detection",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "ch. 12",
+                  "url": "https://book.opengeoai.org/book/core-tasks/change-detection"
+                }
+              ],
+              "practice": "2017 vs 2025: new construction in Tashkent"
+            },
+            {
+              "id": "gis-s4-sam",
+              "title": "Segment Anything (SAM) for geospatial",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "ch. 14",
+                  "url": "https://book.opengeoai.org/book/advanced/sam-geospatial"
+                },
+                {
+                  "label": "segment-geospatial",
+                  "url": "https://github.com/opengeos/segment-geospatial"
+                }
+              ],
+              "practice": "Speed up labeling"
+            },
+            {
+              "id": "gis-s4-vlm",
+              "title": "Vision-language models",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "ch. 15",
+                  "url": "https://book.opengeoai.org/book/advanced/vision-language-models"
+                }
+              ],
+              "practice": "Ask text questions about an image"
+            },
+            {
+              "id": "gis-s4-embeddings",
+              "title": "Satellite embeddings (foundation models)",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "ch. 16",
+                  "url": "https://book.opengeoai.org/book/advanced/foundation-models"
+                },
+                {
+                  "label": "Google Satellite Embedding dataset",
+                  "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_SATELLITE_EMBEDDING_V1_ANNUAL"
+                }
+              ],
+              "practice": "Add each pixel's 64-dimensional vector as a feature to your Stage 3 model"
+            }
+          ]
+        }
+      ],
+      "callouts": [
+        "Google's Satellite Embedding dataset, built on AlphaEarth Foundations, gives a 64-dimensional vector for every 10 m pixel, every year from 2017. It lets you add the \"meaning\" of imagery to a tabular model without processing the images with deep learning yourself."
+      ],
+      "projectRef": "gis-p2",
+      "projectNote": "Green cover (NDVI + segmentation) and LST maps for Tashkent mahallas. Then add both as features to your Stage 3 model and measure how much its accuracy changes.",
+      "notes": {
+        "heading": "Break log",
+        "placeholder": "What you changed (bands, resolution, season, tile size, model) and what happened to the maps and the metrics."
+      }
+    },
+    {
+      "key": "s5",
+      "tab": "Stage 5",
+      "title": "Spatial databases, web GIS and production",
+      "when": "Months 9–10",
+      "months": [
+        9,
+        10
+      ],
+      "goal": "A model has to reach its users. Move from \"I use PostGIS\" to \"I understand why it's slow\".",
+      "groups": [
+        {
+          "label": "Topics",
+          "kind": "topics",
+          "items": [
+            {
+              "id": "gis-s5-postgis",
+              "title": "PostGIS in depth: indexes (GiST), geography vs geometry",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "PostGIS workshop: Spatial Indexing",
+                  "url": "https://postgis.net/workshops/postgis-intro/indexing.html"
+                },
+                {
+                  "label": "Geography",
+                  "url": "https://postgis.net/workshops/postgis-intro/geography.html"
+                }
+              ],
+              "practice": "Speed up a slow query with `EXPLAIN ANALYZE`"
+            },
+            {
+              "id": "gis-s5-duckdb",
+              "title": "DuckDB spatial, GeoParquet",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "Wu: Spatial Data Management with DuckDB (GEOG-414)",
+                  "url": "https://github.com/giswqs/geog-414"
+                }
+              ],
+              "practice": "Compare 1M points in DuckDB and in PostGIS"
+            },
+            {
+              "id": "gis-s5-pgrouting",
+              "title": "pgRouting (network analysis in SQL)",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "pgRouting docs",
+                  "url": "https://docs.pgrouting.org/latest/en/index.html"
+                }
+              ],
+              "practice": "Shortest paths on Tashkent roads"
+            },
+            {
+              "id": "gis-s5-ogc",
+              "title": "OGC standards (WMS, WFS, OGC API), vector tiles",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "Penn State GEOG 585",
+                  "url": "https://e-education.psu.edu/geog585"
+                }
+              ],
+              "practice": "A tile server with [GeoServer](https://geoserver.org/) or [martin](https://maplibre.org/martin/)"
+            },
+            {
+              "id": "gis-s5-webmaps",
+              "title": "Web maps (Leaflet / MapLibre)",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "Penn State GEOG 585",
+                  "url": "https://e-education.psu.edu/geog585"
+                },
+                {
+                  "label": "Leaflet",
+                  "url": "https://leafletjs.com/"
+                },
+                {
+                  "label": "MapLibre",
+                  "url": "https://maplibre.org/"
+                }
+              ],
+              "practice": "Show your model's results on a web map"
+            },
+            {
+              "id": "gis-s5-service",
+              "title": "Turning a GeoAI model into a service (API, batch)",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "FastAPI",
+                  "url": "https://fastapi.tiangolo.com/"
+                }
+              ],
+              "practice": "A scoring API: coordinates in, score out"
+            },
+            {
+              "id": "gis-s5-osgeo",
+              "title": "GDAL, GEOS and PROJ: what each one does",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "GDAL",
+                  "url": "https://gdal.org/"
+                },
+                {
+                  "label": "GEOS",
+                  "url": "https://libgeos.org/"
+                },
+                {
+                  "label": "PROJ",
+                  "url": "https://proj.org/"
+                }
+              ],
+              "practice": "Read one GeoPandas or rasterio error and name the library behind it"
+            }
+          ]
+        }
+      ],
+      "callouts": [
+        "Know the OSGeo ecosystem: OSGeo is the umbrella organization for QGIS, GDAL/OGR, GEOS, PostGIS, GeoServer and pgRouting. Almost every library you use (GeoPandas, shapely, rasterio) relies on GDAL, GEOS and PROJ under the hood, so knowing them at L2 makes errors much easier to understand. Its education initiative is Geo for All; its annual conference is FOSS4G (talks are free on YouTube)."
+      ],
+      "extras": [
+        {
+          "label": "Community",
+          "items": [
+            {
+              "label": "OSGeo",
+              "url": "https://en.wikipedia.org/wiki/Open_Source_Geospatial_Foundation"
+            },
+            {
+              "label": "Geo for All",
+              "url": "https://www.osgeo.org/initiatives/geo-for-all/"
+            },
+            {
+              "label": "FOSS4G talks on YouTube",
+              "url": "https://www.youtube.com/@FOSS4G"
+            }
+          ]
+        }
+      ],
+      "notes": {
+        "heading": "Break log",
+        "placeholder": "Query plans before and after, index on and off, timings at 10k vs 1M rows."
+      }
+    },
+    {
+      "key": "s6",
+      "tab": "Stage 6",
+      "title": "LLMs and GIS",
+      "when": "Months 10–11",
+      "months": [
+        10,
+        11
+      ],
+      "goal": "The newest and fastest-growing direction: LLMs that turn a task in plain language into spatial analysis.",
+      "intro": [
+        "Li and Ning (2023) proposed \"Autonomous GIS\": an LLM turns a natural-language task into spatial analysis code and runs it. Since then came the data-retrieval agent LLM-Find, GIS Copilot inside QGIS, and several benchmarks. Even the best models struggle with complex multi-step spatial reasoning, so the field still has plenty of open problems."
+      ],
+      "sources": [
+        {
+          "label": "Autonomous GIS: the next-generation AI-powered GIS (Li & Ning, 2023)",
+          "url": "https://arxiv.org/abs/2305.06453"
+        },
+        {
+          "label": "LLM-Find: an autonomous GIS agent framework for geospatial data retrieval",
+          "url": "https://arxiv.org/abs/2407.21024"
+        },
+        {
+          "label": "GIS Copilot: towards an autonomous GIS agent for spatial analysis",
+          "url": "https://arxiv.org/abs/2411.03205"
+        }
+      ],
+      "groups": [
+        {
+          "label": "Topics",
+          "kind": "topics",
+          "items": [
+            {
+              "id": "gis-s6-text2sql",
+              "title": "Text-to-SQL for PostGIS",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "Autonomous GIS paper",
+                  "url": "https://arxiv.org/abs/2305.06453"
+                }
+              ],
+              "practice": "\"Schools more than 1 km from a bus stop\" → SQL"
+            },
+            {
+              "id": "gis-s6-agent",
+              "title": "Tool-calling GIS agent",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "GIS Copilot paper",
+                  "url": "https://arxiv.org/abs/2411.03205"
+                }
+              ],
+              "practice": "An agent with buffer, sjoin and isochrone tools"
+            },
+            {
+              "id": "gis-s6-benchmarks",
+              "title": "Evaluating agents (benchmarks)",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "GeoBenchX",
+                  "url": "https://arxiv.org/abs/2503.18129"
+                },
+                {
+                  "label": "GeoAnalystBench",
+                  "url": "https://arxiv.org/abs/2509.05881"
+                }
+              ],
+              "practice": "20 test tasks for your own agent"
+            },
+            {
+              "id": "gis-s6-geocoding",
+              "title": "Address parsing and geocoding",
+              "level": 3,
+              "sources": [],
+              "practice": "Uzbek addresses: Latin and Cyrillic, old and new street names, landmark-based addresses"
+            },
+            {
+              "id": "gis-s6-vlm",
+              "title": "Vision-language models on imagery",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "GeoAI with Python ch. 15",
+                  "url": "https://book.opengeoai.org/book/advanced/vision-language-models"
+                }
+              ],
+              "practice": "Ask questions about a satellite image"
+            }
+          ]
+        }
+      ],
+      "projectRef": "gis-p3",
+      "projectNote": "An LLM pipeline that standardizes Uzbek addresses and turns them into coordinates: a local, real problem with few competitors that could become a strong paper or product.",
+      "notes": {
+        "heading": "Break log",
+        "placeholder": "Which prompts, tools and models you tried, and which tasks the agent got wrong and why."
+      }
+    },
+    {
+      "key": "urban",
+      "tab": "Urban track",
+      "title": "Urban analytics track",
+      "when": "All year, ~20% of the time",
+      "months": null,
+      "goal": "Urban analytics decides what your model measures. Each technical stage has one urban topic: read the one that matches what you're building that month.",
+      "groups": [
+        {
+          "label": "Topics",
+          "kind": "topics",
+          "items": [
+            {
+              "id": "gis-u-structure",
+              "title": "Urban structure, land use, density",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "HKPolyUx: Intro to Urban Geo-Informatics (edX)",
+                  "url": "https://www.edx.org/course/introduction-to-urban-geo-informatics"
+                }
+              ],
+              "practice": "Which districts have mixed use?",
+              "stage": "s1"
+            },
+            {
+              "id": "gis-u-access",
+              "title": "Accessibility, walkability, the 15-minute city",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "OSMnx paper (Boeing 2025)",
+                  "url": "https://geoffboeing.com/publications/osmnx-paper/"
+                },
+                {
+                  "label": "GDSwP",
+                  "url": "https://geographicdata.science/book/"
+                }
+              ],
+              "practice": "Walking access to schools, clinics and stops",
+              "stage": "s2"
+            },
+            {
+              "id": "gis-u-morphology",
+              "title": "Street network form and urban morphology",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "momepy docs",
+                  "url": "https://docs.momepy.org/"
+                }
+              ],
+              "practice": "Old City vs Chilanzar street structure",
+              "stage": "s2"
+            },
+            {
+              "id": "gis-u-economics",
+              "title": "Urban economics: location value, hedonic pricing, agglomeration",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "Boeing's PPDE642 course",
+                  "url": "https://github.com/gboeing/ppde642"
+                }
+              ],
+              "practice": "How does distance to the metro affect apartment prices?",
+              "stage": "s3"
+            },
+            {
+              "id": "gis-u-climate",
+              "title": "Urban climate: heat islands, green infrastructure",
+              "level": 3,
+              "sources": [
+                {
+                  "label": "ARSET: Thermal RS and Urban Heat Island",
+                  "url": "https://www.earthdata.nasa.gov/learn/trainings/introduction-thermal-remote-sensing-applications-urban-heat-island-mapping"
+                }
+              ],
+              "practice": "Which mahallas are hottest in summer, and why?",
+              "stage": "s4"
+            },
+            {
+              "id": "gis-u-ethics",
+              "title": "Smart cities and data ethics",
+              "level": 2,
+              "sources": [
+                {
+                  "label": "PPD534 (Boeing): critique of smart cities",
+                  "url": "https://github.com/gboeing/ppd534"
+                }
+              ],
+              "practice": "Who could a model benefit, and who could it harm?",
+              "stage": "s5"
+            }
+          ]
+        },
+        {
+          "label": "A classic, slowly: Jane Jacobs, The Death and Life of Great American Cities",
+          "kind": "checks",
+          "note": "1–2 chapters a month. After each chapter ask yourself: \"Which indicator could measure this idea?\" That question is where urban analytics and GeoAI meet.",
+          "items": [
+            {
+              "id": "gis-u-jacobs-1",
+              "text": "Part One: The peculiar nature of cities"
+            },
+            {
+              "id": "gis-u-jacobs-2",
+              "text": "Part Two: The conditions for city diversity"
+            },
+            {
+              "id": "gis-u-jacobs-3",
+              "text": "Part Three: Forces of decline and regeneration"
+            },
+            {
+              "id": "gis-u-jacobs-4",
+              "text": "Part Four: Different tactics"
+            }
+          ]
+        }
+      ],
+      "callouts": [
+        "Local context: don't copy Western methodologies blindly. Tashkent's mahalla system, informal commerce, summer heat and Soviet-era microdistricts are distinctive. For every imported indicator, check: \"Does this work the same way in Tashkent?\""
+      ],
+      "notes": {
+        "heading": "Indicator notebook",
+        "placeholder": "Idea → the indicator that could measure it → does it work the same way in Tashkent?"
+      }
+    },
+    {
+      "key": "portfolio",
+      "tab": "Portfolio",
+      "title": "Capstone projects and portfolio",
+      "when": "Month 12 for the final capstone",
+      "months": [
+        12,
+        12
+      ],
+      "goal": "Each stage closes with one visible result. Everything goes on GitHub, with a README and a map.",
+      "groups": [
+        {
+          "label": "Projects",
+          "kind": "projects",
+          "items": [
+            {
+              "id": "gis-p0",
+              "n": "0",
+              "title": "School accessibility: buffer vs network distance",
+              "stage": "Stages 1–2",
+              "proves": "GIS fundamentals + urban thinking"
+            },
+            {
+              "id": "gis-p1",
+              "n": "1",
+              "title": "Apartment price / cafe success model with spatial CV",
+              "stage": "Stage 3",
+              "proves": "GeoAI methodology (the most important project)"
+            },
+            {
+              "id": "gis-p2",
+              "n": "2",
+              "title": "Mahalla green cover and LST maps",
+              "stage": "Stage 4",
+              "proves": "Remote sensing + deep learning"
+            },
+            {
+              "id": "gis-p3",
+              "n": "3",
+              "title": "LLM geocoder for Uzbek addresses",
+              "stage": "Stage 6",
+              "proves": "LLM + GIS"
+            },
+            {
+              "id": "gis-p-final",
+              "n": "Final",
+              "title": "End-to-end platform: data → model → API → web map, or a research paper",
+              "stage": "Stage 5 + everything",
+              "proves": "Full specialist"
+            }
+          ]
+        }
+      ],
+      "callouts": [
+        "Paper route for the final capstone: project 1 or 3 can become a research paper. Suitable venues: Computers, Environment and Urban Systems; Environment and Planning B: Urban Analytics and City Science; the FOSS4G Academic Track. GeoAI research on Central Asian cities is very scarce: that's your advantage."
+      ],
+      "notes": {
+        "heading": "Project notes",
+        "placeholder": "Repository links, the key result of each project in one sentence, and what you would do next."
+      }
+    }
+  ],
+  "sources": [
+    {
+      "label": "Free books",
+      "items": [
+        {
+          "label": "A Gentle Introduction to GIS (QGIS)",
+          "url": "https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/index.html"
+        },
+        {
+          "label": "QGIS Training Manual",
+          "url": "https://docs.qgis.org/3.44/en/docs/training_manual/index.html"
+        },
+        {
+          "label": "Intro to GIS and Spatial Analysis (Manuel Gimond)",
+          "url": "https://mgimond.github.io/Spatial/"
+        },
+        {
+          "label": "Geocomputation with Python (Dorman, Graser, Nowosad, Lovelace)",
+          "url": "https://py.geocompx.org/"
+        },
+        {
+          "label": "Geographic Data Science with Python (Rey, Arribas-Bel, Wolf)",
+          "url": "https://geographicdata.science/book/"
+        },
+        {
+          "label": "GeoAI with Python (Qiusheng Wu, 2026)",
+          "url": "https://book.opengeoai.org/"
+        },
+        {
+          "label": "Spatial Data Management, GEOG-414 (Qiusheng Wu)",
+          "url": "https://github.com/giswqs/geog-414"
+        },
+        {
+          "label": "GEOG-312: Introduction to GIS Programming (Qiusheng Wu)",
+          "url": "https://geog-312.gishub.org/"
+        }
+      ]
+    },
+    {
+      "label": "Courses",
+      "items": [
+        {
+          "label": "UC Davis GIS Specialization (Coursera)",
+          "url": "https://www.coursera.org/specializations/gis"
+        },
+        {
+          "label": "AlaskaX GIS Foundations (edX)",
+          "url": "https://www.edx.org/learn/gis-geographic-information-systems/university-of-alaska-fairbanks-gis-foundations"
+        },
+        {
+          "label": "AlaskaX GIS Essentials certificate (edX)",
+          "url": "https://www.edx.org/certificates/professional-certificate/alaskax-geographic-information-systems-essentials"
+        },
+        {
+          "label": "HKPolyUx: Introduction to Urban Geo-Informatics (edX)",
+          "url": "https://www.edx.org/course/introduction-to-urban-geo-informatics"
+        },
+        {
+          "label": "Penn State GEOG 586: Geographic Information Analysis",
+          "url": "https://www.e-education.psu.edu/geog586/"
+        },
+        {
+          "label": "Penn State GEOG 585: Open Web Mapping",
+          "url": "https://e-education.psu.edu/geog585"
+        },
+        {
+          "label": "Penn State open geospatial course catalog",
+          "url": "https://geospatial.psu.edu/the-experience/course-catalog"
+        },
+        {
+          "label": "NASA ARSET trainings",
+          "url": "https://www.earthdata.nasa.gov/data/projects/arset"
+        },
+        {
+          "label": "Introduction to PostGIS workshop",
+          "url": "https://postgis.net/workshops/postgis-intro/"
+        },
+        {
+          "label": "Geoff Boeing, PPDE642: Advanced Urban Analytics (USC)",
+          "url": "https://github.com/gboeing/ppde642"
+        }
+      ]
+    },
+    {
+      "label": "Libraries and data",
+      "items": [
+        {
+          "label": "OSMnx",
+          "url": "https://github.com/gboeing/osmnx"
+        },
+        {
+          "label": "momepy",
+          "url": "https://github.com/pysal/momepy"
+        },
+        {
+          "label": "PySAL",
+          "url": "https://pysal.org/"
+        },
+        {
+          "label": "GeoPandas",
+          "url": "https://geopandas.org/"
+        },
+        {
+          "label": "TorchGeo",
+          "url": "https://github.com/torchgeo/torchgeo"
+        },
+        {
+          "label": "segment-geospatial",
+          "url": "https://github.com/opengeos/segment-geospatial"
+        },
+        {
+          "label": "geoai",
+          "url": "https://github.com/opengeos/geoai"
+        },
+        {
+          "label": "Google Satellite Embedding dataset (AlphaEarth Foundations)",
+          "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_SATELLITE_EMBEDDING_V1_ANNUAL"
+        }
+      ]
+    },
+    {
+      "label": "Reference and communities",
+      "items": [
+        {
+          "label": "GIS&T Body of Knowledge (UCGIS)",
+          "url": "https://gistbok-topics.ucgis.org/"
+        },
+        {
+          "label": "OSGeo",
+          "url": "https://en.wikipedia.org/wiki/Open_Source_Geospatial_Foundation"
+        },
+        {
+          "label": "Geo for All",
+          "url": "https://www.osgeo.org/initiatives/geo-for-all/"
+        },
+        {
+          "label": "FOSS4G conference",
+          "url": "https://foss4g.org/"
+        }
+      ]
+    },
+    {
+      "label": "Research papers",
+      "items": [
+        {
+          "label": "Meyer & Pebesma (2022), Machine learning-based global maps of ecological variables and the challenge of assessing them, Nature Communications",
+          "url": "https://www.nature.com/articles/s41467-022-29838-9"
+        },
+        {
+          "label": "Meyer & Pebesma (2021), Predicting into unknown space? Estimating the area of applicability of spatial prediction models",
+          "url": "https://arxiv.org/abs/2005.07939"
+        },
+        {
+          "label": "The CAST package for training and assessment of spatial prediction models",
+          "url": "https://arxiv.org/abs/2404.06978"
+        },
+        {
+          "label": "Li & Ning (2023), Autonomous GIS: the next-generation AI-powered GIS",
+          "url": "https://arxiv.org/abs/2305.06453"
+        },
+        {
+          "label": "Ning et al., LLM-Find: an autonomous GIS agent framework",
+          "url": "https://arxiv.org/abs/2407.21024"
+        },
+        {
+          "label": "Akinboyewa et al., GIS Copilot",
+          "url": "https://www.tandfonline.com/doi/full/10.1080/17538947.2025.2497489"
+        },
+        {
+          "label": "GeoBenchX: benchmarking LLMs in agents solving multistep geospatial tasks",
+          "url": "https://arxiv.org/abs/2503.18129"
+        },
+        {
+          "label": "GeoAnalystBench: a GeoAI benchmark for spatial analysis workflows and code generation",
+          "url": "https://arxiv.org/abs/2509.05881"
+        },
+        {
+          "label": "Boeing (2025), Modeling and Analyzing Urban Networks and Amenities with OSMnx",
+          "url": "https://geoffboeing.com/publications/osmnx-paper/"
+        }
+      ]
+    }
+  ]
+}
