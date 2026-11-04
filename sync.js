@@ -9,7 +9,7 @@ const { StringSession } = require("telegram/sessions");
 const apiId = Number(process.env.TG_API_ID);
 const apiHash = process.env.TG_API_HASH;
 const channelUsername = process.env.TG_CHANNEL || "sm1523";
-const fetchLimit = Number(process.env.TG_FETCH_LIMIT || 2000);
+const fetchLimit = Number(process.env.TG_FETCH_LIMIT || 10000);
 const DATA_FILE = path.join(__dirname, "data", "content.json");
 
 function firstLine(text) {
@@ -40,7 +40,9 @@ async function sync() {
   }
 
   const items = [];
+  let scanned = 0;
   for await (const message of client.iterMessages(channel, { limit: fetchLimit })) {
+    scanned++;
     if (!message.video) continue;
     const id = String(message.id);
     items.push({
@@ -49,6 +51,16 @@ async function sync() {
       date: message.date ? new Date(message.date * 1000).toISOString() : null,
       link: `https://t.me/${channelUsername}/${message.id}`,
     });
+  }
+
+  // The site groups videos by their position in this list (see server.js), so a
+  // scan cut short by the limit would shift every course. Keep the old file.
+  if (scanned >= fetchLimit) {
+    await client.disconnect();
+    throw new Error(
+      `Scanned ${scanned} messages, which is the TG_FETCH_LIMIT cap, so older ones may be missing. ` +
+        "Raise TG_FETCH_LIMIT and sync again; data/content.json was not changed."
+    );
   }
 
   items.sort((a, b) => new Date(a.date) - new Date(b.date));

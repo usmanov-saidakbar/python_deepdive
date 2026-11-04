@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "login": "node login.js",
-    "sync": "node sync.js"
+    "sync": "node sync.js",
+    "upload": "node upload.js"
   },
   "dependencies": {
     "@upstash/redis": "^1.38.4",

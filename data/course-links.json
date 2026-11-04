@@ -1,0 +1,144 @@
+{
+  "course": "Databricks Certified Data Engineer Associate",
+  "items": {
+    "v2-d1-t-1": [
+      { "s": 20, "l": 136, "title": "Understanding Spark Execution in Databricks", "kind": "theory", "fit": "intro", "note": "Driver coordinates, executors process partitions in parallel. SparkSession is not covered." },
+      { "s": 4, "l": 15, "title": "Introduction to Databricks Compute", "kind": "theory", "fit": "background", "note": "A cluster is one driver node plus worker nodes." }
+    ],
+    "v2-d1-t-2": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "background", "note": "Which operations force a shuffle: joins, aggregations, group by, sort, distinct (the wide ones). Lazy evaluation is not covered." }
+    ],
+    "v2-d1-t-3": [
+      { "s": 20, "l": 136, "title": "Understanding Spark Execution in Databricks", "kind": "theory", "fit": "intro", "note": "A job is split into stages, a stage into tasks, one task per partition." },
+      { "s": 11, "l": 79, "title": "Checkpointing", "kind": "theory", "fit": "background", "note": "How Structured Streaming recovers from a failure (offset and commit logs). Not the same as lineage-based recovery." }
+    ],
+    "v2-d1-lab-notebook": [
+      { "s": 9, "l": 60, "title": "Introduction to PySpark", "kind": "theory", "fit": "intro", "note": "DataFrames and the read, transform, write pattern." },
+      { "s": 9, "l": 61, "title": "Extract Customers Data - Simple JSON", "kind": "lab", "fit": "background", "note": "Read JSON into a DataFrame and write it as a Delta table." },
+      { "s": 10, "l": 67, "title": "Transform Customers Data", "kind": "lab", "fit": "background", "note": "DataFrame transformations in PySpark, converted from the SQL version." }
+    ],
+
+    "v2-d2-t-3": [
+      { "s": 9, "l": 60, "title": "Introduction to PySpark", "kind": "theory", "fit": "intro", "note": "A DataFrame is a distributed table with rows and named columns. RDDs are not covered." }
+    ],
+
+    "v2-d3-t-1": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "intro", "note": "Names AQE as a runtime optimizer, for skew only. The shuffle partitions setting is not covered." }
+    ],
+
+    "v2-d4-t-1": [
+      { "s": 13, "l": 88, "title": "Introduction to Delta Lake", "kind": "theory", "fit": "intro", "note": "Delta stores its data as Parquet, a columnar binary format. ORC is not covered." },
+      { "s": 7, "l": 41, "title": "Extract Addresses Data using read_files Function - TSV", "kind": "lab", "fit": "background", "note": "Self-describing formats (JSON, Parquet) vs CSV and text, which need read_files options or an external table." }
+    ],
+    "v2-d4-t-2": [
+      { "s": 20, "l": 137, "title": "Understanding Data Scanning and Small File Problems", "kind": "theory", "fit": "match", "note": "Filter early, select only the columns you need, partition pruning, and Delta data skipping." },
+      { "s": 13, "l": 95, "title": "Insert Overwrite & Partitioning", "kind": "lab", "fit": "background", "note": "A table partitioned by date, and INSERT OVERWRITE on a single partition." }
+    ],
+    "v2-d4-t-3": [
+      { "s": 20, "l": 137, "title": "Understanding Data Scanning and Small File Problems", "kind": "theory", "fit": "match", "note": "The small file problem: task and metadata overhead, fixed by compaction. Splittable formats are not covered." },
+      { "s": 21, "l": 140, "title": "Compaction - OPTIMIZE and ZORDER", "kind": "lab", "fit": "match", "note": "Several writes make several small files; OPTIMIZE compacts them (check with DESCRIBE DETAIL)." }
+    ],
+    "v2-d4-t-4": [
+      { "s": 12, "l": 83, "title": "Auto Loader - Schema Evolution", "kind": "lab", "fit": "match", "note": "New columns arriving in the source are added to the table automatically." },
+      { "s": 13, "l": 88, "title": "Introduction to Delta Lake", "kind": "theory", "fit": "background", "note": "What Delta adds on top of plain Parquet: a transaction log and ACID transactions. Avro is not covered." }
+    ],
+    "v2-d4-lab-notebook": [
+      { "s": 21, "l": 140, "title": "Compaction - OPTIMIZE and ZORDER", "kind": "lab", "fit": "match", "note": "File count before and after compaction." },
+      { "s": 13, "l": 95, "title": "Insert Overwrite & Partitioning", "kind": "lab", "fit": "background", "note": "Partitioned table layout." },
+      { "s": 12, "l": 83, "title": "Auto Loader - Schema Evolution", "kind": "lab", "fit": "match", "note": "Schema evolution on ingest." }
+    ],
+
+    "v2-d5-t-1": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "match", "note": "What a shuffle is, why it costs network, disk, memory and time, and the shuffle read/write signs in the Spark UI." }
+    ],
+    "v2-d5-t-2": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "intro", "note": "Broadcast join: copy the small table to every executor and skip the big shuffle. Shuffle hash join is not covered." }
+    ],
+    "v2-d5-t-4": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "intro", "note": "Cutting shuffles with broadcast joins and early filters. Bucketing is not covered." }
+    ],
+    "v2-d5-lab-notebook": [
+      { "s": 8, "l": 55, "title": "Create Customer Address - JOINs", "kind": "lab", "fit": "background", "note": "An inner join in SQL: join syntax, not join strategies." },
+      { "s": 10, "l": 74, "title": "Join Customer Address", "kind": "lab", "fit": "background", "note": "The same join in PySpark." }
+    ],
+
+    "v2-d6-t-1": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "match", "note": "What skew is, a few slow tasks in the Spark UI, and why the slowest task holds up the whole stage." }
+    ],
+    "v2-d6-t-2": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "intro", "note": "Fixes it mentions: repartition, avoid skewed keys, filter early. Salting is not covered." }
+    ],
+    "v2-d6-t-3": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "intro", "note": "AQE can adjust partitioning at runtime to ease skew." }
+    ],
+    "v2-d6-t-4": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "intro", "note": "Repartitioning spreads data more evenly. coalesce is not covered." }
+    ],
+
+    "v2-d7-t-2": [
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "intro", "note": "What spilling is, when it happens (big shuffles, joins, sorts), and the spill metrics in the Spark UI. GC and executor cores are not covered." }
+    ],
+
+    "v2-d8-t-1": [
+      { "s": 8, "l": 57, "title": "Spark User Defined Functions (UDFs)", "kind": "lab", "fit": "intro", "note": "Creating UDFs. Databricks recommends SQL UDFs over Python UDFs because Spark optimizes them better." },
+      { "s": 8, "l": 58, "title": "Higher Order Functions (Array)", "kind": "lab", "fit": "background", "note": "Built-in transform, filter, exists and aggregate work on arrays directly, no UDF needed." },
+      { "s": 8, "l": 59, "title": "Higher Order Functions (Map)", "kind": "lab", "fit": "background", "note": "The same built-in approach for map columns." }
+    ],
+    "v2-d8-t-3": [
+      { "s": 17, "l": 124, "title": "Data Discovery, Audit & Lineage Demo", "kind": "lab", "fit": "match", "note": "Unity Catalog lineage: upstream and downstream tables, column-level lineage." }
+    ],
+    "v2-d8-t-4": [
+      { "s": 11, "l": 76, "title": "Structured Streaming - Introduction", "kind": "theory", "fit": "background", "note": "Streaming basics: micro-batches and the unbounded table. Watermarks are not covered." },
+      { "s": 11, "l": 78, "title": "Trigger & OutputMode", "kind": "theory", "fit": "background", "note": "Update mode suits aggregations with watermarks, but the course does not teach watermarks." }
+    ],
+    "v2-d8-lab-notebook": [
+      { "s": 8, "l": 57, "title": "Spark User Defined Functions (UDFs)", "kind": "lab", "fit": "intro", "note": "UDFs vs built-in functions." },
+      { "s": 17, "l": 124, "title": "Data Discovery, Audit & Lineage Demo", "kind": "lab", "fit": "match", "note": "Data lineage in Unity Catalog." },
+      { "s": 11, "l": 77, "title": "Structured Streaming - Demo", "kind": "lab", "fit": "background", "note": "A working stream with readStream, writeStream and a checkpoint." }
+    ],
+
+    "v2-d9-t-1": [
+      { "s": 13, "l": 88, "title": "Introduction to Delta Lake", "kind": "theory", "fit": "match", "note": "Delta Lake is Parquet plus a transaction log: ACID for batch and streaming." },
+      { "s": 13, "l": 89, "title": "Delta Transaction Log", "kind": "lab", "fit": "match", "note": "Open the _delta_log folder: one JSON commit per operation." },
+      { "s": 13, "l": 91, "title": "Support for ACID Transactions", "kind": "theory", "fit": "match", "note": "Readers get a consistent view while writers are still working." },
+      { "s": 13, "l": 90, "title": "Delta Lake Version History", "kind": "lab", "fit": "background", "note": "Table history, time travel and RESTORE: every version is a snapshot." }
+    ],
+    "v2-d9-t-2": [
+      { "s": 13, "l": 96, "title": "COPY INTO and MERGE Command", "kind": "lab", "fit": "match", "note": "MERGE does insert, update and delete in one statement. Plain UPDATE and DELETE are not shown on their own." },
+      { "s": 13, "l": 93, "title": "Delta Lake Table & Column Properties", "kind": "lab", "fit": "background", "note": "NOT NULL constraints and generated columns. Schema enforcement itself is not covered." }
+    ],
+    "v2-d9-t-3": [
+      { "s": 21, "l": 139, "title": "Understanding Delta Lake Optimization Concepts", "kind": "theory", "fit": "match", "note": "Why Delta tables need upkeep, and the toolbox: OPTIMIZE, Z-order, VACUUM." },
+      { "s": 21, "l": 140, "title": "Compaction - OPTIMIZE and ZORDER", "kind": "lab", "fit": "match", "note": "OPTIMIZE and ZORDER demo." },
+      { "s": 21, "l": 142, "title": "Remove Unused Files - VACUUM", "kind": "lab", "fit": "match", "note": "VACUUM removes unreferenced files older than the 7-day retention." },
+      { "s": 21, "l": 141, "title": "Liquid Clustering", "kind": "theory", "fit": "background", "note": "The newer replacement for partitioning and Z-order (beyond the checklist)." },
+      { "s": 21, "l": 143, "title": "Understanding Predictive Optimization", "kind": "theory", "fit": "background", "note": "Runs OPTIMIZE and VACUUM for you in the background (beyond the checklist)." }
+    ],
+    "v2-d9-t-4": [
+      { "s": 13, "l": 90, "title": "Delta Lake Version History", "kind": "lab", "fit": "background", "note": "Table history and versions. Change Data Feed itself is not covered." }
+    ],
+    "v2-d9-lab-notebook": [
+      { "s": 13, "l": 89, "title": "Delta Transaction Log", "kind": "lab", "fit": "match", "note": "What each operation writes to _delta_log." },
+      { "s": 13, "l": 90, "title": "Delta Lake Version History", "kind": "lab", "fit": "background", "note": "DESCRIBE HISTORY, time travel and RESTORE." },
+      { "s": 13, "l": 96, "title": "COPY INTO and MERGE Command", "kind": "lab", "fit": "match", "note": "MERGE (upsert) demo." },
+      { "s": 21, "l": 140, "title": "Compaction - OPTIMIZE and ZORDER", "kind": "lab", "fit": "match", "note": "OPTIMIZE and ZORDER demo." },
+      { "s": 21, "l": 142, "title": "Remove Unused Files - VACUUM", "kind": "lab", "fit": "match", "note": "VACUUM demo." }
+    ],
+
+    "v2-d10-t-1": [
+      { "s": 20, "l": 137, "title": "Understanding Data Scanning and Small File Problems", "kind": "theory", "fit": "match", "note": "Two runbook rows: too much data scanned, too many small files, each with its Spark UI sign and first fix." },
+      { "s": 20, "l": 138, "title": "Understanding Shuffle Operations, Data Skew, and Disk Spilling", "kind": "theory", "fit": "match", "note": "Three more rows: shuffle, skew, spill, each with its Spark UI sign and first fix." }
+    ],
+    "v2-d10-t-2": [
+      { "s": 20, "l": 136, "title": "Understanding Spark Execution in Databricks", "kind": "theory", "fit": "intro", "note": "The start of the chain: driver, job, stages, tasks. Catalyst and AQE decisions are not covered." }
+    ],
+    "v2-d10-lab-notebook": [
+      { "s": 6, "l": 32, "title": "ETL Project Overview", "kind": "theory", "fit": "background", "note": "A course project with the same bronze, silver, gold shape as this lab." },
+      { "s": 9, "l": 61, "title": "Extract Customers Data - Simple JSON", "kind": "lab", "fit": "background", "note": "Bronze: ingest raw JSON with PySpark." },
+      { "s": 10, "l": 67, "title": "Transform Customers Data", "kind": "lab", "fit": "background", "note": "Silver: clean and transform with PySpark." },
+      { "s": 10, "l": 75, "title": "Month Order Summary", "kind": "lab", "fit": "background", "note": "Gold: orders aggregated per customer per month." },
+      { "s": 13, "l": 96, "title": "COPY INTO and MERGE Command", "kind": "lab", "fit": "background", "note": "Loading new data incrementally with COPY INTO and MERGE." },
+      { "s": 21, "l": 140, "title": "Compaction - OPTIMIZE and ZORDER", "kind": "lab", "fit": "background", "note": "Compact the finished tables." }
+    ]
+  }
+}

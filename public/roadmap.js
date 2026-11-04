@@ -46,6 +46,22 @@ let days = [];
 let activeDay = 1;
 let activePart = "theory";
 
+// Links from roadmap items to lessons of the Databricks course in Telegram.
+// data/course-links.json lists, per roadmap item, the lessons that go with it
+// (by section and lesson number). The Telegram link itself comes from
+// /api/content: the course's part holds each section's videos, and a video's
+// title starts with its lesson number ("🎬 67. Transform Customers Data").
+let courseLinks = { course: "", items: {} };
+let courseLookup = new Map(); // "<section>:<lesson>" -> video
+
+const COURSE_KIND = { theory: "Theory", lab: "Lab" };
+// How closely a lesson fits its topic. "match" needs no label.
+const COURSE_FIT = { match: "", intro: "intro level", background: "related" };
+const COURSE_FIT_HINT = {
+  intro: "The course only touches this topic briefly; the roadmap goes deeper.",
+  background: "Related background, not the same topic.",
+};
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function emptyProgress() {
@@ -309,6 +325,81 @@ function renderLink(label, url) {
   return a;
 }
 
+function normalizeTitle(str) {
+  return String(str).toLowerCase().replace(/[^a-z0-9]/g, "");
+}
+
+function leadingNumber(str) {
+  const m = String(str).match(/(\d+)\./);
+  return m ? Number(m[1]) : null;
+}
+
+function buildCourseLookup(parts) {
+  courseLookup = new Map();
+  if (!courseLinks.course) return;
+  const part = (parts || []).find((p) => p.part.includes(courseLinks.course));
+  if (!part) return;
+  part.sections.forEach((section) => {
+    const s = leadingNumber(section.name);
+    section.items.forEach((video) => {
+      const l = leadingNumber(video.title);
+      if (s !== null && l !== null) courseLookup.set(`${s}:${l}`, video);
+    });
+  });
+}
+
+// The video for a mapping entry, or null when it isn't in the channel yet. The
+// title at that position must also be the one we expect, so a gap in the synced
+// videos can never send you to the wrong lesson.
+function courseVideo(ref) {
+  const video = courseLookup.get(`${ref.s}:${ref.l}`);
+  if (!video) return null;
+  return normalizeTitle(video.title).endsWith(normalizeTitle(ref.title)) ? video : null;
+}
+
+function renderCourseLinks(item) {
+  const found = ((courseLinks.items || {})[item.id] || [])
+    .map((ref) => ({ ref, video: courseVideo(ref) }))
+    .filter((entry) => entry.video);
+  if (found.length === 0) return null;
+
+  const box = document.createElement("span");
+  box.className = "course-links";
+  const heading = document.createElement("span");
+  heading.className = "course-links-heading";
+  heading.textContent = "In the Databricks course";
+  box.appendChild(heading);
+
+  found.forEach(({ ref, video }) => {
+    const row = document.createElement("span");
+    row.className = "course-ref";
+
+    const badge = document.createElement("span");
+    badge.className = `badge badge-${ref.kind}`;
+    badge.textContent = COURSE_KIND[ref.kind] || ref.kind;
+    const link = renderLink(ref.title, video.link);
+    link.className = "course-link";
+    row.append(badge, link);
+
+    const fit = COURSE_FIT[ref.fit];
+    if (fit) {
+      const fitEl = document.createElement("span");
+      fitEl.className = "course-fit";
+      fitEl.title = COURSE_FIT_HINT[ref.fit] || "";
+      fitEl.textContent = ` · ${fit}`;
+      row.appendChild(fitEl);
+    }
+    if (ref.note) {
+      const note = document.createElement("span");
+      note.className = "course-note";
+      note.textContent = ref.note;
+      row.appendChild(note);
+    }
+    box.appendChild(row);
+  });
+  return box;
+}
+
 function renderItem(item) {
   const li = document.createElement("li");
   // Answer cards for checklist questions (they carry `q`) are shown in red.
@@ -354,6 +445,8 @@ function renderItem(item) {
     extra.className = "item-link";
     body.append(document.createElement("br"), extra);
   });
+  const course = renderCourseLinks(item);
+  if (course) body.append(document.createElement("br"), course);
 
   label.appendChild(box);
   label.appendChild(body);
@@ -595,8 +688,18 @@ async function main() {
   renderAccount();
 
   try {
-    const [content] = await Promise.all([fetch("/api/roadmap").then((r) => r.json()), loadProgress()]);
+    const [content, courseData, allContent] = await Promise.all([
+      fetch("/api/roadmap").then((r) => r.json()),
+      // The course links are an extra: if either request fails, the roadmap still works without them.
+      fetch("/api/course-links").then((r) => r.json()).catch(() => null),
+      fetch("/api/content").then((r) => r.json()).catch(() => null),
+      loadProgress(),
+    ]);
     days = content;
+    if (courseData && allContent) {
+      courseLinks = courseData;
+      buildCourseLookup(allContent);
+    }
     const today = todayDayNumber();
     const saved = Number(localStorage.getItem(DAY_KEY));
     activeDay = today >= 1 && today <= days.length ? today : saved || 1;

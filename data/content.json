@@ -2284,5 +2284,1889 @@
     "title": "🎬 2. Marshmallow",
     "date": "2026-09-14T13:34:13.000Z",
     "link": "https://t.me/sm1523/1234"
+  },
+  {
+    "id": "1242",
+    "title": "🎬 1. Introduction",
+    "date": "2026-09-28T17:21:13.000Z",
+    "link": "https://t.me/sm1523/1242"
+  },
+  {
+    "id": "1244",
+    "title": "🎬 2. Prerequisites",
+    "date": "2026-09-28T17:23:22.000Z",
+    "link": "https://t.me/sm1523/1244"
+  },
+  {
+    "id": "1250",
+    "title": "🎬 1. Introduction",
+    "date": "2026-09-28T17:25:52.000Z",
+    "link": "https://t.me/sm1523/1250"
+  },
+  {
+    "id": "1252",
+    "title": "🎬 2. Objects and Classes - Lecture",
+    "date": "2026-09-28T17:27:52.000Z",
+    "link": "https://t.me/sm1523/1252"
+  },
+  {
+    "id": "1255",
+    "title": "🎬 3. Objects and Classes - Coding",
+    "date": "2026-09-28T17:29:40.000Z",
+    "link": "https://t.me/sm1523/1255"
+  },
+  {
+    "id": "1258",
+    "title": "🎬 4. Class Attributes - Lecture",
+    "date": "2026-09-28T17:31:23.000Z",
+    "link": "https://t.me/sm1523/1258"
+  },
+  {
+    "id": "1261",
+    "title": "🎬 5. Class Attributes - Coding",
+    "date": "2026-09-28T17:33:20.000Z",
+    "link": "https://t.me/sm1523/1261"
+  },
+  {
+    "id": "1264",
+    "title": "🎬 6. Callable Class Attributes - Lecture",
+    "date": "2026-09-28T17:33:58.000Z",
+    "link": "https://t.me/sm1523/1264"
+  },
+  {
+    "id": "1267",
+    "title": "🎬 7. Callable Class Attributes - Coding",
+    "date": "2026-09-28T17:34:56.000Z",
+    "link": "https://t.me/sm1523/1267"
+  },
+  {
+    "id": "1270",
+    "title": "🎬 8. Classes are Callables - Lecture",
+    "date": "2026-09-28T17:35:56.000Z",
+    "link": "https://t.me/sm1523/1270"
+  },
+  {
+    "id": "1273",
+    "title": "🎬 9. Classes are Callables - Coding",
+    "date": "2026-09-28T17:37:03.000Z",
+    "link": "https://t.me/sm1523/1273"
+  },
+  {
+    "id": "1276",
+    "title": "🎬 10. Data Attributes - Lecture",
+    "date": "2026-09-28T17:38:27.000Z",
+    "link": "https://t.me/sm1523/1276"
+  },
+  {
+    "id": "1279",
+    "title": "🎬 11. Data Attributes - Coding",
+    "date": "2026-09-28T17:39:48.000Z",
+    "link": "https://t.me/sm1523/1279"
+  },
+  {
+    "id": "1282",
+    "title": "🎬 12. Function Attributes - Lecture",
+    "date": "2026-09-28T17:41:44.000Z",
+    "link": "https://t.me/sm1523/1282"
+  },
+  {
+    "id": "1285",
+    "title": "🎬 13. Function Attributes - Coding",
+    "date": "2026-09-28T17:44:41.000Z",
+    "link": "https://t.me/sm1523/1285"
+  },
+  {
+    "id": "1288",
+    "title": "🎬 14. Initializing Class Instances - Lecture",
+    "date": "2026-09-28T17:46:16.000Z",
+    "link": "https://t.me/sm1523/1288"
+  },
+  {
+    "id": "1291",
+    "title": "🎬 15. Initializing Class Instances - Coding",
+    "date": "2026-09-28T17:47:41.000Z",
+    "link": "https://t.me/sm1523/1291"
+  },
+  {
+    "id": "1294",
+    "title": "🎬 16. Creating Attributes at Run-Time - Lecture",
+    "date": "2026-09-28T17:49:31.000Z",
+    "link": "https://t.me/sm1523/1294"
+  },
+  {
+    "id": "1297",
+    "title": "🎬 17. Creating Attributes at Run-Time - Coding",
+    "date": "2026-09-28T17:51:36.000Z",
+    "link": "https://t.me/sm1523/1297"
+  },
+  {
+    "id": "1300",
+    "title": "🎬 18. Properties - Lecture",
+    "date": "2026-09-28T17:55:59.000Z",
+    "link": "https://t.me/sm1523/1300"
+  },
+  {
+    "id": "1303",
+    "title": "🎬 19. Properties - Coding",
+    "date": "2026-09-28T17:59:17.000Z",
+    "link": "https://t.me/sm1523/1303"
+  },
+  {
+    "id": "1306",
+    "title": "🎬 20. Property Decorators - Lecture",
+    "date": "2026-09-28T18:01:04.000Z",
+    "link": "https://t.me/sm1523/1306"
+  },
+  {
+    "id": "1309",
+    "title": "🎬 21. Property Decorators - Coding",
+    "date": "2026-09-28T18:04:38.000Z",
+    "link": "https://t.me/sm1523/1309"
+  },
+  {
+    "id": "1312",
+    "title": "🎬 22. Read-Only and Computed Properties - Lecture",
+    "date": "2026-09-28T18:06:14.000Z",
+    "link": "https://t.me/sm1523/1312"
+  },
+  {
+    "id": "1315",
+    "title": "🎬 23. Read-Only and Computed Properties - Coding",
+    "date": "2026-09-28T18:08:12.000Z",
+    "link": "https://t.me/sm1523/1315"
+  },
+  {
+    "id": "1318",
+    "title": "🎬 24. Deleting Properties - Lecture",
+    "date": "2026-09-28T18:10:14.000Z",
+    "link": "https://t.me/sm1523/1318"
+  },
+  {
+    "id": "1321",
+    "title": "🎬 25. Deleting Properties - Coding",
+    "date": "2026-09-28T18:11:35.000Z",
+    "link": "https://t.me/sm1523/1321"
+  },
+  {
+    "id": "1324",
+    "title": "🎬 26. Some Questions on the Property Class",
+    "date": "2026-09-28T18:12:20.000Z",
+    "link": "https://t.me/sm1523/1324"
+  },
+  {
+    "id": "1327",
+    "title": "🎬 27. Class and Static Methods - Lecture",
+    "date": "2026-09-28T18:14:42.000Z",
+    "link": "https://t.me/sm1523/1327"
+  },
+  {
+    "id": "1329",
+    "title": "🎬 28. Class and Static Methods - Coding",
+    "date": "2026-09-28T18:16:18.000Z",
+    "link": "https://t.me/sm1523/1329"
+  },
+  {
+    "id": "1333",
+    "title": "🎬 29. Python Builtin and Standard Types",
+    "date": "2026-09-28T18:18:50.000Z",
+    "link": "https://t.me/sm1523/1333"
+  },
+  {
+    "id": "1336",
+    "title": "🎬 30. Class Body Scope - Lecture",
+    "date": "2026-09-28T18:20:42.000Z",
+    "link": "https://t.me/sm1523/1336"
+  },
+  {
+    "id": "1339",
+    "title": "🎬 31. Class Body Scope - Coding",
+    "date": "2026-09-28T18:22:21.000Z",
+    "link": "https://t.me/sm1523/1339"
+  },
+  {
+    "id": "1342",
+    "title": "🎬 32. Quick Recap",
+    "date": "2026-09-28T18:23:20.000Z",
+    "link": "https://t.me/sm1523/1342"
+  },
+  {
+    "id": "1346",
+    "title": "🎬 1. Project Description",
+    "date": "2026-09-28T18:26:06.000Z",
+    "link": "https://t.me/sm1523/1346"
+  },
+  {
+    "id": "1349",
+    "title": "🎬 2. Project Solution - TimeZone",
+    "date": "2026-09-28T18:26:59.000Z",
+    "link": "https://t.me/sm1523/1349"
+  },
+  {
+    "id": "1352",
+    "title": "🎬 3. Project Solution - Transaction Numbers",
+    "date": "2026-09-28T18:27:22.000Z",
+    "link": "https://t.me/sm1523/1352"
+  },
+  {
+    "id": "1355",
+    "title": "🎬 4. Project Solution - Account Numbers, Names",
+    "date": "2026-09-28T18:28:16.000Z",
+    "link": "https://t.me/sm1523/1355"
+  },
+  {
+    "id": "1358",
+    "title": "🎬 5. Project Solution - Preferred TimeZone",
+    "date": "2026-09-28T18:28:42.000Z",
+    "link": "https://t.me/sm1523/1358"
+  },
+  {
+    "id": "1361",
+    "title": "🎬 6. Project Solution - Account Balance",
+    "date": "2026-09-28T18:29:02.000Z",
+    "link": "https://t.me/sm1523/1361"
+  },
+  {
+    "id": "1364",
+    "title": "🎬 7. Project Solution - Interest Rate",
+    "date": "2026-09-28T18:29:28.000Z",
+    "link": "https://t.me/sm1523/1364"
+  },
+  {
+    "id": "1367",
+    "title": "🎬 8. Project Solution - Transaction Codes",
+    "date": "2026-09-28T18:29:43.000Z",
+    "link": "https://t.me/sm1523/1367"
+  },
+  {
+    "id": "1370",
+    "title": "🎬 9. Project Solution - Confirmation Codes",
+    "date": "2026-09-28T18:31:40.000Z",
+    "link": "https://t.me/sm1523/1370"
+  },
+  {
+    "id": "1373",
+    "title": "🎬 10. Project Solution - Transactions",
+    "date": "2026-09-28T18:33:22.000Z",
+    "link": "https://t.me/sm1523/1373"
+  },
+  {
+    "id": "1376",
+    "title": "🎬 11. Project Solution - Testing with unittest",
+    "date": "2026-09-28T18:35:59.000Z",
+    "link": "https://t.me/sm1523/1376"
+  },
+  {
+    "id": "1380",
+    "title": "🎬 1. Introduction",
+    "date": "2026-09-28T18:37:16.000Z",
+    "link": "https://t.me/sm1523/1380"
+  },
+  {
+    "id": "1382",
+    "title": "🎬 2. str and repr Methods - Lecture",
+    "date": "2026-09-28T18:38:06.000Z",
+    "link": "https://t.me/sm1523/1382"
+  },
+  {
+    "id": "1385",
+    "title": "🎬 3. str and repr Methods - Coding",
+    "date": "2026-09-28T18:39:05.000Z",
+    "link": "https://t.me/sm1523/1385"
+  },
+  {
+    "id": "1388",
+    "title": "🎬 4. Arithmetic Operators - Lecture",
+    "date": "2026-09-28T18:40:17.000Z",
+    "link": "https://t.me/sm1523/1388"
+  },
+  {
+    "id": "1391",
+    "title": "🎬 5. Arithmetic Operators - Coding",
+    "date": "2026-09-28T18:43:28.000Z",
+    "link": "https://t.me/sm1523/1391"
+  },
+  {
+    "id": "1394",
+    "title": "🎬 6. Rich Comparisons - Lecture",
+    "date": "2026-09-28T18:43:51.000Z",
+    "link": "https://t.me/sm1523/1394"
+  },
+  {
+    "id": "1397",
+    "title": "🎬 7. Rich Comparisons - Coding",
+    "date": "2026-09-28T18:45:21.000Z",
+    "link": "https://t.me/sm1523/1397"
+  },
+  {
+    "id": "1400",
+    "title": "🎬 8. Hashing and Equality - Lecture",
+    "date": "2026-09-28T18:45:50.000Z",
+    "link": "https://t.me/sm1523/1400"
+  },
+  {
+    "id": "1403",
+    "title": "🎬 9. Hashing and Equality - Coding",
+    "date": "2026-09-28T18:46:54.000Z",
+    "link": "https://t.me/sm1523/1403"
+  },
+  {
+    "id": "1406",
+    "title": "🎬 10. Booleans - Lecture",
+    "date": "2026-09-28T18:47:21.000Z",
+    "link": "https://t.me/sm1523/1406"
+  },
+  {
+    "id": "1409",
+    "title": "🎬 11. Booleans - Coding",
+    "date": "2026-09-28T18:48:20.000Z",
+    "link": "https://t.me/sm1523/1409"
+  },
+  {
+    "id": "1412",
+    "title": "🎬 12. Callables - Lecture",
+    "date": "2026-09-28T18:48:52.000Z",
+    "link": "https://t.me/sm1523/1412"
+  },
+  {
+    "id": "1415",
+    "title": "🎬 13. Callables - Coding",
+    "date": "2026-09-28T18:50:47.000Z",
+    "link": "https://t.me/sm1523/1415"
+  },
+  {
+    "id": "1418",
+    "title": "🎬 14. The del Method - Lecture",
+    "date": "2026-09-28T18:51:46.000Z",
+    "link": "https://t.me/sm1523/1418"
+  },
+  {
+    "id": "1421",
+    "title": "🎬 15. The del Method - Coding",
+    "date": "2026-09-28T18:53:48.000Z",
+    "link": "https://t.me/sm1523/1421"
+  },
+  {
+    "id": "1424",
+    "title": "🎬 16. The format Method - Lecture",
+    "date": "2026-09-28T18:54:26.000Z",
+    "link": "https://t.me/sm1523/1424"
+  },
+  {
+    "id": "1427",
+    "title": "🎬 17. The format Method - Coding",
+    "date": "2026-09-28T18:55:31.000Z",
+    "link": "https://t.me/sm1523/1427"
+  },
+  {
+    "id": "1431",
+    "title": "🎬 1. Project Description",
+    "date": "2026-09-28T18:57:24.000Z",
+    "link": "https://t.me/sm1523/1431"
+  },
+  {
+    "id": "1433",
+    "title": "🎬 2. Project Solution",
+    "date": "2026-09-28T18:59:13.000Z",
+    "link": "https://t.me/sm1523/1433"
+  },
+  {
+    "id": "1437",
+    "title": "🎬 1. Introduction",
+    "date": "2026-09-28T18:59:36.000Z",
+    "link": "https://t.me/sm1523/1437"
+  },
+  {
+    "id": "1439",
+    "title": "🎬 2. Single Inheritance - Lecture",
+    "date": "2026-09-28T19:02:33.000Z",
+    "link": "https://t.me/sm1523/1439"
+  },
+  {
+    "id": "1442",
+    "title": "🎬 3. Single Inheritance - Coding",
+    "date": "2026-09-28T19:04:47.000Z",
+    "link": "https://t.me/sm1523/1442"
+  },
+  {
+    "id": "1445",
+    "title": "🎬 4. The object Class - Lecture",
+    "date": "2026-09-28T19:05:53.000Z",
+    "link": "https://t.me/sm1523/1445"
+  },
+  {
+    "id": "1448",
+    "title": "🎬 5. The object Class - Coding",
+    "date": "2026-09-28T19:07:07.000Z",
+    "link": "https://t.me/sm1523/1448"
+  },
+  {
+    "id": "1451",
+    "title": "🎬 6. Overriding - Lecture",
+    "date": "2026-09-28T19:09:04.000Z",
+    "link": "https://t.me/sm1523/1451"
+  },
+  {
+    "id": "1454",
+    "title": "🎬 7. Overriding - Coding",
+    "date": "2026-09-28T19:11:06.000Z",
+    "link": "https://t.me/sm1523/1454"
+  },
+  {
+    "id": "1457",
+    "title": "🎬 8. Extending - Lecture",
+    "date": "2026-09-28T19:11:26.000Z",
+    "link": "https://t.me/sm1523/1457"
+  },
+  {
+    "id": "1460",
+    "title": "🎬 9. Extending - Coding",
+    "date": "2026-09-28T19:13:01.000Z",
+    "link": "https://t.me/sm1523/1460"
+  },
+  {
+    "id": "1463",
+    "title": "🎬 10. Delegating to Parent - Lecture",
+    "date": "2026-09-28T19:15:11.000Z",
+    "link": "https://t.me/sm1523/1463"
+  },
+  {
+    "id": "1466",
+    "title": "🎬 11. Delegating to Parent - Coding",
+    "date": "2026-09-28T19:18:36.000Z",
+    "link": "https://t.me/sm1523/1466"
+  },
+  {
+    "id": "1469",
+    "title": "🎬 12. Slots - Lecture",
+    "date": "2026-09-28T19:20:19.000Z",
+    "link": "https://t.me/sm1523/1469"
+  },
+  {
+    "id": "1472",
+    "title": "🎬 13. Slots - Coding",
+    "date": "2026-09-28T19:22:14.000Z",
+    "link": "https://t.me/sm1523/1472"
+  },
+  {
+    "id": "1475",
+    "title": "🎬 14. Slots and Single Inheritance - Lecture",
+    "date": "2026-09-28T19:24:00.000Z",
+    "link": "https://t.me/sm1523/1475"
+  },
+  {
+    "id": "1478",
+    "title": "🎬 15. Slots and Single Inheritance - Coding",
+    "date": "2026-09-28T19:26:52.000Z",
+    "link": "https://t.me/sm1523/1478"
+  },
+  {
+    "id": "1482",
+    "title": "🎬 1. Project 3 - Description",
+    "date": "2026-09-28T19:28:26.000Z",
+    "link": "https://t.me/sm1523/1482"
+  },
+  {
+    "id": "1485",
+    "title": "🎬 2. Project Solution - Approach and Setup",
+    "date": "2026-09-28T19:29:13.000Z",
+    "link": "https://t.me/sm1523/1485"
+  },
+  {
+    "id": "1489",
+    "title": "🎬 3. Project Solution - Validators and tests",
+    "date": "2026-09-28T19:30:58.000Z",
+    "link": "https://t.me/sm1523/1489"
+  },
+  {
+    "id": "1491",
+    "title": "🎬 4. Project Solution - Resources class and tests",
+    "date": "2026-09-28T19:32:21.000Z",
+    "link": "https://t.me/sm1523/1491"
+  },
+  {
+    "id": "1493",
+    "title": "🎬 5. Project Solution - CPU class and tests",
+    "date": "2026-09-28T19:32:53.000Z",
+    "link": "https://t.me/sm1523/1493"
+  },
+  {
+    "id": "1495",
+    "title": "🎬 6. Project Solution - Storage class and tests",
+    "date": "2026-09-28T19:33:04.000Z",
+    "link": "https://t.me/sm1523/1495"
+  },
+  {
+    "id": "1497",
+    "title": "🎬 7. Project Solution - HDD and SSD classes and tests",
+    "date": "2026-09-28T20:04:09.000Z",
+    "link": "https://t.me/sm1523/1497"
+  },
+  {
+    "id": "1500",
+    "title": "🎬 1. Introduction",
+    "date": "2026-09-28T20:04:31.000Z",
+    "link": "https://t.me/sm1523/1500"
+  },
+  {
+    "id": "1502",
+    "title": "🎬 2. Descriptors - Lecture",
+    "date": "2026-09-28T20:06:41.000Z",
+    "link": "https://t.me/sm1523/1502"
+  },
+  {
+    "id": "1505",
+    "title": "🎬 3. Descriptors - Coding",
+    "date": "2026-09-28T20:09:02.000Z",
+    "link": "https://t.me/sm1523/1505"
+  },
+  {
+    "id": "1508",
+    "title": "🎬 4. Getters and Setters - Lecture",
+    "date": "2026-09-28T20:11:03.000Z",
+    "link": "https://t.me/sm1523/1508"
+  },
+  {
+    "id": "1511",
+    "title": "🎬 5. Getters and Setters - Coding",
+    "date": "2026-09-28T20:13:34.000Z",
+    "link": "https://t.me/sm1523/1511"
+  },
+  {
+    "id": "1514",
+    "title": "🎬 6. Using as Instance Properties - Lecture",
+    "date": "2026-09-28T20:14:56.000Z",
+    "link": "https://t.me/sm1523/1514"
+  },
+  {
+    "id": "1517",
+    "title": "🎬 7. Using as Instance Properties - Coding",
+    "date": "2026-09-28T20:16:47.000Z",
+    "link": "https://t.me/sm1523/1517"
+  },
+  {
+    "id": "1520",
+    "title": "🎬 8. Strong and Weak References - Lecture",
+    "date": "2026-09-28T20:18:28.000Z",
+    "link": "https://t.me/sm1523/1520"
+  },
+  {
+    "id": "1523",
+    "title": "🎬 9. Strong and Weak References - Coding",
+    "date": "2026-09-28T20:20:36.000Z",
+    "link": "https://t.me/sm1523/1523"
+  },
+  {
+    "id": "1526",
+    "title": "🎬 10. Back to Instance Properties - Lecture",
+    "date": "2026-09-28T20:21:43.000Z",
+    "link": "https://t.me/sm1523/1526"
+  },
+  {
+    "id": "1529",
+    "title": "🎬 11. Back to Instance Properties - Coding",
+    "date": "2026-09-28T20:24:19.000Z",
+    "link": "https://t.me/sm1523/1529"
+  },
+  {
+    "id": "1532",
+    "title": "🎬 12. The set_name Method - Lecture",
+    "date": "2026-09-28T20:25:26.000Z",
+    "link": "https://t.me/sm1523/1532"
+  },
+  {
+    "id": "1535",
+    "title": "🎬 13. The set_name Method - Coding",
+    "date": "2026-09-28T20:27:36.000Z",
+    "link": "https://t.me/sm1523/1535"
+  },
+  {
+    "id": "1538",
+    "title": "🎬 14. Property Lookup Resolution - Lecture",
+    "date": "2026-09-28T20:29:12.000Z",
+    "link": "https://t.me/sm1523/1538"
+  },
+  {
+    "id": "1541",
+    "title": "🎬 15. Property Lookup Resolution - Coding",
+    "date": "2026-09-28T20:30:39.000Z",
+    "link": "https://t.me/sm1523/1541"
+  },
+  {
+    "id": "1544",
+    "title": "🎬 16. Properties and Descriptors - Lecture",
+    "date": "2026-09-28T20:31:24.000Z",
+    "link": "https://t.me/sm1523/1544"
+  },
+  {
+    "id": "1547",
+    "title": "🎬 17. Properties and Descriptors - Coding",
+    "date": "2026-09-28T20:32:59.000Z",
+    "link": "https://t.me/sm1523/1547"
+  },
+  {
+    "id": "1550",
+    "title": "🎬 18. Application - Example 1",
+    "date": "2026-09-28T20:33:28.000Z",
+    "link": "https://t.me/sm1523/1550"
+  },
+  {
+    "id": "1553",
+    "title": "🎬 19. Application - Example 2",
+    "date": "2026-09-28T20:35:15.000Z",
+    "link": "https://t.me/sm1523/1553"
+  },
+  {
+    "id": "1556",
+    "title": "🎬 20. Functions and Descriptors - Lecture",
+    "date": "2026-09-28T20:35:51.000Z",
+    "link": "https://t.me/sm1523/1556"
+  },
+  {
+    "id": "1559",
+    "title": "🎬 21. Functions and Descriptors - Coding",
+    "date": "2026-09-28T20:37:09.000Z",
+    "link": "https://t.me/sm1523/1559"
+  },
+  {
+    "id": "1563",
+    "title": "🎬 1. Project Description",
+    "date": "2026-09-28T20:37:55.000Z",
+    "link": "https://t.me/sm1523/1563"
+  },
+  {
+    "id": "1565",
+    "title": "🎬 2. Solution - Part 1",
+    "date": "2026-09-28T20:40:11.000Z",
+    "link": "https://t.me/sm1523/1565"
+  },
+  {
+    "id": "1568",
+    "title": "🎬 3. Solution - Part 2",
+    "date": "2026-09-28T20:40:58.000Z",
+    "link": "https://t.me/sm1523/1568"
+  },
+  {
+    "id": "1572",
+    "title": "🎬 1. Introduction",
+    "date": "2026-09-28T20:41:20.000Z",
+    "link": "https://t.me/sm1523/1572"
+  },
+  {
+    "id": "1574",
+    "title": "🎬 2. Making the case for Enumerations",
+    "date": "2026-09-28T20:43:21.000Z",
+    "link": "https://t.me/sm1523/1574"
+  },
+  {
+    "id": "1577",
+    "title": "🎬 3. Enumerations - Lecture",
+    "date": "2026-09-28T20:46:02.000Z",
+    "link": "https://t.me/sm1523/1577"
+  },
+  {
+    "id": "1580",
+    "title": "🎬 4. Enumerations - Coding",
+    "date": "2026-09-28T20:48:32.000Z",
+    "link": "https://t.me/sm1523/1580"
+  },
+  {
+    "id": "1583",
+    "title": "🎬 5. Aliases - Lecture",
+    "date": "2026-09-28T20:49:58.000Z",
+    "link": "https://t.me/sm1523/1583"
+  },
+  {
+    "id": "1586",
+    "title": "🎬 6. Aliases - Coding",
+    "date": "2026-09-28T20:51:42.000Z",
+    "link": "https://t.me/sm1523/1586"
+  },
+  {
+    "id": "1589",
+    "title": "🎬 7. CustomizingExtending Enums - Lecture",
+    "date": "2026-09-28T20:53:04.000Z",
+    "link": "https://t.me/sm1523/1589"
+  },
+  {
+    "id": "1592",
+    "title": "🎬 8. CustomizingExtending Enums - Coding",
+    "date": "2026-09-28T20:55:31.000Z",
+    "link": "https://t.me/sm1523/1592"
+  },
+  {
+    "id": "1595",
+    "title": "🎬 9. Automatic Values - Lecture",
+    "date": "2026-09-28T20:56:40.000Z",
+    "link": "https://t.me/sm1523/1595"
+  },
+  {
+    "id": "1598",
+    "title": "🎬 10. Automatic Values - Coding",
+    "date": "2026-09-28T20:58:56.000Z",
+    "link": "https://t.me/sm1523/1598"
+  },
+  {
+    "id": "1602",
+    "title": "🎬 1. Project Description",
+    "date": "2026-09-28T21:00:28.000Z",
+    "link": "https://t.me/sm1523/1602"
+  },
+  {
+    "id": "1604",
+    "title": "🎬 2. Project Solution",
+    "date": "2026-09-28T21:00:57.000Z",
+    "link": "https://t.me/sm1523/1604"
+  },
+  {
+    "id": "1608",
+    "title": "🎬 1. Introduction",
+    "date": "2026-09-28T21:01:21.000Z",
+    "link": "https://t.me/sm1523/1608"
+  },
+  {
+    "id": "1610",
+    "title": "🎬 2. Python Exceptions - Lecture",
+    "date": "2026-09-28T21:03:08.000Z",
+    "link": "https://t.me/sm1523/1610"
+  },
+  {
+    "id": "1613",
+    "title": "🎬 3. Python Exceptions - Coding",
+    "date": "2026-09-28T21:05:35.000Z",
+    "link": "https://t.me/sm1523/1613"
+  },
+  {
+    "id": "1616",
+    "title": "🎬 4. Handling Exceptions - Lecture",
+    "date": "2026-09-28T21:08:04.000Z",
+    "link": "https://t.me/sm1523/1616"
+  },
+  {
+    "id": "1619",
+    "title": "🎬 5. Handling Exceptions - Coding",
+    "date": "2026-09-28T21:11:23.000Z",
+    "link": "https://t.me/sm1523/1619"
+  },
+  {
+    "id": "1622",
+    "title": "🎬 6. Raising Exceptions - Lecture",
+    "date": "2026-09-28T21:12:52.000Z",
+    "link": "https://t.me/sm1523/1622"
+  },
+  {
+    "id": "1625",
+    "title": "🎬 7. Raising Exceptions - Coding",
+    "date": "2026-09-28T21:15:15.000Z",
+    "link": "https://t.me/sm1523/1625"
+  },
+  {
+    "id": "1628",
+    "title": "🎬 8. Custom Exceptions - Lecture",
+    "date": "2026-09-28T21:17:06.000Z",
+    "link": "https://t.me/sm1523/1628"
+  },
+  {
+    "id": "1631",
+    "title": "🎬 9. Custom Exceptions - Coding",
+    "date": "2026-09-28T21:20:43.000Z",
+    "link": "https://t.me/sm1523/1631"
+  },
+  {
+    "id": "1635",
+    "title": "🎬 1. Project Description",
+    "date": "2026-09-28T21:21:10.000Z",
+    "link": "https://t.me/sm1523/1635"
+  },
+  {
+    "id": "1638",
+    "title": "🎬 2. Project Solution",
+    "date": "2026-09-28T21:22:43.000Z",
+    "link": "https://t.me/sm1523/1638"
+  },
+  {
+    "id": "1642",
+    "title": "🎬 1. Introduction",
+    "date": "2026-09-28T21:24:51.000Z",
+    "link": "https://t.me/sm1523/1642"
+  },
+  {
+    "id": "1645",
+    "title": "🎬 2. Decorators and Descriptors - Review",
+    "date": "2026-09-28T21:26:41.000Z",
+    "link": "https://t.me/sm1523/1645"
+  },
+  {
+    "id": "1648",
+    "title": "🎬 3. The new Method - Lecture",
+    "date": "2026-09-28T21:28:30.000Z",
+    "link": "https://t.me/sm1523/1648"
+  },
+  {
+    "id": "1651",
+    "title": "🎬 4. The new Method - Coding",
+    "date": "2026-09-28T21:31:07.000Z",
+    "link": "https://t.me/sm1523/1651"
+  },
+  {
+    "id": "1654",
+    "title": "🎬 5. How Classes are Created - Lecture",
+    "date": "2026-09-28T21:32:48.000Z",
+    "link": "https://t.me/sm1523/1654"
+  },
+  {
+    "id": "1657",
+    "title": "🎬 6. How Classes are Created - Coding",
+    "date": "2026-09-28T21:34:37.000Z",
+    "link": "https://t.me/sm1523/1657"
+  },
+  {
+    "id": "1660",
+    "title": "🎬 7. Inheriting from type - Lecture",
+    "date": "2026-09-28T21:35:20.000Z",
+    "link": "https://t.me/sm1523/1660"
+  },
+  {
+    "id": "1663",
+    "title": "🎬 8. Inheriting from type - Coding",
+    "date": "2026-09-28T21:37:04.000Z",
+    "link": "https://t.me/sm1523/1663"
+  },
+  {
+    "id": "1666",
+    "title": "🎬 9. Metaclasses - Lecture",
+    "date": "2026-09-28T21:38:26.000Z",
+    "link": "https://t.me/sm1523/1666"
+  },
+  {
+    "id": "1669",
+    "title": "🎬 10. Metaclasses - Coding",
+    "date": "2026-09-28T21:40:05.000Z",
+    "link": "https://t.me/sm1523/1669"
+  },
+  {
+    "id": "1672",
+    "title": "🎬 11. Class Decorators - Lecture",
+    "date": "2026-09-28T21:41:10.000Z",
+    "link": "https://t.me/sm1523/1672"
+  },
+  {
+    "id": "1675",
+    "title": "🎬 12. Class Decorators - Coding",
+    "date": "2026-09-28T21:45:11.000Z",
+    "link": "https://t.me/sm1523/1675"
+  },
+  {
+    "id": "1678",
+    "title": "🎬 13. Decorator Classes - Lecture",
+    "date": "2026-09-28T21:46:09.000Z",
+    "link": "https://t.me/sm1523/1678"
+  },
+  {
+    "id": "1681",
+    "title": "🎬 14. Decorator Classes - Coding",
+    "date": "2026-09-28T21:48:19.000Z",
+    "link": "https://t.me/sm1523/1681"
+  },
+  {
+    "id": "1684",
+    "title": "🎬 15. Metaclass vs Class Decorator - Lecture",
+    "date": "2026-09-28T21:49:06.000Z",
+    "link": "https://t.me/sm1523/1684"
+  },
+  {
+    "id": "1687",
+    "title": "🎬 16. Metaclass vs Class Decorator - Coding",
+    "date": "2026-09-28T21:50:59.000Z",
+    "link": "https://t.me/sm1523/1687"
+  },
+  {
+    "id": "1690",
+    "title": "🎬 17. Metaclass Parameters - Lecture",
+    "date": "2026-09-28T21:51:53.000Z",
+    "link": "https://t.me/sm1523/1690"
+  },
+  {
+    "id": "1693",
+    "title": "🎬 18. Metaclass Parameters - Coding",
+    "date": "2026-09-28T21:53:30.000Z",
+    "link": "https://t.me/sm1523/1693"
+  },
+  {
+    "id": "1696",
+    "title": "🎬 19. The prepare Method - Lecture",
+    "date": "2026-09-28T21:54:11.000Z",
+    "link": "https://t.me/sm1523/1696"
+  },
+  {
+    "id": "1699",
+    "title": "🎬 20. The prepare Method - Coding",
+    "date": "2026-09-28T21:56:20.000Z",
+    "link": "https://t.me/sm1523/1699"
+  },
+  {
+    "id": "1702",
+    "title": "🎬 21. Classes, Metaclasses, and call",
+    "date": "2026-09-28T21:59:22.000Z",
+    "link": "https://t.me/sm1523/1702"
+  },
+  {
+    "id": "1705",
+    "title": "🎬 22. Metaprogramming Application 1",
+    "date": "2026-09-28T22:03:01.000Z",
+    "link": "https://t.me/sm1523/1705"
+  },
+  {
+    "id": "1708",
+    "title": "🎬 23. Metaprogramming Application 2",
+    "date": "2026-09-28T22:04:22.000Z",
+    "link": "https://t.me/sm1523/1708"
+  },
+  {
+    "id": "1711",
+    "title": "🎬 24. Metaprogramming Application 3",
+    "date": "2026-09-28T22:06:15.000Z",
+    "link": "https://t.me/sm1523/1711"
+  },
+  {
+    "id": "1714",
+    "title": "🎬 25. Attribute Read Accessors - Lecture",
+    "date": "2026-09-28T22:07:51.000Z",
+    "link": "https://t.me/sm1523/1714"
+  },
+  {
+    "id": "1717",
+    "title": "🎬 26. Attribute Read Accessors - Coding",
+    "date": "2026-09-28T22:11:27.000Z",
+    "link": "https://t.me/sm1523/1717"
+  },
+  {
+    "id": "1720",
+    "title": "🎬 27. Attribute Write Accessors - Lecture",
+    "date": "2026-09-28T22:12:18.000Z",
+    "link": "https://t.me/sm1523/1720"
+  },
+  {
+    "id": "1723",
+    "title": "🎬 28. Attribute Write Accessors - Coding",
+    "date": "2026-09-28T22:13:48.000Z",
+    "link": "https://t.me/sm1523/1723"
+  },
+  {
+    "id": "1726",
+    "title": "🎬 29. Accessors - Application",
+    "date": "2026-09-28T22:15:29.000Z",
+    "link": "https://t.me/sm1523/1726"
+  },
+  {
+    "id": "1730",
+    "title": "🎬 1. Python 3.10",
+    "date": "2026-09-28T22:16:35.000Z",
+    "link": "https://t.me/sm1523/1730"
+  },
+  {
+    "id": "1733",
+    "title": "🎬 2. Python 3.9",
+    "date": "2026-09-28T22:17:46.000Z",
+    "link": "https://t.me/sm1523/1733"
+  },
+  {
+    "id": "1736",
+    "title": "🎬 3. Python 3.8  3.7",
+    "date": "2026-09-28T22:19:03.000Z",
+    "link": "https://t.me/sm1523/1736"
+  },
+  {
+    "id": "1747",
+    "title": "🎬 1. Course Disclaimer",
+    "date": "2026-11-04T21:15:56.000Z",
+    "link": "https://t.me/sm1523/1747"
+  },
+  {
+    "id": "1749",
+    "title": "🎬 2. Course Introduction",
+    "date": "2026-11-04T21:16:58.000Z",
+    "link": "https://t.me/sm1523/1749"
+  },
+  {
+    "id": "1751",
+    "title": "🎬 3. Course Structure",
+    "date": "2026-11-04T21:17:11.000Z",
+    "link": "https://t.me/sm1523/1751"
+  },
+  {
+    "id": "1763",
+    "title": "🎬 7. Creating Azure Free Account",
+    "date": "2026-11-04T21:18:46.000Z",
+    "link": "https://t.me/sm1523/1763"
+  },
+  {
+    "id": "1765",
+    "title": "🎬 8. Azure Portal Overview",
+    "date": "2026-11-04T21:18:58.000Z",
+    "link": "https://t.me/sm1523/1765"
+  },
+  {
+    "id": "1768",
+    "title": "🎬 9. Data Lakehouse Overview",
+    "date": "2026-11-04T21:19:27.000Z",
+    "link": "https://t.me/sm1523/1768"
+  },
+  {
+    "id": "1770",
+    "title": "🎬 10. Introduction to Medallion Architecture",
+    "date": "2026-11-04T21:19:46.000Z",
+    "link": "https://t.me/sm1523/1770"
+  },
+  {
+    "id": "1772",
+    "title": "🎬 11. Databricks Overview",
+    "date": "2026-11-04T21:20:04.000Z",
+    "link": "https://t.me/sm1523/1772"
+  },
+  {
+    "id": "1774",
+    "title": "🎬 12. Creating Azure Databricks Service",
+    "date": "2026-11-04T21:20:37.000Z",
+    "link": "https://t.me/sm1523/1774"
+  },
+  {
+    "id": "1776",
+    "title": "🎬 13. Databricks User Interface Overview",
+    "date": "2026-11-04T21:20:59.000Z",
+    "link": "https://t.me/sm1523/1776"
+  },
+  {
+    "id": "1779",
+    "title": "🎬 14. Databricks Architecture Overview",
+    "date": "2026-11-04T21:21:26.000Z",
+    "link": "https://t.me/sm1523/1779"
+  },
+  {
+    "id": "1781",
+    "title": "🎬 15. Introduction to Databricks Compute",
+    "date": "2026-11-04T21:21:58.000Z",
+    "link": "https://t.me/sm1523/1781"
+  },
+  {
+    "id": "1783",
+    "title": "🎬 16. Databricks Compute Configuration",
+    "date": "2026-11-04T21:22:15.000Z",
+    "link": "https://t.me/sm1523/1783"
+  },
+  {
+    "id": "1785",
+    "title": "🎬 17. Create Databricks Cluster",
+    "date": "2026-11-04T21:22:56.000Z",
+    "link": "https://t.me/sm1523/1785"
+  },
+  {
+    "id": "1787",
+    "title": "🎬 18. Troubleshooting Databricks Cluster Quota and VM Issues",
+    "date": "2026-11-04T21:23:47.000Z",
+    "link": "https://t.me/sm1523/1787"
+  },
+  {
+    "id": "1789",
+    "title": "🎬 19. Databricks Notebooks",
+    "date": "2026-11-04T21:25:00.000Z",
+    "link": "https://t.me/sm1523/1789"
+  },
+  {
+    "id": "1791",
+    "title": "🎬 20. Databricks Magic Commands",
+    "date": "2026-11-04T21:26:01.000Z",
+    "link": "https://t.me/sm1523/1791"
+  },
+  {
+    "id": "1793",
+    "title": "🎬 21. Databricks Utilities",
+    "date": "2026-11-04T21:26:49.000Z",
+    "link": "https://t.me/sm1523/1793"
+  },
+  {
+    "id": "1795",
+    "title": "🎬 22. Databricks Git Folders (Repos)",
+    "date": "2026-11-04T21:27:01.000Z",
+    "link": "https://t.me/sm1523/1795"
+  },
+  {
+    "id": "1797",
+    "title": "🎬 23. Databricks Git Folders (Repos) - Demo",
+    "date": "2026-11-04T21:28:00.000Z",
+    "link": "https://t.me/sm1523/1797"
+  },
+  {
+    "id": "1799",
+    "title": "🎬 24. Debugging Databricks Notebooks",
+    "date": "2026-11-04T21:29:05.000Z",
+    "link": "https://t.me/sm1523/1799"
+  },
+  {
+    "id": "1802",
+    "title": "🎬 25. Introduction to Unity Catalog",
+    "date": "2026-11-04T21:29:28.000Z",
+    "link": "https://t.me/sm1523/1802"
+  },
+  {
+    "id": "1804",
+    "title": "🎬 26. Databricks Unity Catalog Hive Metastore Object Model",
+    "date": "2026-11-04T21:29:46.000Z",
+    "link": "https://t.me/sm1523/1804"
+  },
+  {
+    "id": "1806",
+    "title": "🎬 27. Create Unity Catalog Metastore",
+    "date": "2026-11-04T21:30:28.000Z",
+    "link": "https://t.me/sm1523/1806"
+  },
+  {
+    "id": "1808",
+    "title": "🎬 28. Cluster Configurations For Unity Catalog",
+    "date": "2026-11-04T21:30:41.000Z",
+    "link": "https://t.me/sm1523/1808"
+  },
+  {
+    "id": "1810",
+    "title": "🎬 29. Configure Access to Cloud Storage - Lecture",
+    "date": "2026-11-04T21:30:59.000Z",
+    "link": "https://t.me/sm1523/1810"
+  },
+  {
+    "id": "1812",
+    "title": "🎬 30. Configure Access to Cloud Storage - Demo",
+    "date": "2026-11-04T21:32:06.000Z",
+    "link": "https://t.me/sm1523/1812"
+  },
+  {
+    "id": "1815",
+    "title": "🎬 31. ETL With Apache Spark - Overview",
+    "date": "2026-11-04T21:32:32.000Z",
+    "link": "https://t.me/sm1523/1815"
+  },
+  {
+    "id": "1817",
+    "title": "🎬 32. ETL Project Overview",
+    "date": "2026-11-04T21:32:50.000Z",
+    "link": "https://t.me/sm1523/1817"
+  },
+  {
+    "id": "1819",
+    "title": "🎬 33. Set-up Data Lake Project Environment",
+    "date": "2026-11-04T21:33:28.000Z",
+    "link": "https://t.me/sm1523/1819"
+  },
+  {
+    "id": "1822",
+    "title": "🎬 34. Set-up Unity Catalog Project Environment",
+    "date": "2026-11-04T21:34:25.000Z",
+    "link": "https://t.me/sm1523/1822"
+  },
+  {
+    "id": "1825",
+    "title": "🎬 35. Extract Customers Data - Simple JSON",
+    "date": "2026-11-04T21:35:26.000Z",
+    "link": "https://t.me/sm1523/1825"
+  },
+  {
+    "id": "1827",
+    "title": "🎬 36. Create Views",
+    "date": "2026-11-04T21:35:57.000Z",
+    "link": "https://t.me/sm1523/1827"
+  },
+  {
+    "id": "1829",
+    "title": "🎬 37. Create Temporary Views",
+    "date": "2026-11-04T21:36:22.000Z",
+    "link": "https://t.me/sm1523/1829"
+  },
+  {
+    "id": "1831",
+    "title": "🎬 38. Extract Orders Data - Complex JSON as Text",
+    "date": "2026-11-04T21:37:29.000Z",
+    "link": "https://t.me/sm1523/1831"
+  },
+  {
+    "id": "1834",
+    "title": "🎬 40. Extract Memberships Data - Binary File",
+    "date": "2026-11-04T21:38:04.000Z",
+    "link": "https://t.me/sm1523/1834"
+  },
+  {
+    "id": "1836",
+    "title": "🎬 41. Extract Addresses Data using read_files Function - TSV",
+    "date": "2026-11-04T21:39:07.000Z",
+    "link": "https://t.me/sm1523/1836"
+  },
+  {
+    "id": "1838",
+    "title": "🎬 42. Extract Payments Data - CSV via External Table",
+    "date": "2026-11-04T21:40:07.000Z",
+    "link": "https://t.me/sm1523/1838"
+  },
+  {
+    "id": "1841",
+    "title": "🎬 44. Extract Refunds Data - SQL Table via External Table",
+    "date": "2026-11-04T21:40:59.000Z",
+    "link": "https://t.me/sm1523/1841"
+  },
+  {
+    "id": "1844",
+    "title": "🎬 45. Querying Files via PySpark",
+    "date": "2026-11-04T21:41:58.000Z",
+    "link": "https://t.me/sm1523/1844"
+  },
+  {
+    "id": "1847",
+    "title": "🎬 46. Data Profiling in Databricks",
+    "date": "2026-11-04T21:42:46.000Z",
+    "link": "https://t.me/sm1523/1847"
+  },
+  {
+    "id": "1849",
+    "title": "🎬 47. Transform Customers Data",
+    "date": "2026-11-04T21:44:07.000Z",
+    "link": "https://t.me/sm1523/1849"
+  },
+  {
+    "id": "1851",
+    "title": "🎬 48. Transform Payments Data",
+    "date": "2026-11-04T21:44:45.000Z",
+    "link": "https://t.me/sm1523/1851"
+  },
+  {
+    "id": "1853",
+    "title": "🎬 49. Transform Refunds Data",
+    "date": "2026-11-04T21:45:57.000Z",
+    "link": "https://t.me/sm1523/1853"
+  },
+  {
+    "id": "1855",
+    "title": "🎬 50. Transform Memberships Data",
+    "date": "2026-11-04T21:46:41.000Z",
+    "link": "https://t.me/sm1523/1855"
+  },
+  {
+    "id": "1857",
+    "title": "🎬 51. Transform Addresses Data",
+    "date": "2026-11-04T21:47:16.000Z",
+    "link": "https://t.me/sm1523/1857"
+  },
+  {
+    "id": "1859",
+    "title": "🎬 52. Query Orders Data - JSON Strings",
+    "date": "2026-11-04T21:48:16.000Z",
+    "link": "https://t.me/sm1523/1859"
+  },
+  {
+    "id": "1861",
+    "title": "🎬 53. Transform Orders Data - Convert String to JSON",
+    "date": "2026-11-04T21:49:33.000Z",
+    "link": "https://t.me/sm1523/1861"
+  },
+  {
+    "id": "1863",
+    "title": "🎬 54. Transform Orders Data - Explode Arrays",
+    "date": "2026-11-04T21:50:38.000Z",
+    "link": "https://t.me/sm1523/1863"
+  },
+  {
+    "id": "1865",
+    "title": "🎬 55. Create Customer Address - JOINs",
+    "date": "2026-11-04T21:51:22.000Z",
+    "link": "https://t.me/sm1523/1865"
+  },
+  {
+    "id": "1867",
+    "title": "🎬 56. Create Month Order Summary - Aggregations",
+    "date": "2026-11-04T21:52:35.000Z",
+    "link": "https://t.me/sm1523/1867"
+  },
+  {
+    "id": "1869",
+    "title": "🎬 57. Spark User Defined Functions (UDFs)",
+    "date": "2026-11-04T21:53:45.000Z",
+    "link": "https://t.me/sm1523/1869"
+  },
+  {
+    "id": "1871",
+    "title": "🎬 58. Higher Order Functions (Array)",
+    "date": "2026-11-04T21:54:52.000Z",
+    "link": "https://t.me/sm1523/1871"
+  },
+  {
+    "id": "1873",
+    "title": "🎬 59. Higher Order Functions (Map)",
+    "date": "2026-11-04T21:55:15.000Z",
+    "link": "https://t.me/sm1523/1873"
+  },
+  {
+    "id": "1876",
+    "title": "🎬 60. Introduction to PySpark",
+    "date": "2026-11-04T21:55:33.000Z",
+    "link": "https://t.me/sm1523/1876"
+  },
+  {
+    "id": "1878",
+    "title": "🎬 61. Extract Customers Data - Simple JSON",
+    "date": "2026-11-04T21:57:18.000Z",
+    "link": "https://t.me/sm1523/1878"
+  },
+  {
+    "id": "1880",
+    "title": "🎬 62. Extract Orders Data - Complex JSON as Text",
+    "date": "2026-11-04T21:58:11.000Z",
+    "link": "https://t.me/sm1523/1880"
+  },
+  {
+    "id": "1882",
+    "title": "🎬 63. Extract Memberships Data - Binary File",
+    "date": "2026-11-04T21:58:57.000Z",
+    "link": "https://t.me/sm1523/1882"
+  },
+  {
+    "id": "1884",
+    "title": "🎬 64. Extract Addresses Data - TSV",
+    "date": "2026-11-04T21:59:43.000Z",
+    "link": "https://t.me/sm1523/1884"
+  },
+  {
+    "id": "1886",
+    "title": "🎬 65. Extract Payments Data - CSV",
+    "date": "2026-11-04T22:00:44.000Z",
+    "link": "https://t.me/sm1523/1886"
+  },
+  {
+    "id": "1888",
+    "title": "🎬 66. Extract Refunds Data - SQL Table via JDBC",
+    "date": "2026-11-04T22:01:23.000Z",
+    "link": "https://t.me/sm1523/1888"
+  },
+  {
+    "id": "1891",
+    "title": "🎬 67. Transform Customers Data",
+    "date": "2026-11-04T22:03:56.000Z",
+    "link": "https://t.me/sm1523/1891"
+  },
+  {
+    "id": "1893",
+    "title": "🎬 68. Transform Payments Data",
+    "date": "2026-11-04T22:05:01.000Z",
+    "link": "https://t.me/sm1523/1893"
+  },
+  {
+    "id": "1895",
+    "title": "🎬 69. Transform Refunds Data",
+    "date": "2026-11-04T22:05:48.000Z",
+    "link": "https://t.me/sm1523/1895"
+  },
+  {
+    "id": "1897",
+    "title": "🎬 70. Transform Memberships Data",
+    "date": "2026-11-04T22:06:20.000Z",
+    "link": "https://t.me/sm1523/1897"
+  },
+  {
+    "id": "1899",
+    "title": "🎬 71. Transform Addresses Data",
+    "date": "2026-11-04T22:07:17.000Z",
+    "link": "https://t.me/sm1523/1899"
+  },
+  {
+    "id": "1901",
+    "title": "🎬 72. Transform Orders Data - Convert String to JSON",
+    "date": "2026-11-04T22:08:34.000Z",
+    "link": "https://t.me/sm1523/1901"
+  },
+  {
+    "id": "1903",
+    "title": "🎬 73. Transform Orders Data - Explode Arrays",
+    "date": "2026-11-04T22:09:53.000Z",
+    "link": "https://t.me/sm1523/1903"
+  },
+  {
+    "id": "1905",
+    "title": "🎬 74. Join Customer Address",
+    "date": "2026-11-04T22:10:42.000Z",
+    "link": "https://t.me/sm1523/1905"
+  },
+  {
+    "id": "1907",
+    "title": "🎬 75. Month Order Summary",
+    "date": "2026-11-04T22:11:39.000Z",
+    "link": "https://t.me/sm1523/1907"
+  },
+  {
+    "id": "1910",
+    "title": "🎬 76. Structured Streaming - Introduction",
+    "date": "2026-11-04T22:11:55.000Z",
+    "link": "https://t.me/sm1523/1910"
+  },
+  {
+    "id": "1912",
+    "title": "🎬 77. Structured Streaming - Demo",
+    "date": "2026-11-04T22:12:59.000Z",
+    "link": "https://t.me/sm1523/1912"
+  },
+  {
+    "id": "1915",
+    "title": "🎬 78. Trigger & OutputMode",
+    "date": "2026-11-04T22:13:14.000Z",
+    "link": "https://t.me/sm1523/1915"
+  },
+  {
+    "id": "1917",
+    "title": "🎬 79. Checkpointing",
+    "date": "2026-11-04T22:13:26.000Z",
+    "link": "https://t.me/sm1523/1917"
+  },
+  {
+    "id": "1920",
+    "title": "🎬 80. [2026 Exam Update] Data Ingestion Overview",
+    "date": "2026-11-04T22:14:07.000Z",
+    "link": "https://t.me/sm1523/1920"
+  },
+  {
+    "id": "1922",
+    "title": "🎬 81. Introduction to Auto Loader",
+    "date": "2026-11-04T22:15:05.000Z",
+    "link": "https://t.me/sm1523/1922"
+  },
+  {
+    "id": "1925",
+    "title": "🎬 82. Auto Loader - File Options",
+    "date": "2026-11-04T22:16:06.000Z",
+    "link": "https://t.me/sm1523/1925"
+  },
+  {
+    "id": "1927",
+    "title": "🎬 83. Auto Loader - Schema Evolution",
+    "date": "2026-11-04T22:17:15.000Z",
+    "link": "https://t.me/sm1523/1927"
+  },
+  {
+    "id": "1929",
+    "title": "🎬 84. [2026 Exam Update] Streaming Ingestion with Kafka and Event Hubs",
+    "date": "2026-11-04T22:17:31.000Z",
+    "link": "https://t.me/sm1523/1929"
+  },
+  {
+    "id": "1931",
+    "title": "🎬 85. [2026 Exam Update] Lakeflow Connect - SaaS Connector Architecture",
+    "date": "2026-11-04T22:17:55.000Z",
+    "link": "https://t.me/sm1523/1931"
+  },
+  {
+    "id": "1933",
+    "title": "🎬 86. [2026 Exam Update] Lakeflow Connect - SaaS Connector Demo",
+    "date": "2026-11-04T22:19:02.000Z",
+    "link": "https://t.me/sm1523/1933"
+  },
+  {
+    "id": "1935",
+    "title": "🎬 87. [2026 Exam Update] Lakeflow Connect - Database Connector Architecture",
+    "date": "2026-11-04T22:19:23.000Z",
+    "link": "https://t.me/sm1523/1935"
+  },
+  {
+    "id": "1938",
+    "title": "🎬 88. Introduction to Delta Lake",
+    "date": "2026-11-04T22:19:45.000Z",
+    "link": "https://t.me/sm1523/1938"
+  },
+  {
+    "id": "1940",
+    "title": "🎬 89. Delta Transaction Log",
+    "date": "2026-11-04T22:20:47.000Z",
+    "link": "https://t.me/sm1523/1940"
+  },
+  {
+    "id": "1942",
+    "title": "🎬 90. Delta Lake Version History",
+    "date": "2026-11-04T22:21:16.000Z",
+    "link": "https://t.me/sm1523/1942"
+  },
+  {
+    "id": "1944",
+    "title": "🎬 91. Support for ACID Transactions",
+    "date": "2026-11-04T22:21:32.000Z",
+    "link": "https://t.me/sm1523/1944"
+  },
+  {
+    "id": "1946",
+    "title": "🎬 92. Create Delta Lake Table - Overview",
+    "date": "2026-11-04T22:21:48.000Z",
+    "link": "https://t.me/sm1523/1946"
+  },
+  {
+    "id": "1948",
+    "title": "🎬 93. Delta Lake Table & Column Properties",
+    "date": "2026-11-04T22:22:56.000Z",
+    "link": "https://t.me/sm1523/1948"
+  },
+  {
+    "id": "1950",
+    "title": "🎬 94. Create or Replace & CTAS Statements",
+    "date": "2026-11-04T22:23:43.000Z",
+    "link": "https://t.me/sm1523/1950"
+  },
+  {
+    "id": "1952",
+    "title": "🎬 95. Insert Overwrite & Partitioning",
+    "date": "2026-11-04T22:24:44.000Z",
+    "link": "https://t.me/sm1523/1952"
+  },
+  {
+    "id": "1954",
+    "title": "🎬 96. COPY INTO and MERGE Command",
+    "date": "2026-11-04T22:25:53.000Z",
+    "link": "https://t.me/sm1523/1954"
+  },
+  {
+    "id": "1958",
+    "title": "🎬 97. [2026 Update] DLT Renamed to Lakeflow Spark Declarative Pipelines (SDP)",
+    "date": "2026-11-04T22:26:10.000Z",
+    "link": "https://t.me/sm1523/1958"
+  },
+  {
+    "id": "1960",
+    "title": "🎬 98. Introduction to Lakeflow Spark Declarative Pipelines",
+    "date": "2026-11-04T22:26:34.000Z",
+    "link": "https://t.me/sm1523/1960"
+  },
+  {
+    "id": "1962",
+    "title": "🎬 99. Lakeflow Spark Declarative Pipelines Architecture",
+    "date": "2026-11-04T22:26:46.000Z",
+    "link": "https://t.me/sm1523/1962"
+  },
+  {
+    "id": "1964",
+    "title": "🎬 100. Programming with Lakeflow Spark Declarative Pipelines",
+    "date": "2026-11-04T22:27:08.000Z",
+    "link": "https://t.me/sm1523/1964"
+  },
+  {
+    "id": "1967",
+    "title": "🎬 101. Project Overview",
+    "date": "2026-11-04T22:27:21.000Z",
+    "link": "https://t.me/sm1523/1967"
+  },
+  {
+    "id": "1969",
+    "title": "🎬 102. Cluster Configuration & Azure VM Quota",
+    "date": "2026-11-04T22:27:59.000Z",
+    "link": "https://t.me/sm1523/1969"
+  },
+  {
+    "id": "1971",
+    "title": "🎬 103. Project Environment Set-up",
+    "date": "2026-11-04T22:28:52.000Z",
+    "link": "https://t.me/sm1523/1971"
+  },
+  {
+    "id": "1974",
+    "title": "🎬 104. Introduction to Streaming Tables - Ingest Customer Data (SQL)",
+    "date": "2026-11-04T22:29:27.000Z",
+    "link": "https://t.me/sm1523/1974"
+  },
+  {
+    "id": "1976",
+    "title": "🎬 105. Recent Changes to the User Interface [Please Watch]",
+    "date": "2026-11-04T22:29:47.000Z",
+    "link": "https://t.me/sm1523/1976"
+  },
+  {
+    "id": "1978",
+    "title": "🎬 106. Introduction to SDP Pipelines - Create CircuitBox Pipeline",
+    "date": "2026-11-04T22:30:53.000Z",
+    "link": "https://t.me/sm1523/1978"
+  },
+  {
+    "id": "1980",
+    "title": "🎬 107. Introduction to SDP Expectations - Validate Customers Data (SQL)",
+    "date": "2026-11-04T22:32:35.000Z",
+    "link": "https://t.me/sm1523/1980"
+  },
+  {
+    "id": "1982",
+    "title": "🎬 108. Introduction to Apply Changes - Customers Type 1 SCD Table (SQL)",
+    "date": "2026-11-04T22:33:47.000Z",
+    "link": "https://t.me/sm1523/1982"
+  },
+  {
+    "id": "1984",
+    "title": "🎬 109. Creating SDP Datasets - Ingest Addresses Data (Python)",
+    "date": "2026-11-04T22:34:29.000Z",
+    "link": "https://t.me/sm1523/1984"
+  },
+  {
+    "id": "1986",
+    "title": "🎬 110. Implementing SDP Expectations - Validate Addresses Data (Python)",
+    "date": "2026-11-04T22:35:35.000Z",
+    "link": "https://t.me/sm1523/1986"
+  },
+  {
+    "id": "1988",
+    "title": "🎬 111. Implementing Slowly Changing Dimensions - Addresses Type 2 SCD Table (Python)",
+    "date": "2026-11-04T22:36:38.000Z",
+    "link": "https://t.me/sm1523/1988"
+  },
+  {
+    "id": "1990",
+    "title": "🎬 112. Process Orders Data - Assignment",
+    "date": "2026-11-04T22:37:46.000Z",
+    "link": "https://t.me/sm1523/1990"
+  },
+  {
+    "id": "1992",
+    "title": "🎬 113. Introduction to Materialized Views - Create Customer Order Summary",
+    "date": "2026-11-04T22:39:01.000Z",
+    "link": "https://t.me/sm1523/1992"
+  },
+  {
+    "id": "1996",
+    "title": "🎬 115. Introduction to Lakeflow Jobs",
+    "date": "2026-11-04T22:40:15.000Z",
+    "link": "https://t.me/sm1523/1996"
+  },
+  {
+    "id": "1998",
+    "title": "🎬 116. Introduction to Tasks",
+    "date": "2026-11-04T22:41:07.000Z",
+    "link": "https://t.me/sm1523/1998"
+  },
+  {
+    "id": "2000",
+    "title": "🎬 117. Create a Lakeflow Job",
+    "date": "2026-11-04T22:42:03.000Z",
+    "link": "https://t.me/sm1523/2000"
+  },
+  {
+    "id": "2004",
+    "title": "🎬 118. Running & Monitoring Jobs",
+    "date": "2026-11-04T22:43:03.000Z",
+    "link": "https://t.me/sm1523/2004"
+  },
+  {
+    "id": "2006",
+    "title": "🎬 119. Schedule & Event Triggers",
+    "date": "2026-11-04T22:43:32.000Z",
+    "link": "https://t.me/sm1523/2006"
+  },
+  {
+    "id": "2008",
+    "title": "🎬 120. Debug a failed job",
+    "date": "2026-11-04T22:44:13.000Z",
+    "link": "https://t.me/sm1523/2008"
+  },
+  {
+    "id": "2010",
+    "title": "🎬 121. Complex Triggers using CRON",
+    "date": "2026-11-04T22:44:35.000Z",
+    "link": "https://t.me/sm1523/2010"
+  },
+  {
+    "id": "2014",
+    "title": "🎬 122. Introduction to Data Governance",
+    "date": "2026-11-04T22:44:50.000Z",
+    "link": "https://t.me/sm1523/2014"
+  },
+  {
+    "id": "2016",
+    "title": "🎬 123. Data Governance using Unity Catalog",
+    "date": "2026-11-04T22:45:09.000Z",
+    "link": "https://t.me/sm1523/2016"
+  },
+  {
+    "id": "2018",
+    "title": "🎬 124. Data Discovery, Audit & Lineage Demo",
+    "date": "2026-11-04T22:46:05.000Z",
+    "link": "https://t.me/sm1523/2018"
+  },
+  {
+    "id": "2020",
+    "title": "🎬 125. Data Access Control & Security",
+    "date": "2026-11-04T22:46:54.000Z",
+    "link": "https://t.me/sm1523/2020"
+  },
+  {
+    "id": "2024",
+    "title": "🎬 127. [2026 Exam Update] Data-Level Security Overview",
+    "date": "2026-11-04T22:47:19.000Z",
+    "link": "https://t.me/sm1523/2024"
+  },
+  {
+    "id": "2026",
+    "title": "🎬 128. [2026 Exam Update] Data-Level Security Using Dynamic Views",
+    "date": "2026-11-04T22:48:14.000Z",
+    "link": "https://t.me/sm1523/2026"
+  },
+  {
+    "id": "2028",
+    "title": "🎬 129. [2026 Exam Update] Data-Level Security Using Row Filters and Column Masks",
+    "date": "2026-11-04T22:49:12.000Z",
+    "link": "https://t.me/sm1523/2028"
+  },
+  {
+    "id": "2030",
+    "title": "🎬 130. [2026 Exam Update] Data-Level Security Using ABAC Policies and Governed Tags",
+    "date": "2026-11-04T22:50:49.000Z",
+    "link": "https://t.me/sm1523/2030"
+  },
+  {
+    "id": "2033",
+    "title": "🎬 131. Introduction to Delta Sharing",
+    "date": "2026-11-04T22:51:21.000Z",
+    "link": "https://t.me/sm1523/2033"
+  },
+  {
+    "id": "2035",
+    "title": "🎬 132. Databricks to Databricks Delta Sharing Demo",
+    "date": "2026-11-04T22:52:16.000Z",
+    "link": "https://t.me/sm1523/2035"
+  },
+  {
+    "id": "2037",
+    "title": "🎬 133. Databricks Open Delta Sharing Demo",
+    "date": "2026-11-04T22:52:44.000Z",
+    "link": "https://t.me/sm1523/2037"
+  },
+  {
+    "id": "2040",
+    "title": "🎬 134. Introduction to Lakehouse Federation",
+    "date": "2026-11-04T22:53:03.000Z",
+    "link": "https://t.me/sm1523/2040"
+  },
+  {
+    "id": "2042",
+    "title": "🎬 135. Lakehouse Federation Demo",
+    "date": "2026-11-04T22:54:08.000Z",
+    "link": "https://t.me/sm1523/2042"
+  },
+  {
+    "id": "2045",
+    "title": "🎬 136. [2026 Exam Update] Understanding Spark Execution in Databricks",
+    "date": "2026-11-04T22:54:25.000Z",
+    "link": "https://t.me/sm1523/2045"
+  },
+  {
+    "id": "2047",
+    "title": "🎬 137. [2026 Exam Update] Understanding Data Scanning and Small File Problems",
+    "date": "2026-11-04T22:54:42.000Z",
+    "link": "https://t.me/sm1523/2047"
+  },
+  {
+    "id": "2049",
+    "title": "🎬 138. [2026 Exam Update]Understanding Shuffle Operations, Data Skew, and Disk Spilling",
+    "date": "2026-11-04T22:55:01.000Z",
+    "link": "https://t.me/sm1523/2049"
+  },
+  {
+    "id": "2052",
+    "title": "🎬 139. [2026 Exam Update] Understanding Delta Lake Optimization Concepts",
+    "date": "2026-11-04T22:55:16.000Z",
+    "link": "https://t.me/sm1523/2052"
+  },
+  {
+    "id": "2054",
+    "title": "🎬 140. Compaction - OPTIMIZE and ZORDER",
+    "date": "2026-11-04T22:56:17.000Z",
+    "link": "https://t.me/sm1523/2054"
+  },
+  {
+    "id": "2056",
+    "title": "🎬 141. Liquid Clustering",
+    "date": "2026-11-04T22:56:35.000Z",
+    "link": "https://t.me/sm1523/2056"
+  },
+  {
+    "id": "2058",
+    "title": "🎬 142. Remove Unused Files - VACUUM",
+    "date": "2026-11-04T22:57:21.000Z",
+    "link": "https://t.me/sm1523/2058"
+  },
+  {
+    "id": "2060",
+    "title": "🎬 143. [2026 Exam Update] Understanding Predictive Optimization",
+    "date": "2026-11-04T22:57:37.000Z",
+    "link": "https://t.me/sm1523/2060"
+  },
+  {
+    "id": "2063",
+    "title": "🎬 144. Introduction to Databricks Connect",
+    "date": "2026-11-04T22:57:52.000Z",
+    "link": "https://t.me/sm1523/2063"
+  },
+  {
+    "id": "2065",
+    "title": "🎬 145. Local Development Environment Set-up",
+    "date": "2026-11-04T22:58:46.000Z",
+    "link": "https://t.me/sm1523/2065"
+  },
+  {
+    "id": "2069",
+    "title": "🎬 146. Databricks Connect Set-up",
+    "date": "2026-11-04T22:59:32.000Z",
+    "link": "https://t.me/sm1523/2069"
+  },
+  {
+    "id": "2073",
+    "title": "🎬 147. Introduction to Databricks Automation Bundles (DABs)",
+    "date": "2026-11-04T22:59:50.000Z",
+    "link": "https://t.me/sm1523/2073"
+  },
+  {
+    "id": "2075",
+    "title": "🎬 148. Structure of Databricks Automation Bundles (DABs)",
+    "date": "2026-11-04T23:00:02.000Z",
+    "link": "https://t.me/sm1523/2075"
+  },
+  {
+    "id": "2077",
+    "title": "🎬 149. Deployment to Databricks Workspaces - Demo",
+    "date": "2026-11-04T23:00:54.000Z",
+    "link": "https://t.me/sm1523/2077"
+  },
+  {
+    "id": "2084",
+    "title": "🎬 151. Databricks SQL Warehouse Overview",
+    "date": "2026-11-04T23:01:22.000Z",
+    "link": "https://t.me/sm1523/2084"
+  },
+  {
+    "id": "2086",
+    "title": "🎬 152. Create SQL Warehouse",
+    "date": "2026-11-04T23:02:18.000Z",
+    "link": "https://t.me/sm1523/2086"
+  },
+  {
+    "id": "2088",
+    "title": "🎬 153. Databricks SQL - Query & Visualization",
+    "date": "2026-11-04T23:02:51.000Z",
+    "link": "https://t.me/sm1523/2088"
+  },
+  {
+    "id": "2090",
+    "title": "🎬 154. Databricks - SQL Alerts",
+    "date": "2026-11-04T23:03:20.000Z",
+    "link": "https://t.me/sm1523/2090"
+  },
+  {
+    "id": "2094",
+    "title": "🎬 155. Disclaimer & Use of Practice Exams",
+    "date": "2026-11-04T23:03:36.000Z",
+    "link": "https://t.me/sm1523/2094"
+  },
+  {
+    "id": "2096",
+    "title": "🎬 156. [2026 Exam Update] Certification Exam Overview",
+    "date": "2026-11-04T23:04:14.000Z",
+    "link": "https://t.me/sm1523/2096"
+  },
+  {
+    "id": "2099",
+    "title": "🎬 157. Good Luck",
+    "date": "2026-11-04T23:04:24.000Z",
+    "link": "https://t.me/sm1523/2099"
   }
 ]

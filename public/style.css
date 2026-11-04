@@ -356,6 +356,31 @@ select.status-select {
 
 .badge-deep { color: #c9a0ff; font-weight: 500; }
 
+/* Roadmap items → lessons of the Databricks course (Telegram links) */
+.course-links {
+  display: inline-block; /* not block, so a ticked item's line-through doesn't cross it out */
+  width: 100%;
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-left: 3px solid #3d6f99;
+  border-radius: 0 6px 6px 0;
+  background: rgba(77, 163, 255, 0.06);
+}
+.course-links-heading {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.course-ref { display: block; padding: 2px 0; font-size: 0.85rem; }
+.course-note { display: block; color: var(--muted); font-size: 0.8rem; }
+.course-fit { color: var(--muted); font-size: 0.75rem; font-style: italic; }
+.badge-theory { color: #4da3ff; }
+.badge-lab { color: #6fd08c; }
+
 .notes {
   width: 100%;
   background: var(--card);

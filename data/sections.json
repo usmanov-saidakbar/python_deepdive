@@ -50,5 +50,56 @@
       { "name": "📂 11. Python Updates", "count": 3 },
       { "name": "📂 12. Extras", "count": 2 }
     ]
+  },
+  {
+    "part": "🎓 Python 3 Deep Dive (Part 4 - OOP)",
+    "sections": [
+      { "name": "📂 01. Introduction", "count": 2 },
+      { "name": "📂 02. Classes", "count": 32 },
+      { "name": "📂 03. Project 1", "count": 11 },
+      { "name": "📂 04. Polymorphism and Special Methods", "count": 17 },
+      { "name": "📂 05. Project 2", "count": 2 },
+      { "name": "📂 06. Single Inheritance", "count": 15 },
+      { "name": "📂 07. Project 3", "count": 7 },
+      { "name": "📂 08. Descriptors", "count": 21 },
+      { "name": "📂 09. Project 4", "count": 3 },
+      { "name": "📂 10. Enumerations", "count": 10 },
+      { "name": "📂 11. Project 5", "count": 2 },
+      { "name": "📂 12. Exceptions (Single Inheritance)", "count": 9 },
+      { "name": "📂 13. Project 6", "count": 2 },
+      { "name": "📂 14. Metaprogramming", "count": 29 },
+      { "name": "📂 15. Python Updates", "count": 3 }
+    ]
+  },
+  {
+    "part": "🎓 Databricks Certified Data Engineer Associate (Databricks DE)",
+    "sections": [
+      { "name": "📂 01. Course Introduction", "count": 3 },
+      { "name": "📂 02. Azure Subscription", "count": 2 },
+      { "name": "📂 03. Databricks Lakehouse Platform", "count": 5 },
+      { "name": "📂 04. Databricks Workspace Components", "count": 11 },
+      { "name": "📂 05. Introduction to Unity Catalog", "count": 6 },
+      { "name": "📂 06. Apache Spark - Overview", "count": 4 },
+      { "name": "📂 07. Apache Spark - Querying Data (SQL)", "count": 9 },
+      { "name": "📂 08. Apache Spark - Transforming Data (SQL)", "count": 14 },
+      { "name": "📂 09. Apache Spark - Querying Data (PySpark)", "count": 7 },
+      { "name": "📂 10. Apache Spark - Transforming Data (PySpark)", "count": 9 },
+      { "name": "📂 11. Apache Spark - Structured Streaming", "count": 4 },
+      { "name": "📂 12. [2026 Exam Update] Lakeflow Connect", "count": 8 },
+      { "name": "📂 13. Delta Lake", "count": 9 },
+      { "name": "📂 14. Lakeflow Spark Declarative Pipelines (SDP) - Overview", "count": 4 },
+      { "name": "📂 15. Lakeflow Spark Declarative Pipelines (SDP) - Project", "count": 13 },
+      { "name": "📂 16. Lakeflow Jobs", "count": 7 },
+      { "name": "📂 17. Data Governance", "count": 4 },
+      { "name": "📂 18. [2026 Exam Update] Data-Level Security", "count": 4 },
+      { "name": "📂 19. Delta Sharing & Lakehouse Federation", "count": 5 },
+      { "name": "📂 20. [2026 Exam Update] Spark Performance Optimization", "count": 3 },
+      { "name": "📂 21. [2026 Exam Update] Delta Lake Performance Optimization", "count": 5 },
+      { "name": "📂 22. Databricks Connect", "count": 3 },
+      { "name": "📂 23. Databricks Automation Bundles (DABs)", "count": 3 },
+      { "name": "📂 24. Databricks SQL Warehouse", "count": 4 },
+      { "name": "📂 25. [2026 Exam Update] Certification Exam Guide & Practice Exam", "count": 2 },
+      { "name": "📂 26. Next Steps", "count": 1 }
+    ]
   }
 ]

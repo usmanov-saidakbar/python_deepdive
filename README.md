@@ -9,6 +9,11 @@ that progress server-side so it follows you to other devices.
 
 - `login.js` — run **once**, by you, in your own terminal. Logs in to your
   Telegram account and prints a session string.
+- `upload.js` — uses that session to post a local course folder (a Udemy
+  download, one subfolder per section) to the channel, reproducing the
+  exact message pattern already used for Parts 1-3: a part intro, a header
+  per section, then each lesson's video followed by its resource files
+  (subtitles/slides/notebooks). Run it yourself; see below.
 - `sync.js` — uses that session to read the channel's message history and
   pull out every video (message id, caption as title, date, and a direct
   `t.me/<channel>/<id>` link).
@@ -46,7 +51,41 @@ password if you have one set. When it finishes it prints a long
 line). That session string is equivalent to being logged into your account,
 so keep `.env` private (it's already git-ignored).
 
-## 2. Pull the video list
+## 2. Upload a new course part to the channel (optional)
+
+Only needed when you have a new part's files locally and want to post them
+to the channel. Skip straight to step 3 if the channel already has
+everything and you just want to sync.
+
+```bash
+npm run upload -- --dir "D:\Udemy - Python 3 Deep Dive (Part 4 - OOP) (12.2022)" --part 4 --subtitle "OOP" --dry-run
+```
+
+A course that isn't one of the Python parts goes in with `--course` and no
+`--part`, e.g. the Databricks one:
+
+```bash
+npm run upload -- --dir "<folder>" --course "Databricks Certified Data Engineer Associate" --subtitle "Databricks DE" --dry-run
+npm run upload -- --dir "<folder>" --course "Databricks Certified Data Engineer Associate" --subtitle "Databricks DE" --sections-json
+```
+
+`--sections-json` prints the entry to paste into `data/sections.json` (the
+website groups the synced videos by it). The text in the last parentheses
+of the course title ("Databricks DE") becomes its tab on the course page.
+
+`--dir` is the course folder (its subfolders are the sections, each named
+like `01 - Introduction` or `1 - Introduction`; files like `001 Title.mp4` or
+`1. Title.mp4`). Always run with `--dry-run` first and read
+through the captions it prints — nothing is sent to Telegram in that mode.
+Once it looks right, drop `--dry-run` to actually post everything. It's
+slow (165 real video uploads for Part 4) and can take a long time; if it
+gets interrupted, resume with `--from-section N --from-lesson N` instead
+of starting over — the log lines it prints while running tell you exactly
+where to resume from. After it finishes, add that part's section/video
+counts to `data/sections.json` (if not already there) and move on to step
+3 to pull the new messages into `data/content.json`.
+
+## 3. Pull the video list
 
 ```bash
 npm run sync
@@ -58,7 +97,15 @@ session. Whenever the channel has new videos, run `npm run sync` again
 locally, then `git add data/content.json && git commit && git push` to
 update the live site.
 
-## 3. Set up progress storage (Upstash, free)
+`sync` reads the newest `TG_FETCH_LIMIT` messages of the channel (default
+10000), and **every message counts, not just videos**: each video usually
+comes with a header or a few resource files (the channel had about 2,100
+messages for 695 videos after the Databricks course). If the channel grows
+past the limit, the oldest messages (the start of Part 1) silently drop out
+and every course after it shifts. Keep `TG_FETCH_LIMIT` comfortably above the
+channel's message count.
+
+## 4. Set up progress storage (Upstash, free)
 
 1. Create a free account at https://upstash.com and a new Redis database
    (any region close to you).
@@ -69,7 +116,7 @@ update the live site.
 Without this, the site still works — browsing, search, tabs — it just can't
 save anyone's progress.
 
-## 4. Run it locally
+## 5. Run it locally
 
 ```bash
 npm start
@@ -158,6 +205,20 @@ shows which study day today is; weekends count as catch-up time.
   feed the coverage panel). Text can mark code with `backticks`. Edit the file
   directly to add or change items; keep each item's `id` stable so saved
   checkmarks still line up.
+- **Databricks course links.** `data/course-links.json` maps roadmap item ids
+  (the theory topics and each day's lab notebook) to lessons of the Databricks
+  Data Engineer Associate course in the channel. Each entry gives the
+  lesson's section number `s`, lesson number `l` and `title`, a `kind`
+  (`theory` = lecture, `lab` = hands-on demo), a `fit` (`match`, `intro` =
+  the course only touches the topic, `background` = related, not the same
+  topic) and a one-line `note`. The page (`/api/course-links` plus
+  `/api/content`) turns them into Telegram links shown in a blue box under the
+  item; an entry shows only when that video is synced and its title matches,
+  so nothing links to the wrong lesson. They were matched by reading the
+  lesson transcripts against the checklist questions. Many topics here have
+  no link because the course (a certification prep) doesn't teach them:
+  Catalyst, Tungsten, lazy evaluation, RDDs, join algorithms, salting, memory
+  regions, caching, driver OOM, Change Data Feed and watermarks.
 - The previous 15-day roadmap is in git history (`git show
   2dfe373:data/roadmap.json`). Its checkmarks and notes stay in saved progress
   but no longer show, because the new item ids and note keys start with `v2-`.

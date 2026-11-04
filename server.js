@@ -13,6 +13,7 @@ const DATA_FILE = path.join(__dirname, "data", "content.json");
 const SECTIONS_FILE = path.join(__dirname, "data", "sections.json");
 const ROADMAP_FILE = path.join(__dirname, "data", "roadmap.json");
 const GIS_ROADMAP_FILE = path.join(__dirname, "data", "gis-roadmap.json");
+const COURSE_LINKS_FILE = path.join(__dirname, "data", "course-links.json");
 
 // Progress storage: keyed by whatever email the visitor typed in, with no
 // password check. This is a convenience identifier, not authentication —
@@ -94,6 +95,16 @@ app.get("/api/roadmap", (req, res) => {
     res.json(JSON.parse(fs.readFileSync(ROADMAP_FILE, "utf8")));
   } catch {
     res.json([]);
+  }
+});
+
+// Which course lessons (by section + lesson number) go with which roadmap item.
+// The page turns them into Telegram links using /api/content.
+app.get("/api/course-links", (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(COURSE_LINKS_FILE, "utf8")));
+  } catch {
+    res.json({ course: "", items: {} });
   }
 });
 
