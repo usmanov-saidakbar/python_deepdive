@@ -1,4 +1,18 @@
 const EMAIL_KEY = "course-tracker-email";
+
+// One script serves every course page. Attributes on <body> set what a page shows:
+//   data-course   keep only the parts whose name contains this text
+//   data-exclude  drop the parts whose name contains this text
+//   data-progress the progress API route (each page keeps its own map)
+const PAGE = document.body.dataset;
+const PROGRESS_API = PAGE.progress || "/api/progress";
+
+function keepPart(part) {
+  if (PAGE.course && !part.part.includes(PAGE.course)) return false;
+  if (PAGE.exclude && part.part.includes(PAGE.exclude)) return false;
+  return true;
+}
+
 const STATUSES = [
   { value: "not_watched", label: "Not watched" },
   { value: "in_progress", label: "In progress" },
@@ -27,7 +41,7 @@ async function loadProgress() {
     return;
   }
   try {
-    const res = await fetch(`/api/progress/${encodeURIComponent(email)}`);
+    const res = await fetch(`${PROGRESS_API}/${encodeURIComponent(email)}`);
     if (!res.ok) throw new Error(`status ${res.status}`);
     statuses = await res.json();
   } catch (err) {
@@ -48,7 +62,7 @@ function persistProgress() {
   if (!email) return persistChain;
   const targetEmail = email;
   persistChain = persistChain.then(() =>
-    fetch(`/api/progress/${encodeURIComponent(targetEmail)}`, {
+    fetch(`${PROGRESS_API}/${encodeURIComponent(targetEmail)}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(statuses),
@@ -174,6 +188,8 @@ function tabLabel(partName) {
 function renderTabs() {
   const tabsEl = document.getElementById("tabs");
   tabsEl.innerHTML = "";
+  // A page with a single course has nothing to switch between.
+  tabsEl.style.display = allParts.length > 1 ? "" : "none";
 
   allParts.forEach((part, i) => {
     const btn = document.createElement("button");
@@ -268,7 +284,8 @@ function applyFilter() {
   if (total === 0) {
     statusEl.textContent = "No videos found yet. The server may still be syncing — refresh in a bit.";
   } else if (query) {
-    statusEl.textContent = `${filteredTotal} of ${total} videos (searching all courses)`;
+    statusEl.textContent =
+      allParts.length > 1 ? `${filteredTotal} of ${total} videos (searching all courses)` : `${filteredTotal} of ${total} videos`;
   } else {
     statusEl.textContent = `${filteredTotal} videos`;
   }
@@ -289,7 +306,8 @@ async function main() {
 
   try {
     const [content] = await Promise.all([fetch("/api/content").then((r) => r.json()), loadProgress()]);
-    allParts = content;
+    allParts = content.filter(keepPart);
+    if (allParts.length === 1) document.getElementById("search").placeholder = "Search lessons…";
     refresh();
     if (progressError) statusEl.textContent = progressError;
   } catch (err) {

@@ -157,6 +157,7 @@ function progressRoutes(route, keyPrefix) {
 }
 
 progressRoutes("/api/progress", "progress");
+progressRoutes("/api/databricks-progress", "databricks");
 progressRoutes("/api/roadmap-progress", "roadmap");
 progressRoutes("/api/gis-progress", "gis");
 progressRoutes("/api/russian-progress", "russian");

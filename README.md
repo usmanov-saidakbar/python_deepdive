@@ -71,7 +71,9 @@ npm run upload -- --dir "<folder>" --course "Databricks Certified Data Engineer 
 
 `--sections-json` prints the entry to paste into `data/sections.json` (the
 website groups the synced videos by it). The text in the last parentheses
-of the course title ("Databricks DE") becomes its tab on the course page.
+of the course title ("Databricks DE") becomes its tab label. The Databricks
+course has its own page (`/databricks.html`); see "Databricks Course tab"
+below for how a page picks its course.
 
 `--dir` is the course folder (its subfolders are the sections, each named
 like `01 - Introduction` or `1 - Introduction`; files like `001 Title.mp4` or
@@ -165,6 +167,21 @@ walkthrough for either.
 - Progress endpoints: `GET /api/progress/:email` and
   `PUT /api/progress/:email` (body: the full status map). Both 503 if Upstash
   isn't configured.
+
+## Databricks Course tab
+
+`/databricks.html` (the "Databricks Course" tab) lists the 149 lessons of the
+Databricks Data Engineer Associate course by section, with the same search and
+Not watched / In progress / Done menu as the Python Deep Dive page. Both pages
+run the same `app.js`; attributes on `<body>` choose what each shows:
+
+- `data-course="Databricks"` keeps only the parts whose name contains that text.
+- `data-exclude="Databricks"` (on `index.html`) drops them, so the Python page
+  shows Python parts only. A new course gets its own page by copying
+  `databricks.html` and changing these attributes.
+- `data-progress="/api/databricks-progress"` is the page's progress route.
+  Progress is saved under `databricks:<email>` in Upstash via `GET`/`PUT
+  /api/databricks-progress/:email`, separate from the Python page's.
 
 ## Spark Roadmap tab
 
