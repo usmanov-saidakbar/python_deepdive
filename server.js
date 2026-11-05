@@ -14,6 +14,7 @@ const SECTIONS_FILE = path.join(__dirname, "data", "sections.json");
 const ROADMAP_FILE = path.join(__dirname, "data", "roadmap.json");
 const GIS_ROADMAP_FILE = path.join(__dirname, "data", "gis-roadmap.json");
 const RUSSIAN_ROADMAP_FILE = path.join(__dirname, "data", "russian-roadmap.json");
+const RUSSIAN_DAYS_FILE = path.join(__dirname, "data", "russian-days.json");
 const COURSE_LINKS_FILE = path.join(__dirname, "data", "course-links.json");
 
 // Progress storage: keyed by whatever email the visitor typed in, with no
@@ -122,6 +123,15 @@ app.get("/api/russian-roadmap", (req, res) => {
     res.json(JSON.parse(fs.readFileSync(RUSSIAN_ROADMAP_FILE, "utf8")));
   } catch {
     res.json({ stages: [], sources: [] });
+  }
+});
+
+// The 300-day plan for the Russian roadmap: one checklist per day.
+app.get("/api/russian-days", (req, res) => {
+  try {
+    res.json(JSON.parse(fs.readFileSync(RUSSIAN_DAYS_FILE, "utf8")));
+  } catch {
+    res.json({ days: [] });
   }
 });
 

@@ -1,8 +1,10 @@
 const EMAIL_KEY = "course-tracker-email";
 const LOCAL_KEY = "russian-roadmap-progress";
 const TAB_KEY = "russian-roadmap-tab";
-const PLAN_MONTHS = 10;
-const REVIEW_MONTHS = [2, 4, 6, 8, 10];
+const DAY_KEY = "russian-roadmap-day";
+const PLAN_DAYS = 300;
+// Self-assessment days: day 29 of every second month (the review day).
+const REVIEW_DAYS = [59, 119, 179, 239, 299];
 
 // A topic's depth level decides which steps it needs (see "How to use this roadmap").
 const LEVELS = {
@@ -17,15 +19,30 @@ const STEPS = {
   speak: { label: "Speak", hint: "Said 10+ sentences of your own with it, and used it in a conversation" },
   auto: { label: "Automatic", hint: "It came out right in unplanned speech: a whole conversation without a correction on it" },
 };
+const KINDS = {
+  setup: "Setup",
+  anki: "Anki",
+  grammar: "Grammar",
+  input: "Listen",
+  speak: "Speak",
+  write: "Write",
+  review: "Review",
+  test: "Test",
+  project: "Project",
+};
 
 // Same email-keyed storage as the other pages, under its own server key.
 // progress = { checked: { [key]: true }, notes: { [key]: "..." }, startDate: "YYYY-MM-DD" }
-// Keys: "<topicId>:<step>", "<selfCheckId>:r<round>", "<projectId>:<step>", or "<checkId>".
+// Keys: "<topicId>:<step>", "<selfCheckId>:r<round>", "<projectId>:<step>", "<checkId>", or a daily
+// task's own id ("d37-speak"). A daily task with `keys` ticks those keys instead, so the
+// 300-day plan and the stage checklists share one set of checkmarks.
 let email = "";
 let progress = emptyProgress();
 let progressError = "";
 let plan = { stages: [], sources: [], selfCheckRounds: [], projectSteps: [] };
+let days = [];
 let activeStage = "s0";
+let activeDay = 1;
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -135,10 +152,6 @@ function stageKeys(stage) {
   return [...new Set(keys)];
 }
 
-function allKeys() {
-  return [...new Set(plan.stages.flatMap(stageKeys))];
-}
-
 function countChecked(keys) {
   return keys.filter((key) => progress.checked[key]).length;
 }
@@ -154,73 +167,98 @@ function topicDone(topic) {
 }
 
 function setChecked(key, on) {
-  if (on) progress.checked[key] = true;
-  else delete progress.checked[key];
+  setKeys([key], on);
+}
+
+function setKeys(keys, on) {
+  keys.forEach((key) => {
+    if (on) progress.checked[key] = true;
+    else delete progress.checked[key];
+  });
   persistProgress();
   refresh();
 }
 
-// ---------------------------------------------------------------- plan position
-
-function addMonths(date, months) {
-  const d = new Date(date);
-  d.setMonth(d.getMonth() + months);
-  return d;
+// A daily task is done when all its keys are ticked (its own id when it has none).
+function taskKeys(task) {
+  return task.keys && task.keys.length ? task.keys : [task.id];
 }
+
+function taskDone(task) {
+  return taskKeys(task).every((key) => progress.checked[key]);
+}
+
+function dayCounts(day) {
+  const done = day.items.filter(taskDone).length;
+  return { done, total: day.items.length };
+}
+
+// ---------------------------------------------------------------- plan position
 
 function formatDate(date) {
   return date.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
 }
 
-// Where today falls in the 10 months: null, { before: days }, or { month, firstWeek, stages }.
-function planPosition() {
+function startDate() {
   if (!progress.startDate) return null;
-  const start = new Date(progress.startDate + "T00:00:00");
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  if (today < start) return { before: Math.round((start - today) / 86400000) };
-  let elapsed = (today.getFullYear() - start.getFullYear()) * 12 + today.getMonth() - start.getMonth();
-  if (today.getDate() < start.getDate()) elapsed--;
-  const month = elapsed + 1;
-  const firstWeek = today - start < 7 * 86400000;
-  const stages = firstWeek
-    ? ["s0"]
-    : plan.stages.filter((s) => s.months && s.key !== "s0" && s.months[0] <= month && month <= s.months[1]).map((s) => s.key);
-  return { month, firstWeek, stages, start };
+  const [y, m, d] = progress.startDate.split("-").map(Number);
+  return new Date(y, m - 1, d);
+}
+
+// Day 1 is the start date. Counted on calendar dates, so clock changes can't shift it.
+function todayNumber() {
+  const start = startDate();
+  if (!start) return null;
+  const now = new Date();
+  const diff = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate()) - Date.UTC(start.getFullYear(), start.getMonth(), start.getDate());
+  return Math.round(diff / 86400000) + 1;
+}
+
+function dateOfDay(n) {
+  const d = startDate();
+  d.setDate(d.getDate() + n - 1);
+  return d;
+}
+
+function monthOfDay(n) {
+  return Math.ceil(n / 30);
+}
+
+function stageOfDay(n) {
+  const day = days[n - 1];
+  return day ? plan.stages.find((s) => s.key === day.stage) : null;
 }
 
 function renderStartDate() {
   const input = document.getElementById("start-date");
   input.value = progress.startDate || "";
   const hint = document.getElementById("today-hint");
-  const position = planPosition();
-  if (!position) {
-    hint.textContent = "Set it to see which month and stage you're in.";
+  const n = todayNumber();
+  if (n === null) {
+    hint.textContent = "Set it to see which day of the plan today is.";
     return;
   }
-  if (position.before) {
-    hint.textContent = `Starts in ${position.before} day${position.before === 1 ? "" : "s"}.`;
+  if (n < 1) {
+    hint.textContent = `Starts in ${1 - n} day${1 - n === 1 ? "" : "s"}.`;
     return;
   }
-  if (position.month > PLAN_MONTHS) {
-    hint.textContent = `The ${PLAN_MONTHS} months are over: finish your open items, take the second mock again and redo the self-assessment.`;
+  if (n > PLAN_DAYS) {
+    hint.textContent = `All ${PLAN_DAYS} days are behind you: finish your open tasks, take a mock again and redo the self-assessment.`;
     return;
   }
-  const names = position.stages.map((key) => {
-    const stage = plan.stages.find((s) => s.key === key);
-    return `${stage.tab}: ${stage.title}`;
-  });
-  const nextRound = REVIEW_MONTHS.find((m) => m >= position.month);
-  const review = nextRound
-    ? ` Next self-assessment (Stage 0, "Month ${nextRound}"): ${formatDate(addMonths(position.start, nextRound))}.`
-    : "";
-  hint.textContent = `Month ${position.month} of ${PLAN_MONTHS} · ${names.join(" → ")}.${review}`;
+  const stage = stageOfDay(n);
+  const next = REVIEW_DAYS.find((d) => d >= n);
+  const review = next ? ` Next self-assessment: day ${next} (${formatDate(dateOfDay(next))}).` : "";
+  hint.textContent = `Today is day ${n} of ${PLAN_DAYS} · month ${monthOfDay(n)} · ${stage ? `${stage.tab}: ${stage.title}` : ""}.${review}`;
 }
 
 function todayStages() {
-  const position = planPosition();
-  if (!position || position.before || position.month > PLAN_MONTHS) return [];
-  return position.stages;
+  const n = todayNumber();
+  if (n === null || n < 1 || n > PLAN_DAYS) return [];
+  const keys = n <= 7 ? ["s0"] : [];
+  const stage = stageOfDay(n);
+  if (stage) keys.push(stage.key);
+  return keys;
 }
 
 // ---------------------------------------------------------------- rendering helpers
@@ -237,17 +275,18 @@ function renderProgressBar(done, total, unit = "steps") {
 }
 
 function renderOverallProgress() {
-  const keys = allKeys();
   const holder = document.getElementById("overall-progress");
   holder.innerHTML = "";
-  if (keys.length === 0) return;
-  holder.appendChild(renderProgressBar(countChecked(keys), keys.length));
+  const tasks = days.flatMap((day) => day.items);
+  if (tasks.length === 0) return;
+  holder.appendChild(renderProgressBar(tasks.filter(taskDone).length, tasks.length, "daily tasks"));
   const topics = allTopics();
   const projects = (plan.stages.find((s) => s.key === "projects")?.groups || []).flatMap((g) => g.items);
   const recorded = projects.filter((p) => progress.checked[`${p.id}:recorded`]).length;
+  const fullDays = days.filter((day) => dayCounts(day).done === day.items.length).length;
   const text = document.createElement("div");
   text.className = "progress-text";
-  text.textContent = `${topics.filter(topicDone).length} of ${topics.length} topics at their target level · ${recorded} of ${projects.length} speaking projects recorded`;
+  text.textContent = `${fullDays} of ${days.length} days complete · ${topics.filter(topicDone).length} of ${topics.length} topics at their target level · ${recorded} of ${projects.length} speaking projects recorded`;
   holder.appendChild(text);
 }
 
@@ -459,7 +498,135 @@ function renderNextButton(stage) {
   return btn;
 }
 
-// ---------------------------------------------------------------- tabs and stage
+// ---------------------------------------------------------------- the 300-day plan
+
+function selectDay(n) {
+  activeDay = Math.min(Math.max(n, 1), days.length);
+  try {
+    localStorage.setItem(DAY_KEY, String(activeDay));
+  } catch {}
+}
+
+function goToDay(n) {
+  selectDay(n);
+  refresh();
+  document.getElementById("month-tabs").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function renderMonthTabs() {
+  const el = document.getElementById("month-tabs");
+  el.innerHTML = "";
+  const today = todayNumber();
+  for (let m = 1; m <= Math.ceil(days.length / 30); m++) {
+    const monthDays = days.slice((m - 1) * 30, m * 30);
+    const complete = monthDays.every((day) => dayCounts(day).done === day.items.length);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className =
+      "tab" +
+      (monthOfDay(activeDay) === m ? " active" : "") +
+      (complete ? " complete" : "") +
+      (today && monthOfDay(today) === m ? " today" : "");
+    btn.textContent = `${complete ? "✓ " : ""}Month ${m}`;
+    const stage = plan.stages.find((s) => s.key === monthDays[0].stage);
+    btn.title = `Days ${(m - 1) * 30 + 1}–${m * 30}${stage ? ` · ${stage.tab}: ${stage.title}` : ""}`;
+    btn.addEventListener("click", () => {
+      // Open today's day if it's in this month, otherwise the month's first unfinished day.
+      const open = today && monthOfDay(today) === m ? today : (monthDays.find((day) => dayCounts(day).done < day.items.length) || monthDays[0]).n;
+      selectDay(open);
+      refresh();
+    });
+    el.appendChild(btn);
+  }
+}
+
+function renderDayGrid() {
+  const el = document.getElementById("day-grid");
+  el.innerHTML = "";
+  const today = todayNumber();
+  const m = monthOfDay(activeDay);
+  days.slice((m - 1) * 30, m * 30).forEach((day) => {
+    const { done, total } = dayCounts(day);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className =
+      "day-cell" +
+      (day.n === activeDay ? " active" : "") +
+      (done === total ? " done" : done > 0 ? " partial" : "") +
+      (day.n === today ? " today" : "") +
+      (day.week ? "" : " review");
+    btn.textContent = day.n;
+    btn.title = `Day ${day.n}${day.theme ? ` · ${day.theme}` : ""} — ${done}/${total} done`;
+    btn.setAttribute("aria-label", btn.title);
+    btn.addEventListener("click", () => {
+      selectDay(day.n);
+      refresh();
+    });
+    el.appendChild(btn);
+  });
+}
+
+function renderTask(task) {
+  const on = taskDone(task);
+  const li = document.createElement("li");
+  li.className = "item check-item day-task" + (on ? " done" : "");
+  const label = document.createElement("label");
+  const box = document.createElement("input");
+  box.type = "checkbox";
+  box.checked = on;
+  box.addEventListener("change", () => setKeys(taskKeys(task), box.checked));
+  const body = document.createElement("span");
+  body.className = "check-text";
+  body.innerHTML = `<span class="badge kind kind-${task.kind}">${KINDS[task.kind] || task.kind}</span>${formatText(task.text)}`;
+  label.append(box, body);
+  li.appendChild(label);
+  return li;
+}
+
+function renderDayPanel() {
+  const el = document.getElementById("day-panel");
+  el.innerHTML = "";
+  const day = days[activeDay - 1];
+  if (!day) return;
+  const today = todayNumber();
+  const stage = stageOfDay(day.n);
+  const where = day.week
+    ? `Month ${day.month}, week ${(day.week - 1) % 4 + 1}, day ${day.dow}${day.dow === 7 ? " (light day)" : ""}`
+    : `Month ${day.month}, day ${(day.n - 1) % 30 + 1} (${day.theme.toLowerCase()})`;
+  const date = startDate() ? ` · ${formatDate(dateOfDay(day.n))}` : "";
+  const { done, total } = dayCounts(day);
+
+  const card = document.createElement("section");
+  card.className = "part day-card";
+  card.innerHTML = `
+    <h3 class="part-heading">Day ${day.n}${day.n === today ? ' <span class="day-today">today</span>' : ""}</h3>
+    <div class="day-meta">${escapeHtml(where)}${escapeHtml(date)}${stage ? ` · ${escapeHtml(`${stage.tab}: ${stage.title}`)}` : ""}</div>
+    ${day.week ? `<p class="day-goal"><strong>This week:</strong> ${escapeHtml(day.theme)}</p>` : ""}
+  `;
+  card.appendChild(renderProgressBar(done, total, "tasks"));
+  const ul = document.createElement("ul");
+  ul.className = "list";
+  day.items.forEach((task) => ul.appendChild(renderTask(task)));
+  card.appendChild(ul);
+
+  const nav = document.createElement("div");
+  nav.className = "day-nav";
+  const addButton = (text, n, primary) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = primary ? "next-btn" : "secondary-btn";
+    btn.textContent = text;
+    btn.addEventListener("click", () => goToDay(n));
+    nav.appendChild(btn);
+  };
+  if (day.n > 1) addButton(`← Day ${day.n - 1}`, day.n - 1, false);
+  if (today && today >= 1 && today <= days.length && today !== day.n) addButton("Today", today, false);
+  if (day.n < days.length) addButton(`Day ${day.n + 1} →`, day.n + 1, true);
+  card.appendChild(nav);
+  el.appendChild(card);
+}
+
+// ---------------------------------------------------------------- stage tabs (reference)
 
 function selectStage(key) {
   activeStage = key;
@@ -667,6 +834,9 @@ function renderAccount() {
 function refresh() {
   const scrollY = window.scrollY;
   renderStartDate();
+  renderMonthTabs();
+  renderDayGrid();
+  renderDayPanel();
   renderTabs();
   renderStage();
   renderOverallProgress();
@@ -680,15 +850,25 @@ async function main() {
   renderAccount();
 
   try {
-    const [content] = await Promise.all([fetch("/api/russian-roadmap").then((r) => r.json()), loadProgress()]);
+    const [content, daily] = await Promise.all([
+      fetch("/api/russian-roadmap").then((r) => r.json()),
+      fetch("/api/russian-days").then((r) => r.json()),
+      loadProgress(),
+    ]);
     plan = content;
-    const today = todayStages();
-    let saved = null;
+    days = daily.days || [];
+    let savedTab = null;
+    let savedDay = null;
     try {
-      saved = localStorage.getItem(TAB_KEY);
+      savedTab = localStorage.getItem(TAB_KEY);
+      savedDay = Number(localStorage.getItem(DAY_KEY));
     } catch {}
+    // Open today's day when the plan is running, otherwise the last day you looked at.
+    const today = todayNumber();
+    activeDay = today && today >= 1 && today <= days.length ? today : savedDay >= 1 && savedDay <= days.length ? savedDay : 1;
     const known = (key) => plan.stages.some((s) => s.key === key);
-    activeStage = today.length && known(today[today.length - 1]) ? today[today.length - 1] : known(saved) ? saved : plan.stages[0].key;
+    const todays = todayStages();
+    activeStage = todays.length && known(todays[todays.length - 1]) ? todays[todays.length - 1] : known(savedTab) ? savedTab : plan.stages[0].key;
     renderSources();
     refresh();
     if (progressError) statusEl.textContent = progressError;
@@ -699,6 +879,8 @@ async function main() {
   document.getElementById("start-date").addEventListener("change", (e) => {
     progress.startDate = e.target.value;
     persistProgress();
+    const today = todayNumber();
+    if (today && today >= 1 && today <= days.length) selectDay(today);
     refresh();
   });
 }
