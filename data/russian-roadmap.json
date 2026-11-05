@@ -1,0 +1,1088 @@
+{
+  "title": "Russian: B2 speaking in 10 months",
+  "basedOn": "free resources checked in November 2026; the official ТРКИ-2 (TORFL-II) speaking format, sample tests and scoring tables from the SPbU testing centre; the official ТРКИ lexical minimums (A1 780, A2 about 1,300, B1 2,300, B2 about 5,100 words); the CEFR self-assessment grid; Paul Nation's four strands",
+  "selfCheckRounds": ["Start", "Month 2", "Month 4", "Month 6", "Month 8", "Month 10"],
+  "projectSteps": [
+    { "key": "prepared", "label": "Prepared", "hint": "Key words and a plan on one card (not a script), practised out loud 3 times" },
+    { "key": "recorded", "label": "Recorded", "hint": "Recorded in one take, without reading" },
+    { "key": "feedback", "label": "Feedback", "hint": "A native speaker (or an AI) corrected it, and the corrections are in your error log" }
+  ],
+  "stages": [
+    {
+      "key": "s0",
+      "tab": "Stage 0",
+      "title": "Placement and setup",
+      "when": "Week 1",
+      "months": [1, 1],
+      "goal": "Find your real starting level, set up the free tools, and record a ‘before’ sample so you can hear your progress later.",
+      "intro": [
+        "If you already understand some Russian (common in Tashkent), don't restart from zero: take the placement tests, then in Stages 1–2 skip the Learn step for the topics you know, do a quick drill, and tick them.",
+        "One rule for the whole year: a topic is done when you've said it out loud in your own sentences, not when you've read about it."
+      ],
+      "groups": [
+        {
+          "kind": "selfcheck",
+          "label": "A1: survival",
+          "items": [
+            { "id": "ru-s0-intro", "text": "I can introduce myself for 1 minute without notes: name, age, city, job, family, hobbies", "stage": "s1" },
+            { "id": "ru-s0-questions", "text": "I can ask and answer simple questions: who, what, where, when, how much", "stage": "s1" },
+            { "id": "ru-s0-errands", "text": "I can buy something, order food and ask the way in simple Russian", "stage": "s1" }
+          ]
+        },
+        {
+          "kind": "selfcheck",
+          "label": "A2: everyday life",
+          "items": [
+            { "id": "ru-s0-routine", "text": "I can describe my day, my home and my work for 2 minutes in simple connected sentences", "stage": "s2" },
+            { "id": "ru-s0-weekend", "text": "I can tell what I did last weekend and what I'll do next weekend", "stage": "s2" },
+            { "id": "ru-s0-plans", "text": "I can invite someone, accept or refuse, and agree on a time and a place", "stage": "s2" }
+          ]
+        },
+        {
+          "kind": "selfcheck",
+          "label": "B1: independent",
+          "items": [
+            { "id": "ru-s0-story", "text": "I can tell a story (a trip, an event, a mistake) with details, and say how I felt", "stage": "s3" },
+            { "id": "ru-s0-20min", "text": "I can keep a 20-minute conversation on familiar topics going without switching to English", "stage": "s3" },
+            { "id": "ru-s0-reasons", "text": "I can say what I think about a film, a book or a plan, and give reasons", "stage": "s3" },
+            { "id": "ru-s0-unknown-word", "text": "When I don't know a word, I can explain it another way and keep going", "stage": "s3" }
+          ]
+        },
+        {
+          "kind": "selfcheck",
+          "label": "B2: fluent",
+          "items": [
+            { "id": "ru-s0-field", "text": "I can explain my work (data, GIS) for 5 minutes and answer questions about it", "stage": "s4" },
+            { "id": "ru-s0-argue", "text": "I can argue for and against a position on a social issue, with examples, and reach a conclusion", "stage": "s4" },
+            { "id": "ru-s0-natives", "text": "I can follow a fast conversation between native speakers and join in", "stage": "s5" },
+            { "id": "ru-s0-retell", "text": "I can retell a video or a news story in detail and say what I think about it", "stage": "s5" },
+            { "id": "ru-s0-strain", "text": "I can talk with a stranger for 15 minutes without strain on either side: they don't slow down or switch to English", "stage": "s5" }
+          ]
+        },
+        {
+          "kind": "selfcheck",
+          "label": "Recording (the same question every round)",
+          "items": [
+            { "id": "ru-s0-recording", "text": "Recorded a 2-minute answer to «Расскажи о себе и о своей жизни в Ташкенте», without notes. Keep every round's file and listen to them side by side." }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Setup (once)",
+          "items": [
+            { "id": "ru-s0-test", "text": "Take a placement test: the [Russian for Free level test](https://www.russianforfree.com/Russian-level-test.php), then register on the [Pushkin Institute portal](https://pushkininstitute.ru/learn) (free self-study, interface in English or Uzbek) and take its level test. Write both results in the notes below." },
+            { "id": "ru-s0-anki", "text": "Install Anki: [desktop and AnkiDroid](https://apps.ankiweb.net/) are free; on an iPhone use [AnkiWeb](https://ankiweb.net/) in the browser, since the iOS app is paid." },
+            { "id": "ru-s0-keyboard", "text": "Add the Russian keyboard (ЙЦУКЕН layout) to your phone and computer, and type without looking within two weeks." },
+            { "id": "ru-s0-tools", "text": "Bookmark the tools: [OpenRussian](https://en.openrussian.org/) (stress, declension and conjugation tables), [Russiangram](https://russiangram.com/) (adds stress marks to any text), [Forvo](https://forvo.com/languages/ru/) (native pronunciation) and [Reverso Context](https://context.reverso.net/translation/russian-english/) (words in real sentences)." },
+            { "id": "ru-s0-accounts", "text": "Create free accounts on [Tandem](https://tandem.net/) and [HelloTalk](https://www.hellotalk.com/) (language exchange) and on [LangCorrect](https://langcorrect.com/) (native speakers correct your writing). Write your profile in Russian and English." },
+            { "id": "ru-s0-slots", "text": "Fix your daily slots: one 2-hour block (or two 1-hour blocks), plus passive listening on the commute, at the gym or while cooking." },
+            { "id": "ru-s0-why", "text": "Write in the notes why you want Russian (work, family, travel, an exam) and your B2 date: your start date plus 10 months." }
+          ]
+        }
+      ],
+      "notes": { "heading": "Starting point", "placeholder": "Placement results: …\nWhat I can already say: …\nWhy I'm learning: …\nB2 date: …" }
+    },
+    {
+      "key": "s1",
+      "tab": "Stage 1",
+      "title": "Sounds and survival (A1)",
+      "when": "Months 1–2",
+      "pace": "~2 h a day + 30 min of listening",
+      "months": [1, 2],
+      "goal": "Hear and make Russian sounds correctly, learn your first 800 words, and have your first real conversation in week 3.",
+      "sources": [
+        { "label": "Между нами, lessons 1–4", "url": "https://mezhdunami.org/unit01/goal.shtml", "note": "free first-year textbook from the University of Kansas, with audio; your main course for Stages 1–2, about one episode a day" },
+        { "label": "Pushkin Institute: A1 course", "url": "https://pushkininstitute.ru/beginner", "note": "free after registration; extra exercises on the same topics" },
+        { "label": "Russian with Max", "url": "https://www.youtube.com/@russianwithmax", "note": "slow, clear videos for beginners" },
+        { "label": "Duolingo Russian", "url": "https://www.duolingo.com/course/ru/en/Learn-Russian", "note": "optional 10-minute warm-up, never the main course" }
+      ],
+      "callouts": [
+        "If you read Uzbek Cyrillic, the alphabet takes a day or two. Spend the time on what's different: ы, щ, hard vs soft consonants (мат / мать), and vowel reduction: an unstressed о sounds like а, so молоко́ sounds like «малако́».",
+        "Stress isn't marked in normal texts, and it moves (рука́, ру́ки). Learn every word with its stress: OpenRussian, Wiktionary and Russiangram show it."
+      ],
+      "groups": [
+        {
+          "kind": "topics",
+          "label": "Topics",
+          "items": [
+            {
+              "id": "ru-s1-alphabet",
+              "title": "Alphabet, reading and typing",
+              "level": 3,
+              "sources": [
+                { "label": "Russian for Free: how to read Russian", "url": "https://www.russianforfree.com/lessons-how-to-read-in-russian-01.php" },
+                { "label": "Master Russian: the alphabet with sounds", "url": "https://masterrussian.com/blalphabet.shtml" }
+              ],
+              "practice": "Read 10 shop signs or menu items in Tashkent out loud, and type 20 words on the Russian keyboard."
+            },
+            {
+              "id": "ru-s1-sounds",
+              "title": "Pronunciation: vowel reduction, hard and soft consonants, ы, stress",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: vowels", "url": "https://masterrussian.com/aa032301a.shtml" },
+                { "label": "consonants", "url": "https://masterrussian.com/aa081201a.shtml" },
+                { "label": "Между нами, lesson 1", "url": "https://mezhdunami.org/unit01/goal.shtml" }
+              ],
+              "practice": "Every day, shadow 1 minute of a Между нами dialogue. Once a week, record yourself reading it and compare with the original."
+            },
+            {
+              "id": "ru-s1-intonation",
+              "title": "Intonation: statements vs yes/no questions (ИК-1, ИК-3)",
+              "level": 3,
+              "sources": [
+                { "label": "«Русская интонация», Kazan Federal University (PDF)", "url": "https://kpfu.ru//staff_files/F542785795/Sadykova_I.A._Uchebnoe_posobie_Russkaya_intonaciya.pdf" },
+                { "label": "Real Russian Club: intonation", "url": "https://www.youtube.com/@RealRussianClub/search?query=intonation" }
+              ],
+              "practice": "Say «Это твой телефон.» and «Это твой телефон?» so a listener hears the difference without seeing the punctuation."
+            },
+            {
+              "id": "ru-s1-gender",
+              "title": "Gender, plurals and possessives (мой, моя, моё, мои; чей?)",
+              "level": 4,
+              "sources": [
+                { "label": "Между нами, lesson 1", "url": "https://mezhdunami.org/unit01/goal.shtml" },
+                { "label": "lesson 2", "url": "https://mezhdunami.org/unit02/goal.shtml" }
+              ],
+              "practice": "Point at 15 things around you and say whose they are: «Это мой ноутбук. Это её сумка.»"
+            },
+            {
+              "id": "ru-s1-present",
+              "title": "Present tense: 1st and 2nd conjugation (читать, говорить, жить)",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: present tense", "url": "https://masterrussian.com/aa021100a.shtml" },
+                { "label": "Между нами, lesson 3", "url": "https://mezhdunami.org/unit03/goal.shtml" },
+                { "label": "conjugation charts", "url": "https://mezhdunami.org/conjugation.shtml" }
+              ],
+              "practice": "Say 10 sentences about what you, your family and your colleagues do every day."
+            },
+            {
+              "id": "ru-s1-adjectives",
+              "title": "Adjectives and colours: какой? (новый, хорошая, большое)",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: adjectives", "url": "https://masterrussian.com/aa041201.shtml" },
+                { "label": "Между нами, lesson 2", "url": "https://mezhdunami.org/unit02/goal.shtml" }
+              ],
+              "practice": "Describe your flat or your office in 8 sentences."
+            },
+            {
+              "id": "ru-s1-prepositional",
+              "title": "Prepositional case: where? (в / на + -е) and about (о + -е)",
+              "level": 4,
+              "sources": [
+                { "label": "Между нами, lesson 3", "url": "https://mezhdunami.org/unit03/goal.shtml" },
+                { "label": "в vs на", "url": "https://mezhdunami.org/v_and_na.shtml" },
+                { "label": "Russian for Free: cases course", "url": "https://www.russianforfree.com/lessons-russian-cases-01.php" }
+              ],
+              "practice": "Say where you live, work and study, and where 5 places in Tashkent are: «Я живу в Ташкенте, в Юнусабаде.»"
+            },
+            {
+              "id": "ru-s1-accusative",
+              "title": "Accusative of things: what do you read, watch, buy?",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: accusative", "url": "https://masterrussian.com/aa071200a.shtml" },
+                { "label": "Между нами, lesson 3", "url": "https://mezhdunami.org/unit03/goal.shtml" }
+              ],
+              "practice": "Say what you read, watch, eat and buy in a week: «Я читаю новости, смотрю сериал, покупаю хлеб.»"
+            },
+            {
+              "id": "ru-s1-numbers",
+              "title": "Numbers 0–1000, prices, phone numbers and the time",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: numbers", "url": "https://masterrussian.com/numbers/Russian_Numbers.htm" },
+                { "label": "Между нами, lesson 5 (time)", "url": "https://mezhdunami.org/unit05/goal.shtml" }
+              ],
+              "practice": "Ask for prices at a Tashkent bazaar or shop in Russian, and say your phone number and the time out loud until it's fast."
+            },
+            {
+              "id": "ru-s1-phrases",
+              "title": "Survival phrases: greetings, ты / вы, please, sorry, asking for help",
+              "level": 4,
+              "sources": [
+                { "label": "Между нами, lesson 1", "url": "https://mezhdunami.org/unit01/goal.shtml" },
+                { "label": "Russian for Free: dialogues with audio", "url": "https://www.russianforfree.com/dialogues.php" }
+              ],
+              "practice": "Spend one day using Russian for every small exchange: shop, taxi, café, lift. In Tashkent you can start today."
+            },
+            {
+              "id": "ru-s1-have",
+              "title": "Having and not having: у меня есть / у меня нет",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: genitive", "url": "https://masterrussian.com/aa061500a.shtml" },
+                { "label": "Между нами, lesson 4", "url": "https://mezhdunami.org/unit04/goal.shtml" }
+              ],
+              "practice": "Say what you have and don't have: «У меня есть кот, но нет машины.»"
+            },
+            {
+              "id": "ru-s1-past",
+              "title": "Past tense (был, была, делал, делала)",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: past tense", "url": "https://masterrussian.com/aa021500a.shtml" },
+                { "label": "Между нами, lesson 4", "url": "https://mezhdunami.org/unit04/goal.shtml" }
+              ],
+              "practice": "Tell what you did yesterday in 6 sentences."
+            }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Vocabulary",
+          "items": [
+            { "id": "ru-s1-anki", "text": "Anki: 800 words, as short phrases with audio and stress, from the Между нами lessons and the [OpenRussian A1 list](https://en.openrussian.org/list/all?level=A1). The official A1 minimum is 780 words." },
+            { "id": "ru-s1-chunks", "text": "Learn the 8 phrases you'll need in every conversation: Как сказать по-русски…? Что это значит? Повторите, пожалуйста. Говорите медленнее, пожалуйста. Я не понял(а). Можно вопрос? Как это пишется? Я правильно сказал(а)?" }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Stage practice (speaking)",
+          "items": [
+            { "id": "ru-s1-shadow", "text": "Daily: shadow 1–2 minutes of audio. Listen once, then speak along at the same time, copying the rhythm and the melody." },
+            { "id": "ru-s1-selftalk", "text": "Daily: 10 minutes of self-talk. Say out loud what you're doing: «Я готовлю завтрак. Я иду на работу.»" },
+            { "id": "ru-s1-first-exchange", "text": "Week 3: your first language exchange on Tandem or HelloTalk, 15 minutes in Russian and 15 in English. Prepare 10 questions first." },
+            { "id": "ru-s1-ai", "text": "Twice a week: 10 minutes of voice chat with a free AI assistant, using the prompt on the Speaking track." }
+          ]
+        }
+      ],
+      "projectRef": "ru-p1",
+      "projectNote": "Record a 1-minute self-introduction without notes: name, age, your district of Tashkent, job, family, hobbies, and why you're learning Russian. Get it corrected by an exchange partner or on [r/russian](https://www.reddit.com/r/russian/).",
+      "notes": { "heading": "Error log", "placeholder": "What I said → what's correct (where it came up)\nЯ живу в Ташкент → Я живу в Ташкенте (exchange call)\n…" }
+    },
+    {
+      "key": "s2",
+      "tab": "Stage 2",
+      "title": "Cases, past and future (A2)",
+      "when": "Months 3–4",
+      "pace": "~2 h a day + 30–60 min of listening",
+      "months": [3, 4],
+      "goal": "Get all six cases into your speech, talk about the past and your plans, and hold a 30-minute exchange that's at least half in Russian.",
+      "sources": [
+        { "label": "Между нами, lessons 5–9", "url": "https://mezhdunami.org/unit05/goal.shtml", "note": "the same book: the rest of the cases, aspect, and the basics of motion verbs" },
+        { "label": "Pushkin Institute: A2 course", "url": "https://pushkininstitute.ru/basic", "note": "free after registration" },
+        { "label": "Russian for Free: cases course", "url": "https://www.russianforfree.com/lessons-russian-cases-01.php", "note": "with [grammar exercises](https://www.russianforfree.com/exercises.php)" },
+        { "label": "Master Russian: the six cases", "url": "https://masterrussian.com/aa071600a.shtml", "note": "and the [case usage table](https://masterrussian.com/blcasetable.shtml)" }
+      ],
+      "callouts": [
+        "Cases are where most learners stall. Don't start from the tables: learn one phrase per case that you'll say every day (в Ташкенте, у меня нет, мне нравится, с другом, к врачу), then build the table around it."
+      ],
+      "groups": [
+        {
+          "kind": "topics",
+          "label": "Topics",
+          "items": [
+            {
+              "id": "ru-s2-acc-animate",
+              "title": "Accusative of people (вижу брата, жду коллегу)",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: accusative", "url": "https://masterrussian.com/aa071200a.shtml" },
+                { "label": "Между нами, lesson 4", "url": "https://mezhdunami.org/unit04/goal.shtml" }
+              ],
+              "practice": "Say who you see, know, love and wait for: «Я жду коллегу. Я знаю его брата.»"
+            },
+            {
+              "id": "ru-s2-genitive",
+              "title": "Genitive: absence, quantity, ‘of’, and из, от, до, без, после, у",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: genitive", "url": "https://masterrussian.com/aa061500a.shtml" },
+                { "label": "Между нами, lesson 4", "url": "https://mezhdunami.org/unit04/goal.shtml" },
+                { "label": "lesson 8", "url": "https://mezhdunami.org/unit08/goal.shtml" }
+              ],
+              "practice": "Say where 5 things are from and what's missing: «Чай из Китая. В офисе нет кофе.»"
+            },
+            {
+              "id": "ru-s2-dative",
+              "title": "Dative: кому? (мне нравится, мне нужно, мне 25 лет)",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: dative", "url": "https://masterrussian.com/aa070100a.shtml" },
+                { "label": "Между нами, lesson 6", "url": "https://mezhdunami.org/unit06/goal.shtml" }
+              ],
+              "practice": "Say what your family likes and needs, and how old everyone is: «Моему брату 30 лет. Ему нравится футбол.»"
+            },
+            {
+              "id": "ru-s2-instrumental",
+              "title": "Instrumental: с кем? кем? (работать аналитиком, заниматься спортом)",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: instrumental", "url": "https://masterrussian.com/aa073000a.shtml" },
+                { "label": "Между нами, lesson 7", "url": "https://mezhdunami.org/unit07/goal.shtml" }
+              ],
+              "practice": "Say who you work and spend time with, and what you do in your free time: «Я работаю аналитиком данных. Я занимаюсь спортом.»"
+            },
+            {
+              "id": "ru-s2-aspect",
+              "title": "Aspect, first pass: делал or сделал? буду делать or сделаю?",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: aspect", "url": "https://masterrussian.com/aa031600a.shtml" },
+                { "label": "Между нами, lesson 6", "url": "https://mezhdunami.org/unit06/goal.shtml" },
+                { "label": "Real Russian Club: aspect", "url": "https://www.youtube.com/@RealRussianClub/search?query=aspect" }
+              ],
+              "practice": "Tell what you did yesterday with 5 finished actions (perfective) and 5 habits or processes (imperfective)."
+            },
+            {
+              "id": "ru-s2-future",
+              "title": "Future and plans (буду + infinitive, the perfective future, собираюсь, хочу)",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: future tense", "url": "https://masterrussian.com/aa032600a.shtml" },
+                { "label": "Между нами, lesson 6", "url": "https://mezhdunami.org/unit06/goal.shtml" }
+              ],
+              "practice": "Say 8 sentences about your plans for the weekend and for next year."
+            },
+            {
+              "id": "ru-s2-motion",
+              "title": "Motion verbs, part 1: идти / ходить, ехать / ездить; где, куда, откуда",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: verbs of motion", "url": "https://masterrussian.com/verbs/verbs_of_motion.htm" },
+                { "label": "Между нами, lesson 5", "url": "https://mezhdunami.org/unit05/goal.shtml" },
+                { "label": "Real Russian Club: verbs of motion practice", "url": "https://www.youtube.com/@RealRussianClub/search?query=verbs%20of%20motion" }
+              ],
+              "practice": "Describe how you get around: «Каждый день я езжу на работу на метро. Сейчас я еду домой.»"
+            },
+            {
+              "id": "ru-s2-imperative",
+              "title": "Imperative and requests (скажите, дайте, давайте…)",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: imperative and subjunctive", "url": "https://masterrussian.com/aa042700a.shtml" },
+                { "label": "Между нами, lesson 9", "url": "https://mezhdunami.org/unit09/goal.shtml" }
+              ],
+              "practice": "Give a friend directions from Amir Temur Square (сквер Амира Темура) to your home, with imperatives."
+            },
+            {
+              "id": "ru-s2-pronouns",
+              "title": "Pronouns in all cases (меня, мне, мной…) and свой",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: personal pronouns", "url": "https://masterrussian.com/aa110100a.shtml" },
+                { "label": "Между нами, lesson 9", "url": "https://mezhdunami.org/unit09/goal.shtml" }
+              ],
+              "practice": "Answer 10 questions with a pronoun instead of the noun: «Ты звонил маме? — Да, я ей звонил.»"
+            },
+            {
+              "id": "ru-s2-compare",
+              "title": "Comparatives and superlatives (больше, лучше, самый)",
+              "level": 3,
+              "sources": [
+                { "label": "Между нами, lesson 8", "url": "https://mezhdunami.org/unit08/goal.shtml" }
+              ],
+              "practice": "Compare Tashkent with another city in 8 sentences: weather, prices, food, transport."
+            },
+            {
+              "id": "ru-s2-counting",
+              "title": "Numbers with nouns (2 часа, 5 часов) and the genitive plural",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: numbers", "url": "https://masterrussian.com/numbers/Russian_Numbers.htm" },
+                { "label": "Между нами, lesson 8", "url": "https://mezhdunami.org/unit08/goal.shtml" }
+              ],
+              "practice": "Count things out loud all week: «два брата, пять минут, двадцать один год»."
+            },
+            {
+              "id": "ru-s2-connect",
+              "title": "Connecting ideas: потому что, поэтому, когда, если, который",
+              "level": 4,
+              "sources": [
+                { "label": "Между нами, lesson 4", "url": "https://mezhdunami.org/unit04/goal.shtml" },
+                { "label": "lesson 6", "url": "https://mezhdunami.org/unit06/goal.shtml" },
+                { "label": "Master Russian: relative pronouns", "url": "https://masterrussian.com/aa012501a.shtml" }
+              ],
+              "practice": "Join 6 short sentences into 3 long ones with потому что, когда or который, then say them without looking."
+            }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Vocabulary",
+          "items": [
+            { "id": "ru-s2-anki", "text": "Anki: 1,500 words in total (the official A2 minimum is about 1,300). From now on, add whole sentences from your listening and your error log, not single words." },
+            { "id": "ru-s2-topics", "text": "One topic a week, 30–50 phrases each: food, transport, health, shopping, work, weather, free time, the city." }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Stage practice (speaking)",
+          "items": [
+            { "id": "ru-s2-exchanges", "text": "Two language exchanges a week, 30 minutes each, at least half in Russian." },
+            { "id": "ru-s2-432", "text": "Twice a week, 4/3/2: tell the same story (your day, your weekend) three times, in 4, 3 and 2 minutes, and record the last one." },
+            { "id": "ru-s2-errands", "text": "Use Russian for one errand a day in Tashkent (shop, taxi, pharmacy, bank), and write down one phrase you were missing." },
+            { "id": "ru-s2-pushkin", "text": "Work through the [Pushkin Institute A2 course](https://pushkininstitute.ru/basic) units on your weakest cases." },
+            { "id": "ru-s2-mock", "text": "End of month 4: do the speaking part of the [SPbU A2 sample test (ТБУ)](https://testingcenter.spbu.ru/images/files/TBU.pdf), with a partner or an AI playing the examiner." }
+          ]
+        }
+      ],
+      "projectRef": "ru-p2",
+      "projectNote": "Talk for 3 minutes about your life in Tashkent: your day, your home and your work (present), last weekend (past) and your plans (future). Use at least four different cases on purpose.",
+      "notes": { "heading": "Error log", "placeholder": "What I said → what's correct (where it came up)\n…" }
+    },
+    {
+      "key": "s3",
+      "tab": "Stage 3",
+      "title": "Aspect, motion and storytelling (B1)",
+      "when": "Months 5–6",
+      "pace": "~2 h a day + 45–60 min of listening",
+      "months": [5, 6],
+      "goal": "Tell stories: master aspect and prefixed motion verbs, learn to explain words you don't know, and hold 30 minutes in Russian only.",
+      "sources": [
+        { "label": "Pushkin Institute: B1 course", "url": "https://pushkininstitute.ru/certified1", "note": "free after registration; your main course for Stage 3" },
+        { "label": "Master Russian: aspect", "url": "https://masterrussian.com/aa031600a.shtml", "note": "and [verbs of motion](https://masterrussian.com/verbs/verbs_of_motion.htm)" },
+        { "label": "Real Russian Club", "url": "https://www.youtube.com/@RealRussianClub", "note": "grammar explained in Russian, with subtitles" },
+        { "label": "Inklingo graded stories", "url": "https://www.inklingo.app/russian/stories", "note": "free stories with audio, A2–B1: read them as models for your own stories" }
+      ],
+      "callouts": [
+        "Aspect and motion verbs are what separate B1 speakers from A2 speakers. Give them double time and expect mistakes for months: that's normal, and the error log will show them shrinking."
+      ],
+      "groups": [
+        {
+          "kind": "topics",
+          "label": "Topics",
+          "items": [
+            {
+              "id": "ru-s3-aspect",
+              "title": "Aspect in depth: process vs result, once vs repeated, aspect after не and in commands",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: aspect", "url": "https://masterrussian.com/aa031600a.shtml" },
+                { "label": "Real Russian Club: aspect", "url": "https://www.youtube.com/@RealRussianClub/search?query=aspect" },
+                { "label": "Russian with Max: aspect", "url": "https://www.youtube.com/@russianwithmax/search?query=aspect" }
+              ],
+              "practice": "Retell a short story twice: once as a chain of finished events (perfective), once as background and habits (imperfective)."
+            },
+            {
+              "id": "ru-s3-prefixes",
+              "title": "Prefixed motion verbs (при-, у-, в-, вы-, за-, пере-, про-, под-, от-, до-)",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: verbs of motion", "url": "https://masterrussian.com/verbs/verbs_of_motion.htm" },
+                { "label": "Между нами, lesson 7", "url": "https://mezhdunami.org/unit07/goal.shtml" },
+                { "label": "lesson 8", "url": "https://mezhdunami.org/unit08/goal.shtml" },
+                { "label": "Russian with Max: motion verbs with prefixes", "url": "https://www.youtube.com/@russianwithmax/search?query=prefixes" }
+              ],
+              "practice": "Describe your route from home to work, step by step: «Я выхожу из дома, перехожу дорогу, захожу в магазин…»"
+            },
+            {
+              "id": "ru-s3-carry",
+              "title": "More motion: on foot vs by transport, нести / везти / вести",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: verbs of motion", "url": "https://masterrussian.com/verbs/verbs_of_motion.htm" },
+                { "label": "Be Fluent in Russian: verbs of motion", "url": "https://www.youtube.com/@befluentinrussian/search?query=verbs%20of%20motion" }
+              ],
+              "practice": "Tell how you moved house or brought something heavy home."
+            },
+            {
+              "id": "ru-s3-conditional",
+              "title": "Conditional and wishes (если бы…, я бы хотел, чтобы…)",
+              "level": 4,
+              "sources": [
+                { "label": "Master Russian: subjunctive and imperative", "url": "https://masterrussian.com/aa042700a.shtml" },
+                { "label": "Между нами, lesson 9", "url": "https://mezhdunami.org/unit09/goal.shtml" }
+              ],
+              "practice": "Answer for 2 minutes: «Что бы ты сделал, если бы у тебя был год свободного времени?»"
+            },
+            {
+              "id": "ru-s3-reported",
+              "title": "Reported speech and questions (он сказал, что…; я спросил, придёт ли он)",
+              "level": 3,
+              "sources": [
+                { "label": "Pelister: indirect speech", "url": "https://pelister.org/russian/tutorials/0068.html" },
+                { "label": "Mango Languages: reported speech", "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-report-speech-in-russian-" }
+              ],
+              "practice": "Retell a conversation you had today: «Коллега сказал, что… Я спросил, придёт ли он…»"
+            },
+            {
+              "id": "ru-s3-reflexive",
+              "title": "Reflexive verbs (-ся) and друг друга",
+              "level": 3,
+              "sources": [
+                { "label": "Между нами, lesson 6", "url": "https://mezhdunami.org/unit06/goal.shtml" },
+                { "label": "lesson 8", "url": "https://mezhdunami.org/unit08/goal.shtml" }
+              ],
+              "practice": "Describe your morning with -ся verbs: «Я просыпаюсь, умываюсь, одеваюсь…»"
+            },
+            {
+              "id": "ru-s3-indefinite",
+              "title": "кто-то, что-нибудь, никто, ничего не",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: indefinite pronouns", "url": "https://masterrussian.com/aa010801a.shtml" },
+                { "label": "negative pronouns", "url": "https://masterrussian.com/aa022401a.shtml" },
+                { "label": "Be Fluent in Russian: что-то, кто-то", "url": "https://www.youtube.com/@befluentinrussian/search?query=%D1%87%D1%82%D0%BE-%D1%82%D0%BE" }
+              ],
+              "practice": "Answer 10 questions with никогда, ничего or никуда: «Ты куда-нибудь ездил летом? — Нет, никуда не ездил.»"
+            },
+            {
+              "id": "ru-s3-time",
+              "title": "Time expressions (в понедельник, через час, неделю назад, за два часа, на неделю)",
+              "level": 4,
+              "sources": [
+                { "label": "Между нами, lesson 7", "url": "https://mezhdunami.org/unit07/goal.shtml" },
+                { "label": "lesson 9", "url": "https://mezhdunami.org/unit09/goal.shtml" }
+              ],
+              "practice": "Tell your life story with 10 time markers: «в 2015 году», «через год», «два года назад»…"
+            },
+            {
+              "id": "ru-s3-connectors",
+              "title": "Storytelling connectors (сначала, потом, вдруг, в итоге, оказалось, к счастью)",
+              "level": 4,
+              "sources": [
+                { "label": "Slow Russian podcast", "url": "https://podcasts.apple.com/us/podcast/slow-russian/id1069742339" },
+                { "label": "Russian with Max", "url": "https://www.youtube.com/@russianwithmax" }
+              ],
+              "practice": "Tell a 3-minute story about a trip or a funny event, with 8 connectors."
+            },
+            {
+              "id": "ru-s3-explain-word",
+              "title": "Explaining a word you don't know (это такая вещь, которой…; это человек, который…)",
+              "level": 4,
+              "sources": [],
+              "practice": "Play ‘guess the word’ with a partner or an AI: explain 10 words without saying them («это такая вещь, которой режут хлеб»)."
+            },
+            {
+              "id": "ru-s3-opinion",
+              "title": "Opinions and feelings (мне кажется, по-моему, я рад, мне жаль, я в восторге)",
+              "level": 4,
+              "sources": [
+                { "label": "SPbU: the 20 intentions of the speaking test (PDF, slide «Интенции»)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf" }
+              ],
+              "practice": "React to 10 headlines on [Kun.uz](https://kun.uz/ru) with an opinion phrase and one reason."
+            },
+            {
+              "id": "ru-s3-emotion",
+              "title": "Intonation of emotion (ИК-2, ИК-5, ИК-7: surprise, delight, annoyance)",
+              "level": 3,
+              "sources": [
+                { "label": "«Русская интонация», Kazan Federal University (PDF)", "url": "https://kpfu.ru//staff_files/F542785795/Sadykova_I.A._Uchebnoe_posobie_Russkaya_intonaciya.pdf" }
+              ],
+              "practice": "Say «Какая погода!» as delight and as annoyance, and ask a partner which one they heard."
+            },
+            {
+              "id": "ru-s3-states",
+              "title": "Short adjectives and states (должен, рад, готов, занят, прав)",
+              "level": 3,
+              "sources": [
+                { "label": "Be Fluent in Russian: short adjectives", "url": "https://www.youtube.com/@befluentinrussian/search?query=short%20adjectives" },
+                { "label": "Между нами, lesson 5", "url": "https://mezhdunami.org/unit05/goal.shtml" }
+              ],
+              "practice": "Say 6 sentences about how you feel and what you have to do this week."
+            }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Vocabulary",
+          "items": [
+            { "id": "ru-s3-anki", "text": "Anki: 2,500 words in total (the official B1 minimum is 2,300)." },
+            { "id": "ru-s3-my-phrases", "text": "Start a ‘my phrases’ deck: the 200 sentences you need for your own life (work, family, GIS, Tashkent), each one checked by a native speaker." }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Stage practice (speaking)",
+          "items": [
+            { "id": "ru-s3-exchanges", "text": "Two 45-minute conversations a week, Russian only for at least the first 30 minutes." },
+            { "id": "ru-s3-journal", "text": "Weekly: write 150 words on [LangCorrect](https://langcorrect.com/), then read the corrected version out loud 3 times." },
+            { "id": "ru-s3-retell", "text": "Weekly: retell a 3–5-minute Russian Progress or Real Russian Club video from memory, and record it." },
+            { "id": "ru-s3-mock", "text": "Month 6: do the speaking part of the [SPbU B1 sample test (ТРКИ-1)](https://testingcenter.spbu.ru/images/files/TRKI-1.pdf)." }
+          ]
+        }
+      ],
+      "projectRef": "ru-p3",
+      "projectNote": "Tell a 4-minute story (a trip, an event or a mistake) with aspect, motion verbs, time markers, connectors and how you felt. Do 4/3/2 on it before you record.",
+      "notes": { "heading": "Error log", "placeholder": "What I said → what's correct (where it came up)\n…" }
+    },
+    {
+      "key": "s4",
+      "tab": "Stage 4",
+      "title": "Opinions and complex sentences (B1+ to B2)",
+      "when": "Months 7–8",
+      "pace": "~2 h a day + 60 min of listening",
+      "months": [7, 8],
+      "goal": "Move from telling to arguing: give and defend opinions, compare options, and talk about your work for 5 minutes.",
+      "sources": [
+        { "label": "Pushkin Institute: B2 course", "url": "https://pushkininstitute.ru/certified2", "note": "«Новости из России»: news videos with tasks for all five exam skills; free after registration" },
+        { "label": "Russian Progress", "url": "https://www.youtube.com/@RussianProgress", "note": "natural speech with subtitles" },
+        { "label": "Easy Russian", "url": "https://www.youtube.com/c/EasyRussian", "note": "street interviews at native speed" },
+        { "label": "Gazeta.uz (in Russian)", "url": "https://www.gazeta.uz/ru/", "note": "Tashkent news: daily reading and retelling" }
+      ],
+      "callouts": [
+        "From B1+ the main gap is no longer grammar: it's words for abstract topics and the speed to use them. Spend more time on topic vocabulary and fluency, less on new rules."
+      ],
+      "groups": [
+        {
+          "kind": "topics",
+          "label": "Topics",
+          "items": [
+            {
+              "id": "ru-s4-arguing",
+              "title": "Arguing: for and against, conceding, concluding (с одной стороны…, с другой стороны…; однако; таким образом)",
+              "level": 4,
+              "sources": [
+                { "label": "SPbU: the speaking test, task 15 (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf" }
+              ],
+              "practice": "Talk for 3 minutes on «Работа из дома: плюсы и минусы»: 2 arguments for, 2 against, and a conclusion."
+            },
+            {
+              "id": "ru-s4-reacting",
+              "title": "Agreeing, disagreeing, doubting, asking what someone means (я не совсем согласен; что вы имеете в виду?)",
+              "level": 4,
+              "sources": [
+                { "label": "SPbU: the speaking test, tasks 1–8 (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf" }
+              ],
+              "practice": "With a partner, take turns making claims about Tashkent and reacting with a different intention each time: agree, doubt, be surprised, object."
+            },
+            {
+              "id": "ru-s4-complex",
+              "title": "Complex sentences: хотя, несмотря на то что, для того чтобы, вместо того чтобы, в то время как",
+              "level": 4,
+              "sources": [
+                { "label": "Mango Languages: conjunctions of reason, purpose and concession", "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-conjunctions-of-reason-purpose-result-and-concession-in-russian-" },
+                { "label": "Bucknell: subordinate clauses", "url": "https://www.departments.bucknell.edu/russian/language/subordin.html" }
+              ],
+              "practice": "Answer 5 questions about your city with one complex sentence each."
+            },
+            {
+              "id": "ru-s4-fillers",
+              "title": "Fillers that buy thinking time (ну, в общем, то есть, как бы сказать, дело в том, что)",
+              "level": 4,
+              "sources": [
+                { "label": "Easy Russian", "url": "https://www.youtube.com/c/EasyRussian" }
+              ],
+              "practice": "Collect 15 fillers from Easy Russian interviews and use 5 of them in your next conversation."
+            },
+            {
+              "id": "ru-s4-short-participles",
+              "title": "Short passive participles (закрыт, сделано, написан)",
+              "level": 3,
+              "sources": [
+                { "label": "Russian Enthusiast: participles", "url": "https://russianenthusiast.com/russian-grammar/verbs/participles/" }
+              ],
+              "practice": "Describe the state of things at work and in the city: «Магазин закрыт. Отчёт уже написан.»"
+            },
+            {
+              "id": "ru-s4-participles",
+              "title": "Long participles and verbal adverbs (читающий, прочитанный, читая, прочитав): mostly to understand",
+              "level": 2,
+              "sources": [
+                { "label": "Russian Enthusiast: participles", "url": "https://russianenthusiast.com/russian-grammar/verbs/participles/" },
+                { "label": "verbal adverbs (gerunds)", "url": "https://russianenthusiast.com/russian-grammar/verbs/gerunds/" }
+              ],
+              "practice": "Find 10 in a news article and say each sentence again with который or когда."
+            },
+            {
+              "id": "ru-s4-word-formation",
+              "title": "Word formation: roots, prefixes and suffixes (-ость, -ние, -тель, пере-, недо-)",
+              "level": 3,
+              "sources": [
+                { "label": "Be Fluent in Russian: prefixes", "url": "https://www.youtube.com/@befluentinrussian/search?query=prefixes" }
+              ],
+              "practice": "Build word families from 5 roots (говор-, пис-, ход-, нов-, раб-) and use 3 words from each in sentences."
+            },
+            {
+              "id": "ru-s4-numbers",
+              "title": "Numbers in all cases: dates, percentages, statistics (в 2025 году, на 15 процентов)",
+              "level": 3,
+              "sources": [
+                { "label": "Master Russian: numbers", "url": "https://masterrussian.com/numbers/Russian_Numbers.htm" }
+              ],
+              "practice": "Read 5 numbers from a [Gazeta.uz](https://www.gazeta.uz/ru/) article out loud: dates, percentages, prices."
+            },
+            {
+              "id": "ru-s4-register",
+              "title": "Register: formal and informal speech, phone calls, polite complaints",
+              "level": 3,
+              "sources": [
+                { "label": "Be Fluent in Russian: formal vs informal", "url": "https://www.youtube.com/@befluentinrussian/search?query=formal" },
+                { "label": "Pushkin Institute: B2 course", "url": "https://pushkininstitute.ru/certified2" }
+              ],
+              "practice": "Role-play two phone calls with a partner or an AI: booking an appointment, and complaining about a late delivery."
+            },
+            {
+              "id": "ru-s4-field",
+              "title": "Your field in Russian: data, maps, GIS, AI",
+              "level": 4,
+              "sources": [
+                { "label": "Википедия: Геоинформационная система", "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0" },
+                { "label": "Хабр (Russian tech articles)", "url": "https://habr.com/ru/" }
+              ],
+              "practice": "Explain your current GIS or data project in 5 minutes, then answer 5 questions about it."
+            },
+            {
+              "id": "ru-s4-idioms",
+              "title": "Idioms, proverbs and colloquial words",
+              "level": 2,
+              "sources": [
+                { "label": "Master Russian: proverbs and sayings", "url": "https://masterrussian.com/proverbs/russian_proverbs.htm" },
+                { "label": "Be Fluent in Russian: idioms", "url": "https://www.youtube.com/@befluentinrussian/search?query=idioms" }
+              ],
+              "practice": "Note 20 that you hear in films and interviews, with the situation they were used in."
+            }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Vocabulary",
+          "items": [
+            { "id": "ru-s4-anki", "text": "Anki: 3,500 words in total. Add topic packs for the B2 discussion topics in Stage 5: work, education, the city, technology, family, health, ecology, culture, money, media." }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Stage practice (speaking)",
+          "items": [
+            { "id": "ru-s4-conversations", "text": "Three conversations a week (exchange partners, a Russian-speaking friend or colleague, or AI voice chat), one of them 60 minutes long." },
+            { "id": "ru-s4-opinion-talk", "text": "Weekly: a recorded 5-minute opinion talk on one of the Stage 5 discussion topics, after doing 4/3/2 on it." },
+            { "id": "ru-s4-news", "text": "Daily: read one Tashkent news story in Russian and sum it up out loud in 1 minute." },
+            { "id": "ru-s4-film", "text": "Every two weeks: watch a film (Mosfilm classics are free on YouTube) and retell the plot in 3 minutes." }
+          ]
+        }
+      ],
+      "projectRef": "ru-p4",
+      "projectNote": "Explain your work in 5 minutes: what you do, a project you're proud of, a problem you solved. Then let an exchange partner or an AI ask you 5 questions, and answer without notes.",
+      "notes": { "heading": "Error log", "placeholder": "What I said → what's correct (where it came up)\n…" }
+    },
+    {
+      "key": "s5",
+      "tab": "Stage 5",
+      "title": "B2 fluency and the exam tasks",
+      "when": "Months 9–10",
+      "pace": "~2 h a day + 60 min of listening",
+      "months": [9, 10],
+      "goal": "Make your speech fast, accurate and flexible: train all 15 tasks of the B2 (ТРКИ-2) speaking test and pass a full mock at 66% or more.",
+      "intro": [
+        "The B2 speaking test (ТРКИ-2) has 15 tasks in 45 minutes, without a dictionary. Tasks 1–4: react to remarks, for example disagree using opposite evaluative words. Tasks 5–8: react with a given intention (agreement, doubt, delight, a suggestion) and explain why. Tasks 9–12: say lines with the intonation of an emotion. Task 13: watch a video clip, then describe the situation and the characters and explain why it happened (10 minutes to prepare, 3–5 to speak). Task 14: phone about an ad and ask about everything in detail (3 minutes to prepare, 3–5 to speak). Task 15: a 10–15-minute unprepared discussion of a social issue with the examiner.",
+        "To pass, you need 66% (96 of 145 points). Even if you never take the real exam, passing the mock is your proof of B2 speaking."
+      ],
+      "sources": [
+        { "label": "SPbU: sample test ТРКИ-2 (PDF)", "url": "https://testingcenter.spbu.ru/images/files/TRKI-2.pdf", "note": "the official format with sample tasks; see the part «Говорение»" },
+        { "label": "SPbU: the speaking test at B2 and C1 (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf", "note": "every task with examples, and the scoring tables" },
+        { "label": "SPbU: preparing for B2 (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf", "note": "all five parts of the exam, and the list of intentions" },
+        { "label": "Pushkin Institute: sample test ТРКИ-II (PDF)", "url": "https://www.pushkin.institute/wp-content/uploads/2022/11/%D0%A2%D0%A0%D0%9A%D0%98-II.pdf", "note": "a second full sample for the final mock" }
+      ],
+      "groups": [
+        {
+          "kind": "topics",
+          "label": "The 15 tasks, plus speed and accuracy",
+          "items": [
+            {
+              "id": "ru-s5-t1-4",
+              "title": "Tasks 1–4: disagree with opposite evaluative words (увлекательный → скучный)",
+              "level": 4,
+              "sources": [
+                { "label": "SPbU: speaking test, tasks 1–4 (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf" }
+              ],
+              "practice": "Daily: a partner or an AI says 10 positive sentences about a trip, a film or a café, and you disagree each time with an antonym."
+            },
+            {
+              "id": "ru-s5-t5-8",
+              "title": "Tasks 5–8: react with an intention and explain it (agree, doubt, delight, suggest, regret, reproach…)",
+              "level": 4,
+              "sources": [
+                { "label": "SPbU: the list of intentions (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf" }
+              ],
+              "practice": "Make a card for each of the 20 intentions with 2 phrases on it, then react to random lines with a random card."
+            },
+            {
+              "id": "ru-s5-t9-12",
+              "title": "Tasks 9–12: the intonation of emotions (indignation, joy, disappointment, praise, surprise)",
+              "level": 4,
+              "sources": [
+                { "label": "«Русская интонация» (PDF)", "url": "https://kpfu.ru//staff_files/F542785795/Sadykova_I.A._Uchebnoe_posobie_Russkaya_intonaciya.pdf" },
+                { "label": "SPbU: tasks 9–12 (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf" }
+              ],
+              "practice": "Record the 4 sample lines with the requested emotions, and ask a native speaker which emotion they hear."
+            },
+            {
+              "id": "ru-s5-t13",
+              "title": "Task 13: describe a video: the situation, the characters, their motives, your explanation",
+              "level": 4,
+              "sources": [
+                { "label": "SPbU: sample test (PDF)", "url": "https://testingcenter.spbu.ru/images/files/TRKI-2.pdf" },
+                { "label": "Mosfilm on YouTube", "url": "https://www.youtube.com/channel/UCEK3tT7DcfWGWJpNEDBdWog" }
+              ],
+              "practice": "Twice a week: watch a 2–3-minute film scene, prepare for 10 minutes, speak for 4, and record it."
+            },
+            {
+              "id": "ru-s5-t14",
+              "title": "Task 14: phone about an ad (a job, a flat, a course, a competition)",
+              "level": 4,
+              "sources": [
+                { "label": "SPbU: task 14 and its scoring (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf" }
+              ],
+              "practice": "Take a real Russian-language ad from [OLX.uz](https://www.olx.uz/) (a flat or a job), write 8 questions in 3 minutes, and make the call with a partner or an AI playing the seller."
+            },
+            {
+              "id": "ru-s5-t15",
+              "title": "Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion)",
+              "level": 4,
+              "sources": [
+                { "label": "SPbU: task 15 (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf" }
+              ],
+              "practice": "Three times a week: a partner or an AI plays the examiner for 15 minutes on one topic from the list below."
+            },
+            {
+              "id": "ru-s5-accuracy",
+              "title": "Accuracy at speed: endings after numbers and prepositions, aspect, stress",
+              "level": 4,
+              "sources": [
+                { "label": "OpenRussian", "url": "https://en.openrussian.org/" },
+                { "label": "Russian for Free: exercises", "url": "https://www.russianforfree.com/exercises.php" }
+              ],
+              "practice": "Record 5 minutes of free speech, transcribe 1 minute of it, fix every error, and put the fixes into Anki."
+            },
+            {
+              "id": "ru-s5-fluency",
+              "title": "Fluency: more speed, fewer pauses",
+              "level": 4,
+              "sources": [
+                { "label": "Paul Nation: The Four Strands (PDF)", "url": "https://www.wgtn.ac.nz/lals/resources/paul-nations-resources/paul-nations-publications/publications/documents/2007-Four-strands.pdf" },
+                { "label": "Russian Progress", "url": "https://www.youtube.com/@RussianProgress" }
+              ],
+              "practice": "Daily: shadow 2 minutes of a native-speed video. Weekly: 4/3/2 on a discussion topic."
+            }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Discussion topics for task 15 (one a week)",
+          "items": [
+            { "id": "ru-s5-topic-work", "text": "Работа и карьера: работа мечты, удалённая работа, профессии будущего" },
+            { "id": "ru-s5-topic-education", "text": "Образование: онлайн-обучение, платное и бесплатное образование, учёба за границей" },
+            { "id": "ru-s5-topic-city", "text": "Город: транспорт, жильё, жизнь в мегаполисе и в деревне" },
+            { "id": "ru-s5-topic-tech", "text": "Технологии: искусственный интеллект, соцсети, дети и смартфоны" },
+            { "id": "ru-s5-topic-family", "text": "Семья: роль родителей, отцы и дети, традиции" },
+            { "id": "ru-s5-topic-health", "text": "Здоровье: здоровый образ жизни, спорт, медицина" },
+            { "id": "ru-s5-topic-ecology", "text": "Экология: изменение климата, вода в Центральной Азии, переработка мусора" },
+            { "id": "ru-s5-topic-culture", "text": "Культура: кино, книги, музеи, туризм, национальные традиции" },
+            { "id": "ru-s5-topic-money", "text": "Деньги: потребление, кредиты, благотворительность" },
+            { "id": "ru-s5-topic-media", "text": "СМИ: новости, фейки, реклама" }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Mock tests",
+          "items": [
+            { "id": "ru-s5-mock1", "text": "Month 9, week 2: a full speaking mock with the [SPbU ТРКИ-2 sample](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf): all 15 tasks, 45 minutes, recorded. A partner or an AI plays the examiner." },
+            { "id": "ru-s5-score1", "text": "Score it with the scoring tables in the [SPbU speaking webinar](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf), and give your 3 weakest tasks the next 4 weeks." },
+            { "id": "ru-s5-mock2", "text": "Month 10, week 2: a second full mock with the [Pushkin Institute ТРКИ-II sample](https://www.pushkin.institute/wp-content/uploads/2022/11/%D0%A2%D0%A0%D0%9A%D0%98-II.pdf). Target: 66% or more." },
+            { "id": "ru-s5-real-exam", "text": "Optional: if you want a certificate, find an authorised ТРКИ test centre and book the B2 exam." }
+          ]
+        }
+      ],
+      "projectRef": "ru-p5",
+      "projectNote": "The full 45-minute mock from the mock tests above, recorded. For feedback, score each task with the SPbU tables, then ask a native speaker to listen to tasks 13–15.",
+      "notes": { "heading": "Error log", "placeholder": "What I said → what's correct (where it came up)\nMock 1 score: … / 145\n…" }
+    },
+    {
+      "key": "speaking",
+      "tab": "Speaking track",
+      "title": "Daily speaking system",
+      "when": "All year, every day",
+      "months": null,
+      "goal": "Speaking is a skill you train, not knowledge you collect: 30–40 minutes of speaking a day, from week 1.",
+      "callouts": [
+        "AI conversation prompt (the free voice mode of ChatGPT, Gemini or Claude): «Давай поговорим по-русски. Мой уровень — A2. Говори просто и медленно, задавай мне вопросы по одному, а после каждого моего ответа исправляй мои ошибки: сначала мой вариант, потом правильный.» Change A2 to your level at every self-assessment.",
+        "Language exchange rules: split the time 50/50, agree on how you want to be corrected (in the chat, at the end), prepare 5 questions before each call, and write 3 corrections into your error log after it."
+      ],
+      "groups": [
+        {
+          "kind": "checks",
+          "label": "Habits (tick each one once you've kept it up 4 weeks in a row)",
+          "items": [
+            { "id": "ru-sp-shadow", "text": "Shadowing, 10 minutes a day: listen once, then speak along with the audio at the same time, copying the rhythm and the melody." },
+            { "id": "ru-sp-selftalk", "text": "Self-talk, 10 minutes a day: say what you're doing and thinking (walking, cooking, driving)." },
+            { "id": "ru-sp-432", "text": "4/3/2 twice a week: give the same talk three times, in 4, 3 and 2 minutes. It's Paul Nation's fluency drill: the time pressure makes you faster without new language." },
+            { "id": "ru-sp-errorlog", "text": "Error log: every correction you get goes into the stage's notes, and then into Anki as a sentence." },
+            { "id": "ru-sp-ai", "text": "AI voice chat, 15 minutes a day, with the prompt above." },
+            { "id": "ru-sp-record", "text": "Record yourself once a week and listen back for 5 minutes: stress, endings, pauses." }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Conversation milestones",
+          "items": [
+            { "id": "ru-sp-m1", "text": "First 15-minute language exchange (month 1)" },
+            { "id": "ru-sp-m2", "text": "10 minutes with a native speaker, all in Russian (months 2–3)" },
+            { "id": "ru-sp-m3", "text": "First phone call in Russian: book, order or ask about something (month 3)" },
+            { "id": "ru-sp-m4", "text": "30 minutes without a word of English (month 5)" },
+            { "id": "ru-sp-m5", "text": "Understood a joke and laughed at the right moment (month 6)" },
+            { "id": "ru-sp-m6", "text": "A 60-minute conversation in Russian only (months 7–8)" },
+            { "id": "ru-sp-m7", "text": "15 minutes with a stranger who didn't slow down or switch to English (months 9–10)" }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Tashkent: free immersion",
+          "items": [
+            { "id": "ru-sp-t-errand", "text": "Use Russian for one errand a day: bazaar, taxi, pharmacy, bank, café." },
+            { "id": "ru-sp-t-phone", "text": "Switch your phone and one social network to Russian." },
+            { "id": "ru-sp-t-lunch", "text": "Agree on a weekly ‘Russian only’ lunch or walk with a Russian-speaking friend or colleague." },
+            { "id": "ru-sp-t-news", "text": "Read Tashkent news in Russian ([Gazeta.uz](https://www.gazeta.uz/ru/), [Kun.uz](https://kun.uz/ru), [Spot.uz](https://www.spot.uz/ru/)) and retell one story to someone the same day." },
+            { "id": "ru-sp-t-club", "text": "Find a free Russian speaking club or meetup (universities, libraries, Telegram groups, [Conversation Exchange](https://www.conversationexchange.com/)) and go at least once." }
+          ]
+        }
+      ],
+      "notes": { "heading": "Conversation log", "placeholder": "Date · who · minutes · topic · 3 corrections\n…" }
+    },
+    {
+      "key": "input",
+      "tab": "Input track",
+      "title": "Listening and reading ladder",
+      "when": "All year: 30 min focused + passive time every day",
+      "months": null,
+      "goal": "You can only say what you've heard many times. Climb from slow learner content to native speed: about 300 hours of listening in 10 months.",
+      "callouts": [
+        "Two kinds of listening. Focused (25–30 minutes, block 3 of the day): with a transcript or subtitles; pause, repeat, shadow. Passive (commute, gym, chores): something you understand 70–90% of, without pausing. [Language Reactor](https://www.languagereactor.com/) shows Russian and English subtitles together on YouTube for free.",
+        "Move up a level when you understand about 80% of the current one without subtitles."
+      ],
+      "groups": [
+        {
+          "kind": "checks",
+          "label": "Level 1 · months 1–3 (A1–A2)",
+          "items": [
+            { "id": "ru-in-mn-audio", "text": "[Между нами audio](https://mezhdunami.org/audio/index.shtml): each episode until you understand every word" },
+            { "id": "ru-in-max", "text": "[Russian with Max](https://www.youtube.com/@russianwithmax): slow, clear videos and stories for beginners" },
+            { "id": "ru-in-ci", "text": "[Comprehensible Russian](https://www.youtube.com/@ComprehensibleRussian): beginner videos fully in Russian, explained with pictures (the YouTube videos are free)" },
+            { "id": "ru-in-rff", "text": "[Russian for Free dialogues](https://www.russianforfree.com/dialogues.php) and [texts with audio](https://www.russianforfree.com/texts.php)" },
+            { "id": "ru-in-inklingo-a", "text": "[Inklingo](https://www.inklingo.app/russian/stories): free graded stories with audio, A0–A2 first" },
+            { "id": "ru-in-cartoons", "text": "[Союзмультфильм](https://www.youtube.com/@soyuzmultfilm): classic Soviet cartoons, short and repetitive" }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Level 2 · months 4–6 (A2–B1)",
+          "items": [
+            { "id": "ru-in-slow", "text": "[Slow Russian](https://podcasts.apple.com/us/podcast/slow-russian/id1069742339): a podcast about everyday life at a slow pace (also on Spotify)" },
+            { "id": "ru-in-rrc", "text": "[Real Russian Club](https://www.youtube.com/@RealRussianClub): grammar and everyday-life videos with Russian subtitles" },
+            { "id": "ru-in-progress", "text": "[Russian Progress](https://www.youtube.com/@RussianProgress): natural speech with subtitles, for intermediate learners" },
+            { "id": "ru-in-inklingo-b", "text": "[Inklingo](https://www.inklingo.app/russian/stories) B1 stories and [lingua.com](https://lingua.com/russian/reading/) texts with audio" },
+            { "id": "ru-in-bfr", "text": "[Be Fluent in Russian](https://www.youtube.com/@befluentinrussian): grammar, culture and idioms" }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Level 3 · months 7–10 (B1+–B2)",
+          "items": [
+            { "id": "ru-in-easy", "text": "[Easy Russian](https://www.youtube.com/c/EasyRussian): street interviews at native speed, with Russian and English subtitles" },
+            { "id": "ru-in-mosfilm", "text": "[Mosfilm](https://www.youtube.com/channel/UCEK3tT7DcfWGWJpNEDBdWog): classic films, free on YouTube" },
+            { "id": "ru-in-lectures", "text": "[ПостНаука](https://www.youtube.com/@postnauka) and [Arzamas](https://arzamas.academy/): short lectures on science, history and culture, for B2 topic vocabulary" },
+            { "id": "ru-in-news", "text": "Tashkent news in Russian: [Gazeta.uz](https://www.gazeta.uz/ru/), [Kun.uz](https://kun.uz/ru)" },
+            { "id": "ru-in-pushkin-b2", "text": "[Pushkin Institute B2](https://pushkininstitute.ru/certified2): «Новости из России», news videos with tasks" }
+          ]
+        },
+        {
+          "kind": "checks",
+          "label": "Listening hours (keep a running total in the notes)",
+          "items": [
+            { "id": "ru-in-h50", "text": "50 hours" },
+            { "id": "ru-in-h100", "text": "100 hours" },
+            { "id": "ru-in-h200", "text": "200 hours" },
+            { "id": "ru-in-h300", "text": "300 hours" }
+          ]
+        }
+      ],
+      "notes": { "heading": "Listening log", "placeholder": "Date · what · minutes · phrases I picked up\nRunning total: … hours" }
+    },
+    {
+      "key": "projects",
+      "tab": "Speaking projects",
+      "title": "Recorded speaking projects",
+      "when": "One per stage, and a final talk in month 10",
+      "months": null,
+      "goal": "Each stage ends with one recorded talk. Keep every file: hearing month 1 next to month 10 is the best proof of progress there is.",
+      "callouts": [
+        "Record on your phone, in one take, without reading. Prepare key words on one card, not a script: B2 is about speaking freely, not reciting."
+      ],
+      "groups": [
+        {
+          "kind": "projects",
+          "label": "Projects",
+          "items": [
+            { "id": "ru-p1", "n": "1", "title": "Self-introduction (1 minute)", "stage": "Stage 1, month 2", "proves": "A1: basic sentences, sounds and stress" },
+            { "id": "ru-p2", "n": "2", "title": "My life in Tashkent (3 minutes)", "stage": "Stage 2, month 4", "proves": "A2: present, past and future, and the cases" },
+            { "id": "ru-p3", "n": "3", "title": "A story with feelings (4 minutes)", "stage": "Stage 3, month 6", "proves": "B1: aspect, motion verbs, connected storytelling" },
+            { "id": "ru-p4", "n": "4", "title": "Explaining my work (5 minutes + questions)", "stage": "Stage 4, month 8", "proves": "B1+: explaining, complex sentences, unprepared answers" },
+            { "id": "ru-p5", "n": "5", "title": "Full B2 speaking mock (45 minutes)", "stage": "Stage 5, months 9–10", "proves": "B2: all 15 tasks of the ТРКИ-2 speaking test at 66% or more" },
+            { "id": "ru-p6", "n": "6", "title": "Final talk: 10 minutes on a topic from your field, then 10 minutes of questions", "stage": "Month 10", "proves": "B2: long, clear speech and spontaneous discussion with native speakers" }
+          ]
+        }
+      ],
+      "notes": { "heading": "Recordings", "placeholder": "Project · date · file name · what improved since the last one\n…" }
+    }
+  ],
+  "sources": [
+    {
+      "label": "Courses and textbooks",
+      "items": [
+        { "label": "Между нами (Mezhdu nami)", "url": "https://mezhdunami.org/", "note": "free first-year Russian textbook with audio, University of Kansas" },
+        { "label": "Pushkin Institute: Образование на русском", "url": "https://pushkininstitute.ru/learn", "note": "free self-study courses from A1 to C2 after registration; interface in English and Uzbek" },
+        { "label": "Russian for Free", "url": "https://www.russianforfree.com/", "note": "courses, grammar tables, exercises, texts and dialogues with audio, a level test" },
+        { "label": "FSI, DLI and Peace Corps Russian courses (Live Lingua)", "url": "https://www.livelingua.com/project/fsi/Russian", "note": "free public-domain government courses with audio; old, but full of useful pattern drills" },
+        { "label": "Duolingo Russian", "url": "https://www.duolingo.com/course/ru/en/Learn-Russian", "note": "optional warm-up in months 1–3" }
+      ]
+    },
+    {
+      "label": "Grammar reference",
+      "items": [
+        { "label": "Master Russian: all lessons", "url": "https://masterrussian.com/blprevious.shtml", "note": "cases, aspect, tenses, pronouns, numbers" },
+        { "label": "Master Russian: verbs of motion", "url": "https://masterrussian.com/verbs/verbs_of_motion.htm" },
+        { "label": "Между нами: declension tables", "url": "https://mezhdunami.org/declension.shtml", "note": "plus [conjugation](https://mezhdunami.org/conjugation.shtml) and [case usage](https://mezhdunami.org/cases.shtml)" },
+        { "label": "Russian for Free: grammar exercises", "url": "https://www.russianforfree.com/exercises.php" }
+      ]
+    },
+    {
+      "label": "Dictionaries and tools",
+      "items": [
+        { "label": "OpenRussian", "url": "https://en.openrussian.org/", "note": "stress, every form of a word, word lists by CEFR level" },
+        { "label": "Wiktionary", "url": "https://en.wiktionary.org/", "note": "stress and full tables for almost any word" },
+        { "label": "Reverso Context", "url": "https://context.reverso.net/translation/russian-english/", "note": "words in real sentences" },
+        { "label": "Multitran", "url": "https://www.multitran.com/", "note": "a big dictionary, strong on technical terms" },
+        { "label": "Forvo", "url": "https://forvo.com/languages/ru/", "note": "native speakers pronouncing words" },
+        { "label": "Russiangram", "url": "https://russiangram.com/", "note": "adds stress marks to any text" },
+        { "label": "LanguageTool", "url": "https://languagetool.org/", "note": "a free grammar checker for your Russian writing" },
+        { "label": "Anki", "url": "https://apps.ankiweb.net/", "note": "spaced repetition; free on desktop, Android and the web" },
+        { "label": "Language Reactor", "url": "https://www.languagereactor.com/", "note": "two subtitle languages at once on YouTube" }
+      ]
+    },
+    {
+      "label": "Speaking and writing practice",
+      "items": [
+        { "label": "Tandem", "url": "https://tandem.net/", "note": "language exchange" },
+        { "label": "HelloTalk", "url": "https://www.hellotalk.com/", "note": "language exchange" },
+        { "label": "Conversation Exchange", "url": "https://www.conversationexchange.com/", "note": "partners for calls, or meetups in your city" },
+        { "label": "LangCorrect", "url": "https://langcorrect.com/", "note": "native speakers correct your writing, free" },
+        { "label": "r/russian", "url": "https://www.reddit.com/r/russian/", "note": "questions, and feedback on your recordings" },
+        { "label": "r/russian: resource wiki", "url": "https://www.reddit.com/r/russian/wiki/index" }
+      ]
+    },
+    {
+      "label": "The B2 exam (ТРКИ-2 / TORFL-II)",
+      "items": [
+        { "label": "SPbU: sample test ТРКИ-2 (PDF)", "url": "https://testingcenter.spbu.ru/images/files/TRKI-2.pdf" },
+        { "label": "SPbU: the speaking test at B2 and C1 (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf" },
+        { "label": "SPbU: preparing for B2 (PDF)", "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf" },
+        { "label": "SPbU: sample test A2, ТБУ (PDF)", "url": "https://testingcenter.spbu.ru/images/files/TBU.pdf" },
+        { "label": "SPbU: sample test B1, ТРКИ-1 (PDF)", "url": "https://testingcenter.spbu.ru/images/files/TRKI-1.pdf" },
+        { "label": "Pushkin Institute: sample test ТРКИ-II (PDF)", "url": "https://www.pushkin.institute/wp-content/uploads/2022/11/%D0%A2%D0%A0%D0%9A%D0%98-II.pdf" },
+        { "label": "University of Victoria: what TORFL tests", "url": "https://hcmc.uvic.ca/torfl/whatIsTested.php", "note": "the parts of the exam and their timing at each level" }
+      ]
+    },
+    {
+      "label": "Method",
+      "items": [
+        { "label": "Paul Nation: The Four Strands (PDF)", "url": "https://www.wgtn.ac.nz/lals/resources/paul-nations-resources/paul-nations-publications/publications/documents/2007-Four-strands.pdf", "note": "why the day splits into input, output, language study and fluency" },
+        { "label": "CEFR self-assessment grid (PDF)", "url": "https://europass.europa.eu/system/files/2020-05/CEFR%20self-assessment%20grid%20EN.pdf", "note": "the can-do descriptions behind Stage 0" },
+        { "label": "FSI: foreign language training", "url": "https://www.state.gov/foreign-language-training/", "note": "Russian is a Category III language: about 1,100 class hours to professional working proficiency" }
+      ]
+    }
+  ]
+}

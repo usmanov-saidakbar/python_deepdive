@@ -258,3 +258,32 @@ all year: the urban analytics track and the portfolio.
 - Progress is saved like the Spark roadmap's, under its own key: `gis:<email>`
   in Upstash via `GET`/`PUT /api/gis-progress/:email`, or this browser's
   localStorage without an email.
+
+## Russian Roadmap tab
+
+`/russian.html` (the "Russian Roadmap" tab) is a 10-month plan to reach B2
+speaking in Russian with free resources only. It has 6 stages in order (Stage 0
+placement and setup, then A1, A2, B1, B1+ and B2), plus three tabs that run all
+year: the speaking track, the input (listening and reading) track, and the
+recorded speaking projects.
+
+- Every topic has a target depth, and the depth decides which steps it shows
+  as chips: Recognize = *Learn, Spot*; Use = *Learn, Drill, Speak*; Automatic
+  = all of those plus *Automatic*. Each topic links the exact lesson to study
+  and gives a speaking task ("Say it").
+- Stage 0 is a CEFR can-do self-assessment with one chip per round (start and
+  months 2, 4, 6, 8, 10), left out of the progress bars like the GIS one. Each
+  stage ends in a recorded speaking project (prepared, recorded, feedback),
+  shared with the Speaking projects tab. Stage 5 follows the official ТРКИ-2
+  (B2) speaking test: 15 tasks, 45 minutes, with SPbU and Pushkin Institute
+  sample tests for the two mocks.
+- Every stage has a notes box (an error log for the language stages), and the
+  weekly check keeps one entry per ISO week. Set a start date and the page
+  shows which month and stage you're in and when the next self-assessment is
+  due.
+- Data lives in `data/russian-roadmap.json`, in the same shape as the GIS
+  roadmap's; source notes can hold links too. Keep each item's `id` stable so
+  saved checkmarks still line up.
+- Progress is saved under its own key: `russian:<email>` in Upstash via
+  `GET`/`PUT /api/russian-progress/:email`, or this browser's localStorage
+  without an email.
