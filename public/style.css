@@ -581,7 +581,6 @@ select.status-select {
 
 /* Russian roadmap: the 300-day plan */
 .daily { margin-bottom: 36px; }
-.reference-heading { margin-top: 8px; }
 
 .day-grid {
   display: grid;

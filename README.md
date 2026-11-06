@@ -279,42 +279,26 @@ all year: the urban analytics track and the portfolio.
 ## Russian Roadmap tab
 
 `/russian.html` (the "Russian Roadmap" tab) is a 300-day plan to reach B2
-speaking in Russian with free resources only. The top of the page is the
-**300-day plan**: month tabs, a grid of the month's 30 days, and the selected
-day's checklist (3–5 tasks, about 2 hours). Below it, the stages hold what the
-days work through: 6 stages in order (Stage 0 placement and setup, then A1, A2,
-B1, B1+ and B2), plus three tabs that run all year: the speaking track, the
-input (listening and reading) track, and the recorded speaking projects.
+speaking in Russian with free resources only. The page is just the plan:
+month tabs, a grid of the month's 30 days, the selected day's checklist (3–5
+tasks, about 2 hours), and one notes box for the error log. Set a start date
+and the page opens on today's day.
 
 - Each month is 4 weeks of 7 days, then a review day (29) and a catch-up day
   (30). A normal day has Anki, one step of the week's grammar topic, a named
   listening (a *Между нами* episode, a Slow Russian episode or an Inklingo
-  story) and a speaking task; day 7 is light. Months 9–10 follow the 15 tasks
-  of the ТРКИ-2 speaking exam, with two full mocks.
-- A daily task with `keys` ticks those keys (a topic step, a project step or a
-  stage check) instead of its own id, so the days and the stages share one set
-  of checkmarks. The page opens on today's day once a start date is set.
+  story) and a speaking task; day 7 is light and holds the weekly check.
+  Months 9–10 follow the 15 tasks of the ТРКИ-2 speaking exam, with two full
+  mocks.
+- Each task carries everything it needs (links, the AI chat prompt, the weekly
+  questions), so no task points anywhere else on the page.
 - The days live in `data/russian-days.json` (`days` → `items` with `id`,
-  `kind`, `text` and optional `keys`); `GET /api/russian-days` serves it. The
-  file was generated from the stage data and checked lists of the free
-  episodes and stories; edit it directly, keeping ids stable.
-- Every topic has a target depth, and the depth decides which steps it shows
-  as chips: Recognize = *Learn, Spot*; Use = *Learn, Drill, Speak*; Automatic
-  = all of those plus *Automatic*. Each topic links the exact lesson to study
-  and gives a speaking task ("Say it").
-- Stage 0 is a CEFR can-do self-assessment with one chip per round (start and
-  months 2, 4, 6, 8, 10), left out of the progress bars like the GIS one. Each
-  stage ends in a recorded speaking project (prepared, recorded, feedback),
-  shared with the Speaking projects tab. Stage 5 follows the official ТРКИ-2
-  (B2) speaking test: 15 tasks, 45 minutes, with SPbU and Pushkin Institute
-  sample tests for the two mocks.
-- Every stage has a notes box (an error log for the language stages), and the
-  weekly check keeps one entry per ISO week. Set a start date and the page
-  shows which day, month and stage you're in and when the next self-assessment
-  is due.
-- Stage data lives in `data/russian-roadmap.json`, in the same shape as the GIS
-  roadmap's; source notes can hold links too. Keep each item's `id` stable so
-  saved checkmarks still line up.
+  `kind`, `text` and optional `keys`); `GET /api/russian-days` serves it. Edit
+  it directly, keeping ids stable. A task with `keys` is ticked under those
+  keys instead of its id: they're left from the stage checklists the page used
+  to have, so ticks saved back then still show.
+- Notes from the old per-stage and weekly notes boxes are folded into the one
+  notes box when progress loads.
 - Progress is saved under its own key: `russian:<email>` in Upstash via
   `GET`/`PUT /api/russian-progress/:email`, or this browser's localStorage
   without an email.

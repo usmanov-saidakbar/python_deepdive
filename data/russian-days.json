@@ -4,7 +4,6 @@
   {
    "n": 1,
    "month": 1,
-   "stage": "s1",
    "week": 1,
    "dow": 1,
    "theme": "Знакомство · introductions",
@@ -12,7 +11,7 @@
     {
      "id": "d1-test",
      "kind": "setup",
-     "text": "Placement (30 min): take the [Russian for Free level test](https://www.russianforfree.com/Russian-level-test.php), then register on the [Pushkin Institute portal](https://pushkininstitute.ru/learn) and take its level test. Write both results in the Stage 0 notes.",
+     "text": "Placement (30 min): take the [Russian for Free level test](https://www.russianforfree.com/Russian-level-test.php), then register on the [Pushkin Institute portal](https://pushkininstitute.ru/learn) and take its level test. Write both results in the notes below.",
      "keys": [
       "ru-s0-test"
      ]
@@ -34,14 +33,9 @@
      ]
     },
     {
-     "id": "d1-selfcheck",
-     "kind": "setup",
-     "text": "Self-assessment (10 min): open Stage 0 and tick ‘Start’ on every can-do statement you can already do."
-    },
-    {
      "id": "d1-why",
      "kind": "setup",
-     "text": "Why and when (5 min): write in the Stage 0 notes why you want Russian, and your B2 date (today plus 300 days).",
+     "text": "Why and when (5 min): write in the notes below why you want Russian, and your B2 date (today plus 300 days).",
      "keys": [
       "ru-s0-why"
      ]
@@ -69,7 +63,6 @@
   {
    "n": 2,
    "month": 1,
-   "stage": "s1",
    "week": 1,
    "dow": 2,
    "theme": "Знакомство · introductions",
@@ -108,7 +101,7 @@
     {
      "id": "d2-tools",
      "kind": "setup",
-     "text": "Bookmark the tools (5 min): OpenRussian, Russiangram, Forvo and Reverso Context (links in Stage 0).",
+     "text": "Bookmark the tools (5 min): [OpenRussian](https://en.openrussian.org/) (stress and word forms), [Russiangram](https://russiangram.com/) (adds stress marks to any text), [Forvo](https://forvo.com/languages/ru/) (native pronunciation) and [Reverso Context](https://context.reverso.net/translation/russian-english/) (words in real sentences).",
      "keys": [
       "ru-s0-tools"
      ]
@@ -118,7 +111,6 @@
   {
    "n": 3,
    "month": 1,
-   "stage": "s1",
    "week": 1,
    "dow": 3,
    "theme": "Знакомство · introductions",
@@ -167,7 +159,6 @@
   {
    "n": 4,
    "month": 1,
-   "stage": "s1",
    "week": 1,
    "dow": 4,
    "theme": "Знакомство · introductions",
@@ -208,7 +199,6 @@
   {
    "n": 5,
    "month": 1,
-   "stage": "s1",
    "week": 1,
    "dow": 5,
    "theme": "Знакомство · introductions",
@@ -249,7 +239,6 @@
   {
    "n": 6,
    "month": 1,
-   "stage": "s1",
    "week": 1,
    "dow": 6,
    "theme": "Знакомство · introductions",
@@ -287,7 +276,6 @@
   {
    "n": 7,
    "month": 1,
-   "stage": "s1",
    "week": 1,
    "dow": 7,
    "theme": "Знакомство · introductions",
@@ -300,7 +288,7 @@
     {
      "id": "d7-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d7-passive",
@@ -317,7 +305,6 @@
   {
    "n": 8,
    "month": 1,
-   "stage": "s1",
    "week": 2,
    "dow": 1,
    "theme": "Вежливость и кафе · politeness and cafés",
@@ -343,14 +330,13 @@
     {
      "id": "d8-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Order tea and samsa from an AI playing a waiter, and ask the price: «Чай, пожалуйста. Сколько стоит?» Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Order tea and samsa from an AI playing a waiter, and ask the price: «Чай, пожалуйста. Сколько стоит?» Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 9,
    "month": 1,
-   "stage": "s1",
    "week": 2,
    "dow": 2,
    "theme": "Вежливость и кафе · politeness and cafés",
@@ -383,7 +369,6 @@
   {
    "n": 10,
    "month": 1,
-   "stage": "s1",
    "week": 2,
    "dow": 3,
    "theme": "Вежливость и кафе · politeness and cafés",
@@ -416,7 +401,6 @@
   {
    "n": 11,
    "month": 1,
-   "stage": "s1",
    "week": 2,
    "dow": 4,
    "theme": "Вежливость и кафе · politeness and cafés",
@@ -449,7 +433,6 @@
   {
    "n": 12,
    "month": 1,
-   "stage": "s1",
    "week": 2,
    "dow": 5,
    "theme": "Вежливость и кафе · politeness and cafés",
@@ -485,7 +468,6 @@
   {
    "n": 13,
    "month": 1,
-   "stage": "s1",
    "week": 2,
    "dow": 6,
    "theme": "Вежливость и кафе · politeness and cafés",
@@ -523,7 +505,6 @@
   {
    "n": 14,
    "month": 1,
-   "stage": "s1",
    "week": 2,
    "dow": 7,
    "theme": "Вежливость и кафе · politeness and cafés",
@@ -536,7 +517,7 @@
     {
      "id": "d14-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d14-passive",
@@ -553,7 +534,6 @@
   {
    "n": 15,
    "month": 1,
-   "stage": "s1",
    "week": 3,
    "dow": 1,
    "theme": "Семья · family",
@@ -579,14 +559,13 @@
     {
      "id": "d15-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Tell an AI about your family: who they are, their names, ages and jobs. Let it ask you questions. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Tell an AI about your family: who they are, their names, ages and jobs. Let it ask you questions. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 16,
    "month": 1,
-   "stage": "s1",
    "week": 3,
    "dow": 2,
    "theme": "Семья · family",
@@ -619,7 +598,6 @@
   {
    "n": 17,
    "month": 1,
-   "stage": "s1",
    "week": 3,
    "dow": 3,
    "theme": "Семья · family",
@@ -656,7 +634,6 @@
   {
    "n": 18,
    "month": 1,
-   "stage": "s1",
    "week": 3,
    "dow": 4,
    "theme": "Семья · family",
@@ -689,7 +666,6 @@
   {
    "n": 19,
    "month": 1,
-   "stage": "s1",
    "week": 3,
    "dow": 5,
    "theme": "Семья · family",
@@ -722,7 +698,6 @@
   {
    "n": 20,
    "month": 1,
-   "stage": "s1",
    "week": 3,
    "dow": 6,
    "theme": "Семья · family",
@@ -760,7 +735,6 @@
   {
    "n": 21,
    "month": 1,
-   "stage": "s1",
    "week": 3,
    "dow": 7,
    "theme": "Семья · family",
@@ -773,7 +747,7 @@
     {
      "id": "d21-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d21-passive",
@@ -790,7 +764,6 @@
   {
    "n": 22,
    "month": 1,
-   "stage": "s1",
    "week": 4,
    "dow": 1,
    "theme": "Дом · home",
@@ -816,14 +789,13 @@
     {
      "id": "d22-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Describe your flat to an AI playing an estate agent: the rooms, their size and colours. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Describe your flat to an AI playing an estate agent: the rooms, their size and colours. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 23,
    "month": 1,
-   "stage": "s1",
    "week": 4,
    "dow": 2,
    "theme": "Дом · home",
@@ -856,7 +828,6 @@
   {
    "n": 24,
    "month": 1,
-   "stage": "s1",
    "week": 4,
    "dow": 3,
    "theme": "Дом · home",
@@ -889,7 +860,6 @@
   {
    "n": 25,
    "month": 1,
-   "stage": "s1",
    "week": 4,
    "dow": 4,
    "theme": "Дом · home",
@@ -902,7 +872,7 @@
     {
      "id": "d25-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d25-input",
@@ -919,7 +889,6 @@
   {
    "n": 26,
    "month": 1,
-   "stage": "s1",
    "week": 4,
    "dow": 5,
    "theme": "Дом · home",
@@ -949,7 +918,6 @@
   {
    "n": 27,
    "month": 1,
-   "stage": "s1",
    "week": 4,
    "dow": 6,
    "theme": "Дом · home",
@@ -984,7 +952,6 @@
   {
    "n": 28,
    "month": 1,
-   "stage": "s1",
    "week": 4,
    "dow": 7,
    "theme": "Дом · home",
@@ -997,7 +964,7 @@
     {
      "id": "d28-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d28-passive",
@@ -1014,7 +981,6 @@
   {
    "n": 29,
    "month": 1,
-   "stage": "s1",
    "theme": "Monthly review",
    "items": [
     {
@@ -1030,7 +996,7 @@
     {
      "id": "d29-habit",
      "kind": "review",
-     "text": "Habit check: have you kept up shadowing 10 minutes a day for 4 weeks in a row? If yes, tick it (it's on the Speaking track).",
+     "text": "Habit check: have you kept up shadowing 10 minutes a day for 4 weeks in a row? If yes, tick it.",
      "keys": [
       "ru-sp-shadow"
      ]
@@ -1040,7 +1006,6 @@
   {
    "n": 30,
    "month": 1,
-   "stage": "s1",
    "theme": "Catch-up",
    "items": [
     {
@@ -1051,19 +1016,13 @@
     {
      "id": "d30-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
-    },
-    {
-     "id": "d30-next",
-     "kind": "review",
-     "text": "Look ahead (10 min): read next month's first week in this plan, and the stage's main sources."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     }
    ]
   },
   {
    "n": 31,
    "month": 2,
-   "stage": "s1",
    "week": 5,
    "dow": 1,
    "theme": "Мой день · my day",
@@ -1089,14 +1048,13 @@
     {
      "id": "d31-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Tell an AI what you do on a normal weekday, then ask about its day. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Tell an AI what you do on a normal weekday, then ask about its day. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 32,
    "month": 2,
-   "stage": "s1",
    "week": 5,
    "dow": 2,
    "theme": "Мой день · my day",
@@ -1129,7 +1087,6 @@
   {
    "n": 33,
    "month": 2,
-   "stage": "s1",
    "week": 5,
    "dow": 3,
    "theme": "Мой день · my day",
@@ -1162,7 +1119,6 @@
   {
    "n": 34,
    "month": 2,
-   "stage": "s1",
    "week": 5,
    "dow": 4,
    "theme": "Мой день · my day",
@@ -1195,7 +1151,6 @@
   {
    "n": 35,
    "month": 2,
-   "stage": "s1",
    "week": 5,
    "dow": 5,
    "theme": "Мой день · my day",
@@ -1228,7 +1183,6 @@
   {
    "n": 36,
    "month": 2,
-   "stage": "s1",
    "week": 5,
    "dow": 6,
    "theme": "Мой день · my day",
@@ -1266,7 +1220,6 @@
   {
    "n": 37,
    "month": 2,
-   "stage": "s1",
    "week": 5,
    "dow": 7,
    "theme": "Мой день · my day",
@@ -1279,7 +1232,7 @@
     {
      "id": "d37-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d37-passive",
@@ -1296,7 +1249,6 @@
   {
    "n": 38,
    "month": 2,
-   "stage": "s1",
    "week": 6,
    "dow": 1,
    "theme": "Город · the city",
@@ -1322,14 +1274,13 @@
     {
      "id": "d38-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Ask an AI playing a tour guide where things are in Tashkent: the metro, a bank, a pharmacy, a good café. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Ask an AI playing a tour guide where things are in Tashkent: the metro, a bank, a pharmacy, a good café. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 39,
    "month": 2,
-   "stage": "s1",
    "week": 6,
    "dow": 2,
    "theme": "Город · the city",
@@ -1362,7 +1313,6 @@
   {
    "n": 40,
    "month": 2,
-   "stage": "s1",
    "week": 6,
    "dow": 3,
    "theme": "Город · the city",
@@ -1395,7 +1345,6 @@
   {
    "n": 41,
    "month": 2,
-   "stage": "s1",
    "week": 6,
    "dow": 4,
    "theme": "Город · the city",
@@ -1408,7 +1357,7 @@
     {
      "id": "d41-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d41-input",
@@ -1425,7 +1374,6 @@
   {
    "n": 42,
    "month": 2,
-   "stage": "s1",
    "week": 6,
    "dow": 5,
    "theme": "Город · the city",
@@ -1455,7 +1403,6 @@
   {
    "n": 43,
    "month": 2,
-   "stage": "s1",
    "week": 6,
    "dow": 6,
    "theme": "Город · the city",
@@ -1490,7 +1437,6 @@
   {
    "n": 44,
    "month": 2,
-   "stage": "s1",
    "week": 6,
    "dow": 7,
    "theme": "Город · the city",
@@ -1503,7 +1449,7 @@
     {
      "id": "d44-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d44-passive",
@@ -1520,7 +1466,6 @@
   {
    "n": 45,
    "month": 2,
-   "stage": "s1",
    "week": 7,
    "dow": 1,
    "theme": "Покупки · shopping",
@@ -1546,7 +1491,7 @@
     {
      "id": "d45-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Buy fruit from an AI playing a bazaar seller: ask prices, choose, pay. «Почём яблоки? Дайте килограмм, пожалуйста.» Use the AI prompt from the Speaking track, or a person if you have one.",
+     "text": "Speak (40 min): Buy fruit from an AI playing a bazaar seller: ask prices, choose, pay. «Почём яблоки? Дайте килограмм, пожалуйста.» Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person.",
      "keys": [
       "ru-sp-m2"
      ]
@@ -1556,7 +1501,6 @@
   {
    "n": 46,
    "month": 2,
-   "stage": "s1",
    "week": 7,
    "dow": 2,
    "theme": "Покупки · shopping",
@@ -1589,7 +1533,6 @@
   {
    "n": 47,
    "month": 2,
-   "stage": "s1",
    "week": 7,
    "dow": 3,
    "theme": "Покупки · shopping",
@@ -1622,7 +1565,6 @@
   {
    "n": 48,
    "month": 2,
-   "stage": "s1",
    "week": 7,
    "dow": 4,
    "theme": "Покупки · shopping",
@@ -1655,7 +1597,6 @@
   {
    "n": 49,
    "month": 2,
-   "stage": "s1",
    "week": 7,
    "dow": 5,
    "theme": "Покупки · shopping",
@@ -1688,7 +1629,6 @@
   {
    "n": 50,
    "month": 2,
-   "stage": "s1",
    "week": 7,
    "dow": 6,
    "theme": "Покупки · shopping",
@@ -1726,7 +1666,6 @@
   {
    "n": 51,
    "month": 2,
-   "stage": "s1",
    "week": 7,
    "dow": 7,
    "theme": "Покупки · shopping",
@@ -1739,7 +1678,7 @@
     {
      "id": "d51-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d51-passive",
@@ -1756,7 +1695,6 @@
   {
    "n": 52,
    "month": 2,
-   "stage": "s1",
    "week": 8,
    "dow": 1,
    "theme": "Биография · my story",
@@ -1769,7 +1707,7 @@
     {
      "id": "d52-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d52-input",
@@ -1779,14 +1717,13 @@
     {
      "id": "d52-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Interview an AI about its ‘life’ (where it was born, studied, works), then answer the same questions about yourself. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Interview an AI about its ‘life’ (where it was born, studied, works), then answer the same questions about yourself. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 53,
    "month": 2,
-   "stage": "s1",
    "week": 8,
    "dow": 2,
    "theme": "Биография · my story",
@@ -1816,7 +1753,6 @@
   {
    "n": 54,
    "month": 2,
-   "stage": "s1",
    "week": 8,
    "dow": 3,
    "theme": "Биография · my story",
@@ -1846,7 +1782,6 @@
   {
    "n": 55,
    "month": 2,
-   "stage": "s1",
    "week": 8,
    "dow": 4,
    "theme": "Биография · my story",
@@ -1859,7 +1794,7 @@
     {
      "id": "d55-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d55-input",
@@ -1876,7 +1811,6 @@
   {
    "n": 56,
    "month": 2,
-   "stage": "s1",
    "week": 8,
    "dow": 5,
    "theme": "Биография · my story",
@@ -1906,7 +1840,6 @@
   {
    "n": 57,
    "month": 2,
-   "stage": "s1",
    "week": 8,
    "dow": 6,
    "theme": "Биография · my story",
@@ -1944,7 +1877,6 @@
   {
    "n": 58,
    "month": 2,
-   "stage": "s1",
    "week": 8,
    "dow": 7,
    "theme": "Биография · my story",
@@ -1957,7 +1889,7 @@
     {
      "id": "d58-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d58-passive",
@@ -1974,7 +1906,6 @@
   {
    "n": 59,
    "month": 2,
-   "stage": "s1",
    "theme": "Monthly review",
    "items": [
     {
@@ -1991,11 +1922,6 @@
      ]
     },
     {
-     "id": "d59-selfcheck",
-     "kind": "review",
-     "text": "Self-assessment (15 min): open Stage 0 and tick ‘Month 2’ on every can-do statement you can do now."
-    },
-    {
      "id": "d59-project",
      "kind": "project",
      "text": "Record project 1 (20 min): in one take, without reading, from your key-word card.",
@@ -2004,62 +1930,29 @@
      ]
     },
     {
-     "id": "d59-auto-ru-s1-sounds",
+     "id": "d59-auto",
      "kind": "grammar",
-     "text": "Automatic check: Pronunciation: vowel reduction, hard and soft consonants, ы, stress. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s1-sounds:auto"
-     ]
-    },
-    {
-     "id": "d59-auto-ru-s1-phrases",
-     "kind": "grammar",
-     "text": "Automatic check: Survival phrases: greetings, ты / вы, please, sorry, asking for help. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s1-phrases:auto"
-     ]
-    },
-    {
-     "id": "d59-auto-ru-s1-gender",
-     "kind": "grammar",
-     "text": "Automatic check: Gender, plurals and possessives (мой, моя, моё, мои; чей?). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s1-gender:auto"
-     ]
-    },
-    {
-     "id": "d59-auto-ru-s1-numbers",
-     "kind": "grammar",
-     "text": "Automatic check: Numbers 0–1000, prices, phone numbers and the time. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s1-numbers:auto"
-     ]
+     "text": "Automatic check: Pronunciation · Survival phrases · Gender, plurals and possessives · Numbers 0–1000, prices, phone numbers and the time. Which came out right in this month's conversations without a correction? Drill the others again next week."
     },
     {
      "id": "d59-habit",
      "kind": "review",
-     "text": "Habit check: have you kept up self-talk 10 minutes a day for 4 weeks in a row? If yes, tick it (it's on the Speaking track).",
+     "text": "Habit check: have you kept up self-talk 10 minutes a day for 4 weeks in a row? If yes, tick it.",
      "keys": [
       "ru-sp-selftalk"
      ]
-    },
-    {
-     "id": "d59-stage-habits",
-     "kind": "review",
-     "text": "Open Stage 1: Sounds and survival (A1) and tick the stage practice items you kept up."
     }
    ]
   },
   {
    "n": 60,
    "month": 2,
-   "stage": "s1",
    "theme": "Catch-up",
    "items": [
     {
      "id": "d60-anki",
      "kind": "anki",
-     "text": "Anki (15 min): reviews only. Goal check: about 800 words learned? If yes, tick it (it's the stage's vocabulary goal).",
+     "text": "Anki (15 min): reviews only. Goal check: about 800 words learned by now?",
      "keys": [
       "ru-s1-anki"
      ]
@@ -2067,7 +1960,7 @@
     {
      "id": "d60-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     },
     {
      "id": "d60-feedback",
@@ -2076,18 +1969,12 @@
      "keys": [
       "ru-p1:feedback"
      ]
-    },
-    {
-     "id": "d60-next",
-     "kind": "review",
-     "text": "Look ahead (10 min): read next month's first week in this plan, and the stage's main sources."
     }
    ]
   },
   {
    "n": 61,
    "month": 3,
-   "stage": "s2",
    "week": 9,
    "dow": 1,
    "theme": "Транспорт и расписание · getting around",
@@ -2113,7 +2000,7 @@
     {
      "id": "d61-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Ask an AI ticket clerk about trains from Tashkent to Samarkand: when they leave, how long it takes, how much it costs. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Ask an AI ticket clerk about trains from Tashkent to Samarkand: when they leave, how long it takes, how much it costs. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A2. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     },
     {
      "id": "d61-topics",
@@ -2128,7 +2015,6 @@
   {
    "n": 62,
    "month": 3,
-   "stage": "s2",
    "week": 9,
    "dow": 2,
    "theme": "Транспорт и расписание · getting around",
@@ -2161,7 +2047,6 @@
   {
    "n": 63,
    "month": 3,
-   "stage": "s2",
    "week": 9,
    "dow": 3,
    "theme": "Транспорт и расписание · getting around",
@@ -2194,7 +2079,6 @@
   {
    "n": 64,
    "month": 3,
-   "stage": "s2",
    "week": 9,
    "dow": 4,
    "theme": "Транспорт и расписание · getting around",
@@ -2235,7 +2119,6 @@
   {
    "n": 65,
    "month": 3,
-   "stage": "s2",
    "week": 9,
    "dow": 5,
    "theme": "Транспорт и расписание · getting around",
@@ -2268,7 +2151,6 @@
   {
    "n": 66,
    "month": 3,
-   "stage": "s2",
    "week": 9,
    "dow": 6,
    "theme": "Транспорт и расписание · getting around",
@@ -2306,7 +2188,6 @@
   {
    "n": 67,
    "month": 3,
-   "stage": "s2",
    "week": 9,
    "dow": 7,
    "theme": "Транспорт и расписание · getting around",
@@ -2319,7 +2200,7 @@
     {
      "id": "d67-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d67-passive",
@@ -2336,7 +2217,6 @@
   {
    "n": 68,
    "month": 3,
-   "stage": "s2",
    "week": 10,
    "dow": 1,
    "theme": "Свободное время · free time and plans",
@@ -2362,14 +2242,13 @@
     {
      "id": "d68-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Plan a weekend with an AI friend: suggest, agree, refuse, and choose a time and place («Давай…? Во сколько?»). Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Plan a weekend with an AI friend: suggest, agree, refuse, and choose a time and place («Давай…? Во сколько?»). Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A2. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 69,
    "month": 3,
-   "stage": "s2",
    "week": 10,
    "dow": 2,
    "theme": "Свободное время · free time and plans",
@@ -2402,7 +2281,6 @@
   {
    "n": 70,
    "month": 3,
-   "stage": "s2",
    "week": 10,
    "dow": 3,
    "theme": "Свободное время · free time and plans",
@@ -2435,7 +2313,6 @@
   {
    "n": 71,
    "month": 3,
-   "stage": "s2",
    "week": 10,
    "dow": 4,
    "theme": "Свободное время · free time and plans",
@@ -2468,7 +2345,6 @@
   {
    "n": 72,
    "month": 3,
-   "stage": "s2",
    "week": 10,
    "dow": 5,
    "theme": "Свободное время · free time and plans",
@@ -2501,7 +2377,6 @@
   {
    "n": 73,
    "month": 3,
-   "stage": "s2",
    "week": 10,
    "dow": 6,
    "theme": "Свободное время · free time and plans",
@@ -2539,7 +2414,6 @@
   {
    "n": 74,
    "month": 3,
-   "stage": "s2",
    "week": 10,
    "dow": 7,
    "theme": "Свободное время · free time and plans",
@@ -2552,7 +2426,7 @@
     {
      "id": "d74-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d74-passive",
@@ -2569,7 +2443,6 @@
   {
    "n": 75,
    "month": 3,
-   "stage": "s2",
    "week": 11,
    "dow": 1,
    "theme": "Прошлые выходные · last weekend",
@@ -2595,14 +2468,13 @@
     {
      "id": "d75-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Tell an AI about last weekend and answer its follow-up questions. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Tell an AI about last weekend and answer its follow-up questions. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A2. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 76,
    "month": 3,
-   "stage": "s2",
    "week": 11,
    "dow": 2,
    "theme": "Прошлые выходные · last weekend",
@@ -2635,7 +2507,6 @@
   {
    "n": 77,
    "month": 3,
-   "stage": "s2",
    "week": 11,
    "dow": 3,
    "theme": "Прошлые выходные · last weekend",
@@ -2668,7 +2539,6 @@
   {
    "n": 78,
    "month": 3,
-   "stage": "s2",
    "week": 11,
    "dow": 4,
    "theme": "Прошлые выходные · last weekend",
@@ -2701,7 +2571,6 @@
   {
    "n": 79,
    "month": 3,
-   "stage": "s2",
    "week": 11,
    "dow": 5,
    "theme": "Прошлые выходные · last weekend",
@@ -2737,7 +2606,6 @@
   {
    "n": 80,
    "month": 3,
-   "stage": "s2",
    "week": 11,
    "dow": 6,
    "theme": "Прошлые выходные · last weekend",
@@ -2775,7 +2643,6 @@
   {
    "n": 81,
    "month": 3,
-   "stage": "s2",
    "week": 11,
    "dow": 7,
    "theme": "Прошлые выходные · last weekend",
@@ -2788,7 +2655,7 @@
     {
      "id": "d81-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d81-passive",
@@ -2805,7 +2672,6 @@
   {
    "n": 82,
    "month": 3,
-   "stage": "s2",
    "week": 12,
    "dow": 1,
    "theme": "Праздники и подарки · holidays and gifts",
@@ -2831,14 +2697,13 @@
     {
      "id": "d82-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Choose a birthday present for a friend with an AI shop assistant: ask for advice and prices. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Choose a birthday present for a friend with an AI shop assistant: ask for advice and prices. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A2. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 83,
    "month": 3,
-   "stage": "s2",
    "week": 12,
    "dow": 2,
    "theme": "Праздники и подарки · holidays and gifts",
@@ -2871,7 +2736,6 @@
   {
    "n": 84,
    "month": 3,
-   "stage": "s2",
    "week": 12,
    "dow": 3,
    "theme": "Праздники и подарки · holidays and gifts",
@@ -2904,7 +2768,6 @@
   {
    "n": 85,
    "month": 3,
-   "stage": "s2",
    "week": 12,
    "dow": 4,
    "theme": "Праздники и подарки · holidays and gifts",
@@ -2917,7 +2780,7 @@
     {
      "id": "d85-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d85-input",
@@ -2934,7 +2797,6 @@
   {
    "n": 86,
    "month": 3,
-   "stage": "s2",
    "week": 12,
    "dow": 5,
    "theme": "Праздники и подарки · holidays and gifts",
@@ -2964,7 +2826,6 @@
   {
    "n": 87,
    "month": 3,
-   "stage": "s2",
    "week": 12,
    "dow": 6,
    "theme": "Праздники и подарки · holidays and gifts",
@@ -2999,7 +2860,6 @@
   {
    "n": 88,
    "month": 3,
-   "stage": "s2",
    "week": 12,
    "dow": 7,
    "theme": "Праздники и подарки · holidays and gifts",
@@ -3012,7 +2872,7 @@
     {
      "id": "d88-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d88-passive",
@@ -3029,7 +2889,6 @@
   {
    "n": 89,
    "month": 3,
-   "stage": "s2",
    "theme": "Monthly review",
    "items": [
     {
@@ -3043,25 +2902,14 @@
      "text": "Monthly recording (10 min): answer «Расскажи о себе и о своей жизни в Ташкенте» for 2 minutes without notes, and listen to it next to your previous one."
     },
     {
-     "id": "d89-auto-ru-s1-present",
+     "id": "d89-auto",
      "kind": "grammar",
-     "text": "Automatic check: Present tense: 1st and 2nd conjugation (читать, говорить, жить). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s1-present:auto"
-     ]
-    },
-    {
-     "id": "d89-auto-ru-s1-prepositional",
-     "kind": "grammar",
-     "text": "Automatic check: Prepositional case: where? (в / на + -е) and about (о + -е). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s1-prepositional:auto"
-     ]
+     "text": "Automatic check: Present tense · Prepositional case. Which came out right in this month's conversations without a correction? Drill the others again next week."
     },
     {
      "id": "d89-habit",
      "kind": "review",
-     "text": "Habit check: have you kept up 4/3/2 twice a week for 4 weeks in a row? If yes, tick it (it's on the Speaking track).",
+     "text": "Habit check: have you kept up 4/3/2 twice a week for 4 weeks in a row? If yes, tick it.",
      "keys": [
       "ru-sp-432"
      ]
@@ -3071,7 +2919,6 @@
   {
    "n": 90,
    "month": 3,
-   "stage": "s2",
    "theme": "Catch-up",
    "items": [
     {
@@ -3082,19 +2929,13 @@
     {
      "id": "d90-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
-    },
-    {
-     "id": "d90-next",
-     "kind": "review",
-     "text": "Look ahead (10 min): read next month's first week in this plan, and the stage's main sources."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     }
    ]
   },
   {
    "n": 91,
    "month": 4,
-   "stage": "s2",
    "week": 13,
    "dow": 1,
    "theme": "Еда и профессии · food and jobs",
@@ -3120,14 +2961,13 @@
     {
      "id": "d91-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Order a full meal from an AI waiter, ask what it recommends, then ask for the bill: «Счёт, пожалуйста.» Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Order a full meal from an AI waiter, ask what it recommends, then ask for the bill: «Счёт, пожалуйста.» Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A2. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 92,
    "month": 4,
-   "stage": "s2",
    "week": 13,
    "dow": 2,
    "theme": "Еда и профессии · food and jobs",
@@ -3160,7 +3000,6 @@
   {
    "n": 93,
    "month": 4,
-   "stage": "s2",
    "week": 13,
    "dow": 3,
    "theme": "Еда и профессии · food and jobs",
@@ -3193,7 +3032,6 @@
   {
    "n": 94,
    "month": 4,
-   "stage": "s2",
    "week": 13,
    "dow": 4,
    "theme": "Еда и профессии · food and jobs",
@@ -3226,7 +3064,6 @@
   {
    "n": 95,
    "month": 4,
-   "stage": "s2",
    "week": 13,
    "dow": 5,
    "theme": "Еда и профессии · food and jobs",
@@ -3259,7 +3096,6 @@
   {
    "n": 96,
    "month": 4,
-   "stage": "s2",
    "week": 13,
    "dow": 6,
    "theme": "Еда и профессии · food and jobs",
@@ -3297,7 +3133,6 @@
   {
    "n": 97,
    "month": 4,
-   "stage": "s2",
    "week": 13,
    "dow": 7,
    "theme": "Еда и профессии · food and jobs",
@@ -3310,7 +3145,7 @@
     {
      "id": "d97-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d97-passive",
@@ -3327,7 +3162,6 @@
   {
    "n": 98,
    "month": 4,
-   "stage": "s2",
    "week": 14,
    "dow": 1,
    "theme": "Погода, спорт, поездки · weather, sport, trips",
@@ -3353,14 +3187,13 @@
     {
      "id": "d98-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Talk with an AI about the weather in Tashkent in each season and what you do then. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Talk with an AI about the weather in Tashkent in each season and what you do then. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A2. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 99,
    "month": 4,
-   "stage": "s2",
    "week": 14,
    "dow": 2,
    "theme": "Погода, спорт, поездки · weather, sport, trips",
@@ -3393,7 +3226,6 @@
   {
    "n": 100,
    "month": 4,
-   "stage": "s2",
    "week": 14,
    "dow": 3,
    "theme": "Погода, спорт, поездки · weather, sport, trips",
@@ -3426,7 +3258,6 @@
   {
    "n": 101,
    "month": 4,
-   "stage": "s2",
    "week": 14,
    "dow": 4,
    "theme": "Погода, спорт, поездки · weather, sport, trips",
@@ -3439,7 +3270,7 @@
     {
      "id": "d101-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d101-input",
@@ -3456,7 +3287,6 @@
   {
    "n": 102,
    "month": 4,
-   "stage": "s2",
    "week": 14,
    "dow": 5,
    "theme": "Погода, спорт, поездки · weather, sport, trips",
@@ -3486,7 +3316,6 @@
   {
    "n": 103,
    "month": 4,
-   "stage": "s2",
    "week": 14,
    "dow": 6,
    "theme": "Погода, спорт, поездки · weather, sport, trips",
@@ -3521,7 +3350,6 @@
   {
    "n": 104,
    "month": 4,
-   "stage": "s2",
    "week": 14,
    "dow": 7,
    "theme": "Погода, спорт, поездки · weather, sport, trips",
@@ -3534,7 +3362,7 @@
     {
      "id": "d104-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d104-passive",
@@ -3551,7 +3379,6 @@
   {
    "n": 105,
    "month": 4,
-   "stage": "s2",
    "week": 15,
    "dow": 1,
    "theme": "Сравнение городов · comparing cities",
@@ -3577,14 +3404,13 @@
     {
      "id": "d105-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Compare Tashkent and Samarkand (or Moscow) with an AI: which is bigger, older, more expensive, better to live in? Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Compare Tashkent and Samarkand (or Moscow) with an AI: which is bigger, older, more expensive, better to live in? Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A2. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 106,
    "month": 4,
-   "stage": "s2",
    "week": 15,
    "dow": 2,
    "theme": "Сравнение городов · comparing cities",
@@ -3617,7 +3443,6 @@
   {
    "n": 107,
    "month": 4,
-   "stage": "s2",
    "week": 15,
    "dow": 3,
    "theme": "Сравнение городов · comparing cities",
@@ -3650,7 +3475,6 @@
   {
    "n": 108,
    "month": 4,
-   "stage": "s2",
    "week": 15,
    "dow": 4,
    "theme": "Сравнение городов · comparing cities",
@@ -3683,7 +3507,6 @@
   {
    "n": 109,
    "month": 4,
-   "stage": "s2",
    "week": 15,
    "dow": 5,
    "theme": "Сравнение городов · comparing cities",
@@ -3716,7 +3539,6 @@
   {
    "n": 110,
    "month": 4,
-   "stage": "s2",
    "week": 15,
    "dow": 6,
    "theme": "Сравнение городов · comparing cities",
@@ -3754,7 +3576,6 @@
   {
    "n": 111,
    "month": 4,
-   "stage": "s2",
    "week": 15,
    "dow": 7,
    "theme": "Сравнение городов · comparing cities",
@@ -3767,7 +3588,7 @@
     {
      "id": "d111-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d111-passive",
@@ -3784,7 +3605,6 @@
   {
    "n": 112,
    "month": 4,
-   "stage": "s2",
    "week": 16,
    "dow": 1,
    "theme": "Здоровье и дорога · health and directions",
@@ -3797,7 +3617,7 @@
     {
      "id": "d112-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d112-input",
@@ -3807,14 +3627,13 @@
     {
      "id": "d112-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Visit an AI doctor: describe your symptoms («У меня болит…»), answer its questions, get advice. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Visit an AI doctor: describe your symptoms («У меня болит…»), answer its questions, get advice. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — A2. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 113,
    "month": 4,
-   "stage": "s2",
    "week": 16,
    "dow": 2,
    "theme": "Здоровье и дорога · health and directions",
@@ -3844,7 +3663,6 @@
   {
    "n": 114,
    "month": 4,
-   "stage": "s2",
    "week": 16,
    "dow": 3,
    "theme": "Здоровье и дорога · health and directions",
@@ -3874,7 +3692,6 @@
   {
    "n": 115,
    "month": 4,
-   "stage": "s2",
    "week": 16,
    "dow": 4,
    "theme": "Здоровье и дорога · health and directions",
@@ -3887,7 +3704,7 @@
     {
      "id": "d115-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d115-input",
@@ -3904,7 +3721,6 @@
   {
    "n": 116,
    "month": 4,
-   "stage": "s2",
    "week": 16,
    "dow": 5,
    "theme": "Здоровье и дорога · health and directions",
@@ -3934,7 +3750,6 @@
   {
    "n": 117,
    "month": 4,
-   "stage": "s2",
    "week": 16,
    "dow": 6,
    "theme": "Здоровье и дорога · health and directions",
@@ -3972,7 +3787,6 @@
   {
    "n": 118,
    "month": 4,
-   "stage": "s2",
    "week": 16,
    "dow": 7,
    "theme": "Здоровье и дорога · health and directions",
@@ -3985,7 +3799,7 @@
     {
      "id": "d118-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d118-passive",
@@ -4002,7 +3816,6 @@
   {
    "n": 119,
    "month": 4,
-   "stage": "s2",
    "theme": "Monthly review",
    "items": [
     {
@@ -4019,11 +3832,6 @@
      ]
     },
     {
-     "id": "d119-selfcheck",
-     "kind": "review",
-     "text": "Self-assessment (15 min): open Stage 0 and tick ‘Month 4’ on every can-do statement you can do now."
-    },
-    {
      "id": "d119-project",
      "kind": "project",
      "text": "Record project 2 (20 min): in one take, without reading, from your key-word card.",
@@ -4032,78 +3840,29 @@
      ]
     },
     {
-     "id": "d119-auto-ru-s2-acc-animate",
+     "id": "d119-auto",
      "kind": "grammar",
-     "text": "Automatic check: Accusative of people (вижу брата, жду коллегу). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s2-acc-animate:auto"
-     ]
-    },
-    {
-     "id": "d119-auto-ru-s2-motion",
-     "kind": "grammar",
-     "text": "Automatic check: Motion verbs, part 1: идти / ходить, ехать / ездить; где, куда, откуда. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s2-motion:auto"
-     ]
-    },
-    {
-     "id": "d119-auto-ru-s2-future",
-     "kind": "grammar",
-     "text": "Automatic check: Future and plans (буду + infinitive, the perfective future, собираюсь, хочу). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s2-future:auto"
-     ]
-    },
-    {
-     "id": "d119-auto-ru-s2-connect",
-     "kind": "grammar",
-     "text": "Automatic check: Connecting ideas: потому что, поэтому, когда, если, который. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s2-connect:auto"
-     ]
-    },
-    {
-     "id": "d119-auto-ru-s2-dative",
-     "kind": "grammar",
-     "text": "Automatic check: Dative: кому? (мне нравится, мне нужно, мне 25 лет). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s2-dative:auto"
-     ]
-    },
-    {
-     "id": "d119-auto-ru-s2-genitive",
-     "kind": "grammar",
-     "text": "Automatic check: Genitive: absence, quantity, ‘of’, and из, от, до, без, после, у. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s2-genitive:auto"
-     ]
+     "text": "Automatic check: Accusative of people · Motion verbs, part 1 · Future and plans · Connecting ideas · Dative · Genitive. Which came out right in this month's conversations without a correction? Drill the others again next week."
     },
     {
      "id": "d119-habit",
      "kind": "review",
-     "text": "Habit check: have you kept up the error log, with every correction going into Anki for 4 weeks in a row? If yes, tick it (it's on the Speaking track).",
+     "text": "Habit check: have you kept up the error log, with every correction going into Anki for 4 weeks in a row? If yes, tick it.",
      "keys": [
       "ru-sp-errorlog"
      ]
-    },
-    {
-     "id": "d119-stage-habits",
-     "kind": "review",
-     "text": "Open Stage 2: Cases, past and future (A2) and tick the stage practice items you kept up."
     }
    ]
   },
   {
    "n": 120,
    "month": 4,
-   "stage": "s2",
    "theme": "Catch-up and test",
    "items": [
     {
      "id": "d120-anki",
      "kind": "anki",
-     "text": "Anki (15 min): reviews only. Goal check: about 1,500 words learned? If yes, tick it (it's the stage's vocabulary goal).",
+     "text": "Anki (15 min): reviews only. Goal check: about 1,500 words learned by now?",
      "keys": [
       "ru-s2-anki"
      ]
@@ -4111,7 +3870,7 @@
     {
      "id": "d120-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     },
     {
      "id": "d120-mock",
@@ -4128,18 +3887,12 @@
      "keys": [
       "ru-p2:feedback"
      ]
-    },
-    {
-     "id": "d120-next",
-     "kind": "review",
-     "text": "Look ahead (10 min): read next month's first week in this plan, and the stage's main sources."
     }
    ]
   },
   {
    "n": 121,
    "month": 5,
-   "stage": "s3",
    "week": 17,
    "dow": 1,
    "theme": "Детство · childhood",
@@ -4165,7 +3918,7 @@
     {
      "id": "d121-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Tell an AI about your childhood: where you grew up, school, friends. Let it ask for details. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Tell an AI about your childhood: where you grew up, school, friends. Let it ask for details. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     },
     {
      "id": "d121-phrases",
@@ -4180,7 +3933,6 @@
   {
    "n": 122,
    "month": 5,
-   "stage": "s3",
    "week": 17,
    "dow": 2,
    "theme": "Детство · childhood",
@@ -4213,7 +3965,6 @@
   {
    "n": 123,
    "month": 5,
-   "stage": "s3",
    "week": 17,
    "dow": 3,
    "theme": "Детство · childhood",
@@ -4246,7 +3997,6 @@
   {
    "n": 124,
    "month": 5,
-   "stage": "s3",
    "week": 17,
    "dow": 4,
    "theme": "Детство · childhood",
@@ -4279,7 +4029,6 @@
   {
    "n": 125,
    "month": 5,
-   "stage": "s3",
    "week": 17,
    "dow": 5,
    "theme": "Детство · childhood",
@@ -4312,7 +4061,6 @@
   {
    "n": 126,
    "month": 5,
-   "stage": "s3",
    "week": 17,
    "dow": 6,
    "theme": "Детство · childhood",
@@ -4350,7 +4098,6 @@
   {
    "n": 127,
    "month": 5,
-   "stage": "s3",
    "week": 17,
    "dow": 7,
    "theme": "Детство · childhood",
@@ -4363,7 +4110,7 @@
     {
      "id": "d127-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d127-passive",
@@ -4380,7 +4127,6 @@
   {
    "n": 128,
    "month": 5,
-   "stage": "s3",
    "week": 18,
    "dow": 1,
    "theme": "Маршруты и поездки · routes and travel",
@@ -4406,14 +4152,13 @@
     {
      "id": "d128-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Plan a Tashkent–Samarkand–Bukhara trip with an AI travel agent: routes, trains, hotels. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Plan a Tashkent–Samarkand–Bukhara trip with an AI travel agent: routes, trains, hotels. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 129,
    "month": 5,
-   "stage": "s3",
    "week": 18,
    "dow": 2,
    "theme": "Маршруты и поездки · routes and travel",
@@ -4446,7 +4191,6 @@
   {
    "n": 130,
    "month": 5,
-   "stage": "s3",
    "week": 18,
    "dow": 3,
    "theme": "Маршруты и поездки · routes and travel",
@@ -4479,7 +4223,6 @@
   {
    "n": 131,
    "month": 5,
-   "stage": "s3",
    "week": 18,
    "dow": 4,
    "theme": "Маршруты и поездки · routes and travel",
@@ -4515,7 +4258,6 @@
   {
    "n": 132,
    "month": 5,
-   "stage": "s3",
    "week": 18,
    "dow": 5,
    "theme": "Маршруты и поездки · routes and travel",
@@ -4548,7 +4290,6 @@
   {
    "n": 133,
    "month": 5,
-   "stage": "s3",
    "week": 18,
    "dow": 6,
    "theme": "Маршруты и поездки · routes and travel",
@@ -4586,7 +4327,6 @@
   {
    "n": 134,
    "month": 5,
-   "stage": "s3",
    "week": 18,
    "dow": 7,
    "theme": "Маршруты и поездки · routes and travel",
@@ -4599,7 +4339,7 @@
     {
      "id": "d134-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d134-passive",
@@ -4616,7 +4356,6 @@
   {
    "n": 135,
    "month": 5,
-   "stage": "s3",
    "week": 19,
    "dow": 1,
    "theme": "Истории · stories",
@@ -4642,14 +4381,13 @@
     {
      "id": "d135-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Tell an AI about a time you moved house or carried something heavy; it asks what happened next. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Tell an AI about a time you moved house or carried something heavy; it asks what happened next. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 136,
    "month": 5,
-   "stage": "s3",
    "week": 19,
    "dow": 2,
    "theme": "Истории · stories",
@@ -4682,7 +4420,6 @@
   {
    "n": 137,
    "month": 5,
-   "stage": "s3",
    "week": 19,
    "dow": 3,
    "theme": "Истории · stories",
@@ -4715,7 +4452,6 @@
   {
    "n": 138,
    "month": 5,
-   "stage": "s3",
    "week": 19,
    "dow": 4,
    "theme": "Истории · stories",
@@ -4748,7 +4484,6 @@
   {
    "n": 139,
    "month": 5,
-   "stage": "s3",
    "week": 19,
    "dow": 5,
    "theme": "Истории · stories",
@@ -4781,7 +4516,6 @@
   {
    "n": 140,
    "month": 5,
-   "stage": "s3",
    "week": 19,
    "dow": 6,
    "theme": "Истории · stories",
@@ -4819,7 +4553,6 @@
   {
    "n": 141,
    "month": 5,
-   "stage": "s3",
    "week": 19,
    "dow": 7,
    "theme": "Истории · stories",
@@ -4832,7 +4565,7 @@
     {
      "id": "d141-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d141-passive",
@@ -4849,7 +4582,6 @@
   {
    "n": 142,
    "month": 5,
-   "stage": "s3",
    "week": 20,
    "dow": 1,
    "theme": "Мечты · dreams and what-ifs",
@@ -4875,14 +4607,13 @@
     {
      "id": "d142-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Answer an AI's ‘what would you do if…’ questions: a million dollars, living anywhere, a free year. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Answer an AI's ‘what would you do if…’ questions: a million dollars, living anywhere, a free year. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 143,
    "month": 5,
-   "stage": "s3",
    "week": 20,
    "dow": 2,
    "theme": "Мечты · dreams and what-ifs",
@@ -4918,7 +4649,6 @@
   {
    "n": 144,
    "month": 5,
-   "stage": "s3",
    "week": 20,
    "dow": 3,
    "theme": "Мечты · dreams and what-ifs",
@@ -4951,7 +4681,6 @@
   {
    "n": 145,
    "month": 5,
-   "stage": "s3",
    "week": 20,
    "dow": 4,
    "theme": "Мечты · dreams and what-ifs",
@@ -4984,7 +4713,6 @@
   {
    "n": 146,
    "month": 5,
-   "stage": "s3",
    "week": 20,
    "dow": 5,
    "theme": "Мечты · dreams and what-ifs",
@@ -5017,7 +4745,6 @@
   {
    "n": 147,
    "month": 5,
-   "stage": "s3",
    "week": 20,
    "dow": 6,
    "theme": "Мечты · dreams and what-ifs",
@@ -5055,7 +4782,6 @@
   {
    "n": 148,
    "month": 5,
-   "stage": "s3",
    "week": 20,
    "dow": 7,
    "theme": "Мечты · dreams and what-ifs",
@@ -5068,7 +4794,7 @@
     {
      "id": "d148-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d148-passive",
@@ -5085,7 +4811,6 @@
   {
    "n": 149,
    "month": 5,
-   "stage": "s3",
    "theme": "Monthly review",
    "items": [
     {
@@ -5099,17 +4824,14 @@
      "text": "Monthly recording (10 min): answer «Расскажи о себе и о своей жизни в Ташкенте» for 2 minutes without notes, and listen to it next to your previous one."
     },
     {
-     "id": "d149-auto-ru-s2-instrumental",
+     "id": "d149-auto",
      "kind": "grammar",
-     "text": "Automatic check: Instrumental: с кем? кем? (работать аналитиком, заниматься спортом). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s2-instrumental:auto"
-     ]
+     "text": "Automatic check: Instrumental. Did it come out right in this month's conversations without a correction? If not, drill it again next week."
     },
     {
      "id": "d149-habit",
      "kind": "review",
-     "text": "Habit check: have you kept up 15 minutes of AI voice chat a day for 4 weeks in a row? If yes, tick it (it's on the Speaking track).",
+     "text": "Habit check: have you kept up 15 minutes of AI voice chat a day for 4 weeks in a row? If yes, tick it.",
      "keys": [
       "ru-sp-ai"
      ]
@@ -5119,7 +4841,6 @@
   {
    "n": 150,
    "month": 5,
-   "stage": "s3",
    "theme": "Catch-up",
    "items": [
     {
@@ -5130,19 +4851,13 @@
     {
      "id": "d150-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
-    },
-    {
-     "id": "d150-next",
-     "kind": "review",
-     "text": "Look ahead (10 min): read next month's first week in this plan, and the stage's main sources."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     }
    ]
   },
   {
    "n": 151,
    "month": 6,
-   "stage": "s3",
    "week": 21,
    "dow": 1,
    "theme": "Новости и разговоры · news and reported speech",
@@ -5168,14 +4883,13 @@
     {
      "id": "d151-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Read a short news story on [Kun.uz](https://kun.uz/ru) and retell it to an AI with reported speech (сообщили, что…; сказал, что…). Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Read a short news story on [Kun.uz](https://kun.uz/ru) and retell it to an AI with reported speech (сообщили, что…; сказал, что…). Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 152,
    "month": 6,
-   "stage": "s3",
    "week": 21,
    "dow": 2,
    "theme": "Новости и разговоры · news and reported speech",
@@ -5208,7 +4922,6 @@
   {
    "n": 153,
    "month": 6,
-   "stage": "s3",
    "week": 21,
    "dow": 3,
    "theme": "Новости и разговоры · news and reported speech",
@@ -5241,7 +4954,6 @@
   {
    "n": 154,
    "month": 6,
-   "stage": "s3",
    "week": 21,
    "dow": 4,
    "theme": "Новости и разговоры · news and reported speech",
@@ -5274,7 +4986,6 @@
   {
    "n": 155,
    "month": 6,
-   "stage": "s3",
    "week": 21,
    "dow": 5,
    "theme": "Новости и разговоры · news and reported speech",
@@ -5307,7 +5018,6 @@
   {
    "n": 156,
    "month": 6,
-   "stage": "s3",
    "week": 21,
    "dow": 6,
    "theme": "Новости и разговоры · news and reported speech",
@@ -5345,7 +5055,6 @@
   {
    "n": 157,
    "month": 6,
-   "stage": "s3",
    "week": 21,
    "dow": 7,
    "theme": "Новости и разговоры · news and reported speech",
@@ -5358,7 +5067,7 @@
     {
      "id": "d157-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d157-passive",
@@ -5375,7 +5084,6 @@
   {
    "n": 158,
    "month": 6,
-   "stage": "s3",
    "week": 22,
    "dow": 1,
    "theme": "Кино и книги · films and books",
@@ -5401,14 +5109,13 @@
     {
      "id": "d158-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Recommend a film to an AI and say why; it disagrees, and you defend your choice. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Recommend a film to an AI and say why; it disagrees, and you defend your choice. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 159,
    "month": 6,
-   "stage": "s3",
    "week": 22,
    "dow": 2,
    "theme": "Кино и книги · films and books",
@@ -5441,7 +5148,6 @@
   {
    "n": 160,
    "month": 6,
-   "stage": "s3",
    "week": 22,
    "dow": 3,
    "theme": "Кино и книги · films and books",
@@ -5474,7 +5180,6 @@
   {
    "n": 161,
    "month": 6,
-   "stage": "s3",
    "week": 22,
    "dow": 4,
    "theme": "Кино и книги · films and books",
@@ -5507,7 +5212,6 @@
   {
    "n": 162,
    "month": 6,
-   "stage": "s3",
    "week": 22,
    "dow": 5,
    "theme": "Кино и книги · films and books",
@@ -5540,7 +5244,6 @@
   {
    "n": 163,
    "month": 6,
-   "stage": "s3",
    "week": 22,
    "dow": 6,
    "theme": "Кино и книги · films and books",
@@ -5578,7 +5281,6 @@
   {
    "n": 164,
    "month": 6,
-   "stage": "s3",
    "week": 22,
    "dow": 7,
    "theme": "Кино и книги · films and books",
@@ -5591,7 +5293,7 @@
     {
      "id": "d164-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d164-passive",
@@ -5608,7 +5310,6 @@
   {
    "n": 165,
    "month": 6,
-   "stage": "s3",
    "week": 23,
    "dow": 1,
    "theme": "Эмоции и праздники · emotions and celebrations",
@@ -5634,14 +5335,13 @@
     {
      "id": "d165-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Act out 6 short scenes with an AI where you react with emotion: surprise, joy, annoyance, regret. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Act out 6 short scenes with an AI where you react with emotion: surprise, joy, annoyance, regret. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 166,
    "month": 6,
-   "stage": "s3",
    "week": 23,
    "dow": 2,
    "theme": "Эмоции и праздники · emotions and celebrations",
@@ -5674,7 +5374,6 @@
   {
    "n": 167,
    "month": 6,
-   "stage": "s3",
    "week": 23,
    "dow": 3,
    "theme": "Эмоции и праздники · emotions and celebrations",
@@ -5707,7 +5406,6 @@
   {
    "n": 168,
    "month": 6,
-   "stage": "s3",
    "week": 23,
    "dow": 4,
    "theme": "Эмоции и праздники · emotions and celebrations",
@@ -5720,7 +5418,7 @@
     {
      "id": "d168-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d168-input",
@@ -5737,7 +5435,6 @@
   {
    "n": 169,
    "month": 6,
-   "stage": "s3",
    "week": 23,
    "dow": 5,
    "theme": "Эмоции и праздники · emotions and celebrations",
@@ -5767,7 +5464,6 @@
   {
    "n": 170,
    "month": 6,
-   "stage": "s3",
    "week": 23,
    "dow": 6,
    "theme": "Эмоции и праздники · emotions and celebrations",
@@ -5802,7 +5498,6 @@
   {
    "n": 171,
    "month": 6,
-   "stage": "s3",
    "week": 23,
    "dow": 7,
    "theme": "Эмоции и праздники · emotions and celebrations",
@@ -5815,7 +5510,7 @@
     {
      "id": "d171-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d171-passive",
@@ -5832,7 +5527,6 @@
   {
    "n": 172,
    "month": 6,
-   "stage": "s3",
    "week": 24,
    "dow": 1,
    "theme": "Рассказы · storytelling",
@@ -5845,7 +5539,7 @@
     {
      "id": "d172-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d172-input",
@@ -5855,14 +5549,13 @@
     {
      "id": "d172-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Tell an AI your project 3 story and let it ask 5 questions. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Tell an AI your project 3 story and let it ask 5 questions. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 173,
    "month": 6,
-   "stage": "s3",
    "week": 24,
    "dow": 2,
    "theme": "Рассказы · storytelling",
@@ -5892,7 +5585,6 @@
   {
    "n": 174,
    "month": 6,
-   "stage": "s3",
    "week": 24,
    "dow": 3,
    "theme": "Рассказы · storytelling",
@@ -5922,7 +5614,6 @@
   {
    "n": 175,
    "month": 6,
-   "stage": "s3",
    "week": 24,
    "dow": 4,
    "theme": "Рассказы · storytelling",
@@ -5935,7 +5626,7 @@
     {
      "id": "d175-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d175-input",
@@ -5952,7 +5643,6 @@
   {
    "n": 176,
    "month": 6,
-   "stage": "s3",
    "week": 24,
    "dow": 5,
    "theme": "Рассказы · storytelling",
@@ -5982,7 +5672,6 @@
   {
    "n": 177,
    "month": 6,
-   "stage": "s3",
    "week": 24,
    "dow": 6,
    "theme": "Рассказы · storytelling",
@@ -6020,7 +5709,6 @@
   {
    "n": 178,
    "month": 6,
-   "stage": "s3",
    "week": 24,
    "dow": 7,
    "theme": "Рассказы · storytelling",
@@ -6033,7 +5721,7 @@
     {
      "id": "d178-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d178-passive",
@@ -6050,7 +5738,6 @@
   {
    "n": 179,
    "month": 6,
-   "stage": "s3",
    "theme": "Monthly review",
    "items": [
     {
@@ -6067,11 +5754,6 @@
      ]
     },
     {
-     "id": "d179-selfcheck",
-     "kind": "review",
-     "text": "Self-assessment (15 min): open Stage 0 and tick ‘Month 6’ on every can-do statement you can do now."
-    },
-    {
      "id": "d179-project",
      "kind": "project",
      "text": "Record project 3 (20 min): in one take, without reading, from your key-word card.",
@@ -6080,70 +5762,29 @@
      ]
     },
     {
-     "id": "d179-auto-ru-s3-aspect",
+     "id": "d179-auto",
      "kind": "grammar",
-     "text": "Automatic check: Aspect in depth: process vs result, once vs repeated, aspect after не and in commands. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s3-aspect:auto"
-     ]
-    },
-    {
-     "id": "d179-auto-ru-s3-time",
-     "kind": "grammar",
-     "text": "Automatic check: Time expressions (в понедельник, через час, неделю назад, за два часа, на неделю). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s3-time:auto"
-     ]
-    },
-    {
-     "id": "d179-auto-ru-s3-prefixes",
-     "kind": "grammar",
-     "text": "Automatic check: Prefixed motion verbs (при-, у-, в-, вы-, за-, пере-, про-, под-, от-, до-). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s3-prefixes:auto"
-     ]
-    },
-    {
-     "id": "d179-auto-ru-s3-connectors",
-     "kind": "grammar",
-     "text": "Automatic check: Storytelling connectors (сначала, потом, вдруг, в итоге, оказалось, к счастью). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s3-connectors:auto"
-     ]
-    },
-    {
-     "id": "d179-auto-ru-s3-conditional",
-     "kind": "grammar",
-     "text": "Automatic check: Conditional and wishes (если бы…, я бы хотел, чтобы…). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s3-conditional:auto"
-     ]
+     "text": "Automatic check: Aspect in depth · Time expressions · Prefixed motion verbs · Storytelling connectors · Conditional and wishes. Which came out right in this month's conversations without a correction? Drill the others again next week."
     },
     {
      "id": "d179-habit",
      "kind": "review",
-     "text": "Habit check: have you kept up recording yourself once a week and listening back for 4 weeks in a row? If yes, tick it (it's on the Speaking track).",
+     "text": "Habit check: have you kept up recording yourself once a week and listening back for 4 weeks in a row? If yes, tick it.",
      "keys": [
       "ru-sp-record"
      ]
-    },
-    {
-     "id": "d179-stage-habits",
-     "kind": "review",
-     "text": "Open Stage 3: Aspect, motion and storytelling (B1) and tick the stage practice items you kept up."
     }
    ]
   },
   {
    "n": 180,
    "month": 6,
-   "stage": "s3",
    "theme": "Catch-up and test",
    "items": [
     {
      "id": "d180-anki",
      "kind": "anki",
-     "text": "Anki (15 min): reviews only. Goal check: about 2,500 words learned? If yes, tick it (it's the stage's vocabulary goal).",
+     "text": "Anki (15 min): reviews only. Goal check: about 2,500 words learned by now?",
      "keys": [
       "ru-s3-anki"
      ]
@@ -6151,7 +5792,7 @@
     {
      "id": "d180-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     },
     {
      "id": "d180-mock",
@@ -6168,18 +5809,12 @@
      "keys": [
       "ru-p3:feedback"
      ]
-    },
-    {
-     "id": "d180-next",
-     "kind": "review",
-     "text": "Look ahead (10 min): read next month's first week in this plan, and the stage's main sources."
     }
    ]
   },
   {
    "n": 181,
    "month": 7,
-   "stage": "s4",
    "week": 25,
    "dow": 1,
    "theme": "Работа и карьера · work and careers",
@@ -6205,14 +5840,13 @@
     {
      "id": "d181-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Have a job interview with an AI recruiter for a data analyst or GIS role. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Have a job interview with an AI recruiter for a data analyst or GIS role. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 182,
    "month": 7,
-   "stage": "s4",
    "week": 25,
    "dow": 2,
    "theme": "Работа и карьера · work and careers",
@@ -6245,7 +5879,6 @@
   {
    "n": 183,
    "month": 7,
-   "stage": "s4",
    "week": 25,
    "dow": 3,
    "theme": "Работа и карьера · work and careers",
@@ -6278,7 +5911,6 @@
   {
    "n": 184,
    "month": 7,
-   "stage": "s4",
    "week": 25,
    "dow": 4,
    "theme": "Работа и карьера · work and careers",
@@ -6311,7 +5943,6 @@
   {
    "n": 185,
    "month": 7,
-   "stage": "s4",
    "week": 25,
    "dow": 5,
    "theme": "Работа и карьера · work and careers",
@@ -6344,7 +5975,6 @@
   {
    "n": 186,
    "month": 7,
-   "stage": "s4",
    "week": 25,
    "dow": 6,
    "theme": "Работа и карьера · work and careers",
@@ -6382,7 +6012,6 @@
   {
    "n": 187,
    "month": 7,
-   "stage": "s4",
    "week": 25,
    "dow": 7,
    "theme": "Работа и карьера · work and careers",
@@ -6395,7 +6024,7 @@
     {
      "id": "d187-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d187-passive",
@@ -6412,7 +6041,6 @@
   {
    "n": 188,
    "month": 7,
-   "stage": "s4",
    "week": 26,
    "dow": 1,
    "theme": "Образование · education",
@@ -6438,14 +6066,13 @@
     {
      "id": "d188-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Debate with an AI: is university still worth it, or are online courses enough? Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Debate with an AI: is university still worth it, or are online courses enough? Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 189,
    "month": 7,
-   "stage": "s4",
    "week": 26,
    "dow": 2,
    "theme": "Образование · education",
@@ -6478,7 +6105,6 @@
   {
    "n": 190,
    "month": 7,
-   "stage": "s4",
    "week": 26,
    "dow": 3,
    "theme": "Образование · education",
@@ -6511,7 +6137,6 @@
   {
    "n": 191,
    "month": 7,
-   "stage": "s4",
    "week": 26,
    "dow": 4,
    "theme": "Образование · education",
@@ -6544,7 +6169,6 @@
   {
    "n": 192,
    "month": 7,
-   "stage": "s4",
    "week": 26,
    "dow": 5,
    "theme": "Образование · education",
@@ -6577,7 +6201,6 @@
   {
    "n": 193,
    "month": 7,
-   "stage": "s4",
    "week": 26,
    "dow": 6,
    "theme": "Образование · education",
@@ -6615,7 +6238,6 @@
   {
    "n": 194,
    "month": 7,
-   "stage": "s4",
    "week": 26,
    "dow": 7,
    "theme": "Образование · education",
@@ -6628,7 +6250,7 @@
     {
      "id": "d194-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d194-passive",
@@ -6645,7 +6267,6 @@
   {
    "n": 195,
    "month": 7,
-   "stage": "s4",
    "week": 27,
    "dow": 1,
    "theme": "Услуги и жалобы · services and complaints",
@@ -6671,14 +6292,13 @@
     {
      "id": "d195-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Phone an AI customer service about a late delivery: explain, complain politely, ask for a solution. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Phone an AI customer service about a late delivery: explain, complain politely, ask for a solution. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 196,
    "month": 7,
-   "stage": "s4",
    "week": 27,
    "dow": 2,
    "theme": "Услуги и жалобы · services and complaints",
@@ -6711,7 +6331,6 @@
   {
    "n": 197,
    "month": 7,
-   "stage": "s4",
    "week": 27,
    "dow": 3,
    "theme": "Услуги и жалобы · services and complaints",
@@ -6744,7 +6363,6 @@
   {
    "n": 198,
    "month": 7,
-   "stage": "s4",
    "week": 27,
    "dow": 4,
    "theme": "Услуги и жалобы · services and complaints",
@@ -6777,7 +6395,6 @@
   {
    "n": 199,
    "month": 7,
-   "stage": "s4",
    "week": 27,
    "dow": 5,
    "theme": "Услуги и жалобы · services and complaints",
@@ -6810,7 +6427,6 @@
   {
    "n": 200,
    "month": 7,
-   "stage": "s4",
    "week": 27,
    "dow": 6,
    "theme": "Услуги и жалобы · services and complaints",
@@ -6848,7 +6464,6 @@
   {
    "n": 201,
    "month": 7,
-   "stage": "s4",
    "week": 27,
    "dow": 7,
    "theme": "Услуги и жалобы · services and complaints",
@@ -6861,7 +6476,7 @@
     {
      "id": "d201-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d201-passive",
@@ -6878,7 +6493,6 @@
   {
    "n": 202,
    "month": 7,
-   "stage": "s4",
    "week": 28,
    "dow": 1,
    "theme": "Новости и цифры · news and numbers",
@@ -6904,14 +6518,13 @@
     {
      "id": "d202-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Sum up a [Gazeta.uz](https://www.gazeta.uz/ru/) article to an AI with its numbers (dates, percentages, prices), then give your opinion. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Sum up a [Gazeta.uz](https://www.gazeta.uz/ru/) article to an AI with its numbers (dates, percentages, prices), then give your opinion. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 203,
    "month": 7,
-   "stage": "s4",
    "week": 28,
    "dow": 2,
    "theme": "Новости и цифры · news and numbers",
@@ -6944,7 +6557,6 @@
   {
    "n": 204,
    "month": 7,
-   "stage": "s4",
    "week": 28,
    "dow": 3,
    "theme": "Новости и цифры · news and numbers",
@@ -6974,7 +6586,6 @@
   {
    "n": 205,
    "month": 7,
-   "stage": "s4",
    "week": 28,
    "dow": 4,
    "theme": "Новости и цифры · news and numbers",
@@ -7007,7 +6618,6 @@
   {
    "n": 206,
    "month": 7,
-   "stage": "s4",
    "week": 28,
    "dow": 5,
    "theme": "Новости и цифры · news and numbers",
@@ -7040,7 +6650,6 @@
   {
    "n": 207,
    "month": 7,
-   "stage": "s4",
    "week": 28,
    "dow": 6,
    "theme": "Новости и цифры · news and numbers",
@@ -7078,7 +6687,6 @@
   {
    "n": 208,
    "month": 7,
-   "stage": "s4",
    "week": 28,
    "dow": 7,
    "theme": "Новости и цифры · news and numbers",
@@ -7091,7 +6699,7 @@
     {
      "id": "d208-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d208-passive",
@@ -7108,7 +6716,6 @@
   {
    "n": 209,
    "month": 7,
-   "stage": "s4",
    "theme": "Monthly review",
    "items": [
     {
@@ -7122,27 +6729,15 @@
      "text": "Monthly recording (10 min): answer «Расскажи о себе и о своей жизни в Ташкенте» for 2 minutes without notes, and listen to it next to your previous one."
     },
     {
-     "id": "d209-auto-ru-s3-explain-word",
+     "id": "d209-auto",
      "kind": "grammar",
-     "text": "Automatic check: Explaining a word you don't know (это такая вещь, которой…; это человек, который…). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s3-explain-word:auto"
-     ]
-    },
-    {
-     "id": "d209-auto-ru-s3-opinion",
-     "kind": "grammar",
-     "text": "Automatic check: Opinions and feelings (мне кажется, по-моему, я рад, мне жаль, я в восторге). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s3-opinion:auto"
-     ]
+     "text": "Automatic check: Explaining a word you don't know · Opinions and feelings. Which came out right in this month's conversations without a correction? Drill the others again next week."
     }
    ]
   },
   {
    "n": 210,
    "month": 7,
-   "stage": "s4",
    "theme": "Catch-up",
    "items": [
     {
@@ -7153,19 +6748,13 @@
     {
      "id": "d210-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
-    },
-    {
-     "id": "d210-next",
-     "kind": "review",
-     "text": "Look ahead (10 min): read next month's first week in this plan, and the stage's main sources."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     }
    ]
   },
   {
    "n": 211,
    "month": 8,
-   "stage": "s4",
    "week": 29,
    "dow": 1,
    "theme": "Технологии · technology and AI",
@@ -7191,14 +6780,13 @@
     {
      "id": "d211-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Discuss with an AI whether AI will take people's jobs, arguing both sides. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Discuss with an AI whether AI will take people's jobs, arguing both sides. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 212,
    "month": 8,
-   "stage": "s4",
    "week": 29,
    "dow": 2,
    "theme": "Технологии · technology and AI",
@@ -7231,7 +6819,6 @@
   {
    "n": 213,
    "month": 8,
-   "stage": "s4",
    "week": 29,
    "dow": 3,
    "theme": "Технологии · technology and AI",
@@ -7264,7 +6851,6 @@
   {
    "n": 214,
    "month": 8,
-   "stage": "s4",
    "week": 29,
    "dow": 4,
    "theme": "Технологии · technology and AI",
@@ -7297,7 +6883,6 @@
   {
    "n": 215,
    "month": 8,
-   "stage": "s4",
    "week": 29,
    "dow": 5,
    "theme": "Технологии · technology and AI",
@@ -7330,7 +6915,6 @@
   {
    "n": 216,
    "month": 8,
-   "stage": "s4",
    "week": 29,
    "dow": 6,
    "theme": "Технологии · technology and AI",
@@ -7365,7 +6949,6 @@
   {
    "n": 217,
    "month": 8,
-   "stage": "s4",
    "week": 29,
    "dow": 7,
    "theme": "Технологии · technology and AI",
@@ -7378,7 +6961,7 @@
     {
      "id": "d217-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d217-passive",
@@ -7395,7 +6978,6 @@
   {
    "n": 218,
    "month": 8,
-   "stage": "s4",
    "week": 30,
    "dow": 1,
    "theme": "Моя работа · my work",
@@ -7421,14 +7003,13 @@
     {
      "id": "d218-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Explain your current GIS or data project to an AI playing a manager, and answer its questions. Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Explain your current GIS or data project to an AI playing a manager, and answer its questions. Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 219,
    "month": 8,
-   "stage": "s4",
    "week": 30,
    "dow": 2,
    "theme": "Моя работа · my work",
@@ -7461,7 +7042,6 @@
   {
    "n": 220,
    "month": 8,
-   "stage": "s4",
    "week": 30,
    "dow": 3,
    "theme": "Моя работа · my work",
@@ -7494,7 +7074,6 @@
   {
    "n": 221,
    "month": 8,
-   "stage": "s4",
    "week": 30,
    "dow": 4,
    "theme": "Моя работа · my work",
@@ -7507,7 +7086,7 @@
     {
      "id": "d221-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d221-input",
@@ -7524,7 +7103,6 @@
   {
    "n": 222,
    "month": 8,
-   "stage": "s4",
    "week": 30,
    "dow": 5,
    "theme": "Моя работа · my work",
@@ -7557,7 +7135,6 @@
   {
    "n": 223,
    "month": 8,
-   "stage": "s4",
    "week": 30,
    "dow": 6,
    "theme": "Моя работа · my work",
@@ -7592,7 +7169,6 @@
   {
    "n": 224,
    "month": 8,
-   "stage": "s4",
    "week": 30,
    "dow": 7,
    "theme": "Моя работа · my work",
@@ -7605,7 +7181,7 @@
     {
      "id": "d224-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d224-passive",
@@ -7622,7 +7198,6 @@
   {
    "n": 225,
    "month": 8,
-   "stage": "s4",
    "week": 31,
    "dow": 1,
    "theme": "Город и экология · the city and ecology",
@@ -7635,7 +7210,7 @@
     {
      "id": "d225-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d225-input",
@@ -7645,14 +7220,13 @@
     {
      "id": "d225-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Debate with an AI: should Tashkent limit cars in the city centre? Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Debate with an AI: should Tashkent limit cars in the city centre? Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 226,
    "month": 8,
-   "stage": "s4",
    "week": 31,
    "dow": 2,
    "theme": "Город и экология · the city and ecology",
@@ -7682,7 +7256,6 @@
   {
    "n": 227,
    "month": 8,
-   "stage": "s4",
    "week": 31,
    "dow": 3,
    "theme": "Город и экология · the city and ecology",
@@ -7712,7 +7285,6 @@
   {
    "n": 228,
    "month": 8,
-   "stage": "s4",
    "week": 31,
    "dow": 4,
    "theme": "Город и экология · the city and ecology",
@@ -7725,7 +7297,7 @@
     {
      "id": "d228-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d228-input",
@@ -7742,7 +7314,6 @@
   {
    "n": 229,
    "month": 8,
-   "stage": "s4",
    "week": 31,
    "dow": 5,
    "theme": "Город и экология · the city and ecology",
@@ -7772,7 +7343,6 @@
   {
    "n": 230,
    "month": 8,
-   "stage": "s4",
    "week": 31,
    "dow": 6,
    "theme": "Город и экология · the city and ecology",
@@ -7807,7 +7377,6 @@
   {
    "n": 231,
    "month": 8,
-   "stage": "s4",
    "week": 31,
    "dow": 7,
    "theme": "Город и экология · the city and ecology",
@@ -7820,7 +7389,7 @@
     {
      "id": "d231-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d231-passive",
@@ -7837,7 +7406,6 @@
   {
    "n": 232,
    "month": 8,
-   "stage": "s4",
    "week": 32,
    "dow": 1,
    "theme": "Семья и поколения · family and generations",
@@ -7850,7 +7418,7 @@
     {
      "id": "d232-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d232-input",
@@ -7860,14 +7428,13 @@
     {
      "id": "d232-speak",
      "kind": "speak",
-     "text": "Speak (40 min): Discuss with an AI: are young people today different from their parents? Use the AI prompt from the Speaking track, or a person if you have one."
+     "text": "Speak (40 min): Discuss with an AI: are young people today different from their parents? Start the AI voice chat with «Давай поговорим по-русски. Мой уровень — B1. Говори просто, задавай вопросы по одному и исправляй мои ошибки.» Or do it with a person."
     }
    ]
   },
   {
    "n": 233,
    "month": 8,
-   "stage": "s4",
    "week": 32,
    "dow": 2,
    "theme": "Семья и поколения · family and generations",
@@ -7897,7 +7464,6 @@
   {
    "n": 234,
    "month": 8,
-   "stage": "s4",
    "week": 32,
    "dow": 3,
    "theme": "Семья и поколения · family and generations",
@@ -7927,7 +7493,6 @@
   {
    "n": 235,
    "month": 8,
-   "stage": "s4",
    "week": 32,
    "dow": 4,
    "theme": "Семья и поколения · family and generations",
@@ -7940,7 +7505,7 @@
     {
      "id": "d235-grammar",
      "kind": "review",
-     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the topic page each one belongs to."
+     "text": "Review (20 min): open your error log and pick the 2 mistakes you make most often. Re-read the lesson each one belongs to."
     },
     {
      "id": "d235-input",
@@ -7957,7 +7522,6 @@
   {
    "n": 236,
    "month": 8,
-   "stage": "s4",
    "week": 32,
    "dow": 5,
    "theme": "Семья и поколения · family and generations",
@@ -7987,7 +7551,6 @@
   {
    "n": 237,
    "month": 8,
-   "stage": "s4",
    "week": 32,
    "dow": 6,
    "theme": "Семья и поколения · family and generations",
@@ -8025,7 +7588,6 @@
   {
    "n": 238,
    "month": 8,
-   "stage": "s4",
    "week": 32,
    "dow": 7,
    "theme": "Семья и поколения · family and generations",
@@ -8038,7 +7600,7 @@
     {
      "id": "d238-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d238-passive",
@@ -8055,7 +7617,6 @@
   {
    "n": 239,
    "month": 8,
-   "stage": "s4",
    "theme": "Monthly review",
    "items": [
     {
@@ -8072,11 +7633,6 @@
      ]
     },
     {
-     "id": "d239-selfcheck",
-     "kind": "review",
-     "text": "Self-assessment (15 min): open Stage 0 and tick ‘Month 8’ on every can-do statement you can do now."
-    },
-    {
      "id": "d239-project",
      "kind": "project",
      "text": "Record project 4 (20 min): in one take, without reading, from your key-word card.",
@@ -8085,54 +7641,21 @@
      ]
     },
     {
-     "id": "d239-auto-ru-s4-fillers",
+     "id": "d239-auto",
      "kind": "grammar",
-     "text": "Automatic check: Fillers that buy thinking time (ну, в общем, то есть, как бы сказать, дело в том, что). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s4-fillers:auto"
-     ]
-    },
-    {
-     "id": "d239-auto-ru-s4-reacting",
-     "kind": "grammar",
-     "text": "Automatic check: Agreeing, disagreeing, doubting, asking what someone means (я не совсем согласен; что вы имеете в виду?). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s4-reacting:auto"
-     ]
-    },
-    {
-     "id": "d239-auto-ru-s4-arguing",
-     "kind": "grammar",
-     "text": "Automatic check: Arguing: for and against, conceding, concluding (с одной стороны…, с другой стороны…; однако; таким образом). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s4-arguing:auto"
-     ]
-    },
-    {
-     "id": "d239-auto-ru-s4-complex",
-     "kind": "grammar",
-     "text": "Automatic check: Complex sentences: хотя, несмотря на то что, для того чтобы, вместо того чтобы, в то время как. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s4-complex:auto"
-     ]
-    },
-    {
-     "id": "d239-stage-habits",
-     "kind": "review",
-     "text": "Open Stage 4: Opinions and complex sentences (B1+ to B2) and tick the stage practice items you kept up."
+     "text": "Automatic check: Fillers that buy thinking time · Agreeing, disagreeing, doubting, asking what someone means · Arguing · Complex sentences. Which came out right in this month's conversations without a correction? Drill the others again next week."
     }
    ]
   },
   {
    "n": 240,
    "month": 8,
-   "stage": "s4",
    "theme": "Catch-up",
    "items": [
     {
      "id": "d240-anki",
      "kind": "anki",
-     "text": "Anki (15 min): reviews only. Goal check: about 3,500 words learned? If yes, tick it (it's the stage's vocabulary goal).",
+     "text": "Anki (15 min): reviews only. Goal check: about 3,500 words learned by now?",
      "keys": [
       "ru-s4-anki"
      ]
@@ -8140,7 +7663,7 @@
     {
      "id": "d240-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     },
     {
      "id": "d240-feedback",
@@ -8149,18 +7672,12 @@
      "keys": [
       "ru-p4:feedback"
      ]
-    },
-    {
-     "id": "d240-next",
-     "kind": "review",
-     "text": "Look ahead (10 min): read next month's first week in this plan, and the stage's main sources."
     }
    ]
   },
   {
    "n": 241,
    "month": 9,
-   "stage": "s5",
    "week": 33,
    "dow": 1,
    "theme": "Работа и карьера · task 15 topic",
@@ -8196,7 +7713,6 @@
   {
    "n": 242,
    "month": 9,
-   "stage": "s5",
    "week": 33,
    "dow": 2,
    "theme": "Работа и карьера · task 15 topic",
@@ -8229,7 +7745,6 @@
   {
    "n": 243,
    "month": 9,
-   "stage": "s5",
    "week": 33,
    "dow": 3,
    "theme": "Работа и карьера · task 15 topic",
@@ -8262,7 +7777,6 @@
   {
    "n": 244,
    "month": 9,
-   "stage": "s5",
    "week": 33,
    "dow": 4,
    "theme": "Работа и карьера · task 15 topic",
@@ -8295,7 +7809,6 @@
   {
    "n": 245,
    "month": 9,
-   "stage": "s5",
    "week": 33,
    "dow": 5,
    "theme": "Работа и карьера · task 15 topic",
@@ -8328,7 +7841,6 @@
   {
    "n": 246,
    "month": 9,
-   "stage": "s5",
    "week": 33,
    "dow": 6,
    "theme": "Работа и карьера · task 15 topic",
@@ -8366,7 +7878,6 @@
   {
    "n": 247,
    "month": 9,
-   "stage": "s5",
    "week": 33,
    "dow": 7,
    "theme": "Работа и карьера · task 15 topic",
@@ -8379,7 +7890,7 @@
     {
      "id": "d247-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d247-passive",
@@ -8396,7 +7907,6 @@
   {
    "n": 248,
    "month": 9,
-   "stage": "s5",
    "week": 34,
    "dow": 1,
    "theme": "Образование · task 15 topic",
@@ -8432,7 +7942,6 @@
   {
    "n": 249,
    "month": 9,
-   "stage": "s5",
    "week": 34,
    "dow": 2,
    "theme": "Образование · task 15 topic",
@@ -8465,7 +7974,6 @@
   {
    "n": 250,
    "month": 9,
-   "stage": "s5",
    "week": 34,
    "dow": 3,
    "theme": "Образование · task 15 topic",
@@ -8498,7 +8006,6 @@
   {
    "n": 251,
    "month": 9,
-   "stage": "s5",
    "week": 34,
    "dow": 4,
    "theme": "Образование · task 15 topic",
@@ -8531,7 +8038,6 @@
   {
    "n": 252,
    "month": 9,
-   "stage": "s5",
    "week": 34,
    "dow": 5,
    "theme": "Образование · task 15 topic",
@@ -8564,7 +8070,6 @@
   {
    "n": 253,
    "month": 9,
-   "stage": "s5",
    "week": 34,
    "dow": 6,
    "theme": "Образование · task 15 topic",
@@ -8600,7 +8105,6 @@
   {
    "n": 254,
    "month": 9,
-   "stage": "s5",
    "week": 34,
    "dow": 7,
    "theme": "Образование · task 15 topic",
@@ -8613,12 +8117,12 @@
     {
      "id": "d254-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d254-score",
      "kind": "test",
-     "text": "Score yesterday's mock (40 min) with the scoring tables in the [SPbU speaking slides](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Write your score out of 145 in the Stage 5 notes, and make your 3 weakest tasks next month's review topic.",
+     "text": "Score yesterday's mock (40 min) with the scoring tables in the [SPbU speaking slides](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Write your score out of 145 in the notes below, and make your 3 weakest tasks next month's review topic.",
      "keys": [
       "ru-s5-score1"
      ]
@@ -8628,7 +8132,6 @@
   {
    "n": 255,
    "month": 9,
-   "stage": "s5",
    "week": 35,
    "dow": 1,
    "theme": "Город · task 15 topic",
@@ -8664,7 +8167,6 @@
   {
    "n": 256,
    "month": 9,
-   "stage": "s5",
    "week": 35,
    "dow": 2,
    "theme": "Город · task 15 topic",
@@ -8697,7 +8199,6 @@
   {
    "n": 257,
    "month": 9,
-   "stage": "s5",
    "week": 35,
    "dow": 3,
    "theme": "Город · task 15 topic",
@@ -8730,7 +8231,6 @@
   {
    "n": 258,
    "month": 9,
-   "stage": "s5",
    "week": 35,
    "dow": 4,
    "theme": "Город · task 15 topic",
@@ -8763,7 +8263,6 @@
   {
    "n": 259,
    "month": 9,
-   "stage": "s5",
    "week": 35,
    "dow": 5,
    "theme": "Город · task 15 topic",
@@ -8796,7 +8295,6 @@
   {
    "n": 260,
    "month": 9,
-   "stage": "s5",
    "week": 35,
    "dow": 6,
    "theme": "Город · task 15 topic",
@@ -8809,7 +8307,7 @@
     {
      "id": "d260-grammar",
      "kind": "grammar",
-     "text": "Speak (20 min): Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion). Three times a week: a partner or an AI plays the examiner for 15 minutes on one topic from the list below.",
+     "text": "Speak (20 min): Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion). Three times a week: a partner or an AI plays the examiner for 15 minutes on one of these topics: работа, образование, город, технологии, семья, здоровье, экология, культура, деньги, СМИ.",
      "keys": [
       "ru-s5-t15:speak"
      ]
@@ -8834,7 +8332,6 @@
   {
    "n": 261,
    "month": 9,
-   "stage": "s5",
    "week": 35,
    "dow": 7,
    "theme": "Город · task 15 topic",
@@ -8847,7 +8344,7 @@
     {
      "id": "d261-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d261-passive",
@@ -8864,7 +8361,6 @@
   {
    "n": 262,
    "month": 9,
-   "stage": "s5",
    "week": 36,
    "dow": 1,
    "theme": "Технологии · task 15 topic",
@@ -8900,7 +8396,6 @@
   {
    "n": 263,
    "month": 9,
-   "stage": "s5",
    "week": 36,
    "dow": 2,
    "theme": "Технологии · task 15 topic",
@@ -8933,7 +8428,6 @@
   {
    "n": 264,
    "month": 9,
-   "stage": "s5",
    "week": 36,
    "dow": 3,
    "theme": "Технологии · task 15 topic",
@@ -8966,7 +8460,6 @@
   {
    "n": 265,
    "month": 9,
-   "stage": "s5",
    "week": 36,
    "dow": 4,
    "theme": "Технологии · task 15 topic",
@@ -8999,7 +8492,6 @@
   {
    "n": 266,
    "month": 9,
-   "stage": "s5",
    "week": 36,
    "dow": 5,
    "theme": "Технологии · task 15 topic",
@@ -9032,7 +8524,6 @@
   {
    "n": 267,
    "month": 9,
-   "stage": "s5",
    "week": 36,
    "dow": 6,
    "theme": "Технологии · task 15 topic",
@@ -9070,7 +8561,6 @@
   {
    "n": 268,
    "month": 9,
-   "stage": "s5",
    "week": 36,
    "dow": 7,
    "theme": "Технологии · task 15 topic",
@@ -9083,7 +8573,7 @@
     {
      "id": "d268-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d268-passive",
@@ -9100,7 +8590,6 @@
   {
    "n": 269,
    "month": 9,
-   "stage": "s5",
    "theme": "Monthly review",
    "items": [
     {
@@ -9114,19 +8603,15 @@
      "text": "Monthly recording (10 min): answer «Расскажи о себе и о своей жизни в Ташкенте» for 2 minutes without notes, and listen to it next to your previous one."
     },
     {
-     "id": "d269-auto-ru-s4-field",
+     "id": "d269-auto",
      "kind": "grammar",
-     "text": "Automatic check: Your field in Russian: data, maps, GIS, AI. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s4-field:auto"
-     ]
+     "text": "Automatic check: Your field in Russian. Did it come out right in this month's conversations without a correction? If not, drill it again next week."
     }
    ]
   },
   {
    "n": 270,
    "month": 9,
-   "stage": "s5",
    "theme": "Catch-up",
    "items": [
     {
@@ -9137,19 +8622,13 @@
     {
      "id": "d270-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
-    },
-    {
-     "id": "d270-next",
-     "kind": "review",
-     "text": "Look ahead (10 min): read next month's first week in this plan, and the stage's main sources."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     }
    ]
   },
   {
    "n": 271,
    "month": 10,
-   "stage": "s5",
    "week": 37,
    "dow": 1,
    "theme": "Семья · task 15 topic",
@@ -9182,7 +8661,6 @@
   {
    "n": 272,
    "month": 10,
-   "stage": "s5",
    "week": 37,
    "dow": 2,
    "theme": "Семья · task 15 topic",
@@ -9212,7 +8690,6 @@
   {
    "n": 273,
    "month": 10,
-   "stage": "s5",
    "week": 37,
    "dow": 3,
    "theme": "Семья · task 15 topic",
@@ -9242,7 +8719,6 @@
   {
    "n": 274,
    "month": 10,
-   "stage": "s5",
    "week": 37,
    "dow": 4,
    "theme": "Семья · task 15 topic",
@@ -9272,7 +8748,6 @@
   {
    "n": 275,
    "month": 10,
-   "stage": "s5",
    "week": 37,
    "dow": 5,
    "theme": "Семья · task 15 topic",
@@ -9302,7 +8777,6 @@
   {
    "n": 276,
    "month": 10,
-   "stage": "s5",
    "week": 37,
    "dow": 6,
    "theme": "Семья · task 15 topic",
@@ -9337,7 +8811,6 @@
   {
    "n": 277,
    "month": 10,
-   "stage": "s5",
    "week": 37,
    "dow": 7,
    "theme": "Семья · task 15 topic",
@@ -9350,7 +8823,7 @@
     {
      "id": "d277-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d277-passive",
@@ -9367,7 +8840,6 @@
   {
    "n": 278,
    "month": 10,
-   "stage": "s5",
    "week": 38,
    "dow": 1,
    "theme": "Здоровье · task 15 topic",
@@ -9400,7 +8872,6 @@
   {
    "n": 279,
    "month": 10,
-   "stage": "s5",
    "week": 38,
    "dow": 2,
    "theme": "Здоровье · task 15 topic",
@@ -9430,7 +8901,6 @@
   {
    "n": 280,
    "month": 10,
-   "stage": "s5",
    "week": 38,
    "dow": 3,
    "theme": "Здоровье · task 15 topic",
@@ -9460,7 +8930,6 @@
   {
    "n": 281,
    "month": 10,
-   "stage": "s5",
    "week": 38,
    "dow": 4,
    "theme": "Здоровье · task 15 topic",
@@ -9490,7 +8959,6 @@
   {
    "n": 282,
    "month": 10,
-   "stage": "s5",
    "week": 38,
    "dow": 5,
    "theme": "Здоровье · task 15 topic",
@@ -9528,7 +8996,6 @@
   {
    "n": 283,
    "month": 10,
-   "stage": "s5",
    "week": 38,
    "dow": 6,
    "theme": "Здоровье · task 15 topic",
@@ -9562,7 +9029,6 @@
   {
    "n": 284,
    "month": 10,
-   "stage": "s5",
    "week": 38,
    "dow": 7,
    "theme": "Здоровье · task 15 topic",
@@ -9575,7 +9041,7 @@
     {
      "id": "d284-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d284-feedback",
@@ -9590,7 +9056,6 @@
   {
    "n": 285,
    "month": 10,
-   "stage": "s5",
    "week": 39,
    "dow": 1,
    "theme": "Экология · task 15 topic",
@@ -9623,7 +9088,6 @@
   {
    "n": 286,
    "month": 10,
-   "stage": "s5",
    "week": 39,
    "dow": 2,
    "theme": "Экология · task 15 topic",
@@ -9653,7 +9117,6 @@
   {
    "n": 287,
    "month": 10,
-   "stage": "s5",
    "week": 39,
    "dow": 3,
    "theme": "Экология · task 15 topic",
@@ -9683,7 +9146,6 @@
   {
    "n": 288,
    "month": 10,
-   "stage": "s5",
    "week": 39,
    "dow": 4,
    "theme": "Экология · task 15 topic",
@@ -9713,7 +9175,6 @@
   {
    "n": 289,
    "month": 10,
-   "stage": "s5",
    "week": 39,
    "dow": 5,
    "theme": "Экология · task 15 topic",
@@ -9743,7 +9204,6 @@
   {
    "n": 290,
    "month": 10,
-   "stage": "s5",
    "week": 39,
    "dow": 6,
    "theme": "Экология · task 15 topic",
@@ -9778,7 +9238,6 @@
   {
    "n": 291,
    "month": 10,
-   "stage": "s5",
    "week": 39,
    "dow": 7,
    "theme": "Экология · task 15 topic",
@@ -9791,7 +9250,7 @@
     {
      "id": "d291-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d291-passive",
@@ -9808,7 +9267,6 @@
   {
    "n": 292,
    "month": 10,
-   "stage": "s5",
    "week": 40,
    "dow": 1,
    "theme": "Культура, деньги, СМИ · task 15 topics",
@@ -9841,7 +9299,6 @@
   {
    "n": 293,
    "month": 10,
-   "stage": "s5",
    "week": 40,
    "dow": 2,
    "theme": "Культура, деньги, СМИ · task 15 topics",
@@ -9874,7 +9331,6 @@
   {
    "n": 294,
    "month": 10,
-   "stage": "s5",
    "week": 40,
    "dow": 3,
    "theme": "Культура, деньги, СМИ · task 15 topics",
@@ -9907,7 +9363,6 @@
   {
    "n": 295,
    "month": 10,
-   "stage": "s5",
    "week": 40,
    "dow": 4,
    "theme": "Культура, деньги, СМИ · task 15 topics",
@@ -9937,7 +9392,6 @@
   {
    "n": 296,
    "month": 10,
-   "stage": "s5",
    "week": 40,
    "dow": 5,
    "theme": "Культура, деньги, СМИ · task 15 topics",
@@ -9967,7 +9421,6 @@
   {
    "n": 297,
    "month": 10,
-   "stage": "s5",
    "week": 40,
    "dow": 6,
    "theme": "Культура, деньги, СМИ · task 15 topics",
@@ -10005,7 +9458,6 @@
   {
    "n": 298,
    "month": 10,
-   "stage": "s5",
    "week": 40,
    "dow": 7,
    "theme": "Культура, деньги, СМИ · task 15 topics",
@@ -10018,7 +9470,7 @@
     {
      "id": "d298-weekly",
      "kind": "review",
-     "text": "Weekly check (20 min): answer the five questions in the Weekly check box at the top of the page."
+     "text": "Weekly check (20 min): how many minutes did you speak this week (target: 210)? How many hours did you listen (target: 7)? Which 3 mistakes came up most in your error log? What can you say now that you couldn't last week? Under 180 minutes of speaking? Next week, cut grammar time, not speaking."
     },
     {
      "id": "d298-passive",
@@ -10035,7 +9487,6 @@
   {
    "n": 299,
    "month": 10,
-   "stage": "s5",
    "theme": "Monthly review",
    "items": [
     {
@@ -10052,11 +9503,6 @@
      ]
     },
     {
-     "id": "d299-selfcheck",
-     "kind": "review",
-     "text": "Self-assessment (15 min): open Stage 0 and tick ‘Month 10’ on every can-do statement you can do now."
-    },
-    {
      "id": "d299-project",
      "kind": "project",
      "text": "Final talk (30 min): give your 10-minute talk to Russian speakers (friends, colleagues, an online group) and take 10 minutes of questions. Record it.",
@@ -10065,75 +9511,15 @@
      ]
     },
     {
-     "id": "d299-auto-ru-s5-t1-4",
+     "id": "d299-auto",
      "kind": "grammar",
-     "text": "Automatic check: Tasks 1–4: disagree with opposite evaluative words (увлекательный → скучный). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s5-t1-4:auto"
-     ]
-    },
-    {
-     "id": "d299-auto-ru-s5-t5-8",
-     "kind": "grammar",
-     "text": "Automatic check: Tasks 5–8: react with an intention and explain it (agree, doubt, delight, suggest, regret, reproach…). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s5-t5-8:auto"
-     ]
-    },
-    {
-     "id": "d299-auto-ru-s5-t9-12",
-     "kind": "grammar",
-     "text": "Automatic check: Tasks 9–12: the intonation of emotions (indignation, joy, disappointment, praise, surprise). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s5-t9-12:auto"
-     ]
-    },
-    {
-     "id": "d299-auto-ru-s5-t13",
-     "kind": "grammar",
-     "text": "Automatic check: Task 13: describe a video: the situation, the characters, their motives, your explanation. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s5-t13:auto"
-     ]
-    },
-    {
-     "id": "d299-auto-ru-s5-t14",
-     "kind": "grammar",
-     "text": "Automatic check: Task 14: phone about an ad (a job, a flat, a course, a competition). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s5-t14:auto"
-     ]
-    },
-    {
-     "id": "d299-auto-ru-s5-t15",
-     "kind": "grammar",
-     "text": "Automatic check: Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion). Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s5-t15:auto"
-     ]
-    },
-    {
-     "id": "d299-auto-ru-s5-accuracy",
-     "kind": "grammar",
-     "text": "Automatic check: Accuracy at speed: endings after numbers and prepositions, aspect, stress. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s5-accuracy:auto"
-     ]
-    },
-    {
-     "id": "d299-auto-ru-s5-fluency",
-     "kind": "grammar",
-     "text": "Automatic check: Fluency: more speed, fewer pauses. Did it come out right in this month's conversations without a correction? If yes, tick it; if not, drill it again next week.",
-     "keys": [
-      "ru-s5-fluency:auto"
-     ]
+     "text": "Automatic check: Tasks 1–4 · Tasks 5–8 · Tasks 9–12 · Task 13 · Task 14 · Task 15 · Accuracy at speed · Fluency. Which came out right in this month's conversations without a correction? Drill the others again next week."
     }
    ]
   },
   {
    "n": 300,
    "month": 10,
-   "stage": "s5",
    "theme": "Catch-up",
    "items": [
     {
@@ -10144,7 +9530,7 @@
     {
      "id": "d300-catchup",
      "kind": "review",
-     "text": "Catch-up (60 min): finish the tasks you missed this month (days without a ✓ in the grid above)."
+     "text": "Catch-up (60 min): finish the tasks you missed this month (days that aren't green in the grid above)."
     },
     {
      "id": "d300-final-feedback",
@@ -10153,11 +9539,6 @@
      "keys": [
       "ru-p6:feedback"
      ]
-    },
-    {
-     "id": "d300-final-auto",
-     "kind": "review",
-     "text": "Automatic checks (15 min): in Stage 5, tick ‘Automatic’ on the exam tasks that went well in mock 2 and in this month's conversations."
     },
     {
      "id": "d300-exam",
