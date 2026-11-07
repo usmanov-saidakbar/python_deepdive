@@ -12,7 +12,6 @@ const ADMIN_KEY = process.env.ADMIN_KEY || "";
 const DATA_FILE = path.join(__dirname, "data", "content.json");
 const SECTIONS_FILE = path.join(__dirname, "data", "sections.json");
 const ROADMAP_FILE = path.join(__dirname, "data", "roadmap.json");
-const GIS_ROADMAP_FILE = path.join(__dirname, "data", "gis-roadmap.json");
 const RUSSIAN_DAYS_FILE = path.join(__dirname, "data", "russian-days.json");
 const COURSE_LINKS_FILE = path.join(__dirname, "data", "course-links.json");
 
@@ -109,14 +108,6 @@ app.get("/api/course-links", (req, res) => {
   }
 });
 
-app.get("/api/gis-roadmap", (req, res) => {
-  try {
-    res.json(JSON.parse(fs.readFileSync(GIS_ROADMAP_FILE, "utf8")));
-  } catch {
-    res.json({ stages: [], sources: [] });
-  }
-});
-
 // The 300-day plan for the Russian roadmap: one checklist per day.
 app.get("/api/russian-days", (req, res) => {
   try {
@@ -160,7 +151,6 @@ function progressRoutes(route, keyPrefix) {
 progressRoutes("/api/progress", "progress");
 progressRoutes("/api/databricks-progress", "databricks");
 progressRoutes("/api/roadmap-progress", "roadmap");
-progressRoutes("/api/gis-progress", "gis");
 progressRoutes("/api/russian-progress", "russian");
 
 app.post("/api/sync", async (req, res) => {
