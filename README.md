@@ -186,7 +186,7 @@ run the same `app.js`; attributes on `<body>` choose what each shows:
 ## Spark Roadmap tab
 
 `/roadmap.html` (the "Spark Roadmap" tab at the top of the page) is a
-26-day Spark plan (Monday to Friday), in four phases. Each day has one part,
+15-day Spark plan (Monday to Friday), in three phases. Each day has one part,
 with its own progress bar and notes box:
 
 - **Days 1–9, theory** (learn the module checklist's 80 questions in 7
@@ -197,25 +197,31 @@ with its own progress bar and notes box:
   Engineering Zoomcamp, its 16 units split over two days (about 2 hours each),
   each linking the YouTube video and the unit's notes; Day 11 ends with the
   module's optional homework.
-- **Days 12–14, practice:** one notebook a day in
-  `public/spark-lab/notebooks/` (`practice_day12.ipynb` to
-  `practice_day14.ipynb`), 14 problems each, written in Zillacode's format: a
-  function `etl(...)` that returns a DataFrame, with the expected output under
-  the problem, a collapsed hint, and the answers collapsed at the end. Day 12
-  covers conditions, nulls, text and dates; Day 13 aggregations and joins;
-  Day 14 window functions and a 6-problem timed set. They use the same small
-  shop tables (customers, products, orders, plus a small extra table where a
-  topic needs one) written out in the setup cell. The problems come from the
-  earlier labs; every answer was re-run on PySpark 4.2.0 and gives the shown
-  output. Day 14 also sets up Zillacode.
-- **Days 15–26, Zillacode:** all 52 PySpark problems of
-  [Zillacode](https://github.com/davidzajac1/zillacode), easy to hard (7 easy,
-  4 medium or 3 hard a day). zillacode.com no longer runs problems, so it runs
-  locally with Docker (`docker compose up`); each task links
-  `http://localhost:5173/ide/<number>`.
+- **Days 12–15, Zillacode prep:** one lesson-and-exercise notebook a day in
+  `public/spark-lab/notebooks/` (`zillacode_prep_day12.ipynb` to
+  `zillacode_prep_day15.ipynb`). They teach the DataFrame API that the theory
+  days and the Zoomcamp module don't cover, everything the 52 PySpark problems
+  of [Zillacode](https://github.com/davidzajac1/zillacode) use: each lesson
+  explains one tool in depth with example cells (their output is stored in
+  the notebook), followed by quick exercises in Zillacode's format (a function
+  `etl(...)` that returns a DataFrame, with the expected output under the
+  task and the answers collapsed at the end). Day 12: how Zillacode runs and
+  checks an answer, columns, filters, `when`, nulls, text, regular
+  expressions and unions. Day 13: dates, aggregations, the fan-out trap,
+  pivot and arrays. Day 14: joins in depth and window functions. Day 15:
+  sessions, streaks and other Hard-problem patterns, Spark SQL, debugging,
+  UDFs, and a 90-minute mock exam on new data built the way Zillacode builds
+  its inputs. The setup cell turns ANSI mode off so Spark 4.2 behaves like
+  Zillacode's Spark 3. Every example and answer was run on PySpark 4.2.0,
+  and each notebook was re-run top to bottom in a fresh kernel with the same
+  outputs. Day 15 ends with setting up Zillacode, which now runs only
+  locally with Docker (`docker compose up`, then
+  `http://localhost:5173/questions`).
 
-The old Lab notebooks (`day01_lab.ipynb` to `day10_lab.ipynb`) are in git
-history (`git show b80b0ed:public/spark-lab/notebooks/day01_lab.ipynb`).
+Earlier versions are in git history: the Lab notebooks
+(`git show b80b0ed:public/spark-lab/notebooks/day01_lab.ipynb`) and the
+practice-only notebooks
+(`git show 2d2b4a1:public/spark-lab/notebooks/practice_day12.ipynb`).
 
 The *Checklist coverage* panel lists every checklist question, the day that
 covers it and whether its topic is ticked. Set a start date and the page
@@ -245,8 +251,9 @@ shows which study day today is; weekends count as catch-up time.
 - The previous 15-day roadmap is in git history (`git show
   2dfe373:data/roadmap.json`). Its checkmarks and notes stay in saved progress
   but no longer show, because the new item ids and note keys start with `v2-`.
-- Notes are saved under `v2-<day>-<part>`: `theory`, `video`, `practice` or
-  `zillacode` (older `v2-<day>-lab` notes stay in storage but no longer show).
+- Notes are saved under `v2-<day>-<part>`: `theory`, `video` or `practice`
+  (older `v2-<day>-lab` and `v2-<day>-zillacode` notes stay in storage but no
+  longer show).
 - With an email entered, progress is saved in Upstash under `roadmap:<email>`
   (separate from the course's `progress:<email>`) via
   `GET`/`PUT /api/roadmap-progress/:email`. Without one, it's kept in the

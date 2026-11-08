@@ -2,7 +2,7 @@ const EMAIL_KEY = "course-tracker-email";
 const LOCAL_KEY = "spark-roadmap-progress";
 const DAY_KEY = "spark-roadmap-day";
 
-// Each day has one part (Theory, Videos, Practice or Zillacode), and each part
+// Each day has one part (Theory, Videos or Practice), and each part
 // has its own notes box. Keys carry a "v2-" prefix so notes written for the old
 // 15-day roadmap ("<day>-theory", "<day>-lab", "<day>") stay in storage
 // untouched instead of showing up under a day that now covers a different topic.
@@ -21,12 +21,7 @@ const PART_NOTES = {
   practice: {
     suffix: "-practice",
     heading: "Practice notes",
-    placeholder: "The problems you needed a hint or the answer for, and what was missing. Solve them again tomorrow.",
-  },
-  zillacode: {
-    suffix: "-zillacode",
-    heading: "Zillacode log",
-    placeholder: "Problems you needed the solution for (number and what you missed). Solve each one again from scratch two days later.",
+    placeholder: "The exercises you needed the answer for, and what was missing. Solve them again from scratch the next day.",
   },
   recall: {
     suffix: "-recall",

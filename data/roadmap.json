@@ -1237,29 +1237,30 @@
   },
   {
     "day": 12,
-    "title": "Practice: Conditions, missing values, text and dates",
-    "goal": "Write conditions, handle nulls, clean text with regular expressions and work with dates, in Zillacode's `etl()` format.",
-    "theme": "Practice for Zillacode",
+    "title": "Zillacode prep 1/4: columns, filters, conditions, nulls and text",
+    "goal": "Know how Zillacode runs and checks an answer, and use columns, filters, `when`, nulls, text functions, regular expressions and unions without falling into their traps.",
+    "theme": "Zillacode prep",
     "parts": [
       {
         "key": "practice",
-        "name": "Practice",
-        "tagline": "Solve the practice notebook",
-        "time": "2 h 30 min",
+        "name": "Lessons and exercises",
+        "tagline": "Learn from the notebook, then solve its exercises",
+        "time": "3 h",
         "activities": [
           {
             "key": "notebook",
-            "name": "🧪 Practice notebook",
-            "time": "2 h 30 min",
+            "name": "📘 Lesson and exercise notebook",
+            "time": "3 h",
+            "note": "Read each lesson and run its example cells, then solve the quick exercises right under it before moving on.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Practice notebook: practice_day12.ipynb",
-                    "text": "Download it, open it with `jupyter lab` and solve the 14 problems. Each one is a function `etl(...)` that returns a DataFrame, exactly like on Zillacode, and shows the output it must produce. The hints are under each problem and the answers are collapsed at the end of the notebook.",
+                    "title": "Notebook: zillacode_prep_day12.ipynb",
+                    "text": "8 lessons (how Zillacode runs and checks an answer; columns and types; filters; `when`/`otherwise`; nulls; text functions; regular expressions; duplicates, sorting and unions), each explained in depth with examples you run, then 20 quick exercises and 3 mixed problems in Zillacode's `etl()` format. Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
                     "id": "v3-d12-practice",
-                    "url": "/spark-lab/notebooks/practice_day12.ipynb"
+                    "url": "/spark-lab/notebooks/zillacode_prep_day12.ipynb"
                   }
                 ]
               }
@@ -1268,33 +1269,34 @@
         ]
       }
     ],
-    "time": "≈ 2 h 30 min"
+    "time": "≈ 3 h"
   },
   {
     "day": 13,
-    "title": "Practice: Aggregations and joins",
-    "goal": "Aggregate with several functions at once, filter on aggregates, pivot, and use every kind of join: anti, left, full, self, range and cross.",
-    "theme": "Practice for Zillacode",
+    "title": "Zillacode prep 2/4: dates, aggregations, pivots and arrays",
+    "goal": "Turn date text into dates and compute with them, aggregate with several functions and conditions, avoid the fan-out trap of joining before aggregating, pivot, and explode lists.",
+    "theme": "Zillacode prep",
     "parts": [
       {
         "key": "practice",
-        "name": "Practice",
-        "tagline": "Solve the practice notebook",
-        "time": "2 h 30 min",
+        "name": "Lessons and exercises",
+        "tagline": "Learn from the notebook, then solve its exercises",
+        "time": "3 h",
         "activities": [
           {
             "key": "notebook",
-            "name": "🧪 Practice notebook",
-            "time": "2 h 30 min",
+            "name": "📘 Lesson and exercise notebook",
+            "time": "3 h",
+            "note": "Read each lesson and run its example cells, then solve the quick exercises right under it before moving on.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Practice notebook: practice_day13.ipynb",
-                    "text": "Download it, open it with `jupyter lab` and solve the 14 problems. Each one is a function `etl(...)` that returns a DataFrame, exactly like on Zillacode, and shows the output it must produce. The hints are under each problem and the answers are collapsed at the end of the notebook.",
+                    "title": "Notebook: zillacode_prep_day13.ipynb",
+                    "text": "5 lessons (dates and timestamps; `groupBy`/`agg`, conditional aggregation and HAVING; aggregate first, then join; pivot; arrays, `explode` and `collect_list`), each with examples you run, then 17 quick exercises and 3 mixed problems. Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
                     "id": "v3-d13-practice",
-                    "url": "/spark-lab/notebooks/practice_day13.ipynb"
+                    "url": "/spark-lab/notebooks/zillacode_prep_day13.ipynb"
                   }
                 ]
               }
@@ -1303,37 +1305,74 @@
         ]
       }
     ],
-    "time": "≈ 2 h 30 min"
+    "time": "≈ 3 h"
   },
   {
     "day": 14,
-    "title": "Practice: Window functions and a timed set",
-    "goal": "Solve top-N, previous-row, running-total, latest-row, session and streak problems with window functions, then 6 problems against the clock.",
-    "theme": "Practice for Zillacode",
+    "title": "Zillacode prep 3/4: joins in depth and window functions",
+    "goal": "Choose the right join type, handle same-named columns, one table in two roles and self-joins, join on ranges, and solve ranking, latest-row, previous-row and running-total problems with window functions.",
+    "theme": "Zillacode prep",
     "parts": [
       {
         "key": "practice",
-        "name": "Practice",
-        "tagline": "Solve the practice notebook",
-        "time": "2 h 30 min",
+        "name": "Lessons and exercises",
+        "tagline": "Learn from the notebook, then solve its exercises",
+        "time": "3 h 15 min",
         "activities": [
           {
             "key": "notebook",
-            "name": "🧪 Practice notebook",
-            "time": "2 h 30 min",
+            "name": "📘 Lesson and exercise notebook",
+            "time": "3 h 15 min",
+            "note": "Read each lesson and run its example cells, then solve the quick exercises right under it before moving on.",
             "blocks": [
               {
                 "label": "",
                 "items": [
                   {
-                    "title": "Practice notebook: practice_day14.ipynb",
-                    "text": "Download it, open it with `jupyter lab` and solve the 14 problems. Each one is a function `etl(...)` that returns a DataFrame, exactly like on Zillacode, and shows the output it must produce. The hints are under each problem and the answers are collapsed at the end of the notebook.",
+                    "title": "Notebook: zillacode_prep_day14.ipynb",
+                    "text": "6 lessons (join types; same column names, two roles and self-joins; range and cross joins; window functions; `row_number`/`rank`/`dense_rank`; `lag`/`lead`, running totals and the frame trap), each with examples you run, then 19 quick exercises and 4 mixed problems. Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
                     "id": "v3-d14-practice",
-                    "url": "/spark-lab/notebooks/practice_day14.ipynb"
+                    "url": "/spark-lab/notebooks/zillacode_prep_day14.ipynb"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "time": "≈ 3 h 15 min"
+  },
+  {
+    "day": 15,
+    "title": "Zillacode prep 4/4: hard patterns, Spark SQL and a mock exam",
+    "goal": "Solve session, streak, first/last-row and snapshot problems, answer in Spark SQL when that's easier, read Spark's error messages, then pass a timed mock exam and set up Zillacode.",
+    "theme": "Zillacode prep",
+    "parts": [
+      {
+        "key": "practice",
+        "name": "Lessons and exercises",
+        "tagline": "Learn from the notebook, then solve its exercises",
+        "time": "3 h 20 min",
+        "activities": [
+          {
+            "key": "notebook",
+            "name": "📘 Lesson and exercise notebook",
+            "time": "3 h 20 min",
+            "note": "Read each lesson and run its example cells, then solve the quick exercises right under it before moving on.",
+            "blocks": [
+              {
+                "label": "",
+                "items": [
+                  {
+                    "title": "Notebook: zillacode_prep_day15.ipynb",
+                    "text": "4 lessons (sessions, streaks, first/last row per group, snapshots and whole-table comparisons; Spark SQL inside `etl`; debugging errors and silent mistakes; UDFs), 5 exercises, then a mock exam: 8 problems in 90 minutes on new data built exactly the way Zillacode builds its inputs. Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
+                    "id": "v3-d15-practice",
+                    "url": "/spark-lab/notebooks/zillacode_prep_day15.ipynb"
                   },
                   {
                     "title": "Set up Zillacode on your Mac (once, about 20 min)",
-                    "text": "zillacode.com no longer runs problems: Zillacode is open source now and runs locally with Docker. Start Docker Desktop, then in a terminal: `git clone https://github.com/davidzajac1/zillacode.git`, `cd zillacode`, `docker compose up`. The first start downloads about 2.6 GB. Open the problem list, open problem 1, choose PySpark and press Run on the starter code to check that it works. Ports 5001, 5173 and 8081–8083 must be free; stop it with Ctrl+C.",
+                    "text": "zillacode.com no longer runs problems: Zillacode is open source now and runs locally with Docker. Start Docker Desktop, then in a terminal: `git clone https://github.com/davidzajac1/zillacode.git`, `cd zillacode`, `docker compose up`. The first start downloads about 2.6 GB. Open the problem list, open problem 1, choose PySpark and press Run on the starter code to check that it works. Ports 5001, 5173 and 8081–8083 must be free; stop it with Ctrl+C. Then solve the 52 problems at your own pace, Easy first; the last cell of today's notebook lists them by topic.",
                     "id": "v3-zillacode-setup",
                     "url": "http://localhost:5173/questions",
                     "links": [
@@ -1350,678 +1389,6 @@
         ]
       }
     ],
-    "time": "≈ 2 h 50 min"
-  },
-  {
-    "day": 15,
-    "title": "Zillacode: easy problems (1/3)",
-    "goal": "Solve 7 easy Zillacode problems in PySpark, about 15 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#1 Streaming Platform · Easy",
-                    "text": "Topics: Conditional Logic, Datetime Operations.",
-                    "id": "v3-zillacode-1",
-                    "url": "http://localhost:5173/ide/1"
-                  },
-                  {
-                    "title": "#5 E-Commerce Platform · Easy",
-                    "text": "Topics: Aggregate Functions, Complex Joins.",
-                    "id": "v3-zillacode-5",
-                    "url": "http://localhost:5173/ide/5"
-                  },
-                  {
-                    "title": "#6 Correcting Social Media Posts · Easy",
-                    "text": "Topics: Regular Expressions.",
-                    "id": "v3-zillacode-6",
-                    "url": "http://localhost:5173/ide/6"
-                  },
-                  {
-                    "title": "#8 Call Center · Easy",
-                    "text": "Topics: Aggregate Functions, Distinct Function.",
-                    "id": "v3-zillacode-8",
-                    "url": "http://localhost:5173/ide/8"
-                  },
-                  {
-                    "title": "#11 Movies · Easy",
-                    "text": "Topics: Null Handling.",
-                    "id": "v3-zillacode-11",
-                    "url": "http://localhost:5173/ide/11"
-                  },
-                  {
-                    "title": "#12 Insurance Customers · Easy",
-                    "text": "Topics: Union Statements.",
-                    "id": "v3-zillacode-12",
-                    "url": "http://localhost:5173/ide/12"
-                  },
-                  {
-                    "title": "#14 Private Equity Firms · Easy",
-                    "text": "Topics: Complex Joins, Null Handling.",
-                    "id": "v3-zillacode-14",
-                    "url": "http://localhost:5173/ide/14"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 16,
-    "title": "Zillacode: easy problems (2/3)",
-    "goal": "Solve 7 easy Zillacode problems in PySpark, about 15 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#16 Running Payroll · Easy",
-                    "text": "Topics: Case When Statements.",
-                    "id": "v3-zillacode-16",
-                    "url": "http://localhost:5173/ide/16"
-                  },
-                  {
-                    "title": "#17 Geology Samples · Easy",
-                    "text": "Topics: Regular Expressions.",
-                    "id": "v3-zillacode-17",
-                    "url": "http://localhost:5173/ide/17"
-                  },
-                  {
-                    "title": "#25 Mining Corporation · Easy",
-                    "text": "Topics: Aggregate Functions.",
-                    "id": "v3-zillacode-25",
-                    "url": "http://localhost:5173/ide/25"
-                  },
-                  {
-                    "title": "#34 User Interactions · Easy",
-                    "text": "Topics: Union Statements.",
-                    "id": "v3-zillacode-34",
-                    "url": "http://localhost:5173/ide/34"
-                  },
-                  {
-                    "title": "#35 Camping Supplies · Easy",
-                    "text": "Topics: Aggregate Functions.",
-                    "id": "v3-zillacode-35",
-                    "url": "http://localhost:5173/ide/35"
-                  },
-                  {
-                    "title": "#36 Funded Startups · Easy",
-                    "text": "Topics: Aggregate Functions, Conditional Logic.",
-                    "id": "v3-zillacode-36",
-                    "url": "http://localhost:5173/ide/36"
-                  },
-                  {
-                    "title": "#38 Customer Cross Join · Easy",
-                    "text": "Topics: Complex Joins.",
-                    "id": "v3-zillacode-38",
-                    "url": "http://localhost:5173/ide/38"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 17,
-    "title": "Zillacode: easy problems (3/3)",
-    "goal": "Solve 7 easy Zillacode problems in PySpark, about 15 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#39 User Interactions 2 · Easy",
-                    "text": "Topics: Aggregate Functions.",
-                    "id": "v3-zillacode-39",
-                    "url": "http://localhost:5173/ide/39"
-                  },
-                  {
-                    "title": "#41 Architectural Points of Interest · Easy",
-                    "text": "Topics: Case When Statements.",
-                    "id": "v3-zillacode-41",
-                    "url": "http://localhost:5173/ide/41"
-                  },
-                  {
-                    "title": "#42 Zoology · Easy",
-                    "text": "Topics: Aggregate Functions.",
-                    "id": "v3-zillacode-42",
-                    "url": "http://localhost:5173/ide/42"
-                  },
-                  {
-                    "title": "#46 Thermodynamics · Easy",
-                    "text": "Topics: Complex Joins.",
-                    "id": "v3-zillacode-46",
-                    "url": "http://localhost:5173/ide/46"
-                  },
-                  {
-                    "title": "#47 Materials Engineering · Easy",
-                    "text": "Topics: Complex Joins.",
-                    "id": "v3-zillacode-47",
-                    "url": "http://localhost:5173/ide/47"
-                  },
-                  {
-                    "title": "#50 Archaeology Record Keeping · Easy",
-                    "text": "Topics: Conditional Logic.",
-                    "id": "v3-zillacode-50",
-                    "url": "http://localhost:5173/ide/50"
-                  },
-                  {
-                    "title": "#52 Space Observatory · Easy",
-                    "text": "Topics: Complex Joins.",
-                    "id": "v3-zillacode-52",
-                    "url": "http://localhost:5173/ide/52"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 18,
-    "title": "Zillacode: medium problems (1/4)",
-    "goal": "Solve 4 medium Zillacode problems in PySpark, about 30 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#2 CRM SAAS Company · Medium",
-                    "text": "Topics: Complex Joins, String Manipulation.",
-                    "id": "v3-zillacode-2",
-                    "url": "http://localhost:5173/ide/2"
-                  },
-                  {
-                    "title": "#4 Social Media PII · Medium",
-                    "text": "Topics: Regular Expressions.",
-                    "id": "v3-zillacode-4",
-                    "url": "http://localhost:5173/ide/4"
-                  },
-                  {
-                    "title": "#9 AI Research · Medium",
-                    "text": "Topics: Windows Functions.",
-                    "id": "v3-zillacode-9",
-                    "url": "http://localhost:5173/ide/9"
-                  },
-                  {
-                    "title": "#10 Food and Beverage Sales · Medium",
-                    "text": "Topics: Aggregate Functions, Complex Joins.",
-                    "id": "v3-zillacode-10",
-                    "url": "http://localhost:5173/ide/10"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 19,
-    "title": "Zillacode: medium problems (2/4)",
-    "goal": "Solve 4 medium Zillacode problems in PySpark, about 30 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#18 Factory Duplicates · Medium",
-                    "text": "Topics: Complex Joins.",
-                    "id": "v3-zillacode-18",
-                    "url": "http://localhost:5173/ide/18"
-                  },
-                  {
-                    "title": "#19 VC Firms · Medium",
-                    "text": "Topics: Aggregate Functions.",
-                    "id": "v3-zillacode-19",
-                    "url": "http://localhost:5173/ide/19"
-                  },
-                  {
-                    "title": "#23 Machine Learning Metrics · Medium",
-                    "text": "Topics: Aggregate Functions, Complex Joins.",
-                    "id": "v3-zillacode-23",
-                    "url": "http://localhost:5173/ide/23"
-                  },
-                  {
-                    "title": "#27 Mortgage Interest Rates · Medium",
-                    "text": "Topics: Aggregate Functions, Complex Joins.",
-                    "id": "v3-zillacode-27",
-                    "url": "http://localhost:5173/ide/27"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 20,
-    "title": "Zillacode: medium problems (3/4)",
-    "goal": "Solve 4 medium Zillacode problems in PySpark, about 30 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#28 Organizing Manufacturing Parts · Medium",
-                    "text": "Topics: Windows Functions.",
-                    "id": "v3-zillacode-28",
-                    "url": "http://localhost:5173/ide/28"
-                  },
-                  {
-                    "title": "#31 Ecommerce Datetimes · Medium",
-                    "text": "Topics: Datetime Operations, Complex Joins.",
-                    "id": "v3-zillacode-31",
-                    "url": "http://localhost:5173/ide/31"
-                  },
-                  {
-                    "title": "#32 Amusement Park Outlier · Medium",
-                    "text": "Topics: Aggregate Functions, Conditional Logic.",
-                    "id": "v3-zillacode-32",
-                    "url": "http://localhost:5173/ide/32"
-                  },
-                  {
-                    "title": "#33 Aerospace Equipment · Medium",
-                    "text": "Topics: Case When Statements.",
-                    "id": "v3-zillacode-33",
-                    "url": "http://localhost:5173/ide/33"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 21,
-    "title": "Zillacode: medium problems (4/4)",
-    "goal": "Solve 4 medium Zillacode problems in PySpark, about 30 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#40 Background Checks · Medium",
-                    "text": "Topics: String Manipulation.",
-                    "id": "v3-zillacode-40",
-                    "url": "http://localhost:5173/ide/40"
-                  },
-                  {
-                    "title": "#44 PE Portfolio Values · Medium",
-                    "text": "Topics: Aggregate Functions.",
-                    "id": "v3-zillacode-44",
-                    "url": "http://localhost:5173/ide/44"
-                  },
-                  {
-                    "title": "#48 Floors R Us · Medium",
-                    "text": "Topics: String Manipulation.",
-                    "id": "v3-zillacode-48",
-                    "url": "http://localhost:5173/ide/48"
-                  },
-                  {
-                    "title": "#49 Busy Airline · Medium",
-                    "text": "Topics: Complex Joins.",
-                    "id": "v3-zillacode-49",
-                    "url": "http://localhost:5173/ide/49"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 22,
-    "title": "Zillacode: hard problems (1/5)",
-    "goal": "Solve 3 hard Zillacode problems in PySpark, about 40 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#3 Property Management Company · Hard",
-                    "text": "Topics: Pivot Function, Complex Joins, Aggregate Functions.",
-                    "id": "v3-zillacode-3",
-                    "url": "http://localhost:5173/ide/3"
-                  },
-                  {
-                    "title": "#7 Manufacturing Plant · Hard",
-                    "text": "Topics: Windows Functions, Conditional Logic.",
-                    "id": "v3-zillacode-7",
-                    "url": "http://localhost:5173/ide/7"
-                  },
-                  {
-                    "title": "#13 Mountain Climbing · Hard",
-                    "text": "Topics: Distinct Function, Complex Joins, Windows Functions.",
-                    "id": "v3-zillacode-13",
-                    "url": "http://localhost:5173/ide/13"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 23,
-    "title": "Zillacode: hard problems (2/5)",
-    "goal": "Solve 3 hard Zillacode problems in PySpark, about 40 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#15 SEO Optimization · Hard",
-                    "text": "Topics: Windows Functions, Complex Joins, Aggregate Functions.",
-                    "id": "v3-zillacode-15",
-                    "url": "http://localhost:5173/ide/15"
-                  },
-                  {
-                    "title": "#20 Construction Company · Hard",
-                    "text": "Topics: Aggregate Functions, Complex Joins, Datetime Operations.",
-                    "id": "v3-zillacode-20",
-                    "url": "http://localhost:5173/ide/20"
-                  },
-                  {
-                    "title": "#21 Retail Stores · Hard",
-                    "text": "Topics: Windows Functions, Case When Statements, String Manipulation.",
-                    "id": "v3-zillacode-21",
-                    "url": "http://localhost:5173/ide/21"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 24,
-    "title": "Zillacode: hard problems (3/5)",
-    "goal": "Solve 3 hard Zillacode problems in PySpark, about 40 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#22 Video Stream Platform · Hard",
-                    "text": "Topics: Windows Functions, Datetime Operations.",
-                    "id": "v3-zillacode-22",
-                    "url": "http://localhost:5173/ide/22"
-                  },
-                  {
-                    "title": "#24 Customer Churn · Hard",
-                    "text": "Topics: Windows Functions, Complex Joins.",
-                    "id": "v3-zillacode-24",
-                    "url": "http://localhost:5173/ide/24"
-                  },
-                  {
-                    "title": "#26 Consumer Goods Discount Confusion · Hard",
-                    "text": "Topics: Regular Expressions, Null Handling.",
-                    "id": "v3-zillacode-26",
-                    "url": "http://localhost:5173/ide/26"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 25,
-    "title": "Zillacode: hard problems (4/5)",
-    "goal": "Solve 3 hard Zillacode problems in PySpark, about 40 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#29 Government Budgeting · Hard",
-                    "text": "Topics: Windows Functions, Mathematical Functions.",
-                    "id": "v3-zillacode-29",
-                    "url": "http://localhost:5173/ide/29"
-                  },
-                  {
-                    "title": "#30 Careful Handling Transactional Data · Hard",
-                    "text": "Topics: Windows Functions, Regular Expressions, Datetime Operations.",
-                    "id": "v3-zillacode-30",
-                    "url": "http://localhost:5173/ide/30"
-                  },
-                  {
-                    "title": "#37 Pharmaceutical Equipment · Hard",
-                    "text": "Topics: Windows Functions.",
-                    "id": "v3-zillacode-37",
-                    "url": "http://localhost:5173/ide/37"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
-  },
-  {
-    "day": 26,
-    "title": "Zillacode: hard problems (5/5)",
-    "goal": "Solve 3 hard Zillacode problems in PySpark, about 40 min each.",
-    "theme": "Zillacode",
-    "parts": [
-      {
-        "key": "zillacode",
-        "name": "Zillacode",
-        "tagline": "Solve today's problems",
-        "time": "2 h",
-        "activities": [
-          {
-            "key": "problems",
-            "name": "🧩 Zillacode problems",
-            "time": "2 h",
-            "note": "Start Zillacode first (`docker compose up` in the zillacode folder), then open each problem and choose PySpark. Give a problem its time before you look at its solution. If you needed the solution, write its number in your notes and solve it again from scratch two days later.",
-            "blocks": [
-              {
-                "label": "",
-                "items": [
-                  {
-                    "title": "#43 Herpetology · Hard",
-                    "text": "Topics: Windows Functions.",
-                    "id": "v3-zillacode-43",
-                    "url": "http://localhost:5173/ide/43"
-                  },
-                  {
-                    "title": "#45 GDP Growth Rate · Hard",
-                    "text": "Topics: Windows Functions, Case When Statements, Mathematical Functions.",
-                    "id": "v3-zillacode-45",
-                    "url": "http://localhost:5173/ide/45"
-                  },
-                  {
-                    "title": "#51 Mathematical Regular Expressions · Hard",
-                    "text": "Topics: Regular Expressions, Mathematical Functions.",
-                    "id": "v3-zillacode-51",
-                    "url": "http://localhost:5173/ide/51"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    "time": "≈ 2 h"
+    "time": "≈ 3 h 20 min"
   }
 ]
