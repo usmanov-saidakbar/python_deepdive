@@ -185,31 +185,37 @@ run the same `app.js`; attributes on `<body>` choose what each shows:
 
 ## Spark Roadmap tab
 
-`/roadmap.html` (the "Spark Roadmap" tab at the top of the page) is a 2-week
-Spark module: 10 study days (Monday to Friday, about 4 focused hours each)
-covering the module checklist's 80 questions in 7 sections, plus a deeper
-thread on how Spark decides how to run a query. Every day is split into two
-parts, each with its own progress bar and notes box:
+`/roadmap.html` (the "Spark Roadmap" tab at the top of the page) is a
+26-day Spark plan (Monday to Friday), in four phases. Each day has one part,
+with its own progress bar and notes box:
 
-- **Theory** (learn the checklist topics): 3–4 topics a day. Each shows the
-  checklist question(s) it answers (in red), one article to read and one
-  "Learn:" sentence. Topics marked "beyond the checklist" go deeper into how
-  Spark decides how to run a query.
-- **Lab** (one Jupyter notebook per day in `public/spark-lab/notebooks/`,
-  solved in place): the Lab tab shows only the notebook link. Every lab uses
-  the same three small shop tables (customers, products, orders; 7 to 16
-  rows each) written out in its setup cell, so nothing is downloaded and
-  every result can be checked by eye. A lab adds one small table when a topic
-  needs it (reviews, promotions, events, messy sign-ups), and generates a big
-  table with `spark.range` where a measurement needs volume (file sizes,
-  shuffles, skew, spills). Part A asks short questions that show the day's
-  checklist topics in the Spark UI and in query plans; Part B has original
-  coding problems, each a one-line task with its expected output table and a
-  collapsed hint, building up to interview-style problems. There are no check
-  cells: the answers (code plus the result of the reference run) sit
-  collapsed in an *Answers* section at the very end of each notebook. Day 10
-  is a final project (a Delta Lake bronze/silver/gold lakehouse built from
-  messy raw files) plus 10 timed problems written as `etl(...)` functions.
+- **Days 1–9, theory** (learn the module checklist's 80 questions in 7
+  sections): 3–4 topics a day. Each shows the checklist question(s) it answers
+  (in red), one article to read and one "Learn:" sentence. Topics marked
+  "beyond the checklist" go deeper into how Spark decides how to run a query.
+- **Days 10–11, videos:** Module 6 (Batch Processing) of DataTalksClub's Data
+  Engineering Zoomcamp, its 16 units split over two days (about 2 hours each),
+  each linking the YouTube video and the unit's notes; Day 11 ends with the
+  module's optional homework.
+- **Days 12–14, practice:** one notebook a day in
+  `public/spark-lab/notebooks/` (`practice_day12.ipynb` to
+  `practice_day14.ipynb`), 14 problems each, written in Zillacode's format: a
+  function `etl(...)` that returns a DataFrame, with the expected output under
+  the problem, a collapsed hint, and the answers collapsed at the end. Day 12
+  covers conditions, nulls, text and dates; Day 13 aggregations and joins;
+  Day 14 window functions and a 6-problem timed set. They use the same small
+  shop tables (customers, products, orders, plus a small extra table where a
+  topic needs one) written out in the setup cell. The problems come from the
+  earlier labs; every answer was re-run on PySpark 4.2.0 and gives the shown
+  output. Day 14 also sets up Zillacode.
+- **Days 15–26, Zillacode:** all 52 PySpark problems of
+  [Zillacode](https://github.com/davidzajac1/zillacode), easy to hard (7 easy,
+  4 medium or 3 hard a day). zillacode.com no longer runs problems, so it runs
+  locally with Docker (`docker compose up`); each task links
+  `http://localhost:5173/ide/<number>`.
+
+The old Lab notebooks (`day01_lab.ipynb` to `day10_lab.ipynb`) are in git
+history (`git show b80b0ed:public/spark-lab/notebooks/day01_lab.ipynb`).
 
 The *Checklist coverage* panel lists every checklist question, the day that
 covers it and whether its topic is ticked. Set a start date and the page
@@ -223,10 +229,10 @@ shows which study day today is; weekends count as catch-up time.
   directly to add or change items; keep each item's `id` stable so saved
   checkmarks still line up.
 - **Databricks course links.** `data/course-links.json` maps roadmap item ids
-  (the theory topics and each day's lab notebook) to lessons of the Databricks
+  (the theory topics) to lessons of the Databricks
   Data Engineer Associate course in the channel. Each entry gives the
   lesson's section number `s`, lesson number `l` and `title`, a `kind`
-  (`theory` = lecture, `lab` = hands-on demo), a `fit` (`match`, `intro` =
+  (`theory` = lecture, `lab` = hands-on demo, shown as "Demo"), a `fit` (`match`, `intro` =
   the course only touches the topic, `background` = related, not the same
   topic) and a one-line `note`. The page (`/api/course-links` plus
   `/api/content`) turns them into Telegram links shown in a blue box under the
@@ -239,8 +245,8 @@ shows which study day today is; weekends count as catch-up time.
 - The previous 15-day roadmap is in git history (`git show
   2dfe373:data/roadmap.json`). Its checkmarks and notes stay in saved progress
   but no longer show, because the new item ids and note keys start with `v2-`.
-- Notes are saved under `v2-<day>-theory`, `v2-<day>-lab` and
-  `v2-<day>-recall`.
+- Notes are saved under `v2-<day>-<part>`: `theory`, `video`, `practice` or
+  `zillacode` (older `v2-<day>-lab` notes stay in storage but no longer show).
 - With an email entered, progress is saved in Upstash under `roadmap:<email>`
   (separate from the course's `progress:<email>`) via
   `GET`/`PUT /api/roadmap-progress/:email`. Without one, it's kept in the

@@ -15,8 +15,8 @@
       <a href="/russian.html">Russian Roadmap</a>
     </nav>
     <header>
-      <h1>2-Week Spark Roadmap</h1>
-      <p class="subtitle">10 study days, Monday to Friday, about 4 focused hours each. Every day has two parts: Theory and a Lab notebook. Tick off each item as you go; your notes are saved with your checklist.</p>
+      <h1>Spark Roadmap</h1>
+      <p class="subtitle">26 study days, Monday to Friday. Days 1–9: theory. Days 10–11: the Spark module of the Data Engineering Zoomcamp. Days 12–14: practice notebooks that prepare you for Zillacode. Days 15–26: all 52 Zillacode PySpark problems, from easy to hard. Tick off each task as you go; your notes are saved with your checklist. A blue box under a theory topic links the matching lesson of the Databricks course.</p>
     </header>
     <div id="account" class="account"></div>
     <div class="overall">
@@ -31,22 +31,8 @@
 
     <details class="guide">
       <summary id="coverage-summary">Checklist coverage</summary>
-      <p class="muted">Every question on the module checklist, the day that covers it, and whether its topic is ticked. Use it to pick questions for the Day 10 mock checkpoint.</p>
+      <p class="muted">Every question on the module checklist, the day that covers it, and whether its topic is ticked. Use it to review before the checkpoint.</p>
       <div id="coverage-body"></div>
-    </details>
-
-    <details class="guide">
-      <summary>How a day works</summary>
-      <table>
-        <tr><th>Part</th><th>Time</th><th>What you do</th></tr>
-        <tr><td><strong>1. Theory</strong><br /><span class="muted">Learn the checklist topics</span></td><td>≈ 1 h 15 min</td><td>3–4 topics a day. Each one shows the checklist questions it answers (in <span style="color:#ff6b6b">red</span>), one article to read, and one sentence on what to learn. Write your answers to the questions in your own words, then check them against the article. Topics marked <em>beyond the checklist</em> go one level deeper.</td></tr>
-        <tr><td><strong>2. Lab</strong><br /><span class="muted">Solve the lab notebook</span></td><td>≈ 2 h 30 min</td><td>Download the day's <code>.ipynb</code> notebook, open it in Jupyter and answer every question in the empty cell under it. Every lab works on the same three small shop tables (customers, products, orders), which the notebook creates for you. Part A shows the day's checklist topics in the Spark UI and in query plans; Part B has coding problems, each with its expected output. The documentation list at the top tells you where to research, and the answers are collapsed at the very end of the notebook (open one only after you tried). Day 10 is a Delta Lake project built from scratch, plus 10 timed interview-style problems.</td></tr>
-      </table>
-      <p><strong>Setup (once):</strong> install Java 17 or 21 (<code>java -version</code> to check) and Python 3.10 or newer (3.12 recommended; macOS ships 3.9, which is too old). Then in a new folder: <code>python3.12 -m venv .venv</code>, <code>source .venv/bin/activate</code>, <code>pip install pyspark==4.2.0 delta-spark==4.4.1 "pyarrow&gt;=18" "pandas&gt;=2.2,&lt;3" jupyterlab</code>, then <code>jupyter lab</code>. The first notebook that uses Delta downloads a jar, which takes a minute or two.</p>
-      <p><strong>Habits:</strong> predict the plan before you run it, then check it with <code>explain('formatted')</code>.
-        Keep the Spark UI open at <code>localhost:4040</code>. Write what you learn in your Theory notes.</p>
-      <p><strong>Databricks course videos:</strong> under a topic or a lab notebook, a blue box links lessons from the Databricks Data Engineer Associate course in the Telegram channel. <span style="color:#4da3ff">Theory</span> is a lecture, <span style="color:#6fd08c">Lab</span> is a hands-on demo. <em>intro level</em> means the course only touches the topic; <em>related</em> means background, not the same topic. That course prepares you for a certification exam, so it skips many internals on this roadmap (Catalyst, Tungsten, join algorithms, salting, memory regions, caching, Change Data Feed, watermarks), and those topics have no course link. Links appear once the course has been uploaded and synced.</p>
-      <p class="muted">Short day? Do the Theory and the first half of the Lab, and finish the rest at the weekend.</p>
     </details>
 
     <div id="tabs" class="tabs"></div>

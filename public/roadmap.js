@@ -2,10 +2,10 @@ const EMAIL_KEY = "course-tracker-email";
 const LOCAL_KEY = "spark-roadmap-progress";
 const DAY_KEY = "spark-roadmap-day";
 
-// Every day is split into Theory, Lab and Recall, and each part has its own
-// notes box. Keys carry a "v2-" prefix so notes written for the old 15-day
-// roadmap ("<day>-theory", "<day>-lab", "<day>") stay in storage untouched
-// instead of showing up under a day that now covers a different topic.
+// Each day has one part (Theory, Videos, Practice or Zillacode), and each part
+// has its own notes box. Keys carry a "v2-" prefix so notes written for the old
+// 15-day roadmap ("<day>-theory", "<day>-lab", "<day>") stay in storage
+// untouched instead of showing up under a day that now covers a different topic.
 const NOTES_PREFIX = "v2-";
 const PART_NOTES = {
   theory: {
@@ -13,10 +13,20 @@ const PART_NOTES = {
     heading: "Theory notes",
     placeholder: "For each checklist question, write 3–5 lines in your own words, then check them against the article.",
   },
-  lab: {
-    suffix: "-lab",
-    heading: "Lab notes",
-    placeholder: "Paste the plans you saved. For each task: what you predicted, what explain and the Spark UI showed, and what broke and how you fixed it.",
+  video: {
+    suffix: "-video",
+    heading: "Video notes",
+    placeholder: "What each video added to Days 1–9, and anything it showed differently.",
+  },
+  practice: {
+    suffix: "-practice",
+    heading: "Practice notes",
+    placeholder: "The problems you needed a hint or the answer for, and what was missing. Solve them again tomorrow.",
+  },
+  zillacode: {
+    suffix: "-zillacode",
+    heading: "Zillacode log",
+    placeholder: "Problems you needed the solution for (number and what you missed). Solve each one again from scratch two days later.",
   },
   recall: {
     suffix: "-recall",
@@ -54,7 +64,7 @@ let activePart = "theory";
 let courseLinks = { course: "", items: {} };
 let courseLookup = new Map(); // "<section>:<lesson>" -> video
 
-const COURSE_KIND = { theory: "Theory", lab: "Lab" };
+const COURSE_KIND = { theory: "Theory", lab: "Demo" };
 // How closely a lesson fits its topic. "match" needs no label.
 const COURSE_FIT = { match: "", intro: "intro level", background: "related" };
 const COURSE_FIT_HINT = {
@@ -235,7 +245,7 @@ function renderCoverage() {
       selectDay(row.day);
       activePart = "theory";
       refresh();
-      document.getElementById("part-switch").scrollIntoView({ behavior: "smooth", block: "start" });
+      (document.getElementById("part-switch") || document.getElementById("day")).scrollIntoView({ behavior: "smooth", block: "start" });
     });
     li.appendChild(go);
     list.appendChild(li);
@@ -583,7 +593,7 @@ function renderNextButton(day, part) {
     if (nextPart) activePart = nextPart.key;
     else selectDay(nextDay.day);
     refresh();
-    document.getElementById(nextPart ? "part-switch" : "tabs").scrollIntoView({ behavior: "smooth", block: "start" });
+    (document.getElementById(nextPart ? "part-switch" : "tabs") || document.getElementById("tabs")).scrollIntoView({ behavior: "smooth", block: "start" });
   });
   return btn;
 }
@@ -599,13 +609,13 @@ function renderDay() {
   dayEl.className = "part";
   dayEl.innerHTML = `
     <h2 class="part-heading">Day ${day.day}: ${escapeHtml(day.title)}</h2>
-    <div class="day-meta">Checklist: ${escapeHtml(day.checklist)} · Lab output: ${escapeHtml(day.labOutput)}${day.time ? ` · ${escapeHtml(day.time)}` : ""}</div>
+    <div class="day-meta">${[day.checklist ? `Checklist: ${escapeHtml(day.checklist)}` : "", day.time ? escapeHtml(day.time) : ""].filter(Boolean).join(" · ")}</div>
     ${day.intro ? `<p class="day-goal">${escapeHtml(day.intro)}</p>` : ""}
     <p class="day-goal"><strong>Goal:</strong> ${escapeHtml(day.goal)}</p>
     ${day.note ? `<p class="activity-note">${escapeHtml(day.note)}</p>` : ""}
   `;
   dayEl.appendChild(renderProgressBar(countChecked(items), items.length));
-  dayEl.appendChild(renderPartSwitch(day));
+  if (day.parts.length > 1) dayEl.appendChild(renderPartSwitch(day));
 
   const part = day.parts.find((p) => p.key === activePart) || day.parts[0];
   const partEl = document.createElement("div");
