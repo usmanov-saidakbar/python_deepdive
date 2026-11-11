@@ -1273,20 +1273,20 @@
   },
   {
     "day": 13,
-    "title": "Zillacode prep 2/4: dates, aggregations, pivots and arrays",
-    "goal": "Turn date text into dates and compute with them, aggregate with several functions and conditions, avoid the fan-out trap of joining before aggregating, pivot, and explode lists.",
-    "theme": "Zillacode prep",
+    "title": "Lab 2/4: dates, aggregations, pivots and arrays, and how Spark plans them",
+    "goal": "Read a physical plan and the Spark UI, see what Catalyst pushes into the file scan and how a groupBy runs (partial aggregation, shuffles, distinct counts), and use dates, aggregations, pivots and arrays the way Zillacode needs.",
+    "theme": "Zillacode prep + optimization",
     "parts": [
       {
         "key": "practice",
         "name": "Lessons and exercises",
         "tagline": "Learn from the notebook, then solve its exercises",
-        "time": "3 h",
+        "time": "3 h 45 min",
         "activities": [
           {
             "key": "notebook",
             "name": "📘 Lesson and exercise notebook",
-            "time": "3 h",
+            "time": "3 h 45 min",
             "note": "Read each lesson and run its example cells, then solve the quick exercises right under it before moving on.",
             "blocks": [
               {
@@ -1294,7 +1294,7 @@
                 "items": [
                   {
                     "title": "Notebook: zillacode_prep_day13.ipynb",
-                    "text": "5 lessons (dates and timestamps; `groupBy`/`agg`, conditional aggregation and HAVING; aggregate first, then join; pivot; arrays, `explode` and `collect_list`), each with examples you run, then 17 quick exercises and 3 mixed problems. Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
+                    "text": "8 lessons: 🔬 reading a query plan (`explain()`, stages, tasks, the Spark UI and a `measure()` helper); 🔬 what Catalyst pushes into the file scan, and what stops it; dates; `groupBy`/`agg`; 🔬 how a `groupBy` runs (partial aggregation, shuffles, distinct counts, AQE's coalescing); the fan-out trap; pivot; arrays. Then 12 `etl` exercises in Zillacode's format, 5 🔍 read-the-plan questions and 3 ⚡ make-it-faster problems. Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
                     "id": "v3-d13-practice",
                     "url": "/spark-lab/notebooks/zillacode_prep_day13.ipynb"
                   }
@@ -1305,24 +1305,24 @@
         ]
       }
     ],
-    "time": "≈ 3 h"
+    "time": "≈ 3 h 45 min"
   },
   {
     "day": 14,
-    "title": "Zillacode prep 3/4: joins in depth and window functions",
-    "goal": "Choose the right join type, handle same-named columns, one table in two roles and self-joins, join on ranges, and solve ranking, latest-row, previous-row and running-total problems with window functions.",
-    "theme": "Zillacode prep",
+    "title": "Lab 3/4: joins and window functions, and how Spark executes them",
+    "goal": "Choose the right join type and solve ranking, latest-row, previous-row and running-total problems; predict which join algorithm Spark picks and change it on purpose; find skew and fix it with a broadcast, AQE or salting.",
+    "theme": "Zillacode prep + optimization",
     "parts": [
       {
         "key": "practice",
         "name": "Lessons and exercises",
         "tagline": "Learn from the notebook, then solve its exercises",
-        "time": "3 h 15 min",
+        "time": "3 h 50 min",
         "activities": [
           {
             "key": "notebook",
             "name": "📘 Lesson and exercise notebook",
-            "time": "3 h 15 min",
+            "time": "3 h 50 min",
             "note": "Read each lesson and run its example cells, then solve the quick exercises right under it before moving on.",
             "blocks": [
               {
@@ -1330,7 +1330,7 @@
                 "items": [
                   {
                     "title": "Notebook: zillacode_prep_day14.ipynb",
-                    "text": "6 lessons (join types; same column names, two roles and self-joins; range and cross joins; window functions; `row_number`/`rank`/`dense_rank`; `lag`/`lead`, running totals and the frame trap), each with examples you run, then 19 quick exercises and 4 mixed problems. Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
+                    "text": "8 lessons: join types; 🔬 the five join algorithms, how Spark picks one, hints and AQE's switch at run time; same column names, two roles and self-joins; range and cross joins; 🔬 skew (AQE's skew join, salting); window functions and how they run; ranking and top N; `lag`/`lead`, running totals and the frame trap. Then 14 `etl` exercises, 2 🔍 and 3 ⚡ problems, measured on 10 million generated sales (the notebook writes about 160 MB to `data/big/` once). Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
                     "id": "v3-d14-practice",
                     "url": "/spark-lab/notebooks/zillacode_prep_day14.ipynb"
                   }
@@ -1341,24 +1341,24 @@
         ]
       }
     ],
-    "time": "≈ 3 h 15 min"
+    "time": "≈ 3 h 50 min"
   },
   {
     "day": 15,
-    "title": "Zillacode prep 4/4: hard patterns, Spark SQL and a mock exam",
-    "goal": "Solve session, streak, first/last-row and snapshot problems, answer in Spark SQL when that's easier, read Spark's error messages, then pass a timed mock exam and set up Zillacode.",
-    "theme": "Zillacode prep",
+    "title": "Lab 4/4: hard patterns, performance tuning and a mock exam",
+    "goal": "Solve session, streak and snapshot problems, make Spark read less (pruning, sorted files, partition folders, file sizes), cache only what pays, replace UDFs with built-ins, fix a slow report with everything from Days 13–15, then pass a timed mock exam and set up Zillacode.",
+    "theme": "Zillacode prep + optimization",
     "parts": [
       {
         "key": "practice",
         "name": "Lessons and exercises",
         "tagline": "Learn from the notebook, then solve its exercises",
-        "time": "3 h 20 min",
+        "time": "4 h",
         "activities": [
           {
             "key": "notebook",
             "name": "📘 Lesson and exercise notebook",
-            "time": "3 h 20 min",
+            "time": "4 h",
             "note": "Read each lesson and run its example cells, then solve the quick exercises right under it before moving on.",
             "blocks": [
               {
@@ -1366,7 +1366,7 @@
                 "items": [
                   {
                     "title": "Notebook: zillacode_prep_day15.ipynb",
-                    "text": "4 lessons (sessions, streaks, first/last row per group, snapshots and whole-table comparisons; Spark SQL inside `etl`; debugging errors and silent mistakes; UDFs), 5 exercises, then a mock exam: 8 problems in 90 minutes on new data built exactly the way Zillacode builds its inputs. Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
+                    "text": "6 lessons: four patterns behind the Hard problems; Spark SQL inside `etl` (and why it runs the same plan); 🔬 read less: columns, sorted files, partition folders and small files; 🔬 caching; UDFs and what they cost; debugging and performance mistakes. Then 4 `etl`, 3 🔍 and 3 ⚡ exercises (the last one a slow report with four mistakes), a one-page optimization checklist, and a mock exam: 6 problems in 75 minutes on new data built the way Zillacode builds its inputs. Download it and open it with `jupyter lab`; the answers are collapsed at the end.",
                     "id": "v3-d15-practice",
                     "url": "/spark-lab/notebooks/zillacode_prep_day15.ipynb"
                   },
@@ -1389,6 +1389,6 @@
         ]
       }
     ],
-    "time": "≈ 3 h 20 min"
+    "time": "≈ 4 h"
   }
 ]

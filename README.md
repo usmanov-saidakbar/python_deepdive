@@ -197,31 +197,44 @@ with its own progress bar and notes box:
   Engineering Zoomcamp, its 16 units split over two days (about 2 hours each),
   each linking the YouTube video and the unit's notes; Day 11 ends with the
   module's optional homework.
-- **Days 12–15, Zillacode prep:** one lesson-and-exercise notebook a day in
-  `public/spark-lab/notebooks/` (`zillacode_prep_day12.ipynb` to
-  `zillacode_prep_day15.ipynb`). They teach the DataFrame API that the theory
-  days and the Zoomcamp module don't cover, everything the 52 PySpark problems
-  of [Zillacode](https://github.com/davidzajac1/zillacode) use: each lesson
-  explains one tool in depth with example cells (their output is stored in
-  the notebook), followed by quick exercises in Zillacode's format (a function
-  `etl(...)` that returns a DataFrame, with the expected output under the
-  task and the answers collapsed at the end). Day 12: how Zillacode runs and
-  checks an answer, columns, filters, `when`, nulls, text, regular
-  expressions and unions. Day 13: dates, aggregations, the fan-out trap,
-  pivot and arrays. Day 14: joins in depth and window functions. Day 15:
-  sessions, streaks and other Hard-problem patterns, Spark SQL, debugging,
-  UDFs, and a 90-minute mock exam on new data built the way Zillacode builds
-  its inputs. The setup cell turns ANSI mode off so Spark 4.2 behaves like
-  Zillacode's Spark 3. Every example and answer was run on PySpark 4.2.0,
-  and each notebook was re-run top to bottom in a fresh kernel with the same
-  outputs. Day 15 ends with setting up Zillacode, which now runs only
-  locally with Docker (`docker compose up`, then
-  `http://localhost:5173/questions`).
+- **Days 12–15, Zillacode prep and optimization labs:** one
+  lesson-and-exercise notebook a day in `public/spark-lab/notebooks/`
+  (`zillacode_prep_day12.ipynb` to `zillacode_prep_day15.ipynb`). They teach
+  the DataFrame API that the theory days and the Zoomcamp module don't cover,
+  everything the 52 PySpark problems of
+  [Zillacode](https://github.com/davidzajac1/zillacode) use, and from Day 13
+  also how Spark runs it: reading physical plans and the Spark UI, and making
+  queries read, shuffle and sort less. Each lesson explains one tool in depth
+  with example cells (their output is stored in the notebook), followed by
+  quick exercises: `etl(...)` functions in Zillacode's format with the
+  expected output under the task, 🔍 read-the-plan questions, and ⚡
+  make-it-faster problems with a plan target; the answers are collapsed at
+  the end. Day 12: how Zillacode runs and checks an answer, columns, filters,
+  `when`, nulls, text, regular expressions and unions. Day 13: reading plans,
+  Catalyst's pushdown and pruning, dates, aggregations and how a `groupBy`
+  runs, the fan-out trap, pivot and arrays. Day 14: join types and the five
+  join algorithms (hints, AQE's switch at run time), skew and salting, window
+  functions and how they run. Day 15: Hard-problem patterns, Spark SQL,
+  reading less (pruning, sorted files, partition folders, small files),
+  caching, UDF costs, performance mistakes, a final optimization problem, an
+  optimization checklist, and a 75-minute mock exam on new data built the way
+  Zillacode builds its inputs. Days 13–15 save the small tables as Parquet
+  (so plans show real file scans) and generate 10 million sales rows in
+  `data/big/` (about 160 MB, plus about 450 MB of copies on Day 15), so each
+  optimization is measured with a small `measure()` helper that reads the
+  Spark UI's REST API. The setup cell turns ANSI mode off so Spark 4.2
+  behaves like Zillacode's Spark 3. Every example and answer was run on
+  PySpark 4.2.0, and each notebook was re-run top to bottom in a fresh kernel
+  with the same outputs (apart from timings and internal ids). Day 15 ends
+  with setting up Zillacode, which now runs only locally with Docker
+  (`docker compose up`, then `http://localhost:5173/questions`).
 
 Earlier versions are in git history: the Lab notebooks
-(`git show b80b0ed:public/spark-lab/notebooks/day01_lab.ipynb`) and the
+(`git show b80b0ed:public/spark-lab/notebooks/day01_lab.ipynb`), the
 practice-only notebooks
-(`git show 2d2b4a1:public/spark-lab/notebooks/practice_day12.ipynb`).
+(`git show 2d2b4a1:public/spark-lab/notebooks/practice_day12.ipynb`), and
+the Zillacode-only Days 13–15
+(`git show 8f49c52:public/spark-lab/notebooks/zillacode_prep_day13.ipynb`).
 
 The *Checklist coverage* panel lists every checklist question, the day that
 covers it and whether its topic is ticked. Set a start date and the page
