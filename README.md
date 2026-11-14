@@ -275,10 +275,10 @@ shows which study day today is; weekends count as catch-up time.
 ## Russian Roadmap tab
 
 `/russian.html` (the "Russian Roadmap" tab) is a 300-day plan to reach B2
-speaking in Russian with free resources only. The page is the plan plus a
-word trainer: the trainer, month tabs, a grid of the month's 30 days, the
-selected day's checklist (3–5 tasks, about 2 hours), and one notes box for
-the error log. Set a start date and the page opens on today's day.
+speaking in Russian with free resources only. The page has month tabs, a grid
+of the month's 30 days, the selected day's checklist (3–5 tasks, about 2
+hours), and one notes box for the error log. Set a start date and the page
+opens on today's day.
 
 - Each month is 4 weeks of 7 days, then a review day (29) and a catch-up day
   (30). A normal day has words, one step of the week's grammar topic, a named
@@ -295,17 +295,17 @@ the error log. Set a start date and the page opens on today's day.
   to have, so ticks saved back then still show.
 - Notes from the old per-stage and weekly notes boxes are folded into the one
   notes box when progress loads.
-- Words: the 240 study days each carry 10 ready-made words (`words`: pairs of
-  Russian with stress marks and English), 2,400 in all, themed by the week.
-  The trainer at the top of the page is spaced repetition like Anki (Again,
-  Hard, Good, Easy): reviews due today, plus 10 new ready-made words a day in
-  plan order (up to today's day when a start date is set; "+10 new words"
-  adds more), plus the user's own words. A card's id is its Russian text
-  without stress marks, so fixing a stress mark keeps its progress. Finishing
-  the day's cards ticks that day's Words task.
+- Words are learned in a separate app, *Слово за словом*
+  ([anki_russian](https://github.com/usmanov-saidakbar/anki_russian), a static
+  site on Render). It has the Kelly A1–B2 word list plus data-engineering terms,
+  spaced repetition and word tests. Each day's Words task links to it. To move
+  the app, replace its URL in the task texts in `data/russian-days.json`.
+- The word app syncs through this server: `GET`/`PUT /api/anki/:email`, stored
+  in Upstash under `anki:<email>`. These routes answer cross-origin requests
+  from `*.onrender.com`, `usmanov-saidakbar.github.io` and localhost (see
+  `WORD_APP_ORIGINS` in `server.js`).
 - Progress is saved under its own key: `russian:<email>` in Upstash via
   `GET`/`PUT /api/russian-progress/:email`, or this browser's localStorage
-  without an email. Besides ticks and notes it holds the trainer's `cards`
-  (`{ due, ivl, ease, reps, lapses }` per word, `due` in days since 1970),
-  `myWords` and a per-date `wordLog`; with every word studied it stays
-  around 250 KB, under the server's 1 MB JSON limit.
+  without an email. It holds ticks, the notes box and the start date. The word
+  fields left over from the old on-page trainer (`cards`, `myWords`, `wordLog`)
+  are dropped when progress loads.

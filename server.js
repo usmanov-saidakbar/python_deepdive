@@ -148,10 +148,33 @@ function progressRoutes(route, keyPrefix) {
   });
 }
 
+// The Russian word app (anki_russian repo) is a separate static site, so its sync calls
+// come from another origin. Allow Render sites, GitHub Pages and local testing.
+const WORD_APP_ORIGINS = [
+  /^https:\/\/[a-z0-9-]+\.onrender\.com$/,
+  /^https:\/\/usmanov-saidakbar\.github\.io$/,
+  /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/,
+];
+app.use("/api/anki", (req, res, next) => {
+  const origin = req.headers.origin;
+  if (origin && WORD_APP_ORIGINS.some((re) => re.test(origin))) {
+    res.set({
+      "Access-Control-Allow-Origin": origin,
+      "Access-Control-Allow-Methods": "GET, PUT, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Max-Age": "86400",
+      Vary: "Origin",
+    });
+  }
+  if (req.method === "OPTIONS") return res.sendStatus(204);
+  next();
+});
+
 progressRoutes("/api/progress", "progress");
 progressRoutes("/api/databricks-progress", "databricks");
 progressRoutes("/api/roadmap-progress", "roadmap");
 progressRoutes("/api/russian-progress", "russian");
+progressRoutes("/api/anki", "anki");
 
 app.post("/api/sync", async (req, res) => {
   if (!ADMIN_KEY || req.query.key !== ADMIN_KEY) {
