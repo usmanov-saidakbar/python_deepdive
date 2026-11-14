@@ -275,13 +275,13 @@ shows which study day today is; weekends count as catch-up time.
 ## Russian Roadmap tab
 
 `/russian.html` (the "Russian Roadmap" tab) is a 300-day plan to reach B2
-speaking in Russian with free resources only. The page is just the plan:
-month tabs, a grid of the month's 30 days, the selected day's checklist (3–5
-tasks, about 2 hours), and one notes box for the error log. Set a start date
-and the page opens on today's day.
+speaking in Russian with free resources only. The page is the plan plus a
+word trainer: the trainer, month tabs, a grid of the month's 30 days, the
+selected day's checklist (3–5 tasks, about 2 hours), and one notes box for
+the error log. Set a start date and the page opens on today's day.
 
 - Each month is 4 weeks of 7 days, then a review day (29) and a catch-up day
-  (30). A normal day has Anki, one step of the week's grammar topic, a named
+  (30). A normal day has words, one step of the week's grammar topic, a named
   listening (a *Между нами* episode, a Slow Russian episode or an Inklingo
   story) and a speaking task; day 7 is light and holds the weekly check.
   Months 9–10 follow the 15 tasks of the ТРКИ-2 speaking exam, with two full
@@ -295,6 +295,17 @@ and the page opens on today's day.
   to have, so ticks saved back then still show.
 - Notes from the old per-stage and weekly notes boxes are folded into the one
   notes box when progress loads.
+- Words: the 240 study days each carry 10 ready-made words (`words`: pairs of
+  Russian with stress marks and English), 2,400 in all, themed by the week.
+  The trainer at the top of the page is spaced repetition like Anki (Again,
+  Hard, Good, Easy): reviews due today, plus 10 new ready-made words a day in
+  plan order (up to today's day when a start date is set; "+10 new words"
+  adds more), plus the user's own words. A card's id is its Russian text
+  without stress marks, so fixing a stress mark keeps its progress. Finishing
+  the day's cards ticks that day's Words task.
 - Progress is saved under its own key: `russian:<email>` in Upstash via
   `GET`/`PUT /api/russian-progress/:email`, or this browser's localStorage
-  without an email.
+  without an email. Besides ticks and notes it holds the trainer's `cards`
+  (`{ due, ivl, ease, reps, lapses }` per word, `due` in days since 1970),
+  `myWords` and a per-date `wordLog`; with every word studied it stays
+  around 250 KB, under the server's 1 MB JSON limit.
