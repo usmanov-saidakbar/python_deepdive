@@ -295,8 +295,9 @@ opens on today's day.
   to have, so ticks saved back then still show.
 - Notes from the old per-stage and weekly notes boxes are folded into the one
   notes box when progress loads.
-- Words are learned in a separate app, *Слово за словом*
-  ([anki_russian](https://github.com/usmanov-saidakbar/anki_russian), a static
+- Words are learned in a separate app,
+  [Слово за словом](https://anki-russian.onrender.com/) (repo:
+  [anki_russian](https://github.com/usmanov-saidakbar/anki_russian), a static
   site on Render). It has the Kelly A1–B2 word list plus data-engineering terms,
   spaced repetition and word tests. Each day's Words task links to it. To move
   the app, replace its URL in the task texts in `data/russian-days.json`.
