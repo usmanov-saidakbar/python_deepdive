@@ -75,7 +75,7 @@
     {
      "id": "d2-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Alphabet, reading and typing. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Alphabet, reading and typing. Study it from [Russian for Free: how to read Russian](https://www.russianforfree.com/lessons-how-to-read-in-russian-01.php) · [Master Russian: the alphabet with sounds](https://masterrussian.com/blalphabet.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-alphabet:drill"
      ]
@@ -123,7 +123,7 @@
     {
      "id": "d3-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Alphabet, reading and typing. Read 10 shop signs or menu items in Tashkent out loud, and type 20 words on the Russian keyboard. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Alphabet, reading and typing. Read 10 shop signs or menu items in Tashkent out loud, and type 20 words on the Russian keyboard. Lesson: [Russian for Free: how to read Russian](https://www.russianforfree.com/lessons-how-to-read-in-russian-01.php) · [Master Russian: the alphabet with sounds](https://masterrussian.com/blalphabet.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-alphabet:speak"
      ]
@@ -211,7 +211,7 @@
     {
      "id": "d5-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Pronunciation: vowel reduction, hard and soft consonants, ы, stress. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Pronunciation: vowel reduction, hard and soft consonants, ы, stress. Study it from [Master Russian: vowels](https://masterrussian.com/aa032301a.shtml) · [consonants](https://masterrussian.com/aa081201a.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-sounds:drill"
      ]
@@ -341,7 +341,7 @@
     {
      "id": "d9-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Survival phrases: greetings, ты / вы, please, sorry, asking for help. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Survival phrases: greetings, ты / вы, please, sorry, asking for help. Study it from [Между нами, lesson 1](https://mezhdunami.org/unit01/goal.shtml) · [Russian for Free: dialogues with audio](https://www.russianforfree.com/dialogues.php). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-phrases:drill"
      ]
@@ -373,7 +373,7 @@
     {
      "id": "d10-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Survival phrases: greetings, ты / вы, please, sorry, asking for help. Spend one day using Russian for every small exchange: shop, taxi, café, lift. In Tashkent you can start today. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Survival phrases: greetings, ты / вы, please, sorry, asking for help. Spend one day using Russian for every small exchange: shop, taxi, café, lift. In Tashkent you can start today. Lesson: [Между нами, lesson 1](https://mezhdunami.org/unit01/goal.shtml) · [Russian for Free: dialogues with audio](https://www.russianforfree.com/dialogues.php). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-phrases:speak"
      ]
@@ -437,7 +437,7 @@
     {
      "id": "d12-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Intonation: statements vs yes/no questions (ИК-1, ИК-3). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Intonation: statements vs yes/no questions (ИК-1, ИК-3). Study it from [«Русская интонация», Kazan Federal University (PDF)](https://kpfu.ru//staff_files/F542785795/Sadykova_I.A._Uchebnoe_posobie_Russkaya_intonaciya.pdf) · [Real Russian Club: intonation](https://www.youtube.com/@RealRussianClub/search?query=intonation). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-intonation:drill"
      ]
@@ -472,7 +472,7 @@
     {
      "id": "d13-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Intonation: statements vs yes/no questions (ИК-1, ИК-3). Say «Это твой телефон.» and «Это твой телефон?» so a listener hears the difference without seeing the punctuation. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Intonation: statements vs yes/no questions (ИК-1, ИК-3). Say «Это твой телефон.» and «Это твой телефон?» so a listener hears the difference without seeing the punctuation. Lesson: [«Русская интонация», Kazan Federal University (PDF)](https://kpfu.ru//staff_files/F542785795/Sadykova_I.A._Uchebnoe_posobie_Russkaya_intonaciya.pdf) · [Real Russian Club: intonation](https://www.youtube.com/@RealRussianClub/search?query=intonation). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-intonation:speak"
      ]
@@ -570,7 +570,7 @@
     {
      "id": "d16-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Gender, plurals and possessives (мой, моя, моё, мои; чей?). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Gender, plurals and possessives (мой, моя, моё, мои; чей?). Study it from [Между нами, lesson 1](https://mezhdunami.org/unit01/goal.shtml) · [lesson 2](https://mezhdunami.org/unit02/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-gender:drill"
      ]
@@ -602,7 +602,7 @@
     {
      "id": "d17-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Gender, plurals and possessives (мой, моя, моё, мои; чей?). Point at 15 things around you and say whose they are: «Это мой ноутбук. Это её сумка.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Gender, plurals and possessives (мой, моя, моё, мои; чей?). Point at 15 things around you and say whose they are: «Это мой ноутбук. Это её сумка.» Lesson: [Между нами, lesson 1](https://mezhdunami.org/unit01/goal.shtml) · [lesson 2](https://mezhdunami.org/unit02/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-gender:speak"
      ]
@@ -670,7 +670,7 @@
     {
      "id": "d19-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Numbers 0–1000, prices, phone numbers and the time. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Numbers 0–1000, prices, phone numbers and the time. Study it from [Master Russian: numbers](https://masterrussian.com/numbers/Russian_Numbers.htm) · [Между нами, lesson 5 (time)](https://mezhdunami.org/unit05/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-numbers:drill"
      ]
@@ -702,7 +702,7 @@
     {
      "id": "d20-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Numbers 0–1000, prices, phone numbers and the time. Ask for prices at a Tashkent bazaar or shop in Russian, and say your phone number and the time out loud until it's fast. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Numbers 0–1000, prices, phone numbers and the time. Ask for prices at a Tashkent bazaar or shop in Russian, and say your phone number and the time out loud until it's fast. Lesson: [Master Russian: numbers](https://masterrussian.com/numbers/Russian_Numbers.htm) · [Между нами, lesson 5 (time)](https://mezhdunami.org/unit05/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-numbers:speak"
      ]
@@ -800,7 +800,7 @@
     {
      "id": "d23-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Adjectives and colours: какой? (новый, хорошая, большое). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Adjectives and colours: какой? (новый, хорошая, большое). Study it from [Master Russian: adjectives](https://masterrussian.com/aa041201.shtml) · [Между нами, lesson 2](https://mezhdunami.org/unit02/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-adjectives:drill"
      ]
@@ -832,7 +832,7 @@
     {
      "id": "d24-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Adjectives and colours: какой? (новый, хорошая, большое). Describe your flat or your office in 8 sentences. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Adjectives and colours: какой? (новый, хорошая, большое). Describe your flat or your office in 8 sentences. Lesson: [Master Russian: adjectives](https://masterrussian.com/aa041201.shtml) · [Между нами, lesson 2](https://mezhdunami.org/unit02/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-adjectives:speak"
      ]
@@ -1059,7 +1059,7 @@
     {
      "id": "d32-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Present tense: 1st and 2nd conjugation (читать, говорить, жить). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Present tense: 1st and 2nd conjugation (читать, говорить, жить). Study it from [Master Russian: present tense](https://masterrussian.com/aa021100a.shtml) · [Между нами, lesson 3](https://mezhdunami.org/unit03/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-present:drill"
      ]
@@ -1091,7 +1091,7 @@
     {
      "id": "d33-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Present tense: 1st and 2nd conjugation (читать, говорить, жить). Say 10 sentences about what you, your family and your colleagues do every day. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Present tense: 1st and 2nd conjugation (читать, говорить, жить). Say 10 sentences about what you, your family and your colleagues do every day. Lesson: [Master Russian: present tense](https://masterrussian.com/aa021100a.shtml) · [Между нами, lesson 3](https://mezhdunami.org/unit03/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-present:speak"
      ]
@@ -1155,7 +1155,7 @@
     {
      "id": "d35-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Accusative of things: what do you read, watch, buy?. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Accusative of things: what do you read, watch, buy?. Study it from [Master Russian: accusative](https://masterrussian.com/aa071200a.shtml) · [Между нами, lesson 3](https://mezhdunami.org/unit03/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-accusative:drill"
      ]
@@ -1187,7 +1187,7 @@
     {
      "id": "d36-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Accusative of things: what do you read, watch, buy?. Say what you read, watch, eat and buy in a week: «Я читаю новости, смотрю сериал, покупаю хлеб.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Accusative of things: what do you read, watch, buy?. Say what you read, watch, eat and buy in a week: «Я читаю новости, смотрю сериал, покупаю хлеб.» Lesson: [Master Russian: accusative](https://masterrussian.com/aa071200a.shtml) · [Между нами, lesson 3](https://mezhdunami.org/unit03/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-accusative:speak"
      ]
@@ -1285,7 +1285,7 @@
     {
      "id": "d39-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Prepositional case: where? (в / на + -е) and about (о + -е). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Prepositional case: where? (в / на + -е) and about (о + -е). Study it from [Между нами, lesson 3](https://mezhdunami.org/unit03/goal.shtml) · [в vs на](https://mezhdunami.org/v_and_na.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-prepositional:drill"
      ]
@@ -1317,7 +1317,7 @@
     {
      "id": "d40-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Prepositional case: where? (в / на + -е) and about (о + -е). Say where you live, work and study, and where 5 places in Tashkent are: «Я живу в Ташкенте, в Юнусабаде.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Prepositional case: where? (в / на + -е) and about (о + -е). Say where you live, work and study, and where 5 places in Tashkent are: «Я живу в Ташкенте, в Юнусабаде.» Lesson: [Между нами, lesson 3](https://mezhdunami.org/unit03/goal.shtml) · [в vs на](https://mezhdunami.org/v_and_na.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-prepositional:speak"
      ]
@@ -1505,7 +1505,7 @@
     {
      "id": "d46-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Having and not having: у меня есть / у меня нет. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Having and not having: у меня есть / у меня нет. Study it from [Master Russian: genitive](https://masterrussian.com/aa061500a.shtml) · [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-have:drill"
      ]
@@ -1537,7 +1537,7 @@
     {
      "id": "d47-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Having and not having: у меня есть / у меня нет. Say what you have and don't have: «У меня есть кот, но нет машины.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Having and not having: у меня есть / у меня нет. Say what you have and don't have: «У меня есть кот, но нет машины.» Lesson: [Master Russian: genitive](https://masterrussian.com/aa061500a.shtml) · [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-have:speak"
      ]
@@ -1601,7 +1601,7 @@
     {
      "id": "d49-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Past tense (был, была, делал, делала). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Past tense (был, была, делал, делала). Study it from [Master Russian: past tense](https://masterrussian.com/aa021500a.shtml) · [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s1-past:drill"
      ]
@@ -1633,7 +1633,7 @@
     {
      "id": "d50-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Past tense (был, была, делал, делала). Tell what you did yesterday in 6 sentences. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Past tense (был, была, делал, делала). Tell what you did yesterday in 6 sentences. Lesson: [Master Russian: past tense](https://masterrussian.com/aa021500a.shtml) · [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s1-past:speak"
      ]
@@ -2011,7 +2011,7 @@
     {
      "id": "d62-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Accusative of people (вижу брата, жду коллегу). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Accusative of people (вижу брата, жду коллегу). Study it from [Master Russian: accusative](https://masterrussian.com/aa071200a.shtml) · [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-acc-animate:drill"
      ]
@@ -2043,7 +2043,7 @@
     {
      "id": "d63-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Accusative of people (вижу брата, жду коллегу). Say who you see, know, love and wait for: «Я жду коллегу. Я знаю его брата.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Accusative of people (вижу брата, жду коллегу). Say who you see, know, love and wait for: «Я жду коллегу. Я знаю его брата.» Lesson: [Master Russian: accusative](https://masterrussian.com/aa071200a.shtml) · [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-acc-animate:speak"
      ]
@@ -2115,7 +2115,7 @@
     {
      "id": "d65-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Motion verbs, part 1: идти / ходить, ехать / ездить; где, куда, откуда. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Motion verbs, part 1: идти / ходить, ехать / ездить; где, куда, откуда. Study it from [Master Russian: verbs of motion](https://masterrussian.com/verbs/verbs_of_motion.htm) · [Между нами, lesson 5](https://mezhdunami.org/unit05/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-motion:drill"
      ]
@@ -2147,7 +2147,7 @@
     {
      "id": "d66-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Motion verbs, part 1: идти / ходить, ехать / ездить; где, куда, откуда. Describe how you get around: «Каждый день я езжу на работу на метро. Сейчас я еду домой.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Motion verbs, part 1: идти / ходить, ехать / ездить; где, куда, откуда. Describe how you get around: «Каждый день я езжу на работу на метро. Сейчас я еду домой.» Lesson: [Master Russian: verbs of motion](https://masterrussian.com/verbs/verbs_of_motion.htm) · [Между нами, lesson 5](https://mezhdunami.org/unit05/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-motion:speak"
      ]
@@ -2245,7 +2245,7 @@
     {
      "id": "d69-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Future and plans (буду + infinitive, the perfective future, собираюсь, хочу). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Future and plans (буду + infinitive, the perfective future, собираюсь, хочу). Study it from [Master Russian: future tense](https://masterrussian.com/aa032600a.shtml) · [Между нами, lesson 6](https://mezhdunami.org/unit06/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-future:drill"
      ]
@@ -2277,7 +2277,7 @@
     {
      "id": "d70-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Future and plans (буду + infinitive, the perfective future, собираюсь, хочу). Say 8 sentences about your plans for the weekend and for next year. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Future and plans (буду + infinitive, the perfective future, собираюсь, хочу). Say 8 sentences about your plans for the weekend and for next year. Lesson: [Master Russian: future tense](https://masterrussian.com/aa032600a.shtml) · [Между нами, lesson 6](https://mezhdunami.org/unit06/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-future:speak"
      ]
@@ -2341,7 +2341,7 @@
     {
      "id": "d72-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Connecting ideas: потому что, поэтому, когда, если, который. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Connecting ideas: потому что, поэтому, когда, если, который. Study it from [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml) · [lesson 6](https://mezhdunami.org/unit06/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-connect:drill"
      ]
@@ -2373,7 +2373,7 @@
     {
      "id": "d73-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Connecting ideas: потому что, поэтому, когда, если, который. Join 6 short sentences into 3 long ones with потому что, когда or который, then say them without looking. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Connecting ideas: потому что, поэтому, когда, если, который. Join 6 short sentences into 3 long ones with потому что, когда or который, then say them without looking. Lesson: [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml) · [lesson 6](https://mezhdunami.org/unit06/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-connect:speak"
      ]
@@ -2471,7 +2471,7 @@
     {
      "id": "d76-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Aspect, first pass: делал or сделал? буду делать or сделаю?. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Aspect, first pass: делал or сделал? буду делать or сделаю?. Study it from [Master Russian: aspect](https://masterrussian.com/aa031600a.shtml) · [Между нами, lesson 6](https://mezhdunami.org/unit06/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-aspect:drill"
      ]
@@ -2503,7 +2503,7 @@
     {
      "id": "d77-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Aspect, first pass: делал or сделал? буду делать or сделаю?. Tell what you did yesterday with 5 finished actions (perfective) and 5 habits or processes (imperfective). [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Aspect, first pass: делал or сделал? буду делать or сделаю?. Tell what you did yesterday with 5 finished actions (perfective) and 5 habits or processes (imperfective). Lesson: [Master Russian: aspect](https://masterrussian.com/aa031600a.shtml) · [Между нами, lesson 6](https://mezhdunami.org/unit06/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-aspect:speak"
      ]
@@ -2567,7 +2567,7 @@
     {
      "id": "d79-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Dative: кому? (мне нравится, мне нужно, мне 25 лет). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Dative: кому? (мне нравится, мне нужно, мне 25 лет). Study it from [Master Russian: dative](https://masterrussian.com/aa070100a.shtml) · [Между нами, lesson 6](https://mezhdunami.org/unit06/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-dative:drill"
      ]
@@ -2602,7 +2602,7 @@
     {
      "id": "d80-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Dative: кому? (мне нравится, мне нужно, мне 25 лет). Say what your family likes and needs, and how old everyone is: «Моему брату 30 лет. Ему нравится футбол.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Dative: кому? (мне нравится, мне нужно, мне 25 лет). Say what your family likes and needs, and how old everyone is: «Моему брату 30 лет. Ему нравится футбол.» Lesson: [Master Russian: dative](https://masterrussian.com/aa070100a.shtml) · [Между нами, lesson 6](https://mezhdunami.org/unit06/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-dative:speak"
      ]
@@ -2700,7 +2700,7 @@
     {
      "id": "d83-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Genitive: absence, quantity, ‘of’, and из, от, до, без, после, у. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Genitive: absence, quantity, ‘of’, and из, от, до, без, после, у. Study it from [Master Russian: genitive](https://masterrussian.com/aa061500a.shtml) · [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-genitive:drill"
      ]
@@ -2732,7 +2732,7 @@
     {
      "id": "d84-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Genitive: absence, quantity, ‘of’, and из, от, до, без, после, у. Say where 5 things are from and what's missing: «Чай из Китая. В офисе нет кофе.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Genitive: absence, quantity, ‘of’, and из, от, до, без, после, у. Say where 5 things are from and what's missing: «Чай из Китая. В офисе нет кофе.» Lesson: [Master Russian: genitive](https://masterrussian.com/aa061500a.shtml) · [Между нами, lesson 4](https://mezhdunami.org/unit04/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-genitive:speak"
      ]
@@ -2964,7 +2964,7 @@
     {
      "id": "d92-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Instrumental: с кем? кем? (работать аналитиком, заниматься спортом). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Instrumental: с кем? кем? (работать аналитиком, заниматься спортом). Study it from [Master Russian: instrumental](https://masterrussian.com/aa073000a.shtml) · [Между нами, lesson 7](https://mezhdunami.org/unit07/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-instrumental:drill"
      ]
@@ -2996,7 +2996,7 @@
     {
      "id": "d93-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Instrumental: с кем? кем? (работать аналитиком, заниматься спортом). Say who you work and spend time with, and what you do in your free time: «Я работаю аналитиком данных. Я занимаюсь спортом.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Instrumental: с кем? кем? (работать аналитиком, заниматься спортом). Say who you work and spend time with, and what you do in your free time: «Я работаю аналитиком данных. Я занимаюсь спортом.» Lesson: [Master Russian: instrumental](https://masterrussian.com/aa073000a.shtml) · [Между нами, lesson 7](https://mezhdunami.org/unit07/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-instrumental:speak"
      ]
@@ -3060,7 +3060,7 @@
     {
      "id": "d95-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Imperative and requests (скажите, дайте, давайте…). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Imperative and requests (скажите, дайте, давайте…). Study it from [Master Russian: imperative and subjunctive](https://masterrussian.com/aa042700a.shtml) · [Между нами, lesson 9](https://mezhdunami.org/unit09/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-imperative:drill"
      ]
@@ -3092,7 +3092,7 @@
     {
      "id": "d96-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Imperative and requests (скажите, дайте, давайте…). Give a friend directions from Amir Temur Square (сквер Амира Темура) to your home, with imperatives. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Imperative and requests (скажите, дайте, давайте…). Give a friend directions from Amir Temur Square (сквер Амира Темура) to your home, with imperatives. Lesson: [Master Russian: imperative and subjunctive](https://masterrussian.com/aa042700a.shtml) · [Между нами, lesson 9](https://mezhdunami.org/unit09/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-imperative:speak"
      ]
@@ -3190,7 +3190,7 @@
     {
      "id": "d99-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Pronouns in all cases (меня, мне, мной…) and свой. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Pronouns in all cases (меня, мне, мной…) and свой. Study it from [Master Russian: personal pronouns](https://masterrussian.com/aa110100a.shtml) · [Между нами, lesson 9](https://mezhdunami.org/unit09/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-pronouns:drill"
      ]
@@ -3222,7 +3222,7 @@
     {
      "id": "d100-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Pronouns in all cases (меня, мне, мной…) and свой. Answer 10 questions with a pronoun instead of the noun: «Ты звонил маме? — Да, я ей звонил.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Pronouns in all cases (меня, мне, мной…) and свой. Answer 10 questions with a pronoun instead of the noun: «Ты звонил маме? — Да, я ей звонил.» Lesson: [Master Russian: personal pronouns](https://masterrussian.com/aa110100a.shtml) · [Между нами, lesson 9](https://mezhdunami.org/unit09/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-pronouns:speak"
      ]
@@ -3407,7 +3407,7 @@
     {
      "id": "d106-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Comparatives and superlatives (больше, лучше, самый). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Comparatives and superlatives (больше, лучше, самый). Study it from [Между нами, lesson 8](https://mezhdunami.org/unit08/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-compare:drill"
      ]
@@ -3439,7 +3439,7 @@
     {
      "id": "d107-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Comparatives and superlatives (больше, лучше, самый). Compare Tashkent with another city in 8 sentences: weather, prices, food, transport. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Comparatives and superlatives (больше, лучше, самый). Compare Tashkent with another city in 8 sentences: weather, prices, food, transport. Lesson: [Между нами, lesson 8](https://mezhdunami.org/unit08/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-compare:speak"
      ]
@@ -3503,7 +3503,7 @@
     {
      "id": "d109-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Numbers with nouns (2 часа, 5 часов) and the genitive plural. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Numbers with nouns (2 часа, 5 часов) and the genitive plural. Study it from [Master Russian: numbers](https://masterrussian.com/numbers/Russian_Numbers.htm) · [Между нами, lesson 8](https://mezhdunami.org/unit08/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s2-counting:drill"
      ]
@@ -3535,7 +3535,7 @@
     {
      "id": "d110-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Numbers with nouns (2 часа, 5 часов) and the genitive plural. Count things out loud all week: «два брата, пять минут, двадцать один год». [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Numbers with nouns (2 часа, 5 часов) and the genitive plural. Count things out loud all week: «два брата, пять минут, двадцать один год». Lesson: [Master Russian: numbers](https://masterrussian.com/numbers/Russian_Numbers.htm) · [Между нами, lesson 8](https://mezhdunami.org/unit08/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s2-counting:speak"
      ]
@@ -3929,7 +3929,7 @@
     {
      "id": "d122-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Aspect in depth: process vs result, once vs repeated, aspect after не and in commands. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Aspect in depth: process vs result, once vs repeated, aspect after не and in commands. Study it from [Master Russian: aspect](https://masterrussian.com/aa031600a.shtml) · [Real Russian Club: aspect](https://www.youtube.com/@RealRussianClub/search?query=aspect). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-aspect:drill"
      ]
@@ -3961,7 +3961,7 @@
     {
      "id": "d123-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Aspect in depth: process vs result, once vs repeated, aspect after не and in commands. Retell a short story twice: once as a chain of finished events (perfective), once as background and habits (imperfective). [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Aspect in depth: process vs result, once vs repeated, aspect after не and in commands. Retell a short story twice: once as a chain of finished events (perfective), once as background and habits (imperfective). Lesson: [Master Russian: aspect](https://masterrussian.com/aa031600a.shtml) · [Real Russian Club: aspect](https://www.youtube.com/@RealRussianClub/search?query=aspect). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-aspect:speak"
      ]
@@ -4025,7 +4025,7 @@
     {
      "id": "d125-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Time expressions (в понедельник, через час, неделю назад, за два часа, на неделю). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Time expressions (в понедельник, через час, неделю назад, за два часа, на неделю). Study it from [Между нами, lesson 7](https://mezhdunami.org/unit07/goal.shtml) · [lesson 9](https://mezhdunami.org/unit09/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-time:drill"
      ]
@@ -4057,7 +4057,7 @@
     {
      "id": "d126-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Time expressions (в понедельник, через час, неделю назад, за два часа, на неделю). Tell your life story with 10 time markers: «в 2015 году», «через год», «два года назад»… [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Time expressions (в понедельник, через час, неделю назад, за два часа, на неделю). Tell your life story with 10 time markers: «в 2015 году», «через год», «два года назад»… Lesson: [Между нами, lesson 7](https://mezhdunami.org/unit07/goal.shtml) · [lesson 9](https://mezhdunami.org/unit09/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-time:speak"
      ]
@@ -4155,7 +4155,7 @@
     {
      "id": "d129-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Prefixed motion verbs (при-, у-, в-, вы-, за-, пере-, про-, под-, от-, до-). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Prefixed motion verbs (при-, у-, в-, вы-, за-, пере-, про-, под-, от-, до-). Study it from [Master Russian: verbs of motion](https://masterrussian.com/verbs/verbs_of_motion.htm) · [Между нами, lesson 7](https://mezhdunami.org/unit07/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-prefixes:drill"
      ]
@@ -4187,7 +4187,7 @@
     {
      "id": "d130-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Prefixed motion verbs (при-, у-, в-, вы-, за-, пере-, про-, под-, от-, до-). Describe your route from home to work, step by step: «Я выхожу из дома, перехожу дорогу, захожу в магазин…» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Prefixed motion verbs (при-, у-, в-, вы-, за-, пере-, про-, под-, от-, до-). Describe your route from home to work, step by step: «Я выхожу из дома, перехожу дорогу, захожу в магазин…» Lesson: [Master Russian: verbs of motion](https://masterrussian.com/verbs/verbs_of_motion.htm) · [Между нами, lesson 7](https://mezhdunami.org/unit07/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-prefixes:speak"
      ]
@@ -4254,7 +4254,7 @@
     {
      "id": "d132-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Reflexive verbs (-ся) and друг друга. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Reflexive verbs (-ся) and друг друга. Study it from [Между нами, lesson 6](https://mezhdunami.org/unit06/goal.shtml) · [lesson 8](https://mezhdunami.org/unit08/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-reflexive:drill"
      ]
@@ -4286,7 +4286,7 @@
     {
      "id": "d133-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Reflexive verbs (-ся) and друг друга. Describe your morning with -ся verbs: «Я просыпаюсь, умываюсь, одеваюсь…» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Reflexive verbs (-ся) and друг друга. Describe your morning with -ся verbs: «Я просыпаюсь, умываюсь, одеваюсь…» Lesson: [Между нами, lesson 6](https://mezhdunami.org/unit06/goal.shtml) · [lesson 8](https://mezhdunami.org/unit08/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-reflexive:speak"
      ]
@@ -4384,7 +4384,7 @@
     {
      "id": "d136-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): More motion: on foot vs by transport, нести / везти / вести. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): More motion: on foot vs by transport, нести / везти / вести. Study it from [Master Russian: verbs of motion](https://masterrussian.com/verbs/verbs_of_motion.htm) · [Be Fluent in Russian: verbs of motion](https://www.youtube.com/@befluentinrussian/search?query=verbs%20of%20motion). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-carry:drill"
      ]
@@ -4416,7 +4416,7 @@
     {
      "id": "d137-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): More motion: on foot vs by transport, нести / везти / вести. Tell how you moved house or brought something heavy home. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): More motion: on foot vs by transport, нести / везти / вести. Tell how you moved house or brought something heavy home. Lesson: [Master Russian: verbs of motion](https://masterrussian.com/verbs/verbs_of_motion.htm) · [Be Fluent in Russian: verbs of motion](https://www.youtube.com/@befluentinrussian/search?query=verbs%20of%20motion). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-carry:speak"
      ]
@@ -4480,7 +4480,7 @@
     {
      "id": "d139-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Storytelling connectors (сначала, потом, вдруг, в итоге, оказалось, к счастью). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Storytelling connectors (сначала, потом, вдруг, в итоге, оказалось, к счастью). Study it from [Slow Russian podcast](https://podcasts.apple.com/us/podcast/slow-russian/id1069742339) · [Russian with Max](https://www.youtube.com/@russianwithmax). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-connectors:drill"
      ]
@@ -4512,7 +4512,7 @@
     {
      "id": "d140-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Storytelling connectors (сначала, потом, вдруг, в итоге, оказалось, к счастью). Tell a 3-minute story about a trip or a funny event, with 8 connectors. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Storytelling connectors (сначала, потом, вдруг, в итоге, оказалось, к счастью). Tell a 3-minute story about a trip or a funny event, with 8 connectors. Lesson: [Slow Russian podcast](https://podcasts.apple.com/us/podcast/slow-russian/id1069742339) · [Russian with Max](https://www.youtube.com/@russianwithmax). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-connectors:speak"
      ]
@@ -4610,7 +4610,7 @@
     {
      "id": "d143-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Conditional and wishes (если бы…, я бы хотел, чтобы…). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Conditional and wishes (если бы…, я бы хотел, чтобы…). Study it from [Master Russian: subjunctive and imperative](https://masterrussian.com/aa042700a.shtml) · [Между нами, lesson 9](https://mezhdunami.org/unit09/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-conditional:drill"
      ]
@@ -4645,7 +4645,7 @@
     {
      "id": "d144-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Conditional and wishes (если бы…, я бы хотел, чтобы…). Answer for 2 minutes: «Что бы ты сделал, если бы у тебя был год свободного времени?» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Conditional and wishes (если бы…, я бы хотел, чтобы…). Answer for 2 minutes: «Что бы ты сделал, если бы у тебя был год свободного времени?» Lesson: [Master Russian: subjunctive and imperative](https://masterrussian.com/aa042700a.shtml) · [Между нами, lesson 9](https://mezhdunami.org/unit09/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-conditional:speak"
      ]
@@ -4709,7 +4709,7 @@
     {
      "id": "d146-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Short adjectives and states (должен, рад, готов, занят, прав). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Short adjectives and states (должен, рад, готов, занят, прав). Study it from [Be Fluent in Russian: short adjectives](https://www.youtube.com/@befluentinrussian/search?query=short%20adjectives) · [Между нами, lesson 5](https://mezhdunami.org/unit05/goal.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-states:drill"
      ]
@@ -4741,7 +4741,7 @@
     {
      "id": "d147-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Short adjectives and states (должен, рад, готов, занят, прав). Say 6 sentences about how you feel and what you have to do this week. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Short adjectives and states (должен, рад, готов, занят, прав). Say 6 sentences about how you feel and what you have to do this week. Lesson: [Be Fluent in Russian: short adjectives](https://www.youtube.com/@befluentinrussian/search?query=short%20adjectives) · [Между нами, lesson 5](https://mezhdunami.org/unit05/goal.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-states:speak"
      ]
@@ -4886,7 +4886,7 @@
     {
      "id": "d152-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Reported speech and questions (он сказал, что…; я спросил, придёт ли он). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Reported speech and questions (он сказал, что…; я спросил, придёт ли он). Study it from [Pelister: indirect speech](https://pelister.org/russian/tutorials/0068.html) · [Mango Languages: reported speech](https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-report-speech-in-russian-). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-reported:drill"
      ]
@@ -4918,7 +4918,7 @@
     {
      "id": "d153-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Reported speech and questions (он сказал, что…; я спросил, придёт ли он). Retell a conversation you had today: «Коллега сказал, что… Я спросил, придёт ли он…» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Reported speech and questions (он сказал, что…; я спросил, придёт ли он). Retell a conversation you had today: «Коллега сказал, что… Я спросил, придёт ли он…» Lesson: [Pelister: indirect speech](https://pelister.org/russian/tutorials/0068.html) · [Mango Languages: reported speech](https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-report-speech-in-russian-). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-reported:speak"
      ]
@@ -4982,7 +4982,7 @@
     {
      "id": "d155-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): кто-то, что-нибудь, никто, ничего не. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): кто-то, что-нибудь, никто, ничего не. Study it from [Master Russian: indefinite pronouns](https://masterrussian.com/aa010801a.shtml) · [negative pronouns](https://masterrussian.com/aa022401a.shtml). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-indefinite:drill"
      ]
@@ -5014,7 +5014,7 @@
     {
      "id": "d156-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): кто-то, что-нибудь, никто, ничего не. Answer 10 questions with никогда, ничего or никуда: «Ты куда-нибудь ездил летом? — Нет, никуда не ездил.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): кто-то, что-нибудь, никто, ничего не. Answer 10 questions with никогда, ничего or никуда: «Ты куда-нибудь ездил летом? — Нет, никуда не ездил.» Lesson: [Master Russian: indefinite pronouns](https://masterrussian.com/aa010801a.shtml) · [negative pronouns](https://masterrussian.com/aa022401a.shtml). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-indefinite:speak"
      ]
@@ -5080,7 +5080,7 @@
     {
      "id": "d158-grammar",
      "kind": "grammar",
-     "text": "2. Learn (20 min): Explaining a word you don't know (это такая вещь, которой…; это человек, который…). Study it from . You're done when you can say the rule and give 3 examples. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Learn (20 min): Explaining a word you don't know (это такая вещь, которой…; это человек, который…). Study it from [Russiangram](https://russiangram.com/). You're done when you can say the rule and give 3 examples. [exercises](https://www.russianforfree.com/exercises.php)",
      "keys": [
       "ru-s3-explain-word:learn"
      ]
@@ -5112,7 +5112,7 @@
     {
      "id": "d159-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Explaining a word you don't know (это такая вещь, которой…; это человек, который…). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Explaining a word you don't know (это такая вещь, которой…; это человек, который…). Study it from [Russiangram](https://russiangram.com/). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-explain-word:drill"
      ]
@@ -5144,7 +5144,7 @@
     {
      "id": "d160-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Explaining a word you don't know (это такая вещь, которой…; это человек, который…). Play ‘guess the word’ with a partner or an AI: explain 10 words without saying them («это такая вещь, которой режут хлеб»). [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Explaining a word you don't know (это такая вещь, которой…; это человек, который…). Play ‘guess the word’ with a partner or an AI: explain 10 words without saying them («это такая вещь, которой режут хлеб»). Lesson: [Russiangram](https://russiangram.com/). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-explain-word:speak"
      ]
@@ -5208,7 +5208,7 @@
     {
      "id": "d162-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Opinions and feelings (мне кажется, по-моему, я рад, мне жаль, я в восторге). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Opinions and feelings (мне кажется, по-моему, я рад, мне жаль, я в восторге). Study it from [SPbU: the 20 intentions of the speaking test (PDF, slide «Интенции»)](https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-opinion:drill"
      ]
@@ -5338,7 +5338,7 @@
     {
      "id": "d166-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Intonation of emotion (ИК-2, ИК-5, ИК-7: surprise, delight, annoyance). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Intonation of emotion (ИК-2, ИК-5, ИК-7: surprise, delight, annoyance). Study it from [«Русская интонация», Kazan Federal University (PDF)](https://kpfu.ru//staff_files/F542785795/Sadykova_I.A._Uchebnoe_posobie_Russkaya_intonaciya.pdf). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s3-emotion:drill"
      ]
@@ -5370,7 +5370,7 @@
     {
      "id": "d167-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Intonation of emotion (ИК-2, ИК-5, ИК-7: surprise, delight, annoyance). Say «Какая погода!» as delight and as annoyance, and ask a partner which one they heard. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Intonation of emotion (ИК-2, ИК-5, ИК-7: surprise, delight, annoyance). Say «Какая погода!» as delight and as annoyance, and ask a partner which one they heard. Lesson: [«Русская интонация», Kazan Federal University (PDF)](https://kpfu.ru//staff_files/F542785795/Sadykova_I.A._Uchebnoe_posobie_Russkaya_intonaciya.pdf). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s3-emotion:speak"
      ]
@@ -5843,7 +5843,7 @@
     {
      "id": "d182-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Fillers that buy thinking time (ну, в общем, то есть, как бы сказать, дело в том, что). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Fillers that buy thinking time (ну, в общем, то есть, как бы сказать, дело в том, что). Study it from [Easy Russian](https://www.youtube.com/c/EasyRussian). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s4-fillers:drill"
      ]
@@ -5875,7 +5875,7 @@
     {
      "id": "d183-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Fillers that buy thinking time (ну, в общем, то есть, как бы сказать, дело в том, что). Collect 15 fillers from Easy Russian interviews and use 5 of them in your next conversation. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Fillers that buy thinking time (ну, в общем, то есть, как бы сказать, дело в том, что). Collect 15 fillers from Easy Russian interviews and use 5 of them in your next conversation. Lesson: [Easy Russian](https://www.youtube.com/c/EasyRussian). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s4-fillers:speak"
      ]
@@ -5939,7 +5939,7 @@
     {
      "id": "d185-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Agreeing, disagreeing, doubting, asking what someone means (я не совсем согласен; что вы имеете в виду?). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Agreeing, disagreeing, doubting, asking what someone means (я не совсем согласен; что вы имеете в виду?). Study it from [SPbU: the speaking test, tasks 1–8 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s4-reacting:drill"
      ]
@@ -5971,7 +5971,7 @@
     {
      "id": "d186-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Agreeing, disagreeing, doubting, asking what someone means (я не совсем согласен; что вы имеете в виду?). With a partner, take turns making claims about Tashkent and reacting with a different intention each time: agree, doubt, be surprised, object. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Agreeing, disagreeing, doubting, asking what someone means (я не совсем согласен; что вы имеете в виду?). With a partner, take turns making claims about Tashkent and reacting with a different intention each time: agree, doubt, be surprised, object. Lesson: [SPbU: the speaking test, tasks 1–8 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s4-reacting:speak"
      ]
@@ -6069,7 +6069,7 @@
     {
      "id": "d189-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Arguing: for and against, conceding, concluding (с одной стороны…, с другой стороны…; однако; таким образом). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Arguing: for and against, conceding, concluding (с одной стороны…, с другой стороны…; однако; таким образом). Study it from [SPbU: the speaking test, task 15 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s4-arguing:drill"
      ]
@@ -6101,7 +6101,7 @@
     {
      "id": "d190-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Arguing: for and against, conceding, concluding (с одной стороны…, с другой стороны…; однако; таким образом). Talk for 3 minutes on «Работа из дома: плюсы и минусы»: 2 arguments for, 2 against, and a conclusion. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Arguing: for and against, conceding, concluding (с одной стороны…, с другой стороны…; однако; таким образом). Talk for 3 minutes on «Работа из дома: плюсы и минусы»: 2 arguments for, 2 against, and a conclusion. Lesson: [SPbU: the speaking test, task 15 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s4-arguing:speak"
      ]
@@ -6165,7 +6165,7 @@
     {
      "id": "d192-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Complex sentences: хотя, несмотря на то что, для того чтобы, вместо того чтобы, в то время как. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Complex sentences: хотя, несмотря на то что, для того чтобы, вместо того чтобы, в то время как. Study it from [Mango Languages: conjunctions of reason, purpose and concession](https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-conjunctions-of-reason-purpose-result-and-concession-in-russian-) · [Bucknell: subordinate clauses](https://www.departments.bucknell.edu/russian/language/subordin.html). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s4-complex:drill"
      ]
@@ -6197,7 +6197,7 @@
     {
      "id": "d193-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Complex sentences: хотя, несмотря на то что, для того чтобы, вместо того чтобы, в то время как. Answer 5 questions about your city with one complex sentence each. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Complex sentences: хотя, несмотря на то что, для того чтобы, вместо того чтобы, в то время как. Answer 5 questions about your city with one complex sentence each. Lesson: [Mango Languages: conjunctions of reason, purpose and concession](https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-conjunctions-of-reason-purpose-result-and-concession-in-russian-) · [Bucknell: subordinate clauses](https://www.departments.bucknell.edu/russian/language/subordin.html). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s4-complex:speak"
      ]
@@ -6295,7 +6295,7 @@
     {
      "id": "d196-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Short passive participles (закрыт, сделано, написан). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Short passive participles (закрыт, сделано, написан). Study it from [Russian Enthusiast: participles](https://russianenthusiast.com/russian-grammar/verbs/participles/). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s4-short-participles:drill"
      ]
@@ -6327,7 +6327,7 @@
     {
      "id": "d197-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Short passive participles (закрыт, сделано, написан). Describe the state of things at work and in the city: «Магазин закрыт. Отчёт уже написан.» [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Short passive participles (закрыт, сделано, написан). Describe the state of things at work and in the city: «Магазин закрыт. Отчёт уже написан.» Lesson: [Russian Enthusiast: participles](https://russianenthusiast.com/russian-grammar/verbs/participles/). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s4-short-participles:speak"
      ]
@@ -6391,7 +6391,7 @@
     {
      "id": "d199-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Register: formal and informal speech, phone calls, polite complaints. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Register: formal and informal speech, phone calls, polite complaints. Study it from [Be Fluent in Russian: formal vs informal](https://www.youtube.com/@befluentinrussian/search?query=formal) · [Pushkin Institute: B2 course](https://pushkininstitute.ru/certified2). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s4-register:drill"
      ]
@@ -6423,7 +6423,7 @@
     {
      "id": "d200-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Register: formal and informal speech, phone calls, polite complaints. Role-play two phone calls with a partner or an AI: booking an appointment, and complaining about a late delivery. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Register: formal and informal speech, phone calls, polite complaints. Role-play two phone calls with a partner or an AI: booking an appointment, and complaining about a late delivery. Lesson: [Be Fluent in Russian: formal vs informal](https://www.youtube.com/@befluentinrussian/search?query=formal) · [Pushkin Institute: B2 course](https://pushkininstitute.ru/certified2). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s4-register:speak"
      ]
@@ -6521,7 +6521,7 @@
     {
      "id": "d203-grammar",
      "kind": "grammar",
-     "text": "2. Spot (20 min): Long participles and verbal adverbs (читающий, прочитанный, читая, прочитав): mostly to understand. Find and understand 10 examples in today's reading or listening. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Spot (20 min): Long participles and verbal adverbs (читающий, прочитанный, читая, прочитав): mostly to understand. Find and understand 10 examples in today's reading or listening. Topic pages: [Russian Enthusiast: participles](https://russianenthusiast.com/russian-grammar/verbs/participles/) · [verbal adverbs (gerunds)](https://russianenthusiast.com/russian-grammar/verbs/gerunds/).",
      "keys": [
       "ru-s4-participles:spot"
      ]
@@ -6614,7 +6614,7 @@
     {
      "id": "d206-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Numbers in all cases: dates, percentages, statistics (в 2025 году, на 15 процентов). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Numbers in all cases: dates, percentages, statistics (в 2025 году, на 15 процентов). Study it from [Master Russian: numbers](https://masterrussian.com/numbers/Russian_Numbers.htm). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s4-numbers:drill"
      ]
@@ -6783,7 +6783,7 @@
     {
      "id": "d212-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Word formation: roots, prefixes and suffixes (-ость, -ние, -тель, пере-, недо-). Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Word formation: roots, prefixes and suffixes (-ость, -ние, -тель, пере-, недо-). Study it from [Be Fluent in Russian: prefixes](https://www.youtube.com/@befluentinrussian/search?query=prefixes). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s4-word-formation:drill"
      ]
@@ -6815,7 +6815,7 @@
     {
      "id": "d213-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Word formation: roots, prefixes and suffixes (-ость, -ние, -тель, пере-, недо-). Build word families from 5 roots (говор-, пис-, ход-, нов-, раб-) and use 3 words from each in sentences. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Word formation: roots, prefixes and suffixes (-ость, -ние, -тель, пере-, недо-). Build word families from 5 roots (говор-, пис-, ход-, нов-, раб-) and use 3 words from each in sentences. Lesson: [Be Fluent in Russian: prefixes](https://www.youtube.com/@befluentinrussian/search?query=prefixes). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s4-word-formation:speak"
      ]
@@ -6879,7 +6879,7 @@
     {
      "id": "d215-grammar",
      "kind": "grammar",
-     "text": "2. Spot (20 min): Idioms, proverbs and colloquial words. Find and understand 10 examples in today's reading or listening. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Spot (20 min): Idioms, proverbs and colloquial words. Find and understand 10 examples in today's reading or listening. Topic pages: [Master Russian: proverbs and sayings](https://masterrussian.com/proverbs/russian_proverbs.htm) · [Be Fluent in Russian: idioms](https://www.youtube.com/@befluentinrussian/search?query=idioms).",
      "keys": [
       "ru-s4-idioms:spot"
      ]
@@ -7006,7 +7006,7 @@
     {
      "id": "d219-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Your field in Russian: data, maps, GIS, AI. Practise out loud with [exercises](https://www.russianforfree.com/exercises.php) and the examples from the lesson until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Your field in Russian: data, maps, GIS, AI. Study it from [Википедия: Геоинформационная система](https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0) · [Хабр (Russian tech articles)](https://habr.com/ru/). Then practise out loud with [exercises](https://www.russianforfree.com/exercises.php) until about 9 in 10 are right.",
      "keys": [
       "ru-s4-field:drill"
      ]
@@ -7038,7 +7038,7 @@
     {
      "id": "d220-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Your field in Russian: data, maps, GIS, AI. Explain your current GIS or data project in 5 minutes, then answer 5 questions about it. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Your field in Russian: data, maps, GIS, AI. Explain your current GIS or data project in 5 minutes, then answer 5 questions about it. Lesson: [Википедия: Геоинформационная система](https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0) · [Хабр (Russian tech articles)](https://habr.com/ru/). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s4-field:speak"
      ]
@@ -7709,7 +7709,7 @@
     {
      "id": "d242-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Tasks 1–4: disagree with opposite evaluative words (увлекательный → скучный). Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Drill (20 min): Tasks 1–4: disagree with opposite evaluative words (увлекательный → скучный). Study it from [SPbU: speaking test, tasks 1–4 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Then practise out loud with the [SPbU sample tasks](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t1-4:drill"
      ]
@@ -7741,7 +7741,7 @@
     {
      "id": "d243-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Tasks 1–4: disagree with opposite evaluative words (увлекательный → скучный). Daily: a partner or an AI says 10 positive sentences about a trip, a film or a café, and you disagree each time with an antonym. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Tasks 1–4: disagree with opposite evaluative words (увлекательный → скучный). Daily: a partner or an AI says 10 positive sentences about a trip, a film or a café, and you disagree each time with an antonym. Lesson: [SPbU: speaking test, tasks 1–4 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s5-t1-4:speak"
      ]
@@ -7805,7 +7805,7 @@
     {
      "id": "d245-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Tasks 5–8: react with an intention and explain it (agree, doubt, delight, suggest, regret, reproach…). Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Drill (20 min): Tasks 5–8: react with an intention and explain it (agree, doubt, delight, suggest, regret, reproach…). Study it from [SPbU: the list of intentions (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf). Then practise out loud with the [SPbU sample tasks](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t5-8:drill"
      ]
@@ -7837,7 +7837,7 @@
     {
      "id": "d246-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Tasks 5–8: react with an intention and explain it (agree, doubt, delight, suggest, regret, reproach…). Make a card for each of the 20 intentions with 2 phrases on it, then react to random lines with a random card. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Tasks 5–8: react with an intention and explain it (agree, doubt, delight, suggest, regret, reproach…). Make a card for each of the 20 intentions with 2 phrases on it, then react to random lines with a random card. Lesson: [SPbU: the list of intentions (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s5-t5-8:speak"
      ]
@@ -7938,7 +7938,7 @@
     {
      "id": "d249-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Tasks 9–12: the intonation of emotions (indignation, joy, disappointment, praise, surprise). Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Drill (20 min): Tasks 9–12: the intonation of emotions (indignation, joy, disappointment, praise, surprise). Study it from [«Русская интонация» (PDF)](https://kpfu.ru//staff_files/F542785795/Sadykova_I.A._Uchebnoe_posobie_Russkaya_intonaciya.pdf) · [SPbU: tasks 9–12 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Then practise out loud with the [SPbU sample tasks](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t9-12:drill"
      ]
@@ -7970,7 +7970,7 @@
     {
      "id": "d250-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Tasks 9–12: the intonation of emotions (indignation, joy, disappointment, praise, surprise). Record the 4 sample lines with the requested emotions, and ask a native speaker which emotion they hear. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Tasks 9–12: the intonation of emotions (indignation, joy, disappointment, praise, surprise). Record the 4 sample lines with the requested emotions, and ask a native speaker which emotion they hear. Lesson: [«Русская интонация» (PDF)](https://kpfu.ru//staff_files/F542785795/Sadykova_I.A._Uchebnoe_posobie_Russkaya_intonaciya.pdf) · [SPbU: tasks 9–12 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s5-t9-12:speak"
      ]
@@ -8034,7 +8034,7 @@
     {
      "id": "d252-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Task 13: describe a video: the situation, the characters, their motives, your explanation. Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Drill (20 min): Task 13: describe a video: the situation, the characters, their motives, your explanation. Study it from [SPbU: sample test (PDF)](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) · [Mosfilm on YouTube](https://www.youtube.com/channel/UCEK3tT7DcfWGWJpNEDBdWog). Then practise out loud with the [SPbU sample tasks](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t13:drill"
      ]
@@ -8066,7 +8066,7 @@
     {
      "id": "d253-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Task 13: describe a video: the situation, the characters, their motives, your explanation. Twice a week: watch a 2–3-minute film scene, prepare for 10 minutes, speak for 4, and record it. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Task 13: describe a video: the situation, the characters, their motives, your explanation. Twice a week: watch a 2–3-minute film scene, prepare for 10 minutes, speak for 4, and record it. Lesson: [SPbU: sample test (PDF)](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) · [Mosfilm on YouTube](https://www.youtube.com/channel/UCEK3tT7DcfWGWJpNEDBdWog). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s5-t13:speak"
      ]
@@ -8163,7 +8163,7 @@
     {
      "id": "d256-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Task 14: phone about an ad (a job, a flat, a course, a competition). Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Drill (20 min): Task 14: phone about an ad (a job, a flat, a course, a competition). Study it from [SPbU: task 14 and its scoring (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf). Then practise out loud with the [SPbU sample tasks](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t14:drill"
      ]
@@ -8259,7 +8259,7 @@
     {
      "id": "d259-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion). Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Drill (20 min): Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion). Study it from [SPbU: task 15 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf). Then practise out loud with the [SPbU sample tasks](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t15:drill"
      ]
@@ -8291,7 +8291,7 @@
     {
      "id": "d260-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion). Three times a week: a partner or an AI plays the examiner for 15 minutes on one of these topics: работа, образование, город, технологии, семья, здоровье, экология, культура, деньги, СМИ. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion). Three times a week: a partner or an AI plays the examiner for 15 minutes on one of these topics: работа, образование, город, технологии, семья, здоровье, экология, культура, деньги, СМИ. Lesson: [SPbU: task 15 (PDF)](https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s5-t15:speak"
      ]
@@ -8392,7 +8392,7 @@
     {
      "id": "d263-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Accuracy at speed: endings after numbers and prepositions, aspect, stress. Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Drill (20 min): Accuracy at speed: endings after numbers and prepositions, aspect, stress. Study it from [OpenRussian](https://en.openrussian.org/). Then practise out loud with the [SPbU sample tasks](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-accuracy:drill"
      ]
@@ -8424,7 +8424,7 @@
     {
      "id": "d264-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Accuracy at speed: endings after numbers and prepositions, aspect, stress. Record 5 minutes of free speech, transcribe 1 minute of it, fix every error, and add the fixes to the word app as your own words. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Speak (20 min): Accuracy at speed: endings after numbers and prepositions, aspect, stress. Record 5 minutes of free speech, transcribe 1 minute of it, fix every error, and add the fixes to the word app as your own words. Lesson: [OpenRussian](https://en.openrussian.org/). Warm up with [exercises](https://www.russianforfree.com/exercises.php).",
      "keys": [
       "ru-s5-accuracy:speak"
      ]
@@ -8488,7 +8488,7 @@
     {
      "id": "d266-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Fluency: more speed, fewer pauses. Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right. [exercises](https://www.russianforfree.com/exercises.php)",
+     "text": "2. Drill (20 min): Fluency: more speed, fewer pauses. Study it from [Paul Nation: The Four Strands (PDF)](https://www.wgtn.ac.nz/lals/resources/paul-nations-resources/paul-nations-publications/publications/documents/2007-Four-strands.pdf) · [Russian Progress](https://www.youtube.com/@RussianProgress). Then practise out loud with the [SPbU sample tasks](https://testingcenter.spbu.ru/images/files/TRKI-2.pdf) and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-fluency:drill"
      ]
