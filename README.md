@@ -288,6 +288,8 @@ opens on today's day.
   mocks.
 - Each task carries everything it needs (links, the AI chat prompt, the weekly
   questions), so no task points anywhere else on the page.
+- Every task's text starts with its step number (`1.`, `2.`, …) and contains
+  at least one `[label](https://…)` link, so each step points at its resource.
 - The days live in `data/russian-days.json` (`days` → `items` with `id`,
   `kind`, `text` and optional `keys`); `GET /api/russian-days` serves it. Edit
   it directly, keeping ids stable. A task with `keys` is ticked under those
