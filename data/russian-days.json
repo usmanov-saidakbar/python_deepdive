@@ -172,16 +172,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 1.2: consonants, ы and ь — Упражнение 1",
-       "url": "https://mezhdunami.org/unit01/1_2/language.shtml"
-      },
-      {
-       "type": "Exercise",
-       "title": "Mango Languages: the Russian alphabet (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-the-russian-alphabet-/activities"
-      },
-      {
        "type": "Lesson",
        "title": "Russian for Free: how to read Russian, lesson 1",
        "url": "https://www.russianforfree.com/lessons-how-to-read-in-russian-01.php"
@@ -190,6 +180,16 @@
        "type": "Video",
        "title": "Easy Russian: Russian alphabet (Super Easy Russian 24)",
        "url": "https://www.youtube.com/watch?v=FSYe9GQc9Ow"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 1.2: consonants, ы and ь — Упражнение 1",
+       "url": "https://mezhdunami.org/unit01/1_2/language.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: the Russian alphabet (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-the-russian-alphabet-/activities"
       }
      ]
     },
@@ -317,6 +317,11 @@
        "url": "https://mezhdunami.org/unit01/1_1/language.shtml"
       },
       {
+       "type": "Video",
+       "title": "Easy Russian: Russian alphabet (Super Easy Russian 24)",
+       "url": "https://www.youtube.com/watch?v=FSYe9GQc9Ow"
+      },
+      {
        "type": "Exercise",
        "title": "Между нами 1.2: consonants, ы and ь — Упражнение 1",
        "url": "https://mezhdunami.org/unit01/1_2/language.shtml"
@@ -325,11 +330,6 @@
        "type": "Exercise",
        "title": "Mango Languages: the Russian alphabet (practice)",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-the-russian-alphabet-/activities"
-      },
-      {
-       "type": "Video",
-       "title": "Easy Russian: Russian alphabet (Super Easy Russian 24)",
-       "url": "https://www.youtube.com/watch?v=FSYe9GQc9Ow"
       }
      ]
     },
@@ -552,11 +552,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 1.3: vowels and stress — Упражнения 1–3",
-       "url": "https://mezhdunami.org/unit01/1_3/language.shtml"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: vowels and vowel reduction",
        "url": "https://masterrussian.com/aa032301a.shtml"
@@ -565,6 +560,11 @@
        "type": "Video",
        "title": "Easy Russian 76: how to pronounce Ы",
        "url": "https://www.youtube.com/watch?v=ZQ6CEQn9SmQ"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 1.3: vowels and stress — Упражнения 1–3",
+       "url": "https://mezhdunami.org/unit01/1_3/language.shtml"
       }
      ]
     },
@@ -642,14 +642,14 @@
        "url": "https://masterrussian.com/aa081201a.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 1.3: vowels and stress — Упражнения 1–3",
-       "url": "https://mezhdunami.org/unit01/1_3/language.shtml"
-      },
-      {
        "type": "Video",
        "title": "Easy Russian 76: how to pronounce Ы",
        "url": "https://www.youtube.com/watch?v=ZQ6CEQn9SmQ"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 1.3: vowels and stress — Упражнения 1–3",
+       "url": "https://mezhdunami.org/unit01/1_3/language.shtml"
       }
      ]
     },
@@ -881,11 +881,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 1.4: greetings — Упражнения 1–2",
-       "url": "https://mezhdunami.org/unit01/1_4/language.shtml"
-      },
-      {
        "type": "Video",
        "title": "Easy Russian 128: 20 ways to ask and answer «How are you?»",
        "url": "https://www.youtube.com/watch?v=Qu2YmZvGjv8"
@@ -894,6 +889,11 @@
        "type": "Dialogue",
        "title": "Russian for Free dialogue: «Мой лучший друг» (beginner)",
        "url": "https://www.russianforfree.com/dialogues-in-russian-beginner-my-best-friend.php"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 1.4: greetings — Упражнения 1–2",
+       "url": "https://mezhdunami.org/unit01/1_4/language.shtml"
       }
      ]
     },
@@ -1458,6 +1458,11 @@
      ],
      "links": [
       {
+       "type": "Video",
+       "title": "Easy Russian: how to know a word's gender (Super Easy Russian 21)",
+       "url": "https://www.youtube.com/watch?v=wCzD2jitlEs"
+      },
+      {
        "type": "Exercise",
        "title": "Между нами 1.5: gender — Упражнение 1",
        "url": "https://mezhdunami.org/unit01/1_5/language.shtml"
@@ -1466,11 +1471,6 @@
        "type": "Exercise",
        "title": "Между нами 1.8: plurals — Упражнение 1",
        "url": "https://mezhdunami.org/unit01/1_8/language.shtml"
-      },
-      {
-       "type": "Video",
-       "title": "Easy Russian: how to know a word's gender (Super Easy Russian 21)",
-       "url": "https://www.youtube.com/watch?v=wCzD2jitlEs"
       }
      ]
     },
@@ -1717,11 +1717,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 2.8: numbers — Упражнения 1–3",
-       "url": "https://mezhdunami.org/unit02/2_8/language.shtml"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: numbers",
        "url": "https://masterrussian.com/numbers/Russian_Numbers.htm"
@@ -1730,6 +1725,11 @@
        "type": "Video",
        "title": "Easy Russian: the ultimate guide to numbers (Super Easy Russian 32)",
        "url": "https://www.youtube.com/watch?v=64C3HxLr0cg"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 2.8: numbers — Упражнения 1–3",
+       "url": "https://mezhdunami.org/unit02/2_8/language.shtml"
       }
      ]
     },
@@ -2041,16 +2041,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 2.5: adjective endings — Упражнения",
-       "url": "https://mezhdunami.org/unit02/2_5/language.shtml"
-      },
-      {
-       "type": "Exercise",
-       "title": "Между нами 2.6: какой in questions — Упражнения",
-       "url": "https://mezhdunami.org/unit02/2_6/language.shtml"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: adjectives",
        "url": "https://masterrussian.com/aa041201.shtml"
@@ -2059,6 +2049,16 @@
        "type": "Video",
        "title": "Easy Russian: colours (Super Easy Russian 36)",
        "url": "https://www.youtube.com/watch?v=PCElEOJ8UDw"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 2.5: adjective endings — Упражнения",
+       "url": "https://mezhdunami.org/unit02/2_5/language.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 2.6: какой in questions — Упражнения",
+       "url": "https://mezhdunami.org/unit02/2_6/language.shtml"
       }
      ]
     },
@@ -2136,14 +2136,14 @@
        "url": "https://mezhdunami.org/unit02/2_5/language.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 2.6: какой in questions — Упражнения",
-       "url": "https://mezhdunami.org/unit02/2_6/language.shtml"
-      },
-      {
        "type": "Video",
        "title": "Easy Russian: colours (Super Easy Russian 36)",
        "url": "https://www.youtube.com/watch?v=PCElEOJ8UDw"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 2.6: какой in questions — Упражнения",
+       "url": "https://mezhdunami.org/unit02/2_6/language.shtml"
       }
      ]
     },
@@ -2723,16 +2723,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 2.4: conjugation — Упражнения 1–3",
-       "url": "https://mezhdunami.org/unit02/2_4/language.shtml"
-      },
-      {
-       "type": "Exercise",
-       "title": "Между нами 3.2: Кто что делает? — Упражнение 1",
-       "url": "https://mezhdunami.org/unit03/3_2/language.shtml"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: present tense",
        "url": "https://masterrussian.com/aa021100a.shtml"
@@ -2741,6 +2731,16 @@
        "type": "Video",
        "title": "Easy Russian: conjugating verbs, group I (Super Easy Russian 30)",
        "url": "https://www.youtube.com/watch?v=F1aBhlBLwsA"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 2.4: conjugation — Упражнения 1–3",
+       "url": "https://mezhdunami.org/unit02/2_4/language.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 3.2: Кто что делает? — Упражнение 1",
+       "url": "https://mezhdunami.org/unit03/3_2/language.shtml"
       }
      ]
     },
@@ -2818,14 +2818,14 @@
        "url": "https://mezhdunami.org/unit02/2_4/language.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 3.2: Кто что делает? — Упражнение 1",
-       "url": "https://mezhdunami.org/unit03/3_2/language.shtml"
-      },
-      {
        "type": "Video",
        "title": "Easy Russian: conjugating verbs, group I (Super Easy Russian 30)",
        "url": "https://www.youtube.com/watch?v=F1aBhlBLwsA"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 3.2: Кто что делает? — Упражнение 1",
+       "url": "https://mezhdunami.org/unit03/3_2/language.shtml"
       }
      ]
     },
@@ -2983,6 +2983,11 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: accusative case",
+       "url": "https://masterrussian.com/aa071200a.shtml"
+      },
+      {
        "type": "Exercise",
        "title": "Russian for Free: nouns in the accusative, masculine 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a01001032.php"
@@ -2991,11 +2996,6 @@
        "type": "Exercise",
        "title": "Russian for Free: nouns in the accusative, feminine 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a01003032.php"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: accusative case",
-       "url": "https://masterrussian.com/aa071200a.shtml"
       }
      ]
     },
@@ -3327,16 +3327,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Russian for Free: nouns in the prepositional, masculine 1",
-       "url": "https://www.russianforfree.com/exercise-nouns-a01021032.php"
-      },
-      {
-       "type": "Exercise",
-       "title": "Russian for Free: nouns in the prepositional, feminine 1",
-       "url": "https://www.russianforfree.com/exercise-nouns-a01023032.php"
-      },
-      {
        "type": "Lesson",
        "title": "Между нами 3.7: Где? prepositional case endings",
        "url": "https://mezhdunami.org/unit03/3_7/language.shtml"
@@ -3345,6 +3335,16 @@
        "type": "Video",
        "title": "Easy Russian: talking about location, prepositional case (Super Easy Russian 13)",
        "url": "https://www.youtube.com/watch?v=-NbTi2_5Gps"
+      },
+      {
+       "type": "Exercise",
+       "title": "Russian for Free: nouns in the prepositional, masculine 1",
+       "url": "https://www.russianforfree.com/exercise-nouns-a01021032.php"
+      },
+      {
+       "type": "Exercise",
+       "title": "Russian for Free: nouns in the prepositional, feminine 1",
+       "url": "https://www.russianforfree.com/exercise-nouns-a01023032.php"
       }
      ]
     },
@@ -3422,6 +3422,11 @@
        "url": "https://mezhdunami.org/v_and_na.shtml"
       },
       {
+       "type": "Video",
+       "title": "Easy Russian: talking about location, prepositional case (Super Easy Russian 13)",
+       "url": "https://www.youtube.com/watch?v=-NbTi2_5Gps"
+      },
+      {
        "type": "Exercise",
        "title": "Russian for Free: nouns in the prepositional, masculine 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a01021032.php"
@@ -3430,11 +3435,6 @@
        "type": "Exercise",
        "title": "Russian for Free: nouns in the prepositional, feminine 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a01023032.php"
-      },
-      {
-       "type": "Video",
-       "title": "Easy Russian: talking about location, prepositional case (Super Easy Russian 13)",
-       "url": "https://www.youtube.com/watch?v=-NbTi2_5Gps"
       }
      ]
     },
@@ -4150,16 +4150,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 4.5: past tense — Упражнения 3–5",
-       "url": "https://mezhdunami.org/unit04/4_5/language.shtml"
-      },
-      {
-       "type": "Exercise",
-       "title": "Между нами 4.6: был, была — Упражнение 2",
-       "url": "https://mezhdunami.org/unit04/4_6/language.shtml"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: past tense",
        "url": "https://masterrussian.com/aa021500a.shtml"
@@ -4168,6 +4158,16 @@
        "type": "Video",
        "title": "Easy Russian: everything about the past (Super Easy Russian 37)",
        "url": "https://www.youtube.com/watch?v=HzxZ2ovb3aM"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 4.5: past tense — Упражнения 3–5",
+       "url": "https://mezhdunami.org/unit04/4_5/language.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 4.6: был, была — Упражнение 2",
+       "url": "https://mezhdunami.org/unit04/4_6/language.shtml"
       }
      ]
     },
@@ -4240,14 +4240,14 @@
        "url": "https://mezhdunami.org/unit04/4_5/language.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 4.6: был, была — Упражнение 2",
-       "url": "https://mezhdunami.org/unit04/4_6/language.shtml"
-      },
-      {
        "type": "Video",
        "title": "Easy Russian: everything about the past (Super Easy Russian 37)",
        "url": "https://www.youtube.com/watch?v=HzxZ2ovb3aM"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 4.6: был, была — Упражнение 2",
+       "url": "https://mezhdunami.org/unit04/4_6/language.shtml"
       }
      ]
     },
@@ -5077,6 +5077,11 @@
      ],
      "links": [
       {
+       "type": "Words",
+       "title": "Слово за словом (word app)",
+       "url": "https://anki-russian.onrender.com/"
+      },
+      {
        "type": "Partner",
        "title": "Tandem: find an exchange partner",
        "url": "https://tandem.net/en"
@@ -5090,11 +5095,6 @@
        "type": "AI partner",
        "title": "ChatGPT voice chat",
        "url": "https://chatgpt.com/"
-      },
-      {
-       "type": "Words",
-       "title": "Слово за словом (word app)",
-       "url": "https://anki-russian.onrender.com/"
       }
      ]
     }
@@ -5213,6 +5213,11 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: accusative case",
+       "url": "https://masterrussian.com/aa071200a.shtml"
+      },
+      {
        "type": "Exercise",
        "title": "Russian for Free: nouns in the accusative, masculine 2",
        "url": "https://www.russianforfree.com/exercise-nouns-a01002032.php"
@@ -5221,11 +5226,6 @@
        "type": "Exercise",
        "title": "Russian for Free: nouns in the accusative, any gender 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a02001032.php"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: accusative case",
-       "url": "https://masterrussian.com/aa071200a.shtml"
       }
      ]
     },
@@ -5488,6 +5488,16 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: verbs of motion",
+       "url": "https://masterrussian.com/verbs/verbs_of_motion.htm"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: Russian verbs of motion",
+       "url": "https://www.youtube.com/watch?v=3dgd9as5Fdk"
+      },
+      {
        "type": "Exercise",
        "title": "Между нами 5.7: в or на — Упражнение 1",
        "url": "https://mezhdunami.org/unit05/5_7/language.shtml"
@@ -5501,16 +5511,6 @@
        "type": "Exercise",
        "title": "Mango Languages: verbs of motion (practice)",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-verbs-of-motion-in-russian-/activities"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: verbs of motion",
-       "url": "https://masterrussian.com/verbs/verbs_of_motion.htm"
-      },
-      {
-       "type": "Video",
-       "title": "Be Fluent in Russian: Russian verbs of motion",
-       "url": "https://www.youtube.com/watch?v=3dgd9as5Fdk"
       }
      ]
     },
@@ -5588,6 +5588,11 @@
        "url": "https://mezhdunami.org/unit05/5_5/language.shtml"
       },
       {
+       "type": "Video",
+       "title": "Be Fluent in Russian: Russian verbs of motion",
+       "url": "https://www.youtube.com/watch?v=3dgd9as5Fdk"
+      },
+      {
        "type": "Exercise",
        "title": "Между нами 5.7: в or на — Упражнение 1",
        "url": "https://mezhdunami.org/unit05/5_7/language.shtml"
@@ -5596,11 +5601,6 @@
        "type": "Exercise",
        "title": "Между нами 5.8: verbs of motion — Упражнения",
        "url": "https://mezhdunami.org/unit05/5_8/language.shtml"
-      },
-      {
-       "type": "Video",
-       "title": "Be Fluent in Russian: Russian verbs of motion",
-       "url": "https://www.youtube.com/watch?v=3dgd9as5Fdk"
       }
      ]
     },
@@ -5832,6 +5832,11 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: future tense",
+       "url": "https://masterrussian.com/aa032600a.shtml"
+      },
+      {
        "type": "Exercise",
        "title": "Между нами 6.6: future — Упражнения 1–2",
        "url": "https://mezhdunami.org/unit06/6_6/language.shtml"
@@ -5840,11 +5845,6 @@
        "type": "Exercise",
        "title": "Между нами 6.7: future in two-part sentences — Упражнение 2",
        "url": "https://mezhdunami.org/unit06/6_7/language.shtml"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: future tense",
-       "url": "https://masterrussian.com/aa032600a.shtml"
       }
      ]
     },
@@ -6391,6 +6391,16 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: verb aspect",
+       "url": "https://masterrussian.com/aa031600a.shtml"
+      },
+      {
+       "type": "Video",
+       "title": "Easy Russian: 50 perfective and imperfective verbs (Super Easy Russian 35)",
+       "url": "https://www.youtube.com/watch?v=i7SOvgZIhIM"
+      },
+      {
        "type": "Exercise",
        "title": "Между нами 6.1: aspect — Упражнения 1–3",
        "url": "https://mezhdunami.org/unit06/6_1/language.shtml"
@@ -6404,16 +6414,6 @@
        "type": "Exercise",
        "title": "Mango Languages: aspect pairs (practice)",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/what-are-aspect-pairs-in-russian-/activities"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: verb aspect",
-       "url": "https://masterrussian.com/aa031600a.shtml"
-      },
-      {
-       "type": "Video",
-       "title": "Easy Russian: 50 perfective and imperfective verbs (Super Easy Russian 35)",
-       "url": "https://www.youtube.com/watch?v=i7SOvgZIhIM"
       }
      ]
     },
@@ -6491,14 +6491,14 @@
        "url": "https://mezhdunami.org/unit06/6_1/language.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 6.2: aspect pairs — Упражнения 1–2",
-       "url": "https://mezhdunami.org/unit06/6_2/language.shtml"
-      },
-      {
        "type": "Video",
        "title": "Easy Russian: 50 perfective and imperfective verbs (Super Easy Russian 35)",
        "url": "https://www.youtube.com/watch?v=i7SOvgZIhIM"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 6.2: aspect pairs — Упражнения 1–2",
+       "url": "https://mezhdunami.org/unit06/6_2/language.shtml"
       }
      ]
     },
@@ -6656,6 +6656,11 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: dative case",
+       "url": "https://masterrussian.com/aa070100a.shtml"
+      },
+      {
        "type": "Exercise",
        "title": "Russian for Free: nouns in the dative, masculine 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a01006032.php"
@@ -6664,11 +6669,6 @@
        "type": "Exercise",
        "title": "Russian for Free: nouns in the dative, feminine 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a01008032.php"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: dative case",
-       "url": "https://masterrussian.com/aa070100a.shtml"
       }
      ]
     },
@@ -6993,16 +6993,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Russian for Free: nouns in the genitive, any gender 1",
-       "url": "https://www.russianforfree.com/exercise-nouns-a02011032.php"
-      },
-      {
-       "type": "Exercise",
-       "title": "Russian for Free: adjectives in the genitive, masculine 1",
-       "url": "https://www.russianforfree.com/exercise-adjectives-a01011032.php"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: genitive case",
        "url": "https://masterrussian.com/aa061500a.shtml"
@@ -7011,6 +7001,16 @@
        "type": "Video",
        "title": "Easy Russian: 10 situations for the genitive (Super Easy Russian 23)",
        "url": "https://www.youtube.com/watch?v=-mf38m0rRfE"
+      },
+      {
+       "type": "Exercise",
+       "title": "Russian for Free: nouns in the genitive, any gender 1",
+       "url": "https://www.russianforfree.com/exercise-nouns-a02011032.php"
+      },
+      {
+       "type": "Exercise",
+       "title": "Russian for Free: adjectives in the genitive, masculine 1",
+       "url": "https://www.russianforfree.com/exercise-adjectives-a01011032.php"
       }
      ]
     },
@@ -7088,6 +7088,11 @@
        "url": "https://mezhdunami.org/unit04/4_3/language.shtml"
       },
       {
+       "type": "Video",
+       "title": "Easy Russian: 10 situations for the genitive (Super Easy Russian 23)",
+       "url": "https://www.youtube.com/watch?v=-mf38m0rRfE"
+      },
+      {
        "type": "Exercise",
        "title": "Russian for Free: nouns in the genitive, any gender 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a02011032.php"
@@ -7096,11 +7101,6 @@
        "type": "Exercise",
        "title": "Russian for Free: adjectives in the genitive, masculine 1",
        "url": "https://www.russianforfree.com/exercise-adjectives-a01011032.php"
-      },
-      {
-       "type": "Video",
-       "title": "Easy Russian: 10 situations for the genitive (Super Easy Russian 23)",
-       "url": "https://www.youtube.com/watch?v=-mf38m0rRfE"
       }
      ]
     },
@@ -7697,6 +7697,16 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: instrumental case",
+       "url": "https://masterrussian.com/aa073000a.shtml"
+      },
+      {
+       "type": "Video",
+       "title": "Easy Russian: the instrumental case (Super Easy Russian 20)",
+       "url": "https://www.youtube.com/watch?v=pfLVqvgkTbU"
+      },
+      {
        "type": "Exercise",
        "title": "Russian for Free: nouns in the instrumental, masculine 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a01016032.php"
@@ -7710,16 +7720,6 @@
        "type": "Exercise",
        "title": "Mango Languages: instrumental case (practice)",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/the-instrumental-case-how-to-form-and-use-it-in-russian-/activities"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: instrumental case",
-       "url": "https://masterrussian.com/aa073000a.shtml"
-      },
-      {
-       "type": "Video",
-       "title": "Easy Russian: the instrumental case (Super Easy Russian 20)",
-       "url": "https://www.youtube.com/watch?v=pfLVqvgkTbU"
       }
      ]
     },
@@ -7797,6 +7797,11 @@
        "url": "https://mezhdunami.org/unit07/7_1/language.shtml"
       },
       {
+       "type": "Video",
+       "title": "Easy Russian: the instrumental case (Super Easy Russian 20)",
+       "url": "https://www.youtube.com/watch?v=pfLVqvgkTbU"
+      },
+      {
        "type": "Exercise",
        "title": "Russian for Free: nouns in the instrumental, masculine 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a01016032.php"
@@ -7805,11 +7810,6 @@
        "type": "Exercise",
        "title": "Russian for Free: nouns in the instrumental, any gender 1",
        "url": "https://www.russianforfree.com/exercise-nouns-a02016032.php"
-      },
-      {
-       "type": "Video",
-       "title": "Easy Russian: the instrumental case (Super Easy Russian 20)",
-       "url": "https://www.youtube.com/watch?v=pfLVqvgkTbU"
       }
      ]
     },
@@ -7962,6 +7962,11 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: imperative and subjunctive",
+       "url": "https://masterrussian.com/aa042700a.shtml"
+      },
+      {
        "type": "Exercise",
        "title": "Между нами 9.3: imperatives — Упражнение 1",
        "url": "https://mezhdunami.org/unit09/9_3/language.shtml"
@@ -7975,11 +7980,6 @@
        "type": "Exercise",
        "title": "Mango Languages: imperative (practice)",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-form-and-use-the-imperative-mood-in-russian-/activities"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: imperative and subjunctive",
-       "url": "https://masterrussian.com/aa042700a.shtml"
       }
      ]
     },
@@ -8286,6 +8286,11 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: personal pronouns",
+       "url": "https://masterrussian.com/aa110100a.shtml"
+      },
+      {
        "type": "Exercise",
        "title": "Между нами 9.2: possessives and свой — Упражнения 1–2",
        "url": "https://mezhdunami.org/unit09/9_2/language.shtml"
@@ -8294,11 +8299,6 @@
        "type": "Exercise",
        "title": "Mango Languages: personal pronouns (practice)",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/russian-personal-pronouns-what-are-they-and-how-to-use-them-/activities"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: personal pronouns",
-       "url": "https://masterrussian.com/aa110100a.shtml"
       }
      ]
     },
@@ -8846,14 +8846,14 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Mango Languages: comparisons (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-form-different-types-of-comparisons-in-russian-/activities"
-      },
-      {
        "type": "Lesson",
        "title": "Между нами 8.1: comparatives",
        "url": "https://mezhdunami.org/unit08/8_1/language.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: comparisons (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-form-different-types-of-comparisons-in-russian-/activities"
       }
      ]
     },
@@ -9028,14 +9028,14 @@
        "url": "https://mezhdunami.org/unit08/8_4/index.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 8.4 «Ама́нда в Третьяко́вской галере́е»: Вы всё поняли? (comprehension questions)",
-       "url": "https://mezhdunami.org/unit08/8_4/comprehension.shtml"
-      },
-      {
        "type": "Listen",
        "title": "Между нами 8.7 «C днём рожде́ния!»",
        "url": "https://mezhdunami.org/unit08/8_7/index.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 8.4 «Ама́нда в Третьяко́вской галере́е»: Вы всё поняли? (comprehension questions)",
+       "url": "https://mezhdunami.org/unit08/8_4/comprehension.shtml"
       },
       {
        "type": "Exercise",
@@ -9101,14 +9101,14 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Russian for Free: nouns in the genitive, any gender 2",
-       "url": "https://www.russianforfree.com/exercise-nouns-a02012032.php"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: numbers",
        "url": "https://masterrussian.com/numbers/Russian_Numbers.htm"
+      },
+      {
+       "type": "Exercise",
+       "title": "Russian for Free: nouns in the genitive, any gender 2",
+       "url": "https://www.russianforfree.com/exercise-nouns-a02012032.php"
       }
      ]
     },
@@ -9123,14 +9123,14 @@
        "url": "https://mezhdunami.org/unit08/8_5/index.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 8.5 «Где мы встре́тимся?»: Вы всё поняли? (comprehension questions)",
-       "url": "https://mezhdunami.org/unit08/8_5/comprehension.shtml"
-      },
-      {
        "type": "Listen",
        "title": "Между нами 8.6 «У Гу́риных»",
        "url": "https://mezhdunami.org/unit08/8_6/index.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 8.5 «Где мы встре́тимся?»: Вы всё поняли? (comprehension questions)",
+       "url": "https://mezhdunami.org/unit08/8_5/comprehension.shtml"
       },
       {
        "type": "Exercise",
@@ -9456,14 +9456,14 @@
        "url": "https://mezhdunami.org/unit09/9_2/index.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 9.2 «На сле́дующий день»: Вы всё поняли? (comprehension questions)",
-       "url": "https://mezhdunami.org/unit09/9_2/comprehension.shtml"
-      },
-      {
        "type": "Listen",
        "title": "Между нами Э.3 «Аэропо́рт Домоде́дово»",
        "url": "https://mezhdunami.org/epilogue/e_3/index.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 9.2 «На сле́дующий день»: Вы всё поняли? (comprehension questions)",
+       "url": "https://mezhdunami.org/unit09/9_2/comprehension.shtml"
       },
       {
        "type": "Exercise",
@@ -9548,14 +9548,14 @@
        "url": "https://mezhdunami.org/unit09/9_3/index.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 9.3 «Как То́ни заблуди́лся»: Вы всё поняли? (comprehension questions)",
-       "url": "https://mezhdunami.org/unit09/9_3/comprehension.shtml"
-      },
-      {
        "type": "Listen",
        "title": "Между нами Э.2 «Пода́рок хозя́евам»",
        "url": "https://mezhdunami.org/epilogue/e_2/index.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 9.3 «Как То́ни заблуди́лся»: Вы всё поняли? (comprehension questions)",
+       "url": "https://mezhdunami.org/unit09/9_3/comprehension.shtml"
       },
       {
        "type": "Exercise",
@@ -9625,14 +9625,14 @@
        "url": "https://mezhdunami.org/unit09/9_4/index.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 9.4 «То́ни в го́роде на Неве́»: Вы всё поняли? (comprehension questions)",
-       "url": "https://mezhdunami.org/unit09/9_4/comprehension.shtml"
-      },
-      {
        "type": "Listen",
        "title": "Между нами Э.1 «Студе́нты уезжа́ют»",
        "url": "https://mezhdunami.org/epilogue/e_1/index.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 9.4 «То́ни в го́роде на Неве́»: Вы всё поняли? (comprehension questions)",
+       "url": "https://mezhdunami.org/unit09/9_4/comprehension.shtml"
       },
       {
        "type": "Exercise",
@@ -9727,14 +9727,14 @@
        "url": "https://mezhdunami.org/unit09/9_5/index.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 9.5 «Са́мое глубо́кое о́зеро в ми́ре»: Вы всё поняли? (comprehension questions)",
-       "url": "https://mezhdunami.org/unit09/9_5/comprehension.shtml"
-      },
-      {
        "type": "Listen",
        "title": "Между нами 9.6 «Кейтлин сдаёт экза́мен»",
        "url": "https://mezhdunami.org/unit09/9_6/index.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 9.5 «Са́мое глубо́кое о́зеро в ми́ре»: Вы всё поняли? (comprehension questions)",
+       "url": "https://mezhdunami.org/unit09/9_5/comprehension.shtml"
       },
       {
        "type": "Exercise",
@@ -10108,6 +10108,11 @@
      ],
      "links": [
       {
+       "type": "Words",
+       "title": "Слово за словом (word app)",
+       "url": "https://anki-russian.onrender.com/"
+      },
+      {
        "type": "Partner",
        "title": "Tandem: find an exchange partner",
        "url": "https://tandem.net/en"
@@ -10121,11 +10126,6 @@
        "type": "AI partner",
        "title": "ChatGPT voice chat",
        "url": "https://chatgpt.com/"
-      },
-      {
-       "type": "Words",
-       "title": "Слово за словом (word app)",
-       "url": "https://anki-russian.onrender.com/"
       }
      ]
     }
@@ -10254,6 +10254,16 @@
      ],
      "links": [
       {
+       "type": "Lesson",
+       "title": "Master Russian: verb aspect",
+       "url": "https://masterrussian.com/aa031600a.shtml"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: the only 3 rules you need for aspect",
+       "url": "https://www.youtube.com/watch?v=VZh0XyhA2xA"
+      },
+      {
        "type": "Exercise",
        "title": "Между нами 6.2: aspect and negation — Упражнения 3–4",
        "url": "https://mezhdunami.org/unit06/6_2/language.shtml"
@@ -10272,16 +10282,6 @@
        "type": "Exercise",
        "title": "Mango Languages: perfective aspect (practice)",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/what-is-the-perfective-aspect-in-russian-/activities"
-      },
-      {
-       "type": "Lesson",
-       "title": "Master Russian: verb aspect",
-       "url": "https://masterrussian.com/aa031600a.shtml"
-      },
-      {
-       "type": "Video",
-       "title": "Be Fluent in Russian: the only 3 rules you need for aspect",
-       "url": "https://www.youtube.com/watch?v=VZh0XyhA2xA"
       }
      ]
     },
@@ -10354,14 +10354,14 @@
        "url": "https://mezhdunami.org/unit06/6_2/language.shtml"
       },
       {
-       "type": "Exercise",
-       "title": "Между нами 6.3: aspect and tense — Упражнения 1–3",
-       "url": "https://mezhdunami.org/unit06/6_3/language.shtml"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: the only 3 rules you need for aspect",
        "url": "https://www.youtube.com/watch?v=VZh0XyhA2xA"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 6.3: aspect and tense — Упражнения 1–3",
+       "url": "https://mezhdunami.org/unit06/6_3/language.shtml"
       }
      ]
     },
@@ -10813,14 +10813,14 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 7.7: prefixed motion verbs — Упражнения",
-       "url": "https://mezhdunami.org/unit07/7_7/language.shtml"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: verbs of motion with prefixes",
        "url": "https://www.youtube.com/watch?v=sDwgUgXsUy8"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 7.7: prefixed motion verbs — Упражнения",
+       "url": "https://mezhdunami.org/unit07/7_7/language.shtml"
       }
      ]
     },
@@ -11350,11 +11350,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Mango Languages: verbs of motion (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-verbs-of-motion-in-russian-/activities"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: verbs of motion",
        "url": "https://masterrussian.com/verbs/verbs_of_motion.htm"
@@ -11363,6 +11358,11 @@
        "type": "Video",
        "title": "Be Fluent in Russian: Russian verbs of motion",
        "url": "https://www.youtube.com/watch?v=3dgd9as5Fdk"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: verbs of motion (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-verbs-of-motion-in-russian-/activities"
       }
      ]
     },
@@ -11435,14 +11435,14 @@
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-carrying-verbs-of-motion-in-russian-"
       },
       {
-       "type": "Exercise",
-       "title": "Mango Languages: verbs of motion (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-verbs-of-motion-in-russian-/activities"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: Russian verbs of motion",
        "url": "https://www.youtube.com/watch?v=3dgd9as5Fdk"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: verbs of motion (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-verbs-of-motion-in-russian-/activities"
       }
      ]
     },
@@ -11585,14 +11585,14 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Mango Languages: conjunctions (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/what-are-conjunctions-in-russian-/activities"
-      },
-      {
        "type": "Lesson",
        "title": "Mango Languages: когда and other time words",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-kogda-when-and-other-conjunctions-of-time-in-russian-"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: conjunctions (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/what-are-conjunctions-in-russian-/activities"
       }
      ]
     },
@@ -12112,14 +12112,14 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 5.6: short adjectives — Упражнение 1",
-       "url": "https://mezhdunami.org/unit05/5_6/language.shtml"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: short adjectives",
        "url": "https://www.youtube.com/watch?v=P58kohODIr0"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 5.6: short adjectives — Упражнение 1",
+       "url": "https://mezhdunami.org/unit05/5_6/language.shtml"
       }
      ]
     },
@@ -12515,14 +12515,14 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Mango Languages: reported speech (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-report-speech-in-russian-/activities"
-      },
-      {
        "type": "Lesson",
        "title": "Mango Languages: reported speech",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-report-speech-in-russian-"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: reported speech (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-report-speech-in-russian-/activities"
       }
      ]
     },
@@ -12740,14 +12740,14 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 8.4: -то and -нибудь — Упражнение 1",
-       "url": "https://mezhdunami.org/unit08/8_4/language.shtml"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: indefinite pronouns",
        "url": "https://masterrussian.com/aa010801a.shtml"
+      },
+      {
+       "type": "Exercise",
+       "title": "Между нами 8.4: -то and -нибудь — Упражнение 1",
+       "url": "https://mezhdunami.org/unit08/8_4/language.shtml"
       }
      ]
     },
@@ -13049,11 +13049,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Mango Languages: который (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-the-word-kotoryj-in-russian-/activities"
-      },
-      {
        "type": "Lesson",
        "title": "Mango Languages: который: «это человек, который…»",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-the-word-kotoryj-in-russian-"
@@ -13062,6 +13057,11 @@
        "type": "Video",
        "title": "Easy Russian: laptop, app and other words Russians call differently (Super Easy Russian 16)",
        "url": "https://www.youtube.com/watch?v=p9XNf1EFz98"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: который (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-the-word-kotoryj-in-russian-/activities"
       }
      ]
     },
@@ -13124,14 +13124,14 @@
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-the-word-kotoryj-in-russian-"
       },
       {
-       "type": "Exercise",
-       "title": "Mango Languages: который (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-the-word-kotoryj-in-russian-/activities"
-      },
-      {
        "type": "Video",
        "title": "Easy Russian: laptop, app and other words Russians call differently (Super Easy Russian 16)",
        "url": "https://www.youtube.com/watch?v=p9XNf1EFz98"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: который (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-the-word-kotoryj-in-russian-/activities"
       }
      ]
     },
@@ -13269,9 +13269,9 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Между нами 7.5: feelings — Упражнение 1",
-       "url": "https://mezhdunami.org/unit07/7_5/language.shtml"
+       "type": "Exam task",
+       "title": "SPbU: the 20 intentions of the speaking test (PDF, slide «Интенции»)",
+       "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf"
       },
       {
        "type": "Video",
@@ -13279,9 +13279,9 @@
        "url": "https://www.youtube.com/watch?v=Lv39BhZJ2mg"
       },
       {
-       "type": "Exam task",
-       "title": "SPbU: the 20 intentions of the speaking test (PDF, slide «Интенции»)",
-       "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf"
+       "type": "Exercise",
+       "title": "Между нами 7.5: feelings — Упражнение 1",
+       "url": "https://mezhdunami.org/unit07/7_5/language.shtml"
       }
      ]
     },
@@ -14621,6 +14621,11 @@
      ],
      "links": [
       {
+       "type": "Words",
+       "title": "Слово за словом (word app)",
+       "url": "https://anki-russian.onrender.com/"
+      },
+      {
        "type": "Partner",
        "title": "Tandem: find an exchange partner",
        "url": "https://tandem.net/en"
@@ -14634,11 +14639,6 @@
        "type": "AI partner",
        "title": "ChatGPT voice chat",
        "url": "https://chatgpt.com/"
-      },
-      {
-       "type": "Words",
-       "title": "Слово за словом (word app)",
-       "url": "https://anki-russian.onrender.com/"
       }
      ]
     }
@@ -14747,11 +14747,6 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Mango Languages: particles (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/particles-in-russian-what-are-they-and-when-to-use-them-/activities"
-      },
-      {
        "type": "Lesson",
        "title": "Mango Languages: particles",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/particles-in-russian-what-are-they-and-when-to-use-them-"
@@ -14760,6 +14755,11 @@
        "type": "Video",
        "title": "Easy Russian 29: Ну, вот, так что… Russian filler words",
        "url": "https://www.youtube.com/watch?v=Fjkw9vYDukg"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: particles (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/particles-in-russian-what-are-they-and-when-to-use-them-/activities"
       }
      ]
     },
@@ -14827,14 +14827,14 @@
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/particles-in-russian-what-are-they-and-when-to-use-them-"
       },
       {
-       "type": "Exercise",
-       "title": "Mango Languages: particles (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/particles-in-russian-what-are-they-and-when-to-use-them-/activities"
-      },
-      {
        "type": "Video",
        "title": "Easy Russian 29: Ну, вот, так что… Russian filler words",
        "url": "https://www.youtube.com/watch?v=Fjkw9vYDukg"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: particles (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/particles-in-russian-what-are-they-and-when-to-use-them-/activities"
       }
      ]
     },
@@ -15486,14 +15486,14 @@
      ],
      "links": [
       {
-       "type": "Exercise",
-       "title": "Mango Languages: conjunctions (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/what-are-conjunctions-in-russian-/activities"
-      },
-      {
        "type": "Lesson",
        "title": "Mango Languages: хотя, несмотря на то что",
        "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/how-to-use-conjunctions-of-reason-purpose-result-and-concession-in-russian-"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: conjunctions (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/what-are-conjunctions-in-russian-/activities"
       }
      ]
     },
@@ -17584,24 +17584,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -17664,24 +17664,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -17897,24 +17897,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -17974,24 +17974,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -18118,24 +18118,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -18195,24 +18195,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -18428,24 +18428,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -18505,24 +18505,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -18649,24 +18649,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -18726,24 +18726,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: all the basics of prefixes",
-       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
-      },
-      {
        "type": "Lesson",
        "title": "Master Russian: proverbs and sayings",
        "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
       },
       {
-       "type": "Video",
-       "title": "Be Fluent in Russian: 10 Russian idioms",
-       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
-      },
-      {
        "type": "Lesson",
        "title": "Википедия: Геоинформационная система",
        "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: all the basics of prefixes",
+       "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
+      },
+      {
+       "type": "Video",
+       "title": "Be Fluent in Russian: 10 Russian idioms",
+       "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
       }
      ]
     },
@@ -18923,14 +18923,14 @@
      "text": "4. Automatic check: Fillers that buy thinking time · Agreeing, disagreeing, doubting, asking what someone means · Arguing · Complex sentences. Which came out right in this month's conversations without a correction? Drill the others again next week.",
      "links": [
       {
-       "type": "Exercise",
-       "title": "Mango Languages: particles (practice)",
-       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/particles-in-russian-what-are-they-and-when-to-use-them-/activities"
-      },
-      {
        "type": "Lesson",
        "title": "SPbU: speaking test tasks and scoring (PDF)",
        "url": "https://testingcenter.spbu.ru/images/webinars/webinar_9_test_rki.pdf"
+      },
+      {
+       "type": "Exercise",
+       "title": "Mango Languages: particles (practice)",
+       "url": "https://www.mangolanguages.com/resources/learn/grammar/russian/particles-in-russian-what-are-they-and-when-to-use-them-/activities"
       },
       {
        "type": "Exercise",
@@ -18982,6 +18982,11 @@
      ],
      "links": [
       {
+       "type": "Words",
+       "title": "Слово за словом (word app)",
+       "url": "https://anki-russian.onrender.com/"
+      },
+      {
        "type": "Partner",
        "title": "Tandem: find an exchange partner",
        "url": "https://tandem.net/en"
@@ -18995,11 +19000,6 @@
        "type": "AI partner",
        "title": "ChatGPT voice chat",
        "url": "https://chatgpt.com/"
-      },
-      {
-       "type": "Words",
-       "title": "Слово за словом (word app)",
-       "url": "https://anki-russian.onrender.com/"
       }
      ]
     }
@@ -20494,14 +20494,14 @@
      ],
      "links": [
       {
-       "type": "Tool",
-       "title": "OpenRussian",
-       "url": "https://en.openrussian.org/"
-      },
-      {
        "type": "Exam task",
        "title": "SPbU sample tasks",
        "url": "https://testingcenter.spbu.ru/images/files/TRKI-2.pdf"
+      },
+      {
+       "type": "Tool",
+       "title": "OpenRussian",
+       "url": "https://en.openrussian.org/"
       }
      ]
     },
@@ -20679,14 +20679,14 @@
      ],
      "links": [
       {
-       "type": "Watch",
-       "title": "Russian Progress: My Italian friend Carlo for the first time in Siberia - Intermediate Russian Podcast (rus sub)",
-       "url": "https://www.youtube.com/watch?v=JtyR1mB9HgQ"
-      },
-      {
        "type": "Exam task",
        "title": "SPbU sample tasks",
        "url": "https://testingcenter.spbu.ru/images/files/TRKI-2.pdf"
+      },
+      {
+       "type": "Watch",
+       "title": "Russian Progress: My Italian friend Carlo for the first time in Siberia - Intermediate Russian Podcast (rus sub)",
+       "url": "https://www.youtube.com/watch?v=JtyR1mB9HgQ"
       }
      ]
     },
@@ -21802,14 +21802,14 @@
      ],
      "links": [
       {
-       "type": "Exam task",
-       "title": "SPbU",
-       "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf"
-      },
-      {
        "type": "Words",
        "title": "Слово за словом (word app)",
        "url": "https://anki-russian.onrender.com/"
+      },
+      {
+       "type": "Exam task",
+       "title": "SPbU",
+       "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf"
       }
      ]
     }
