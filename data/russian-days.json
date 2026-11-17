@@ -301,7 +301,7 @@
     {
      "id": "d3-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Alphabet, reading and typing. Read 10 shop signs or menu items in Tashkent out loud, and type 20 words on the Russian keyboard. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Alphabet, reading and typing. First go over the lesson and warm up with the exercises below. Then: Read 10 shop signs or menu items in Tashkent out loud, and type 20 words on the Russian keyboard.",
      "keys": [
       "ru-s1-alphabet:speak"
      ],
@@ -875,7 +875,7 @@
     {
      "id": "d9-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Survival phrases: greetings, ты / вы, please, sorry, asking for help. Then practise out loud with the exercises below until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Survival phrases: greetings, ты / вы, please, sorry, asking for help. Practise out loud with the exercises below until about 9 in 10 are right.",
      "keys": [
       "ru-s1-phrases:drill"
      ],
@@ -1452,7 +1452,7 @@
     {
      "id": "d16-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Gender, plurals and possessives (мой, моя, моё, мои; чей?). Then practise out loud with the exercises below until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Gender, plurals and possessives (мой, моя, моё, мои; чей?). Practise out loud with the exercises below until about 9 in 10 are right.",
      "keys": [
       "ru-s1-gender:drill"
      ],
@@ -2120,7 +2120,7 @@
     {
      "id": "d24-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Adjectives and colours: какой? (новый, хорошая, большое). Describe your flat or your office in 8 sentences. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Adjectives and colours: какой? (новый, хорошая, большое). First go over the lesson and warm up with the exercises below. Then: Describe your flat or your office in 8 sentences.",
      "keys": [
       "ru-s1-adjectives:speak"
      ],
@@ -2802,7 +2802,7 @@
     {
      "id": "d33-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Present tense: 1st and 2nd conjugation (читать, говорить, жить). Say 10 sentences about what you, your family and your colleagues do every day. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Present tense: 1st and 2nd conjugation (читать, говорить, жить). First go over the lesson and warm up with the exercises below. Then: Say 10 sentences about what you, your family and your colleagues do every day.",
      "keys": [
       "ru-s1-present:speak"
      ],
@@ -3057,7 +3057,7 @@
     {
      "id": "d36-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Accusative of things: what do you read, watch, buy?. Say what you read, watch, eat and buy in a week: «Я читаю новости, смотрю сериал, покупаю хлеб.» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Accusative of things: what do you read, watch, buy?. First go over the lesson and warm up with the exercises below. Then: Say what you read, watch, eat and buy in a week: «Я читаю новости, смотрю сериал, покупаю хлеб.»",
      "keys": [
       "ru-s1-accusative:speak"
      ],
@@ -3406,7 +3406,7 @@
     {
      "id": "d40-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Prepositional case: where? (в / на + -е) and about (о + -е). Say where you live, work and study, and where 5 places in Tashkent are: «Я живу в Ташкенте, в Юнусабаде.» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Prepositional case: where? (в / на + -е) and about (о + -е). First go over the lesson and warm up with the exercises below. Then: Say where you live, work and study, and where 5 places in Tashkent are: «Я живу в Ташкенте, в Юнусабаде.»",
      "keys": [
       "ru-s1-prepositional:speak"
      ],
@@ -3909,7 +3909,7 @@
     {
      "id": "d46-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Having and not having: у меня есть / у меня нет. Then practise out loud with the exercises below until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Having and not having: у меня есть / у меня нет. Practise out loud with the exercises below until about 9 in 10 are right.",
      "keys": [
       "ru-s1-have:drill"
      ],
@@ -4224,7 +4224,7 @@
     {
      "id": "d50-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Past tense (был, была, делал, делала). Tell what you did yesterday in 6 sentences. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Past tense (был, была, делал, делала). First go over the lesson and warm up with the exercises below. Then: Tell what you did yesterday in 6 sentences.",
      "keys": [
       "ru-s1-past:speak"
      ],
@@ -5077,11 +5077,6 @@
      ],
      "links": [
       {
-       "type": "Words",
-       "title": "Слово за словом (word app)",
-       "url": "https://anki-russian.onrender.com/"
-      },
-      {
        "type": "Partner",
        "title": "Tandem: find an exchange partner",
        "url": "https://tandem.net/en"
@@ -5095,6 +5090,11 @@
        "type": "AI partner",
        "title": "ChatGPT voice chat",
        "url": "https://chatgpt.com/"
+      },
+      {
+       "type": "Words",
+       "title": "Слово за словом (word app)",
+       "url": "https://anki-russian.onrender.com/"
       }
      ]
     }
@@ -5287,7 +5287,7 @@
     {
      "id": "d63-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Accusative of people (вижу брата, жду коллегу). Say who you see, know, love and wait for: «Я жду коллегу. Я знаю его брата.» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Accusative of people (вижу брата, жду коллегу). First go over the lesson and warm up with the exercises below. Then: Say who you see, know, love and wait for: «Я жду коллегу. Я знаю его брата.»",
      "keys": [
       "ru-s2-acc-animate:speak"
      ],
@@ -5572,7 +5572,7 @@
     {
      "id": "d66-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Motion verbs, part 1: идти / ходить, ехать / ездить; где, куда, откуда. Describe how you get around: «Каждый день я езжу на работу на метро. Сейчас я еду домой.» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Motion verbs, part 1: идти / ходить, ехать / ездить; где, куда, откуда. First go over the lesson and warm up with the exercises below. Then: Describe how you get around: «Каждый день я езжу на работу на метро. Сейчас я еду домой.»",
      "keys": [
       "ru-s2-motion:speak"
      ],
@@ -5906,7 +5906,7 @@
     {
      "id": "d70-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Future and plans (буду + infinitive, the perfective future, собираюсь, хочу). Say 8 sentences about your plans for the weekend and for next year. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Future and plans (буду + infinitive, the perfective future, собираюсь, хочу). First go over the lesson and warm up with the exercises below. Then: Say 8 sentences about your plans for the weekend and for next year.",
      "keys": [
       "ru-s2-future:speak"
      ],
@@ -6071,7 +6071,7 @@
     {
      "id": "d72-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Connecting ideas: потому что, поэтому, когда, если, который. Then practise out loud with the exercises below until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Connecting ideas: потому что, поэтому, когда, если, который. Practise out loud with the exercises below until about 9 in 10 are right.",
      "keys": [
       "ru-s2-connect:drill"
      ],
@@ -6475,7 +6475,7 @@
     {
      "id": "d77-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Aspect, first pass: делал or сделал? буду делать or сделаю?. Tell what you did yesterday with 5 finished actions (perfective) and 5 habits or processes (imperfective). Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Aspect, first pass: делал or сделал? буду делать or сделаю?. First go over the lesson and warm up with the exercises below. Then: Tell what you did yesterday with 5 finished actions (perfective) and 5 habits or processes (imperfective).",
      "keys": [
       "ru-s2-aspect:speak"
      ],
@@ -6728,7 +6728,7 @@
     {
      "id": "d80-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Dative: кому? (мне нравится, мне нужно, мне 25 лет). Say what your family likes and needs, and how old everyone is: «Моему брату 30 лет. Ему нравится футбол.» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Dative: кому? (мне нравится, мне нужно, мне 25 лет). First go over the lesson and warm up with the exercises below. Then: Say what your family likes and needs, and how old everyone is: «Моему брату 30 лет. Ему нравится футбол.»",
      "keys": [
       "ru-s2-dative:speak"
      ],
@@ -7072,7 +7072,7 @@
     {
      "id": "d84-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Genitive: absence, quantity, ‘of’, and из, от, до, без, после, у. Say where 5 things are from and what's missing: «Чай из Китая. В офисе нет кофе.» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Genitive: absence, quantity, ‘of’, and из, от, до, без, после, у. First go over the lesson and warm up with the exercises below. Then: Say where 5 things are from and what's missing: «Чай из Китая. В офисе нет кофе.»",
      "keys": [
       "ru-s2-genitive:speak"
      ],
@@ -7781,7 +7781,7 @@
     {
      "id": "d93-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Instrumental: с кем? кем? (работать аналитиком, заниматься спортом). Say who you work and spend time with, and what you do in your free time: «Я работаю аналитиком данных. Я занимаюсь спортом.» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Instrumental: с кем? кем? (работать аналитиком, заниматься спортом). First go over the lesson and warm up with the exercises below. Then: Say who you work and spend time with, and what you do in your free time: «Я работаю аналитиком данных. Я занимаюсь спортом.»",
      "keys": [
       "ru-s2-instrumental:speak"
      ],
@@ -8036,7 +8036,7 @@
     {
      "id": "d96-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Imperative and requests (скажите, дайте, давайте…). Give a friend directions from Amir Temur Square (сквер Амира Темура) to your home, with imperatives. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Imperative and requests (скажите, дайте, давайте…). First go over the lesson and warm up with the exercises below. Then: Give a friend directions from Amir Temur Square (сквер Амира Темура) to your home, with imperatives.",
      "keys": [
       "ru-s2-imperative:speak"
      ],
@@ -8360,7 +8360,7 @@
     {
      "id": "d100-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Pronouns in all cases (меня, мне, мной…) and свой. Answer 10 questions with a pronoun instead of the noun: «Ты звонил маме? — Да, я ей звонил.» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Pronouns in all cases (меня, мне, мной…) and свой. First go over the lesson and warm up with the exercises below. Then: Answer 10 questions with a pronoun instead of the noun: «Ты звонил маме? — Да, я ей звонил.»",
      "keys": [
       "ru-s2-pronouns:speak"
      ],
@@ -8915,7 +8915,7 @@
     {
      "id": "d107-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Comparatives and superlatives (больше, лучше, самый). Compare Tashkent with another city in 8 sentences: weather, prices, food, transport. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Comparatives and superlatives (больше, лучше, самый). First go over the lesson and warm up with the exercises below. Then: Compare Tashkent with another city in 8 sentences: weather, prices, food, transport.",
      "keys": [
       "ru-s2-compare:speak"
      ],
@@ -9028,14 +9028,14 @@
        "url": "https://mezhdunami.org/unit08/8_4/index.shtml"
       },
       {
-       "type": "Listen",
-       "title": "Между нами 8.7 «C днём рожде́ния!»",
-       "url": "https://mezhdunami.org/unit08/8_7/index.shtml"
-      },
-      {
        "type": "Exercise",
        "title": "Между нами 8.4 «Ама́нда в Третьяко́вской галере́е»: Вы всё поняли? (comprehension questions)",
        "url": "https://mezhdunami.org/unit08/8_4/comprehension.shtml"
+      },
+      {
+       "type": "Listen",
+       "title": "Между нами 8.7 «C днём рожде́ния!»",
+       "url": "https://mezhdunami.org/unit08/8_7/index.shtml"
       },
       {
        "type": "Exercise",
@@ -9123,14 +9123,14 @@
        "url": "https://mezhdunami.org/unit08/8_5/index.shtml"
       },
       {
-       "type": "Listen",
-       "title": "Между нами 8.6 «У Гу́риных»",
-       "url": "https://mezhdunami.org/unit08/8_6/index.shtml"
-      },
-      {
        "type": "Exercise",
        "title": "Между нами 8.5 «Где мы встре́тимся?»: Вы всё поняли? (comprehension questions)",
        "url": "https://mezhdunami.org/unit08/8_5/comprehension.shtml"
+      },
+      {
+       "type": "Listen",
+       "title": "Между нами 8.6 «У Гу́риных»",
+       "url": "https://mezhdunami.org/unit08/8_6/index.shtml"
       },
       {
        "type": "Exercise",
@@ -9180,7 +9180,7 @@
     {
      "id": "d110-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Numbers with nouns (2 часа, 5 часов) and the genitive plural. Count things out loud all week: «два брата, пять минут, двадцать один год». Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Numbers with nouns (2 часа, 5 часов) and the genitive plural. First go over the lesson and warm up with the exercises below. Then: Count things out loud all week: «два брата, пять минут, двадцать один год».",
      "keys": [
       "ru-s2-counting:speak"
      ],
@@ -9456,14 +9456,14 @@
        "url": "https://mezhdunami.org/unit09/9_2/index.shtml"
       },
       {
-       "type": "Listen",
-       "title": "Между нами Э.3 «Аэропо́рт Домоде́дово»",
-       "url": "https://mezhdunami.org/epilogue/e_3/index.shtml"
-      },
-      {
        "type": "Exercise",
        "title": "Между нами 9.2 «На сле́дующий день»: Вы всё поняли? (comprehension questions)",
        "url": "https://mezhdunami.org/unit09/9_2/comprehension.shtml"
+      },
+      {
+       "type": "Listen",
+       "title": "Между нами Э.3 «Аэропо́рт Домоде́дово»",
+       "url": "https://mezhdunami.org/epilogue/e_3/index.shtml"
       },
       {
        "type": "Exercise",
@@ -9548,14 +9548,14 @@
        "url": "https://mezhdunami.org/unit09/9_3/index.shtml"
       },
       {
-       "type": "Listen",
-       "title": "Между нами Э.2 «Пода́рок хозя́евам»",
-       "url": "https://mezhdunami.org/epilogue/e_2/index.shtml"
-      },
-      {
        "type": "Exercise",
        "title": "Между нами 9.3 «Как То́ни заблуди́лся»: Вы всё поняли? (comprehension questions)",
        "url": "https://mezhdunami.org/unit09/9_3/comprehension.shtml"
+      },
+      {
+       "type": "Listen",
+       "title": "Между нами Э.2 «Пода́рок хозя́евам»",
+       "url": "https://mezhdunami.org/epilogue/e_2/index.shtml"
       },
       {
        "type": "Exercise",
@@ -9625,14 +9625,14 @@
        "url": "https://mezhdunami.org/unit09/9_4/index.shtml"
       },
       {
-       "type": "Listen",
-       "title": "Между нами Э.1 «Студе́нты уезжа́ют»",
-       "url": "https://mezhdunami.org/epilogue/e_1/index.shtml"
-      },
-      {
        "type": "Exercise",
        "title": "Между нами 9.4 «То́ни в го́роде на Неве́»: Вы всё поняли? (comprehension questions)",
        "url": "https://mezhdunami.org/unit09/9_4/comprehension.shtml"
+      },
+      {
+       "type": "Listen",
+       "title": "Между нами Э.1 «Студе́нты уезжа́ют»",
+       "url": "https://mezhdunami.org/epilogue/e_1/index.shtml"
       },
       {
        "type": "Exercise",
@@ -9727,14 +9727,14 @@
        "url": "https://mezhdunami.org/unit09/9_5/index.shtml"
       },
       {
-       "type": "Listen",
-       "title": "Между нами 9.6 «Кейтлин сдаёт экза́мен»",
-       "url": "https://mezhdunami.org/unit09/9_6/index.shtml"
-      },
-      {
        "type": "Exercise",
        "title": "Между нами 9.5 «Са́мое глубо́кое о́зеро в ми́ре»: Вы всё поняли? (comprehension questions)",
        "url": "https://mezhdunami.org/unit09/9_5/comprehension.shtml"
+      },
+      {
+       "type": "Listen",
+       "title": "Между нами 9.6 «Кейтлин сдаёт экза́мен»",
+       "url": "https://mezhdunami.org/unit09/9_6/index.shtml"
       },
       {
        "type": "Exercise",
@@ -10108,11 +10108,6 @@
      ],
      "links": [
       {
-       "type": "Words",
-       "title": "Слово за словом (word app)",
-       "url": "https://anki-russian.onrender.com/"
-      },
-      {
        "type": "Partner",
        "title": "Tandem: find an exchange partner",
        "url": "https://tandem.net/en"
@@ -10126,6 +10121,11 @@
        "type": "AI partner",
        "title": "ChatGPT voice chat",
        "url": "https://chatgpt.com/"
+      },
+      {
+       "type": "Words",
+       "title": "Слово за словом (word app)",
+       "url": "https://anki-russian.onrender.com/"
       }
      ]
     }
@@ -10338,7 +10338,7 @@
     {
      "id": "d123-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Aspect in depth: process vs result, once vs repeated, aspect after не and in commands. Retell a short story twice: once as a chain of finished events (perfective), once as background and habits (imperfective). Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Aspect in depth: process vs result, once vs repeated, aspect after не and in commands. First go over the lesson and warm up with the exercises below. Then: Retell a short story twice: once as a chain of finished events (perfective), once as background and habits (imperfective).",
      "keys": [
       "ru-s3-aspect:speak"
      ],
@@ -10498,7 +10498,7 @@
     {
      "id": "d125-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Time expressions (в понедельник, через час, неделю назад, за два часа, на неделю). Then practise out loud with the exercises below until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Time expressions (в понедельник, через час, неделю назад, за два часа, на неделю). Practise out loud with the exercises below until about 9 in 10 are right.",
      "keys": [
       "ru-s3-time:drill"
      ],
@@ -10807,7 +10807,7 @@
     {
      "id": "d129-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Prefixed motion verbs (при-, у-, в-, вы-, за-, пере-, про-, под-, от-, до-). Then practise out loud with the exercises below until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Prefixed motion verbs (при-, у-, в-, вы-, за-, пере-, про-, под-, от-, до-). Practise out loud with the exercises below until about 9 in 10 are right.",
      "keys": [
       "ru-s3-prefixes:drill"
      ],
@@ -11035,7 +11035,7 @@
     {
      "id": "d132-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Reflexive verbs (-ся) and друг друга. Then practise out loud with the exercises below until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Reflexive verbs (-ся) and друг друга. Practise out loud with the exercises below until about 9 in 10 are right.",
      "keys": [
       "ru-s3-reflexive:drill"
      ],
@@ -11419,7 +11419,7 @@
     {
      "id": "d137-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): More motion: on foot vs by transport, нести / везти / вести. Tell how you moved house or brought something heavy home. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): More motion: on foot vs by transport, нести / везти / вести. First go over the lesson and warm up with the exercises below. Then: Tell how you moved house or brought something heavy home.",
      "keys": [
       "ru-s3-carry:speak"
      ],
@@ -11649,7 +11649,7 @@
     {
      "id": "d140-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Storytelling connectors (сначала, потом, вдруг, в итоге, оказалось, к счастью). Tell a 3-minute story about a trip or a funny event, with 8 connectors. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Storytelling connectors (сначала, потом, вдруг, в итоге, оказалось, к счастью). First go over the lesson and warm up with the exercises below. Then: Tell a 3-minute story about a trip or a funny event, with 8 connectors.",
      "keys": [
       "ru-s3-connectors:speak"
      ],
@@ -12106,7 +12106,7 @@
     {
      "id": "d146-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Short adjectives and states (должен, рад, готов, занят, прав). Then practise out loud with the exercises below until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Short adjectives and states (должен, рад, готов, занят, прав). Practise out loud with the exercises below until about 9 in 10 are right.",
      "keys": [
       "ru-s3-states:drill"
      ],
@@ -12579,7 +12579,7 @@
     {
      "id": "d153-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Reported speech and questions (он сказал, что…; я спросил, придёт ли он). Retell a conversation you had today: «Коллега сказал, что… Я спросил, придёт ли он…» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Reported speech and questions (он сказал, что…; я спросил, придёт ли он). First go over the lesson and warm up with the exercises below. Then: Retell a conversation you had today: «Коллега сказал, что… Я спросил, придёт ли он…»",
      "keys": [
       "ru-s3-reported:speak"
      ],
@@ -12804,7 +12804,7 @@
     {
      "id": "d156-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): кто-то, что-нибудь, никто, ничего не. Answer 10 questions with никогда, ничего or никуда: «Ты куда-нибудь ездил летом? — Нет, никуда не ездил.» Warm up with the exercises below.",
+     "text": "2. Speak (20 min): кто-то, что-нибудь, никто, ничего не. First go over the lesson and warm up with the exercises below. Then: Answer 10 questions with никогда, ничего or никуда: «Ты куда-нибудь ездил летом? — Нет, никуда не ездил.»",
      "keys": [
       "ru-s3-indefinite:speak"
      ],
@@ -13113,7 +13113,7 @@
     {
      "id": "d160-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Explaining a word you don't know (это такая вещь, которой…; это человек, который…). Play ‘guess the word’ with a partner or an AI: explain 10 words without saying them («это такая вещь, которой режут хлеб»). Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Explaining a word you don't know (это такая вещь, которой…; это человек, который…). First go over the lesson and warm up with the exercises below. Then: Play ‘guess the word’ with a partner or an AI: explain 10 words without saying them («это такая вещь, которой режут хлеб»).",
      "keys": [
       "ru-s3-explain-word:speak"
      ],
@@ -13263,7 +13263,7 @@
     {
      "id": "d162-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Opinions and feelings (мне кажется, по-моему, я рад, мне жаль, я в восторге). Then practise out loud with the exercises below until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Opinions and feelings (мне кажется, по-моему, я рад, мне жаль, я в восторге). Practise out loud with the exercises below until about 9 in 10 are right.",
      "keys": [
       "ru-s3-opinion:drill"
      ],
@@ -14621,11 +14621,6 @@
      ],
      "links": [
       {
-       "type": "Words",
-       "title": "Слово за словом (word app)",
-       "url": "https://anki-russian.onrender.com/"
-      },
-      {
        "type": "Partner",
        "title": "Tandem: find an exchange partner",
        "url": "https://tandem.net/en"
@@ -14639,6 +14634,11 @@
        "type": "AI partner",
        "title": "ChatGPT voice chat",
        "url": "https://chatgpt.com/"
+      },
+      {
+       "type": "Words",
+       "title": "Слово за словом (word app)",
+       "url": "https://anki-russian.onrender.com/"
       }
      ]
     }
@@ -14816,7 +14816,7 @@
     {
      "id": "d183-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Fillers that buy thinking time (ну, в общем, то есть, как бы сказать, дело в том, что). Collect 15 fillers from Easy Russian interviews and use 5 of them in your next conversation. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Fillers that buy thinking time (ну, в общем, то есть, как бы сказать, дело в том, что). First go over the lesson and warm up with the exercises below. Then: Collect 15 fillers from Easy Russian interviews and use 5 of them in your next conversation.",
      "keys": [
       "ru-s4-fillers:speak"
      ],
@@ -15545,7 +15545,7 @@
     {
      "id": "d193-grammar",
      "kind": "grammar",
-     "text": "2. Speak (20 min): Complex sentences: хотя, несмотря на то что, для того чтобы, вместо того чтобы, в то время как. Answer 5 questions about your city with one complex sentence each. Warm up with the exercises below.",
+     "text": "2. Speak (20 min): Complex sentences: хотя, несмотря на то что, для того чтобы, вместо того чтобы, в то время как. First go over the lesson and warm up with the exercises below. Then: Answer 5 questions about your city with one complex sentence each.",
      "keys": [
       "ru-s4-complex:speak"
      ],
@@ -17584,24 +17584,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -17664,24 +17664,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -17897,24 +17897,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -17974,24 +17974,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -18118,24 +18118,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -18195,24 +18195,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -18428,24 +18428,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -18505,24 +18505,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -18649,24 +18649,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -18726,24 +18726,24 @@
        "url": "https://en.wiktionary.org/wiki/Category:Russian_suffixes"
       },
       {
-       "type": "Lesson",
-       "title": "Master Russian: proverbs and sayings",
-       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
-      },
-      {
-       "type": "Lesson",
-       "title": "Википедия: Геоинформационная система",
-       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
-      },
-      {
        "type": "Video",
        "title": "Be Fluent in Russian: all the basics of prefixes",
        "url": "https://www.youtube.com/watch?v=_8VNP_NjblY"
       },
       {
+       "type": "Lesson",
+       "title": "Master Russian: proverbs and sayings",
+       "url": "https://masterrussian.com/proverbs/russian_proverbs.htm"
+      },
+      {
        "type": "Video",
        "title": "Be Fluent in Russian: 10 Russian idioms",
        "url": "https://www.youtube.com/watch?v=B-KCz_As-M0"
+      },
+      {
+       "type": "Lesson",
+       "title": "Википедия: Геоинформационная система",
+       "url": "https://ru.wikipedia.org/wiki/%D0%93%D0%B5%D0%BE%D0%B8%D0%BD%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0"
       }
      ]
     },
@@ -18982,11 +18982,6 @@
      ],
      "links": [
       {
-       "type": "Words",
-       "title": "Слово за словом (word app)",
-       "url": "https://anki-russian.onrender.com/"
-      },
-      {
        "type": "Partner",
        "title": "Tandem: find an exchange partner",
        "url": "https://tandem.net/en"
@@ -19000,6 +18995,11 @@
        "type": "AI partner",
        "title": "ChatGPT voice chat",
        "url": "https://chatgpt.com/"
+      },
+      {
+       "type": "Words",
+       "title": "Слово за словом (word app)",
+       "url": "https://anki-russian.onrender.com/"
       }
      ]
     }
@@ -19090,7 +19090,7 @@
     {
      "id": "d242-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Tasks 1–4: disagree with opposite evaluative words (увлекательный → скучный). Then practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Tasks 1–4: disagree with opposite evaluative words (увлекательный → скучный). Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t1-4:drill"
      ],
@@ -19275,7 +19275,7 @@
     {
      "id": "d245-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Tasks 5–8: react with an intention and explain it (agree, doubt, delight, suggest, regret, reproach…). Then practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Tasks 5–8: react with an intention and explain it (agree, doubt, delight, suggest, regret, reproach…). Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t5-8:drill"
      ],
@@ -19762,7 +19762,7 @@
     {
      "id": "d252-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Task 13: describe a video: the situation, the characters, their motives, your explanation. Then practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Task 13: describe a video: the situation, the characters, their motives, your explanation. Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t13:drill"
      ],
@@ -20021,7 +20021,7 @@
     {
      "id": "d256-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Task 14: phone about an ad (a job, a flat, a course, a competition). Then practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Task 14: phone about an ad (a job, a flat, a course, a competition). Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t14:drill"
      ],
@@ -20206,7 +20206,7 @@
     {
      "id": "d259-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion). Then practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Task 15: a 10–15-minute discussion (opinion → details → reasons → comparison → example → guess → conclusion). Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-t15:drill"
      ],
@@ -20488,7 +20488,7 @@
     {
      "id": "d263-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Accuracy at speed: endings after numbers and prepositions, aspect, stress. Then practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Accuracy at speed: endings after numbers and prepositions, aspect, stress. Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-accuracy:drill"
      ],
@@ -20673,7 +20673,7 @@
     {
      "id": "d266-grammar",
      "kind": "grammar",
-     "text": "2. Drill (20 min): Fluency: more speed, fewer pauses. Then practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
+     "text": "2. Drill (20 min): Fluency: more speed, fewer pauses. Practise out loud with the SPbU sample tasks and a partner or AI until about 9 in 10 are right.",
      "keys": [
       "ru-s5-fluency:drill"
      ],
@@ -21802,14 +21802,14 @@
      ],
      "links": [
       {
-       "type": "Words",
-       "title": "Слово за словом (word app)",
-       "url": "https://anki-russian.onrender.com/"
-      },
-      {
        "type": "Exam task",
        "title": "SPbU",
        "url": "https://testingcenter.spbu.ru/images/webinars/webinar_trki_b2.pdf"
+      },
+      {
+       "type": "Words",
+       "title": "Слово за словом (word app)",
+       "url": "https://anki-russian.onrender.com/"
       }
      ]
     }
