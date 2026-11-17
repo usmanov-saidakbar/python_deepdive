@@ -590,3 +590,40 @@ select.status-select {
 }
 
 .secondary-btn:hover { border-color: var(--accent); }
+
+/* Russian roadmap: each task's exact resources, one per line, under the task text */
+.day-task { flex-wrap: wrap; }
+.task-links {
+  flex-basis: 100%;
+  width: 100%;
+  list-style: none;
+  margin: 6px 0 2px 28px;
+  padding: 0;
+  display: grid;
+  gap: 4px;
+  font-size: 0.86rem;
+}
+.task-links li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  min-width: 0;
+}
+.tl-type {
+  flex: none;
+  width: 78px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.task-links a {
+  color: var(--accent);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 520px) {
+  .task-links { margin-left: 0; }
+  .tl-type { width: 64px; }
+}

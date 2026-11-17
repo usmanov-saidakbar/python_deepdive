@@ -288,6 +288,13 @@ opens on today's day.
   mocks.
 - Each task carries everything it needs (links, the AI chat prompt, the weekly
   questions), so no task points anywhere else on the page.
+- A task's `text` is the plain instruction; its `links` list holds the exact
+  resources, shown one per line under the task as `{ type, title, url }` (types:
+  Lesson, Exercise, Video, Listen, Read, Watch, Dialogue, Words, AI partner,
+  Partner, Post, Exam task, Tool, How to). Grammar topics link to the exact
+  Между нами grammar page (its «Упражнения» are the exercises), Russian for Free
+  case exercises, Mango Languages lessons and practice pages, and Master Russian;
+  videos are single YouTube videos, not channels.
 - Every task's text starts with its step number (`1.`, `2.`, …) and contains
   at least one `[label](https://…)` link, so each step points at its resource.
 - The days live in `data/russian-days.json` (`days` → `items` with `id`,

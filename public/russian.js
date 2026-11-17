@@ -342,6 +342,25 @@ function renderTask(task) {
   body.innerHTML = `<span class="badge kind kind-${task.kind}">${KINDS[task.kind] || task.kind}</span>${formatText(task.text)}`;
   label.append(box, body);
   li.appendChild(label);
+  // Each task lists its exact resources: "Lesson", "Exercise", "Listen", "Read", …
+  if (task.links && task.links.length) {
+    const list = document.createElement("ul");
+    list.className = "task-links";
+    for (const link of task.links) {
+      const row = document.createElement("li");
+      const type = document.createElement("span");
+      type.className = "tl-type";
+      type.textContent = link.type;
+      const a = document.createElement("a");
+      a.href = link.url;
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = link.title;
+      row.append(type, a);
+      list.appendChild(row);
+    }
+    li.appendChild(list);
+  }
   return li;
 }
 
