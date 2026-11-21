@@ -274,42 +274,48 @@ shows which study day today is; weekends count as catch-up time.
 
 ## Russian Roadmap tab
 
-`/russian.html` (the "Russian Roadmap" tab) is a 300-day plan to reach B2
-speaking in Russian with free resources only. The page has month tabs, a grid
-of the month's 30 days, the selected day's checklist (3–5 tasks, about 2
-hours), and one notes box for the error log. Set a start date and the page
-opens on today's day.
+`/russian.html` (the "Russian Roadmap" tab) is a 240-day plan from B1 to B2,
+with grammar as the main work. The page has month tabs, a grid of the month's
+30 days, the selected day's checklist (3–5 tasks, 1½–2 hours), and one notes
+box for the error log. Set a start date and the page opens on today's day.
 
-- Each month is 4 weeks of 7 days, then a review day (29) and a catch-up day
-  (30). A normal day has words, one step of the week's grammar topic, a named
-  listening (a *Между нами* episode, a Slow Russian episode or an Inklingo
-  story) and a speaking task; day 7 is light and holds the weekly check.
-  Months 9–10 follow the 15 tasks of the ТРКИ-2 speaking exam, with two full
-  mocks.
+- Each month is 4 weeks of 7 days, then a monthly check (day 29) and a catch-up
+  day with an optional Mosfilm film (day 30). Every day starts with the word
+  app. A week has two grammar topics (learn, drill, then a mixed drill on
+  Friday with two advanced Russian for Free case tests), four sessions with the
+  vocabulary book (Terence Wade, *Using Russian Vocabulary*: one unit every
+  1¾ weeks), four episodes of «Кухня» on STS's official YouTube channel (always
+  after the words), and speaking and writing that use the week's grammar on the
+  episodes and the book's topic. Sunday is light: reviews, the weekly check and
+  a rewatch without subtitles. Weeks 1–28 cover cases, verbs, motion verbs,
+  numbers, complex sentences, government, participles and verbal adverbs, and
+  style; weeks 29–32 are ТРКИ-2 practice. After «Кухня» (episode 21 isn't on
+  the official channel) the plan moves on to «Отель Элеон».
+- `data/russian-days.json` is built by `scripts/build_russian_plan.py`, which
+  holds the topic table, the book's units and pages, and the episode list. Edit
+  the script and run `python3 scripts/build_russian_plan.py`; run it with
+  `--check` to confirm every link opens (YouTube links are checked through
+  oEmbed). Task ids are `b<day>-<slot>`.
 - Each task carries everything it needs (links, the AI chat prompt, the weekly
   questions), so no task points anywhere else on the page.
 - A task's `text` is the plain instruction; its `links` list holds the exact
   resources, shown one per line under the task as `{ type, title, url }` (types:
-  Lesson, Exercise, Video, Listen, Read, Watch, Dialogue, Words, AI partner,
-  Partner, Post, Exam task, Tool, How to). Grammar topics link to the exact
-  Между нами grammar page (its «Упражнения» are the exercises), Russian for Free
-  case exercises, Mango Languages lessons and practice pages, and Master Russian;
-  videos are single YouTube videos, not channels.
-- Every task's text starts with its step number (`1.`, `2.`, …) and contains
-  at least one `[label](https://…)` link, so each step points at its resource.
-- The days live in `data/russian-days.json` (`days` → `items` with `id`,
-  `kind`, `text` and optional `keys`); `GET /api/russian-days` serves it. Edit
-  it directly, keeping ids stable. A task with `keys` is ticked under those
-  keys instead of its id: they're left from the stage checklists the page used
-  to have, so ticks saved back then still show.
+  Lesson, Exercise, Video, Watch, Read, Book, Words, AI partner, Exam task,
+  Test, Tool, Course). Links come in the order you use them; the word app is
+  last, except in the Words task.
+- The plan was rebuilt for B1 → B2 on 2026-11-21. Progress saved before that
+  has no `plan: "b1-b2"` marker: its start date moves to `oldPlanStartDate`, so
+  the new plan starts on the date you pick. Old ticks stay in storage but no new
+  task uses their ids.
 - Notes from the old per-stage and weekly notes boxes are folded into the one
   notes box when progress loads.
 - Words are learned in a separate app,
   [Слово за словом](https://anki-russian.onrender.com/) (repo:
   [anki_russian](https://github.com/usmanov-saidakbar/anki_russian), a static
-  site on Render). It has the Kelly A1–B2 word list plus data-engineering terms,
-  spaced repetition and word tests. Each day's Words task links to it. To move
-  the app, replace its URL in the task texts in `data/russian-days.json`.
+  site on Render). Its new words follow the vocabulary book (the units in the
+  publisher's preview for now), then the Kelly B1–B2 list, plus data-engineering
+  terms, with spaced repetition and word tests. Each day's Words task links to
+  it. To move the app, change `APP` in `scripts/build_russian_plan.py`.
 - The word app syncs through this server: `GET`/`PUT /api/anki/:email`, stored
   in Upstash under `anki:<email>`. These routes answer cross-origin requests
   from `*.onrender.com`, `usmanov-saidakbar.github.io` and localhost (see

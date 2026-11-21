@@ -108,7 +108,7 @@ app.get("/api/course-links", (req, res) => {
   }
 });
 
-// The 300-day plan for the Russian roadmap: one checklist per day.
+// The day-by-day plan for the Russian roadmap (data/russian-days.json, built by scripts/build_russian_plan.py).
 app.get("/api/russian-days", (req, res) => {
   try {
     res.json(JSON.parse(fs.readFileSync(RUSSIAN_DAYS_FILE, "utf8")));

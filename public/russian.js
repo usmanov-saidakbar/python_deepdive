@@ -2,12 +2,16 @@ const EMAIL_KEY = "course-tracker-email";
 const LOCAL_KEY = "russian-roadmap-progress";
 const DAY_KEY = "russian-roadmap-day";
 const NOTES_KEY = "log";
-const PLAN_DAYS = 300;
+// The plan was rebuilt for B1 → B2 on 2026-11-21. A plan started before that gets a fresh start date.
+const PLAN_VERSION = "b1-b2";
+let PLAN_DAYS = 240; // replaced by the number of days in the data once it loads
 
 const KINDS = {
   setup: "Setup",
   anki: "Words",
   grammar: "Grammar",
+  book: "Book",
+  watch: "Watch",
   input: "Listen",
   speak: "Speak",
   write: "Write",
@@ -17,7 +21,7 @@ const KINDS = {
 };
 
 // Same email-keyed storage as the other pages, under its own server key.
-// progress = { checked: { [key]: true }, notes: { log: "..." }, startDate: "YYYY-MM-DD" }
+// progress = { checked: { [key]: true }, notes: { log: "..." }, startDate: "YYYY-MM-DD", plan: "b1-b2" }
 // Words are learned in the separate word app (anki_russian repo), which keeps its own progress.
 // A daily task is ticked under its own id ("d37-speak"), or under its `keys` when it has them:
 // those come from the stage checklists the page used to have, so ticks saved back then still show.
@@ -30,7 +34,7 @@ let activeDay = 1;
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function emptyProgress() {
-  return { checked: {}, notes: {}, startDate: "" };
+  return { checked: {}, notes: {}, startDate: "", plan: PLAN_VERSION };
 }
 
 function isPlainObject(value) {
@@ -44,6 +48,13 @@ function normalizeProgress(data) {
   if (!isPlainObject(result.notes)) result.notes = {};
   // The old on-page word trainer kept its cards here; words now live in the word app.
   for (const key of ["cards", "myWords", "wordLog", "wordDir"]) delete result[key];
+  // A start date set for the old 300-day beginner plan doesn't fit the B1 → B2 plan: keep it aside and
+  // let the new plan start when you choose. Ticks and notes stay (new task ids never clash with old ones).
+  if (!isPlainObject(data) || data.plan !== PLAN_VERSION) {
+    if (result.startDate) result.oldPlanStartDate = result.startDate;
+    result.startDate = "";
+    result.plan = PLAN_VERSION;
+  }
   const old = Object.keys(result.notes).filter((key) => key !== NOTES_KEY).sort();
   if (old.length) {
     const parts = [result.notes[NOTES_KEY], ...old.map((key) => result.notes[key])].filter(Boolean);
@@ -251,7 +262,7 @@ function renderNotes() {
   textarea.className = "notes";
   textarea.rows = 8;
   textarea.placeholder =
-    "Error log: what I said → what's correct (where it came up)\nЯ живу в Ташкент → Я живу в Ташкенте (exchange call)\n\nPlacement results, B2 date, mock scores: …";
+    "Error log: what I said → what's correct (where it came up)\nЯ живу в Ташкент → Я живу в Ташкенте (retelling «Кухня» 3)\n\nPlacement result, top 3 grammar problems, rewatch % per week, mock scores: …";
   textarea.value = progress.notes[NOTES_KEY] || "";
   textarea.addEventListener("input", () => {
     if (textarea.value) progress.notes[NOTES_KEY] = textarea.value;
@@ -261,7 +272,7 @@ function renderNotes() {
   el.appendChild(textarea);
 }
 
-// ---------------------------------------------------------------- the 300-day plan
+// ---------------------------------------------------------------- the day plan
 
 function selectDay(n) {
   activeDay = Math.min(Math.max(n, 1), days.length);
@@ -474,6 +485,7 @@ async function main() {
   try {
     const [daily] = await Promise.all([fetch("/api/russian-days").then((r) => r.json()), loadProgress()]);
     days = daily.days || [];
+    PLAN_DAYS = days.length || PLAN_DAYS;
     let savedDay = null;
     try {
       savedDay = Number(localStorage.getItem(DAY_KEY));

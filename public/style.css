@@ -576,6 +576,8 @@ select.status-select {
 .badge.kind-review { color: #9aa3b2; }
 .badge.kind-test { color: #ff7b7b; }
 .badge.kind-project { color: #6fd08c; }
+.badge.kind-book { color: #e8a5ff; }
+.badge.kind-watch { color: #4dd0c8; }
 
 .day-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 
