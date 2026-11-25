@@ -197,9 +197,11 @@ with its own progress bar and notes box:
   Engineering Zoomcamp, its 16 units split over two days (about 2 hours each),
   each linking the YouTube video and the unit's notes; Day 11 ends with the
   module's optional homework.
-- **Days 12–15, Zillacode prep and optimization labs:** one
-  lesson-and-exercise notebook a day in `public/spark-lab/notebooks/`
-  (`zillacode_prep_day12.ipynb` to `zillacode_prep_day15.ipynb`). They teach
+- **Days 12–15, Zillacode prep and optimization labs:**
+  lesson-and-exercise notebooks in `public/spark-lab/notebooks/`:
+  `zillacode_prep_day12.ipynb`, `zillacode_prep_day13.ipynb` and
+  `zillacode_prep_day14_15.ipynb`, one notebook for Days 14 and 15 (Lessons
+  1–8 are Day 14, Lessons 9–14 are Day 15; both days link to it). They teach
   the DataFrame API that the theory days and the Zoomcamp module don't cover,
   everything the 52 PySpark problems of
   [Zillacode](https://github.com/davidzajac1/zillacode) use, and from Day 13
@@ -216,9 +218,8 @@ with its own progress bar and notes box:
   join algorithms (hints, AQE's switch at run time), skew and salting, window
   functions and how they run. Day 15: Hard-problem patterns, Spark SQL,
   reading less (pruning, sorted files, partition folders, small files),
-  caching, UDF costs, performance mistakes, a final optimization problem, an
-  optimization checklist, and a 75-minute mock exam on new data built the way
-  Zillacode builds its inputs. Days 13–15 save the small tables as Parquet
+  caching, UDF costs, performance mistakes, a final optimization problem and an
+  optimization checklist. Days 13–15 save the small tables as Parquet
   (so plans show real file scans) and generate 10 million sales rows in
   `data/big/` (about 160 MB, plus about 450 MB of copies on Day 15), so each
   optimization is measured with a small `measure()` helper that reads the
@@ -234,7 +235,9 @@ Earlier versions are in git history: the Lab notebooks
 practice-only notebooks
 (`git show 2d2b4a1:public/spark-lab/notebooks/practice_day12.ipynb`), and
 the Zillacode-only Days 13–15
-(`git show 8f49c52:public/spark-lab/notebooks/zillacode_prep_day13.ipynb`).
+(`git show 8f49c52:public/spark-lab/notebooks/zillacode_prep_day13.ipynb`), and
+the separate Day 14 and Day 15 notebooks, with Day 15's 75-minute mock exam
+(`git show 8da797c:public/spark-lab/notebooks/zillacode_prep_day15.ipynb`).
 
 The *Checklist coverage* panel lists every checklist question, the day that
 covers it and whether its topic is ticked. Set a start date and the page
